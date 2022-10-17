@@ -41,7 +41,7 @@
     "hexo-github-card": "^1.0.5",
     "hexo-i18n": "^1.0.0",
     "hexo-log": "^3.2.0",
-    "hexo-pagination": "^2.0.0",
+    "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-marked": "^5.0.0",
     "hexo-renderer-stylus": "^2.1.0",
