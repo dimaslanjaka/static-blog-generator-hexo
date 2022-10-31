@@ -44,7 +44,7 @@
   "devDependencies": {
     "@types/hexo": "file:packages/@types/hexo",
     "@types/hexo-util": "file:packages/@types/hexo-util",
-    "@types/node": "^18.11.7",
+    "@types/node": "^18.11.8",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "cross-env": "^7.0.3",
