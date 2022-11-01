@@ -45,7 +45,7 @@
     "@types/hexo": "file:packages/@types/hexo",
     "@types/hexo-util": "file:packages/@types/hexo-util",
     "@types/node": "^18.11.7",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.40.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.25.0",
