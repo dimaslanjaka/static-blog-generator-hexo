@@ -30,17 +30,19 @@ export function deployConfig() {
   return { deployDir, config, github };
 }
 
+/** common ignore files */
 export const commonIgnore = [
-  '**/yandex_*.html',
-  '**/comments.html',
-  '**/disqus-comments.html',
-  '**/comment.html',
-  '**/favicon.html',
-  '**/404.html',
-  '**/node_modules/**',
-  '**/tmp/**',
-  '**/.cache/**',
-  '**/.vscode/**',
-  '**/.frontmatter/**',
-  '**/pinterest-*.html'
+  '**/yandex_*.html', // skip yandex verification file
+  // '**/comments.html',
+  // '**/disqus-comments.html',
+  // '**/comment.html', // skip comment.html
+  '**/favicon.html', // skip favicon
+  '**/404.html', // skip 404
+  '**/node_modules/**', // skip node_modules
+  '**/tmp/**', // skip tmp
+  '**/.cache/**', // skip common cache folder
+  '**/.vscode/**', // skip vscode configuration folder
+  '**/.frontmatter/**', // skip frontmatter vscode extension
+  '**/pinterest-*.html', // skip pinterest verification file
+  '**/_*.standalone.{js,ts}' // skip _filename.standalone.js
 ];
