@@ -1,4 +1,0 @@
-source/_posts/**/*
-tmp
-.cache
-.deploy_git
