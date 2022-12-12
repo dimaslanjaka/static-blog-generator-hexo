@@ -3,6 +3,8 @@ title: Script auto fishing
 webtitle: Chimeraland
 date: 2022-12-12
 updated: 2022-12-12
+tags: [chimeraland, fishing, script]
+categories: [chimeraland]
 ---
 
 <!-- source https://codepen.io/dimaslanjaka/pen/JjZqyRZ -->
