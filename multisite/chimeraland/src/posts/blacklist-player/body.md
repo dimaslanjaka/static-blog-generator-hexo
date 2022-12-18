@@ -39,4 +39,7 @@
 - Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
 - Jangan melakukan transaksi dengan **AKUN SMURF** (orang indonesia menyebutnya **AKUN TUYUL**), 90% merupakan scammer.
 
-> shortlink halaman ini: [http://bit.ly/chimeraland-blacklist](http://bit.ly/chimeraland-blacklist)
+## Links yang merujuk tentang scammer
+- scammer midman/rekber (rekening bersama): https://www.facebook.com/groups/5827051707365882/permalink/8491039837633709/?mibextid=Nif5oz
+- shortlink halaman ini: [http://bit.ly/chimeraland-blacklist](http://bit.ly/chimeraland-blacklist)
+
