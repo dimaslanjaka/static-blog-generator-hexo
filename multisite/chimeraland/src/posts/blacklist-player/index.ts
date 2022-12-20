@@ -4,7 +4,8 @@ import { buildPost, postMap, postMeta, renderMarkdown } from 'hexo-post-parser'
 import { JSDOM } from 'jsdom'
 import { EOL } from 'os'
 import slugify from 'slugify'
-import { basename, extname, join } from 'upath'
+import { trueCasePathSync } from 'true-case-path'
+import { basename, join, toUnix } from 'upath'
 import { sbgProject } from '../../../project'
 
 const metadata: postMeta = {
@@ -15,7 +16,7 @@ const metadata: postMeta = {
   updated: '2022-12-20T14:44:15+07:00',
   lang: 'id',
   permalink: '/chimeraland/blacklist-player.html',
-  tags: ['Chimeraland', 'Blacklist', 'Player'],
+  tags: ['Chimeraland', 'Blacklist', 'Player', 'Scammer'],
   categories: ['Games', 'Chimeraland'],
   thumbnail:
     'https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.palmassgames.ru/wp-content/uploads/2021/07/screenshot_6-1-1024x504.png',
@@ -58,27 +59,71 @@ Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
 })
 
 // include screenshots
-const screenshots = readdirSync(__dirname)
-  .filter((path) => /.(jpe?g|png)$/i.test(path))
-  .map((path) => join(__dirname, path))
-  .map((path) => {
-    spawnAsync('git', 'config --get remote.origin.url'.split(' '), {
-      cwd: __dirname
-    }).then(console.log)
+const screenshots = function (): Promise<string[]> {
+  return new Promise((resolve) => {
+    const results: string[] = []
+    readdirSync(__dirname)
+      .filter((path) => /.(jpe?g|png)$/i.test(path))
+      .map((path) => join(__dirname, path))
+      .map((path, index, all) => {
+        //https://stackoverflow.com/a/957978
+        spawnAsync('git', 'rev-parse --show-toplevel'.split(' ')).then(
+          (toplevel) => {
+            // https://stackoverflow.com/a/4090938
+            spawnAsync('git', 'config --get remote.origin.url'.split(' '), {
+              cwd: __dirname
+            })
+              .then((origin) => {
+                spawnAsync('git', 'branch --show-current'.split(' ')).then(
+                  (branch) => {
+                    const url = new URL(
+                      origin.stdout.trim().replace(/(.git|\/)$/i, '')
+                    )
+                    url.pathname = (
+                      url.pathname +
+                      '/raw/' +
+                      branch.stdout.trim() +
+                      '/' +
+                      toUnix(
+                        trueCasePathSync(path).replace(
+                          trueCasePathSync(toplevel.stdout.trim()),
+                          ''
+                        )
+                      )
+                    ).replace(/\/{2,}/gm, '/')
 
-    const jpgDataUrlPrefix =
-      'data:image/' + extname(path).replace('.', '') + ';base64,'
-    const base64 = readFileSync(path, 'base64')
-    return `<img src="${jpgDataUrlPrefix}${base64}" alt="${basename(path)}" />`
+                    const img = `<img src="${url.toString()}" alt="${basename(
+                      path
+                    )}" />`
+                    results.push(img)
+
+                    if (index === all.length - 1) resolve(results)
+                  }
+                )
+              })
+              .catch(console.log)
+          }
+        )
+
+        /*const jpgDataUrlPrefix =
+          'data:image/' + extname(path).replace('.', '') + ';base64,'
+        const base64 = readFileSync(path, 'base64')
+        return `<img src="${jpgDataUrlPrefix}${base64}" alt="${basename(
+          path
+        )}" />`*/
+      })
   })
-
+}
 let body = dom.window.document.body.innerHTML
 dom.window.close()
 // console.log(body)
-body = body.replace('<!-- tangkapan.layar -->', screenshots.join(EOL))
 
-const post: postMap = { metadata, body: translator + '\n\n' + body }
-const build = buildPost(post)
-const saveTo = join(sbgProject, 'src-posts/blacklist-player.md')
+screenshots().then(function (ss) {
+  body = body.replace('<!-- tangkapan.layar -->', ss.join(EOL))
 
-writeFileSync(saveTo, build)
+  const post: postMap = { metadata, body: translator + '\n\n' + body }
+  const build = buildPost(post)
+  const saveTo = join(sbgProject, 'src-posts/blacklist-player.md')
+
+  writeFileSync(saveTo, build)
+})

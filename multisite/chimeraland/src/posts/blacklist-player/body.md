@@ -43,5 +43,5 @@
 - scammer midman/rekber (rekening bersama): https://www.facebook.com/groups/5827051707365882/permalink/8491039837633709/?mibextid=Nif5oz
 - shortlink halaman ini: [http://bit.ly/chimeraland-blacklist](http://bit.ly/chimeraland-blacklist)
 
-## Kumpulan Tangkapan Layar (screenshot)
+## Kumpulan Tangkapan Layar (screenshot) tentang scammer
 <!-- tangkapan.layar -->
