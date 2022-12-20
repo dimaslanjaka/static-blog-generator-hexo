@@ -344,6 +344,13 @@ generator:
     posts:
       space: true
 
+# https://www.npmjs.com/package/hexo-excerpt
+excerpt:
+  depth: 10
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: false
+
 ## https://github.com/dimaslanjaka/hexo-adsense
 adsense:
   enable: false
