@@ -5,8 +5,10 @@
   "scripts": {
     "prestart": "npm run copy",
     "start": "npm run server",
-    "prebuild": "npm run copy && cd multisite/chimeraland && npm run build",
-    "build": "hexo generate",
+    "build": "run-s build:**",
+    "build:chimera": "cd multisite/chimeraland && npm run build",
+    "build:post": "npm run copy",
+    "build:site": "hexo generate",
     "postbuild": "gulp sitemap && gulp feed && gulp copy && gulp seo && gulp safelink",
     "copy": "gulp copy-all-post",
     "clean": "gulp clean",
