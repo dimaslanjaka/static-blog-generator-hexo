@@ -1,8 +1,10 @@
-import { readFileSync, writeFileSync } from 'fs-extra'
+import { readdirSync, readFileSync, writeFileSync } from 'fs-extra'
+import { spawnAsync } from 'git-command-helper/dist/spawn'
 import { buildPost, postMap, postMeta, renderMarkdown } from 'hexo-post-parser'
 import { JSDOM } from 'jsdom'
+import { EOL } from 'os'
 import slugify from 'slugify'
-import { join } from 'upath'
+import { basename, extname, join } from 'upath'
 import { sbgProject } from '../../../project'
 
 const metadata: postMeta = {
@@ -10,7 +12,7 @@ const metadata: postMeta = {
   description:
     'Blacklist player chimeraland (scammer list meliputi ruby trader, map illus 16 party, roll drop item, dan lain-lain)',
   date: '2022-11-07T19:54:01+07:00',
-  updated: '2022-12-03T06:22:25+07:00',
+  updated: '2022-12-20T14:44:15+07:00',
   lang: 'id',
   permalink: '/chimeraland/blacklist-player.html',
   tags: ['Chimeraland', 'Blacklist', 'Player'],
@@ -40,13 +42,13 @@ Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
   })
 })
 
-Array.from(dom.window.document.querySelectorAll('*')).forEach(function (el){
-  let style = el.getAttribute('style')||'';
-  if (!style.includes('vertical-align')){
-    if (!style.endsWith(';')) style += ';';
-    style += 'vertical-align: unset;';
+Array.from(dom.window.document.querySelectorAll('*')).forEach(function (el) {
+  let style = el.getAttribute('style') || ''
+  if (!style.includes('vertical-align')) {
+    if (!style.endsWith(';')) style += ';'
+    style += 'vertical-align: unset;'
   }
-});
+})
 
 // remove .header-ancor
 Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
@@ -56,11 +58,24 @@ Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
 })
 
 // include screenshots
+const screenshots = readdirSync(__dirname)
+  .filter((path) => /.(jpe?g|png)$/i.test(path))
+  .map((path) => join(__dirname, path))
+  .map((path) => {
+    spawnAsync('git', 'config --get remote.origin.url'.split(' '), {
+      cwd: __dirname
+    }).then(console.log)
 
+    const jpgDataUrlPrefix =
+      'data:image/' + extname(path).replace('.', '') + ';base64,'
+    const base64 = readFileSync(path, 'base64')
+    return `<img src="${jpgDataUrlPrefix}${base64}" alt="${basename(path)}" />`
+  })
 
-const body = dom.window.document.body.innerHTML
+let body = dom.window.document.body.innerHTML
 dom.window.close()
 // console.log(body)
+body = body.replace('<!-- tangkapan.layar -->', screenshots.join(EOL))
 
 const post: postMap = { metadata, body: translator + '\n\n' + body }
 const build = buildPost(post)
