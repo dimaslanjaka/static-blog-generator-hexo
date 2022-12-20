@@ -55,6 +55,9 @@ Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
   }
 })
 
+// include screenshots
+
+
 const body = dom.window.document.body.innerHTML
 dom.window.close()
 // console.log(body)
