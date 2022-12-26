@@ -7,3 +7,6 @@ package-lock.json
 *.rar
 google-api-key*.json
 client_secret*.json
+
+# auto generated
+src-posts/blacklist-chimeraland.md
