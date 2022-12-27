@@ -14,8 +14,9 @@
 # turn off delta attributes for large files
 # fix large files
 # https://stackoverflow.com/a/3096675
-/large_file_dir/* -delta
+# /large_file_dir/* -delta
+# another/file/that/is/large -delta
 *.psd -delta
-/data/*.iso -delta
-/some/big/file -delta
-another/file/that/is/large -delta
+*.iso -delta
+*.tgz -delta
+
