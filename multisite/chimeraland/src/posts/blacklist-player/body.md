@@ -20,6 +20,7 @@
 | Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | hella | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
 | LORD | AKUN KEDUA **[#hella](hella)** |
+| Yayan bae | SCAMMER Illus Seal, Toxic |
 
 ## Daftar player kategori tukang roll drop item
 
@@ -28,6 +29,7 @@
 | Corleonx | Roll drops items |
 | Shelby | Roll drops items |
 | PrimalHunter | Roll drops items |
+| blackblades | Roll telur illus 30,000 years |
 
 ## Daftar player yang dicurigai sebagai scammer
 
