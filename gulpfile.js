@@ -36,6 +36,13 @@ async function pull() {
   }
 }
 
-exports.sbg = sbg;
+async function commit() {
+  const config = sbg.getConfig();
+  const cwd = config.deploy.deployDir;
+  const gh = config.deploy.github;
+  await gh.spawn('git', ['add', '.'], { cwd });
+}
+
+exports.commit = commit;
 exports.pull = pull;
 exports = gulp;
