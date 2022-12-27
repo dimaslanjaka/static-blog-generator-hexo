@@ -35,7 +35,10 @@ Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
     const player = tr.querySelector('td:nth-child(1)')
     if (player && !/nama player/gim.test(player.innerHTML)) {
       // console.log(player.innerHTML)
-      player.setAttribute('notranslate', '')
+      // tell google translate do not include this element
+      // https://stackoverflow.com/a/9629628
+      player.setAttribute('notranslate', 'true')
+      player.setAttribute('class', player.getAttribute('class').trim() + ' notranslate');
       // add attribute id to player nickname
       const id = slugify(player.innerHTML)
       if (!dom.window.document.getElementById(id)) player.setAttribute('id', id)
