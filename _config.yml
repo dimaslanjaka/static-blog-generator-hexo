@@ -171,7 +171,7 @@ exclude:
   - "**/bin/**"
   - "**/backend/**"
   - "**/MIDI.js/**"
-  - "**/{readme,README,changelog,CHANGELOG}.md"
+  - "**/{readme,README,changelog,CHANGELOG,license,LICENSE,License}.md"
   - "**/Test/**"
   - "**/guzzle/**"
   - "**/exclude/**"
