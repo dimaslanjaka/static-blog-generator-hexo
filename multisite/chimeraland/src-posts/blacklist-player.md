@@ -3,7 +3,7 @@ title: Blacklist Player Chimeraland
 description: Blacklist player chimeraland (scammer list meliputi ruby trader,
   map illus 16 party, roll drop item, dan lain-lain)
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-12-20T14:44:15+07:00
+updated: 2022-12-27T16:37:14+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 tags:
@@ -337,8 +337,9 @@ author: L3n4r0x
 <li>shortlink halaman ini: <a href="http://bit.ly/chimeraland-blacklist">http://bit.ly/chimeraland-blacklist</a></li>
 </ul>
 <h2 id="kumpulan-tangkapan-layar-screenshot-tentang-scammer" tabindex="-1"><a href="#kumpulan-tangkapan-layar-screenshot-tentang-scammer">Kumpulan Tangkapan Layar (screenshot) tentang scammer</a></h2>
-<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/Screenshot_2022-12-06-22-05-38-93_f4fc9fb10454fc3a3dacb99dff89b568.jpg" alt="Screenshot_2022-12-06-22-05-38-93_f4fc9fb10454fc3a3dacb99dff89b568.jpg" />
-<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/FB_IMG_1671155487205.jpg" alt="FB_IMG_1671155487205.jpg" />
-<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/Screenshot_2022-12-13-14-58-41-93_f4fc9fb10454fc3a3dacb99dff89b568.jpg" alt="Screenshot_2022-12-13-14-58-41-93_f4fc9fb10454fc3a3dacb99dff89b568.jpg" />
-<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/Screenshot_2022-12-13-14-58-49-30_f4fc9fb10454fc3a3dacb99dff89b568.jpg" alt="Screenshot_2022-12-13-14-58-49-30_f4fc9fb10454fc3a3dacb99dff89b568.jpg" />
-<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/Screenshot_2022-12-18-20-49-48-79_a23b203fd3aafc6dcb84e438dda678b6.jpg" alt="Screenshot_2022-12-18-20-49-48-79_a23b203fd3aafc6dcb84e438dda678b6.jpg" />
+<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/Egy%20&%20sizukaz%20&%20Black%20sword%20&%20hella%20&%20aster%20&%20Dikoo.jpg" alt="Egy & sizukaz & Black sword & hella & aster & Dikoo.jpg" />
+<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/batagor%20&%20sus%20&%20unknown.jpg" alt="batagor & sus & unknown.jpg" />
+<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/black%20sword%20&%20sakuraz.jpg" alt="black sword & sakuraz.jpg" />
+<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/Chinese%20player%20&%20UnknowN.jpg" alt="Chinese player & UnknowN.jpg" />
+<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/blackblades.jpg" alt="blackblades.jpg" />
+<img src="https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/multisite/chimeraland/src/posts/blacklist-player/Xalll.jpg" alt="Xalll.jpg" />
