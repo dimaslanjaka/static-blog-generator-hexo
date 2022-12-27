@@ -16,3 +16,4 @@ docs/
 **/.yarn/unplugged/**
 **/.yarn/*.gz
 .pnp.*
+/build/
