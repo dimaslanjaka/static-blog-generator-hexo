@@ -182,7 +182,7 @@ exclude:
   - "**/tmp/**"
   - "**/hexo-theme-unit-test/**"
 ignore:
-  - "**/.git"
+  - "**/.git*"
 # https://hexo.io/docs/configuration.html
 skip_render:
   - "*.html"
