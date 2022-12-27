@@ -38,7 +38,7 @@ Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
       // tell google translate do not include this element
       // https://stackoverflow.com/a/9629628
       player.setAttribute('notranslate', 'true')
-      player.setAttribute('class', player.getAttribute('class').trim() + ' notranslate');
+      player.setAttribute('class', (player.getAttribute('class') || '').trim() + ' notranslate');
       // add attribute id to player nickname
       const id = slugify(player.innerHTML)
       if (!dom.window.document.getElementById(id)) player.setAttribute('id', id)
