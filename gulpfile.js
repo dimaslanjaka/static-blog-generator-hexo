@@ -2,11 +2,12 @@ const gulp = require('gulp');
 const sbg = require('static-blog-generator');
 //const sbg = require('./packages/gulp-sbg');
 
+const config = sbg.getConfig();
+
 /**
  * git pull on deploy dir
  */
-async function pull() {
-  const config = sbg.getConfig();
+async function pull(done) {
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
   await gh.spawn('git', ['config', 'pull.rebase', 'false'], {
@@ -26,6 +27,7 @@ async function pull() {
     }
 
     try {
+      console.log('pulling', sub.root);
       await gh.spawn('git', ['pull', '-X', 'theirs'], {
         cwd: sub.root,
         stdio: 'inherit'
@@ -34,15 +36,14 @@ async function pull() {
       console.log('cannot pull', sub.root);
     }
   }
+  done();
 }
 
 async function commit() {
-  const config = sbg.getConfig();
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
   await gh.spawn('git', ['add', '.'], { cwd });
 }
 
-exports.commit = commit;
-exports.pull = pull;
-exports = gulp;
+gulp.task('commit', commit);
+gulp.task('pull', pull);
