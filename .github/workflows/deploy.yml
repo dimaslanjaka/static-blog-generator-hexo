@@ -94,8 +94,7 @@ jobs:
         shell: bash
         continue-on-error: true
         run: |
-          curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-          npm install
+          npm run update
           #npm i -D https://github.com/dimaslanjaka/static-blog-generator.git
           #npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
           #npm i -D https://github.com/dimaslanjaka/safelink.git
