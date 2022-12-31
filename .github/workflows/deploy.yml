@@ -73,7 +73,14 @@ jobs:
 
       - name: Fix Sharp
         run: |
-          sudo add-apt-repository 'deb http://cz.archive.ubuntu.com/ubuntu disco main universe'
+          git clone git://github.com/jcupitt/libvips.git
+          cd libvips/
+          # install dependencies if you have errors during autogen.sh
+          #sudo apt install gtk-doc-tools
+          #sudo apt install gobject-introspection
+          ./autogen.sh
+          make
+          sudo make install
           sudo apt-get update
           sudo apt-get --only-upgrade install libvips
 
