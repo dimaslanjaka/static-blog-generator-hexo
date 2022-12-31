@@ -93,7 +93,7 @@ jobs:
       - name: Fix Sharp
         continue-on-error: true
         run: |
-          git clone git://github.com/jcupitt/libvips.git
+          git clone https://github.com/jcupitt/libvips.git
           cd libvips/
           # install dependencies if you have errors during autogen.sh
           #sudo apt install gtk-doc-tools
