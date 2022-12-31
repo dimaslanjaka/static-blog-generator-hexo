@@ -18,7 +18,7 @@
     "postinstall": "node postinstall.js",
     "preupdate": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update": "npx npm-check-updates -u -x hexo,chalk && npm install --cache tmp/npm",
-    "refresh": "npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
+    "refresh": "rimraf package-lock.json && npm install"
   },
   "hexo": {
     "version": "6.3.0"
