@@ -195,7 +195,7 @@ const argv = process.argv.slice(2);
       }
 
       // dump
-      json[pkgname] = Object.assign(json[pkgname], {
+      json[pkgname] = Object.assign(json[pkgname] || {}, {
         isLocalPkg,
         isGitPkg,
         isUrlPkg,
