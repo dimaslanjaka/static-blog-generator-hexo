@@ -29,7 +29,8 @@ export default function gulpDom(mutator: GulpDomCallback) {
     }
 
     if (file.isBuffer()) {
-      const dom = new jsdom.JSDOM(file.contents.toString('utf8'));
+      try {
+        const dom = new jsdom.JSDOM(file.contents.toString('utf8'));
       const mutated = mutator.call(dom.window.document, file.path);
 
       file.contents = Buffer.from(
@@ -38,6 +39,11 @@ export default function gulpDom(mutator: GulpDomCallback) {
       callback(null, file);
 
       dom.window.close();
+      } catch (e){
+        if (e instanceof Error) {
+          console.log(e.message)
+        }
+      }
     }
   });
 

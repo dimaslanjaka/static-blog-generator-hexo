@@ -13,8 +13,8 @@ npm i https://....url-tgz
 ```
 for example
 ```bash
-npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-sbg/release/gulp-sbg.tgz
+npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
 ```
 
 ## URL Parts Explanations
-> https://github.com/`<github-username>`/`<github-repo-name>`/raw/`<github-branch-name>`/`<path-to-file-with-extension>`
+> https://github.com/github-username/github-repo-name/raw/github-branch-name/path-to-file-with-extension
