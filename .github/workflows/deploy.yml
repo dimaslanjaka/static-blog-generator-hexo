@@ -142,9 +142,14 @@ jobs:
           echo "install-npm outcome=${{ steps.install-npm.outcome }}, conclusion=${{ steps.install-npm.conclusion }}"
           echo "install-chimeraland outcome=${{ steps.install-chimeraland.outcome }}, conclusion=${{ steps.install-chimeraland.conclusion }}"
 
-      - name: Pull Deployment
-        run: gulp pull
-      - run: npm run build
+      - run: gulp pull
+      - run: gulp post:standalone
+      - run: gulp post:copy
+      - run: hexo generate
+      - run: gulp sitemap
+      - run: gulp feed
+      - run: gulp deploy:copy
+      - run: gulp seo
       - name: Git push
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
