@@ -23,6 +23,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "chimeraland": "file:multisite/chimeraland",
     "fs-extra": "^11.1.0",
     "hexo": "^6.3.0",
     "hexo-asset-link": "^2.2.1",
