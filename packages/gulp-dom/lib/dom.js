@@ -32,6 +32,9 @@ function gulpDom(mutator) {
                 if (e instanceof Error) {
                     console.log(e.message);
                 }
+                console.log('drop file', file.path);
+                // drop file
+                callback();
             }
         }
     });

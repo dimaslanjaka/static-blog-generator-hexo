@@ -1,5 +1,10 @@
 /// <reference types="node" />
-export type GulpDomCallback = (this: Document, path: string) => any;
+/**
+ * Callback/Mutator
+ * * this: jsdom
+ * * path: current file.path
+ */
+export type GulpDomCallback = (/** jsdom bind */ this: Document, /** current file path */ path: string) => any;
 /**
  * gulpDom
  * @param mutator callback
