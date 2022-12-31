@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     timeout-minutes: 120
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
@@ -138,15 +138,18 @@ jobs:
 
       - name: Clean Install
         id: install-clean
+        continue-on-error: true
         shell: bash
         if: steps.install-update.outcome == 'failure'
         run: |
           rm -rf node_modules
           rm -rf package-lock.json
           npm install --force
-          git add package-lock.json
-          git commit -m "update dependencies"
-          git push
+          
+      - name: Update Install
+        if: steps.install-clean.outcome == 'failure'
+        shell: bash
+        run: npm update
 
       - name: Dump Installations
         run: |
