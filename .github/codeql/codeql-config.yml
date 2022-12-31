@@ -12,3 +12,6 @@ paths-ignore:
   - '**/temp/**' # skip temp
   - '**/build/**' # skip build
   - '**/node_modules/**' # skip node_modules
+  - 'packages/My-Rewriter/**'
+  - 'packages/article-rewriter/**'
+  - 'packages/article-spinner/**'
