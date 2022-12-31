@@ -58,9 +58,9 @@ jobs:
             ./db.json
             ./public
           key: ${{ runner.os }}-${{ hashFiles('.guid') }}
-      
+
       - name: Clone site
-        run: git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
+        run: git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
 
       - name: Install dependencies
         run: |
