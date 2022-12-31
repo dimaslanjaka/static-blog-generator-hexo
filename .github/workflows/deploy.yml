@@ -87,6 +87,7 @@ jobs:
         run: git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
 
       - name: Install dependencies
+        id: install-deps
         shell: bash
         run: |
           npm i gulp-cli typescript npm ts-node hexo-cli yarn typescript --location=global -g
@@ -98,6 +99,50 @@ jobs:
           #npm i -D https://github.com/dimaslanjaka/git-command-helper.git
           #npm i https://github.com/dimaslanjaka/hexo-seo.git
           #npm i https://github.com/dimaslanjaka/hexo-adsense.git
+
+      - name: Install Global Packages
+        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
+
+      - name: Install Legacy Peer Dependencies
+        run: npm install --legacy-peer-deps
+        if: steps.install-deps.outcome == 'failure'
+        id: install-legacy
+        shell: bash
+        continue-on-error: true
+
+      - name: Install Verbose
+        if: steps.install-legacy.outcome == 'failure'
+        id: install-verbose
+        continue-on-error: true
+        shell: bash
+        run: |
+          rm -rf node_modules
+          npm install --verbose
+      - name: Install Update Binary
+        id: install-update
+        if: steps.install-verbose.outcome == 'failure'
+        shell: bash
+        run: |
+          rm -rf node_modules
+          npm install --no-shrinkwrap --update-binary
+        continue-on-error: true
+
+      - name: Clean Install
+        id: install-clean
+        shell: bash
+        if: steps.install-update.outcome == 'failure'
+        run: rm -rf node_modules package-lock.json && npm install
+
+      - name: Dump Installations
+        run: |
+          echo "install-legacy.outcome ${{ steps.install-legacy.outcome }}"
+          echo "install-legacy.conclusion ${{ steps.install-legacy.conclusion }}"
+          echo "install-verbose.outcome ${{ steps.install-verbose.outcome }}"
+          echo "install-verbose.conclusion ${{ steps.install-verbose.conclusion }}"
+          echo "install-update.outcome ${{ steps.install-update.outcome }}"
+          echo "install-update.conclusion ${{ steps.install-update.conclusion }}"
+          echo "install-clean.outcome ${{ steps.install-clean.outcome }}"
+          echo "install-clean.conclusion ${{ steps.install-clean.conclusion }}"
 
       - run: npm run build
       - name: Git push
