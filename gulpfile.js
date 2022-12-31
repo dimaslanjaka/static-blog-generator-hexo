@@ -35,7 +35,6 @@ async function pull(done) {
   };
 
   const clone = async () => {
-    console.log(cwd);
     if (!existsSync(cwd)) {
       await gh.spawn(
         'git',
