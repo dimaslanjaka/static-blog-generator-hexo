@@ -71,6 +71,12 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
+      - name: Fix Sharp
+        run: |
+          deb http://cz.archive.ubuntu.com/ubuntu disco main universe
+          sudo apt-get update
+          sudo apt-get --only-upgrade install libvips
+
       - name: Update submodules
         run: |
           git config --global init.defaultBranch master
