@@ -14,6 +14,7 @@ const config = sbg.getConfig();
 async function pull(done) {
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
+  if (!gh) return;
   const doPull = async (cwd) => {
     try {
       await gh.spawn('git', ['config', 'pull.rebase', 'false'], {
@@ -36,11 +37,9 @@ async function pull(done) {
 
   const clone = async () => {
     if (!existsSync(cwd)) {
-      await gh.spawn(
-        'git',
-        'clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git'.split(' '),
-        { cwd: __dirname }
-      );
+      await gh.spawn('git', [...'clone -b master --single-branch'.split(' '), config.deploy.repo, '.deploy_git'], {
+        cwd: __dirname
+      });
     }
   };
 
