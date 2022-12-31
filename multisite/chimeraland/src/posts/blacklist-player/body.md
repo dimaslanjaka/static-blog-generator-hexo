@@ -8,6 +8,10 @@
 | Shelby | SCAMMER MAP ILLUS 16 |
 | Suvi | SCAMMER MAP ILLUS 16 sebagai LEADER PARTY |
 | PrimalHunter | SCAMMER MAP ILLUS 16 |
+| HitsuiTH | SCAMMER MAP ILLUS 16 |
+| Dikoo | SCAMMER MAP ILLUS 16 |
+| Glitch | SCAMMER MAP ILLUS 16 |
+| jiejie | SCAMMER MAP ILLUS 16 |
 
 ## Daftar blacklist player kategori SCAMMER RUBY
 
@@ -19,7 +23,7 @@
 | Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | hella | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
-| LORD | AKUN KEDUA **[#hella](hella)** |
+| LORD | AKUN KEDUA **[https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true](hella)** |
 | Yayan bae | SCAMMER Illus Seal, Toxic |
 
 ## Daftar player kategori tukang roll drop item
