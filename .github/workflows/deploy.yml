@@ -91,9 +91,6 @@ jobs:
             ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
             ${{ runner.os }}-
 
-      - name: Clone site
-        run: git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
-
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli rimraf npm-run-all npm-check-updates --location=global
 
@@ -145,7 +142,7 @@ jobs:
           rm -rf node_modules
           rm -rf package-lock.json
           npm install --force
-          
+
       - name: Update Install
         if: steps.install-clean.outcome == 'failure'
         shell: bash
@@ -162,6 +159,8 @@ jobs:
           echo "install-clean.outcome ${{ steps.install-clean.outcome }}"
           echo "install-clean.conclusion ${{ steps.install-clean.conclusion }}"
 
+      - name: Pull Deployment
+        run: gulp pull
       - run: npm run build
       - name: Git push
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
