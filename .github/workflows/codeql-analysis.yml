@@ -66,8 +66,8 @@ jobs:
     # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
-    - if: matrix.language == 'java'
-      name: Build Java
+    - name: Build Java
+      # if: matrix.language == 'java'
       run: |
         make bootstrap
         make release
