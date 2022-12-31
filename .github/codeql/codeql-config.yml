@@ -5,6 +5,10 @@ paths:
 paths-ignore:
   - '**/*.test*.{ts,js}' # skip test unit
   - '**/*.spec*.{ts,js}' # skip test unit
+  - '**/*.min.js' # skip minified js
   #- '**/*.{html,ejs,njk}' # skip non-source files
   - '**/dist/**' # skip dist
+  - '**/tmp/**' # skip tmp
+  - '**/temp/**' # skip temp
+  - '**/build/**' # skip build
   - '**/node_modules/**' # skip node_modules
