@@ -40,21 +40,32 @@ async function pull(done) {
   done();
 }
 
+async function getCurrentCommit() {
+  const git = new gch.default(__dirname);
+  const commit = await git.latestCommit();
+  const remote = await git.getremote();
+  return remote.fetch.url.replace(/(.git|\/)$/) + '/commit/' + commit;
+}
+
 async function commit() {
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
   const doCommit = async (cwd) => {
     await gh.spawn('git', ['add', '.'], { cwd });
-    const remote = await gch.ext.getGithubRemote('origin', { cwd });
-    const branch = await gch.ext.getGithubCurrentBranch({ cwd });
-    console.log(remote, branch);
+    await gh.spawn('git', [
+      'commit',
+      '-m',
+      'Update site from ' + (await getCurrentCommit())
+    ]);
   };
-  doCommit(cwd);
+
+  // runners
+  await doCommit(cwd);
   const submodules = await gh.submodule.get();
   for (let i = 0; i < submodules.length; i++) {
     const sub = submodules[i];
     const cwd = sub.root;
-    doCommit(cwd);
+    await doCommit(cwd);
   }
 }
 
