@@ -3,6 +3,7 @@ const sbg = require('static-blog-generator');
 const gch = require('git-command-helper');
 const Hexo = require('hexo');
 const { default: noop } = require('git-command-helper/dist/noop');
+const { existsSync } = require('fs');
 //const sbg = require('./packages/static-blog-generator');
 
 const config = sbg.getConfig();
@@ -32,6 +33,17 @@ async function pull(done) {
       console.log('cannot pull', cwd);
     }
   };
+  const clone = async () => {
+    if (!existsSync(cwd)) {
+      await gh.spawn(
+        'git',
+        'clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git'.split(' '),
+        { cwd: __dirname }
+      );
+    }
+  };
+
+  await clone();
   doPull(cwd);
   const submodules = await gh.submodule.get();
   for (let i = 0; i < submodules.length; i++) {
@@ -61,11 +73,7 @@ async function commit() {
   const gh = config.deploy.github;
   const doCommit = async (cwd) => {
     await gh.spawn('git', ['add', '.'], { cwd });
-    await gh.spawn('git', [
-      'commit',
-      '-m',
-      'Update site from ' + (await getCurrentCommit())
-    ]);
+    await gh.spawn('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())]);
   };
 
   // runners
@@ -92,16 +100,4 @@ async function generate(done) {
 gulp.task('commit', commit);
 gulp.task('pull', pull);
 gulp.task('generate', generate);
-gulp.task(
-  'build',
-  gulp.series(
-    'pull',
-    'generate',
-    'deploy:copy',
-    'seo',
-    'safelink',
-    'feed',
-    'sitemap',
-    'commit'
-  )
-);
+gulp.task('build', gulp.series('pull', 'generate', 'deploy:copy', 'seo', 'safelink', 'feed', 'sitemap', 'commit'));
