@@ -1,6 +1,6 @@
 const gulp = require('gulp');
-//const sbg = require('static-blog-generator');
-const sbg = require('./packages/static-blog-generator');
+const sbg = require('static-blog-generator');
+//const sbg = require('./packages/static-blog-generator');
 
 const config = sbg.getConfig();
 
@@ -23,7 +23,7 @@ async function pull(done) {
       console.log('pulling', cwd);
       await gh.spawn('git', ['pull', '-X', 'theirs'], {
         cwd,
-        stdio: 'inherit'
+        stdio: 'pipe'
       });
     } catch (e) {
       console.log('cannot pull', cwd);

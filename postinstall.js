@@ -1,22 +1,44 @@
 const pjson = require('./package.json');
 const fs = require('fs');
-const path = require('upath');
+const path = require('path');
+
+const isAllPackagesInstalled = [
+  'cross-spawn',
+  'upath',
+  'axios-cache-interceptor',
+  'axios',
+  'hpagent',
+  'persistent-cache'
+].map((name) => {
+  return {
+    name,
+    installed: isPackageInstalled(name)
+  };
+});
+if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
+  const names = isAllPackagesInstalled.map((o) => o.name);
+  console.log('package', names, 'is not installed', 'skipping postinstall script');
+  return;
+}
+
+// postinstall scripts
+// run this script after `npm install`
+// required	: cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache
+// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
+// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
+// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
+// usages		: node postinstall.js
+
+// imports start
 const { spawn } = require('cross-spawn');
-const lock = require('./node_modules/.package-lock.json');
 const Axios = require('axios');
+// const upath = require('upath');
 const crypto = require('crypto');
 const { setupCache } = require('axios-cache-interceptor');
 const axios = setupCache(Axios);
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
 // const persistentCache = require('persistent-cache');
-
-// postinstall scripts
-// run this script after `npm install`
-// required	: cross-spawn upath axios-cache-interceptor axios hpagent
-// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
-// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
-// usages		: node postinstall.js
+// imports ends
 
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
@@ -61,15 +83,52 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
        * @type {string}
        */
       const version = pkgs[pkgname];
-      // re-installing local and monorepo package
-      if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
-        //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
-        toUpdate.push(pkgname);
+
+      // skip when not exist in node_modules
+      if (!fs.existsSync(path.join(__dirname, pkgname))) {
+        continue;
       }
 
+      /*
+      // re-installing local and monorepo package
+			if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
+				//const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
+				toUpdate.push(pkgname);
+			}
+      */
+
+      // push update for private ssh package
+      if (/^(ssh+|git+ssh)/i.test(version)) {
+        toUpdate.push(pkgname);
+        continue;
+      }
+
+      const locks = ['./node_modules/.package-lock.json', './package-lock.json']
+        .map((str) => path.join(__dirname, str))
+        .filter(fs.existsSync)[0];
+      /**
+       * @type {import('./package-lock.json')}
+       */
+      const lockfile = fs.existsSync(locks) ? JSON.parse(fs.readFileSync(locks, 'utf-8')) : {};
+
       const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
-      const isGitPkg = /^(git+|github:)/i.test(version);
-      const isUrlPkg = /^(https?)/i.test(version);
+      /**
+       * is remote url package
+       */
+      const isUrlPkg =
+        /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version) &&
+        // check link to github directly
+        !/.git$/i.test(version);
+      /**
+       * is github package
+       */
+      const isGitPkg =
+        /^(git+|github:|https?:\/\/github.com\/)/i.test(version) &&
+        // check tarball path
+        !/\/tarball\//i.test(version);
+      /**
+       * is local package
+       */
       const isLocalPkg = /^(file):/i.test(version);
       if (!isLocalPkg && !isGitPkg && !isUrlPkg) {
         delete pkgs[pkgname];
@@ -77,13 +136,25 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
       }
 
       // existing lock
-      const installedLock = lock.packages['node_modules/' + pkgname];
+      const installedLock = lockfile.packages['node_modules/' + pkgname];
       installedLock.name = pkgname;
       const { integrity, resolved } = installedLock;
-      let original = resolved;
-      if (original) {
+      let original = typeof resolved === 'string' && !/^https?/i.test(String(resolved)) ? resolved : null;
+      if (typeof original === 'string') {
         original = String(original).replace(/^file:/, '');
         original = path.resolve(path.join(__dirname, original));
+      }
+
+      // checksum remote package
+      if (isUrlPkg) {
+        // console.log({ pkgname, integrity, resolved, original });
+        const hash = 'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
+        if (integrity !== hash) {
+          console.log('remote package', pkgname, 'has different integrity');
+          // fs.rmSync(node_modules_path, { recursive: true, force: true });
+          toUpdate.push(pkgname);
+          continue;
+        }
       }
 
       // checksum local package
@@ -91,14 +162,15 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
         let originalHash = 'sha512-' + (await file_to_hash('sha512', original, 'base64'));
 
         // check sum tarball
-        if (/\/tarball\/|.tgz$/i.test(version)) {
+        if (/\/tarball\/|.(tgz|zip|tar|tar.gz)$/i.test(version)) {
           // console.log(value);
           if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
-            console.log('removing local package', pkgname, 'caused by different integrity');
-            fs.rmSync(node_modules_path, { recursive: true, force: true });
+            console.log('local package', pkgname, 'has different integrity');
+            // fs.rmSync(node_modules_path, { recursive: true, force: true });
+            toUpdate.push(pkgname);
+            continue;
           }
         }
-        // console.log({ pkgName, integrity, resolved, original, originalHash });
       }
 
       // checksum github package
@@ -121,18 +193,27 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
             // skip when get api failure
             if (!getApi) continue;
             if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-              console.log('removing github package', pkgname, 'caused by different hash');
-              fs.rmSync(node_modules_path, { recursive: true, force: true });
+              console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
+              // fs.rmSync(node_modules_path, { recursive: true, force: true });
+              toUpdate.push(pkgname);
+              continue;
             }
           } else {
             const getApiRoot = await axiosGet(apiRoot);
             // skip when get api failure
             if (!getApiRoot) continue;
-            const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + getApiRoot.data.default_branch;
+            const branch = getApiRoot.data.default_branch;
+            const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
             const getApi = await axiosGet(api);
             // skip when get api failure
             if (!getApi) continue;
             console.log({ version, githubPathHash, data: getApi.data.sha });
+            if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
+              console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
+              // fs.rmSync(node_modules_path, { recursive: true, force: true });
+              toUpdate.push(pkgname);
+              continue;
+            }
           }
         } catch (e) {
           if (e instanceof Error) console.log(e.code, e.message);
@@ -180,6 +261,9 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
   };
 
   if (checkNodeModules()) {
+    // filter duplicates package names
+    const filterUpdates = toUpdate.filter((item, index) => toUpdate.indexOf(item) === index);
+    // do update
     try {
       if (isYarn) {
         const version = await summon('yarn', ['--version']);
@@ -187,31 +271,31 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
 
         if (typeof version.stdout === 'string') {
           if (version.stdout.includes('3.2.4')) {
-            toUpdate.push('--check-cache');
+            filterUpdates.push('--check-cache');
           }
         }
         // yarn cache clean
-        if (toUpdate.find((str) => str.startsWith('file:'))) {
+        if (filterUpdates.find((str) => str.startsWith('file:'))) {
           await summon('yarn', ['cache', 'clean'], {
             cwd: __dirname,
             stdio: 'inherit'
           });
         }
         // yarn upgrade package
-        await summon('yarn', ['upgrade'].concat(...toUpdate), {
+        await summon('yarn', ['upgrade'].concat(...filterUpdates), {
           cwd: __dirname,
           stdio: 'inherit'
         });
       } else {
         // npm cache clean package
-        if (toUpdate.find((str) => str.startsWith('file:'))) {
-          await summon('npm', ['cache', 'clean'].concat(...toUpdate), {
+        if (filterUpdates.find((str) => str.startsWith('file:'))) {
+          await summon('npm', ['cache', 'clean'].concat(...filterUpdates), {
             cwd: __dirname,
             stdio: 'inherit'
           });
         }
         // npm update package
-        await summon('npm', ['update'].concat(...toUpdate), {
+        await summon('npm', ['update'].concat(...filterUpdates), {
           cwd: __dirname,
           stdio: 'inherit'
         });
@@ -355,12 +439,12 @@ function _noop(..._) {
 
 /**
  * convert file to hash
- * @param {'sha1' | 'sha256' | 'sha384' | 'sha512', 'md5'} alogarithm
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
  * @param {string} path
  * @param {import('crypto').BinaryToTextEncoding} encoding
  * @returns
  */
-function file_to_hash(alogarithm = 'sha1', path, encoding = 'hex') {
+function file_to_hash(alogarithm, path, encoding = 'hex') {
   return new Promise((resolve, reject) => {
     const hash = crypto.createHash(alogarithm);
     const rs = fs.createReadStream(path);
@@ -372,12 +456,13 @@ function file_to_hash(alogarithm = 'sha1', path, encoding = 'hex') {
 
 /**
  * convert data to hash
- * @param {'sha1' | 'sha256' | 'sha384' | 'sha512', 'md5'} alogarithm
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
  * @param {string} path
  * @param {import('crypto').BinaryToTextEncoding} encoding
  * @returns
  */
-function _data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
   return new Promise((resolve, reject) => {
     try {
       const hash = crypto.createHash(alogarithm).update(data).digest(encoding);
@@ -386,4 +471,54 @@ function _data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
       reject(e);
     }
   });
+}
+
+/**
+ * convert data to hash
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
+ * @param {string} url
+ * @param {import('crypto').BinaryToTextEncoding} encoding
+ * @returns
+ */
+async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
+  return new Promise((resolve, reject) => {
+    let outputLocationPath = path.join(__dirname, 'tmp/postinstall', path.basename(url));
+    if (!path.basename(url).includes('.')) {
+      outputLocationPath += '.tgz';
+    }
+    if (!fs.existsSync(path.dirname(outputLocationPath))) {
+      fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
+    }
+    const writer = fs.createWriteStream(outputLocationPath, { flags: 'w' });
+    Axios.default(url, { responseType: 'stream' }).then((response) => {
+      response.data.pipe(writer);
+      let error = null;
+      writer.on('error', (err) => {
+        error = err;
+        writer.close();
+        reject(err);
+      });
+      writer.on('close', async () => {
+        if (!error) {
+          // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
+          file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
+            resolve(checksum);
+          });
+        }
+      });
+    });
+  });
+}
+
+/**
+ * check package installed
+ * @param {string} x
+ * @returns
+ */
+function isPackageInstalled(x) {
+  try {
+    return process.moduleLoadList.indexOf('NativeModule ' + x) >= 0 || require('fs').existsSync(require.resolve(x));
+  } catch (e) {
+    return false;
+  }
 }
