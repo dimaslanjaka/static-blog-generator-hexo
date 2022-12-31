@@ -9,6 +9,7 @@
 const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
+const fsp = require('fs/promises');
 
 //// CHECK REQUIRED PACKAGES
 
@@ -60,7 +61,7 @@ if (!fs.existsSync(cacheJSON)) {
  * Get cache
  * @returns {import('./node_modules/cache/npm-install.json')}
  */
-const getCache = () => require('./node_modules/.cache/npm-install.json');
+const getCache = JSON.parse(readfile(cacheJSON, 'utf-8'));
 
 /**
  * Save cache
@@ -71,7 +72,7 @@ const getCache = () => require('./node_modules/.cache/npm-install.json');
  * data['key']='value';
  * saveCache(data)
  */
-const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, null, 2));
+const saveCache = (data) => writefile(cacheJSON, JSON.stringify(data, null, 2));
 
 // @todo clear cache local packages
 const packages = [pjson.dependencies, pjson.devDependencies];
@@ -94,6 +95,18 @@ const coloredScriptName = colors.grey(scriptname);
       return;
     }
 
+    // lock file
+    const locks = ['./node_modules/.package-lock.json', './package-lock.json']
+      .map((str) => path.normalize(path.join(__dirname, str)))
+      .filter((str) => {
+        try {
+          return fs.existsSync(str);
+        } catch {
+          console.log(coloredScriptName, 'cannot access', str);
+        }
+        return false;
+      })[0];
+
     // dump file
     const jsonfile = path.join(__dirname, 'tmp/postinstall/monorepos.json');
     if (!fs.existsSync(path.dirname(jsonfile))) {
@@ -101,7 +114,7 @@ const coloredScriptName = colors.grey(scriptname);
     }
     let json = {};
     if (fs.existsSync(jsonfile)) {
-      json = JSON.parse(fs.readFileSync(jsonfile, 'utf-8'));
+      json = JSON.parse(readfile(jsonfile, 'utf-8'));
     }
 
     for (let i = 0; i < packages.length; i++) {
@@ -123,21 +136,11 @@ const coloredScriptName = colors.grey(scriptname);
           toUpdate.add(pkgname);
         }
 
-        const locks = ['./node_modules/.package-lock.json', './package-lock.json']
-          .map((str) => path.join(__dirname, str))
-          .filter((str) => {
-            try {
-              return fs.existsSync(str);
-            } catch {
-              console.log(coloredScriptName, 'cannot access', str);
-            }
-            return false;
-          })[0];
         /**
          * @type {import('./package-lock.json')}
          */
         const lockfile = fs.existsSync(locks)
-          ? JSON.parse(fs.readFileSync(locks, 'utf-8'))
+          ? JSON.parse(readfile(locks, 'utf-8'))
           : {
               packages: {}
             };
@@ -196,7 +199,7 @@ const coloredScriptName = colors.grey(scriptname);
 
         // skip checking when not exist in node_modules
         // npm will automate installing these packages
-        if (!fs.existsSync(path.join(__dirname, 'node_modules', pkgname))) {
+        if (!fs.existsSync(node_modules_path)) {
           hasNotInstalled = true;
           console.log(coloredScriptName, coloredPkgname, colors.red('not installed.'), 'skipping...');
           continue;
@@ -252,7 +255,7 @@ const coloredScriptName = colors.grey(scriptname);
             if (isBranchPkg) {
               const branch = String(version).split('#')[1];
               const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
-              console.log(coloredScriptName, 'accessing', api);
+              console.log(coloredScriptName, branch, 'package', 'accessing', api);
               const getApi = await axiosGet(api);
               // skip when get api failure
               if (!getApi) continue;
@@ -302,7 +305,7 @@ const coloredScriptName = colors.grey(scriptname);
     }
 
     // dump write
-    fs.writeFileSync(jsonfile, JSON.stringify(json, null, 2));
+    writefile(jsonfile, JSON.stringify(json, null, 2));
 
     // do update
 
@@ -331,6 +334,7 @@ const coloredScriptName = colors.grey(scriptname);
     if (checkNodeModules()) {
       // filter duplicates package names
       const filterUpdates = Array.from(toUpdate).filter((item, index) => Array.from(toUpdate).indexOf(item) === index);
+      console.log(filterUpdates);
       if (filterUpdates.length > 0) {
         // do update
         try {
@@ -632,4 +636,35 @@ function checkNodeModules() {
   );
   //console.log({ exists });
   return exists.every((exist) => exist === true);
+}
+
+/**
+ * read file with validation
+ * @param {string} str
+ * @param {import('fs').EncodingOption} encoding
+ * @returns
+ */
+function readfile(str, encoding = 'utf-8') {
+  if (fs.existsSync(str)) {
+    if (fs.statSync(str).isFile()) {
+      return fs.readFileSync(str, encoding);
+    } else {
+      throw str + ' is directory';
+    }
+  } else {
+    throw str + ' not found';
+  }
+}
+
+/**
+ * write to file recursively
+ * @param {string} dest
+ * @param {any} data
+ */
+function writefile(dest, data) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(dest)) {
+    if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
+  }
+  fs.writeFileSync(dest, data);
 }
