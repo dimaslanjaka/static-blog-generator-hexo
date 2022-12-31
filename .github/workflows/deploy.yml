@@ -77,7 +77,7 @@ jobs:
           git submodule update -i -r
           git submodule foreach git submodule update -i -r
 
-      - uses: actions/cache@v3
+      - uses: pat-s/always-upload-cache@v3.0.11
         id: cache
         with:
           path: |
