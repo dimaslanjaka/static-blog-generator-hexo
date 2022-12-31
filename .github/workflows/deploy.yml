@@ -96,8 +96,8 @@ jobs:
           git clone https://github.com/jcupitt/libvips.git
           cd libvips/
           # install dependencies if you have errors during autogen.sh
-          #sudo apt install gtk-doc-tools
-          #sudo apt install gobject-introspection
+          sudo apt install gtk-doc-tools
+          sudo apt install gobject-introspection
           ./autogen.sh
           make
           sudo make install
