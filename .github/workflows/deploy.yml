@@ -92,6 +92,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Global Packages
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli rimraf npm-run-all npm-check-updates --location=global
 
       - name: Install dependencies
