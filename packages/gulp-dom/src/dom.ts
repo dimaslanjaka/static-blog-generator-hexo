@@ -8,7 +8,12 @@ import PluginError from 'plugin-error';
 import through2 from 'through2';
 const pluginName = 'gulp-dom';
 
-export type GulpDomCallback = (this: Document, path: string) => any;
+/**
+ * Callback/Mutator
+ * * this: jsdom
+ * * path: current file.path
+ */
+export type GulpDomCallback = (/** jsdom bind */ this: Document, /** current file path */ path: string) => any;
 
 /**
  * gulpDom
@@ -38,6 +43,9 @@ export default function gulpDom(mutator: GulpDomCallback) {
         if (e instanceof Error) {
           console.log(e.message);
         }
+        console.log('drop file', file.path);
+        // drop file
+        callback();
       }
     }
   });
