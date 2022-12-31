@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
@@ -94,70 +94,23 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli rimraf npm-run-all npm-check-updates --location=global
 
-      - name: Install dependencies
-        id: install-deps
+      - name: Install chimeraland
+        id: install-chimeraland
         shell: bash
-        continue-on-error: true
+        working-directory: multisite/chimeraland
+        run: |
+          npm install
+
+      - name: Install dependencies
+        id: install-npm
+        shell: bash
         run: |
           npm run update
-          #npm i -D https://github.com/dimaslanjaka/static-blog-generator.git
-          #npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
-          #npm i -D https://github.com/dimaslanjaka/safelink.git
-          #npm i -D https://github.com/dimaslanjaka/git-command-helper.git
-          #npm i https://github.com/dimaslanjaka/hexo-seo.git
-          #npm i https://github.com/dimaslanjaka/hexo-adsense.git
-
-      - name: Install Legacy Peer Dependencies
-        run: npm install --legacy-peer-deps
-        if: steps.install-deps.outcome == 'failure'
-        id: install-legacy
-        shell: bash
-        continue-on-error: true
-
-      - name: Install Verbose
-        if: steps.install-legacy.outcome == 'failure'
-        id: install-verbose
-        continue-on-error: true
-        shell: bash
-        run: |
-          rm -rf node_modules
-          rm -rf package-lock.json
-          npm install --verbose
-      - name: Install Update Binary
-        id: install-update
-        if: steps.install-verbose.outcome == 'failure'
-        shell: bash
-        run: |
-          rm -rf node_modules
-          rm -rf package-lock.json
-          npm install --no-shrinkwrap --update-binary
-        continue-on-error: true
-
-      - name: Clean Install
-        id: install-clean
-        continue-on-error: true
-        shell: bash
-        if: steps.install-update.outcome == 'failure'
-        run: |
-          rm -rf node_modules
-          rm -rf package-lock.json
-          npm install --force
-
-      - name: Update Install
-        if: steps.install-clean.outcome == 'failure'
-        shell: bash
-        run: npm update
 
       - name: Dump Installations
         run: |
-          echo "install-legacy.outcome ${{ steps.install-legacy.outcome }}"
-          echo "install-legacy.conclusion ${{ steps.install-legacy.conclusion }}"
-          echo "install-verbose.outcome ${{ steps.install-verbose.outcome }}"
-          echo "install-verbose.conclusion ${{ steps.install-verbose.conclusion }}"
-          echo "install-update.outcome ${{ steps.install-update.outcome }}"
-          echo "install-update.conclusion ${{ steps.install-update.conclusion }}"
-          echo "install-clean.outcome ${{ steps.install-clean.outcome }}"
-          echo "install-clean.conclusion ${{ steps.install-clean.conclusion }}"
+          echo "install-npm outcome=${{ steps.install-npm.outcome }}, conclusion=${{ steps.install-npm.conclusion }}"
+          echo "install-chimeraland outcome=${{ steps.install-chimeraland.outcome }}, conclusion=${{ steps.install-chimeraland.conclusion }}"
 
       - name: Pull Deployment
         run: gulp pull

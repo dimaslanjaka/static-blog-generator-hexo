@@ -58,6 +58,9 @@
     "**/packages/**"
   ],
   "typeAcquisition": {
-    "enable": true
+    "enable": true,
+    "include": [
+      "nodejs-package-types"
+    ]
   }
 }
