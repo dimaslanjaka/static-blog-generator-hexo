@@ -100,7 +100,6 @@ jobs:
         continue-on-error: true
         run: |
           npm run update
-          npm install
           #npm i -D https://github.com/dimaslanjaka/static-blog-generator.git
           #npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
           #npm i -D https://github.com/dimaslanjaka/safelink.git
