@@ -15,6 +15,7 @@ on:
   # schedule this job every 1:45 AM everydays
   schedule:
     - cron: '45 1 * * *'
+  workflow_dispatch:
 
 # cancel previous workflows, run only one workflow
 concurrency:
