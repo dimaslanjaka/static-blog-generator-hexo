@@ -1,8 +1,6 @@
 {
   // Change this to match your project
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "compilerOptions": {
     "module": "CommonJS",
     "target": "es2018",
@@ -32,14 +30,9 @@
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
     "noImplicitThis": false,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node",
-      "through2",
-      "jsdom"
-    ],
+    "downlevelIteration": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node", "through2", "jsdom"],
     "lib": [
       "DOM",
       "ES5",
@@ -54,7 +47,5 @@
       "WebWorker"
     ]
   },
-  "exclude": [
-    "**/node_modules/**"
-  ]
+  "exclude": ["**/node_modules/**"]
 }

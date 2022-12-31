@@ -1,4 +1,14 @@
 /// <reference types="node" />
+export declare const customPath: {
+    join: (...str: string[]) => string;
+    dirname: (str: string) => string;
+    toUnix: (str: string) => string;
+};
+export declare const gulpDomPath: {
+    join: (...str: string[]) => string;
+    dirname: (str: string) => string;
+    toUnix: (str: string) => string;
+};
 /**
  * Callback/Mutator
  * * this: jsdom
