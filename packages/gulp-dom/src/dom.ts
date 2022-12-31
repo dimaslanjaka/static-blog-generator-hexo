@@ -4,9 +4,20 @@
 'use strict';
 
 import jsdom from 'jsdom';
+import fs from 'fs';
+import upath from 'upath';
 import PluginError from 'plugin-error';
 import through2 from 'through2';
+import truecasepath from 'true-case-path';
 const pluginName = 'gulp-dom';
+const path = {
+  join: (...str: string[]) => upath.toUnix(truecasepath.trueCasePathSync(upath.join(...str))),
+  dirname: (str: string) => upath.toUnix(truecasepath.trueCasePathSync(upath.dirname(str))),
+  toUnix: (str: string) => upath.toUnix(truecasepath.trueCasePathSync(str))
+};
+
+export const customPath = path;
+export const gulpDomPath = path;
 
 /**
  * Callback/Mutator
@@ -51,4 +62,16 @@ export default function gulpDom(mutator: GulpDomCallback) {
   });
 
   return stream;
+}
+/**
+ * write to file recursively
+ * @param {string} dest
+ * @param {any} data
+ */
+function writefile(dest, data) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(dest)) {
+    if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
+  }
+  fs.writeFileSync(dest, data);
 }
