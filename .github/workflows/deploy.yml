@@ -91,6 +91,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Fix Sharp
+        continue-on-error: true
         run: |
           git clone git://github.com/jcupitt/libvips.git
           cd libvips/
