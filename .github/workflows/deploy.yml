@@ -78,12 +78,18 @@ jobs:
           git submodule foreach git submodule update -i -r
 
       - uses: actions/cache@v3
+        id: cache
         with:
           path: |
-            ${{ steps.vars.outputs.npm }}
+            ${{ steps.set-env.outputs.cache-npm }}
+            ${{ steps.set-env.outputs.cache-yarn }}
+            ${{ steps.set-env.outputs.cache-yarn2 }}
             ./db.json
             ./public
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-
 
       - name: Clone site
         run: git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
