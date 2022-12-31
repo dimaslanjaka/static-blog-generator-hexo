@@ -46,11 +46,9 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   )
   // add description when quality and delicacies written
   if (item.delicacies.length > 0 && item.qty.length > 0) {
-    attr.description = `${item.type.replace(/s$/, '')} ${
-      item.name
-    } default quality ${item.qty} ${item.buff} delicacies/tasty ${
-      item.delicacies
-    } ${attr.categories} ${attr.tags}`.substring(0, 300)
+    attr.description = `${item.type.replace(/s$/, '')} ${item.name
+      } default quality ${item.qty} ${item.buff} delicacies/tasty ${item.delicacies
+      } ${attr.categories} ${attr.tags}`.substring(0, 300)
   }
 
   // GRADE A ATK 75 HP 60 DEF 75
@@ -144,6 +142,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   } catch (e) {
     if (e instanceof Error) {
       console.log('cannot prettify', item.name)
+      if (!existsSync(join(process.cwd(), 'tmp'))) mkdirpSync(join(process.cwd(), 'tmp'))
       writeFileSync(join(process.cwd(), 'tmp/prettier-error.log'), inspect(e))
     }
   }
