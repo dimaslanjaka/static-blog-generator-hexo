@@ -37,9 +37,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'typescript', 'javascript', 'EJS', 'nunjucks' ]
-        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
+        language: [ 'typescript', 'javascript', 'EJS', 'nunjucks' ]
 
     steps:
     - name: Checkout repository
@@ -57,17 +56,15 @@ jobs:
         # Prefix the list here with "+" to use these queries and those in the config file.
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
-    # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
-    # If this step fails, then you should remove it and run the build manually (see below)
-    - if: matrix.language == 'cpp' || matrix.language == 'csharp' || matrix.language == 'java'
-      name: Autobuild
+    # Autobuild attempts to build any compiled languages (C/C++, C#, or Java). If this step fails, then you should remove it and run the build manually.
+    - name: Autobuild
+      id: autobuild
       uses: github/codeql-action/autobuild@v2
+      continue-on-error: true
 
-    # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
-    #    and modify them (or add more) to build your code if your project
-    #    uses a compiled language
-    - name: Bootstrap
-      # if: matrix.language == 'java'
+    # If the Autobuild fails above, then build it manually.
+    - if: steps.autobuild.outcome == 'failure'
+      name: Manual Build
       run: |
         make bootstrap
         make release
