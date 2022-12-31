@@ -8,6 +8,8 @@ on:
       - '**/*.tgz'
       - '**/*.gz'
       - '**/release/**'
+      - '.github/codeql/*'
+      - '**codeql**'
   pull_request:
     types:
       - closed
