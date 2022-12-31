@@ -9,7 +9,6 @@
 const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
-const fsp = require('fs/promises');
 
 //// CHECK REQUIRED PACKAGES
 
