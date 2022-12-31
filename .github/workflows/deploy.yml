@@ -87,14 +87,17 @@ jobs:
         run: git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
 
       - name: Install dependencies
+        shell: bash
         run: |
-          npm i gulp-cli typescript npm ts-node hexo-cli yarn typescript --location=global
-          npm i -D https://github.com/dimaslanjaka/static-blog-generator.git
-          npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
-          npm i -D https://github.com/dimaslanjaka/safelink.git
-          npm i -D https://github.com/dimaslanjaka/git-command-helper.git
-          npm i https://github.com/dimaslanjaka/hexo-seo.git
-          # npm i https://github.com/dimaslanjaka/hexo-adsense.git
+          npm i gulp-cli typescript npm ts-node hexo-cli yarn typescript --location=global -g
+          curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
+          npm install
+          #npm i -D https://github.com/dimaslanjaka/static-blog-generator.git
+          #npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
+          #npm i -D https://github.com/dimaslanjaka/safelink.git
+          #npm i -D https://github.com/dimaslanjaka/git-command-helper.git
+          #npm i https://github.com/dimaslanjaka/hexo-seo.git
+          #npm i https://github.com/dimaslanjaka/hexo-adsense.git
 
       - run: npm run build
       - name: Git push
