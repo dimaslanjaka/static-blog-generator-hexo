@@ -73,7 +73,7 @@ jobs:
 
       - name: Fix Sharp
         run: |
-          deb http://cz.archive.ubuntu.com/ubuntu disco main universe
+          sudo add-apt-repository 'deb http://cz.archive.ubuntu.com/ubuntu disco main universe'
           sudo apt-get update
           sudo apt-get --only-upgrade install libvips
 
