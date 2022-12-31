@@ -31,6 +31,7 @@ jobs:
           node-version: '16'
           cache: 'npm'
           cache-dependency-path: '.guid'
+
       - name: Set env
         id: set-env
         shell: bash
@@ -74,15 +75,6 @@ jobs:
           git submodule update -i -r
           git submodule foreach git submodule update -i -r
 
-      - name: Declare some variables
-        id: vars
-        shell: bash
-        run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-          echo "::set-output name=hash::$(git rev-parse --short HEAD)"
-          echo "::set-output name=yarn::$(yarn cache dir)"
-          echo "::set-output name=npm::$(npm config get cache)"
-
       - uses: actions/cache@v3
         with:
           path: |
@@ -105,16 +97,17 @@ jobs:
           # npm i https://github.com/dimaslanjaka/hexo-adsense.git
 
       - run: npm run build
-      - name: Manual Push
-        if: ${{ false }}
-        working-directory: .deploy_git
+      - name: Git push
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
+        working-directory: .deploy_git
         run: |
-          git config user.email "dimaslanjaka@gmail.com"
-          git config user.name "dimaslanjaka"
-          git add -A
-          git commit -m "update site from ${{ steps.vars.outputs.hash }}"
-          git push origin master
+          git submodule foreach "git add . | :"
+          git submodule foreach "git commit -m 'Update build from ${{ env.GITHUB_COMMIT_URL }}' | :"
+          git add .
+          git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+          git push
+
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         if: ${{ false }}
