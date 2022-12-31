@@ -99,7 +99,7 @@ jobs:
         shell: bash
         working-directory: multisite/chimeraland
         run: |
-          npm install
+          npm run update
 
       - name: Install dependencies
         id: install-npm

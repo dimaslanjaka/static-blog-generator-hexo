@@ -8,15 +8,17 @@
     "type": "git"
   },
   "scripts": {
-    "update": "npx npm-check-updates -u -x hexo,chalk && npm install --cache tmp/npm",
+    "preupdate": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
+    "update": "npx npm-check-updates -u -x hexo && npm install",
+    "postinstall": "node postinstall.js",
     "patch": "npm version patch"
   },
   "dependencies": {
-    "gulp": "latest",
     "fs-extra": "latest",
+    "gulp": "latest",
+    "moment-timezone": "latest",
     "through2": "latest",
-    "upath": "latest",
-    "moment-timezone": "latest"
+    "upath": "latest"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.38",
@@ -25,6 +27,9 @@
     "@types/node": "^18.11.18"
   },
   "optionalDependencies": {
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
+    "ansi-colors": "^4.1.3",
+    "axios": "^1.2.2",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript"
   }
 }
