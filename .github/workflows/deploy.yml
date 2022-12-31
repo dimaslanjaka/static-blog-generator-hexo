@@ -124,6 +124,7 @@ jobs:
         shell: bash
         run: |
           rm -rf node_modules
+          rm -rf package-lock.json
           npm install --verbose
       - name: Install Update Binary
         id: install-update
@@ -131,6 +132,7 @@ jobs:
         shell: bash
         run: |
           rm -rf node_modules
+          rm -rf package-lock.json
           npm install --no-shrinkwrap --update-binary
         continue-on-error: true
 
@@ -139,7 +141,8 @@ jobs:
         shell: bash
         if: steps.install-update.outcome == 'failure'
         run: |
-          rm -rf node_modules package-lock.json
+          rm -rf node_modules
+          rm -rf package-lock.json
           npm install --force
           git add package-lock.json
           git commit -m "update dependencies"
