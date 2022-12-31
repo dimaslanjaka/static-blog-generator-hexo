@@ -22,26 +22,21 @@ export default function gulpDom(mutator: GulpDomCallback) {
     }
 
     if (file.isStream()) {
-      return stream.emit(
-        'error',
-        new PluginError(pluginName, 'Streaming not supported')
-      );
+      return stream.emit('error', new PluginError(pluginName, 'Streaming not supported'));
     }
 
     if (file.isBuffer()) {
       try {
         const dom = new jsdom.JSDOM(file.contents.toString('utf8'));
-      const mutated = mutator.call(dom.window.document, file.path);
+        const mutated = mutator.call(dom.window.document, file.path);
 
-      file.contents = Buffer.from(
-        typeof mutated === 'string' ? mutated : dom.serialize()
-      );
-      callback(null, file);
+        file.contents = Buffer.from(typeof mutated === 'string' ? mutated : dom.serialize());
+        callback(null, file);
 
-      dom.window.close();
-      } catch (e){
+        dom.window.close();
+      } catch (e) {
         if (e instanceof Error) {
-          console.log(e.message)
+          console.log(e.message);
         }
       }
     }
