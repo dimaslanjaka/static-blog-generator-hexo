@@ -87,7 +87,7 @@ jobs:
         run: git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
 
       - name: Install Global Packages
-        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli --location=global
+        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli rimraf npm-run-all npm-check-updates --location=global
 
       - name: Install dependencies
         id: install-deps
