@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const sbg = require('static-blog-generator');
 const gch = require('git-command-helper');
+const Hexo = require('hexo');
+const { default: noop } = require('git-command-helper/dist/noop');
 //const sbg = require('./packages/static-blog-generator');
 
 const config = sbg.getConfig();
@@ -40,6 +42,10 @@ async function pull(done) {
   done();
 }
 
+/**
+ * get current commit url
+ * @returns
+ */
 async function getCurrentCommit() {
   const git = new gch.default(__dirname);
   const commit = await git.latestCommit();
@@ -47,6 +53,9 @@ async function getCurrentCommit() {
   return remote.fetch.url.replace(/(.git|\/)$/) + '/commit/' + commit;
 }
 
+/**
+ * do commit including submodules
+ */
 async function commit() {
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
@@ -69,5 +78,30 @@ async function commit() {
   }
 }
 
+/**
+ * hexo generate
+ * @param {gulp.TaskFunctionCallback} done
+ */
+async function generate(done) {
+  const hexo = new Hexo(__dirname);
+  await hexo.init().catch(noop);
+  await hexo.call('generate').catch(noop);
+  if (typeof done === 'function') done();
+}
+
 gulp.task('commit', commit);
 gulp.task('pull', pull);
+gulp.task('generate', generate);
+gulp.task(
+  'build',
+  gulp.series(
+    'pull',
+    'generate',
+    'deploy:copy',
+    'seo',
+    'safelink',
+    'feed',
+    'sitemap',
+    'commit'
+  )
+);
