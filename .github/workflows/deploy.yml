@@ -4,6 +4,19 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '**/*.tgz'
+      - '**/*.gz'
+      - '**/release/**'
+  pull_request:
+    types:
+      - closed
+    paths-ignore:
+      - '**/release/**'
+      - '**/*.tgz'
+      - '**/*.gz'
+      - '**/test*/**'
+  workflow_dispatch:
 
 concurrency:
   group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
