@@ -85,7 +85,7 @@ async function getCurrentCommit() {
 async function commit() {
   const config = getConfig();
   const cwd = config.deploy.deployDir;
-  const gh = config.deploy.github;
+  const gh = config.deploy.github || new gch(cwd);
   const doCommit = async (cwd: string) => {
     await spawnAsync('git', ['add', '.'], { cwd });
     await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())]);
