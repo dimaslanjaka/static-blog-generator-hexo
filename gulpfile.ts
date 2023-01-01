@@ -116,3 +116,9 @@ gulp.task('commit', commit);
 gulp.task('pull', pull);
 gulp.task('generate', generate);
 gulp.task('build', gulp.series('pull', 'generate', 'deploy:copy', 'seo', 'safelink', 'feed', 'sitemap', 'commit'));
+
+gulp.task('env', function (done) {
+  const envs = process.env;
+  console.log(envs);
+  done();
+});
