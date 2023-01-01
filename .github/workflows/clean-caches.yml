@@ -3,11 +3,11 @@ name: Clean Caches
 on:
   push:
     branches: [ "master", "main" ]
-    path:
+    paths:
       - '**/package-lock.json'
       - '**/yarn.lock'
   pull_request:
-    path:
+    paths:
       - '**/package-lock.json'
       - '**/yarn.lock'
   workflow_dispatch:
