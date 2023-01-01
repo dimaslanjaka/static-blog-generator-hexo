@@ -17,6 +17,11 @@
   <!-- prettier-ignore-start-start -->
   {{ next_data('main', next_config()) }}
   {{- next_js('config.js') }}
+  {{ next_font() }}
+  {{ next_vendors('fontawesome') }}
+  {%- if theme.motion.enable %}
+    {{ next_vendors('animate_css') }}
+  {%- endif %}
   <!-- prettier-ignore-start-end -->
   <link rel="stylesheet" href="//www.webmanajemen.com/node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/vs.min.css" />
@@ -73,23 +78,17 @@
         <h1 class="display-5 fw-bold">{{ page.title }}</h1>
 
         <p class="d-block">
-          <span class="me-2">{{ page.type }} about</span>
+          <span class="me-2">{{ page.type }} label</span>
 
           {%- if page.tags and page.tags.length %}
           {%- for label in page.tags.toArray() %}
-          <span class="tag tag-{{ label.name }}">
-            {{ label.name }}
-            <span class="visually-hidden">type</span>
-          </span>
+          <a class="tag tag-{{ label.name }}" href="{{ url_for(label.path) }}" rel="tag"><i class="fa fa-tag"></i> {{ label.name }}</a>
           {%- endfor %}
           {% endif %}
 
           {%- if page.categories and page.categories.length %}
           {%- for label in page.categories.toArray() %}
-          <span class="tag tag-{{ label.name }}">
-            {{ label.name }}
-            <span class="visually-hidden">type</span>
-          </span>
+          <a class="tag tag-{{ label.name }}" href="{{ url_for(label.path) }}" rel="tag"><i class="fa fa-tag"></i> {{ label.name }}</a>
           {%- endfor %}
           {% endif %}
         </p>
