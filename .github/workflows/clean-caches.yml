@@ -1,3 +1,5 @@
+name: Clean Caches
+
 on:
   push:
     branches: [ "master", "main" ]
