@@ -131,6 +131,8 @@ jobs:
       - run: gulp deploy:copy
       - run: gulp seo
       - run: gulp safelink
+      - run: gulp commit
+      - run: gulp push
 
       - name: Collect Errors
         shell: bash
