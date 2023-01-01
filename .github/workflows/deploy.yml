@@ -10,6 +10,7 @@ on:
       - '**/release/**'
       - '.github/codeql/*'
       - '**codeql**'
+      - '**clean-caches**'
   pull_request:
     types:
       - closed
