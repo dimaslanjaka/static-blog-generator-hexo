@@ -70,35 +70,32 @@
 
     <div class="container-fluid mt-4">
       <div class="bg-dark rounded-3 text-white p-5">
-        <div class="position-relative">
-          <div class="position-absolute">
-            <span class="translate-middle badge rounded-pill bg-danger">
-              {{ page.type }}
-              <span class="visually-hidden">type</span>
-            </span>
+        <h1 class="display-5 fw-bold">{{ page.title }}</h1>
 
-            {%- if page.tags and page.tags.length %}
-            {%- for label in page.tags.toArray() %}
-            <span class="translate-middle badge rounded-pill bg-danger">
-              {{ label.name }}
-              <span class="visually-hidden">type</span>
-            </span>
-            {%- endfor %}
-            {% endif %}
+        <p class="d-block">
+          <span class="badge bg-danger">
+            {{ page.type }}
+            <span class="visually-hidden">type</span>
+          </span>
 
-            {%- if page.categories and page.categories.length %}
-            {%- for label in page.categories.toArray() %}
-            <span class="translate-middle badge rounded-pill bg-danger">
-              {{ label.name }}
-              <span class="visually-hidden">type</span>
-            </span>
-            {%- endfor %}
-            {% endif %}
-          </div>
+          {%- if page.tags and page.tags.length %}
+          {%- for label in page.tags.toArray() %}
+          <span class="tag tag-{{ label.name }}">
+            {{ label.name }}
+            <span class="visually-hidden">type</span>
+          </span>
+          {%- endfor %}
+          {% endif %}
 
-          <h1 class="display-5 fw-bold">{{ page.title }}</h1>
-        </div>
-
+          {%- if page.categories and page.categories.length %}
+          {%- for label in page.categories.toArray() %}
+          <span class="tag tag-{{ label.name }}">
+            {{ label.name }}
+            <span class="visually-hidden">type</span>
+          </span>
+          {%- endfor %}
+          {% endif %}
+        </p>
         <p class="col-md-8 fs-4">{{ page.description or page.excerpt or page.subtitle }}</p>
         <a class="btn btn-outline-light" type="button" href="../">BACK</a>
       </div>
