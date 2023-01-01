@@ -6,6 +6,7 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp from 'gulp';
 import Hexo from 'hexo';
 import { join } from 'path';
+import './packages/static-blog-generator';
 import { deployConfig, getConfig } from './packages/static-blog-generator';
 //import { deployConfig, getConfig } from 'static-blog-generator';
 //const sbg = require('./packages/static-blog-generator');
