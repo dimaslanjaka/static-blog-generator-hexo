@@ -36,7 +36,7 @@ hexo.extend.helper.register(
          */
         function (post) {
           // do what you have to do with each post
-          console.log(post.title);
+          console.log(post.title, post.permalink);
         }
       );
     });

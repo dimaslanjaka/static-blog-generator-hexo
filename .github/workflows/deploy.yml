@@ -124,10 +124,24 @@ jobs:
       - run: gulp post:copy
       - run: hexo generate
       - run: gulp sitemap
+        continue-on-error: true
+        id: sitemap
       - run: gulp feed
+        continue-on-error: true
+        id: feed
       - run: gulp deploy:copy
       - run: gulp seo
       - run: gulp safelink
+
+      - name: Collect Errors
+        shell: bash
+        run:
+          mkdir -p .deploy_git/reports/
+          echo "conclusion=${{ steps.feed.conclusion }}" > .deploy_git/reports/feed.txt
+          echo "conclusion=${{ steps.sitemap.conclusion }}" > .deploy_git/reports/sitemap.txt
+          echo "outcome=${{ steps.feed.outcome }}" >> .deploy_git/reports/feed.txt
+          echo "outcome=${{ steps.sitemap.outcome }}" >> .deploy_git/reports/sitemap.txt
+
       - name: Git push
         shell: bash
         id: push-manual
