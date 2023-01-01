@@ -36,7 +36,7 @@ jobs:
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
       - name: Cleanup caches
         shell: bash
-        if: contains(github.event.head_commit.message, 'update') || contains(github.event.head_commit.message, 'update deps') || contains(github.event.head_commit.message, 'update dependencies') || contains(github.event.head_commit.message, 'clean cache')
+        if: contains(github.event.head_commit.message, 'update deps') || contains(github.event.head_commit.message, 'update dependencies') || contains(github.event.head_commit.message, 'clean cache')
         run: |
           gh extension install actions/gh-actions-cache
           REPO=${{ github.repository }}
