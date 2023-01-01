@@ -108,21 +108,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-
 
-      - name: Fix Sharp
-        if: ${{ false }}
-        continue-on-error: true
-        run: |
-          git clone https://github.com/jcupitt/libvips.git
-          cd libvips/
-          # install dependencies if you have errors during autogen.sh
-          sudo apt install gtk-doc-tools
-          sudo apt install gobject-introspection
-          ./autogen.sh
-          make
-          sudo make install
-          sudo apt-get update
-          sudo apt-get --only-upgrade install libvips
-
       - name: Install Global Packages
         # if: steps.cache.outputs.cache-hit != 'true'
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli rimraf npm-run-all npm-check-updates --location=global
@@ -143,18 +128,20 @@ jobs:
       - run: gulp seo
       - run: gulp safelink
       - name: Git push
+        shell: bash
         continue-on-error: true
-        working-directory: .deploy_git
+        working-directory: ./.deploy_git
         run: |
           git submodule foreach "git add . | :"
           git submodule foreach "git commit -m 'Update build from ${{ env.GITHUB_COMMIT_URL }}' | :"
+          git submodule foreach "git push | :"
           git add .
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
           git push
 
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
-        if: ${{ false }}
+        #if: ${{ false }}
         #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
