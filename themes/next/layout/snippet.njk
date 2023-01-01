@@ -23,8 +23,8 @@
       }
       .btn-pre {
         position: absolute;
-        top: 0px;
-        right: 0px;
+        top: 2px;
+        right: 2px;
       }
     </style>
   </head>
@@ -82,15 +82,15 @@
 
       <div class="container-fluid mt-4">
         <div class="bg-dark rounded-3 text-white p-5">
-          <h1 class="display-5 fw-bold">{{ page.title }}</h1>
-          <p class="col-md-8 position-relative">
-            <span class="fs-4">{{ page.description or page.excerpt or page.subtitle }}</span>
-
+          <div class="position-relative">
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               {{ page.type }}
               <span class="visually-hidden">type</span>
             </span>
-          </p>
+            <h1 class="display-5 fw-bold">{{ page.title }}</h1>
+          </div>
+
+          <p class="col-md-8 fs-4">{{ page.description or page.excerpt or page.subtitle }}</p>
           <a class="btn btn-outline-light" type="button" href="../">BACK</a>
         </div>
       </div>
@@ -109,7 +109,7 @@
         const el = els[i];
         hljs.highlightBlock(el);
         const btn = document.createElement('button');
-        btn.classList.add('btn', 'btn-sm', 'btn-pre');
+        btn.classList.add('btn', 'btn-sm', 'btn-pre', 'border');
         btn.textContent = 'copy';
         el.parentElement.append(btn);
       }
