@@ -99,10 +99,16 @@
       </div>
       <div class="py-4">
         <h2>Another Snippets</h2>
-        <ul>
+        <ul class="list-group">
           {% for item in getPost('tags', ['snippet', 'script']) %}
-          <li>
-            <img source="{{ item.thumbnail or item.photos[0] }}" alt="thumbnail {{ item.title }}" class="d-inline" />
+          <li class="list-group-item">
+            <img
+              source="{{ item.thumbnail or item.photos[0] }}"
+              src="https://thumbs.dreamstime.com/b/no-picture-available-placeholder-thumbnail-icon-illustration-261212107.jpg"
+              width="150px"
+              height="150px"
+              alt="thumbnail {{ item.title }}"
+              class="d-inline" />
             <a href="{{ item.permalink }}" class="d-inline">{{ item.title }}</a>
           </li>
           {% endfor %}
@@ -110,7 +116,7 @@
       </div>
     </div>
 
-    <!--<script src="/r-ads.js"></script>-->
+    <script src="/r-ads.js"></script>
     <script src="//www.webmanajemen.com/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
