@@ -100,7 +100,7 @@
       <div class="py-4">
         <h2>Another Snippets</h2>
         <ul>
-          {% for item in getPost('tags', 'snippet') %}
+          {% for item in getPost('tags', ['snippet', 'script']) %}
             <li><a href="{{ item.permalink }}">{{ item.title }}</a></li>
           {% endfor %}
         </ul>

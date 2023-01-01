@@ -18,26 +18,29 @@ hexo.extend.helper.register(
   /**
    * get post by key with name
    * @param {'tags'|'categories'} by
-   * @param {string} filtername
+   * @param {string[]} filternames
+   * @returns {Record<string, string>[]}
    */
-  function (by, filtername) {
+  function (by, filternames) {
     const hexo = this;
     /**
      * @type {any[]}
      */
     const data = hexo.site[by].data;
-    const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
-    const map = filter.map((group) => {
-      return group.posts.map(
-        /**
-         * @param {import('hexo').Post.Data} post
-         */
-        function ({ title, permalink }) {
-          // do what you have to do with each post
-          return { title, permalink };
-        }
-      );
-    });
+    const map = filternames.map((filtername) => {
+      const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
+      return filter.map((group) => {
+        return group.posts.map(
+          /**
+           * @param {import('hexo').Post.Data} post
+           */
+          function ({ title, permalink }) {
+            // do what you have to do with each post
+            return { title, permalink };
+          }
+        );
+      });
+    }).flat()
     // return JSON.stringify(map, null, 2);
     return map;
   }
