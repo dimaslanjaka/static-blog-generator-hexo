@@ -27,12 +27,18 @@ hexo.extend.helper.register(
     /**
      * @type {any[]}
      */
-    const data = hexo.site[by].data.filter(({ name }) => name == filtername);
-    data.forEach((tag) => {
-      tag.posts.forEach(function (post) {
-        // do what you have to do with each post
-        console.log(post.title);
-      });
+    const data = hexo.site[by].data;
+    const filter = data.filter(({ name }) => name == filtername);
+    filter.forEach((tag) => {
+      tag.posts.forEach(
+        /**
+         * @param {import('hexo').Post.Data} post
+         */
+        function (post) {
+          // do what you have to do with each post
+          console.log(post.title);
+        }
+      );
     });
   }
 );
