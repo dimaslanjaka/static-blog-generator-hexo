@@ -1,0 +1,111 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { existsSync } from 'fs';
+import gch from 'git-command-helper';
+import { default as noop } from 'git-command-helper/dist/noop';
+import { spawnAsync } from 'git-command-helper/dist/spawn';
+import gulp from 'gulp';
+import Hexo from 'hexo';
+import { getConfig } from 'static-blog-generator';
+//const sbg = require('./packages/static-blog-generator');
+
+/**
+ * git clone
+ * @param cwd
+ */
+async function clone(cwd: string) {
+  if (!existsSync(cwd)) {
+    await spawnAsync('git', [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, '.deploy_git'], {
+      cwd: __dirname
+    });
+  }
+}
+
+/**
+ * git pull on deploy dir
+ */
+async function pull(done: gulp.TaskFunctionCallback) {
+  const config = getConfig();
+  const cwd = config.deploy.deployDir;
+  const gh = config.deploy.github;
+
+  const doPull = async (cwd: string) => {
+    try {
+      await spawnAsync('git', ['config', 'pull.rebase', 'false'], {
+        cwd
+      });
+    } catch (e) {
+      // console.log(e.message, sub.root);
+    }
+
+    try {
+      console.log('pulling', cwd);
+      await gh.spawn('git', ['pull', '-X', 'theirs'], {
+        cwd,
+        stdio: 'pipe'
+      });
+    } catch (e) {
+      console.log('cannot pull', cwd);
+    }
+  };
+
+  await clone(cwd);
+  doPull(cwd);
+  if (gh) {
+    const submodules = gh.submodule.get();
+    for (let i = 0; i < submodules.length; i++) {
+      const sub = submodules[i];
+
+      doPull(sub.root);
+    }
+  }
+  done();
+}
+
+/**
+ * get current commit url
+ * @returns
+ */
+async function getCurrentCommit() {
+  const git = new gch(__dirname);
+  const commit = await git.latestCommit();
+  const remote = await git.getremote();
+  return remote.fetch.url.replace(/(.git|\/)$/, '') + '/commit/' + commit;
+}
+
+/**
+ * do commit including submodules
+ */
+async function commit() {
+  const config = getConfig();
+  const cwd = config.deploy.deployDir;
+  const gh = config.deploy.github;
+  const doCommit = async (cwd: string) => {
+    await spawnAsync('git', ['add', '.'], { cwd });
+    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())]);
+  };
+
+  // runners
+  await doCommit(cwd);
+  const submodules = gh.submodule.get();
+  for (let i = 0; i < submodules.length; i++) {
+    const sub = submodules[i];
+    const cwd = sub.root;
+    await doCommit(cwd);
+  }
+}
+
+/**
+ * hexo generate
+ * @param done
+ */
+async function generate(done: gulp.TaskFunctionCallback) {
+  const hexo = new Hexo(__dirname);
+  await hexo.init().catch(noop);
+  await hexo.call('generate').catch(noop);
+  if (typeof done === 'function') done();
+}
+
+gulp.task('commit', commit);
+gulp.task('pull', pull);
+gulp.task('generate', generate);
+gulp.task('build', gulp.series('pull', 'generate', 'deploy:copy', 'seo', 'safelink', 'feed', 'sitemap', 'commit'));
