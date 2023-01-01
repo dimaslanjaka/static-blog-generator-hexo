@@ -88,6 +88,7 @@ jobs:
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
       - name: Update submodules
+        if: ${{ false }}
         run: |
           git config --global init.defaultBranch master
           git submodule update -i -r
