@@ -53,20 +53,47 @@ async function pull(done: gulp.TaskFunctionCallback) {
 
   try {
     await clone(cwd);
-    doPull(cwd);
+    await doPull(cwd);
     if (gh) {
       const submodules = gh.submodule.get();
       for (let i = 0; i < submodules.length; i++) {
         const sub = submodules[i];
 
-        doPull(sub.root);
+        await doPull(sub.root);
       }
     }
   } catch (e) {
     console.log(e.message);
   }
-  done();
+  if (typeof done === 'function') done();
 }
+
+async function push(done?: gulp.TaskFunctionCallback) {
+  const config = getConfig();
+  const cwd = config.deploy.deployDir;
+  const gh = config.deploy.github;
+
+  const doPush = async (cwd: string, origin = 'origin', branch = 'gh-pages') => {
+    await spawnAsync('git', ['push', origin, branch], {
+      cwd
+    });
+  };
+
+  if (gh) {
+    const submodules = gh.submodule.get();
+    for (let i = 0; i < submodules.length; i++) {
+      const sub = submodules[i];
+
+      doPush(sub.root, 'origin', sub.branch);
+    }
+
+    await doPush(cwd);
+  }
+
+  if (typeof done === 'function') done();
+}
+
+gulp.task('push', push);
 
 /**
  * get current commit url
@@ -124,7 +151,10 @@ async function generate(done: gulp.TaskFunctionCallback) {
 gulp.task('commit', commit);
 gulp.task('pull', pull);
 gulp.task('generate', generate);
-gulp.task('build', gulp.series('pull', 'generate', 'deploy:copy', 'seo', 'safelink', 'feed', 'sitemap', 'commit'));
+gulp.task(
+  'build',
+  gulp.series('pull', 'generate', 'deploy:copy', 'seo', 'safelink', 'feed', 'sitemap', 'commit', 'push')
+);
 
 gulp.task('env', function (done) {
   const envs = process.env;
