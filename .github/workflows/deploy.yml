@@ -98,6 +98,8 @@ jobs:
 
       - uses: pat-s/always-upload-cache@v3.0.11
         id: cache
+        env:
+          cache_name: kamisato
         with:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
@@ -106,9 +108,10 @@ jobs:
             ./db.json
             ./public
             ./tmp
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+            ./source/_posts
+          key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
           restore-keys: |
-            ${{ runner.os }}-
+            ${{ env.cache_name }}-
 
       - name: Install Global Packages
         # if: steps.cache.outputs.cache-hit != 'true'
