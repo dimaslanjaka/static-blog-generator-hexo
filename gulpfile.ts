@@ -73,7 +73,7 @@ async function push(done?: gulp.TaskFunctionCallback) {
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
 
-  const doPush = async (cwd: string, origin = 'origin', branch = 'gh-pages') => {
+  const doPush = async (cwd: string, origin: string, branch: string) => {
     await spawnAsync('git', ['push', origin, branch], {
       cwd
     });
