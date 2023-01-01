@@ -1,6 +1,4 @@
 /* global hexo */
-/// <reference types="hexo" />
-/// <reference types="node" />
 
 hexo.extend.helper.register('getPosts', function () {
   const { page } = this;
@@ -19,7 +17,7 @@ hexo.extend.helper.register(
   'getPost',
   /**
    * get post by key with name
-   * @param {'tags'} by
+   * @param {'tags'|'categories'} by
    * @param {string} filtername
    */
   function (by, filtername) {
@@ -29,8 +27,8 @@ hexo.extend.helper.register(
      */
     const data = hexo.site[by].data;
     const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
-    const map = filter.map((tag) => {
-      return tag.posts.map(
+    const map = filter.map((group) => {
+      return group.posts.map(
         /**
          * @param {import('hexo').Post.Data} post
          */
@@ -40,6 +38,7 @@ hexo.extend.helper.register(
         }
       );
     });
-    return JSON.stringify(map, null, 2);
+    // return JSON.stringify(map, null, 2);
+    return map;
   }
 );
