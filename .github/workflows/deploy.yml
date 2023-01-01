@@ -91,6 +91,8 @@ jobs:
         run: |
           git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
           cd .deploy_git
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git submodule update -i -r
           git submodule foreach git submodule update -i -r
 
