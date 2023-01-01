@@ -144,7 +144,7 @@ jobs:
 
       - name: Deploy 🚀
         if: ${{ false }}
-        if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
+        #if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: master # The branch the action should deploy to.
