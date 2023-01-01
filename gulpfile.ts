@@ -87,8 +87,8 @@ async function commit() {
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github || new gch(cwd);
   const doCommit = async (cwd: string) => {
-    await spawnAsync('git', ['add', '.'], { cwd });
-    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())]);
+    await spawnAsync('git', ['add', '.'], { cwd }).catch(fcatch);
+    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())]).catch(fcatch);
   };
 
   // runners
@@ -103,6 +103,11 @@ async function commit() {
   } catch (e) {
     console.log(e.message);
   }
+}
+
+function fcatch(e: any) {
+  if (e instanceof Error) return console.log(e.message);
+  console.log(e);
 }
 
 /**
