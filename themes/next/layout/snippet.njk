@@ -103,8 +103,7 @@
           {% for item in getPost('tags', ['snippet', 'script']) %}
           <li class="list-group-item">
             <img
-              source="{{ item.thumbnail or item.photos[0] }}"
-              src="https://thumbs.dreamstime.com/b/no-picture-available-placeholder-thumbnail-icon-illustration-261212107.jpg"
+              src="{{ item.thumbnail or item.photos[0] or 'https://thumbs.dreamstime.com/b/no-picture-available-placeholder-thumbnail-icon-illustration-261212107.jpg' }}"
               width="150px"
               height="150px"
               alt="thumbnail {{ item.title }}"
