@@ -15,7 +15,24 @@ hexo.extend.helper.register('getAuthor', function (author, fallback) {
   if (author.nickname) return author.nickname;
 });
 
-hexo.extend.helper.register('getPost', function (by) {
-  const hexo = this;
-  console.log(hexo)
-});
+hexo.extend.helper.register(
+  'getPost',
+  /**
+   * get post by key with name
+   * @param {'tags'} by
+   * @param {string} filtername
+   */
+  function (by, filtername) {
+    const hexo = this;
+    /**
+     * @type {any[]}
+     */
+    const data = hexo.site[by].data.filter(({ name }) => name == filtername);
+    data.forEach((tag) => {
+      tag.posts.forEach(function (post) {
+        // do what you have to do with each post
+        console.log(post.title);
+      });
+    });
+  }
+);
