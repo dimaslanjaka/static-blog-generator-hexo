@@ -101,7 +101,10 @@
         <h2>Another Snippets</h2>
         <ul>
           {% for item in getPost('tags', ['snippet', 'script']) %}
-            <li><a href="{{ item.permalink }}">{{ item.title }}</a></li>
+          <li>
+            <img source="{{ item.thumbnail or item.photos[0] }}" alt="thumbnail {{ item.title }}" class="d-inline" />
+            <a href="{{ item.permalink }}" class="d-inline">{{ item.title }}</a>
+          </li>
           {% endfor %}
         </ul>
       </div>
