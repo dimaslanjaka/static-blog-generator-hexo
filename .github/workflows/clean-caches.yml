@@ -28,7 +28,7 @@ jobs:
       fail-fast: true
     runs-on: ubuntu-latest
 
-    name: Node ${{ matrix.node-version }} - ${{ matrix.os }}-${{ matrix.architecture }}
+    name: Cache Cleaner
     steps:
       - uses: actions/checkout@v3
         with:
