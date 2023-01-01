@@ -20,6 +20,8 @@
         border: black solid 1px;
         border-radius: 5px;
         position: relative;
+        min-height: 30px;
+        padding: 2px;
       }
       .btn-pre {
         position: absolute;
@@ -104,10 +106,11 @@
           <li class="list-group-item">
             <img
               src="{{ item.thumbnail or item.photos[0] or 'https://thumbs.dreamstime.com/b/no-picture-available-placeholder-thumbnail-icon-illustration-261212107.jpg' }}"
+              onerror="this.src='https://thumbs.dreamstime.com/b/no-picture-available-placeholder-thumbnail-icon-illustration-261212107.jpg'"
               width="150px"
               height="150px"
               alt="thumbnail {{ item.title }}"
-              class="d-inline" />
+              class="d-inline me-2" />
             <a href="{{ item.permalink }}" class="d-inline">{{ item.title }}</a>
           </li>
           {% endfor %}
@@ -119,66 +122,8 @@
     <script src="//www.webmanajemen.com/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>
-      const els = Array.from(document.querySelectorAll('pre code'));
-      for (let i = 0; i < els.length; i++) {
-        const el = els[i];
-        hljs.highlightBlock(el);
-        const btn = document.createElement('button');
-        btn.classList.add('btn', 'btn-sm', 'btn-pre', 'border');
-        btn.textContent = 'copy';
-        el.parentElement.append(btn);
-      }
-
-      document.addEventListener('click', function (e) {
-        /**
-         * @type {HTMLElement}
-         */
-        const el = e.target;
-        if (el.classList.contains('btn-pre')) {
-          const content = el.parentElement.textContent;
-          copyTextToClipboard(content);
-        }
-      });
-
-      function fallbackCopyTextToClipboard(text) {
-        var textArea = document.createElement('textarea');
-        textArea.value = text;
-
-        // Avoid scrolling to bottom
-        textArea.style.top = '0';
-        textArea.style.left = '0';
-        textArea.style.position = 'fixed';
-
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-
-        try {
-          var successful = document.execCommand('copy');
-          var msg = successful ? 'successful' : 'unsuccessful';
-          console.log('Fallback: Copying text command was ' + msg);
-        } catch (err) {
-          console.error('Fallback: Oops, unable to copy', err);
-        }
-
-        document.body.removeChild(textArea);
-      }
-      function copyTextToClipboard(text) {
-        if (!navigator.clipboard) {
-          fallbackCopyTextToClipboard(text);
-          return;
-        }
-        navigator.clipboard.writeText(text).then(
-          function () {
-            console.log('Async: Copying to clipboard was successful!');
-          },
-          function (err) {
-            console.error('Async: Could not copy text: ', err);
-          }
-        );
-      }
-    </script>
+    <script src="//cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+    {{- next_js('snippet.js') }}
   </body>
 </html>
 <!--
