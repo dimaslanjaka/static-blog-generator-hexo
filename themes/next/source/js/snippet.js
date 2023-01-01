@@ -33,13 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
   localSearch.fetchData();
 
   /**
-   * @type {HTMLInputElement}
+   * @type {HTMLInputElement[]}
    */
-  const input = document.querySelector('.search-input');
+  const inputs = Array.from(document.querySelectorAll('.search-input'));
 
-  const inputEventFunction = () => {
+  /**
+   * Search input event
+   * @param {Event} e
+   * @returns
+   */
+  const inputEventFunction = function (e) {
     if (!localSearch.isfetched) return console.info('local search not fetched yet');
-    const searchText = input.value.trim().toLowerCase();
+    let searchText = '';
+    if (e.target.tagName.toLowerCase() == 'form') {
+      searchText = e.target.querySelector('.search-input').value.trim().toLowerCase();
+    } else if (e.target.tagName.toLowerCase() == 'input') {
+      searchText = e.target.value.trim().toLowerCase();
+    } else {
+      return console.debug(e.target);
+    }
     const keywords = searchText.split(/[-\s]+/).filter((str) => str.trim().length > 0);
     const container = document.querySelector('.search-result-container');
     let resultItems = [];
@@ -72,12 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  input.addEventListener('input', inputEventFunction);
-  input.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-      inputEventFunction();
-    }
+  inputs.forEach((input) => {
+    input.addEventListener('input', inputEventFunction);
+    input.addEventListener('click', inputEventFunction);
+    input.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        inputEventFunction();
+      }
+    });
   });
+  document.getElementById('search-form').addEventListener('submit', inputEventFunction);
 });
 
 function fallbackCopyTextToClipboard(text) {

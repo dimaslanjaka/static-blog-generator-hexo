@@ -81,7 +81,7 @@
   "[css]": {
     "editor.suggest.insertMode": "replace",
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "vscode.css-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.formatOnSave": true, // enable json formating with default vscode formatter
