@@ -102,6 +102,8 @@ jobs:
             ${{ steps.set-env.outputs.cache-yarn2 }}
             ./db.json
             ./public
+            ./tmp
+            ./.deploy_git
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-
