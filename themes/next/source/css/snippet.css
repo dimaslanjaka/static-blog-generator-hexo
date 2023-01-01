@@ -61,7 +61,6 @@ body {
   color: var(--text-color);
   margin: 0;
   font-family: var(--font-body);
-  font-size: var(--font-size);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -76,6 +75,7 @@ body {
   color: var(--text-color);
   font-weight: 600;
   margin: 0.25em 0.1em;
+  /* font-size: var(--font-size); */
 }
 
 h1.tag {

@@ -73,10 +73,7 @@
         <h1 class="display-5 fw-bold">{{ page.title }}</h1>
 
         <p class="d-block">
-          <span class="badge bg-danger">
-            {{ page.type }}
-            <span class="visually-hidden">type</span>
-          </span>
+          <span class="me-2">{{ page.type }} about</span>
 
           {%- if page.tags and page.tags.length %}
           {%- for label in page.tags.toArray() %}
