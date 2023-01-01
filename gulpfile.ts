@@ -80,11 +80,15 @@ async function push(done?: gulp.TaskFunctionCallback) {
   };
 
   if (gh) {
-    const submodules = gh.submodule.get();
-    for (let i = 0; i < submodules.length; i++) {
-      const sub = submodules[i];
-
-      doPush(sub.root, 'origin', sub.branch);
+    try {
+      const submodules = gh.submodule.get();
+      for (let i = 0; i < submodules.length; i++) {
+        const sub = submodules[i];
+        console.log('push', sub.root);
+        doPush(sub.root, 'origin', sub.branch);
+      }
+    } catch (error) {
+      fcatch(error);
     }
 
     await doPush(cwd, 'origin', 'master');
