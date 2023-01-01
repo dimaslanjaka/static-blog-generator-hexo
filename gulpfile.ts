@@ -5,7 +5,8 @@ import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp from 'gulp';
 import Hexo from 'hexo';
-import { getConfig } from 'static-blog-generator';
+import { join } from 'path';
+import { deployConfig, getConfig } from 'static-blog-generator';
 //const sbg = require('./packages/static-blog-generator');
 
 /**
@@ -14,9 +15,14 @@ import { getConfig } from 'static-blog-generator';
  */
 async function clone(cwd: string) {
   if (!existsSync(cwd)) {
+    // clone from blog root
     await spawnAsync('git', [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, '.deploy_git'], {
       cwd: __dirname
     });
+    // update submodule from blog deployment dir
+    if (existsSync(join(deployConfig().deployDir, '.gitmodules'))) {
+      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], { cwd });
+    }
   }
 }
 
@@ -48,15 +54,19 @@ async function pull(done: gulp.TaskFunctionCallback) {
     }
   };
 
-  await clone(cwd);
-  doPull(cwd);
-  if (gh) {
-    const submodules = gh.submodule.get();
-    for (let i = 0; i < submodules.length; i++) {
-      const sub = submodules[i];
+  try {
+    await clone(cwd);
+    doPull(cwd);
+    if (gh) {
+      const submodules = gh.submodule.get();
+      for (let i = 0; i < submodules.length; i++) {
+        const sub = submodules[i];
 
-      doPull(sub.root);
+        doPull(sub.root);
+      }
     }
+  } catch (e) {
+    console.log(e.message);
   }
   done();
 }
