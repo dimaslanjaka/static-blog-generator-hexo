@@ -92,12 +92,16 @@ async function commit() {
   };
 
   // runners
-  await doCommit(cwd);
-  const submodules = gh.submodule.get();
-  for (let i = 0; i < submodules.length; i++) {
-    const sub = submodules[i];
-    const cwd = sub.root;
+  try {
     await doCommit(cwd);
+    const submodules = gh.submodule.get();
+    for (let i = 0; i < submodules.length; i++) {
+      const sub = submodules[i];
+      const cwd = sub.root;
+      await doCommit(cwd);
+    }
+  } catch (e) {
+    console.log(e.message);
   }
 }
 
