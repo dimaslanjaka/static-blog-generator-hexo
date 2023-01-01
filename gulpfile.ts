@@ -87,7 +87,7 @@ async function push(done?: gulp.TaskFunctionCallback) {
       doPush(sub.root, 'origin', sub.branch);
     }
 
-    await doPush(cwd);
+    await doPush(cwd, 'origin', 'master');
   }
 
   if (typeof done === 'function') done();
