@@ -2,7 +2,7 @@
   // Change this to match your project
   "include": [
     "*.ts",
-    "gulpfile.js"
+    "gulpfile.ts"
   ],
   "compilerOptions": {
     "module": "CommonJS",

@@ -150,8 +150,8 @@ jobs:
       - run: gulp feed
       - run: gulp deploy:copy
       - run: gulp seo
+      - run: gulp safelink
       - name: Git push
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         working-directory: .deploy_git
         run: |
