@@ -136,7 +136,7 @@ jobs:
       - run: gulp commit
       - run: gulp push
 
-      - name: Collect Errors
+      - name: Collect Reports
         shell: bash
         continue-on-error: true
         run:
