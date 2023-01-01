@@ -214,14 +214,18 @@ server:
   port: 4000
   log: false
   ip: 0.0.0.0
-  #host: adsense.webmanajemen.com
-  #proxy: adsense.webmanajemen.com
   compress: false
   cache: false
   header: false
   serveStatic:
+    dotfiles: allow
     extensions:
       - html
+      - js
+      - css
+      - png
+      - jpg
+      - jpeg
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

@@ -20,11 +20,12 @@ if (!fs.existsSync(path.dirname(cacheJSON))) {
 if (!fs.existsSync(cacheJSON)) {
   fs.writeFileSync(cacheJSON, '{}');
 }
+
 /**
  * Get cache
  * @returns {import('./node_modules/cache/npm-install.json')}
  */
-const getCache = () => require('./node_modules/.cache/npm-install.json');
+const getCache = () => JSON.parse(readfile(cacheJSON, 'utf-8'));
 
 /**
  * Save cache
@@ -35,16 +36,11 @@ const getCache = () => require('./node_modules/.cache/npm-install.json');
  * data['key']='value';
  * saveCache(data)
  */
-const saveCache = (data) =>
-  fs.writeFileSync(cacheJSON, JSON.stringify(data, null, 2));
+const saveCache = (data) => writefile(cacheJSON, JSON.stringify(data, null, 2));
 
 if (require.main === module) {
   // console.log('called directly');
-  summon(
-    'git',
-    ['submodule', 'sync', '--recursive'],
-    spawnOpt({ cwd: __dirname, stdio: 'inherit' })
-  );
+  summon('git', ['submodule', 'sync', '--recursive'], spawnOpt({ cwd: __dirname, stdio: 'inherit' }));
 
   const packages = [pjson.dependencies, pjson.devDependencies];
   for (let i = 0; i < packages.length; i++) {
@@ -100,8 +96,7 @@ if (require.main === module) {
 function summon(cmd, args = [], opt = {}) {
   // *** Return the promise
   return new Promise(function (resolve, reject) {
-    if (typeof cmd !== 'string' || cmd.trim().length === 0)
-      return reject('cmd empty');
+    if (typeof cmd !== 'string' || cmd.trim().length === 0) return reject('cmd empty');
     const process = spawn(cmd, args, opt);
     process.on('close', function (code) {
       // Should probably be 'exit', not 'close'
@@ -126,50 +121,33 @@ function spawnOpt(opt = {}) {
   return Object.assign({ stdio: 'inherit' }, opt);
 }
 
-/*
-cdir="$PWD"
+/**
+ * read file with validation
+ * @param {string} str
+ * @param {import('fs').EncodingOption} encoding
+ * @returns
+ */
+function readfile(str, encoding = 'utf-8') {
+  if (fs.existsSync(str)) {
+    if (fs.statSync(str).isFile()) {
+      return fs.readFileSync(str, encoding);
+    } else {
+      throw str + ' is directory';
+    }
+  } else {
+    throw str + ' not found';
+  }
+}
 
-git submodule update -i -r
-echo "update submodule static-blog-generator"
-cd $cdir/packages/static-blog-generator
-git submodule update -i -r
-echo "update submodule hexo-post-parser"
-cd $cdir/packages/static-blog-generator/packages/hexo-post-parser
-git submodule update -i -r
-    summon(
-      'yarn',
-      ['install', '--check-files'],
-      spawnOpt({
-        cwd: path.join(
-          sbgPath,
-          'packages/hexo-post-parser/packages/persistent-cache'
-        )
-      })
-    ).then(() => {
-      summon(
-        'yarn',
-        ['install', '--check-files'],
-        spawnOpt({
-          cwd: path.join(sbgPath, 'packages/google-news-sitemap')
-        })
-      ).then(() => {
-        summon(
-          'yarn',
-          ['install', '--check-files'],
-          spawnOpt({
-            cwd: path.join(sbgPath, 'packages/hexo-post-parser')
-          })
-        ).then(() => {
-          summon(
-            'yarn',
-            ['install', '--check-files'],
-            spawnOpt({
-              cwd: path.join(sbgPath, 'packages/safelink')
-            })
-          ).then(() => {
-
-          });
-        });
-      });
-    });
-*/
+/**
+ * write to file recursively
+ * @param {string} dest
+ * @param {any} data
+ */
+function writefile(dest, data) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(dest)) {
+    if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
+  }
+  fs.writeFileSync(dest, data);
+}
