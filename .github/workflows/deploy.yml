@@ -87,9 +87,10 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
-      - name: Update submodules
-        if: ${{ false }}
+      - name: Clone Deployment Site
         run: |
+          git clone -b master --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io .deploy_git
+          cd .deploy_git
           git config --global init.defaultBranch master
           git submodule update -i -r
           git submodule foreach git submodule update -i -r
