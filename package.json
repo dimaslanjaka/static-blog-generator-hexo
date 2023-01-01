@@ -15,8 +15,10 @@
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
+    "update:chimeraland": "cd multisite/chimeraland/chimeraland && npm run update",
+    "update:chimeraland2": "cd multisite/chimeraland && npm run update",
+    "update:sbg": "cd packages/static-blog-generator && npm run update && npm run build",
     "update:ncu": "npx npm-check-updates -u -x hexo,chalk",
-    "update:chimeraland": "cd multisite/chimeraland && npm run update",
     "update": "run-s update:** && npm install",
     "postinstall": "node postinstall.js --commit",
     "refresh": "rimraf package-lock.json && npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
