@@ -30,7 +30,7 @@ jobs:
 
     name: Node ${{ matrix.node-version }} - ${{ matrix.os }}-${{ matrix.architecture }}
     steps:
-       - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
