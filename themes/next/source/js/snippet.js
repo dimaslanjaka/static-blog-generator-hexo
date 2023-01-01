@@ -25,12 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // hexo-genereator-searchdb
-  if (!CONFIG.path) {
-    // Search DB path
-    console.warn('`hexo-generator-searchdb` plugin is not installed!');
-    return;
-  }
   const localSearch = new LocalSearch({
     path: CONFIG.path,
     top_n_per_article: CONFIG.localsearch.top_n_per_article,
@@ -43,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!localSearch.isfetched) return;
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
+    console.log(keywords);
     const container = document.querySelector('.search-result-container');
     let resultItems = [];
     if (searchText.length > 0) {
@@ -64,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return right.id - left.id;
       });
-      const stats = CONFIG.i18n.hits.replace(/\$\{hits}/, resultItems.length);
+      const stats = CONFIG.i18n.hits.replace('${hits}', resultItems.length);
 
       container.classList.remove('no-result');
       container.innerHTML = `<div class="search-stats">${stats}</div>
@@ -74,51 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  localSearch.highlightSearchWords(document.querySelector('.post-body'));
-  if (CONFIG.localsearch.preload) {
-    localSearch.fetchData();
-  }
-
-  if (CONFIG.localsearch.trigger === 'auto') {
-    input.addEventListener('input', inputEventFunction);
-  } else {
-    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
-    input.addEventListener('keypress', (event) => {
-      if (event.key === 'Enter') {
-        inputEventFunction();
-      }
-    });
-  }
-  window.addEventListener('search:loaded', inputEventFunction);
-
-  // Handle and trigger popup window
-  document.querySelectorAll('.popup-trigger').forEach((element) => {
-    element.addEventListener('click', () => {
-      document.body.classList.add('search-active');
-      // Wait for search-popup animation to complete
-      setTimeout(() => input.focus(), 500);
-      if (!localSearch.isfetched) localSearch.fetchData();
-    });
-  });
-
-  // Monitor main search box
-  const onPopupClose = () => {
-    document.body.classList.remove('search-active');
-  };
-
-  document.querySelector('.search-pop-overlay').addEventListener('click', (event) => {
-    if (event.target === document.querySelector('.search-pop-overlay')) {
-      onPopupClose();
-    }
-  });
-  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
-  document.addEventListener('pjax:success', () => {
-    localSearch.highlightSearchWords(document.querySelector('.post-body'));
-    onPopupClose();
-  });
-  window.addEventListener('keyup', (event) => {
-    if (event.key === 'Escape') {
-      onPopupClose();
+  if (input.value.trim().length > 0) inputEventFunction();
+  input.addEventListener('input', inputEventFunction);
+  input.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      inputEventFunction();
     }
   });
 });
