@@ -3,7 +3,7 @@ name: Clean Caches
 on:
   push:
     branches: [ "master", "main" ]
-    paths:
+    path:
       - '**/package-lock.json'
       - '**/yarn.lock'
     paths-ignore:
@@ -11,7 +11,7 @@ on:
       - '**/*.gz'
       - '**/release/**'
   pull_request:
-    paths:
+    path:
       - '**/package-lock.json'
       - '**/yarn.lock'
     types:
