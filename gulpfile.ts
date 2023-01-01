@@ -1,15 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs';
 import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
-import gulp from 'gulp';
 import Hexo from 'hexo';
 import { join } from 'path';
-import './packages/static-blog-generator';
-import { deployConfig, getConfig } from './packages/static-blog-generator';
-//import { deployConfig, getConfig } from 'static-blog-generator';
-//const sbg = require('./packages/static-blog-generator');
+import { deployConfig, getConfig, gulp } from 'static-blog-generator';
 
 /**
  * git clone
