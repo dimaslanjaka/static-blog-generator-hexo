@@ -35,10 +35,10 @@ hexo.extend.helper.register(
             /**
              * @param {import('hexo').Post.Data} post
              */
-            function ({ title, permalink }) {
+            function ({ title, permalink, thumbnail, photos }) {
               // get title and permalink
               // for more keys, you can look at https://github.com/dimaslanjaka/nodejs-package-types/blob/ec9b509d81eefdfada79f1658ac02118936a1e5a/index.d.ts#L757-L762
-              return { title, permalink };
+              return { title, permalink, thumbnail, photos };
             }
           );
         });
