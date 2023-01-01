@@ -82,7 +82,6 @@ jobs:
           git config core.autocrlf input
           git checkout-index --force --all
       - name: Git setup user email
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         run: |
           git config --global user.name 'github-actions[bot]'
