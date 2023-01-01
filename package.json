@@ -53,6 +53,8 @@
     "upath": "^2.0.1"
   },
   "devDependencies": {
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz",
+    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
@@ -78,8 +80,6 @@
     "yargs": "^17.6.2"
   },
   "optionalDependencies": {
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz",
-    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz",
