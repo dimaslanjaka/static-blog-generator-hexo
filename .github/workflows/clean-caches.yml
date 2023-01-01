@@ -6,21 +6,10 @@ on:
     path:
       - '**/package-lock.json'
       - '**/yarn.lock'
-    paths-ignore:
-      - '**/*.tgz'
-      - '**/*.gz'
-      - '**/release/**'
   pull_request:
     path:
       - '**/package-lock.json'
       - '**/yarn.lock'
-    types:
-      - closed
-    paths-ignore:
-      - '**/release/**'
-      - '**/*.tgz'
-      - '**/*.gz'
-      - '**/test*/**'
   workflow_dispatch:
 
 # run single job
