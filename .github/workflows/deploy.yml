@@ -123,7 +123,6 @@ jobs:
         run: |
           npm run update
 
-      - run: gulp pull
       - run: gulp post:standalone
       - run: gulp post:copy
       - run: hexo generate
@@ -136,8 +135,6 @@ jobs:
       - run: gulp deploy:copy
       - run: gulp seo
       - run: gulp safelink
-      - run: gulp commit
-      - run: gulp push
 
       - name: Collect Reports
         shell: bash
