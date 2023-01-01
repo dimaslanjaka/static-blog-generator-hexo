@@ -8,16 +8,35 @@
     <title>Snippet {{ page.title | safe }}</title>
     <meta name="author" content="{{ post.author or config.author or "L3n4r0x" }}">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="{{ page.keywords }}">
-    <meta name="description" content="{{ page.description or page.excerpt or page.subtitle}}">
+    <meta name="keywords" content="{{ page.keyword or page.keywords }}">
+    <meta name="description" content="{{ page.description or page.excerpt or page.subtitle }}">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/node_modules/highlight.js/styles/vs.css" />
   </head>
   <body>
-    {{ page.content }}
-    <script src="/r-ads.js"></script>
+
+    <div class="jumbotron">
+      <h1 class="display-4">{{ page.title }}</h1>
+      <p class="lead">{{ page.description or page.excerpt or page.subtitle }}</p>
+    </div>
+
+    <div class="container-fluid">
+      {{ page.content }}
+    </div>
+
+    <!--<script src="/r-ads.js"></script>-->
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/node_modules/highlight.js/lib/languages/yaml.js"></script>
+    <script src="/node_modules/highlight.js/lib/core.js"></script>
+    <script>
+      const els = Array.from(document.querySelectorAll('pre code'));
+      for (let i = 0; i < els.length; i++) {
+        const el = els[i];
+        hljs.highlightBlock(el);
+      }
+    </script>
   </body>
 </html>
