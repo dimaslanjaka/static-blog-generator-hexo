@@ -28,17 +28,18 @@ hexo.extend.helper.register(
      * @type {any[]}
      */
     const data = hexo.site[by].data;
-    const filter = data.filter(({ name }) => name == filtername);
-    filter.forEach((tag) => {
-      tag.posts.forEach(
+    const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
+    const map = filter.map((tag) => {
+      return tag.posts.map(
         /**
          * @param {import('hexo').Post.Data} post
          */
-        function (post) {
+        function ({ title, permalink }) {
           // do what you have to do with each post
-          console.log(post.title, post.permalink);
+          return { title, permalink };
         }
       );
     });
+    return JSON.stringify(map, null, 2);
   }
 );

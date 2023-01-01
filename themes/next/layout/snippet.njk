@@ -98,7 +98,7 @@
         {{ page.content }}
       </div>
 
-      {{ getPost('tags', 'snippet') }}
+
     </div>
 
     <!--<script src="/r-ads.js"></script>-->
@@ -165,6 +165,8 @@
         );
       }
     </script>
+
+    <script id="related-posts" type="application/json">{{ getPost('tags', 'snippet') }}</script>
   </body>
 </html>
 <!--
