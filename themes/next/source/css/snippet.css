@@ -1,0 +1,12 @@
+pre {
+  border: black solid 1px;
+  border-radius: 5px;
+  position: relative;
+  min-height: 30px;
+  padding: 2px;
+}
+.btn-pre {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
