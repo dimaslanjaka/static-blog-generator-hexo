@@ -149,4 +149,4 @@ jobs:
           folder: .deploy_git # The folder the action should deploy.
           force: false # merge instead push --force, (keep old / non modified) files?
           token: "${{ secrets.GITHUB_TOKEN }}" # github token
-          repository-name: "dimaslanjaka/dimaslanjaka.github.io" # Repostory URL
+          repository-name: "https://github.com/dimaslanjaka/dimaslanjaka.github.io" # Repostory URL
