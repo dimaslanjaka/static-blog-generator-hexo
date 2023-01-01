@@ -30,14 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
     top_n_per_article: CONFIG.localsearch.top_n_per_article,
     unescape: CONFIG.localsearch.unescape
   });
+  localSearch.fetchData();
 
+  /**
+   * @type {HTMLInputElement}
+   */
   const input = document.querySelector('.search-input');
 
   const inputEventFunction = () => {
-    if (!localSearch.isfetched) return;
+    if (!localSearch.isfetched) return console.info('local search not fetched yet');
     const searchText = input.value.trim().toLowerCase();
-    const keywords = searchText.split(/[-\s]+/);
-    console.log(keywords);
+    const keywords = searchText.split(/[-\s]+/).filter((str) => str.trim().length > 0);
     const container = document.querySelector('.search-result-container');
     let resultItems = [];
     if (searchText.length > 0) {
@@ -69,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  if (input.value.trim().length > 0) inputEventFunction();
   input.addEventListener('input', inputEventFunction);
   input.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {

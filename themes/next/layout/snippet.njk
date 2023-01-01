@@ -71,10 +71,31 @@
     <div class="container-fluid mt-4">
       <div class="bg-dark rounded-3 text-white p-5">
         <div class="position-relative">
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ page.type }}
-            <span class="visually-hidden">type</span>
-          </span>
+          <div class="position-absolute">
+            <span class="translate-middle badge rounded-pill bg-danger">
+              {{ page.type }}
+              <span class="visually-hidden">type</span>
+            </span>
+
+            {%- if page.tags and page.tags.length %}
+            {%- for label in page.tags.toArray() %}
+            <span class="translate-middle badge rounded-pill bg-danger">
+              {{ label.name }}
+              <span class="visually-hidden">type</span>
+            </span>
+            {%- endfor %}
+            {% endif %}
+
+            {%- if page.categories and page.categories.length %}
+            {%- for label in page.categories.toArray() %}
+            <span class="translate-middle badge rounded-pill bg-danger">
+              {{ label.name }}
+              <span class="visually-hidden">type</span>
+            </span>
+            {%- endfor %}
+            {% endif %}
+          </div>
+
           <h1 class="display-5 fw-bold">{{ page.title }}</h1>
         </div>
 
@@ -82,6 +103,7 @@
         <a class="btn btn-outline-light" type="button" href="../">BACK</a>
       </div>
     </div>
+
     <div class="py-4">
       {{ page.content }}
     </div>
