@@ -133,6 +133,7 @@ jobs:
         continue-on-error: true
         working-directory: ./.deploy_git
         run: |
+          echo "git branch --show-current"
           git submodule foreach "git add . | :"
           git submodule foreach "git commit -m 'Update build from ${{ env.GITHUB_COMMIT_URL }}' | :"
           git submodule foreach "git push | :"
