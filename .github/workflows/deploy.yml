@@ -135,8 +135,8 @@ jobs:
 
       - name: Collect Errors
         shell: bash
+        continue-on-error: true
         run:
-          mkdir -p .deploy_git/reports/
           echo "conclusion=${{ steps.feed.conclusion }}" > .deploy_git/reports/feed.txt
           echo "conclusion=${{ steps.sitemap.conclusion }}" > .deploy_git/reports/sitemap.txt
           echo "outcome=${{ steps.feed.outcome }}" >> .deploy_git/reports/feed.txt

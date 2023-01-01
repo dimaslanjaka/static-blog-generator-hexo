@@ -97,8 +97,14 @@
       <div class="py-4">
         {{ page.content }}
       </div>
-
-
+      <div class="py-4">
+        <h2>Another Snippets</h2>
+        <ul>
+          {% for item in getPost('tags', 'snippet') %}
+            <li><a href="{{ item.permalink }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
 
     <!--<script src="/r-ads.js"></script>-->
@@ -165,8 +171,6 @@
         );
       }
     </script>
-
-    <script id="related-posts" type="application/json">{{ getPost('tags', 'snippet') }}</script>
   </body>
 </html>
 <!--
