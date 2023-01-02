@@ -27,11 +27,18 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     permissions: read-all
     timeout-minutes: 120
     strategy:
       fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+        node_version:
+          - 18
+        architecture:
+          - x64
     env:
       cache_name: kamisato-ayaka
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
@@ -48,11 +55,11 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: ${{ matrix.node_version }}
+          architecture: ${{ matrix.architecture }}
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           check-latest: true
-          architecture: 'x64' # optional, x64 or x86. If not specified, x64 will be used by default
 
       - name: Set env
         id: set-env
