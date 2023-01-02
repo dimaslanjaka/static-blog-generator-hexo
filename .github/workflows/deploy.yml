@@ -116,8 +116,7 @@ jobs:
             ${{ steps.set-env.outputs.cache-yarn2 }}
             ./db.json
             ./public
-            **/tmp
-            **/build
+            ./tmp
             ./build
             ./source/_posts
             **/node_modules
