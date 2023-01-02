@@ -109,7 +109,8 @@ jobs:
             ./public
             ./tmp
             ./source/_posts
-          key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
+          # key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
+          key: "${{ env.cache_name }}-fd5a3218bcb45b029a6cd3bb6095a740a40baf941f8f94988291d8b301254317" 
           restore-keys: |
             ${{ env.cache_name }}-
 
