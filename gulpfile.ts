@@ -5,9 +5,6 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
 import { join } from 'path';
 import { deployConfig, getConfig, gulp } from 'static-blog-generator';
-import { cleanOldArchives as testcleanOldArchives } from './packages/static-blog-generator/src/gulp.clean';
-
-gulp.task('test:clean', testcleanOldArchives);
 
 /**
  * git clone
