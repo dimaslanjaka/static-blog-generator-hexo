@@ -28,7 +28,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
+    permissions: read-all
     timeout-minutes: 120
     strategy:
       fail-fast: false
