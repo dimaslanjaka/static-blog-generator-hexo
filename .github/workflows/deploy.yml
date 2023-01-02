@@ -124,12 +124,12 @@ jobs:
         run: |
           npm run update
           
-      - name: Clean Install
+      - name: Install Update
         if: steps.install-npm.outcome == 'failure'
         run: |
-          npm ci
-          cd multisite/chimeraland/chimeraland && npm ci && cd ..
-          cd multisite/chimeraland && npm ci && cd ../..
+          npm update
+          cd multisite/chimeraland/chimeraland && npm update && cd ..
+          cd multisite/chimeraland && npm update && cd ../..
         
       - name: build chimeraland
         run: npm run build
