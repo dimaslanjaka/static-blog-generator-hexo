@@ -127,7 +127,10 @@ jobs:
           
       - name: Clean Install
         if: steps.install-npm.conclusion == 'failure'
-        run: npm ci
+        run: |
+          npm ci
+          cd multisite/chimeraland/chimeraland && npm ci && cd ..
+          cd multisite/chimeraland && npm ci && cd ../..
         
       - name: build chimeraland
         run: npm run build
