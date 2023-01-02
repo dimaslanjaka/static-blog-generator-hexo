@@ -119,7 +119,7 @@ async function commit() {
   const gh = config.deploy.github || new gch(cwd);
   const doCommit = async (cwd: string) => {
     await spawnAsync('git', ['add', '.'], { cwd }).catch(fcatch);
-    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())]).catch(fcatch);
+    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())], { cwd }).catch(fcatch);
   };
 
   // runners
@@ -129,6 +129,7 @@ async function commit() {
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
       const cwd = sub.root;
+      console.log('commiting', sub.root);
       await doCommit(cwd);
     }
   } catch (e) {
