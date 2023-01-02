@@ -211,7 +211,7 @@ jobs:
           git push
 
       - name: Deploy 🚀
-        if: ${{ false }}
+        #if: ${{ false }}
         #if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
