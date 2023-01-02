@@ -180,10 +180,9 @@ jobs:
         with:
           source-directory: './.deploy_git/chimeraland'
           destination-github-username: 'dimaslanjaka'
-          destination-repository-name: 'pandoc-test-output'
+          destination-repository-name: 'chimeraland'
           user-email: 'dimaslanjaka@gmail.com'
           target-branch: gh-pages
-          destination-repository-name: 'dimaslanjaka/chimeraland'
           commit-message: "update: commit ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
 
       - name: Git push
