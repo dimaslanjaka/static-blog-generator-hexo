@@ -85,7 +85,7 @@ jobs:
           echo "cache npm   : ${{ env.CACHE_NPM }}"
           echo "cache yarn  : ${{ env.CACHE_YARN }}"
           echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
-          npx gulp env
+
       - name: Set EOL git configs
         continue-on-error: true
         run: |
@@ -139,6 +139,9 @@ jobs:
       - name: Install Update
         if: steps.install-npm.outcome == 'failure'
         run: npm update
+
+      - name: Dump process.env
+        run: npx gulp env
 
       - name: build chimeraland
         run: npm update && npm run build
