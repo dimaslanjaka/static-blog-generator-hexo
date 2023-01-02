@@ -28,7 +28,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: permissions: read-all|write-all
     timeout-minutes: 120
+    strategy:
+      fail-fast: false
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
 
@@ -126,11 +129,11 @@ jobs:
         continue-on-error: true
         run: |
           npm run update
-          
+
       - name: Install Update
         if: steps.install-npm.outcome == 'failure'
         run: npm update
-        
+
       - name: build chimeraland
         run: npm update && npm run build
         working-directory: ./multisite/chimeraland
