@@ -1,4 +1,4 @@
-import { existsSync } from 'fs';
+import { copy, existsSync, mkdirp, rm } from 'fs-extra';
 import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
@@ -166,9 +166,16 @@ gulp.task('env', function (done) {
   done();
 });
 
-gulp.task('hooks', function () {
+gulp.task('hooks', async function () {
   const dest = join(__dirname, '.git/hooks');
-  return gulp
-    .src('*.*', { ignore: ['**/*.{sample,js}'], cwd: join(__dirname, 'git-hooks'), noext: true })
-    .pipe(gulp.dest(dest));
+  const src = join(__dirname, 'git-hooks');
+  if (existsSync(dest)) {
+    await rm(dest, { recursive: true, force: true });
+    await mkdirp(dest);
+  }
+
+  await copy(src, dest, {
+    recursive: true,
+    overwrite: true
+  });
 });

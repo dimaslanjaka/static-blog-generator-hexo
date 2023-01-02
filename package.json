@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "chimeraland": "file:multisite/chimeraland",
-    "fs-extra": "^11.1.0",
     "hexo": "^6.3.0",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",
@@ -49,8 +48,7 @@
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "file:themes/next",
-    "upath": "^2.0.1"
+    "hexo-theme-next": "file:themes/next"
   },
   "devDependencies": {
     "@types/hexo": "file:packages/@types/hexo",
@@ -66,6 +64,7 @@
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "fs-extra": "^11.1.0",
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-dom": "file:packages/gulp-dom",
@@ -78,6 +77,7 @@
     "static-blog-generator": "file:packages/static-blog-generator",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4",
+    "upath": "^2.0.1",
     "yargs": "^17.6.2"
   },
   "optionalDependencies": {
