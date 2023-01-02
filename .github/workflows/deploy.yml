@@ -33,6 +33,7 @@ jobs:
     strategy:
       fail-fast: false
     env:
+      cache_name: kamisato-ayaka
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
 
     steps:
@@ -101,8 +102,6 @@ jobs:
 
       - uses: pat-s/always-upload-cache@v3.0.11
         id: cache
-        env:
-          cache_name: kamisato-ayaka
         with:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
