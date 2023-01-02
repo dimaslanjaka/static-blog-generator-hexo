@@ -123,7 +123,6 @@ jobs:
         continue-on-error: true
         run: |
           npm run update
-          cd multisite/chimeraland && npm run build && cd ../..
           
       - name: Clean Install
         if: steps.install-npm.conclusion == 'failure'
