@@ -117,6 +117,7 @@ jobs:
             ./db.json
             ./public
             **/tmp
+            **/build
             ./build
             ./source/_posts
             **/node_modules
