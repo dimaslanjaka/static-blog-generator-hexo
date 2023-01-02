@@ -107,7 +107,7 @@ jobs:
             ${{ steps.set-env.outputs.cache-yarn2 }}
             ./db.json
             ./public
-            ./tmp
+            **/tmp
             ./source/_posts
             **/node_modules
           # key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
