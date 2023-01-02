@@ -125,7 +125,7 @@ jobs:
           npm run update
           
       - name: Clean Install
-        if: steps.install-npm.conclusion == 'failure'
+        if: steps.install-npm.outcome == 'failure'
         run: |
           npm ci
           cd multisite/chimeraland/chimeraland && npm ci && cd ..
@@ -156,6 +156,10 @@ jobs:
           echo "conclusion=${{ steps.sitemap.conclusion }}" > .deploy_git/reports/sitemap.txt
           echo "outcome=${{ steps.feed.outcome }}" >> .deploy_git/reports/feed.txt
           echo "outcome=${{ steps.sitemap.outcome }}" >> .deploy_git/reports/sitemap.txt
+          cd .deploy_git
+          git add reports
+          git commit -m "Update reports from ${{ env.GITHUB_COMMIT_URL }}"
+          git push
 
       - name: push chimeraland
         shell: bash
