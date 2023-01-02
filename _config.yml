@@ -424,22 +424,26 @@ seo:
       - dimaslanjaka.github.io
   sitemap: true
 
+# static-blog-generator
 ## Categories and Tags mapper
-### Assign existing tag to new tag
-tag_assign:
-### Assign existing category to new category
-category_assign:
-  TS: Programming
-  JS: Programming
-  Typescript: Programming
-  Javascript: Programming
-  GitHub: Programming
-### Replace Tag to New Tag
-tag_mapper:
-  JS: Javascript
-  TS: Typescript
-### Replace Category to New Category
-category_mapper:
-  JS: Javascript
-  TS: Typescript
+
+tags:
+  lowercase: true
+  mapper:
+    JS: javascript
+    TS: javascript
+  assign:
+    JS: programming
+    TS: programming
+    GitHub: Programming
+categories:
+  lowercase: true
+  mapper:
+    JS: javascript
+    TS: typescript
+  assign:
+    GitHub: Programming
+    JS: programming
+    TS: programming
+
 
