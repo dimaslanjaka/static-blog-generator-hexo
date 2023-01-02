@@ -123,10 +123,15 @@ jobs:
         continue-on-error: true
         run: |
           npm run update
+          cd multisite/chimeraland && npm run build && cd ../..
           
       - name: Clean Install
         if: steps.install-npm.conclusion == 'failure'
         run: npm ci
+        
+      - name: build chimeraland
+        run: npm run build
+        working-directory: ./multisite/chimeraland
 
       - run: gulp post:standalone
       - run: gulp post:copy
