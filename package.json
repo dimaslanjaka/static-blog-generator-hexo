@@ -27,7 +27,6 @@
     "version": "6.3.0"
   },
   "dependencies": {
-    "chimeraland": "file:multisite/chimeraland",
     "hexo": "^6.3.0",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",
@@ -81,6 +80,7 @@
     "yargs": "^17.6.2"
   },
   "optionalDependencies": {
+    "chimeraland": "file:multisite/chimeraland",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
