@@ -77,7 +77,7 @@ jobs:
           echo "cache npm   : ${{ env.CACHE_NPM }}"
           echo "cache yarn  : ${{ env.CACHE_YARN }}"
           echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
-          echo "npx gulp env"
+          npx gulp env
       - name: Set EOL git configs
         continue-on-error: true
         run: |
@@ -102,7 +102,7 @@ jobs:
       - uses: pat-s/always-upload-cache@v3.0.11
         id: cache
         env:
-          cache_name: kamisato
+          cache_name: kamisato-ayaka
         with:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
@@ -115,9 +115,9 @@ jobs:
             ./source/_posts
             **/node_modules
           # key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
-          key: "${{ env.cache_name }}-persistent"
+          key: ${{ env.cache_name }}
           restore-keys: |
-            ${{ env.cache_name }}-
+            ${{ env.cache_name }}
 
       - name: Install Global Packages
         # if: steps.cache.outputs.cache-hit != 'true'
