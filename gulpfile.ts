@@ -165,3 +165,8 @@ gulp.task('env', function (done) {
   console.log(envs);
   done();
 });
+
+gulp.task('hooks', function () {
+  const dest = join(__dirname, '.git/hooks');
+  return gulp.src('*.*', { ignore: ['**/*.{sample,js}'], cwd: join(__dirname, 'git-hooks') }).pipe(gulp.dest(dest));
+});
