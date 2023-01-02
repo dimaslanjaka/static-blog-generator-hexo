@@ -14,7 +14,7 @@ hexo.extend.helper.register('getAuthor', function (author, fallback) {
 });
 
 hexo.extend.helper.register(
-  'getPost',
+  'getPostByLabel',
   /**
    * hexo get post by key with name
    * @param {'tags'|'categories'} by
