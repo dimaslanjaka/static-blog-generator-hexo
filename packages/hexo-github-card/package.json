@@ -8,7 +8,10 @@
     "url": "https://github.com/Gisonrg/hexo-github-card.git"
   },
   "scripts": {
-    "update": "npx npm-check-updates -u"
+    "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
+    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
+    "update:ncu": "npx npm-check-updates -u",
+    "update": "run-s update:** && npm install && node postinstall.js"
   },
   "keywords": [
     "website",
@@ -32,8 +35,11 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.7.2",
-    "hexo-fs": "^4.0.0",
+    "hexo-fs": "^4.1.1",
+    "hexo-renderer-nunjucks": "^2.0.0",
     "nunjucks": "^3.2.3"
   },
-  "readmeFilename": "README.md"
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }
