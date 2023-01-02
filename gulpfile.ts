@@ -76,19 +76,15 @@ async function push(done?: gulp.TaskFunctionCallback) {
   const doPush = async (cwd: string, origin: string, branch: string) => {
     await spawnAsync('git', ['push', origin, branch], {
       cwd
-    });
+    }).catch(() => console.log('cannot push', cwd));
   };
 
   if (gh) {
-    try {
-      const submodules = gh.submodule.get();
-      for (let i = 0; i < submodules.length; i++) {
-        const sub = submodules[i];
-        console.log('push', sub.root);
-        doPush(sub.root, 'origin', sub.branch);
-      }
-    } catch (error) {
-      fcatch(error);
+    const submodules = gh.submodule.get();
+    for (let i = 0; i < submodules.length; i++) {
+      const sub = submodules[i];
+      console.log('push', sub.root, 'origin/' + sub.branch);
+      await doPush(sub.root, 'origin', sub.branch).catch(() => console.log('cannot push', cwd));
     }
 
     await doPush(cwd, 'origin', 'master');
@@ -118,8 +114,10 @@ async function commit() {
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github || new gch(cwd);
   const doCommit = async (cwd: string) => {
-    await spawnAsync('git', ['add', '.'], { cwd }).catch(fcatch);
-    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())], { cwd }).catch(fcatch);
+    await spawnAsync('git', ['add', '.'], { cwd }).catch(() => console.log('cannot add', cwd));
+    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())], { cwd }).catch(() =>
+      console.log('cannot commit', cwd)
+    );
   };
 
   // runners
@@ -135,11 +133,6 @@ async function commit() {
   } catch (e) {
     console.log(e.message);
   }
-}
-
-function fcatch(e: any) {
-  if (e instanceof Error) return console.log(e.message);
-  console.log(e);
 }
 
 /**
