@@ -108,6 +108,7 @@ jobs:
             ./db.json
             ./public
             **/tmp
+            ./build
             ./source/_posts
             **/node_modules
           # key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
