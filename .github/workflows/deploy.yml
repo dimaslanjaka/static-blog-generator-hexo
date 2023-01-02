@@ -109,7 +109,8 @@ jobs:
             ./public
             ./tmp
             ./source/_posts
-          key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
+          # key: "${{ env.cache_name }}-${{ hashFiles('**/package-lock.json') }}"
+          key: "${{ env.cache_name }}-persistent"
           restore-keys: |
             ${{ env.cache_name }}-
 
@@ -126,13 +127,10 @@ jobs:
           
       - name: Install Update
         if: steps.install-npm.outcome == 'failure'
-        run: |
-          npm update
-          cd multisite/chimeraland/chimeraland && npm update && cd ..
-          cd multisite/chimeraland && npm update && cd ../..
+        run: npm update
         
       - name: build chimeraland
-        run: npm run build
+        run: npm update && npm run build
         working-directory: ./multisite/chimeraland
 
       - run: gulp post:standalone
