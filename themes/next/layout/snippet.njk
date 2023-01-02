@@ -104,7 +104,7 @@
     <div class="py-4">
       <h2>Another Snippets</h2>
       <ul class="list-group">
-        {% for item in getPost('tags', ['snippet', 'script']) %}
+        {% for item in getPostByLabel('tags', ['snippet', 'script', 'snippets', 'scripts']) %}
         <li class="list-group-item">
           <img
             src="{{ item.thumbnail or item.photos[0] or 'https://thumbs.dreamstime.com/b/no-picture-available-placeholder-thumbnail-icon-illustration-261212107.jpg' }}"
