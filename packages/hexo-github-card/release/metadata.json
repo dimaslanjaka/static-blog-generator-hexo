@@ -1,20 +1,20 @@
 {
   "/release/hexo-github-card-1.0.5.tgz": {
     "integrity": {
-      "sha1": "b8855ff3de26d5e67c68d9d67a2a548ca3f6764e",
-      "sha256": "tSGiHuhoaCEkMfqjQKqnfru3fvTcRBbBOxEmNerDq4U=",
-      "md5": "e49f59c3c2361cbac1cbd017d6c7d74b",
-      "sha512": "qU+POPrQccU4vbwj7ccTQy5TY40KEn0Ypcti7tVzqvRTPMVY1+3/VvJeZ/dfY5RIZyKv3Cf1BFK3sxUWfw3X2w=="
+      "sha1": "72ed0fac30df6cfe0a1753fcd0f5cbc86fa55bc6",
+      "sha256": "8RwEi9PU0f5dx/62Qq42UCHCOILtftQq432uB6Kb2P8=",
+      "md5": "81a78a277be9971dd1f15ae1bd956861",
+      "sha512": "4sa6RPwQLISj4haCKSv3ke02s9jLOBbuTL201O4hyQZe47nDzRTLpA9aMdgrLtIbwkcF74im1/AsTUJdZxlZag=="
     },
-    "size": "9.45 KB"
+    "size": "9.46 KB"
   },
   "/release/hexo-github-card.tgz": {
     "integrity": {
-      "sha1": "b8855ff3de26d5e67c68d9d67a2a548ca3f6764e",
-      "sha256": "tSGiHuhoaCEkMfqjQKqnfru3fvTcRBbBOxEmNerDq4U=",
-      "md5": "e49f59c3c2361cbac1cbd017d6c7d74b",
-      "sha512": "qU+POPrQccU4vbwj7ccTQy5TY40KEn0Ypcti7tVzqvRTPMVY1+3/VvJeZ/dfY5RIZyKv3Cf1BFK3sxUWfw3X2w=="
+      "sha1": "72ed0fac30df6cfe0a1753fcd0f5cbc86fa55bc6",
+      "sha256": "8RwEi9PU0f5dx/62Qq42UCHCOILtftQq432uB6Kb2P8=",
+      "md5": "81a78a277be9971dd1f15ae1bd956861",
+      "sha512": "4sa6RPwQLISj4haCKSv3ke02s9jLOBbuTL201O4hyQZe47nDzRTLpA9aMdgrLtIbwkcF74im1/AsTUJdZxlZag=="
     },
-    "size": "9.45 KB"
+    "size": "9.46 KB"
   }
 }

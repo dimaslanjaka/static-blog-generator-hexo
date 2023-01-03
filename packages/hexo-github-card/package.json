@@ -16,7 +16,8 @@
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
     "update:ncu": "npx npm-check-updates -u",
-    "update": "run-s update:** && npm install && node postinstall.js"
+    "update": "run-s update:** && npm install && node postinstall.js",
+    "build": "node packer.js"
   },
   "keywords": [
     "website",
