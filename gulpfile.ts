@@ -8,17 +8,17 @@ import { deployConfig, getConfig, gulp } from 'static-blog-generator';
 
 /**
  * git clone
- * @param cwd
+ * @param destFolder
  */
-async function clone(cwd: string) {
-  if (!existsSync(cwd)) {
+async function clone(destFolder: string) {
+  if (!fs.existsSync(destFolder)) {
     // clone from blog root
     await spawnAsync('git', [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, '.deploy_git'], {
       cwd: __dirname
     });
     // update submodule from blog deployment dir
-    if (existsSync(join(deployConfig().deployDir, '.gitmodules'))) {
-      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], { cwd });
+    if (fs.existsSync(path.join(destFolder, '.gitmodules'))) {
+      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], { cwd: destFolder });
     }
   }
 }
