@@ -12,7 +12,7 @@ injector.register(
       return i18n_post_meta(name, link, post.path);
     });
     return `
-    <span class="post-meta-item">
+    <span class="post-meta-item" id="i18n-meta">
       <span class="post-meta-item-icon">
         ${fa_inline('globe', { prefix: 'fas' })}
         <i class="fa fa-globe"></i>
