@@ -27,6 +27,9 @@ async function clone(cwd: string) {
  * git pull on deploy dir
  */
 async function pull(done: gulp.TaskFunctionCallback) {
+  // register graceful shutdown
+  gracefulShutdown(pull.name, done);
+
   const config = getConfig();
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
@@ -69,6 +72,9 @@ async function pull(done: gulp.TaskFunctionCallback) {
 }
 
 async function push(done?: gulp.TaskFunctionCallback) {
+  // register graceful shutdown
+  gracefulShutdown(push.name, done);
+
   const config = getConfig();
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
@@ -109,11 +115,15 @@ async function getCurrentCommit() {
 /**
  * do commit including submodules
  */
-async function commit() {
+async function commit(done: (...args: any[]) => any) {
+  // register graceful shutdown
+  gracefulShutdown(commit.name, done);
+
   const config = getConfig();
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github || new gch(cwd);
   const doCommit = async (cwd: string) => {
+    console.log('commiting', cwd);
     await spawnAsync('git', ['add', '.'], { cwd }).catch(() => console.log('cannot add', cwd));
     await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())], { cwd }).catch(() =>
       console.log('cannot commit', cwd)
@@ -122,14 +132,16 @@ async function commit() {
 
   // runners
   try {
-    await doCommit(cwd);
+    // commit submodules first
     const submodules = gh.submodule.get();
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
       const cwd = sub.root;
-      console.log('commiting', sub.root);
       await doCommit(cwd);
     }
+
+    // commit root repo
+    await doCommit(cwd);
   } catch (e) {
     console.log(e.message);
   }
@@ -173,3 +185,17 @@ gulp.task('hooks', async function () {
     overwrite: true
   });
 });
+
+const callbacks: Record<string, (...args: any[]) => any> = {};
+function gracefulShutdown(key: string, callback: (...args: any[]) => any) {
+  callbacks[key] = callback;
+  process.on('SIGTERM', () => {
+    console.info('SIGTERM signal received.');
+    console.log('Closing http server.');
+    for (const fkey in callbacks) {
+      const func = callbacks[fkey];
+      func.apply(null);
+    }
+    process.exit(0);
+  });
+}
