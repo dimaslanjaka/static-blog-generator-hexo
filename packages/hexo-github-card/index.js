@@ -10,9 +10,9 @@ const path = require('path');
 const LIB_PATH = path.resolve(__dirname, './lib');
 const GITHUB_CARD_LIB_NAME = 'githubcard.js';
 const GITHUB_CARD_FILE_PATH = path.resolve(LIB_PATH, GITHUB_CARD_LIB_NAME);
-const GITHUB_CARD_ROUTE_NAME = 'github-card-lib';
+const GITHUB_CARD_ROUTE_NAME = 'js';
 const GITHUB_CARD_TAG_NAME = 'githubCard';
-const GITHUB_CARD_TEMPLATE = path.resolve(__dirname, 'card.njk');
+const GITHUB_CARD_TEMPLATE = path.resolve(__dirname, 'hexo-github-card.njk');
 
 nunjucks.configure(__dirname, {
   watch: false

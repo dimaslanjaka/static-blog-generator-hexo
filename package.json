@@ -24,10 +24,10 @@
     "refresh": "rimraf package-lock.json && npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
   },
   "hexo": {
-    "version": "6.3.0"
+    "version": "6.2.0"
   },
   "dependencies": {
-    "hexo": "^6.3.0",
+    "hexo": "^6.2.0",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",
     "hexo-excerpt": "^1.3.0",
@@ -36,10 +36,10 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
     "hexo-generator-json-content": "^4.2.3",
-    "hexo-generator-redirect": "file:packages/hexo-generator-redirect",
+    "hexo-generator-redirect": "file:packages/hexo-generator-redirect/release/hexo-generator-redirect.tgz",
     "hexo-generator-searchdb": "^1.4.1",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-github-card": "file:packages/hexo-github-card",
+    "hexo-github-card": "file:packages/hexo-github-card/release/hexo-github-card.tgz",
     "hexo-i18n": "^2.0.0",
     "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
