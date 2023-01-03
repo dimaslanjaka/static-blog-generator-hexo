@@ -22,4 +22,4 @@ if ! [ -x "$NODE_EXE" ]; then
   NODE_EXE=node
 fi
 
-"$NODE_EXE" "$basedir/pre-commit.js" "$@"
+"$NODE_EXE" "$basedir/pre-push.js" "$@"
