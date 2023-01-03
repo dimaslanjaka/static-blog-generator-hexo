@@ -1,4 +1,4 @@
-import { copy, existsSync, mkdirp, rm } from 'fs-extra';
+import fs, { copy, existsSync, mkdirp, rm } from 'fs-extra';
 import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
