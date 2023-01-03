@@ -194,8 +194,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           commit-message: "update: commit ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
-          branch: master # The branch the action should deploy to.
-          folder: .deploy_git # The folder the action should deploy.
+          branch: 'master' # The branch the action should deploy to.
+          folder: ".deploy_git" # The folder the action should deploy.
           force: false # merge instead push --force, (keep old / non modified) files?
           token: "${{ secrets.GITHUB_TOKEN }}" # github token
           repository-name: "dimaslanjaka/dimaslanjaka.github.io" # Repostory URL
