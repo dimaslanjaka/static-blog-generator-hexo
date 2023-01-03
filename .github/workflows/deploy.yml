@@ -193,7 +193,7 @@ jobs:
         #if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          message: "update: commit ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
+          commit-message: "update: commit ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
           branch: master # The branch the action should deploy to.
           folder: .deploy_git # The folder the action should deploy.
           force: false # merge instead push --force, (keep old / non modified) files?
