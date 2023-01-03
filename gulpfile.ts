@@ -80,17 +80,17 @@ async function push(done?: gulp.TaskFunctionCallback) {
   const gh = config.deploy.github;
 
   const doPush = async (cwd: string, origin: string, branch: string) => {
+    console.log('push', cleanCwd(cwd), origin + '/' + branch);
     await spawnAsync('git', ['push', origin, branch], {
       cwd
-    }).catch(() => console.log('cannot push', cwd));
+    }).catch(() => console.log('cannot push', cleanCwd(cwd)));
   };
 
   if (gh) {
     const submodules = gh.submodule.get();
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
-      console.log('push', sub.root, 'origin/' + sub.branch);
-      await doPush(sub.root, 'origin', sub.branch).catch(() => console.log('cannot push', cwd));
+      await doPush(sub.root, 'origin', sub.branch).catch(() => console.log('cannot push', cleanCwd(cwd)));
     }
 
     await doPush(cwd, 'origin', 'master');
@@ -100,6 +100,10 @@ async function push(done?: gulp.TaskFunctionCallback) {
 }
 
 gulp.task('push', push);
+
+function cleanCwd(cwd: string) {
+  return cwd.replace(__dirname, '');
+}
 
 /**
  * get current commit url
@@ -145,6 +149,8 @@ async function commit(done: (...args: any[]) => any) {
   } catch (e) {
     console.log(e.message);
   }
+
+  if (typeof done === 'function') done();
 }
 
 /**
