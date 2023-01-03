@@ -3,7 +3,7 @@ import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
-import { join } from 'path';
+import path, { join } from 'path';
 import { deployConfig, getConfig, gulp } from 'static-blog-generator';
 
 /**
