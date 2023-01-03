@@ -1,24 +1,27 @@
-import { copy, existsSync, mkdirp, rm } from 'fs-extra';
+import fs, { copy, existsSync, mkdirp, rm } from 'fs-extra';
 import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
-import { join } from 'path';
+import path, { join } from 'path';
 import { deployConfig, getConfig, gulp } from 'static-blog-generator';
 
 /**
  * git clone
- * @param cwd
+ * @param destFolder
  */
-async function clone(cwd: string) {
-  if (!existsSync(cwd)) {
-    // clone from blog root
-    await spawnAsync('git', [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, '.deploy_git'], {
-      cwd: __dirname
-    });
-    // update submodule from blog deployment dir
-    if (existsSync(join(deployConfig().deployDir, '.gitmodules'))) {
-      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], { cwd });
+async function clone(destFolder: string, options?: import('child_process').SpawnOptions) {
+  const spawnOpt = Object.assign({ cwd: __dirname }, options);
+  if (!fs.existsSync(destFolder)) {
+    // clone from root deployment dir
+    await spawnAsync(
+      'git',
+      [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, destFolder],
+      spawnOpt
+    );
+    // update submodule from deployment dir
+    if (fs.existsSync(path.join(destFolder, '.gitmodules'))) {
+      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], Object.assign(spawnOpt, { cwd: destFolder }));
     }
   }
 }
@@ -55,7 +58,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
   };
 
   try {
-    await clone(cwd);
+    await clone('.deploy_git', { cwd: __dirname });
     await doPull(cwd);
     if (gh) {
       const submodules = gh.submodule.get();
