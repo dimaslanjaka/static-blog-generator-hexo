@@ -197,7 +197,7 @@ jobs:
           branch: 'master' # The branch the action should deploy to.
           folder: ".deploy_git" # The folder the action should deploy.
           force: false # merge instead push --force, (keep old / non modified) files?
-          token: "${{ secrets.PAT }}" # github token
+          token: "${{ secrets.ACCESS_TOKEN }}" # github token
           repository-name: "dimaslanjaka/dimaslanjaka.github.io" # Repostory URL
           git-config-email: 'dimaslanjaka@gmail.com'
           git-config-name: 'dimaslanjaka'
