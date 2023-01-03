@@ -10,15 +10,18 @@ import { deployConfig, getConfig, gulp } from 'static-blog-generator';
  * git clone
  * @param destFolder
  */
-async function clone(destFolder: string) {
+async function clone(destFolder: string, options?: import('child_process').SpawnOptions) {
+  const spawnOpt = Object.assign({ cwd: __dirname }, options);
   if (!fs.existsSync(destFolder)) {
-    // clone from blog root
-    await spawnAsync('git', [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, '.deploy_git'], {
-      cwd: __dirname
-    });
-    // update submodule from blog deployment dir
+    // clone from root deployment dir
+    await spawnAsync(
+      'git',
+      [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, destFolder],
+      spawnOpt
+    );
+    // update submodule from deployment dir
     if (fs.existsSync(path.join(destFolder, '.gitmodules'))) {
-      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], { cwd: destFolder });
+      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], Object.assign(spawnOpt, { cwd: destFolder }));
     }
   }
 }
@@ -55,7 +58,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
   };
 
   try {
-    await clone(cwd);
+    await clone('.deploy_git', { cwd: __dirname });
     await doPull(cwd);
     if (gh) {
       const submodules = gh.submodule.get();
