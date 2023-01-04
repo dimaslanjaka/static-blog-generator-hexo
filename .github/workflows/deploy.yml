@@ -33,7 +33,6 @@ jobs:
     strategy:
       fail-fast: false
     env:
-      cache_name: c-1
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
 
     steps:
@@ -51,8 +50,8 @@ jobs:
           node-version: 18
           architecture: x64
           cache: 'npm'
-          cache-dependency-path: '.guid'
-          # check-latest: true
+          cache-dependency-path: '**/.guid'
+          check-latest: true
 
       - name: Set env
         id: set-env
@@ -113,13 +112,10 @@ jobs:
             /home/runner/build
             /home/runner/source/_posts
             **/node_modules
-          # key: "node-cache-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
-          key: ${{ env.cache_name }}
-          # key: ${{ hashFiles('.guid') }}
+          key: node-cache-${{ runner.os }}-npm-${{ hashFiles('**/.guid') }}
           restore-keys: |
-            ${{ env.cache_name }}
-            ${{ hashFiles('.guid') }}
-            node-cache-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+            node-cache-${{ runner.os }}-npm-${{ hashFiles('**/.guid') }}
+            node-cache-${{ runner.os }}-npm-
 
       - name: Install Global Packages
         # if: steps.cache.outputs.cache-hit != 'true'
