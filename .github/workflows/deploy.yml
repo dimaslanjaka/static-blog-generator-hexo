@@ -107,8 +107,8 @@ jobs:
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
-            ./db.json
-            ./public
+            **/db.json
+            **/public
             ./tmp
             ./build
             ./source/_posts
