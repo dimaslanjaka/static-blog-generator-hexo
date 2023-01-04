@@ -144,7 +144,7 @@ jobs:
         run: npx gulp env
 
       - name: build chimeraland
-        run: npm update && npm run build
+        run: npm install && npm run build
         working-directory: ./multisite/chimeraland
 
       - run: gulp post:standalone
