@@ -166,7 +166,7 @@ jobs:
 
       - name: push .deploy_git/docs
         shell: bash
-        id: push-manual
+        id: push-docs
         continue-on-error: true
         working-directory: ./.deploy_git/docs
         run: |
@@ -179,7 +179,7 @@ jobs:
 
       - name: push .deploy_git/page
         shell: bash
-        id: push-manual
+        id: push-page
         continue-on-error: true
         working-directory: ./.deploy_git/page
         run: |
@@ -193,7 +193,7 @@ jobs:
 
       - name: push .deploy_git/chimeraland
         shell: bash
-        id: push-manual
+        id: push-chimeraland
         continue-on-error: true
         working-directory: ./.deploy_git/chimeraland
         run: |
