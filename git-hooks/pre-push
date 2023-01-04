@@ -3,7 +3,7 @@
 # run before commit
 
 # update
-npm run update
+# npm run update
 
 # execute node
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
