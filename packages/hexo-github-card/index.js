@@ -3,7 +3,7 @@
 'use strict';
 
 const Promise = require('bluebird');
-const fs = require('hexo-fs');
+const fs = require('fs');
 const nunjucks = require('nunjucks');
 const path = require('path');
 
@@ -13,6 +13,7 @@ const GITHUB_CARD_FILE_PATH = path.resolve(LIB_PATH, GITHUB_CARD_LIB_NAME);
 const GITHUB_CARD_ROUTE_NAME = 'js';
 const GITHUB_CARD_TAG_NAME = 'githubCard';
 const GITHUB_CARD_TEMPLATE = path.resolve(__dirname, 'hexo-github-card.njk');
+const GITHUB_CARD_TEMPLATE_CONTENT = fs.readFileSync(GITHUB_CARD_TEMPLATE, 'utf-8');
 
 nunjucks.configure(__dirname, {
   watch: false
@@ -58,7 +59,7 @@ hexo.extend.tag.register(
     };
 
     return new Promise((resolve, reject) => {
-      nunjucks.render(GITHUB_CARD_TEMPLATE, payload, (err, res) => {
+      nunjucks.renderString(GITHUB_CARD_TEMPLATE_CONTENT, payload, (err, res) => {
         if (err) {
           return reject(err);
         }
