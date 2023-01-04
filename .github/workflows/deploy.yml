@@ -51,7 +51,7 @@ jobs:
           node-version: 18
           architecture: x64
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          cache-dependency-path: '.guid'
           # check-latest: true
 
       - name: Set env
@@ -107,16 +107,18 @@ jobs:
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
-            **/db.json
-            **/public
+            /home/runner/db.json
+            /home/runner/public
             /home/runner/tmp
             /home/runner/build
             /home/runner/source/_posts
             **/node_modules
-          key: "node-cache-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
-          # key: ${{ env.cache_name }}
+          # key: "node-cache-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          key: ${{ env.cache_name }}
+          # key: ${{ hashFiles('.guid') }}
           restore-keys: |
             ${{ env.cache_name }}
+            ${{ hashFiles('.guid') }}
             node-cache-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install Global Packages
