@@ -87,7 +87,6 @@
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz",
-    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
-    "termux-chimeraland": "file:multisite/chimeraland/chimeraland"
+    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
   }
 }
