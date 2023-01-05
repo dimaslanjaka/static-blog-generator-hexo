@@ -150,6 +150,8 @@ jobs:
         continue-on-error: true
         run: |
           npm run update
+          npm i -O file:multisite/chimeraland/chimeraland
+          npm i -O file:multisite/chimeraland
 
       - name: Install Update
         if: steps.install-npm.outcome == 'failure'
