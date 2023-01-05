@@ -55,41 +55,45 @@ export class SiteMapCrawlerCore {
             return done();
           }
 
-          const $ = cheerio.load(body);
-          const hrefs = $('[href]');
-          const filteredLinks = new Set<string>();
+          try {
+            const $ = cheerio.load(body);
+            const hrefs = $('[href]');
+            const filteredLinks = new Set<string>();
 
-          hrefs.each(function (i) {
-            if (hrefs.eq(i).get(0)?.tagName.toLowerCase() !== 'a') {
-              const href = hrefs.eq(i).attr('href');
-              if (!href || !/(\/|.html)$/gi.test(href)) return;
-            }
-            const href = self.filterLink(link, hrefs.eq(i).attr('href') || '')?.trim();
-
-            if (typeof href === 'string' && href.length > 0) {
-              const dirUrl = link.substring(0, link.lastIndexOf('/'));
-              if (/^https?:\/\//i.test(href.trim())) {
-                filteredLinks.add(href);
-              } else {
-                filteredLinks.add(dirUrl + '/' + href);
+            hrefs.each(function (i) {
+              if (hrefs.eq(i).get(0)?.tagName.toLowerCase() !== 'a') {
+                const href = hrefs.eq(i).attr('href');
+                if (!href || !/(\/|.html)$/gi.test(href)) return;
               }
-            }
-          });
+              const href = self.filterLink(link, hrefs.eq(i).attr('href') || '')?.trim();
 
-          const arrayLinks = Array.from(filteredLinks).map((url) => {
-            if (url.endsWith('/')) {
-              // url ends with. / -> /index.html
-              url += 'index.html';
-            } else if (!/(\w+\.\w+)$/.test(url)) {
-              // url doesnt have extension. /path -> /path/index.html
-              url += '/index.html';
-            }
-            if (!core_opt.keepQuery) return url.split('?')[0];
-            return url;
-          });
+              if (typeof href === 'string' && href.length > 0) {
+                const dirUrl = link.substring(0, link.lastIndexOf('/'));
+                if (/^https?:\/\//i.test(href.trim())) {
+                  filteredLinks.add(href);
+                } else {
+                  filteredLinks.add(dirUrl + '/' + href);
+                }
+              }
+            });
 
-          if (arrayLinks.length > 0) {
-            siteMap[link] = arrayLinks;
+            const arrayLinks = Array.from(filteredLinks).map((url) => {
+              if (url.endsWith('/')) {
+                // url ends with. / -> /index.html
+                url += 'index.html';
+              } else if (!/(\w+\.\w+)$/.test(url)) {
+                // url doesnt have extension. /path -> /path/index.html
+                url += '/index.html';
+              }
+              if (!core_opt.keepQuery) return url.split('?')[0];
+              return url;
+            });
+
+            if (arrayLinks.length > 0) {
+              siteMap[link] = arrayLinks;
+            }
+          } catch {
+            console.log('sitemap-crawler', 'cannot parse', link);
           }
           return done();
         });

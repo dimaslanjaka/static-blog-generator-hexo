@@ -33,42 +33,47 @@ class SiteMapCrawlerCore {
                     }
                     return done();
                 }
-                const $ = cheerio_1.default.load(body);
-                const hrefs = $('[href]');
-                const filteredLinks = new Set();
-                hrefs.each(function (i) {
-                    var _a, _b;
-                    if (((_a = hrefs.eq(i).get(0)) === null || _a === void 0 ? void 0 : _a.tagName.toLowerCase()) !== 'a') {
-                        const href = hrefs.eq(i).attr('href');
-                        if (!href || !/(\/|.html)$/gi.test(href))
-                            return;
-                    }
-                    const href = (_b = self.filterLink(link, hrefs.eq(i).attr('href') || '')) === null || _b === void 0 ? void 0 : _b.trim();
-                    if (typeof href === 'string' && href.length > 0) {
-                        const dirUrl = link.substring(0, link.lastIndexOf('/'));
-                        if (/^https?:\/\//i.test(href.trim())) {
-                            filteredLinks.add(href);
+                try {
+                    const $ = cheerio_1.default.load(body);
+                    const hrefs = $('[href]');
+                    const filteredLinks = new Set();
+                    hrefs.each(function (i) {
+                        var _a, _b;
+                        if (((_a = hrefs.eq(i).get(0)) === null || _a === void 0 ? void 0 : _a.tagName.toLowerCase()) !== 'a') {
+                            const href = hrefs.eq(i).attr('href');
+                            if (!href || !/(\/|.html)$/gi.test(href))
+                                return;
                         }
-                        else {
-                            filteredLinks.add(dirUrl + '/' + href);
+                        const href = (_b = self.filterLink(link, hrefs.eq(i).attr('href') || '')) === null || _b === void 0 ? void 0 : _b.trim();
+                        if (typeof href === 'string' && href.length > 0) {
+                            const dirUrl = link.substring(0, link.lastIndexOf('/'));
+                            if (/^https?:\/\//i.test(href.trim())) {
+                                filteredLinks.add(href);
+                            }
+                            else {
+                                filteredLinks.add(dirUrl + '/' + href);
+                            }
                         }
+                    });
+                    const arrayLinks = Array.from(filteredLinks).map((url) => {
+                        if (url.endsWith('/')) {
+                            // url ends with. / -> /index.html
+                            url += 'index.html';
+                        }
+                        else if (!/(\w+\.\w+)$/.test(url)) {
+                            // url doesnt have extension. /path -> /path/index.html
+                            url += '/index.html';
+                        }
+                        if (!core_opt.keepQuery)
+                            return url.split('?')[0];
+                        return url;
+                    });
+                    if (arrayLinks.length > 0) {
+                        siteMap[link] = arrayLinks;
                     }
-                });
-                const arrayLinks = Array.from(filteredLinks).map((url) => {
-                    if (url.endsWith('/')) {
-                        // url ends with. / -> /index.html
-                        url += 'index.html';
-                    }
-                    else if (!/(\w+\.\w+)$/.test(url)) {
-                        // url doesnt have extension. /path -> /path/index.html
-                        url += '/index.html';
-                    }
-                    if (!core_opt.keepQuery)
-                        return url.split('?')[0];
-                    return url;
-                });
-                if (arrayLinks.length > 0) {
-                    siteMap[link] = arrayLinks;
+                }
+                catch (_a) {
+                    console.log('sitemap-crawler', 'cannot parse', link);
                 }
                 return done();
             });
