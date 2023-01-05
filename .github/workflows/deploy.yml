@@ -76,10 +76,6 @@ jobs:
           path: .deploy_git/docs
           token: "${{ secrets.ACCESS_TOKEN }}"
 
-      - name: test cloned
-        run: ls
-        working-directory: ./.deploy_git
-
       # NODE SETUP
       - uses: actions/setup-node@v3
         with:
@@ -168,7 +164,6 @@ jobs:
         run: npm install && npm run build
         working-directory: ./multisite/chimeraland
 
-      - run: gulp clean-archives
       - run: gulp post:standalone
       - run: gulp post:copy
       - run: hexo generate
