@@ -59,22 +59,26 @@ jobs:
         with:
           repository: dimaslanjaka/chimeraland
           ref: gh-pages
-          path: .deploy_git
+          path: .deploy_git/chimeraland
           token: "${{ secrets.ACCESS_TOKEN }}"
       - name: Checkout .deploy_git/page
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/page
           ref: gh-pages
-          path: .deploy_git
+          path: .deploy_git/page
           token: "${{ secrets.ACCESS_TOKEN }}"
       - name: Checkout .deploy_git/docs
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/docs
           ref: master
-          path: .deploy_git
+          path: .deploy_git/docs
           token: "${{ secrets.ACCESS_TOKEN }}"
+
+      - name: test cloned
+        run: ls
+        working-directory: ./.deploy_git
 
       # NODE SETUP
       - uses: actions/setup-node@v3
