@@ -164,6 +164,7 @@ jobs:
         run: npm install && npm run build
         working-directory: ./multisite/chimeraland
 
+      - run: gulp clean-archives
       - run: gulp post:standalone
       - run: gulp post:copy
       - run: hexo generate
