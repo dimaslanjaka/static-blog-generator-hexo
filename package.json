@@ -50,6 +50,7 @@
     "hexo-theme-next": "file:themes/next"
   },
   "devDependencies": {
+    "@types/hexo": "file:packages/@types/hexo",
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
     "@types/node": "^18.11.18",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
