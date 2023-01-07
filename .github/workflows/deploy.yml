@@ -164,6 +164,9 @@ jobs:
       - name: build chimeraland
         run: npm install && npm run build
         working-directory: ./multisite/chimeraland
+      - name: build static-blog-generator
+        run: npm install && npm run build
+        working-directory: ./packages/static-blog-generator
 
       - run: gulp post:standalone
       - run: gulp post:copy
