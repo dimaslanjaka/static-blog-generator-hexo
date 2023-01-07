@@ -4,8 +4,8 @@ import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
 import path, { join } from 'path';
+import { getConfig, gulp } from 'static-blog-generator';
 import './gulpfile-copy';
-import { getConfig, gulp } from './packages/static-blog-generator/src';
 
 /**
  * git clone
