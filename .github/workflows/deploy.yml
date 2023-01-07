@@ -203,7 +203,9 @@ jobs:
           git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
           git add .
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git push origin master --recurse-submodules=on-demand
+
+      - run: git push origin master
+      - run: git push --recurse-submodules=on-demand
 
       - name: Deploy 🚀
         #if: ${{ false }}
