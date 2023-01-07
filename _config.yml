@@ -340,14 +340,6 @@ browsersync:
   browser: "firefox"
   open: false
 
-# static-blog-generator
-generator:
-  cache: true
-  type: hexo
-  copy:
-    posts:
-      space: true
-
 # https://www.npmjs.com/package/hexo-excerpt
 excerpt:
   depth: 10
@@ -425,6 +417,12 @@ seo:
   sitemap: true
 
 # static-blog-generator
+## Core configuration
+generator:
+  cache: true
+  type: hexo
+  verbose: false
+  amp: false
 ## Categories and Tags mapper
 
 tags:
