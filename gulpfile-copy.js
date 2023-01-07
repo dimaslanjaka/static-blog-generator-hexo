@@ -1,30 +1,37 @@
-const gulp = require('gulp');
-const { Application } = require('static-blog-generator');
+process.cwd = () => __dirname;
 
-async function copy(done) {
-  const api = new Application(__dirname);
-  console.log('starting post copy');
-  await api
-    .copy()
+const gulp = require('gulp');
+const { Application, noop } = require('./packages/static-blog-generator/dist');
+
+function pCopy(done) {
+  const api = new Application(__dirname, {
+    exclude: []
+  });
+
+  api
+    .clean()
+    .then(() => {
+      console.log('project clean done occurs');
+    })
+    .then(api.copy)
     .then(() => {
       console.log('post copy done occurs');
-      done();
     })
     .catch(() => {
       console.log('post copy error occurs');
-      done();
     })
     .finally(() => {
       console.log('post copy finally occurs');
-      done();
+      if (typeof done == 'function') done();
     });
 }
 
-gulp.task('start-copy', gulp.series(copy));
+gulp.task('start-copy', gulp.series(pCopy));
 
 if (require.main === module) {
   //console.log('called directly');
-  copy();
+  pCopy(noop);
 } else {
   //console.log('required as a module');
+  module.exports = { copy: pCopy };
 }
