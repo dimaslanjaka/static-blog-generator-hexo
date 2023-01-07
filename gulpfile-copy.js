@@ -1,5 +1,5 @@
 process.cwd = () => __dirname;
-process.env.DEBUG = 'post:*';
+process.env.DEBUG = 'post:label,post:error';
 
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
