@@ -5,7 +5,7 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
 import path, { join } from 'path';
 import './gulpfile-copy';
-import { getConfig, gulp } from './packages/static-blog-generator';
+import { getConfig, gulp } from './packages/static-blog-generator/dist';
 
 /**
  * git clone

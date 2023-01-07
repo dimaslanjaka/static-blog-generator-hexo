@@ -1,4 +1,4 @@
-const { Application, gulp } = require('./packages/static-blog-generator');
+const { Application, gulp } = require('./packages/static-blog-generator/dist');
 
 function copy(done) {
   const api = new Application(__dirname);
