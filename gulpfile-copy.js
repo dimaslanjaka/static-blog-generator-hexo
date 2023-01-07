@@ -5,15 +5,7 @@ const gulp = require('gulp');
 const { Application, noop } = require('./packages/static-blog-generator/dist');
 
 function pCopy(done) {
-  const api = new Application(__dirname, {
-    // exclude: ['**/.*', '**/.{vscode,github,cache}/**', '**/frontmatter.json', '**/frontmatter/**']
-  });
-  api
-    .clean()
-    .then(() => api.copy())
-    .then(console.log)
-    .finally(done);
-  /*
+  const api = new Application(__dirname);
   api
     .clean()
     .then(() => {
@@ -29,7 +21,7 @@ function pCopy(done) {
     .finally(() => {
       console.log('post copy finally occurs');
       if (typeof done == 'function') done();
-    });*/
+    });
 }
 
 gulp.task('start-copy', gulp.series(pCopy));
