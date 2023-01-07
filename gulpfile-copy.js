@@ -1,9 +1,10 @@
-const { Application, gulp } = require('./packages/static-blog-generator/dist');
+const gulp = require('gulp');
+const { Application } = require('./packages/static-blog-generator/dist');
 
-function copy(done) {
+async function copy(done) {
   const api = new Application(__dirname);
-  console.log('starting copy');
-  api
+  console.log('starting post copy');
+  await api
     .copy()
     .then(() => {
       console.log('post copy done occurs');
