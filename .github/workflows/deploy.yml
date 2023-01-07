@@ -159,8 +159,7 @@ jobs:
         if: steps.install-npm.outcome == 'failure'
         run: npm update
 
-      - name: Dump process.env
-        run: npx gulp env
+      - run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
 
       - name: build chimeraland
         run: npm install && npm run build
