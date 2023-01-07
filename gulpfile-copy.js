@@ -1,13 +1,14 @@
 process.cwd = () => __dirname;
 
 const gulp = require('gulp');
-const { Application, noop } = require('./packages/static-blog-generator/dist');
+const { Application, noop, copyAllPosts } = require('./packages/static-blog-generator/dist');
 
 function pCopy(done) {
   const api = new Application(__dirname, {
-    exclude: []
+    exclude: ['**/.*']
   });
-
+  copyAllPosts(done);
+  /*
   api
     .clean()
     .then(() => {
@@ -23,7 +24,7 @@ function pCopy(done) {
     .finally(() => {
       console.log('post copy finally occurs');
       if (typeof done == 'function') done();
-    });
+    });*/
 }
 
 gulp.task('start-copy', gulp.series(pCopy));
