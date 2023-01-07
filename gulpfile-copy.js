@@ -1,13 +1,18 @@
 process.cwd = () => __dirname;
+process.env.DEBUG = 'post:error';
 
 const gulp = require('gulp');
-const { Application, noop, copyAllPosts } = require('./packages/static-blog-generator/dist');
+const { Application, noop } = require('./packages/static-blog-generator/dist');
 
 function pCopy(done) {
   const api = new Application(__dirname, {
-    exclude: ['**/.*']
+    // exclude: ['**/.*', '**/.{vscode,github,cache}/**', '**/frontmatter.json', '**/frontmatter/**']
   });
-  copyAllPosts(done);
+  api
+    .clean()
+    .then(() => api.copy())
+    .then(console.log)
+    .finally(done);
   /*
   api
     .clean()
