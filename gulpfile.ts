@@ -4,15 +4,8 @@ import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
 import path, { join } from 'path';
-import { Application, getConfig, gulp } from 'static-blog-generator';
-
-gulp.task('post:copy', function (done) {
-  const api = new Application(__dirname);
-  api
-    .copy()
-    .then(() => done())
-    .catch(done);
-});
+import { getConfig, gulp } from 'static-blog-generator';
+import './gulpfile-copy';
 
 /**
  * git clone
