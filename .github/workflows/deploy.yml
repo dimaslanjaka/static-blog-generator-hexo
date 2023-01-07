@@ -169,7 +169,7 @@ jobs:
         working-directory: ./packages/static-blog-generator
 
       - name: Cleaning
-        if: contains(github.event.head_commit.message, 'update deps')
+        if: contains(github.event.head_commit.message, 'update dep')
         run: gulp clean
       - run: gulp post:standalone
       - run: gulp post:copy
