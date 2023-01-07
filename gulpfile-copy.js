@@ -1,12 +1,16 @@
 process.cwd = () => __dirname;
-process.env.DEBUG = 'post:error';
+process.env.DEBUG = 'post:*';
 
+const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { Application, noop } = require('./packages/static-blog-generator/dist');
 
-function pCopy(done) {
+async function pCopy(done) {
+  await spawnAsync('npm', ['run', 'build:nopack'], { cwd: __dirname + '/packages/static-blog-generator' }).then((r) =>
+    console.log(r.output.join('\n'))
+  );
   const api = new Application(__dirname);
-  api
+  await api
     .clean()
     .then(() => {
       console.log('project clean done occurs');
