@@ -13,7 +13,7 @@ function pCopy(done) {
     .then(() => {
       console.log('project clean done occurs');
     })
-    .then(api.copy)
+    .then(() => api.copy())
     .then(() => {
       console.log('post copy done occurs');
     })
