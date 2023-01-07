@@ -146,8 +146,6 @@ jobs:
         # if: steps.cache.outputs.cache-hit != 'true'
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli rimraf npm-run-all npm-check-updates --location=global
 
-      - run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
-
       - name: Install dependencies
         id: install-npm
         shell: bash
@@ -160,6 +158,8 @@ jobs:
       - name: Install Update
         if: steps.install-npm.outcome == 'failure'
         run: npm update
+
+      - run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
 
       - name: build chimeraland
         run: npm install && npm run build
