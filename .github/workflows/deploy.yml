@@ -135,6 +135,7 @@ jobs:
             /home/runner/tmp
             /home/runner/build
             /home/runner/source/_posts
+            **/dist/**
             **/node_modules
           key: node-cache-${{ runner.os }}-npm-${{ hashFiles('**/.guid') }}
           restore-keys: |
