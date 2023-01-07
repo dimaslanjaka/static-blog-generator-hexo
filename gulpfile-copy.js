@@ -19,8 +19,9 @@ async function pCopy(done) {
     .then(() => {
       console.log('post copy done occurs');
     })
-    .catch(() => {
+    .catch((e) => {
       console.log('post copy error occurs');
+      console.log(e);
     })
     .finally(() => {
       console.log('post copy finally occurs');
