@@ -172,7 +172,7 @@ jobs:
         if: contains(github.event.head_commit.message, 'update dep')
         run: gulp actions:clean
       - run: gulp post:standalone
-      - run: gulp actions:copy
+      - run: node gulpfile-github-actions.js
       - run: hexo generate
       - run: gulp sitemap
         continue-on-error: true

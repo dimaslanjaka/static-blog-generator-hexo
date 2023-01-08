@@ -44,20 +44,30 @@ async function cleanCopy(done) {
     permalink: ':title.html'
   });
 
-  console.log('clean-start');
-  await api.clean();
-  console.log('clean-ends');
-  console.log('standalone-start');
-  await api.standalone();
-  console.log('standalone-ends');
-  console.log('copy-start');
-  await api.copy().catch((e) => {
-    console.log('post copy error occurs');
+  try {
+    console.log('clean-start');
+    await api.clean();
+    console.log('clean-ends');
+    console.log('standalone-start');
+    await api.standalone();
+    console.log('standalone-ends');
+    console.log('copy-start');
+    await api.copy().catch((e) => {
+      console.log('post copy error occurs');
+      console.log(e);
+    });
+    console.log('copy-ends');
+  } catch (e) {
     console.log(e);
-  });
-  console.log('copy-ends');
+  }
 
   if (typeof done == 'function') done();
+}
+
+if (require.main === module) {
+  cleanCopy();
+} else {
+  /// console.log('required as a module');
 }
 
 gulp.task('actions:copy', () => gulp.series(cleanCopy));
