@@ -81,8 +81,8 @@ jobs:
         with:
           node-version: 18
           architecture: x64
-          cache: 'npm'
-          cache-dependency-path: '**/.guid'
+          #cache: 'npm'
+          #cache-dependency-path: '**/.guid'
           check-latest: true
 
       - name: Set env
