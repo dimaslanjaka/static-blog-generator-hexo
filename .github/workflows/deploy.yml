@@ -176,7 +176,7 @@ jobs:
           sudo apt-get --only-upgrade install libvips
 
       - name: build chimeraland
-        run: npm install && npm run build
+        run: npm install --unsafe-perm && npm run build
         working-directory: ./multisite/chimeraland
       - name: build static-blog-generator
         run: npm install && npm run build
