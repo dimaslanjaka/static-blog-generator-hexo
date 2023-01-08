@@ -41,7 +41,8 @@ async function cleanCopy(done) {
     console.log('static-blog-generator builded successful');
   });
   const api = new Application(__dirname, {
-    permalink: ':title.html'
+    permalink: ':title.html',
+    cache: false
   });
 
   try {
