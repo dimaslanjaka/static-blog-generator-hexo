@@ -9,7 +9,9 @@ async function pCopy(done) {
   await spawnAsync('npm', ['run', 'build:nopack'], { cwd: __dirname + '/packages/static-blog-generator' }).then((r) =>
     console.log(r.output.join('\n'))
   );
-  const api = new Application(__dirname);
+  const api = new Application(__dirname, {
+    permalink: ':title.html'
+  });
   await api
     .clean()
     .then(() => {
@@ -29,7 +31,7 @@ async function pCopy(done) {
     });
 }
 
-gulp.task('start-copy', gulp.series(pCopy));
+gulp.task('start-copy', () => gulp.series(pCopy));
 
 if (require.main === module) {
   //console.log('called directly');
