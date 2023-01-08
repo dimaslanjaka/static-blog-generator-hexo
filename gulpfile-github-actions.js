@@ -1,5 +1,5 @@
 process.cwd = () => __dirname;
-process.env.DEBUG = 'post:label,post:error';
+process.env.DEBUG = 'post:permalink,post:error';
 
 const path = require('path');
 const upath = require('upath');
