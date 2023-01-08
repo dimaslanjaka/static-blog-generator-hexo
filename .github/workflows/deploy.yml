@@ -160,6 +160,20 @@ jobs:
         run: npm update
 
       - run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
+      - name: Fix Sharp
+        if: ${{ false }}
+        continue-on-error: true
+        run: |
+          git clone https://github.com/jcupitt/libvips.git
+          cd libvips/
+          # install dependencies if you have errors during autogen.sh
+          sudo apt install gtk-doc-tools
+          sudo apt install gobject-introspection
+          ./autogen.sh
+          make
+          sudo make install
+          sudo apt-get update
+          sudo apt-get --only-upgrade install libvips
 
       - name: build chimeraland
         run: npm install && npm run build
