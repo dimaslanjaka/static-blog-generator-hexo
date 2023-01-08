@@ -2,12 +2,12 @@
 import './gulpfile-github-actions';
 ///
 
-import fs, { copy, existsSync, mkdirp, rm } from 'fs-extra';
+import fs from 'fs-extra';
 import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
-import path, { join } from 'path';
+import path from 'path';
 import { getConfig, gulp } from 'static-blog-generator';
 
 /**
@@ -183,20 +183,6 @@ gulp.task('env', function (done) {
   const envs = process.env;
   console.log(envs);
   done();
-});
-
-gulp.task('hooks', async function () {
-  const dest = join(__dirname, '.git/hooks');
-  const src = join(__dirname, 'git-hooks');
-  if (existsSync(dest)) {
-    await rm(dest, { recursive: true, force: true });
-    await mkdirp(dest);
-  }
-
-  await copy(src, dest, {
-    recursive: true,
-    overwrite: true
-  });
 });
 
 const callbacks: Record<string, (...args: any[]) => any> = {};
