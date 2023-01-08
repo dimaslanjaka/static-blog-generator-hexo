@@ -1,3 +1,7 @@
+///
+import './gulpfile-github-actions';
+///
+
 import fs, { copy, existsSync, mkdirp, rm } from 'fs-extra';
 import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
@@ -5,8 +9,6 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
 import path, { join } from 'path';
 import { getConfig, gulp } from 'static-blog-generator';
-//import './gulpfile-copy';
-//import './gulpfile-github-actions';
 
 /**
  * git clone
