@@ -35,7 +35,7 @@ gulp.task('actions:clean', function (done) {
     });
 });
 
-async function pCopy(done) {
+async function cleanCopy(done) {
   await spawnAsync('npm', ['run', 'build:nopack'], { cwd: __dirname + '/packages/static-blog-generator' }).then((_) => {
     // console.log(_.output.join('\n'));
     console.log('static-blog-generator builded successful');
@@ -60,7 +60,7 @@ async function pCopy(done) {
   if (typeof done == 'function') done();
 }
 
-gulp.task('actions:copy', () => gulp.series(pCopy));
+gulp.task('actions:copy', () => gulp.series(cleanCopy));
 
 /**
  * convert file to hash
