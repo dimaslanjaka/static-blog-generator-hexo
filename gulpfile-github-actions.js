@@ -3,7 +3,7 @@ process.env.DEBUG = 'post:permalink,post:error';
 
 const path = require('path');
 const upath = require('upath');
-const { gulp } = require('static-blog-generator');
+const gulp = require('gulp');
 const fs = require('fs-extra');
 const Axios = require('axios');
 const glob = require('glob');
@@ -42,14 +42,11 @@ async function cleanCopy(done) {
     // console.log(_.output.join('\n'));
     console.log('static-blog-generator builded successful');
   });
-  const api = new Application(__dirname, {
-    permalink: ':title.html',
-    cache: false
-  });
+  const api = new Application(__dirname);
 
   try {
     console.log('clean-start');
-    await api.clean();
+    await api.clean('database');
     console.log('clean-ends');
     console.log('standalone-start');
     await api.standalone();
