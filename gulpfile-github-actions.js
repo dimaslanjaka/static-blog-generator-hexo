@@ -3,13 +3,12 @@ process.env.DEBUG = 'post:permalink,post:error';
 
 const path = require('path');
 const upath = require('upath');
-const gulp = require('gulp');
 const fs = require('fs-extra');
 const Axios = require('axios');
 const glob = require('glob');
 const crypto = require('crypto');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
-const { Application } = require('./packages/static-blog-generator');
+const { Application, gulp } = require('./packages/static-blog-generator');
 const { persistentCache } = require('persistent-cache');
 
 gulp.task('actions:clean', function (done) {
@@ -48,9 +47,9 @@ async function cleanCopy(done) {
     console.log('clean-start');
     await api.clean('database');
     console.log('clean-ends');
-    console.log('standalone-start');
-    await api.standalone();
-    console.log('standalone-ends');
+    //console.log('standalone-start');
+    //await api.standalone();
+    //console.log('standalone-ends');
     console.log('copy-start');
     await api.copy().catch((e) => {
       console.log('post copy error occurs');
