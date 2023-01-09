@@ -47,9 +47,9 @@ async function cleanCopy(done) {
     console.log('clean-start');
     await api.clean('database');
     console.log('clean-ends');
-    //console.log('standalone-start');
-    //await api.standalone();
-    //console.log('standalone-ends');
+    console.log('standalone-start');
+    await api.standalone();
+    console.log('standalone-ends');
     console.log('copy-start');
     await api.copy().catch((e) => {
       console.log('post copy error occurs');

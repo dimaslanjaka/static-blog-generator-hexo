@@ -183,6 +183,13 @@ jobs:
 
       - name: build chimeraland
         run: npm install --unsafe-perm && npm run build
+        continue-on-error: true
+        id: chimera1
+        working-directory: ./multisite/chimeraland
+      - name: build chimeraland
+        run: npm rebuild && npm run build
+        continue-on-error: true
+        if: ${{ steps.chimera1.outcome }} == 'failure'
         working-directory: ./multisite/chimeraland
       - name: build static-blog-generator
         run: npm install && npm run build
