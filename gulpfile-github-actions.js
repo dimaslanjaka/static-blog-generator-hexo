@@ -44,9 +44,9 @@ async function cleanCopy(done) {
   const api = new Application(__dirname);
 
   try {
-    console.log('clean-start');
-    await api.clean('database');
-    console.log('clean-ends');
+    //console.log('clean-start');
+    //await api.clean('database');
+    //console.log('clean-ends');
     console.log('standalone-start');
     await api.standalone();
     console.log('standalone-ends');

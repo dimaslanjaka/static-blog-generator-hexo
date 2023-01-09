@@ -167,7 +167,8 @@ jobs:
         if: steps.cache.cache-hit == 'true'
       #- run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
       - name: Fix Sharp
-        if: ${{ false }}
+        #if: ${{ false }}
+        if: steps.cache.cache-hit != 'true'
         continue-on-error: true
         run: |
           git clone https://github.com/jcupitt/libvips.git
@@ -182,7 +183,7 @@ jobs:
           sudo apt-get --only-upgrade install libvips
 
       - name: build chimeraland
-        run: npm install --unsafe-perm && npm run build
+        run: npm install sharp && npm run build
         continue-on-error: true
         id: chimera1
         working-directory: ./multisite/chimeraland
