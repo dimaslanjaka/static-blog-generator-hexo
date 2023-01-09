@@ -162,6 +162,9 @@ jobs:
         if: steps.install-npm.outcome == 'failure'
         run: npm update
 
+      - name: Rebuild on cached hit
+        run: npm rebuild
+        if: steps.cache.cache-hit == 'true'
       - run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
       - name: Fix Sharp
         if: ${{ false }}
