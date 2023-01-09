@@ -1,0 +1,29 @@
+{
+  "/release/termux-chimeraland-0.0.1.tgz": {
+    "integrity": {
+      "sha1": "f1f326f907fd3c131cda72961262d5ea6c1f5dd7",
+      "sha256": "bvX2qgcgQCeUQSUQEliC9oKxL0WcuRYBYyKwET59MzU=",
+      "md5": "721820f9c4fd504a76c406e314f11068",
+      "sha512": "lCd8BXF1ykFO0FMIcbU64yx4E2WlVEWSZdW3OqAJVoekz7uom7dxqL39lpLwy3+Yn5SlM2A+mYyhll/ZtebZ9g=="
+    },
+    "size": "120.52 KB"
+  },
+  "/release/termux-chimeraland.tgz": {
+    "integrity": {
+      "sha1": "f1f326f907fd3c131cda72961262d5ea6c1f5dd7",
+      "sha256": "bvX2qgcgQCeUQSUQEliC9oKxL0WcuRYBYyKwET59MzU=",
+      "md5": "721820f9c4fd504a76c406e314f11068",
+      "sha512": "lCd8BXF1ykFO0FMIcbU64yx4E2WlVEWSZdW3OqAJVoekz7uom7dxqL39lpLwy3+Yn5SlM2A+mYyhll/ZtebZ9g=="
+    },
+    "size": "120.52 KB"
+  },
+  "/package-lock.json": {
+    "integrity": {
+      "sha1": "3f5cc648fd14e21c92f2360ae0560f10b02d0c80",
+      "sha256": "Cf0Su7ZUvXgJHXH8NbzATeCT/LcYtBXQNAusX+sxoAI=",
+      "md5": "290362e0715eed236770aa30bd450702",
+      "sha512": "2y4xaIutZmkLHwMDk0oP06rji+AnZCND5dLodazOvPWNHVZJyri792wUw+gFlJdaGorvThRWeTy2aSD3qCBZxQ=="
+    },
+    "size": "366.29 KB"
+  }
+}
