@@ -165,7 +165,7 @@ jobs:
       - name: Rebuild on cached hit
         run: npm rebuild
         if: steps.cache.cache-hit == 'true'
-      - run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
+      #- run: npm i https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/static-blog-generator.tgz
       - name: Fix Sharp
         if: ${{ false }}
         continue-on-error: true
