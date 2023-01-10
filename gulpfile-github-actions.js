@@ -93,7 +93,7 @@ async function postCopy(done) {
 }
 
 if (require.main === module) {
-  cleanPostCopy();
+  postCopy();
 } else {
   /// console.log('required as a module');
   //delete process.env.DEBUG;
