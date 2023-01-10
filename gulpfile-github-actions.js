@@ -34,13 +34,17 @@ gulp.task('actions:clean', function (done) {
     });
 });
 
-async function cleanCopy(done) {
+async function compile() {
   const sbgPath = path.join(__dirname, 'packages/static-blog-generator');
   // await fs.rm(path.join(sbgPath, 'dist'), { recursive: true, force: true });
   await spawnAsync('npm', ['run', 'build:nopack'], { cwd: sbgPath }).then((_) => {
     // console.log(_.output.join('\n'));
     console.log('static-blog-generator builded successful');
   });
+}
+
+async function cleanPostCopy(done) {
+  await compile();
 
   const { Application } = require('./packages/static-blog-generator');
   const api = new Application(__dirname);
@@ -65,14 +69,42 @@ async function cleanCopy(done) {
   if (typeof done == 'function') done();
 }
 
-if (require.main === module) {
-  cleanCopy();
-} else {
-  /// console.log('required as a module');
-  delete process.env.DEBUG;
+async function copyPost(done) {
+  await compile();
+
+  const { Application } = require('./packages/static-blog-generator');
+  const api = new Application(__dirname);
+
+  try {
+    console.log('standalone-start');
+    await api.standalone();
+    console.log('standalone-ends');
+    console.log('copy-start');
+    await api.copy().catch((e) => {
+      console.log('post copy error occurs');
+      console.log(e);
+    });
+    console.log('copy-ends');
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (typeof done == 'function') done();
 }
 
-gulp.task('actions:copy', () => gulp.series(cleanCopy));
+if (require.main === module) {
+  cleanPostCopy();
+} else {
+  /// console.log('required as a module');
+  //delete process.env.DEBUG;
+}
+
+module.exports = {
+  copyPost,
+  cleanPostCopy
+};
+
+gulp.task('actions:copy', () => gulp.series(cleanPostCopy));
 
 /**
  * convert file to hash
