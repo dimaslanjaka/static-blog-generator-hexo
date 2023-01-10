@@ -1,0 +1,3 @@
+#!/bin/sh
+# check update and commit
+node postinstall.js --commit --publish

@@ -36,7 +36,7 @@ gulp.task('actions:clean', function (done) {
 
 async function cleanCopy(done) {
   const sbgPath = path.join(__dirname, 'packages/static-blog-generator');
-  await fs.rm(path.join(sbgPath, 'dist'), { recursive: true, force: true });
+  // await fs.rm(path.join(sbgPath, 'dist'), { recursive: true, force: true });
   await spawnAsync('npm', ['run', 'build:nopack'], { cwd: sbgPath }).then((_) => {
     // console.log(_.output.join('\n'));
     console.log('static-blog-generator builded successful');
@@ -44,12 +44,12 @@ async function cleanCopy(done) {
   const api = new Application(__dirname);
 
   try {
-    //console.log('clean-start');
-    //await api.clean('database');
-    //console.log('clean-ends');
-    console.log('standalone-start');
-    await api.standalone();
-    console.log('standalone-ends');
+    console.log('clean-start');
+    await api.clean('database');
+    console.log('clean-ends');
+    //console.log('standalone-start');
+    //await api.standalone();
+    //console.log('standalone-ends');
     console.log('copy-start');
     await api.copy().catch((e) => {
       console.log('post copy error occurs');
@@ -67,6 +67,7 @@ if (require.main === module) {
   cleanCopy();
 } else {
   /// console.log('required as a module');
+  delete process.env.DEBUG;
 }
 
 gulp.task('actions:copy', () => gulp.series(cleanCopy));
