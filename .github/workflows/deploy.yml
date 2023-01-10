@@ -188,9 +188,9 @@ jobs:
         id: chimera1
         working-directory: ./multisite/chimeraland
       - name: build chimeraland
-        run: npm rebuild && npm run build
+        run: npm update && npm rebuild && npm run build
         continue-on-error: true
-        if: ${{ steps.chimera1.outcome }} == 'failure'
+        if: steps.chimera1.outcome == 'failure'
         working-directory: ./multisite/chimeraland
       - name: build static-blog-generator
         run: npm install && npm run build
