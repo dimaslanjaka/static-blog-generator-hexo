@@ -69,7 +69,7 @@ async function cleanPostCopy(done) {
   if (typeof done == 'function') done();
 }
 
-async function copyPost(done) {
+async function postCopy(done) {
   await compile();
 
   const { Application } = require('./packages/static-blog-generator');
@@ -100,11 +100,11 @@ if (require.main === module) {
 }
 
 module.exports = {
-  copyPost,
+  copyPost: postCopy,
   cleanPostCopy
 };
 
-gulp.task('actions:copy', () => gulp.series(cleanPostCopy));
+gulp.task('actions:copy', () => gulp.series(postCopy));
 
 /**
  * convert file to hash
