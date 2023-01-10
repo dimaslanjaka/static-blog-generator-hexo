@@ -214,12 +214,12 @@ jobs:
       - name: Collect Reports
         shell: bash
         continue-on-error: true
+        working-directory: ./.deploy_git
         run:
-          echo "conclusion=${{ steps.feed.conclusion }}" > .deploy_git/reports/feed.txt
-          echo "conclusion=${{ steps.sitemap.conclusion }}" > .deploy_git/reports/sitemap.txt
-          echo "outcome=${{ steps.feed.outcome }}" >> .deploy_git/reports/feed.txt
-          echo "outcome=${{ steps.sitemap.outcome }}" >> .deploy_git/reports/sitemap.txt
-          cd .deploy_git
+          echo "conclusion=${{ steps.feed.conclusion }}" > reports/feed.txt
+          echo "conclusion=${{ steps.sitemap.conclusion }}" > reports/sitemap.txt
+          echo "outcome=${{ steps.feed.outcome }}" >> reports/feed.txt
+          echo "outcome=${{ steps.sitemap.outcome }}" >> reports/sitemap.txt
           git add reports
           git commit -m "Update reports from ${{ env.GITHUB_COMMIT_URL }}"
 
