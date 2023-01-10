@@ -45,6 +45,8 @@ jobs:
       # CHECKOUT
       - uses: actions/checkout@v3
         with:
+          ref: master
+          repository: dimaslanjaka/static-blog-generator-hexo
           submodules: recursive
           token: "${{ secrets.ACCESS_TOKEN }}"
       - name: Checkout .deploy_git
