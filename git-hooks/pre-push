@@ -2,9 +2,6 @@
 
 # run before push
 
-# check update and commit
-node postinstall.js --commit --publish
-
 # execute node
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
