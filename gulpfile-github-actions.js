@@ -8,7 +8,7 @@ const Axios = require('axios');
 const glob = require('glob');
 const crypto = require('crypto');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
-const { Application, gulp } = require('./packages/static-blog-generator');
+const { gulp } = require('./packages/static-blog-generator');
 const { persistentCache } = require('persistent-cache');
 
 gulp.task('actions:clean', function (done) {
@@ -41,6 +41,8 @@ async function cleanCopy(done) {
     // console.log(_.output.join('\n'));
     console.log('static-blog-generator builded successful');
   });
+
+  const { Application } = require('./packages/static-blog-generator');
   const api = new Application(__dirname);
 
   try {
