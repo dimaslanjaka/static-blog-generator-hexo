@@ -39,7 +39,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
 
   const config = getConfig();
   const cwd = config.deploy.deployDir;
-  const gh = config.deploy.github;
+  const gh = new gch(cwd);
 
   const doPull = async (cwd: string) => {
     try {
@@ -84,7 +84,7 @@ async function push(done?: gulp.TaskFunctionCallback) {
 
   const config = getConfig();
   const cwd = config.deploy.deployDir;
-  const gh = config.deploy.github;
+  const gh = new gch(cwd);
 
   const doPush = async (cwd: string, origin: string, branch: string) => {
     console.log('push', cleanCwd(cwd), origin + '/' + branch);
