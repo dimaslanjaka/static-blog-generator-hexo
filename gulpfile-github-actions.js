@@ -105,6 +105,7 @@ module.exports = {
 };
 
 gulp.task('actions:copy', () => gulp.series(postCopy));
+gulp.task('actions:clean-copy', () => gulp.series(cleanPostCopy));
 
 /**
  * convert file to hash
