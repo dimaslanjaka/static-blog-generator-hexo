@@ -8,7 +8,7 @@ import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
 import Hexo from 'hexo';
 import path from 'path';
-import { getConfig, gulp } from 'static-blog-generator';
+import { config as sbgConfig, gulp } from 'static-blog-generator';
 
 /**
  * git clone
@@ -20,7 +20,7 @@ async function clone(destFolder: string, options?: import('child_process').Spawn
     // clone from root deployment dir
     await spawnAsync(
       'git',
-      [...'clone -b master --single-branch'.split(' '), getConfig().deploy.repo, destFolder],
+      [...'clone -b master --single-branch'.split(' '), sbgConfig.getConfig().deploy.repo, destFolder],
       spawnOpt
     );
     // update submodule from deployment dir
@@ -37,7 +37,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
   // register graceful shutdown
   gracefulShutdown(pull.name, done);
 
-  const config = getConfig();
+  const config = sbgConfig.getConfig();
   const cwd = config.deploy.deployDir;
   const gh = new gch(cwd);
 
@@ -82,7 +82,7 @@ async function push(done?: gulp.TaskFunctionCallback) {
   // register graceful shutdown
   gracefulShutdown(push.name, done);
 
-  const config = getConfig();
+  const config = sbgConfig.getConfig();
   const cwd = config.deploy.deployDir;
   const gh = new gch(cwd);
 
@@ -130,7 +130,7 @@ async function commit(done: (...args: any[]) => any) {
   // register graceful shutdown
   gracefulShutdown(commit.name, done);
 
-  const config = getConfig();
+  const config = sbgConfig.getConfig();
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github || new gch(cwd);
   const doCommit = async (cwd: string) => {
