@@ -1,4 +1,5 @@
 {
+  "files.associations": { "*.njk": "njk", "*.nj": "njk" },
   "terminal.integrated.env.linux": {
     "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
   },
