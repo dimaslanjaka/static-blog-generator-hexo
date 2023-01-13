@@ -37,9 +37,15 @@
 
 ## Daftar player yang dicurigai sebagai scammer
 
-| Nama Player | Keterangan |
+| Nama Player | Clan | Keterangan |
+| :--- | :--- | :--- |
+| ChipsChips | - | dicurigai sebagai scammer map illus 16 party |
+| Yunas | CheeseCake | akun primer beberapa scammer |
+
+## Daftar clan yang berisi beberapa scammer
+| Nama Clan | Player |
 | :--- | :--- |
-| ChipsChips | dicurigai sebagai scammer map illus 16 party |
+| CheeseCake | Yunas |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
