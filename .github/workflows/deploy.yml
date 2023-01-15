@@ -49,6 +49,13 @@ jobs:
           repository: dimaslanjaka/static-blog-generator-hexo
           submodules: recursive
           token: "${{ secrets.ACCESS_TOKEN }}"
+      - uses: actions/checkout@v3
+        name: checkout src-posts
+        with:
+          ref: posts
+          repository: dimaslanjaka/source-posts
+          path: src-posts
+          token: "${{ secrets.ACCESS_TOKEN }}"
       - name: Checkout .deploy_git
         uses: actions/checkout@v3
         with:
