@@ -71,7 +71,7 @@
     "md5-file": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.3",
-    "rimraf": "^4.0.5",
+    "rimraf": "^4.0.7",
     "sitemap-crawler": "file:packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/tarball/master",
     "ts-node": "^10.9.1",
