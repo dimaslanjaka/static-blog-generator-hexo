@@ -172,6 +172,7 @@ jobs:
         if: steps.install-npm.outcome == 'failure'
         run: npm update
         id: install-update
+        continue-on-error: true
       
       - name: remove node_modules and locks
         if: steps.install-update.outcome == 'failure'
