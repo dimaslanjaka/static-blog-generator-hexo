@@ -6,9 +6,10 @@ import fs from 'fs-extra';
 import gch from 'git-command-helper';
 import { default as noop } from 'git-command-helper/dist/noop';
 import { spawnAsync } from 'git-command-helper/dist/spawn';
+import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'path';
-import { Application, gulp } from 'static-blog-generator';
+import { Application } from 'static-blog-generator';
 
 const api = new Application(__dirname);
 
