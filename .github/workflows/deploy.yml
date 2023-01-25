@@ -175,6 +175,7 @@ jobs:
           npm un git-command-helper hexo-post-parser nodejs-package-types
           npm i git-command-helper hexo-post-parser https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
         continue-on-error: true
+        shell: bash
 
       - name: clean install
         if: steps.install-update.outcome == 'failure'
