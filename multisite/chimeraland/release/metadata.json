@@ -1,29 +1,29 @@
 {
   "/release/chimeraland-0.0.2.tgz": {
     "integrity": {
-      "sha1": "e834db9fcbe1aad7f88c801caeeca1ba87022ae7",
-      "sha256": "B9uW8W1bKP/+pFkAQ38On5Ws0BrYYSzOCkJFXxNKgF8=",
-      "md5": "3e2e326d1abc2db14b5d021b4a9198fd",
-      "sha512": "3goX6fuDE5rW+wvfiy32RealT76vCfgAcVTtWupesAYBTElXAh0FtDi2hZvSrW6MBZUwkImS9Z37Y/JxfP4bpA=="
+      "sha1": "cc92e8b078457f0c951644ff584a27ec0c3ee57b",
+      "sha256": "hZeZWJvGOI7wuXJh+0bHMCxJ8LrR6ndMTKKBaS0wXbY=",
+      "md5": "624860c360c8d68251d01f2fc4d335cc",
+      "sha512": "1WWKeEsiU449Ir+gDGIWlLNSDmgdmqv7zaXL8LXAAoUMwV8dx7/z6XT34R7Ba/xrzoSs3+HAnpIZmu25bUa0/w=="
     },
-    "size": "6.14 KB"
+    "size": "6.15 KB"
   },
   "/release/chimeraland.tgz": {
     "integrity": {
-      "sha1": "e834db9fcbe1aad7f88c801caeeca1ba87022ae7",
-      "sha256": "B9uW8W1bKP/+pFkAQ38On5Ws0BrYYSzOCkJFXxNKgF8=",
-      "md5": "3e2e326d1abc2db14b5d021b4a9198fd",
-      "sha512": "3goX6fuDE5rW+wvfiy32RealT76vCfgAcVTtWupesAYBTElXAh0FtDi2hZvSrW6MBZUwkImS9Z37Y/JxfP4bpA=="
+      "sha1": "cc92e8b078457f0c951644ff584a27ec0c3ee57b",
+      "sha256": "hZeZWJvGOI7wuXJh+0bHMCxJ8LrR6ndMTKKBaS0wXbY=",
+      "md5": "624860c360c8d68251d01f2fc4d335cc",
+      "sha512": "1WWKeEsiU449Ir+gDGIWlLNSDmgdmqv7zaXL8LXAAoUMwV8dx7/z6XT34R7Ba/xrzoSs3+HAnpIZmu25bUa0/w=="
     },
-    "size": "6.14 KB"
+    "size": "6.15 KB"
   },
   "/package-lock.json": {
     "integrity": {
-      "sha1": "16d25d12981011a32048ede26edcbe6c1ba2e8d0",
-      "sha256": "gnUCuN6T2Te5xfC/NK89Kk111mtPHPbyhhqO3GRSgOU=",
-      "md5": "2f3abea7521e549832607027fb99737f",
-      "sha512": "GMjVX3EWtTdbZwHtyHyBVkYWW2yQcwqTmUY1qkZtTqcV2CqsxeB0ZeNvXb2WfbqKm+NEicwq6LDl3VhhINBv4A=="
+      "sha1": "0c7d2cdc40ab7fa1142af3e25a13d2adb578d9bf",
+      "sha256": "5rUSjOkzI9airh1KmtK7hvXS8/ruEvNyKyQwGLLFmJI=",
+      "md5": "311e3eb8191c0ac73242dde26626f99d",
+      "sha512": "E7H6oEqA2DqqX+76ROaQmcuB/0xDMjYMnD6I5bLuUoxVm+wjDbaSy7b3Q5Pi/pR2EkhBh/9YTi/9bnNCnOF9gQ=="
     },
-    "size": "424.83 KB"
+    "size": "426.36 KB"
   }
 }
