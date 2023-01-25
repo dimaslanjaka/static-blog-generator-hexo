@@ -172,7 +172,7 @@ jobs:
           find . -name "package-lock.json" -type d -exec rm -rf '{}' +
           find . -name "tmp" -type d -exec rm -rf '{}' +
           find . -name "node_modules" -type d -exec rm -rf '{}' +
-          npm update git-command-helper hexo-post-parser nodejs-package-types
+          npm update git-command-helper hexo-post-parser nodejs-package-types static-blog-generator
         continue-on-error: true
         shell: bash
 
