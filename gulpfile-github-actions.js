@@ -8,7 +8,7 @@ const Axios = require('axios');
 const glob = require('glob');
 const crypto = require('crypto');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
-const { gulp } = require('./packages/static-blog-generator');
+const gulp = require('gulp');
 const { persistentCache } = require('persistent-cache');
 
 gulp.task('actions:clean', function (done) {
@@ -37,7 +37,7 @@ gulp.task('actions:clean', function (done) {
 async function compile() {
   const sbgPath = path.join(__dirname, 'packages/static-blog-generator');
   // await fs.rm(path.join(sbgPath, 'dist'), { recursive: true, force: true });
-  await spawnAsync('npm', ['run', 'build:nopack'], { cwd: sbgPath }).then((_) => {
+  await spawnAsync('npm', ['run', 'build'], { cwd: sbgPath }).then((_) => {
     // console.log(_.output.join('\n'));
     console.log('static-blog-generator builded successful');
   });
