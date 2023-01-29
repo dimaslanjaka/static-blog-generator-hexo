@@ -1,0 +1,24 @@
+---
+title: Chimeraland attendant skill list
+date: 2023-01-30T01:30:47+07:00
+updated: 2023-01-30T01:39:47+07:00
+author: L3n4r0x
+categories: ['Games', 'Chimeraland']
+tags: ['attendants', 'skill']
+---
+
+List attendant skill level 1
+
+| Skill Name | Effect |
+| :--- | :--- |
+| DEF Break | Armor pierce +71 |
+| ATK | Attack +42 |
+| DEF | Defense +44 |
+| HP | Health Point +700 |
+| Cunning | PvP Damage Bonus +2.88% |
+| Steelbody | Melee Damage Reduction +2.88% |
+| Slashing | Melee Damage Increase +2.88% |
+| Protection | Ranged Damage Increase +2.88% |
+| Charge | Crit Damage Increase +2.88% |
+| Vigiliance | RES +36 |
+| Power ATK | Crit +109 |
