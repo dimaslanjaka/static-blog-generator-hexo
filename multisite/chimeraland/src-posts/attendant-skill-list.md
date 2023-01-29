@@ -6,6 +6,7 @@ author: L3n4r0x
 categories: ['Games', 'Chimeraland']
 tags: ['attendants', 'skill']
 permalink: /chimeraland/attendant-skill-list.html
+thumbnail: https://img.youtube.com/vi/kV6vGNhwyRA/mqdefault.jpg
 ---
 
 List attendant skill level 1
