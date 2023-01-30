@@ -1,28 +1,28 @@
 {
   "/release/termux-chimeraland-0.0.1.tgz": {
     "integrity": {
-      "sha1": "5c4b276d5318bda775363ae57207400e3f3fe4a8",
-      "sha256": "p7iaHXHAD9ScSmL+BsIqNn8isodQ4lvKllmypGIi0GM=",
-      "md5": "861290b7e064e28d820a8d8a1e60f63e",
-      "sha512": "LcC/HYCm2cRjVg3FnhQl9iWKk2f45uURgVc8fu9rf8jld9s1LR39sXabGpNq4AGb2ehAp5IPvQqxyhvK1qldPQ=="
+      "sha1": "209043317437297e57a3061fe4312c8db139518c",
+      "sha256": "DYquG13X+OmXzIXIUC+gzSgr6OC1X5JHU5WeOc99QL4=",
+      "md5": "5b89c0ed074f83ef5c012c43c585f9b8",
+      "sha512": "TFkBuYKHz+84kGBwFQkaaktnzvXdb3XZXPAQmVRVzOqI8H6c4ndFlttQmIgOJz8mVERggKAAh5Cqv7j4UpYX9A=="
     },
     "size": "120.52 KB"
   },
   "/release/termux-chimeraland.tgz": {
     "integrity": {
-      "sha1": "5c4b276d5318bda775363ae57207400e3f3fe4a8",
-      "sha256": "p7iaHXHAD9ScSmL+BsIqNn8isodQ4lvKllmypGIi0GM=",
-      "md5": "861290b7e064e28d820a8d8a1e60f63e",
-      "sha512": "LcC/HYCm2cRjVg3FnhQl9iWKk2f45uURgVc8fu9rf8jld9s1LR39sXabGpNq4AGb2ehAp5IPvQqxyhvK1qldPQ=="
+      "sha1": "209043317437297e57a3061fe4312c8db139518c",
+      "sha256": "DYquG13X+OmXzIXIUC+gzSgr6OC1X5JHU5WeOc99QL4=",
+      "md5": "5b89c0ed074f83ef5c012c43c585f9b8",
+      "sha512": "TFkBuYKHz+84kGBwFQkaaktnzvXdb3XZXPAQmVRVzOqI8H6c4ndFlttQmIgOJz8mVERggKAAh5Cqv7j4UpYX9A=="
     },
     "size": "120.52 KB"
   },
   "/package-lock.json": {
     "integrity": {
-      "sha1": "fef264b394afaf8dff5dc601ab520948e26f84b9",
-      "sha256": "aPd6t3n6SvzIahIdTvDtN2+s93R7/w8uUKyFlrqkL9c=",
-      "md5": "4de16902420cd207160f35683a2fc1f5",
-      "sha512": "vwFxycNVx0j6FdC10+eAJeaBulF2TL2Ol8FEJ8YqJUpb4K0ALdmVJ4O6aoGRmE++qOx8l/T6HnB4pmZpynXNuw=="
+      "sha1": "abad97c4e5c1f752d907f59ebcbf970af515d8c1",
+      "sha256": "321whmuFxAzGNXCds8x8dPe3tsH3xW3B0dTx34gnk68=",
+      "md5": "48403cd055a34b959ea49c041e36009b",
+      "sha512": "lnlDhjewUQvIq8g1RV9dTzsV3BD1OT+bf2KLXhWWDEyVDdyFWXSNcHlD0oyyXMk1DpHFpBMttWVSnYRbJtNkug=="
     },
     "size": "366.29 KB"
   }
