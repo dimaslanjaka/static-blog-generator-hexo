@@ -127,7 +127,11 @@ dom.window.close()
 screenshots().then(function (ss) {
   body = body.replace('<!-- tangkapan.layar -->', ss.join(EOL))
 
-  const post: postMap = { metadata, body: translator + '\n\n' + body }
+  const post: postMap = {
+    metadata,
+    body: translator + '\n\n' + body,
+    rawbody: translator + '\n\n' + body
+  }
   const build = buildPost(post)
   const saveTo = join(sbgProject, 'src-posts/blacklist-player.md')
 

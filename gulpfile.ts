@@ -9,7 +9,8 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'path';
-import { Application } from 'static-blog-generator';
+// import { Application } from 'static-blog-generator';
+import { Application } from 'static-blog-generator/packages/sbg-api';
 
 const api = new Application(__dirname);
 
