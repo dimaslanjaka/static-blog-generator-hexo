@@ -9,7 +9,7 @@
     "build:chimera": "cd multisite/chimeraland && npm run build",
     "build:post": "npm run copy",
     "build:site": "gulp build",
-    "copy": "gulp copy-all-post",
+    "copy": "npx sbg post copy",
     "clean": "gulp clean",
     "deploy": "npm run build && gulp deploy",
     "server": "hexo server -p 4000",
@@ -81,9 +81,8 @@
     "rimraf": "^4.1.2",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
-    "static-blog-generator": "file:packages/static-blog-generator",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.4",
+    "typescript": "^4.9.5",
     "upath": "^2.0.1",
     "yargs": "^17.6.2"
   }
