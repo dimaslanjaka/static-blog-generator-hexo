@@ -25,30 +25,39 @@
 | hella | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
 | LORD | AKUN KEDUA **[https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true](hella)** |
 | Yayan bae | SCAMMER Illus Seal, Toxic |
+| Rishya | SCAMMER ruby |
+| BangPo | SCAMMER ruby |
+| HitsuiTH | SCAMMER map illus 16 |
+| Jiejie | SCAMMER map illus 16 |
+| Glitch | SCAMMER map illus 16 |
+| Dikoo | SCAMMER map illus 16 |
 
 ## Daftar player kategori tukang roll drop item
 
-| Nama Player | Keterangan |
-| :--- | :--- |
-| Corleonx | Roll drops items |
-| Shelby | Roll drops items |
-| PrimalHunter | Roll drops items |
-| blackblades | Roll telur illus 30,000 years |
+| Nama Player | Clan | Keterangan |
+| :--- | :--- | :--- |
+| Corleonx | | Roll drops items from Map Illus 16 |
+| Shelby | | Roll drops items from Map Illus 16 |
+| PrimalHunter | | Roll drops items from Map Illus 16 |
+| blackblades | | Roll telur illus 30,000 years |
+| maraa | undead | Roll drops items from Map Illus 16 |
 
 ## Daftar player yang dicurigai sebagai scammer
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | ChipsChips | - | dicurigai sebagai scammer map illus 16 party |
-| Yunas | CheeseCake | akun primer beberapa scammer |
+| Yunas | CheeseCake | dicurigai sebagai akun primer beberapa scammer |
+| HODE | LastEmperror | dicurigai sebagai roll drops items map illus 16 party |
 
 ## Daftar clan yang berisi beberapa scammer
-| Nama Clan | Player |
-| :--- | :--- |
-| CheeseCake | Yunas |
+| Nama Clan | Player | Keterangan |
+| :--- | :--- | :--- |
+| CheeseCake | Yunas, BangPo |
+| ourobores | | |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
-- Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
+- Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini kadang hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
 - Jangan melakukan transaksi dengan **AKUN SMURF** (orang indonesia menyebutnya **AKUN TUYUL**), 90% merupakan scammer.
 
 ## Tautan yang merujuk tentang scammer
