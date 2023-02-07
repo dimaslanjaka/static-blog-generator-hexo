@@ -19,6 +19,7 @@
     "hexo-post-parser": "^1.2.6",
     "lodash": "^4.17.21",
     "moment-timezone": "^0.5.40",
+    "node-libcurl": "^3.0.0",
     "puppeteer": "^19.6.3",
     "slugify": "^1.6.5",
     "underscore": "^1.13.6",
