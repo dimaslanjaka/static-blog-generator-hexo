@@ -1,28 +1,28 @@
 {
   "/release/chimeraland-0.0.2.tgz": {
     "integrity": {
-      "sha1": "1481efc737fcb93e3ba4dc7cdc12b38bbc8c1f1e",
-      "sha256": "9wmQHw1Bj4EU5EbewaJTigkzL8T+H+WNSYWljVgFniY=",
-      "md5": "e552f4206f7608354beec976eb619507",
-      "sha512": "LdZtdYcRs6DsdsYvSdReygx/2rNwi8HJ+fjz+smix1BDZirZD/JRAVjKoSKN+W9gBVnUfjIMap0ruLo91879tQ=="
+      "sha1": "4f1942e381c1b1d9b035b8f7a424b185d68197b7",
+      "sha256": "Q+oDCu96lvmira+bducbkrJhpyYOmd7B2HykmsbZ8wY=",
+      "md5": "33ba79e2fb559897ea88b49481734b62",
+      "sha512": "nivbRLPr2Bnok5yeqbit/H3rEf0cBHbM81Lrr83MatBzw1bC+++AevENsKwb/StXbVfBI0umzq9jA71zaz6BUA=="
     },
     "size": "6.15 KB"
   },
   "/release/chimeraland.tgz": {
     "integrity": {
-      "sha1": "1481efc737fcb93e3ba4dc7cdc12b38bbc8c1f1e",
-      "sha256": "9wmQHw1Bj4EU5EbewaJTigkzL8T+H+WNSYWljVgFniY=",
-      "md5": "e552f4206f7608354beec976eb619507",
-      "sha512": "LdZtdYcRs6DsdsYvSdReygx/2rNwi8HJ+fjz+smix1BDZirZD/JRAVjKoSKN+W9gBVnUfjIMap0ruLo91879tQ=="
+      "sha1": "4f1942e381c1b1d9b035b8f7a424b185d68197b7",
+      "sha256": "Q+oDCu96lvmira+bducbkrJhpyYOmd7B2HykmsbZ8wY=",
+      "md5": "33ba79e2fb559897ea88b49481734b62",
+      "sha512": "nivbRLPr2Bnok5yeqbit/H3rEf0cBHbM81Lrr83MatBzw1bC+++AevENsKwb/StXbVfBI0umzq9jA71zaz6BUA=="
     },
     "size": "6.15 KB"
   },
   "/package-lock.json": {
     "integrity": {
-      "sha1": "c6f826ee10eae5e70594803d420d9e4573c65f59",
-      "sha256": "ycMwwScICN/Z8ZRgk4U4wvnRAtS8FTRK4XzzvsTT/wA=",
-      "md5": "9de933b1abca93c2b541fa55f6b7b8e4",
-      "sha512": "iFQfatoH6QXTfldaC/wz4KveGlVxRLlgxbbSVsOQ1Fx95gsHOLUX57uxohsY6fPisEtiDUIoz4WYnXhz5bt9mQ=="
+      "sha1": "e7b466393a11c817c7e0e6a45da90a70b3ef4c0b",
+      "sha256": "lZQd2ZVp8jIUiL9Fd+dn+Sfr6++XeeyQI6WvEJUvnRM=",
+      "md5": "44414db53a812b2b164428a6bebfed16",
+      "sha512": "DeFRPBokV3MuF25jSvh8kBSkSRJymo+c48nhFYmq3rpflE+TKpT6y2d3lrFYuGgV+NcjCKQbXYPhq8XijgTOLw=="
     },
     "size": "426.36 KB"
   }
