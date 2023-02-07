@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "input submodule path"
 read folderpath
 
 # Remove the submodule entry from .git/config
