@@ -13,12 +13,6 @@
   "typeAcquisition": {
     "enable": true
   },
-  "include": [
-    "src",
-    "test",
-    "scraper"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "test", "scraper", "sikda-optima"],
+  "exclude": ["node_modules"]
 }
