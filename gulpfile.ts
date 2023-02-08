@@ -22,11 +22,7 @@ async function clone(destFolder: string, options?: import('child_process').Spawn
   const spawnOpt = Object.assign({ cwd: __dirname }, options);
   if (!fs.existsSync(destFolder)) {
     // clone from root deployment dir
-    await spawnAsync(
-      'git',
-      [...'clone -b master --single-branch'.split(' '), api.getConfig().deploy.repo, destFolder],
-      spawnOpt
-    );
+    await spawnAsync('git', ['clone', api.getConfig().deploy.repo, destFolder], spawnOpt);
     // update submodule from deployment dir
     if (fs.existsSync(path.join(destFolder, '.gitmodules'))) {
       await spawnAsync('git', ['submodule', 'update', '-i', '-r'], Object.assign(spawnOpt, { cwd: destFolder }));
