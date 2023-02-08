@@ -1,6 +1,6 @@
-const spawn = require('cross-spawn');
+const { spawn } = require('cross-spawn');
 const { existsSync } = require('fs-extra');
-const { del, noop } = require('gulp-sbg/dist/gulp.clean');
+const { del, noop } = require('static-blog-generator');
 const { join } = require('upath');
 
 const myArgs = require('yargs/yargs')(process.argv.slice(2)).parse();
