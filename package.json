@@ -8,7 +8,7 @@
     "build": "run-s build:*",
     "build:chimera": "cd multisite/chimeraland && npm run build",
     "build:post": "npm run copy",
-    "build:site": "gulp build",
+    "build:site": "npx hexo generate",
     "copy": "npx sbg post copy",
     "clean": "gulp clean",
     "deploy": "npm run build && gulp deploy",
