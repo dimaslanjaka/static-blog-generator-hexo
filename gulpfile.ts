@@ -34,6 +34,10 @@ async function clone(destFolder: string, options?: import('child_process').Spawn
   }
 }
 
+gulp.task('deploy:copy', function () {
+  return gulp.src('**/*', { cwd: path.join(__dirname, 'public') }).pipe(gulp.dest(path.join(__dirname, '.deploy_git')));
+});
+
 /**
  * git pull on deploy dir
  */
@@ -178,6 +182,7 @@ async function generate(done: gulp.TaskFunctionCallback) {
 gulp.task('commit', commit);
 gulp.task('pull', pull);
 gulp.task('generate', generate);
+
 /*
 gulp.task(
   'build',
