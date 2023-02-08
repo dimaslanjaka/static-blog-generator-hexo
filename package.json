@@ -17,7 +17,6 @@
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:chimeraland": "cd multisite/chimeraland/chimeraland && npm run update",
     "update:chimeraland2": "cd multisite/chimeraland && npm run update",
-    "update:sbg": "cd packages/static-blog-generator && npm run update",
     "update:ncu": "npx npm-check-updates -u -x hexo,chalk",
     "update": "run-s update:** && npm install",
     "postupdate": "node postinstall.js --commit",
