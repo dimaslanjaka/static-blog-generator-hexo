@@ -45,6 +45,7 @@ jobs:
       - run: |
           corepack prepare yarn@3.2.0 --activate
           corepack enable
+      - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck
       - run: yarn install
       - run: yarn build
       - run: yarn deploy
