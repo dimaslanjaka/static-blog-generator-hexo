@@ -3,7 +3,13 @@
     "multisite/chimeraland/chimeraland",
     "themes/next",
     "packages/hexo-github-card",
-    "packages/hexo-generator-redirect"
+    "packages/hexo-generator-redirect",
+    "packages/sitemap-crawler",
+    "packages/gulp-dom",
+    "packages/hexo-seo",
+    "packages/@types/*",
+    "packages/instant-indexing",
+    "packages/static-blog-generator"
   ]
 
 
