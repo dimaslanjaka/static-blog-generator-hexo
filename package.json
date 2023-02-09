@@ -58,10 +58,8 @@
   },
   "workspaces": [
     "multisite/chimeraland",
-    "multisite/chimeraland/chimeraland",
     "themes/next",
     "packages/hexo-github-card",
-    "packages/hexo-generator-redirect",
-    "packages/static-blog-generator"
+    "packages/hexo-generator-redirect"
   ]
 }
