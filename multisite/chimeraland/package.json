@@ -14,15 +14,15 @@
     "start": "node start.js",
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update": "run-s update:** && npx npm-check-updates -u",
-    "post-install": "node postinstall.js",
-    "patch": "npm version patch",
+    "update": "run-s update:** && npx npm-check-updates -u && node packer.js --yarn",
+    "post-install": "node postinstall.js --yarn",
     "build": "node build.js",
     "copy": "node test/copy.js",
     "deploy": "node deploy.js",
     "lint": "run-s lint:**",
     "lint:src": "npx eslint --fix src/**/*.{ts,tsx,js,json}",
-    "lint:sync": "npx eslint --fix sync/**/*.{ts,tsx,js,json}"
+    "lint:sync": "npx eslint --fix sync/**/*.{ts,tsx,js,json}",
+    "pack": "node packer.js --yarn"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^2.1.1",

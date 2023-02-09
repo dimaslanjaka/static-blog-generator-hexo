@@ -14,9 +14,9 @@
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update": "run-s update:** && npx npm-check-updates -u && npm install && node packer.js",
+    "update": "run-s update:** && npx npm-check-updates -u && node packer.js --yarn",
     "post-install": "node postinstall.js",
-    "patch": "npm version patch"
+    "pack": "node packer.js --yarn"
   },
   "dependencies": {
     "decode-uri-component": "^0.4.1",
