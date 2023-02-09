@@ -63,24 +63,26 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/sharp": "^0.31.1",
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "cross-env": "^7.0.3",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "npm-run-all": "^4.1.5",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
     "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
+    "npm-run-all": "^4.1.5",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz",
-    "termux-chimeraland": "file:chimeraland"
-  }
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "workspaces": [
+    "chimeraland"
+  ]
 }
