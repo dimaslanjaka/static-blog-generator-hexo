@@ -54,8 +54,7 @@
     "gulp": "^4.0.2",
     "lerna": "^6.4.1",
     "npm-run-all": "^4.1.5",
-    "nx": "^15.6.3",
-    "static-blog-generator": "file:packages/static-blog-generator/packages/static-blog-generator/release/static-blog-generator.tgz"
+    "nx": "^15.6.3"
   },
   "workspaces": [
     "multisite/chimeraland",
@@ -63,10 +62,6 @@
     "themes/next",
     "packages/hexo-github-card",
     "packages/hexo-generator-redirect",
-    "packages/sitemap-crawler",
-    "packages/gulp-dom",
-    "packages/hexo-seo",
-    "packages/@types/*",
-    "packages/instant-indexing"
+    "packages/static-blog-generator"
   ]
 }
