@@ -46,6 +46,8 @@ jobs:
           corepack prepare yarn@3.2.0 --activate
           corepack enable
       - run: yarn install
+      - run: yarn build
+      - run: yarn deploy
       - name: Deploy 🚀
         #if: ${{ false }}
         #if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
