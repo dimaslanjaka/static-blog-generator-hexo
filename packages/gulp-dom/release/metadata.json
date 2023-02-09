@@ -28,20 +28,20 @@
   },
   "/release/gulp-dom.tgz": {
     "integrity": {
-      "sha1": "0fbeaad0b45e5741a93417d38d0abb36222e8091",
-      "sha256": "oGyBCn+eHzK59o6Bs3uC438bxfGRUNPI20tx1yXmq8c=",
-      "md5": "1d1bdf2306465a66a9c6dab3b69ef08e",
-      "sha512": "kvUS7N6AYQpsdmb1LCpEJ9g/50joUx5RLjdxpA0QjRUf9haNr8JF7gBi8Y/pt7HVxDd6e0DvbEVzNhQ5MuXshw=="
+      "sha1": "acea24ebeb9923f991e09eae7422bc92f4fe683c",
+      "sha256": "ZpX2LBRHS/W8WHr0n2gDjbqvIqkAEH8YoEDCfSqzaeU=",
+      "md5": "4a29a3b8c2cdf6725d50066043063756",
+      "sha512": "RL9RlUCGZFJHYvuz2SxJZnWaIgMtxXPr2bUykYrEDuQ452llLgusyMOjtZxFAJZS6ZY9gaDtm9QaNj7Aiz3exw=="
     },
-    "size": "8.57 KB"
+    "size": "8.62 KB"
   },
   "/release/gulp-dom-1.0.4.tgz": {
     "integrity": {
-      "sha1": "0fbeaad0b45e5741a93417d38d0abb36222e8091",
-      "sha256": "oGyBCn+eHzK59o6Bs3uC438bxfGRUNPI20tx1yXmq8c=",
-      "md5": "1d1bdf2306465a66a9c6dab3b69ef08e",
-      "sha512": "kvUS7N6AYQpsdmb1LCpEJ9g/50joUx5RLjdxpA0QjRUf9haNr8JF7gBi8Y/pt7HVxDd6e0DvbEVzNhQ5MuXshw=="
+      "sha1": "acea24ebeb9923f991e09eae7422bc92f4fe683c",
+      "sha256": "ZpX2LBRHS/W8WHr0n2gDjbqvIqkAEH8YoEDCfSqzaeU=",
+      "md5": "4a29a3b8c2cdf6725d50066043063756",
+      "sha512": "RL9RlUCGZFJHYvuz2SxJZnWaIgMtxXPr2bUykYrEDuQ452llLgusyMOjtZxFAJZS6ZY9gaDtm9QaNj7Aiz3exw=="
     },
-    "size": "8.57 KB"
+    "size": "8.62 KB"
   }
 }
