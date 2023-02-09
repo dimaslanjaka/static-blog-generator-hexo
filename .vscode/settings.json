@@ -1,5 +1,8 @@
 {
-  "files.associations": { "*.njk": "njk", "*.nj": "njk" },
+  "files.associations": {
+    "*.njk": "njk",
+    "*.nj": "njk"
+  },
   "terminal.integrated.env.linux": {
     "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
   },
@@ -143,8 +146,8 @@
   "prettier.enableDebugLogs": true,
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.printWidth": 180,
-  "npm.packageManager": "npm",
+  "npm.packageManager": "yarn",
   "git.enabled": true,
-  "eslint.packageManager": "npm",
+  "eslint.packageManager": "yarn",
   "explorer.autoReveal": false
 }
