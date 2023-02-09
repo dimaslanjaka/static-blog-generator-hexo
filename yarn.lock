@@ -11871,6 +11871,7 @@ __metadata:
   resolution: "sitemap-crawler@workspace:packages/sitemap-crawler"
   dependencies:
     "@types/bluebird": ^3.5.38
+    "@types/node": ^18.13.0
     "@typescript-eslint/eslint-plugin": ^5.51.0
     "@typescript-eslint/parser": ^5.51.0
     ansi-colors: ^4.1.3
