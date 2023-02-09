@@ -42,6 +42,9 @@ jobs:
           architecture: x64
           cache: 'yarn'
           check-latest: true
+      - run: |
+          corepack prepare yarn@3.2.0 --activate
+          corepack enable
       - run: yarn install
       - name: Deploy 🚀
         #if: ${{ false }}
