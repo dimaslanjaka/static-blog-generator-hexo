@@ -43,7 +43,6 @@
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^2.1.0",
-    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
     "hexo-server": "^3.0.0"
   },
   "devDependencies": {
@@ -60,6 +59,9 @@
     "packages/hexo-github-card",
     "packages/hexo-generator-redirect",
     "packages/sitemap-crawler",
-    "packages/gulp-dom"
+    "packages/gulp-dom",
+    "packages/hexo-seo",
+    "packages/@types/*",
+    "packages/instant-indexing"
   ]
 }
