@@ -47,8 +47,12 @@ jobs:
           corepack enable
       - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck
       - run: yarn install
-      - run: yarn build
-      - run: yarn deploy
+      - run: sbg post standalone
+      - run: sbg post copy
+      - run: hexo generate
+      - run: sbg deploy copy
+      - run: sbg deploy seo
+      - run: sbg deploy safelink
       - name: Deploy 🚀
         #if: ${{ false }}
         #if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
