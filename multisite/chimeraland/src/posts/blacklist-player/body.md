@@ -12,6 +12,9 @@
 | Dikoo | SCAMMER MAP ILLUS 16 |
 | Glitch | SCAMMER MAP ILLUS 16 |
 | jiejie | SCAMMER MAP ILLUS 16 |
+| HitsuiTH | SCAMMER map illus 16 |
+| Jiejie | SCAMMER map illus 16 |
+| Glitch | SCAMMER map illus 16 |
 
 ## Daftar blacklist player kategori SCAMMER RUBY
 
@@ -27,10 +30,8 @@
 | Yayan bae | SCAMMER Illus Seal, Toxic |
 | Rishya | SCAMMER ruby |
 | BangPo | SCAMMER ruby |
-| HitsuiTH | SCAMMER map illus 16 |
-| Jiejie | SCAMMER map illus 16 |
-| Glitch | SCAMMER map illus 16 |
-| Dikoo | SCAMMER map illus 16 |
+| Xalll | SCAMMER ruby |
+| Xaiii | SCAMMER ruby |
 
 ## Daftar player kategori tukang roll drop item
 
