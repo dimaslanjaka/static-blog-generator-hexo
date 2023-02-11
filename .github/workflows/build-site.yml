@@ -47,6 +47,10 @@ jobs:
           corepack enable
       - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck
       - run: yarn install
+      - run: |
+          echo "node_modules/.bin" >> $GITHUB_PATH
+          echo "bin" >> $GITHUB_PATH
+        name: register bin
       - run: yarn build
         working-directory: multisite/chimeraland
       - run: sbg post standalone
