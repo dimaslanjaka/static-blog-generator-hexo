@@ -20,8 +20,7 @@
     "update:chimeraland2": "cd multisite/chimeraland && yarn update",
     "update:ncu": "npm-check-updates -u",
     "update": "run-s update:* && npm install",
-    "postupdate": "node postinstall.js --commit --yarn",
-    "refresh": "rimraf package-lock.json && npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
+    "postupdate": "node postinstall.js --commit --yarn"
   },
   "hexo": {
     "version": "6.3.0"
