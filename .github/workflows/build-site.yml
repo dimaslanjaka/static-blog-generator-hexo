@@ -47,6 +47,8 @@ jobs:
           corepack enable
       - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck
       - run: yarn install
+      - run: yarn build
+        working-directory: multisite/chimeraland
       - run: sbg post standalone
       - run: sbg post copy
       - run: hexo generate
