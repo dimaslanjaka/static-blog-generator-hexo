@@ -52,6 +52,7 @@ jobs:
           echo "bin" >> $GITHUB_PATH
         name: register bin
       - run: yarn workspace chimeraland build
+      - run: which sbg
       - run: npx sbg post standalone
       - run: npx sbg post copy
       - run: hexo generate
