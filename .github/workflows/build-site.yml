@@ -51,14 +51,13 @@ jobs:
           echo "node_modules/.bin" >> $GITHUB_PATH
           echo "bin" >> $GITHUB_PATH
         name: register bin
-      - run: yarn build
-        working-directory: multisite/chimeraland
-      - run: sbg post standalone
-      - run: sbg post copy
+      - run: yarn workspace chimeraland build
+      - run: npx sbg post standalone
+      - run: npx sbg post copy
       - run: hexo generate
-      - run: sbg deploy copy
-      - run: sbg deploy seo
-      - run: sbg deploy safelink
+      - run: npx sbg deploy copy
+      - run: npx sbg deploy seo
+      - run: npx sbg deploy safelink
       - name: Deploy 🚀
         #if: ${{ false }}
         #if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
