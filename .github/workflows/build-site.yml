@@ -52,7 +52,7 @@ jobs:
           echo "node_modules/.bin" >> $GITHUB_PATH
           echo "bin" >> $GITHUB_PATH
         name: register bin
-      - run: lerna exec "npm run build --if-present --ignore=test"
+      - run: lerna exec "npm run build --if-present" --ignore=test
       - run: yarn workspace chimeraland build
       - run: npm rebuild
       - run: which sbg
