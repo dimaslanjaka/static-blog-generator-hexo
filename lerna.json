@@ -3,7 +3,8 @@
   "version": "independent",
   "packages": [
     "source",
-    "src-posts"
+    "src-posts",
+    "packages/static-blog-generator"
   ],
   "useWorkspaces": true,
   "npmClient": "yarn"
