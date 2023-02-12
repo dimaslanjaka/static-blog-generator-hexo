@@ -61,6 +61,6 @@
   },
   "workspaces": [
     "multisite/chimeraland",
-    "packages/static-blog-generator/packages/*"
+    "packages/static-blog-generator"
   ]
 }
