@@ -4,7 +4,10 @@
   "packages": [
     "source",
     "src-posts",
-    "packages/static-blog-generator"
+    "packages/static-blog-generator/packages/sbg-utility",
+    "packages/static-blog-generator/packages/sbg-api",
+    "packages/static-blog-generator/packages/sbg-server",
+    "packages/static-blog-generator/packages/sbg-cli"
   ],
   "useWorkspaces": true,
   "npmClient": "yarn"
