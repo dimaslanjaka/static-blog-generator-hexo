@@ -5939,7 +5939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.0.0, axios@npm:^1.1.3, axios@npm:^1.2.6, axios@npm:^1.3.2":
+"axios@npm:^1.0.0, axios@npm:^1.2.6, axios@npm:^1.3.2":
   version: 1.3.2
   resolution: "axios@npm:1.3.2"
   dependencies:
@@ -7090,7 +7090,7 @@ __metadata:
     axios: ^1.3.2
     bluebird: ^3.7.2
     cross-env: ^7.0.3
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
     decode-uri-component: ^0.4.1
     eslint: ^8.33.0
@@ -7099,12 +7099,12 @@ __metadata:
     eslint-plugin-react: ^7.32.2
     front-matter: ^4.0.2
     fs-extra: ^11.1.0
-    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz"
+    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
     glob: ^8.1.0
     googleapis: ^110.0.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
-    hexo-post-parser: "https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz"
+    hexo-post-parser: "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz"
     js-yaml: ^4.1.0
     minimatch: ^6.1.6
     moment: ^2.29.4
@@ -7116,7 +7116,7 @@ __metadata:
     prettier: ^2.8.4
     react: ^18.2.0
     react-dom: ^18.2.0
-    safelinkify: "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz"
+    safelinkify: "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz"
     sharp: ^0.31.3
     slugify: ^1.6.5
     through2: ^4.0.2
@@ -8608,7 +8608,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge-ts@npm:^4.2.2, deepmerge-ts@npm:^4.3.0":
+"deepmerge-ts@npm:^4.3.0":
   version: 4.3.0
   resolution: "deepmerge-ts@npm:4.3.0"
   checksum: d5f8a96df9a2bc7177d59544b9390ba76e50fb725f776669068ca04eef319e98ee8870cf7b7ecca9f636b711d57cea571ac61553ee01101a614c045f7a86e0be
@@ -11212,46 +11212,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz":
-  version: 1.1.5
-  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz"
-  dependencies:
-    "@expo/spawn-async": ^1.7.0
-    bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    deepmerge-ts: ^4.2.2
-    fs-extra: ^11.1.0
-    git-command-helper: latest
-    hexo-util: ^3.0.1
-    ini: ^3.0.1
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    true-case-path: ^2.2.1
-    tslib: ^2.4.1
-    upath: ^2.0.1
-  dependenciesMeta:
-    cross-spawn:
-      optional: true
-    git-command-helper:
-      optional: true
-    nodejs-package-types:
-      optional: true
-    persistent-cache:
-      optional: true
-  checksum: cd7494690138cd33553dfe3fbdf5f482909c7b5ace83d81bfb5ea472dcbd5dfdf28616d27acf31fb1d626f901446aed847a0921e820fbe27a0fc86257e9b6601
-  languageName: node
-  linkType: hard
-
-"git-command-helper@npm:latest":
+"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz":
   version: 1.1.7
-  resolution: "git-command-helper@npm:1.1.7"
+  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
   dependencies:
     "@expo/spawn-async": ^1.7.0
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    deepmerge-ts: ^4.2.2
+    deepmerge-ts: ^4.3.0
     fs-extra: ^11.1.0
-    git-command-helper: latest
     hexo-util: ^3.0.1
     ini: ^3.0.1
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
@@ -11259,16 +11228,7 @@ __metadata:
     true-case-path: ^2.2.1
     tslib: ^2.5.0
     upath: ^2.0.1
-  dependenciesMeta:
-    cross-spawn:
-      optional: true
-    git-command-helper:
-      optional: true
-    nodejs-package-types:
-      optional: true
-    persistent-cache:
-      optional: true
-  checksum: 870403b7610798ff939aa53b7ab61107138aab888091563b81925b73a38e903fc0d88a8f0a6d0ec22a12b633a7785d39b35ba5887a2f55f8dcabcf11f9252e51
+  checksum: 64129843465e9381dd2ce80aa2d9722df620f2ab084e1754f1c21e6e10f6eca74caad90ab64224a267cb21c776cfe607940ae3ff8e6f99c1ab41ba1ec63caace
   languageName: node
   linkType: hard
 
@@ -12417,36 +12377,37 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz":
-  version: 1.1.18-5-16ed478
-  resolution: "hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz"
+"hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz":
+  version: 1.2.6
+  resolution: "hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz"
   dependencies:
-    axios: ^1.1.3
+    ansi-colors: ^4.1.3
+    axios: ^1.3.2
     bluebird: ^3.7.2
     chalk: ^4.1.2
-    deepmerge-ts: ^4.2.2
-    fs-extra: ^10.1.0
-    jsdom: ^20.0.2
+    front-matter: ^4.0.2
+    fs-extra: ^11.1.0
+    jsdom: ^21.1.0
     lodash: ^4.17.21
     lodash.deburr: ^4.1.0
     markdown-it: ^13.0.1
     markdown-it-abbr: ^1.0.4
-    markdown-it-anchor: ^8.6.5
-    markdown-it-attrs: ^4.1.4
+    markdown-it-anchor: ^8.6.6
+    markdown-it-attrs: ^4.1.6
     markdown-it-footnote: ^3.0.3
     markdown-it-mark: ^3.0.1
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
-    moment-timezone: ^0.5.38
-    nodejs-package-types: "github:dimaslanjaka/nodejs-package-types"
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz"
+    moment-timezone: ^0.5.40
+    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
+    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     showdown: ^2.1.0
     tiny-typed-emitter: ^2.1.0
     true-case-path: ^2.2.1
     upath: ^2.0.1
-    yaml: ^2.1.3
+    yaml: ^2.2.1
     yargs: ^17.6.2
-  checksum: dbe3c234e499090b7d46d014cf589bdfa0329e86da095cc60eb333f2cd50125097541a407fab9f1541956922c63f7ba3392e95f5de1835d61289487168b269be
+  checksum: 2accacb3a33c4fbc3c9925087db63119b1b26e8c4007b6c5db84181479203812ac4b23cd6f88cd7ff32fee6c9435a231dbd7d17de5fb779f7aa8692aa6a66ff6
   languageName: node
   linkType: hard
 
@@ -12756,7 +12717,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:11.7.0, highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0, highlight.js@npm:^11.7.0":
+"highlight.js@https://github.com/highlightjs/highlight.js/tarball/11-stable":
+  version: 11.3.1
+  resolution: "highlight.js@https://github.com/highlightjs/highlight.js.git#commit=2a972d86589f65f4e79f67a02c3bf389a187afa0"
+  checksum: 927c5f188896dbc30e5a9452f2cf52a87073555aa2f30d0974701b4bf2659bee22847ee663bdec805a52bb91200ae4b075ec218b4dbdbe06bf0d265ea4bdd1ac
+  languageName: node
+  linkType: hard
+
+"highlight.js@npm:11.7.0, highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0":
   version: 11.7.0
   resolution: "highlight.js@npm:11.7.0"
   checksum: 19e3fb8b56f4b361b057a8523b989dfeb6479bbd1e29cec3fac6fa5c78d09927d5fa61b7dba6631fdb57cfdca9b3084aa4da49405ceaf4a67f67beae2ed5b77d
@@ -14677,7 +14645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^20.0.1, jsdom@npm:^20.0.2, jsdom@npm:^20.0.3":
+"jsdom@npm:^20.0.1, jsdom@npm:^20.0.3":
   version: 20.0.3
   resolution: "jsdom@npm:20.0.3"
   dependencies:
@@ -15823,7 +15791,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-anchor@npm:^8.6.5, markdown-it-anchor@npm:^8.6.6":
+"markdown-it-anchor@npm:^8.6.6":
   version: 8.6.6
   resolution: "markdown-it-anchor@npm:8.6.6"
   peerDependencies:
@@ -15833,7 +15801,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-attrs@npm:^4.1.3, markdown-it-attrs@npm:^4.1.4, markdown-it-attrs@npm:^4.1.6":
+"markdown-it-attrs@npm:^4.1.3, markdown-it-attrs@npm:^4.1.6":
   version: 4.1.6
   resolution: "markdown-it-attrs@npm:4.1.6"
   peerDependencies:
@@ -16444,7 +16412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment-timezone@npm:^0.5.21, moment-timezone@npm:^0.5.34, moment-timezone@npm:^0.5.38, moment-timezone@npm:^0.5.40, moment-timezone@npm:latest":
+"moment-timezone@npm:^0.5.21, moment-timezone@npm:^0.5.34, moment-timezone@npm:^0.5.40, moment-timezone@npm:latest":
   version: 0.5.40
   resolution: "moment-timezone@npm:0.5.40"
   dependencies:
@@ -16849,23 +16817,6 @@ __metadata:
   dependencies:
     node.extend: 1.0.8
   checksum: b2909b4e20fbf42818bcffabb45170b064e38bdbb00dbd1c45cba9c0610822903794ac892f77a6004932c5a3491f3503ea7cb86f39c4b9562b4f4deb563c813e
-  languageName: node
-  linkType: hard
-
-"nodejs-package-types@github:dimaslanjaka/nodejs-package-types":
-  version: 1.1.4
-  resolution: "nodejs-package-types@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=f1156039f9ef1a69478117264d71ed2a237eb99d"
-  dependencies:
-    "@types/express": ^4.17.16
-    ansi-colors: ^4.1.3
-    axios: ^1.2.6
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    fs-extra: ^11.1.0
-    hexo-util: ^3.0.1
-    through2: ^4.0.2
-    true-case-path: ^2.2.1
-    upath: ^2.0.1
-  checksum: e7cde1c16fc88f490eb6682ef99a630f9fa4f26710c1ca5a29d4ba937ff9aaf36edd93d202669eee39c1e6d1fead313793c293d974944877e8bc1885864b20da
   languageName: node
   linkType: hard
 
@@ -20491,17 +20442,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"safelinkify@https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz":
+"safelinkify@https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz":
   version: 1.1.13
-  resolution: "safelinkify@https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz"
+  resolution: "safelinkify@https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz"
   dependencies:
     "@popperjs/core": ^2.11.6
     bootstrap: ^5.2.3
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     crypto-browserify: ^3.12.0
     crypto-js: ^4.1.1
-    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz"
-    highlight.js: ^11.7.0
+    git-command-helper: "*"
+    highlight.js: "https://github.com/highlightjs/highlight.js/tarball/11-stable"
     jquery: ^3.6.3
     moment: ^2.29.4
     moment-timezone: ^0.5.40
@@ -20518,7 +20469,7 @@ __metadata:
       optional: true
     persistent-cache:
       optional: true
-  checksum: 753b26ce9a718e5f44dbd6e8fcf658136db23ef806337d449efbf800eb0e388e03a6265ac377645f9e9d12bf6e97fdd03e31c5e6e330b9a08de2e26bfbaf6353
+  checksum: 9986f92035e72cafed8db2286924e1640df947ed6b250d287c5706b7f4c22ae25acc31d34a66e9cfa34c96661576522f599f18889029b8af20cf885213b03734
   languageName: node
   linkType: hard
 
@@ -22794,7 +22745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0, tslib@npm:^2.4.1, tslib@npm:^2.5.0":
+"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0":
   version: 2.5.0
   resolution: "tslib@npm:2.5.0"
   checksum: ae3ed5f9ce29932d049908ebfdf21b3a003a85653a9a140d614da6b767a93ef94f460e52c3d787f0e4f383546981713f165037dc2274df212ea9f8a4541004e1
@@ -24336,7 +24287,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.1.3, yaml@npm:^2.2.1":
+"yaml@npm:^2.2.1":
   version: 2.2.1
   resolution: "yaml@npm:2.2.1"
   checksum: 84f68cbe462d5da4e7ded4a8bded949ffa912bc264472e5a684c3d45b22d8f73a3019963a32164023bdf3d83cfb6f5b58ff7b2b10ef5b717c630f40bd6369a23
