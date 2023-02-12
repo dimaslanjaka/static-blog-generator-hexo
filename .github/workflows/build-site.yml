@@ -51,6 +51,11 @@ jobs:
           echo "node_modules/.bin" >> $GITHUB_PATH
           echo "bin" >> $GITHUB_PATH
         name: register bin
+      - run: yarn workspace static-utility build
+      - run: yarn workspace static-api build
+      - run: yarn workspace static-server build
+      - run: yarn workspace static-cli build
+      - run: yarn workspace static-blog-generator build
       - run: yarn workspace chimeraland build
       - run: which sbg
       - run: npx sbg post standalone
