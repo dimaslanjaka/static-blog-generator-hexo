@@ -6,12 +6,12 @@ const sbgProject = toUnix(__dirname)
 
 function copyPost() {
   console.log('npm run copy on', hexoProject)
-  spawn('npm', ['run', 'copy'], { cwd: hexoProject, stdio: 'inherit' })
+  // spawn('npm', ['run', 'copy'], { cwd: hexoProject, stdio: 'inherit' })
 }
 
 function generateSite() {
   console.log('npm run build on', hexoProject)
-  spawn('npm', ['run', 'build'], { cwd: hexoProject, stdio: 'inherit' })
+  // spawn('npm', ['run', 'build'], { cwd: hexoProject, stdio: 'inherit' })
 }
 
 module.exports = {
