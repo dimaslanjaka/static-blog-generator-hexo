@@ -5,8 +5,10 @@ import { hexoProject } from '../project'
 const srcPostFolder = join(__dirname, '../src-posts')
 const srcPostOutputFolder = join(hexoProject, 'src-posts/chimeraland')
 
-export default function copySrcPost() {
+export function copySrcPost() {
   return GulpClient.src(['**/*.*'], { cwd: srcPostFolder }).pipe(
     GulpClient.dest(srcPostOutputFolder)
   )
 }
+
+export default copySrcPost

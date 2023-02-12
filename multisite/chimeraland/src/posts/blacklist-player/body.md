@@ -26,12 +26,12 @@
 | Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | hella | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
-| LORD | AKUN KEDUA **[https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true](hella)** |
+| LORD | AKUN KEDUA **[hella](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true)** |
 | Yayan bae | SCAMMER Illus Seal, Toxic |
 | Rishya | SCAMMER ruby |
 | BangPo | SCAMMER ruby |
 | Xalll | SCAMMER ruby |
-| Xaiii | SCAMMER ruby |
+| Xaiii | SCAMMER ruby, second account of **[Xalll](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=Xalll&scroll=true)** |
 
 ## Daftar player kategori tukang roll drop item
 
