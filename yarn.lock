@@ -7099,12 +7099,12 @@ __metadata:
     eslint-plugin-react: ^7.32.2
     front-matter: ^4.0.2
     fs-extra: ^11.1.0
-    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
+    git-command-helper: "workspace:^"
     glob: ^8.1.0
     googleapis: ^110.0.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
-    hexo-post-parser: "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz"
+    hexo-post-parser: "workspace:^"
     js-yaml: ^4.1.0
     minimatch: ^6.1.6
     moment: ^2.29.4
@@ -7116,7 +7116,7 @@ __metadata:
     prettier: ^2.8.4
     react: ^18.2.0
     react-dom: ^18.2.0
-    safelinkify: "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz"
+    safelinkify: "workspace:^"
     sharp: ^0.31.3
     slugify: ^1.6.5
     through2: ^4.0.2
@@ -8158,17 +8158,6 @@ __metadata:
     shebang-command: ^2.0.0
     which: ^2.0.1
   checksum: ba2a57b97e9b59121b567756f0cbe70a07443d749bf39ee9ef8c8de090c19181d3b54eb9a09f07a233caaa3ffd33345456ed28ddd179b57e527469c2ba5f3b11
-  languageName: node
-  linkType: hard
-
-"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript":
-  version: 7.0.3
-  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn.git#commit=e48f170a12c0651ee2f770a41dd043459be336e0"
-  dependencies:
-    path-key: ^3.1.0
-    shebang-command: ^2.0.0
-    which: ^2.0.1
-  checksum: bbf7a558b8efae5b7e54a7790999908167005fe1f3a78535067d84f779ac8ce2a1a813288a7d8f19321e8e9c95285e9d42b2eccf48237f538f706865a204e383
   languageName: node
   linkType: hard
 
@@ -11212,26 +11201,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz":
-  version: 1.1.7
-  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
-  dependencies:
-    "@expo/spawn-async": ^1.7.0
-    bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    deepmerge-ts: ^4.3.0
-    fs-extra: ^11.1.0
-    hexo-util: ^3.0.1
-    ini: ^3.0.1
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    true-case-path: ^2.2.1
-    tslib: ^2.5.0
-    upath: ^2.0.1
-  checksum: 64129843465e9381dd2ce80aa2d9722df620f2ab084e1754f1c21e6e10f6eca74caad90ab64224a267cb21c776cfe607940ae3ff8e6f99c1ab41ba1ec63caace
-  languageName: node
-  linkType: hard
-
 "git-raw-commits@npm:^2.0.0, git-raw-commits@npm:^2.0.8":
   version: 2.0.11
   resolution: "git-raw-commits@npm:2.0.11"
@@ -11954,7 +11923,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"hexo-browsersync@git+https://github.com/hexojs/hexo-browsersync, hexo-browsersync@https://github.com/hexojs/hexo-browsersync/tarball/master":
+"hexo-browsersync@https://github.com/hexojs/hexo-browsersync/tarball/master":
   version: 2.0.0
   resolution: "hexo-browsersync@https://github.com/hexojs/hexo-browsersync.git#commit=3991feb273cf24fc297846df2d287b2ef9afce84"
   dependencies:
@@ -12342,7 +12311,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     front-matter: ^4.0.2
     fs-extra: ^11.1.0
-    git-command-helper: "*"
+    git-command-helper: "workspace:^"
     gulp: ^4.0.2
     jest: ^29.4.2
     jsdom: ^21.1.0
@@ -12376,40 +12345,6 @@ __metadata:
     yargs: ^17.6.2
   languageName: unknown
   linkType: soft
-
-"hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz":
-  version: 1.2.6
-  resolution: "hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz"
-  dependencies:
-    ansi-colors: ^4.1.3
-    axios: ^1.3.2
-    bluebird: ^3.7.2
-    chalk: ^4.1.2
-    front-matter: ^4.0.2
-    fs-extra: ^11.1.0
-    jsdom: ^21.1.0
-    lodash: ^4.17.21
-    lodash.deburr: ^4.1.0
-    markdown-it: ^13.0.1
-    markdown-it-abbr: ^1.0.4
-    markdown-it-anchor: ^8.6.6
-    markdown-it-attrs: ^4.1.6
-    markdown-it-footnote: ^3.0.3
-    markdown-it-mark: ^3.0.1
-    markdown-it-sub: ^1.0.0
-    markdown-it-sup: ^1.0.0
-    moment-timezone: ^0.5.40
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    showdown: ^2.1.0
-    tiny-typed-emitter: ^2.1.0
-    true-case-path: ^2.2.1
-    upath: ^2.0.1
-    yaml: ^2.2.1
-    yargs: ^17.6.2
-  checksum: 2accacb3a33c4fbc3c9925087db63119b1b26e8c4007b6c5db84181479203812ac4b23cd6f88cd7ff32fee6c9435a231dbd7d17de5fb779f7aa8692aa6a66ff6
-  languageName: node
-  linkType: hard
 
 "hexo-renderer-markdown-it@git+https://github.com/hexojs/hexo-renderer-markdown-it":
   version: 7.0.0
@@ -12557,7 +12492,7 @@ __metadata:
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     git-command-helper: "workspace:^"
     hexo: ^6.3.0
-    hexo-browsersync: "git+https://github.com/hexojs/hexo-browsersync"
+    hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
     hexo-generator-archive: "git+https://github.com/hexojs/hexo-generator-archive"
     hexo-generator-category: "git+https://github.com/hexojs/hexo-generator-category"
     hexo-generator-index: "git+https://github.com/hexojs/hexo-generator-index"
@@ -12714,13 +12649,6 @@ __metadata:
   bin:
     hexo: bin/hexo
   checksum: 3d090e727d8ce50b74ee72190b75086493269b5e8c89b34bdd69d1a6f84dc48dd8fab63ae0888c237f2c5ae6c57838ebd392fa9e99949af076d1a11535049e1a
-  languageName: node
-  linkType: hard
-
-"highlight.js@https://github.com/highlightjs/highlight.js/tarball/11-stable":
-  version: 11.3.1
-  resolution: "highlight.js@https://github.com/highlightjs/highlight.js.git#commit=2a972d86589f65f4e79f67a02c3bf389a187afa0"
-  checksum: 927c5f188896dbc30e5a9452f2cf52a87073555aa2f30d0974701b4bf2659bee22847ee663bdec805a52bb91200ae4b075ec218b4dbdbe06bf0d265ea4bdd1ac
   languageName: node
   linkType: hard
 
@@ -20442,37 +20370,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"safelinkify@https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz":
-  version: 1.1.13
-  resolution: "safelinkify@https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz"
-  dependencies:
-    "@popperjs/core": ^2.11.6
-    bootstrap: ^5.2.3
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    crypto-browserify: ^3.12.0
-    crypto-js: ^4.1.1
-    git-command-helper: "*"
-    highlight.js: "https://github.com/highlightjs/highlight.js/tarball/11-stable"
-    jquery: ^3.6.3
-    moment: ^2.29.4
-    moment-timezone: ^0.5.40
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    path-browserify: ^1.0.1
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    toastr: ^2.1.4
-  dependenciesMeta:
-    cross-spawn:
-      optional: true
-    git-command-helper:
-      optional: true
-    nodejs-package-types:
-      optional: true
-    persistent-cache:
-      optional: true
-  checksum: 9986f92035e72cafed8db2286924e1640df947ed6b250d287c5706b7f4c22ae25acc31d34a66e9cfa34c96661576522f599f18889029b8af20cf885213b03734
-  languageName: node
-  linkType: hard
-
 "safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.0.2, safer-buffer@npm:^2.1.0, safer-buffer@npm:^2.1.2, safer-buffer@npm:~2.1.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
@@ -22235,7 +22132,7 @@ __metadata:
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
     ansi-colors: ^4.1.3
     axios: ^1.3.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     decode-uri-component: ^0.4.1
     fs-extra: latest
     gulp: latest
@@ -22243,15 +22140,6 @@ __metadata:
     npm-run-all: ^4.1.5
     through2: latest
     upath: latest
-  dependenciesMeta:
-    "@types/through2":
-      optional: true
-    ansi-colors:
-      optional: true
-    axios:
-      optional: true
-    cross-spawn:
-      optional: true
   languageName: unknown
   linkType: soft
 

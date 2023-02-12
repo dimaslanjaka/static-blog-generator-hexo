@@ -58,6 +58,7 @@ jobs:
       - run: yarn workspace static-cli build
       - run: yarn workspace static-blog-generator build
       - run: yarn workspace chimeraland build
+      - run: npm rebuild
       - run: which sbg
       - run: npx sbg post standalone
       - run: npx sbg post copy
