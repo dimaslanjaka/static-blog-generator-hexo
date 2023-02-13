@@ -1,8 +1,9 @@
-import { readdirSync, readFileSync, writeFileSync } from 'fs-extra'
-import { spawnAsync } from 'git-command-helper/dist/spawn'
+import { readdirSync, readFileSync } from 'fs-extra'
+import { spawnAsync } from 'git-command-helper'
 import { buildPost, postMap, postMeta, renderMarkdown } from 'hexo-post-parser'
 import { JSDOM } from 'jsdom'
 import { EOL } from 'os'
+import sbgutil from 'sbg-utility'
 import slugify from 'slugify'
 import { trueCasePathSync } from 'true-case-path'
 import { basename, join, toUnix } from 'upath'
@@ -135,5 +136,8 @@ screenshots().then(function (ss) {
   const build = buildPost(post)
   const saveTo = join(chimeralandProject, 'src-posts/blacklist-player.md')
 
-  writeFileSync(saveTo, build)
+  sbgutil.debug('chimera-blacklist')(
+    'blacklist saved',
+    sbgutil.writefile(saveTo, build).file
+  )
 })
