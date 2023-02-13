@@ -1,8 +1,8 @@
 const { join, toUnix } = require('upath')
-const spawn = require('cross-spawn')
+// const spawn = require('cross-spawn')
 
 const hexoProject = join(__dirname, '../../')
-const sbgProject = toUnix(__dirname)
+const chimeralandProject = toUnix(__dirname)
 
 function copyPost() {
   console.log('npm run copy on', hexoProject)
@@ -16,7 +16,7 @@ function generateSite() {
 
 module.exports = {
   hexoProject,
-  sbgProject,
+  chimeralandProject,
   generateSite,
   copyPost
 }

@@ -45,6 +45,7 @@
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sbg-utility": "workspace:^",
     "sharp": "^0.31.3",
     "slugify": "^1.6.5",
     "through2": "^4.0.2",

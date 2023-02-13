@@ -32,6 +32,7 @@
 | BangPo | SCAMMER ruby |
 | Xalll | SCAMMER ruby |
 | Xaiii | SCAMMER ruby, second account of **[Xalll](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=Xalll&scroll=true)** |
+| Freecss | SCAMMER ruby alasan baru main dan new owner |
 
 ## Daftar player kategori tukang roll drop item
 
