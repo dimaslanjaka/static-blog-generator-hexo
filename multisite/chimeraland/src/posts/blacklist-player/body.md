@@ -16,6 +16,7 @@
 | Jiejie | SCAMMER map illus 16 |
 | Glitch | SCAMMER map illus 16 |
 | xSOLETAx | SCAMMER map illus 16 |
+| Elacan | SCAMMER map illus 16 |
 
 ## Daftar blacklist player kategori SCAMMER RUBY
 
@@ -34,6 +35,7 @@
 | Xalll | SCAMMER ruby |
 | Xaiii | SCAMMER ruby, second account of **[Xalll](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=Xalll&scroll=true)** |
 | Freecss | SCAMMER ruby alasan baru main dan new owner |
+| drin| SCAMMER ruby clan APPOCALYPSE |
 
 ## Daftar player kategori tukang roll drop item
 
@@ -60,7 +62,7 @@
 | ourobores | | |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
-- Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini kadang hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
+- Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim).
 - Jangan melakukan transaksi dengan **AKUN SMURF** (orang indonesia menyebutnya **AKUN TUYUL**), 90% merupakan scammer.
 
 ## Tautan yang merujuk tentang scammer
