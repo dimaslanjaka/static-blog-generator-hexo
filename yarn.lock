@@ -7117,6 +7117,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     safelinkify: "workspace:^"
+    sbg-utility: "workspace:^"
     sharp: ^0.31.3
     slugify: ^1.6.5
     through2: ^4.0.2
@@ -9987,7 +9988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.33.0":
+"eslint@npm:^8.33.0, eslint@npm:^8.34.0":
   version: 8.34.0
   resolution: "eslint@npm:8.34.0"
   dependencies:
@@ -21416,7 +21417,7 @@ __metadata:
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.51.0
     "@typescript-eslint/parser": ^5.51.0
-    eslint: ^8.33.0
+    eslint: ^8.34.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     gulp: ^4.0.2
@@ -21444,6 +21445,7 @@ __metadata:
     lerna: ^6.4.1
     npm-run-all: ^4.1.5
     nx: ^15.6.3
+    prettier: ^2.8.4
   languageName: unknown
   linkType: soft
 
