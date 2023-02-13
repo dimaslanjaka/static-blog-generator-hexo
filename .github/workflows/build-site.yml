@@ -52,6 +52,7 @@ jobs:
           echo "node_modules/.bin" >> $GITHUB_PATH
           echo "bin" >> $GITHUB_PATH
         name: register bin
+      - run: yarn workspace sbg-utility install
       - run: yarn workspace sbg-utility build
       - run: yarn workspace sbg-api build
       - run: yarn workspace sbg-server build
