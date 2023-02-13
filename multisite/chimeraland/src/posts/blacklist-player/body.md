@@ -15,6 +15,7 @@
 | HitsuiTH | SCAMMER map illus 16 |
 | Jiejie | SCAMMER map illus 16 |
 | Glitch | SCAMMER map illus 16 |
+| xSOLETAx | SCAMMER map illus 16 |
 
 ## Daftar blacklist player kategori SCAMMER RUBY
 
