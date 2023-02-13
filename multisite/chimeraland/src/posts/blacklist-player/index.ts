@@ -6,14 +6,14 @@ import { EOL } from 'os'
 import slugify from 'slugify'
 import { trueCasePathSync } from 'true-case-path'
 import { basename, join, toUnix } from 'upath'
-import { sbgProject } from '../../../project'
+import { chimeralandProject } from '../../../project'
 
 const metadata: postMeta = {
-  title: 'Blacklist Player Chimeraland',
+  title: 'Chimeraland Scammer List Player',
   description:
     'Blacklist player chimeraland (scammer list meliputi ruby trader, map illus 16 party, roll drop item, dan lain-lain)',
   date: '2022-11-07T19:54:01+07:00',
-  updated: '2023-02-12T13:34:15+07:00',
+  updated: '2023-02-13T04:49:35+07:00',
   lang: 'id',
   permalink: '/chimeraland/blacklist-player.html',
   tags: ['Chimeraland', 'Blacklist', 'Player', 'Scammer'],
@@ -133,7 +133,7 @@ screenshots().then(function (ss) {
     rawbody: translator + '\n\n' + body
   }
   const build = buildPost(post)
-  const saveTo = join(sbgProject, 'src-posts/blacklist-player.md')
+  const saveTo = join(chimeralandProject, 'src-posts/blacklist-player.md')
 
   writeFileSync(saveTo, build)
 })
