@@ -63,5 +63,10 @@
   "workspaces": [
     "multisite/chimeraland",
     "packages/static-blog-generator"
-  ]
+  ],
+  "engines": {
+    "node": ">=16.x",
+    "npm": ">=9.x",
+    "yarn": ">=3.2.0"
+  }
 }
