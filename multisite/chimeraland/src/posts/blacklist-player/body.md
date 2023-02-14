@@ -1,6 +1,6 @@
 <!-- include translator.html -->
 
-## Daftar blacklist player kategori SCAMMER MAP ILLUS 16 PARTY
+## Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY
 | Nama Player | Keterangan |
 | :--- | :--- |
 | ASTER | SCAMMER MAP ILLUS 16 |
@@ -18,8 +18,9 @@
 | xSOLETAx | SCAMMER map illus 16 |
 | Elacan | SCAMMER map illus 16 |
 | YurikoSanGyi | Roll and SCAMMER MAP ILLUS 16 |
+| yukie | SCAMMER map illus 16 |
 
-## Daftar blacklist player kategori SCAMMER RUBY
+## Daftar scammer blacklist player kategori SCAMMER RUBY
 
 | Nama Player | Keterangan |
 | :--- | :--- |
@@ -63,11 +64,11 @@
 | ourobores | | |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
-- Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim).
+- Jangan ikut map illus dengan tiket telur grand (kadang orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim).
 - Jangan melakukan transaksi dengan **AKUN SMURF** (orang indonesia menyebutnya **AKUN TUYUL**), 90% merupakan scammer.
 
 ## Tautan yang merujuk tentang scammer
-- scammer midman/rekber (rekening bersama): https://www.facebook.com/groups/5827051707365882/permalink/8491039837633709/?mibextid=Nif5oz
+- scammer midman/rekber (rekening bersama): [https://www.facebook.com/groups/5827051707365882/permalink/8491039837633709/?mibextid=Nif5oz](https://www.facebook.com/groups/5827051707365882/permalink/8491039837633709/?mibextid=Nif5oz)
 - shortlink halaman ini: [http://bit.ly/chimeraland-blacklist](http://bit.ly/chimeraland-blacklist)
 
 ## Kumpulan Tangkapan Layar (screenshot) tentang scammer
