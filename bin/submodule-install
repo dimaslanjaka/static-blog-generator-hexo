@@ -52,9 +52,9 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
         # If the module's path exists, remove it.
         # This is done b/c the module's path is currently
         # not a valid git repo and adding the submodule will cause an error.
-        if [ -d "${MODULE_PATH}" ]; then
+        if [ -d "${ROOT}/${MODULE_PATH}" ]; then
             echo "deleting ${MODULE_PATH}"
-            rm -rf "${MODULE_PATH}"
+            rm -rf "${ROOT}/${MODULE_PATH}"
         fi
 
         NAME="$(echo "${KEY}" | sed 's/^submodule\.\(.*\)\.path$/\1/')"
