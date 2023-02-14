@@ -32,12 +32,13 @@ jobs:
     steps:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@v3
-        name: checkout
+        name: checkout root project
         with:
           ref: master
           repository: dimaslanjaka/static-blog-generator-hexo
           submodules: recursive
           token: "${{ secrets.ACCESS_TOKEN }}"
+      - run: git submodule update -i -r
       - name: Checkout .deploy_git
         uses: actions/checkout@v3
         with:
@@ -156,6 +157,15 @@ jobs:
         working-directory: ./.deploy_git
         name: push .deploy_git
         shell: bash
+      - run: |
+          git config --global user.name 'dimaslanjaka'
+          git config --global user.email 'dimaslanjaka@gmail.com'
+          git submodule foreach "git add -A | :"
+          git submodule foreach "git commit -am 'Update build from ${{ env.GITHUB_COMMIT_URL }}' | :"
+          git submodule foreach "git push | :"
+          #git add -A
+          #git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+        continue-on-error: true
       - name: Deploy 🚀
         #if: ${{ false }}
         #if: steps.push-manual.outcome == 'failure' && steps.push-manual.conclusion == 'failure'
