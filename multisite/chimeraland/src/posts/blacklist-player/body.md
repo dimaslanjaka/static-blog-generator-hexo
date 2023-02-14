@@ -17,6 +17,7 @@
 | Glitch | SCAMMER map illus 16 |
 | xSOLETAx | SCAMMER map illus 16 |
 | Elacan | SCAMMER map illus 16 |
+| YurikoSanGyi | Roll and SCAMMER MAP ILLUS 16 |
 
 ## Daftar blacklist player kategori SCAMMER RUBY
 
