@@ -1,0 +1,43 @@
+#!/bin/bash -e
+
+# usages
+# get-arg
+# get-arg -cwd directory/folder
+# get-arg --cwd=directory/folder
+
+# set default root
+export ROOT="$(git rev-parse --show-toplevel)"
+
+while test $# -gt 0; do
+  case "$1" in
+    -h|--help)
+      echo "$package - attempt to install submodules"
+      echo " "
+      echo "$package [options] application [arguments]"
+      echo " "
+      echo "options:"
+      echo "-h, --help                show brief help"
+      echo "-o, --output-dir=DIR      specify a directory to install submodules"
+      exit 0
+      ;;
+    -cwd)
+      shift
+      if test $# -gt 0; then
+        export ROOT=$1
+      else
+        echo "no output dir specified"
+        exit 1
+      fi
+      shift
+      ;;
+    --cwd*)
+      export ROOT=`echo $1 | sed -e 's/^[^=]*=//g'`
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+echo "cwd $ROOT"
