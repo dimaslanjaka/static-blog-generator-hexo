@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": [
+    "./src/**/*",
+    "./test/**/*",
+    "**/*.json"
+  ],
+  "exclude": [
+    "**/dist/**"
+  ],
+  "references": [
+    {
+      "path": "../../packages/static-blog-generator/packages/sbg-utility"
+    },
+    {
+      "path": "../../packages/static-blog-generator/packages/hexo-post-parser"
+    },
+    {
+      "path": "../../packages/static-blog-generator/packages/hexo-blogger-xml"
+    }
+  ]
+}
