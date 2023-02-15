@@ -11,6 +11,8 @@
     // normally they are ignored as source files
     "allowJs": true,
     "checkJs": false,
+    // enable workspaces
+    "composite": true,
     // Generate d.ts files
     "declaration": true,
     // This compiler run should
