@@ -11974,7 +11974,7 @@ __metadata:
 
 "hexo-seo@file:./packages/hexo-seo::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.1.6
-  resolution: "hexo-seo@file:./packages/hexo-seo#./packages/hexo-seo::hash=7c0758&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-seo@file:./packages/hexo-seo#./packages/hexo-seo::hash=f1c74b&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     bluebird: ^3.7.2
     cheerio: ^1.0.0-rc.12
@@ -11987,8 +11987,8 @@ __metadata:
     hexo-log: ^4.0.1
     html-minifier-terser: ^7.1.0
     jsdom: ^21.1.0
-    minimatch: ^6.1.6
-    minimist: ^1.2.7
+    minimatch: ^6.2.0
+    minimist: ^1.2.8
     moment: ^2.29.4
     moment-timezone: ^0.5.40
     node-cache: ^5.1.2
@@ -12001,7 +12001,6 @@ __metadata:
     sanitize-filename: ^1.6.3
     serve-static: ^1.15.0
     terser: ^5.16.3
-    ts-node: ^10.9.1
     underscore: ^1.13.6
     url-parse: ^1.5.10
     uuid: ">=9.0.0"
@@ -12015,7 +12014,7 @@ __metadata:
       optional: true
     uuid:
       optional: true
-  checksum: 2ddf4decd905942da2c078e71c795c577f087c1f4e8a633eb0d4957f0d0bd5b32aabc26d9e23544065bd47b8297c8040d0b5c90da5597004837362de5aa8dff3
+  checksum: 806da59d85f90e85fe8b7bec26062692855f6ff7018ab4775e255b90e644700d8f39786d58edeea84753aed5818fa8ac1bbb20473b2f40fdde3088f20af2577d
   languageName: node
   linkType: hard
 
@@ -15751,7 +15750,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^6.1.6":
+"minimatch@npm:^6.1.6, minimatch@npm:^6.2.0":
   version: 6.2.0
   resolution: "minimatch@npm:6.2.0"
   dependencies:
@@ -15771,7 +15770,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.1.0, minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.5, minimist@npm:^1.2.6, minimist@npm:^1.2.7":
+"minimist@npm:^1.1.0, minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.5, minimist@npm:^1.2.6, minimist@npm:^1.2.8":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
   checksum: 75a6d645fb122dad29c06a7597bddea977258957ed88d7a6df59b5cd3fe4a527e253e9bbf2e783e4b73657f9098b96a5fe96ab8a113655d4109108577ecf85b0
