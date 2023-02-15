@@ -24,8 +24,7 @@ const metadata: postMeta = {
   tags: ['Chimeraland', 'Blacklist', 'Player', 'Scammer'],
   categories: ['Games', 'Chimeraland'],
   keywords: ['scammer list chimeraland', 'blacklist player chimeraland'],
-  thumbnail:
-    'https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.palmassgames.ru/wp-content/uploads/2021/07/screenshot_6-1-1024x504.png',
+  thumbnail: '/chimeraland/blacklist-player/thumbnail.png',
   author: 'L3n4r0x'
 }
 const translator = readFileSync(join(__dirname, 'translator.html')).toString()

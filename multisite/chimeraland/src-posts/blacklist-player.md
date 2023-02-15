@@ -1,7 +1,7 @@
 ---
 title: Chimeraland Scammer List Player
 date: 2022-11-07T19:54:01+07:00
-updated: 2023-02-15T13:00:57+07:00
+updated: 2023-02-15T13:17:20+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 multilang:
@@ -18,7 +18,7 @@ categories:
 keywords:
   - scammer list chimeraland
   - blacklist player chimeraland
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.palmassgames.ru/wp-content/uploads/2021/07/screenshot_6-1-1024x504.png
+thumbnail: /chimeraland/blacklist-player/thumbnail.png
 author: L3n4r0x
 ---
 

@@ -18,7 +18,7 @@ const publicDir = join(hexoProject, 'source/chimeraland')
 const inputJSON = join(__dirname, 'attendants.json')
 const inputDIR = join(__dirname, 'attendants')
 
-type Extended = typeof attendants['data'][number] & {
+type Extended = (typeof attendants)['data'][number] & {
   images: any[]
   videos: any[]
   pathname: string
@@ -44,7 +44,7 @@ const fixData = function () {
         if (!hasData) {
           // process new data
           console.log('adding', monsterName)
-          const newItem: Required<typeof attendants.data[number]> = {
+          const newItem: Required<(typeof attendants.data)[number]> = {
             name: monsterName,
             datePublished: moment().tz('Asia/Jakarta').format(),
             dateModified: moment()
