@@ -62,7 +62,8 @@
   },
   "workspaces": [
     "multisite/chimeraland",
-    "packages/static-blog-generator"
+    "packages/static-blog-generator",
+    "packages/agc"
   ],
   "engines": {
     "node": ">=16.x",
