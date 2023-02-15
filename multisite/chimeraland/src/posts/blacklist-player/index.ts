@@ -105,7 +105,10 @@ const screenshots = function (): Promise<string[]> {
                       )
                     ).replace(/\/{2,}/gm, '/')
 
-                    console.log('scammer img', url.toString())
+                    sbgutil.debug('chimera').extend('posts')(
+                      'scammer img',
+                      url.toString()
+                    )
 
                     const img = `<img src="${url.toString()}" alt="${basename(
                       path
