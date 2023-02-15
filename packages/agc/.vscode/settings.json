@@ -123,9 +123,9 @@
     "**/tmp/yarn": true
   },
   "code-runner.executorMap": {
-    "typescriptreact": "npx cross-env-shell DEBUG=chimera-* ts-node",
+    "typescriptreact": "node -r ts-node/register",
     "javascript": "node",
-    "typescript": "npx cross-env-shell DEBUG=git-command-helper,chimera-* ts-node",
+    "typescript": "node -r ts-node/register",
     "coffeescript": "coffee",
     "sass": "sass --style expanded",
     "scss": "scss --style expanded",
