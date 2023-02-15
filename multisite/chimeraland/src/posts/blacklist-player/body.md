@@ -1,6 +1,6 @@
 <!-- include translator.html -->
 
-## Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY
+<h2 id="scammer-map-illus-16">Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY</h2>
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | ASTER | | SCAMMER MAP ILLUS 16 |
@@ -22,7 +22,7 @@
 | UnknowN | | SCAMMER map illus 16 |
 | Sus | | SCAMMER map illus 16 |
 
-## Daftar scammer blacklist player kategori SCAMMER RUBY
+<h2 id="scammer-ruby">Daftar scammer blacklist player kategori SCAMMER RUBY</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
@@ -42,7 +42,7 @@
 | drin | APPOCALYPSE | SCAMMER ruby |
 | Naru/naru | | SCAMMER ruby |
 
-## Daftar player kategori tukang roll drop item
+<h2 id="tukang-roll">Daftar player kategori tukang roll drop item</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
