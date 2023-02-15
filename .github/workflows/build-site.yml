@@ -48,6 +48,13 @@ jobs:
           ref: posts
           path: src-posts
           token: "${{ secrets.ACCESS_TOKEN }}"
+      - name: Checkout source
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/public-source
+          ref: master
+          path: source
+          token: "${{ secrets.ACCESS_TOKEN }}"
       - name: Checkout .deploy_git
         uses: actions/checkout@v3
         with:
