@@ -115,7 +115,9 @@ const screenshots = function (): Promise<string[]> {
                     )}" />`
                     results.push(img)
 
-                    if (index === all.length - 1) resolve(results)
+                    if (index === all.length - 1) {
+                      resolve(results.sort(Intl.Collator().compare))
+                    }
                   }
                 )
               })
