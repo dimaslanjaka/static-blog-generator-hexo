@@ -5335,6 +5335,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"agc@workspace:packages/agc":
+  version: 0.0.0-use.local
+  resolution: "agc@workspace:packages/agc"
+  languageName: unknown
+  linkType: soft
+
 "agent-base@npm:6, agent-base@npm:^6.0.2":
   version: 6.0.2
   resolution: "agent-base@npm:6.0.2"
