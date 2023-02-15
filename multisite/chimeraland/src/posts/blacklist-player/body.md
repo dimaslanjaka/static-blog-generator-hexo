@@ -19,6 +19,8 @@
 | YurikoSanGyi | | Roll and SCAMMER MAP ILLUS 16 |
 | yukie | | SCAMMER map illus 16 |
 | EmpiLighT | matanglawin | SCAMMER map illus 16 |
+| UnknowN | | SCAMMER map illus 16 |
+| Sus | | SCAMMER map illus 16 |
 
 ## Daftar scammer blacklist player kategori SCAMMER RUBY
 
