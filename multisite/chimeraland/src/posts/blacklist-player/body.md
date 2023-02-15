@@ -11,9 +11,8 @@
 | HitsuiTH | SCAMMER MAP ILLUS 16 |
 | Dikoo | SCAMMER MAP ILLUS 16 |
 | Glitch | SCAMMER MAP ILLUS 16 |
-| jiejie | SCAMMER MAP ILLUS 16 |
+| jiejie/Jiejie | SCAMMER MAP ILLUS 16 |
 | HitsuiTH | SCAMMER map illus 16 |
-| Jiejie | SCAMMER map illus 16 |
 | Glitch | SCAMMER map illus 16 |
 | xSOLETAx | SCAMMER map illus 16 |
 | Elacan | SCAMMER map illus 16 |
