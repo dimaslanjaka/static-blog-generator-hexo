@@ -1,42 +1,44 @@
 <!-- include translator.html -->
 
 ## Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY
-| Nama Player | Keterangan |
-| :--- | :--- |
-| ASTER | SCAMMER MAP ILLUS 16 |
-| arkep | SCAMMER MAP ILLUS 16 |
-| Shelby | SCAMMER MAP ILLUS 16 |
-| Suvi | SCAMMER MAP ILLUS 16 sebagai LEADER PARTY |
-| PrimalHunter | SCAMMER MAP ILLUS 16 |
-| HitsuiTH | SCAMMER MAP ILLUS 16 |
-| Dikoo | SCAMMER MAP ILLUS 16 |
-| Glitch | SCAMMER MAP ILLUS 16 |
-| jiejie/Jiejie | SCAMMER MAP ILLUS 16 |
-| HitsuiTH | SCAMMER map illus 16 |
-| Glitch | SCAMMER map illus 16 |
-| xSOLETAx | SCAMMER map illus 16 |
-| Elacan | SCAMMER map illus 16 |
+| Nama Player | clan | Keterangan |
+| :--- | :--- | :--- |
+| ASTER | | SCAMMER MAP ILLUS 16 |
+| arkep | | SCAMMER MAP ILLUS 16 |
+| Shelby | | SCAMMER MAP ILLUS 16 |
+| Suvi | | SCAMMER MAP ILLUS 16 sebagai LEADER PARTY |
+| PrimalHunter | | SCAMMER MAP ILLUS 16 |
+| HitsuiTH | | SCAMMER MAP ILLUS 16 |
+| Dikoo | | SCAMMER MAP ILLUS 16 |
+| Glitch | | SCAMMER MAP ILLUS 16 |
+| jiejie/Jiejie | | SCAMMER MAP ILLUS 16 |
+| HitsuiTH | | SCAMMER map illus 16 |
+| Glitch | | SCAMMER map illus 16 |
+| xSOLETAx | | SCAMMER map illus 16 |
+| Elacan | | SCAMMER map illus 16 |
 | YurikoSanGyi | Roll and SCAMMER MAP ILLUS 16 |
-| yukie | SCAMMER map illus 16 |
+| yukie | | SCAMMER map illus 16 |
+| EmpiLighT | matanglawin | SCAMMER map illus 16 |
 
 ## Daftar scammer blacklist player kategori SCAMMER RUBY
 
-| Nama Player | Keterangan |
-| :--- | :--- |
-| Shelby | SCAMMER ruby |
-| NesaMiko | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
-| Tusboll | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| hella | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
-| LORD | AKUN KEDUA **[hella](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true)** |
-| Yayan bae | SCAMMER Illus Seal, Toxic |
-| Rishya | SCAMMER ruby |
-| BangPo | SCAMMER ruby |
-| Xalll | SCAMMER ruby |
-| Xaiii | SCAMMER ruby, akun kedua dari **[Xalll](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=Xalll&scroll=true)** |
-| Freecss | SCAMMER ruby alasan baru main dan new owner |
-| drin| SCAMMER ruby clan APPOCALYPSE |
+| Nama Player | clan | Keterangan |
+| :--- | :--- | :--- |
+| Shelby | | SCAMMER ruby |
+| NesaMiko | | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
+| Tusboll | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
+| Ryujin | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
+| Ryuukendo | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
+| hella | | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
+| LORD | | AKUN KEDUA **[hella](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true)** |
+| Yayan bae | | SCAMMER Illus Seal, Toxic |
+| Rishya | | SCAMMER ruby |
+| BangPo | | SCAMMER ruby |
+| Xalll | | SCAMMER ruby |
+| Xaiii | | SCAMMER ruby, akun kedua dari **[Xalll](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=Xalll&scroll=true)** |
+| Freecss | | SCAMMER ruby alasan baru main dan new owner |
+| drin | APPOCALYPSE | SCAMMER ruby |
+| Naru/naru | | SCAMMER ruby |
 
 ## Daftar player kategori tukang roll drop item
 
