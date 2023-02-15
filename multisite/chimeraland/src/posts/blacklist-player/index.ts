@@ -74,9 +74,10 @@ Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
 const screenshots = function (): Promise<string[]> {
   return new Promise((resolve) => {
     const results: string[] = []
-    readdirSync(__dirname)
+    const imagesDir = join(__dirname, 'images')
+    readdirSync(imagesDir)
       .filter((path) => /.(jpe?g|png)$/i.test(path))
-      .map((path) => join(__dirname, path))
+      .map((path) => join(imagesDir, path))
       .map((path, index, all) => {
         //https://stackoverflow.com/a/957978
         spawnAsync('git', 'rev-parse --show-toplevel'.split(' ')).then(
@@ -103,6 +104,8 @@ const screenshots = function (): Promise<string[]> {
                         )
                       )
                     ).replace(/\/{2,}/gm, '/')
+
+                    console.log('scammer img', url.toString())
 
                     const img = `<img src="${url.toString()}" alt="${basename(
                       path
