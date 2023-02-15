@@ -4,8 +4,11 @@
 
 rm -rf node_modules/@* &
 rm -rf node_modules/.* &
+rm -rf yarn.lock &
+rm -rf package-lock.json &
 
-for letter in {{a..z},{A..Z}}; do
+#for letter in {{a..z},{A..Z}}; do
+for letter in {{a..z}}; do
   loc="node_modules/${letter}*"
   echo "deleting ${loc}"
   rm -rf $loc &
