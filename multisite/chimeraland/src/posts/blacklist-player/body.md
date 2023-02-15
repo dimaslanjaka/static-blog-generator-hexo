@@ -16,7 +16,7 @@
 | Glitch | | SCAMMER map illus 16 |
 | xSOLETAx | | SCAMMER map illus 16 |
 | Elacan | | SCAMMER map illus 16 |
-| YurikoSanGyi | Roll and SCAMMER MAP ILLUS 16 |
+| YurikoSanGyi | | Roll and SCAMMER MAP ILLUS 16 |
 | yukie | | SCAMMER map illus 16 |
 | EmpiLighT | matanglawin | SCAMMER map illus 16 |
 
@@ -29,7 +29,7 @@
 | Tusboll | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryujin | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| hella | | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
+| hella | | SCAMMER sebagai penjual telur rare, player korban scam **oishitamango** |
 | LORD | | AKUN KEDUA **[hella](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true)** |
 | Yayan bae | | SCAMMER Illus Seal, Toxic |
 | Rishya | | SCAMMER ruby |
