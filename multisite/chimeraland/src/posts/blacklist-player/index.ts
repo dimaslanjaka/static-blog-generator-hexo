@@ -28,9 +28,9 @@ const metadata: postMeta = {
     'https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.palmassgames.ru/wp-content/uploads/2021/07/screenshot_6-1-1024x504.png',
   author: 'L3n4r0x'
 }
-const translator = readFileSync(join(__dirname, 'translator.html'), 'utf-8')
+const translator = readFileSync(join(__dirname, 'translator.html')).toString()
 const bodyfile = join(__dirname, 'body.md')
-const bodymd = readFileSync(bodyfile, 'utf-8')
+const bodymd = readFileSync(bodyfile).toString()
 const bodyhtml = renderMarkdown(bodymd)
 const dom = new JSDOM(bodyhtml)
 Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
