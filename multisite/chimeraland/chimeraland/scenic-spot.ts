@@ -17,7 +17,9 @@ const sourceDir = join(__dirname, 'locations/scenic-spot')
 const outputJSON = join(__dirname, '../src/utils/chimeraland-scenic.json')
 
 async function main() {
-  const readDir = readdirSync(sourceDir).map((file) => join(sourceDir, file))
+  const readDir = readdirSync(sourceDir)
+    .filter((str) => str !== 'desktop.ini')
+    .map((file) => join(sourceDir, file))
   const result: any[] = scenicArr
 
   while (readDir.length > 0) {
