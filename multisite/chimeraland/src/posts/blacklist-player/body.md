@@ -1,7 +1,7 @@
 <!-- include translator.html -->
 
 ## Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY
-| Nama Player | clan | Keterangan |
+| Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | ASTER | | SCAMMER MAP ILLUS 16 |
 | arkep | | SCAMMER MAP ILLUS 16 |
@@ -22,7 +22,7 @@
 
 ## Daftar scammer blacklist player kategori SCAMMER RUBY
 
-| Nama Player | clan | Keterangan |
+| Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | Shelby | | SCAMMER ruby |
 | NesaMiko | | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
