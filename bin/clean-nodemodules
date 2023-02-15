@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#sh -c 'rm -rf node_modules/a* & wait'
+
+rm -rf node_modules/@* &
+rm -rf node_modules/.* &
+
+for letter in {{a..z},{A..Z}}; do
+  loc="node_modules/${letter}*"
+  echo "deleting ${loc}"
+  rm -rf $loc &
+done
+
+wait
