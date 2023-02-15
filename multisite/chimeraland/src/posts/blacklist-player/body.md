@@ -1,6 +1,7 @@
 <!-- include translator.html -->
 
 <h2 id="scammer-map-illus-16">Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY</h2>
+
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | ASTER | | SCAMMER MAP ILLUS 16 |
