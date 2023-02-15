@@ -105,10 +105,7 @@ const screenshots = function (): Promise<string[]> {
                       )
                     ).replace(/\/{2,}/gm, '/')
 
-                    sbgutil.debug('chimera').extend('posts')(
-                      'scammer img',
-                      url.toString()
-                    )
+                    sbgutil.debug('chimera-blacklist')('img', url.toString())
 
                     const img = `<img src="${url.toString()}" alt="${basename(
                       path
