@@ -1,29 +1,30 @@
 <!-- include translator.html -->
 
-<h2 id="scammer-map-illus-16">Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY</h2>
+<h2 id="scammer-map-illus-16">Daftar scammer/blacklist player kategori SCAMMER chimeraland MAP ILLUSTRIOUS 16 PARTY</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
-| ASTER | | SCAMMER MAP ILLUS 16 |
-| arkep | | SCAMMER MAP ILLUS 16 |
-| Shelby | | SCAMMER MAP ILLUS 16 |
-| Suvi | | SCAMMER MAP ILLUS 16 sebagai LEADER PARTY |
-| PrimalHunter | | SCAMMER MAP ILLUS 16 |
-| HitsuiTH | | SCAMMER MAP ILLUS 16 |
-| Dikoo | | SCAMMER MAP ILLUS 16 |
-| Glitch | | SCAMMER MAP ILLUS 16 |
-| jiejie/Jiejie | | SCAMMER MAP ILLUS 16 |
-| HitsuiTH | | SCAMMER map illus 16 |
-| Glitch | | SCAMMER map illus 16 |
-| xSOLETAx | | SCAMMER map illus 16 |
-| Elacan | | SCAMMER map illus 16 |
-| YurikoSanGyi | | Roll and SCAMMER MAP ILLUS 16 |
-| yukie | | SCAMMER map illus 16 |
-| EmpiLighT | matanglawin | SCAMMER map illus 16 |
-| UnknowN | | SCAMMER map illus 16 |
-| Sus | | SCAMMER map illus 16 |
+| ASTER | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| arkep | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Shelby | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Suvi | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 sebagai LEADER PARTY |
+| PrimalHunter | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| HitsuiTH | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Dikoo | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Glitch | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| jiejie/Jiejie | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| HitsuiTH | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Glitch | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| xSOLETAx | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Elacan | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| YurikoSanGyi | | Roll and SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| yukie | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| EmpiLighT | matanglawin | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| UnknowN | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Sus | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| HEE | | this account got hacked, and new owner is SCAMMER, last activity SCAMMING chimeraland MAP ILLUSTRIOUS 16 |
 
-<h2 id="scammer-ruby">Daftar scammer blacklist player kategori SCAMMER RUBY</h2>
+<h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
@@ -47,19 +48,19 @@
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
-| Corleonx | | Roll drops items from Map Illus 16 |
-| Shelby | | Roll drops items from Map Illus 16 |
-| PrimalHunter | | Roll drops items from Map Illus 16 |
+| Corleonx | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
+| Shelby | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
+| PrimalHunter | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 | blackblades | | Roll telur illus 30,000 years |
-| maraa | undead | Roll drops items from Map Illus 16 |
+| maraa | undead | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 
 ## Daftar player yang dicurigai sebagai scammer
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
-| ChipsChips | - | dicurigai sebagai scammer map illus 16 party |
+| ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
 | Yunas | CheeseCake | dicurigai sebagai akun primer beberapa scammer |
-| HODE | LastEmperror | dicurigai sebagai roll drops items map illus 16 party |
+| HODE | LastEmperror | dicurigai sebagai roll drops items chimeraland MAP ILLUSTRIOUS 16 party |
 
 ## Daftar clan yang berisi beberapa scammer
 | Nama Clan | Player | Keterangan |
@@ -68,7 +69,7 @@
 | ourobores | | |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
-- Jangan ikut map illus dengan tiket telur grand (kadang orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim).
+- Jangan ikut chimeraland MAP ILLUSTRIOUS dengan tiket telur grand (kadang orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim).
 - Jangan melakukan transaksi dengan **AKUN SMURF** (orang indonesia menyebutnya **AKUN TUYUL**), 90% merupakan scammer.
 
 ## Tautan yang merujuk tentang scammer
