@@ -153,6 +153,8 @@ jobs:
       - run: npx sbg post standalone
       - run: npx sbg post copy
       - run: hexo generate
+      - run: npx sbg generate sitemap
+      - run: npx sbg generate feed
       - run: gulp deploy:copy
       - run: npx sbg deploy seo
       - run: npx sbg deploy safelink
