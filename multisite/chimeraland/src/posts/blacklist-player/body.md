@@ -1,7 +1,8 @@
 <!-- include translator.html -->
 
-## Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY
-| Nama Player | clan | Keterangan |
+<h2 id="scammer-map-illus-16">Daftar scammer blacklist player kategori SCAMMER MAP ILLUS 16 PARTY</h2>
+
+| Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | ASTER | | SCAMMER MAP ILLUS 16 |
 | arkep | | SCAMMER MAP ILLUS 16 |
@@ -16,20 +17,22 @@
 | Glitch | | SCAMMER map illus 16 |
 | xSOLETAx | | SCAMMER map illus 16 |
 | Elacan | | SCAMMER map illus 16 |
-| YurikoSanGyi | Roll and SCAMMER MAP ILLUS 16 |
+| YurikoSanGyi | | Roll and SCAMMER MAP ILLUS 16 |
 | yukie | | SCAMMER map illus 16 |
 | EmpiLighT | matanglawin | SCAMMER map illus 16 |
+| UnknowN | | SCAMMER map illus 16 |
+| Sus | | SCAMMER map illus 16 |
 
-## Daftar scammer blacklist player kategori SCAMMER RUBY
+<h2 id="scammer-ruby">Daftar scammer blacklist player kategori SCAMMER RUBY</h2>
 
-| Nama Player | clan | Keterangan |
+| Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | Shelby | | SCAMMER ruby |
 | NesaMiko | | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
 | Tusboll | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryujin | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| hella | | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
+| hella | | SCAMMER sebagai penjual telur rare, player korban scam **oishitamango** |
 | LORD | | AKUN KEDUA **[hella](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true)** |
 | Yayan bae | | SCAMMER Illus Seal, Toxic |
 | Rishya | | SCAMMER ruby |
@@ -40,7 +43,7 @@
 | drin | APPOCALYPSE | SCAMMER ruby |
 | Naru/naru | | SCAMMER ruby |
 
-## Daftar player kategori tukang roll drop item
+<h2 id="tukang-roll">Daftar player kategori tukang roll drop item</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
@@ -72,5 +75,5 @@
 - scammer midman/rekber (rekening bersama): [https://www.facebook.com/groups/5827051707365882/permalink/8491039837633709/?mibextid=Nif5oz](https://www.facebook.com/groups/5827051707365882/permalink/8491039837633709/?mibextid=Nif5oz)
 - shortlink halaman ini: [http://bit.ly/chimeraland-blacklist](http://bit.ly/chimeraland-blacklist)
 
-## Kumpulan Tangkapan Layar (screenshot) tentang scammer
+<h2 id="screenshots">Kumpulan Tangkapan Layar (screenshot) tentang scammer</h2>
 <!-- tangkapan.layar -->
