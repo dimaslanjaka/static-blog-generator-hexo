@@ -11,10 +11,10 @@ import { chimeralandProject } from '../../../project'
 
 const metadata: postMeta = {
   title: 'Chimeraland Scammer List Player',
-  /*description:
-    'Blacklist player chimeraland (scammer list meliputi ruby trader, map illus 16 party, roll drop item, dan lain-lain)',*/
+  description:
+    'Blacklist player chimeraland (scammer list meliputi ruby trader, map illustrious 16 party, roll drop item, dan lain-lain). daftar SCAMMER chimeraland MAP ILLUSTRIOUS 16. daftar SCAMMER chimeraland ruby.',
   date: '2022-11-07T19:54:01+07:00',
-  updated: '2023-02-15T17:57:26+07:00',
+  updated: '2023-02-16T20:32:54+07:00',
   lang: 'id',
   permalink: '/chimeraland/blacklist-player.html',
   multilang: {
