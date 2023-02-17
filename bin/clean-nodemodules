@@ -10,19 +10,18 @@
 
 vowels=( a i u e o A I U E O )
 for letter in {{a..z},{A..Z}}; do
-    for vowel in "${vowels[@]}"
-    do
+    for vowel in "${vowels[@]}"; do
       withoutVowel="node_modules/${letter}${vowel}*"
       withVowel="node_modules/${letter}${vowel}*"
       if [[ -d $withVowel ]];
       then
-      echo "deleting ${withVowel}"
-      rm -rf $withVowel &
+        echo "deleting ${withVowel}"
+        rm -rf $withVowel &
       fi
       if [[ -d $withoutVowel ]];
       then
-      echo "deleting ${withoutVowel}"
-      rm -rf $withoutVowel &
+        echo "deleting ${withoutVowel}"
+        rm -rf $withoutVowel &
       fi
     done
 done
