@@ -2,16 +2,20 @@
 
 #sh -c 'rm -rf node_modules/a* & wait'
 
-rm -rf node_modules/@* &
-rm -rf node_modules/.* &
-rm -rf yarn.lock &
-rm -rf package-lock.json &
+[[ -d "yarn.lock" ]] &&rm -rf yarn.lock &
+[[ -d "package-lock.json" ]] &&rm -rf package-lock.json &
+[[ -d "node_modules" ]] && rm -rf node_modules/@* &
+[[ -d "node_modules" ]] && rm -rf node_modules/.* &
+[[ -d "node_modules" ]] && rm -rf node_modules &
 
-#for letter in {{a..z},{A..Z}}; do
-for letter in {{a..z}}; do
-  loc="node_modules/${letter}*"
-  echo "deleting ${loc}"
-  rm -rf $loc &
+vowels=( a i u e o A I U E O )
+for letter in {{a..z},{A..Z}}; do
+    for vowel in "${vowels[@]}"
+    do
+      loc="node_modules/${letter}${vowel}*"
+      echo "deleting ${loc}"
+      rm -rf $loc &
+    done
 done
 
 wait
