@@ -49,15 +49,15 @@
     "hexo-theme-next": "./themes/next"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gulp": "^4.0.2",
-    "lerna": "^6.4.1",
+    "lerna": "^6.5.1",
     "npm-run-all": "^4.1.5",
-    "nx": "^15.6.3",
+    "nx": "^15.7.1",
     "prettier": "^2.8.4"
   },
   "workspaces": [
