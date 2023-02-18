@@ -3,7 +3,6 @@
 {% for tag in tags %}{{ tag.permalink | uriencode }}
 {% endfor %}{% for cat in categories %}{{ cat.permalink | uriencode }}
 {% endfor %}
-
 https://www.webmanajemen.com/docs/nodejs-package-types/
 https://www.webmanajemen.com/docs/
 https://www.webmanajemen.com/docs/static-blog-generator/
