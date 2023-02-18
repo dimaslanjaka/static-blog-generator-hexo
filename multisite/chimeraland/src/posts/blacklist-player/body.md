@@ -61,12 +61,6 @@
 | ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
 | HODE | LastEmperror | dicurigai sebagai roll drops items chimeraland MAP ILLUSTRIOUS 16 party |
 
-## Daftar clan yang berisi beberapa scammer
-| Nama Clan | Player | Keterangan |
-| :--- | :--- | :--- |
-| CheeseCake | BangPo |
-| ourobores | | Hampir semua tukang roll ada disini |
-
 ## Daftar Nama Player Yang Dihapus Dari List Diatas
 
 | IGN | Clan | Keterangan |
