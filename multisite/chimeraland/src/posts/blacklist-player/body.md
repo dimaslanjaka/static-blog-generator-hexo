@@ -66,7 +66,7 @@
 
 | IGN | Clan | Keterangan |
 | :--- | :--- | :--- |
-| Yunas | CheeseCake | dikarenakan kurangnya bukti dan narasumber sudah pensiun bermain |
+| Yunas | CheeseCake | dikarenakan kurangnya bukti dan narasumber sudah pensiun bermain. Kabarnya permasalahan tersebut sudah diselesaikan. |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut chimeraland MAP ILLUSTRIOUS dengan tiket telur grand (kadang orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim).
