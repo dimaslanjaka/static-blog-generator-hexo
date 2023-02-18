@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "outDir": "dist",
+    "outDir": "tmp/dist",
     "declaration": true,
     "resolveJsonModule": true,
     "esModuleInterop": true
