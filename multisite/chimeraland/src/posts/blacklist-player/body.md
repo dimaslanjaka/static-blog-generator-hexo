@@ -12,6 +12,7 @@
 | HitsuiTH | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | Dikoo | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | Glitch | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Sakuraz | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | jiejie/Jiejie | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | HitsuiTH | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | Glitch | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
