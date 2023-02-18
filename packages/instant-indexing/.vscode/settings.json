@@ -1,7 +1,7 @@
 {
   "files.autoSave": "onWindowChange",
   "files.exclude": {
-    "**/.cache": true,
+    //"**/.cache": false,
     "**/node_modules": true
   },
   "editor.codeActionsOnSave": {
@@ -42,12 +42,12 @@
   "code-runner.saveAllFilesBeforeRun": true,
   "code-runner.runInTerminal": true,
   "code-runner.executorMap": {
-    "typescript": "node -r ts-node/register",
-    "typescriptreact": "node -r ts-node/register"
+    "typescript": "node -r ts-node/register -r dotenv/config",
+    "typescriptreact": "node -r ts-node/register -r dotenv/config"
   },
   "code-runner.respectShebang": true,
-  "code-runner.terminalRoot": "/mnt/",
-  "code-runner.cwd": "D:/Repositories/static-blog-generator-hexo/packages/instant-indexing",
+  //"code-runner.terminalRoot": "/mnt/",
+  //"code-runner.cwd": "D:/Repositories/static-blog-generator-hexo/packages/instant-indexing",
   "html.autoClosingTags": true,
   //"typescript.tsdk": "node_modules\\typescript\\lib",
   "emmet.includeLanguages": {
@@ -88,5 +88,6 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
-  "npm.packageManager": "npm"
+  "npm.packageManager": "npm",
+  "git.enabled": false
 }

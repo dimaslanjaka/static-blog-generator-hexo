@@ -5,7 +5,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node -r ts-node/register start.ts",
+    "start": "node -r ts-node/register -r dotenv/config start.ts",
     "build": "tsc -p tsconfig.build.json",
     "postbuild": "node packer.js",
     "format:check": "prettier --check .",

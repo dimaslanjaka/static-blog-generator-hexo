@@ -2,4 +2,5 @@ import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-
 
 dotenv.config();
 
-import './src/server';
+// import './src/server';
+import './src/notify.runner';
