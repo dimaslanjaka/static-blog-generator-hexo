@@ -9,7 +9,8 @@
   "include": [
     "./src/**/*",
     "./test/**/*",
-    "**/*.json"
+    "**/*.json",
+    "./types/**/*"
   ],
   "exclude": [
     "**/dist/**"
