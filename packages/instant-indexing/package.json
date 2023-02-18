@@ -25,6 +25,7 @@
     "axios": "^1.3.3",
     "fs-extra": "^11.1.0",
     "googleapis": "^111.0.0",
+    "sbg-utility": "workspace:^",
     "upath": "^2.0.1"
   },
   "devDependencies": {

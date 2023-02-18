@@ -87,6 +87,6 @@
       }
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Cygwin",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "npm.packageManager": "npm"
 }
