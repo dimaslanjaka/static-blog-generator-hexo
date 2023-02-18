@@ -7,3 +7,4 @@ tmp
 google-api-key*.json
 client_secret*.json
 **/desktop.ini
+.env

@@ -75,5 +75,7 @@
     "typescript"
   ],
   "eslint.run": "onSave",
-  "eslint.useESLintClass": true
+  "eslint.useESLintClass": true,
+  "npm.packageManager": "yarn",
+  "eslint.packageManager": "yarn"
 }
