@@ -158,6 +158,11 @@ jobs:
       - run: gulp deploy:copy
       - run: npx sbg deploy seo
       - run: npx sbg deploy safelink
+      - name: install site
+        shell: bash
+        run: npm install --omit=dev --production
+        continue-on-error: true
+        working-directory: ./.deploy_git
       - name: commit .deploy_git
         shell: bash
         id: push-manual
