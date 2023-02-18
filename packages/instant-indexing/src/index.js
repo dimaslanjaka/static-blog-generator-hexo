@@ -1,33 +1,33 @@
-const Notifier = require('./Notifier')
-const axios = require('axios')
+const Notifier = require('./Notifier');
+const axios = require('axios');
 
 class InstantIndexing {
-    /**
-     * @type {Notifier}
-     */
-    notifier
-    key
-    /**
-     *
-     * @param {import('./globals').Key} key
-     */
-    constructor(key) {
-        this.key = key
-        this.notifier = new Notifier(key)
-    }
+  /**
+   * @type {Notifier}
+   */
+  notifier;
+  key;
+  /**
+   *
+   * @param {import('./globals').Key} key
+   */
+  constructor(key) {
+    this.key = key;
+    this.notifier = new Notifier(key);
+  }
 
-    /**
-     * Update url from list of sitemap
-     * @param {string} url Sitemap URL
-     */
-    scanSitemap(url) {
-        const self = this
-        axios.get(url).then((response) => {
-            let list
-            if (url.endsWith('.txt')) list = extractSitemapTXT(response.data)
-            if (Array.isArray(list)) {
-                // self.notifier.batch(list)
-                /* self.notifier.jwtClient.authorize(function (err, tokens) {
+  /**
+   * Update url from list of sitemap
+   * @param {string} url Sitemap URL
+   */
+  scanSitemap(url) {
+    const self = this;
+    axios.get(url).then((response) => {
+      let list;
+      if (url.endsWith('.txt')) list = extractSitemapTXT(response.data);
+      if (Array.isArray(list)) {
+        // self.notifier.batch(list)
+        /* self.notifier.jwtClient.authorize(function (err, tokens) {
                     if (!err) {
 
                         const options = {
@@ -52,9 +52,9 @@ class InstantIndexing {
                         })
                     }
                 }) */
-            }
-        })
-    }
+      }
+    });
+  }
 }
 
 /**
@@ -62,7 +62,7 @@ class InstantIndexing {
  * @param {string} data
  */
 function extractSitemapTXT(data) {
-    return data.split(/\r?\n/g).filter((str) => str.trim().length > 0)
+  return data.split(/\r?\n/g).filter((str) => str.trim().length > 0);
 }
 
-module.exports = InstantIndexing
+module.exports = InstantIndexing;
