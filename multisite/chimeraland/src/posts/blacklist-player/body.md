@@ -37,7 +37,7 @@
 | LORD | | AKUN KEDUA **[hella](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true)** |
 | Yayan bae | | SCAMMER Illus Seal, Toxic |
 | Rishya | | SCAMMER ruby |
-| BangPo | | SCAMMER ruby |
+| BangPo | CheeseCake | SCAMMER ruby |
 | Xalll | | SCAMMER ruby |
 | Xaiii | | SCAMMER ruby, akun kedua dari **[Xalll](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=Xalll&scroll=true)** |
 | Freecss | | SCAMMER ruby alasan baru main dan new owner |
@@ -59,14 +59,19 @@
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
-| Yunas | CheeseCake | dicurigai sebagai akun primer beberapa scammer |
 | HODE | LastEmperror | dicurigai sebagai roll drops items chimeraland MAP ILLUSTRIOUS 16 party |
 
 ## Daftar clan yang berisi beberapa scammer
 | Nama Clan | Player | Keterangan |
 | :--- | :--- | :--- |
-| CheeseCake | Yunas, BangPo |
-| ourobores | | |
+| CheeseCake | BangPo |
+| ourobores | | Hampir semua tukang roll ada disini |
+
+## Daftar Nama Player Yang Dihapus Dari List Diatas
+
+| IGN | Clan | Keterangan |
+| :--- | :--- | :--- |
+| Yunas | CheeseCake | dikarenakan kurangnya bukti dan narasumber sudah pensiun bermain |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut chimeraland MAP ILLUSTRIOUS dengan tiket telur grand (kadang orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim).
