@@ -56,6 +56,7 @@
 | Freecss | | SCAMMER ruby alasan baru main dan new owner |
 | drin | APPOCALYPSE | SCAMMER ruby |
 | Naru/naru | | SCAMMER ruby |
+| Pokemonn | | SCAMMER ruby |
 
 <h2 id="tukang-roll">Daftar player kategori tukang roll drop item dan tidak dikembalikan (tidak ada penyelesaian)</h2>
 
