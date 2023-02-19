@@ -24,6 +24,7 @@
 | UnknowN | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | Sus | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | HEE | | this account got hacked, and new owner is SCAMMER, last activity SCAMMING chimeraland MAP ILLUSTRIOUS 16 |
+| doraemon | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 
 <h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
 
