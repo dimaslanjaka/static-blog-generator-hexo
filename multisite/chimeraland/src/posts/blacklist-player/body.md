@@ -1,6 +1,6 @@
 <!-- include translator.html -->
 
-> IGN Akun admin **L3n4r0x** berada di **S101-116** clan **Hellvius**, tidak pernah menjual ruby
+> IGN Akun admin **L3n4r0x** berada di **S101-116** clan **Hellvius**, tidak pernah menjual ruby, tidak pernah menyediakan JASA APAPUN.
 >
 > Daftar akun tuyul admin:
 > - L3n4r0x PC (S101-116)
@@ -57,7 +57,13 @@
 | drin | APPOCALYPSE | SCAMMER ruby |
 | Naru/naru | | SCAMMER ruby |
 
-<h2 id="tukang-roll">Daftar player kategori tukang roll drop item</h2>
+<h2 id="tukang-roll">Daftar player kategori tukang roll drop item dan tidak dikembalikan (tidak ada penyelesaian)</h2>
+
+> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team. 
+> - Klik Team
+> - Klik Team Settings
+> - Cek **Auto abadon roll**
+> - Klik Confirm/OK
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
@@ -73,6 +79,7 @@
 | :--- | :--- | :--- |
 | ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
 | HODE | LastEmperror | dicurigai sebagai roll drops items chimeraland MAP ILLUSTRIOUS 16 party |
+| Deshwan | | dicurigai sebagai scammer MAP ILLUSTRIOUS 16 |
 
 ## Daftar Nama Player Yang Dihapus Dari List Diatas
 
