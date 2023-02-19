@@ -44,9 +44,9 @@
 | :--- | :--- | :--- |
 | Shelby | | SCAMMER ruby |
 | NesaMiko | | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
-| Tusboll | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| Ryujin | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| Ryuukendo | | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
+| Tusboll | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
+| Ryujin | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
+| Ryuukendo | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
 | hella | | SCAMMER sebagai penjual telur rare, player korban scam **oishitamango** |
 | LORD | | AKUN KEDUA **[hella](https://www.webmanajemen.com/chimeraland/blacklist-player.html?highlight=hella&scroll=true)** |
 | Yayan bae | | SCAMMER Illus Seal, Toxic |
@@ -61,7 +61,7 @@
 
 <h2 id="tukang-roll">Daftar player kategori tukang roll drop item dan tidak dikembalikan (tidak ada penyelesaian)</h2>
 
-> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team. 
+> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
 > - Klik Team
 > - Klik Team Settings
 > - Cek **Auto abadon roll**
