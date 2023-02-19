@@ -79,6 +79,7 @@
 | :--- | :--- | :--- |
 | ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
 | HODE | LastEmperror | dicurigai sebagai roll drops items chimeraland MAP ILLUSTRIOUS 16 party |
+| Deshwan | | dicurigai sebagai scammer MAP ILLUSTRIOUS 16 |
 
 ## Daftar Nama Player Yang Dihapus Dari List Diatas
 
