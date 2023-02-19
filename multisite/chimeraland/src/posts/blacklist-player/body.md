@@ -57,7 +57,7 @@
 | drin | APPOCALYPSE | SCAMMER ruby |
 | Naru/naru | | SCAMMER ruby |
 
-<h2 id="tukang-roll">Daftar player kategori tukang roll drop item</h2>
+<h2 id="tukang-roll">Daftar player kategori tukang roll drop item dan tidak dikembalikan (tidak ada penyelesaian)</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
@@ -66,6 +66,8 @@
 | PrimalHunter | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 | blackblades | | Roll telur illus 30,000 years |
 | maraa | undead | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
+
+> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
 
 ## Daftar player yang dicurigai sebagai scammer
 
