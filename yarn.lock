@@ -3746,7 +3746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/nunjucks@npm:^3.2.1, @types/nunjucks@npm:^3.2.2":
+"@types/nunjucks@npm:^3.2.2":
   version: 3.2.2
   resolution: "@types/nunjucks@npm:3.2.2"
   checksum: e0fdc68f01635b34ea6f5e8845ed6d2e8d11be6347b2f28c8093636454e2401f02c26a2ad6aa459da56f2459f2d59bf72914b6e4774bcd058fa12e2ae5f0f6ef
@@ -3871,6 +3871,15 @@ __metadata:
     "@types/mime": "*"
     "@types/node": "*"
   checksum: b6ac93d471fb0f53ddcac1f9b67572a09cd62806f7db5855244b28f6f421139626f24799392566e97d1ffc61b12f9de7f30380c39fcae3c8a161fe161d44edf2
+  languageName: node
+  linkType: hard
+
+"@types/server-destroy@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@types/server-destroy@npm:1.0.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: 2f53763655b36dd24a147bf71fea8a7191462662e19e5dac9e2b7f80e9e00a0bc8e8b7c010e884919c61afdf26a1509318cd6a69ed7ff9fa3da3f3852fa5ac13
   languageName: node
   linkType: hard
 
@@ -5288,7 +5297,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^2.6.0, async@npm:^2.6.1, async@npm:^2.6.4":
+"async@npm:^2.6.0, async@npm:^2.6.4":
   version: 2.6.4
   resolution: "async@npm:2.6.4"
   dependencies:
@@ -5297,7 +5306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^3.2.3":
+"async@npm:^3.2.3, async@npm:^3.2.4":
   version: 3.2.4
   resolution: "async@npm:3.2.4"
   checksum: 43d07459a4e1d09b84a20772414aa684ff4de085cbcaec6eea3c7a8f8150e8c62aa6cd4e699fe8ee93c3a5b324e777d34642531875a0817a35697522c1b02e89
@@ -6562,7 +6571,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.0.0-rc.12, cheerio@npm:^1.0.0-rc.2":
+"cheerio@npm:^1.0.0-rc.12":
   version: 1.0.0-rc.12
   resolution: "cheerio@npm:1.0.0-rc.12"
   dependencies:
@@ -12132,7 +12141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-post-parser@^1.2.5, hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/static-blog-generator/packages/hexo-post-parser":
+"hexo-post-parser@^1.2.6, hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/static-blog-generator/packages/hexo-post-parser":
   version: 0.0.0-use.local
   resolution: "hexo-post-parser@workspace:packages/static-blog-generator/packages/hexo-post-parser"
   dependencies:
@@ -13061,16 +13070,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instant-indexing@workspace:packages/instant-indexing":
+"instant-indexing@workspace:packages/static-blog-generator/packages/instant-indexing":
   version: 0.0.0-use.local
-  resolution: "instant-indexing@workspace:packages/instant-indexing"
+  resolution: "instant-indexing@workspace:packages/static-blog-generator/packages/instant-indexing"
   dependencies:
     "@google-cloud/local-auth": ^2.1.1
     "@googleapis/docs": ^2.0.0
     "@googleapis/indexing": ^1.0.0
     "@googleapis/searchconsole": ^1.0.0
+    "@jest/globals": ^29.4.3
     "@types/fs-extra": ^11.0.1
     "@types/node": ^18.14.0
+    "@types/server-destroy": ^1.0.1
     "@typescript-eslint/eslint-plugin": ^5.52.0
     "@typescript-eslint/parser": ^5.52.0
     axios: ^1.3.3
@@ -13085,8 +13096,12 @@ __metadata:
     fs-extra: ^11.1.0
     google-auth-library: ^8.7.0
     googleapis: ^111.0.0
+    jest: ^29.4.3
+    open: ^8.4.1
     prettier: ^2.8.4
+    request: ^2.88.2
     sbg-utility: "workspace:^"
+    server-destroy: ^1.0.1
     ts-node: ^10.9.1
     typescript: ^4.9.5
     upath: ^2.0.1
@@ -20116,7 +20131,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"request@npm:>=2.88.2, request@npm:^2.45.0, request@npm:^2.88.0":
+"request@npm:>=2.88.2, request@npm:^2.45.0, request@npm:^2.88.0, request@npm:^2.88.2":
   version: 2.88.2
   resolution: "request@npm:2.88.2"
   dependencies:
@@ -20732,7 +20747,6 @@ __metadata:
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     safelinkify: "workspace:^"
     sbg-utility: "workspace:^"
-    sitemap-crawler: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
     true-case-path: ^2.2.1
     ts-jest: ^29.0.5
     ts-node: ^10.9.1
@@ -20851,16 +20865,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/static-blog-generator/packages/sbg-utility"
   dependencies:
-    "@jest/globals": ^29.4.1
+    "@jest/globals": ^29.4.3
     "@types/debug": ^4.1.7
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
-    "@types/node": ^18.11.19
-    "@types/nunjucks": ^3.2.1
+    "@types/node": ^18.14.0
+    "@types/nunjucks": ^3.2.2
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
     ansi-colors: ^4.1.3
-    axios: ^1.3.2
+    async: ^3.2.4
+    axios: ^1.3.3
     bluebird: ^3.7.2
+    cheerio: ^1.0.0-rc.12
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
     fs-extra: ^11.1.0
@@ -20868,16 +20884,18 @@ __metadata:
     glob: ^8.1.0
     gulp: ^4.0.2
     hexo: ^6.3.0
-    hexo-post-parser: ^1.2.5
+    hexo-post-parser: ^1.2.6
     hexo-util: ^3.0.1
-    jest: ^29.4.1
+    jest: ^29.4.3
     jsdom: ^21.1.0
-    minimatch: ^6.1.6
+    minimatch: ^6.2.0
     node-libcurl: ^3.0.0
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
+    progress: ^2.0.3
+    request: ^2.88.0
     safelinkify: ^1.1.16
     slugify: ^1.6.5
     through2: ^4.0.2
@@ -21328,19 +21346,6 @@ __metadata:
   version: 1.0.5
   resolution: "sisteransi@npm:1.0.5"
   checksum: aba6438f46d2bfcef94cf112c835ab395172c75f67453fe05c340c770d3c402363018ae1ab4172a1026a90c47eaccf3af7b6ff6fa749a680c2929bd7fa2b37a4
-  languageName: node
-  linkType: hard
-
-"sitemap-crawler@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz":
-  version: 1.0.2
-  resolution: "sitemap-crawler@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
-  dependencies:
-    async: ^2.6.1
-    bluebird: ^3.7.2
-    cheerio: ^1.0.0-rc.2
-    progress: ^2.0.0
-    request: ^2.88.0
-  checksum: 463645f1e6997b1a44628e28f6b0e8e63c3ed7767d16a8ba266d84f6277f00c659dbda8aa415d4dc3e5ff5ad4d2eecb47768052d3270a9ef22094676e3d82d34
   languageName: node
   linkType: hard
 
