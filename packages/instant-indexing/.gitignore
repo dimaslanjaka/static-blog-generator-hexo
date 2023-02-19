@@ -1,5 +1,0 @@
-*.zip
-src/config/*.json
-node_modules
-.env
-.cache
