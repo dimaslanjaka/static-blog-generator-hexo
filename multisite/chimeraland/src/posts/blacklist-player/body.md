@@ -59,6 +59,12 @@
 
 <h2 id="tukang-roll">Daftar player kategori tukang roll drop item dan tidak dikembalikan (tidak ada penyelesaian)</h2>
 
+> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team. 
+> - Klik Team
+> - Klik Team Settings
+> - Cek **Auto abadon roll**
+> - Klik Confirm/OK
+
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | Corleonx | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
@@ -66,8 +72,6 @@
 | PrimalHunter | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 | blackblades | | Roll telur illus 30,000 years |
 | maraa | undead | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
-
-> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
 
 ## Daftar player yang dicurigai sebagai scammer
 
