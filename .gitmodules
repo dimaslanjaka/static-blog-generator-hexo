@@ -30,3 +30,7 @@
 	path = packages/@types/through2
 	url = https://github.com/dimaslanjaka/nodejs-package-types
 	branch = through2
+[submodule "themes/next"]
+	path = themes/next
+	url = https://github.com/dimaslanjaka/hexo-theme-next.git
+	branch = private
