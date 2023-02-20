@@ -22,3 +22,7 @@
 	path = themes/next
 	url = https://github.com/dimaslanjaka/hexo-theme-next.git
 	branch = private
+[submodule "themes/butterfly"]
+	path = themes/butterfly
+	url = https://github.com/dimaslanjaka/hexo-theme-butterfly
+	branch = private
