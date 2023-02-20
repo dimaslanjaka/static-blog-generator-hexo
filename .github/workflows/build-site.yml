@@ -138,19 +138,6 @@ jobs:
         name: enable yarn
       - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky
       - run: yarn install
-
-      - run: yarn workspace sbg-utility install
-      - run: yarn workspace sbg-api install
-      - run: yarn workspace sbg-server install
-      - run: yarn workspace sbg-cli install
-      - run: yarn workspace static-blog-generator install
-      - run: yarn workspace chimeraland install
-
-      - run: yarn workspace sbg-utility build
-      - run: yarn workspace sbg-api build
-      - run: yarn workspace sbg-server build
-      - run: yarn workspace sbg-cli build
-      - run: yarn workspace static-blog-generator build
       - run: yarn workspace chimeraland build
         env:
           DEBUG: chimera-*,chimera,chimera:*
