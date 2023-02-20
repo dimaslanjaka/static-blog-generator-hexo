@@ -45,7 +45,7 @@
     "hexo-pdf": "^1.1.1",
     "hexo-seo": "./packages/hexo-seo",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "^8.14.2",
+    "hexo-theme-next": "./themes/next",
     "hexo-util": "^3.0.1",
     "js-yaml": "^4.1.0"
   },
