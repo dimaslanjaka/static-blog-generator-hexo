@@ -13495,8 +13495,21 @@ __metadata:
     npm-run-all: ^4.1.5
     nx: ^15.7.1
     prettier: ^2.8.4
+    static-blog-generator: "git+https://github.com/dimaslanjaka/static-blog-generator#beta"
   languageName: unknown
   linkType: soft
+
+"static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator#beta":
+  version: 3.0.0
+  resolution: "static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator.git#commit=5c686c0ab975a666fe31250893c1eeda632ce8d1"
+  peerDependenciesMeta:
+    markdown-it-anchor:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 6c29dea779937c027d4c4190674a1eacf760dcbf693194ad1bb83e3ce08accf097bcd16602d51be8ea7afcfd26d6dee1e1febffb4e911d5f690a25e61bb97963
+  languageName: node
+  linkType: hard
 
 "static-extend@npm:^0.1.1":
   version: 0.1.2
