@@ -51,11 +51,16 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gulp": "^4.0.2",
+    "instant-indexing": "^1.0.2",
     "lerna": "^6.5.1",
     "npm-run-all": "^4.1.5",
     "nx": "^15.7.1",
     "prettier": "^2.8.4",
-    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz"
+    "sbg-api": "^1.0.3",
+    "sbg-cli": "^1.0.3",
+    "sbg-server": "^1.0.4",
+    "sbg-utility": "^1.0.3",
+    "static-blog-generator": "^3.0.0"
   },
   "workspaces": [
     "multisite/chimeraland",
