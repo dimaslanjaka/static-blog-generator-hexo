@@ -2,11 +2,16 @@
 
 #sh -c 'rm -rf node_modules/a* & wait'
 
-[[ -d "yarn.lock" ]] &&rm -rf yarn.lock &
-[[ -d "package-lock.json" ]] &&rm -rf package-lock.json &
+# make cygwin bin as priority
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+
+[[ -d "yarn.lock" ]] && rm -rf yarn.lock &
+[[ -d "package-lock.json" ]] && rm -rf package-lock.json &
 [[ -d "node_modules/@*" ]] && rm -rf node_modules/@* &
 [[ -d "node_modules/.*" ]] && rm -rf node_modules/.* &
 [[ -d "node_modules" ]] && rm -rf node_modules &
+rm -rf packages/**/node_modules &
+rm -rf packages/**/tmp &
 
 vowels=( a i u e o A I U E O )
 for letter in {{a..z},{A..Z}}; do
@@ -25,5 +30,10 @@ for letter in {{a..z},{A..Z}}; do
       fi
     done
 done
+
+find . -name "tmp" -exec rm -rf '{}' + &
+find . -name "node_modules" -exec rm -rf '{}' + &
+find . -name "yarn.lock" -exec rm -rf '{}' + &
+find . -name "package-lock.json" -exec rm -rf '{}' + &
 
 wait
