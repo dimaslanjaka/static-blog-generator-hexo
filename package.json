@@ -45,7 +45,7 @@
     "hexo-pdf": "^1.1.1",
     "hexo-seo": "./packages/hexo-seo",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "./themes/next",
+    "hexo-theme-butterfly": "./themes/butterfly",
     "hexo-util": "^3.0.1",
     "js-yaml": "^4.1.0"
   },
@@ -76,6 +76,7 @@
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
     "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/raw/monorepo/release/hexo-blogger-xml.tgz",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
+    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sitemap-crawler/release/sitemap-crawler.tgz"
   }
 }
