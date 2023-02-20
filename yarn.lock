@@ -2053,7 +2053,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^2.6.0":
+"async@npm:^2.6.0, async@npm:^2.6.1":
   version: 2.6.4
   resolution: "async@npm:2.6.4"
   dependencies:
@@ -2062,7 +2062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^3.2.3, async@npm:^3.2.4":
+"async@npm:^3.2.3":
   version: 3.2.4
   resolution: "async@npm:3.2.4"
   checksum: 43d07459a4e1d09b84a20772414aa684ff4de085cbcaec6eea3c7a8f8150e8c62aa6cd4e699fe8ee93c3a5b324e777d34642531875a0817a35697522c1b02e89
@@ -2813,7 +2813,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.0.0-rc.12":
+"cheerio@npm:^1.0.0-rc.12, cheerio@npm:^1.0.0-rc.2":
   version: 1.0.0-rc.12
   resolution: "cheerio@npm:1.0.0-rc.12"
   dependencies:
@@ -3612,7 +3612,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.28.0":
+"core-js@npm:^3.27.2":
   version: 3.28.0
   resolution: "core-js@npm:3.28.0"
   checksum: 3155fd0ec16d0089106b145e9595280a4ea4bde0d7ff26aa14364cd4f1c203baf6620c3025acd284f363d08b9f21104101692766ca9a36ffeee7307bdf3e1881
@@ -3803,6 +3803,17 @@ __metadata:
   version: 6.1.0
   resolution: "css-what@npm:6.1.0"
   checksum: b975e547e1e90b79625918f84e67db5d33d896e6de846c9b584094e529f0c63e2ab85ee33b9daffd05bff3a146a1916bec664e18bb76dd5f66cbff9fc13b2bbe
+  languageName: node
+  linkType: hard
+
+"css@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "css@npm:3.0.0"
+  dependencies:
+    inherits: ^2.0.4
+    source-map: ^0.6.1
+    source-map-resolve: ^0.6.0
+  checksum: 4273ac816ddf99b99acb9c1d1a27d86d266a533cc01118369d941d8e8a78277a83cad3315e267a398c509d930fbb86504e193ea1ebc620a4a4212e06fe76e8be
   languageName: node
   linkType: hard
 
@@ -5563,15 +5574,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-yarn-workspace-root@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "find-yarn-workspace-root@npm:2.0.0"
-  dependencies:
-    micromatch: ^4.0.2
-  checksum: fa5ca8f9d08fe7a54ce7c0a5931ff9b7e36f9ee7b9475fb13752bcea80ec6b5f180fa5102d60b376d5526ce924ea3fc6b19301262efa0a5d248dd710f3644242
-  languageName: node
-  linkType: hard
-
 "findup-sync@npm:^2.0.0":
   version: 2.0.0
   resolution: "findup-sync@npm:2.0.0"
@@ -6090,7 +6092,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@npm:^1.1.7, git-command-helper@npm:latest":
+"git-command-helper@npm:^1.1.6, git-command-helper@npm:^1.1.7, git-command-helper@npm:latest":
   version: 1.1.7
   resolution: "git-command-helper@npm:1.1.7"
   dependencies:
@@ -6771,6 +6773,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-blogger-xml@npm:^1.0.28":
+  version: 1.0.28
+  resolution: "hexo-blogger-xml@npm:1.0.28"
+  dependencies:
+    chalk: ^4.1.2
+    fs-extra: ^11.1.0
+    he: ^1.2.0
+    jsdom: ^21.1.0
+    moment: ^2.29.4
+    rimraf: ^4.1.2
+    sanitize-filename: ^1.6.3
+    sbg-utility: ^1.0.3
+    upath: ^2.0.1
+    xml2js: ^0.4.23
+    yaml: ^2.2.1
+  checksum: bbf98dca12ace09bacca19076d3fa83b6ae7b85bacc256a266d1276527e8e0ae081a2d5009d806c127920ae9f3e64a224c865ac97a6682b2aabbe75241663888
+  languageName: node
+  linkType: hard
+
 "hexo-browsersync@https://github.com/hexojs/hexo-browsersync/tarball/master":
   version: 2.0.0
   resolution: "hexo-browsersync@https://github.com/hexojs/hexo-browsersync.git#commit=3991feb273cf24fc297846df2d287b2ef9afce84"
@@ -6899,13 +6920,15 @@ __metadata:
 
 "hexo-generator-redirect@file:./packages/hexo-generator-redirect::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.4.1
-  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=b56f27&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=7609bc&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
     hexo-util: ^3.0.1
     upath: ^2.0.1
-  checksum: ed079a938b87f53f3e1ab454a0b15f1e540276788cacdc7b5f5421143634c0b5924c54e121f13fe4d505378cdff4c29332c604bc5ee80d5d62e930fab1e5deb6
+  peerDependencies:
+    hexo: ">= 4.2.0"
+  checksum: d4ebf463ea14b8d285464b29d3100eceb97a415bd78d1495c7bf39db60650892ca54df6d1165cd026a94c70bb128694807152d5b699fa94c3f0471bdc794ff34
   languageName: node
   linkType: hard
 
@@ -6929,12 +6952,12 @@ __metadata:
 
 "hexo-github-card@file:./packages/hexo-github-card::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.0.5
-  resolution: "hexo-github-card@file:./packages/hexo-github-card#./packages/hexo-github-card::hash=911621&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-github-card@file:./packages/hexo-github-card#./packages/hexo-github-card::hash=d956e7&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     bluebird: ^3.7.2
     hexo-fs: ^2.0.0
     nunjucks: ^3.2.3
-  checksum: 630453a01722e358295d652e0b1bf7984b585b4d283690214aa81015410beef43dce6cabda955825cfb4f0c16d832b0f0205fc835ebf176c6cd64c50eac14c4b
+  checksum: 81d139c0ecba4ea8a81a7b3df57f1223c0433438967564a4b661a46973e6579071ddde569188cac79f7de570be5dd0301a45750f321b506bc3d4ac7958f34d76
   languageName: node
   linkType: hard
 
@@ -6956,7 +6979,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-is@npm:^1.0.5":
+"hexo-is@npm:^1.0.4, hexo-is@npm:^1.0.5":
   version: 1.0.5
   resolution: "hexo-is@npm:1.0.5"
   dependencies:
@@ -7011,7 +7034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-post-parser@npm:^1.2.6":
+"hexo-post-parser@npm:^1.2.5, hexo-post-parser@npm:^1.2.6":
   version: 1.2.6
   resolution: "hexo-post-parser@npm:1.2.6"
   dependencies:
@@ -7047,7 +7070,7 @@ __metadata:
 
 "hexo-seo@file:./packages/hexo-seo::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.1.6
-  resolution: "hexo-seo@file:./packages/hexo-seo#./packages/hexo-seo::hash=a8f2ce&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-seo@file:./packages/hexo-seo#./packages/hexo-seo::hash=fc80e4&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     bluebird: ^3.7.2
     cheerio: ^1.0.0-rc.12
@@ -7078,7 +7101,16 @@ __metadata:
     url-parse: ^1.5.10
     uuid: ">=9.0.0"
     xmlbuilder2: ^3.0.2
-  checksum: cffac7e29f59ac03ce756c25f2d290dc14ac29b99c85d7850a9e7427cef79cbabfdf7b8b87cf1526947bbc2b6099637c0b0aa451c9144ed6e58fb68c4f6fb27b
+  dependenciesMeta:
+    glob-parent:
+      optional: true
+    node.extend:
+      optional: true
+    request:
+      optional: true
+    uuid:
+      optional: true
+  checksum: 2fc1c453fae67268e1b7c72f7c6548ffa3095579f6f5b7bdc4512310143408408c80d67cbbf050854c030392689706d676e9cdb0b276a79dba6bb58c2f06c8b6
   languageName: node
   linkType: hard
 
@@ -7100,8 +7132,10 @@ __metadata:
 
 "hexo-theme-next@file:./themes/next::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 8.13.1
-  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=1c4f41&locator=static-blog-generator-hexo%40workspace%3A."
-  checksum: 1a4771f929133d1faf04ad1ed6221c7c89b8d5076302e6175dfeb472dc300878eba6a22aac6b7a5426c8c98c09da67b67da3378336046a9620d604ea3cf30869
+  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=e3505e&locator=static-blog-generator-hexo%40workspace%3A."
+  dependencies:
+    css: ^3.0.0
+  checksum: 0d8a886cf7a767cb4262e67d36122e597da79d10e3ad8133825de472a4db1c9259619512350873e38758dd8e1793fcffd90a2b0f97285cf991756910a9e91aac
   languageName: node
   linkType: hard
 
@@ -7168,6 +7202,13 @@ __metadata:
   bin:
     hexo: bin/hexo
   checksum: 3d090e727d8ce50b74ee72190b75086493269b5e8c89b34bdd69d1a6f84dc48dd8fab63ae0888c237f2c5ae6c57838ebd392fa9e99949af076d1a11535049e1a
+  languageName: node
+  linkType: hard
+
+"highlight.js@https://github.com/highlightjs/highlight.js/tarball/11-stable":
+  version: 11.3.1
+  resolution: "highlight.js@https://github.com/highlightjs/highlight.js.git#commit=2a972d86589f65f4e79f67a02c3bf389a187afa0"
+  checksum: 927c5f188896dbc30e5a9452f2cf52a87073555aa2f30d0974701b4bf2659bee22847ee663bdec805a52bb91200ae4b075ec218b4dbdbe06bf0d265ea4bdd1ac
   languageName: node
   linkType: hard
 
@@ -9782,6 +9823,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ms@npm:2.1.1":
+  version: 2.1.1
+  resolution: "ms@npm:2.1.1"
+  checksum: 0078a23cd916a9a7435c413caa14c57d4b4f6e2470e0ab554b6964163c8a4436448ac7ae020e883685475da6b6796cc396b670f579cb275db288a21e3e57721e
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
@@ -11633,7 +11681,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"progress@npm:^2.0.3":
+"progress@npm:^2.0.0, progress@npm:^2.0.3":
   version: 2.0.3
   resolution: "progress@npm:2.0.3"
   checksum: f67403fe7b34912148d9252cb7481266a354bd99ce82c835f79070643bb3c6583d10dbcfda4d41e04bbc1d8437e9af0fb1e1f2135727878f5308682a579429b7
@@ -12470,6 +12518,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rimraf@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "rimraf@npm:4.1.2"
+  bin:
+    rimraf: dist/cjs/src/bin.js
+  checksum: 480b8147fd9bcbef3ac118f88a7b1169c3872977a3411a0c84df838bfc30e175a394c0db6f9619fc8b8a886a18c6d779d5e74f380a0075ecc710afaf81b3f50c
+  languageName: node
+  linkType: hard
+
 "ripemd160@npm:^2.0.0, ripemd160@npm:^2.0.1":
   version: 2.0.2
   resolution: "ripemd160@npm:2.0.2"
@@ -12544,6 +12601,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"safe-buffer@npm:5.1.1":
+  version: 5.1.1
+  resolution: "safe-buffer@npm:5.1.1"
+  checksum: 7f117b604554c9daca713be76cecc6c52932ed1dd6303638274f21319038bfd760fbfd353e526cc83f11894935bc4beb71f5b7b9478c11bf9718c0e0d94c51cb
+  languageName: node
+  linkType: hard
+
 "safe-buffer@npm:5.1.2, safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
   version: 5.1.2
   resolution: "safe-buffer@npm:5.1.2"
@@ -12578,7 +12642,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@npm:^1.1.16":
+"safelinkify@npm:^1.1.12, safelinkify@npm:^1.1.16":
   version: 1.1.16
   resolution: "safelinkify@npm:1.1.16"
   dependencies:
@@ -12641,39 +12705,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "sbg-api@npm:1.0.3"
+"sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz":
+  version: 1.0.0
+  resolution: "sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.7
+    git-command-helper: ^1.1.6
     glob: ^8.1.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: ^6.3.0
-    hexo-is: ^1.0.5
-    hexo-post-parser: ^1.2.6
+    hexo-is: ^1.0.4
+    hexo-post-parser: ^1.2.5
     hexo-util: ^3.0.1
     micromatch: ^4.0.5
     moment-timezone: ^0.5.40
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     nunjucks: ^3.2.3
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    safelinkify: ^1.1.16
-    sbg-utility: ^1.0.3
+    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz"
+    safelinkify: ^1.1.12
+    sbg-utility: ^1.0.0
+    sitemap-crawler: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
     true-case-path: ^2.2.1
     upath: ^2.0.1
     xmlbuilder2: ^3.0.2
-  checksum: 29432eb2c11ea62324560dd23366860d3db5222193dc010146652d6567b2468e78bbd663ed944840335c86f951f4fe446c19c775a3363c692dfa67a8a08f52e3
+  checksum: 5c47409c51ab2a72c50240953d14b61fa6c2f774fd227fd70d18a6823e0c65eccfccaefff91d9e57c6b3892d553a72411c22b3878f5f48ed056e291e1cccad98
   languageName: node
   linkType: hard
 
-"sbg-cli@npm:^1.0.3":
+"sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz":
   version: 1.0.3
-  resolution: "sbg-cli@npm:1.0.3"
+  resolution: "sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
@@ -12682,85 +12747,78 @@ __metadata:
     git-command-helper: ^1.1.7
     he: ^1.2.0
     hexo: ^6.3.0
-    hexo-blogger-xml: ^1.0.27
+    hexo-blogger-xml: ^1.0.28
     jsdom: ^21.1.0
     safelinkify: ^1.1.16
     sbg-api: ^1.0.3
     sbg-server: ^1.0.4
     sbg-utility: ^1.0.3
     xml2js: ^0.4.23
-    yargs: ^17.6.2
+    yargs: ^17.7.0
   bin:
     sbg: dist/cli.js
-  checksum: 73c5de54bfcb402d199a57896a0b4e2bdf44732c7c63e588dcc26276aca909632a9f30bff3dae506d24d98c879c22ec3a5f9e990c53d90d14ce471c6ed77c8b7
+  checksum: 5215608bda65ee077667491638d492c2ed3b3ef37568ce4ff0574da91eae83a1e7e7a953ce79fd226993fa9b0d763854d9aa40b6cb9d0c643cdcd2034ab096d1
   languageName: node
   linkType: hard
 
-"sbg-server@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "sbg-server@npm:1.0.4"
+"sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz":
+  version: 1.0.0
+  resolution: "sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz"
   dependencies:
     "@popperjs/core": ^2.11.6
     ansi-colors: ^4.1.3
-    axios: ^1.3.3
+    axios: ^1.2.6
     bluebird: ^3.7.2
     codemirror: 5.65.11
     cookie-parser: ^1.4.6
-    core-js: ^3.28.0
+    core-js: ^3.27.2
     cors: ^2.8.5
     debug: ^4.3.4
     express: ^4.18.2
-    find-yarn-workspace-root: ^2.0.0
     flowbite: ^1.6.3
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.7
     glob: ^8.1.0
-    highlight.js: 11.7.0
+    highlight.js: "https://github.com/highlightjs/highlight.js/tarball/11-stable"
     markdown-it: ^13.0.1
     moment-timezone: ^0.5.40
     nunjucks: ^3.2.3
-    safelinkify: ^1.1.16
-    sbg-api: ^1.0.3
-    sbg-utility: ^1.0.3
+    safelinkify: ^1.1.12
+    sbg-api: ^1.0.0
+    sbg-utility: ^1.0.0
+    serve-favicon: ^2.5.0
     serve-index: ^1.9.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: 8ced279c3b1bbb5a51958b854bbbdbe50130dc332088fcceeb98e115391196b8a6ce92da433d58ba0c6f6e82d31615a70f5ffe128f7d8c7eff98d1b0eacbf847
+  checksum: 06c81ea3bda0a6a526a633df2544af5c6a5984853708b92139ee0d3dcadfa4ccf686357de89f2de0298280ccb5ed0b4bbac9dd7913c9114d6ac060806a942dc1
   languageName: node
   linkType: hard
 
-"sbg-utility@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "sbg-utility@npm:1.0.3"
+"sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz":
+  version: 1.0.0
+  resolution: "sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz"
   dependencies:
     ansi-colors: ^4.1.3
-    async: ^3.2.4
-    axios: ^1.3.3
+    axios: ^1.2.6
     bluebird: ^3.7.2
-    cheerio: ^1.0.0-rc.12
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.7
+    git-command-helper: ^1.1.6
     glob: ^8.1.0
     gulp: ^4.0.2
     hexo: ^6.3.0
-    hexo-post-parser: ^1.2.6
+    hexo-post-parser: ^1.2.5
     hexo-util: ^3.0.1
-    jsdom: ^21.1.0
-    minimatch: ^6.2.0
-    node-libcurl: ^3.0.0
+    minimatch: ^6.1.6
     nunjucks: ^3.2.3
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    progress: ^2.0.3
-    request: ^2.88.0
-    safelinkify: ^1.1.16
+    safelinkify: ^1.1.12
     slugify: ^1.6.5
     through2: ^4.0.2
     true-case-path: ^2.2.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: f74862be56bf9317b75e9b582866cad614595bff565454f396335373ccaa48ee1c396644c76867ac4834920d3d72800fbce1c50721ddc33ea7604a1006aebcc2
+  checksum: 1bd6501e4e52eb9ea422ae86229255b76d4e0882abd19072e82050ec17154afc88f94fd737a8f1beaae5a3d1f1848e5b944aa42392978a29dc99d785840405d7
   languageName: node
   linkType: hard
 
@@ -12886,6 +12944,19 @@ __metadata:
   dependencies:
     type-fest: ^0.13.1
   checksum: e0aba4dca2fc9fe74ae1baf38dbd99190e1945445a241ba646290f2176cdb2032281a76443b02ccf0caf30da5657d510746506368889a593b9835a497fc0732e
+  languageName: node
+  linkType: hard
+
+"serve-favicon@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "serve-favicon@npm:2.5.0"
+  dependencies:
+    etag: ~1.8.1
+    fresh: 0.5.2
+    ms: 2.1.1
+    parseurl: ~1.3.2
+    safe-buffer: 5.1.1
+  checksum: f4dd0fbee3b7e18d0a27ba6ba01d2f585f23f533010c9e8c74aad74615b19b12d8fbe714f14cb3579803f0bacecd67cdc858714cb56c6e28f8dd07ccc997aea4
   languageName: node
   linkType: hard
 
@@ -13119,6 +13190,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sitemap-crawler@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz":
+  version: 1.0.2
+  resolution: "sitemap-crawler@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
+  dependencies:
+    async: ^2.6.1
+    bluebird: ^3.7.2
+    cheerio: ^1.0.0-rc.2
+    progress: ^2.0.0
+    request: ^2.88.0
+  checksum: 463645f1e6997b1a44628e28f6b0e8e63c3ed7767d16a8ba266d84f6277f00c659dbda8aa415d4dc3e5ff5ad4d2eecb47768052d3270a9ef22094676e3d82d34
+  languageName: node
+  linkType: hard
+
 "slash@npm:3.0.0, slash@npm:^3.0.0":
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
@@ -13275,6 +13359,16 @@ __metadata:
     source-map-url: ^0.4.0
     urix: ^0.1.0
   checksum: c73fa44ac00783f025f6ad9e038ab1a2e007cd6a6b86f47fe717c3d0765b4a08d264f6966f3bd7cd9dbcd69e4832783d5472e43247775b2a550d6f2155d24bae
+  languageName: node
+  linkType: hard
+
+"source-map-resolve@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "source-map-resolve@npm:0.6.0"
+  dependencies:
+    atob: ^2.1.2
+    decode-uri-component: ^0.2.0
+  checksum: fe503b9e5dac1c54be835282fcfec10879434e7b3ee08a9774f230299c724a8d403484d9531276d1670c87390e0e4d1d3f92b14cca6e4a2445ea3016b786ecd4
   languageName: node
   linkType: hard
 
@@ -13486,21 +13580,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"static-blog-generator@npm:^3.0.0":
+"static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz":
   version: 3.0.0
-  resolution: "static-blog-generator@npm:3.0.0"
+  resolution: "static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz"
   dependencies:
     git-command-helper: ^1.1.7
     google-news-sitemap: ^1.0.8
     hexo-blogger-xml: ^1.0.27
     hexo-post-parser: ^1.2.6
-    instant-indexing: ^1.0.2
     safelinkify: ^1.1.16
     sbg-api: ^1.0.3
     sbg-cli: ^1.0.3
     sbg-server: ^1.0.4
     sbg-utility: ^1.0.3
-  checksum: 269c804fe55401724844cc264aa583788c2ce4f99fd6065b2595e683c613d74f46b23137d66b1e6cb46df561c633d8414c3151db075c9298ed569b265c46dcf1
+  checksum: 9d046f27d491130cc6da4f99a5205af18e3cae21c07c713052b0f0eaf8dab067d2819de0642330fca464e902ea77a4110b9604fcbb51969afb1afa2beafa4f10
   languageName: node
   linkType: hard
 
@@ -15413,7 +15506,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.3.1, yargs@npm:^17.6.2":
+"yargs@npm:^17.3.1, yargs@npm:^17.6.2, yargs@npm:^17.7.0":
   version: 17.7.0
   resolution: "yargs@npm:17.7.0"
   dependencies:
