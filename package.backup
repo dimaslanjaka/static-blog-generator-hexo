@@ -1,94 +1,33 @@
-"workspaces": [
-    "multisite/chimeraland",
-    "multisite/chimeraland/chimeraland",
-    "themes/next",
-    "packages/hexo-github-card",
-    "packages/hexo-generator-redirect",
-    "packages/sitemap-crawler",
-    "packages/gulp-dom",
-    "packages/hexo-seo",
-    "packages/@types/*",
-    "packages/instant-indexing",
-    "packages/static-blog-generator"
-  ]
-
-
-  "devDependencies": {
-    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
-    "@types/node": "^18.13.0",
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "ansi-colors": "^4.1.3",
-    "axios": "^1.3.2",
-    "axios-cache-interceptor": "^1.0.1",
-    "cross-env": "^7.0.3",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "fs-extra": "^11.1.0",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
-    "git-describe": "^4.1.1",
-    "gulp": "^4.0.2",
-    "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz",
-    "hpagent": "^1.2.0",
-    "lerna": "^6.4.1",
-    "md5-file": "^5.0.0",
-    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
-    "npm-run-all": "^4.1.5",
-    "nx": "^15.6.3",
-    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
-    "prettier": "^2.8.4",
-    "rimraf": "^4.1.2",
-    "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
-    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
-    "static-blog-generator": "file:packages/static-blog-generator/packages/static-blog-generator/release/static-blog-generator.tgz",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
-    "upath": "^2.0.1",
-    "yargs": "^17.6.2"
-  }
-
-
-
-
-
-
-
-
-
-
 {
   "name": "static-blog-generator-hexo",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "yarn@3.2.0",
   "scripts": {
     "prestart": "run-s build:chimera copy",
-    "start": "npm run server",
+    "start": "yarn server",
     "build": "run-s build:*",
-    "build:chimera": "cd multisite/chimeraland && npm run build",
-    "build:post": "npm run copy",
-    "build:site": "npx hexo generate",
-    "copy": "npx sbg post copy",
+    "build:chimera": "cd multisite/chimeraland && yarn build",
+    "build:post": "yarn copy",
+    "build:site": "hexo generate",
+    "copy": "sbg post copy",
     "clean": "gulp clean",
-    "deploy": "npm run build && gulp deploy",
+    "deploy": "gulp deploy",
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
-    "update:chimeraland": "cd multisite/chimeraland/chimeraland && npm run update",
-    "update:chimeraland2": "cd multisite/chimeraland && npm run update",
-    "update:ncu": "npx npm-check-updates -u -x hexo,chalk",
+    "update:chimeraland": "cd multisite/chimeraland/chimeraland && yarn run update",
+    "update:chimeraland2": "cd multisite/chimeraland && yarn run update",
+    "update:ncu": "npm-check-updates -u",
     "update": "run-s update:* && npm install",
-    "postupdate": "node postinstall.js --commit",
-    "refresh": "rimraf package-lock.json && npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
+    "postupdate": "node postinstall.js --commit --yarn"
   },
   "hexo": {
     "version": "6.3.0"
   },
   "dependencies": {
-    "hexo": "^6.2.0",
+    "@next-theme/plugins": "^8.14.2",
+    "hexo": "6.3.0",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",
     "hexo-excerpt": "^1.3.0",
@@ -97,55 +36,47 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
     "hexo-generator-json-content": "^4.2.3",
-    "hexo-generator-redirect": "file:packages/hexo-generator-redirect/release/hexo-generator-redirect.tgz",
+    "hexo-generator-redirect": "./packages/hexo-generator-redirect",
     "hexo-generator-searchdb": "^1.4.1",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-github-card": "file:packages/hexo-github-card/release/hexo-github-card.tgz",
+    "hexo-github-card": "./packages/hexo-github-card",
     "hexo-i18n": "^2.0.0",
     "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
-    "hexo-renderer-marked": "^6.0.0",
-    "hexo-renderer-stylus": "^2.1.0",
-    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
+    "hexo-seo": "./packages/hexo-seo",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "file:themes/next"
+    "hexo-theme-butterfly": "./themes/butterfly",
+    "hexo-util": "^3.0.1",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
-    "@types/node": "^18.13.0",
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "ansi-colors": "^4.1.3",
-    "axios": "^1.3.2",
-    "axios-cache-interceptor": "^1.0.1",
-    "chimeraland": "file:multisite/chimeraland/release/chimeraland.tgz",
-    "cross-env": "^7.0.3",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
-    "eslint": "^8.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "fs-extra": "^11.1.0",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
-    "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
-    "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz",
-    "hpagent": "^1.2.0",
-    "lerna": "^6.4.1",
-    "md5-file": "^5.0.0",
-    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
+    "instant-indexing": "^1.0.2",
+    "lerna": "^6.5.1",
     "npm-run-all": "^4.1.5",
-    "nx": "^15.6.3",
-    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
+    "nx": "^15.7.2",
     "prettier": "^2.8.4",
-    "rimraf": "^4.1.2",
+    "static-blog-generator": "^3.0.0"
+  },
+  "workspaces": [
+    "multisite/chimeraland",
+    "packages/agc"
+  ],
+  "resolutions": {
+    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz",
+    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
+    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz",
+    "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz",
+    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
-    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
-    "static-blog-generator": "file:packages/static-blog-generator/packages/static-blog-generator/release/static-blog-generator.tgz",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
-    "upath": "^2.0.1",
-    "yargs": "^17.6.2"
+    "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/raw/monorepo/release/hexo-blogger-xml.tgz",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
+    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sitemap-crawler/release/sitemap-crawler.tgz"
   }
 }
