@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update:ncu": "npx npm-check-updates -u"
   },
   "keywords": [],
   "author": "L3n4r0x <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
@@ -22,11 +22,11 @@
     "axios": "^1.3.3",
     "electron": "^23.1.0",
     "fs-extra": "^11.1.0",
-    "git-command-helper": "workspace:^",
-    "hexo-post-parser": "workspace:^",
+    "git-command-helper": "^1.1.7",
+    "hexo-post-parser": "^1.2.6",
     "nightmare": "^3.0.2",
     "node-libcurl": "^3.0.0",
-    "sbg-utility": "workspace:^",
+    "sbg-utility": "^1.0.3",
     "upath": "^2.0.1"
   }
 }

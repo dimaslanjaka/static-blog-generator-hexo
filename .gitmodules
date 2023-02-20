@@ -14,10 +14,6 @@
 	path = packages/hexo-generator-i18n
 	url = https://github.com/dimaslanjaka/hexo-generator-i18n.git
 	branch = optimize
-[submodule "packages/static-blog-generator"]
-	path = packages/static-blog-generator
-	url = https://github.com/dimaslanjaka/static-blog-generator.git
-	branch = master
 [submodule "packages/@types/hexo"]
 	path = packages/@types/hexo
 	url = https://github.com/dimaslanjaka/nodejs-package-types
