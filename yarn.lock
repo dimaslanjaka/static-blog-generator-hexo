@@ -2868,7 +2868,7 @@ __metadata:
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo-post-parser: ^1.2.6
     js-yaml: ^4.1.0
-    minimatch: ^6.2.0
+    minimatch: ^7.0.0
     moment: ^2.29.4
     moment-timezone: ^0.5.40
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
@@ -6899,15 +6899,13 @@ __metadata:
 
 "hexo-generator-redirect@file:./packages/hexo-generator-redirect::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.4.1
-  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=7609bc&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=b56f27&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
     hexo-util: ^3.0.1
     upath: ^2.0.1
-  peerDependencies:
-    hexo: ">= 4.2.0"
-  checksum: d4ebf463ea14b8d285464b29d3100eceb97a415bd78d1495c7bf39db60650892ca54df6d1165cd026a94c70bb128694807152d5b699fa94c3f0471bdc794ff34
+  checksum: ed079a938b87f53f3e1ab454a0b15f1e540276788cacdc7b5f5421143634c0b5924c54e121f13fe4d505378cdff4c29332c604bc5ee80d5d62e930fab1e5deb6
   languageName: node
   linkType: hard
 
@@ -6931,12 +6929,12 @@ __metadata:
 
 "hexo-github-card@file:./packages/hexo-github-card::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.0.5
-  resolution: "hexo-github-card@file:./packages/hexo-github-card#./packages/hexo-github-card::hash=d956e7&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-github-card@file:./packages/hexo-github-card#./packages/hexo-github-card::hash=911621&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     bluebird: ^3.7.2
     hexo-fs: ^2.0.0
     nunjucks: ^3.2.3
-  checksum: 81d139c0ecba4ea8a81a7b3df57f1223c0433438967564a4b661a46973e6579071ddde569188cac79f7de570be5dd0301a45750f321b506bc3d4ac7958f34d76
+  checksum: 630453a01722e358295d652e0b1bf7984b585b4d283690214aa81015410beef43dce6cabda955825cfb4f0c16d832b0f0205fc835ebf176c6cd64c50eac14c4b
   languageName: node
   linkType: hard
 
@@ -7049,7 +7047,7 @@ __metadata:
 
 "hexo-seo@file:./packages/hexo-seo::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.1.6
-  resolution: "hexo-seo@file:./packages/hexo-seo#./packages/hexo-seo::hash=fc80e4&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-seo@file:./packages/hexo-seo#./packages/hexo-seo::hash=a8f2ce&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     bluebird: ^3.7.2
     cheerio: ^1.0.0-rc.12
@@ -7080,16 +7078,7 @@ __metadata:
     url-parse: ^1.5.10
     uuid: ">=9.0.0"
     xmlbuilder2: ^3.0.2
-  dependenciesMeta:
-    glob-parent:
-      optional: true
-    node.extend:
-      optional: true
-    request:
-      optional: true
-    uuid:
-      optional: true
-  checksum: 2fc1c453fae67268e1b7c72f7c6548ffa3095579f6f5b7bdc4512310143408408c80d67cbbf050854c030392689706d676e9cdb0b276a79dba6bb58c2f06c8b6
+  checksum: cffac7e29f59ac03ce756c25f2d290dc14ac29b99c85d7850a9e7427cef79cbabfdf7b8b87cf1526947bbc2b6099637c0b0aa451c9144ed6e58fb68c4f6fb27b
   languageName: node
   linkType: hard
 
@@ -7111,8 +7100,8 @@ __metadata:
 
 "hexo-theme-next@file:./themes/next::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 8.13.1
-  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=fe9333&locator=static-blog-generator-hexo%40workspace%3A."
-  checksum: a32d6a6b93b469e3e0713b74cefdd47e85ca36817996dc3b45e37809cb7f0e5f0601235c46e08c2de336bb9e0c1176b7a252e44b4f35ee2b4474599481346d50
+  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=1c4f41&locator=static-blog-generator-hexo%40workspace%3A."
+  checksum: 1a4771f929133d1faf04ad1ed6221c7c89b8d5076302e6175dfeb472dc300878eba6a22aac6b7a5426c8c98c09da67b67da3378336046a9620d604ea3cf30869
   languageName: node
   linkType: hard
 
@@ -9584,6 +9573,15 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: 0ffb77d05bd483fcc344ba3e64a501d569e658fa6c592d94e9716ffc7925de7a8c2ac294cafa822b160bd8b2cbf7e01012917e06ffb9a85cfa9604629b3f2c04
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "minimatch@npm:7.0.0"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: caceffe3489e022c7a8421100b3653ba4c03ebff1e704da8aa5d22c500ec679079163c214eeaf25a52840464fad67ab9a606394ef7302775c5d9d152a76b0ecc
   languageName: node
   linkType: hard
 
