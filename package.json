@@ -26,6 +26,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "@next-theme/plugins": "^8.14.2",
     "hexo": "6.3.0",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",
@@ -44,7 +45,8 @@
     "hexo-pdf": "^1.1.1",
     "hexo-seo": "./packages/hexo-seo",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "./themes/next"
+    "hexo-theme-next": "./themes/next",
+    "hexo-util": "^3.0.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.52.0",
