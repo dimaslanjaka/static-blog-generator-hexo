@@ -39,7 +39,7 @@
     "googleapis": "^111.0.0",
     "gulp": "^4.0.2",
     "js-yaml": "^4.1.0",
-    "minimatch": "^6.2.0",
+    "minimatch": "^7.0.0",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.40",
     "open": "^8.4.1",
