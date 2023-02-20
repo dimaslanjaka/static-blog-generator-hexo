@@ -7630,7 +7630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.1.1, glob@npm:^7.1.3, glob@npm:^7.1.4":
+"glob@npm:^7.1.1, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -8220,7 +8220,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-fs@npm:^3.0.1, hexo-fs@npm:^3.1.0":
+"hexo-fs@npm:^3.0.0, hexo-fs@npm:^3.0.1, hexo-fs@npm:^3.1.0":
   version: 3.1.0
   resolution: "hexo-fs@npm:3.1.0"
   dependencies:
@@ -8420,6 +8420,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-renderer-nunjucks@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "hexo-renderer-nunjucks@npm:2.0.0"
+  dependencies:
+    hexo-fs: ^3.0.0
+    lodash.toarray: ^4.4.0
+    nunjucks: ^3.2.1
+  checksum: 42a34e30b582ee0a6c109ddf4d896535530941cd210607c299c0e885d2d04cc0c24ce94c12c00f2ca44fabedad2bb449a6e891db5cf6731c313e895c63396e78
+  languageName: node
+  linkType: hard
+
+"hexo-renderer-stylus@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "hexo-renderer-stylus@npm:2.1.0"
+  dependencies:
+    nib: ^1.2.0
+    stylus: ^0.57.0
+  checksum: dbd79c0ada28cbf1fe32cf2b4cdd828352f74ae1c55d9379e73970b17cd4db6dc5168c5f53e161c1c517a0fd869dfaaaed0bf2e20ade83fc1c535c74dbaa4b75
+  languageName: node
+  linkType: hard
+
 "hexo-seo@file:./packages/hexo-seo::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.1.6
   resolution: "hexo-seo@file:./packages/hexo-seo#./packages/hexo-seo::hash=fc80e4&locator=static-blog-generator-hexo%40workspace%3A."
@@ -8484,13 +8505,15 @@ __metadata:
 
 "hexo-theme-next@file:./themes/next::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 8.13.1
-  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=eb1848&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=1647b8&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     "@next-theme/plugins": ^8.14.2
     css: ^3.0.0
     hexo-generator-searchdb: ^1.4.1
+    hexo-renderer-nunjucks: ^2.0.0
+    hexo-renderer-stylus: ^2.1.0
     hexo-util: ^3.0.1
-  checksum: 014cbe6f815c92bd2eeea91ed038a76356e8cb60324f384761c0e798310284a30a4071c4c47d5659f4aae8fb6e4e99ddc9c13536922b37d4343a051b3f93673c
+  checksum: d64d141d52d838ad4298bceb7aa7f38412d614a6faab4db19524bd232c33757fb9e2b821bde82d0fa64bf1cc0797514ae3816afdb96b9f7dec76e4d72612d37d
   languageName: node
   linkType: hard
 
@@ -10519,6 +10542,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.toarray@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.toarray@npm:4.4.0"
+  checksum: 2eebcbe75734223b2526018b1c66f7f5e3e5e21e2caffde1553e3453393a676347f2adb7ecbf08364521c188dbf280bd88053604ea159a95121d44453916c31f
+  languageName: node
+  linkType: hard
+
 "lodash@npm:^4.17.10, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:^4.17.5":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
@@ -11448,6 +11478,15 @@ __metadata:
   version: 1.1.0
   resolution: "next-tick@npm:1.1.0"
   checksum: 83b5cf36027a53ee6d8b7f9c0782f2ba87f4858d977342bfc3c20c21629290a2111f8374d13a81221179603ffc4364f38374b5655d17b6a8f8a8c77bdea4fe8b
+  languageName: node
+  linkType: hard
+
+"nib@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "nib@npm:1.2.0"
+  peerDependencies:
+    stylus: "*"
+  checksum: c45c185ae2d8c92727d0e34bea8050a5fc17dc767a8259784c01708aa00ed82263c1c6f346cff699529ad20577341160c725f55571b34ed91f083a3b50484869
   languageName: node
   linkType: hard
 
@@ -14390,7 +14429,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.0.2, safer-buffer@npm:^2.1.0, safer-buffer@npm:~2.1.0":
+"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.0.2, safer-buffer@npm:^2.1.0, safer-buffer@npm:^2.1.2, safer-buffer@npm:~2.1.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
@@ -14406,7 +14445,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sax@npm:>=0.6.0":
+"sax@npm:>=0.6.0, sax@npm:~1.2.4":
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
   checksum: d3df7d32b897a2c2f28e941f732c71ba90e27c24f62ee918bd4d9a8cfb3553f2f81e5493c7f0be94a11c1911b643a9108f231dd6f60df3fa9586b5d2e3e9e1fe
@@ -15129,6 +15168,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"source-map@npm:^0.7.3":
+  version: 0.7.4
+  resolution: "source-map@npm:0.7.4"
+  checksum: 01cc5a74b1f0e1d626a58d36ad6898ea820567e87f18dfc9d24a9843a351aaa2ec09b87422589906d6ff1deed29693e176194dc88bcae7c9a852dc74b311dbf5
+  languageName: node
+  linkType: hard
+
 "sparkles@npm:^1.0.0":
   version: 1.0.1
   resolution: "sparkles@npm:1.0.1"
@@ -15616,6 +15662,22 @@ __metadata:
   version: 4.1.3
   resolution: "stylis@npm:4.1.3"
   checksum: d04dbffcb9bf2c5ca8d8dc09534203c75df3bf711d33973ea22038a99cc475412a350b661ebd99cbc01daa50d7eedcf0d130d121800eb7318759a197023442a6
+  languageName: node
+  linkType: hard
+
+"stylus@npm:^0.57.0":
+  version: 0.57.0
+  resolution: "stylus@npm:0.57.0"
+  dependencies:
+    css: ^3.0.0
+    debug: ^4.3.2
+    glob: ^7.1.6
+    safer-buffer: ^2.1.2
+    sax: ~1.2.4
+    source-map: ^0.7.3
+  bin:
+    stylus: bin/stylus
+  checksum: ad914906755608074df4c4a495fb12e7e095d0dfb0477c2bba05d83ea99c5a53ccfe806b82bba4c4455ba97841484f72d4a4381f4e77f0f11e4856742db041db
   languageName: node
   linkType: hard
 
