@@ -42,7 +42,9 @@
     "hexo-i18n": "^2.0.0",
     "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
-    "hexo-server": "^3.0.0"
+    "hexo-seo": "./packages/hexo-seo",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-next": "./themes/next"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.52.0",
@@ -64,7 +66,6 @@
   },
   "workspaces": [
     "multisite/chimeraland",
-    "packages/agc",
-    "themes/next"
+    "packages/agc"
   ]
 }
