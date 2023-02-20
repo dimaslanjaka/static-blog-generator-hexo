@@ -8552,10 +8552,12 @@ __metadata:
 
 "hexo-theme-next@file:./themes/next::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 8.13.1
-  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=05b43c&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=75445d&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
+    "@next-theme/plugins": ^8.14.2
     css: ^3.0.0
-  checksum: b2c51fb31ea49cb66f2eef11bbc58d716ba2f69594806311163087bc6af1c81e22b1e0d1851644313d5cdf16c18886112a7d0ecdfbfad61b69124f1c5a6bf8ac
+    hexo-util: ^3.0.1
+  checksum: f8aabf0ef0d8cf33a95e6d12a6e47ea0eb94f9412fc9f6038b8f859af1d90d9bec8d7bce9aacaa55a075c4e29eb0a4d88cafd7f779c8753edc30ebc512b68177
   languageName: node
   linkType: hard
 
