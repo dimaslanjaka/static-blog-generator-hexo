@@ -46,7 +46,8 @@
     "hexo-seo": "./packages/hexo-seo",
     "hexo-server": "^3.0.0",
     "hexo-theme-next": "./themes/next",
-    "hexo-util": "^3.0.1"
+    "hexo-util": "^3.0.1",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.52.0",
