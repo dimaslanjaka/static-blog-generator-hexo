@@ -14,10 +14,6 @@
 	path = packages/hexo-generator-i18n
 	url = https://github.com/dimaslanjaka/hexo-generator-i18n.git
 	branch = optimize
-[submodule "packages/hexo-seo"]
-	path = packages/hexo-seo
-	url = https://github.com/dimaslanjaka/hexo-seo
-	branch = master
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/dimaslanjaka/hexo-theme-next.git
