@@ -132,15 +132,26 @@ jobs:
           restore-keys: |
             cache-${{ hashFiles('**/.guid') }}
             cache-
-      - run: |
-          corepack prepare yarn@3.2.0 --activate
-          corepack enable
+      - run: corepack enable
         name: enable yarn
       - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky
       - run: yarn install
-      - run: yarn workspace chimeraland build
+        id: install
+        continue-on-error: true
+        name: install
+      - run: |
+          sh bin/clean-nodemodules && yarn install
+        if: steps.install.outcome == 'failure'
+        name: clean install
+      - name: install submodule
+        run: |
+          lerna exec "touch yarn.lock"
+          lerna exec "yarn install"
+        shell: bash
+      - run: lerna run build --scope=chimeraland
         env:
           DEBUG: chimera-*,chimera,chimera:*
+        name: build chimeraland
 
       - run: npx sbg post standalone
       - run: npx sbg post copy
