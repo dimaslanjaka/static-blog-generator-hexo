@@ -57,7 +57,6 @@
 | Freecss | | SCAMMER ruby alasan baru main dan new owner |
 | drin | APPOCALYPSE | SCAMMER ruby |
 | Naru/naru | | SCAMMER ruby |
-| Pokemonn | | SCAMMER ruby |
 
 <h2 id="tukang-roll">Daftar player kategori tukang roll drop item dan tidak dikembalikan (tidak ada penyelesaian)</h2>
 
@@ -82,6 +81,8 @@
 | ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
 | HODE | LastEmperror | dicurigai sebagai roll drops items chimeraland MAP ILLUSTRIOUS 16 party |
 | Deshwan | | dicurigai sebagai scammer MAP ILLUSTRIOUS 16 |
+| Pokemonn | | dicurigai sebagai SCAMMER ruby |
+| VenKy | | dicurigai sebagai SCAMMER ruby |
 
 ## Daftar Nama Player Yang Dihapus Dari List Diatas
 
