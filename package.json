@@ -2,7 +2,7 @@
   "name": "static-blog-generator-hexo",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.4.1",
   "scripts": {
     "prestart": "run-s build:chimera copy",
     "start": "yarn server",
