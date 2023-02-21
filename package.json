@@ -43,7 +43,7 @@
     "hexo-i18n": "^2.0.0",
     "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
-    "hexo-seo": "./packages/hexo-seo",
+    "hexo-seo": "^1.1.6",
     "hexo-server": "^3.0.0",
     "hexo-theme-next": "./themes/next",
     "hexo-util": "^3.0.1",
@@ -63,11 +63,8 @@
     "prettier": "^2.8.4",
     "static-blog-generator": "^3.0.0"
   },
-  "workspaces": [
-    "multisite/chimeraland",
-    "packages/agc"
-  ],
   "resolutions": {
+    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/raw/master/release/hexo-seo.tgz",
     "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz",
     "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",

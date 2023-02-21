@@ -8,3 +8,5 @@ google-api-key*.json
 client_secret*.json
 **/desktop.ini
 .env
+package-lock.json
+yarn.lock

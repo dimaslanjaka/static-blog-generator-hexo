@@ -2,13 +2,10 @@
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "independent",
   "packages": [
-    "source",
-    "src-posts",
-    "packages/static-blog-generator/packages/sbg-utility",
-    "packages/static-blog-generator/packages/sbg-api",
-    "packages/static-blog-generator/packages/sbg-server",
-    "packages/static-blog-generator/packages/sbg-cli"
+    "multisite/chimeraland",
+    "packages/agc",
+    "src-posts"
   ],
-  "useWorkspaces": true,
+  "useWorkspaces": false,
   "npmClient": "yarn"
 }
