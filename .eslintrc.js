@@ -3,6 +3,7 @@ const prettier = require('./.prettierrc');
  * @type {import('eslint').ESLint.ConfigData}
  */
 const config = {
+  extends: 'hexo',
   root: true, // Specifies your current project has own eslint rules without extends parent folder eslint rules
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   env: {
