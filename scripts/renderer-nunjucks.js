@@ -1,3 +1,4 @@
+// hexo-renderer-nunjucks
 /* global hexo */
 'use strict';
 
@@ -20,7 +21,8 @@ function toArray(value) {
   return _toArray(value);
 }
 
-const env = nunjucks.configure([path.join(__dirname, '../themes', hexo.config.theme, 'layout')], {
+const themeDir = path.join(__dirname, '../themes', hexo.config.theme);
+const env = nunjucks.configure([themeDir, path.join(themeDir, 'layout')], {
   noCache: true,
   autoescape: false,
   throwOnUndefined: false,
