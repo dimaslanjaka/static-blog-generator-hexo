@@ -1,4 +1,8 @@
 ---
 title: {{ title }}
-type: post
+date: {{ date }}
+updated: {{ date }}
+description:
+categories: []
+tags: []
 ---

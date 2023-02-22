@@ -9884,6 +9884,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.toarray@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.toarray@npm:4.4.0"
+  checksum: 2eebcbe75734223b2526018b1c66f7f5e3e5e21e2caffde1553e3453393a676347f2adb7ecbf08364521c188dbf280bd88053604ea159a95121d44453916c31f
+  languageName: node
+  linkType: hard
+
 "lodash@npm:^4.17.10, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
@@ -14424,8 +14431,10 @@ __metadata:
     instant-indexing: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
     js-yaml: ^4.1.0
     lerna: ^6.5.1
+    lodash.toarray: ^4.4.0
     lunr: 2.3.9
     npm-run-all: ^4.1.5
+    nunjucks: ^3.2.3
     nx: ^15.7.2
     prettier: ^2.8.4
     safelinkify: "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz"
