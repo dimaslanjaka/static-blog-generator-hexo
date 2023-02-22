@@ -23,7 +23,7 @@
     "postupdate": "node postinstall.js --commit --yarn"
   },
   "hexo": {
-    "version": "6.0.0"
+    "version": "6.3.0"
   },
   "dependencies": {
     "@next-theme/plugins": "^8.14.2",
