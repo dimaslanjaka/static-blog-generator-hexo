@@ -29,6 +29,7 @@
     "@next-theme/plugins": "^8.14.2",
     "cheerio": "^0.22.0",
     "css": "^3.0.0",
+    "ejs": "^3.1.8",
     "hexo": "6.3.0",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",

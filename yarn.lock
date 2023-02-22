@@ -5362,7 +5362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ejs@npm:^3.1.7":
+"ejs@npm:^3.1.7, ejs@npm:^3.1.8":
   version: 3.1.8
   resolution: "ejs@npm:3.1.8"
   dependencies:
@@ -14471,6 +14471,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.53.0
     cheerio: ^0.22.0
     css: ^3.0.0
+    ejs: ^3.1.8
     eslint: ^8.34.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
