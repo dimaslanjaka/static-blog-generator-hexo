@@ -142,6 +142,7 @@ jobs:
           sh bin/clean-nodemodules && yarn install
         if: steps.install.outcome == 'failure'
         name: clean install
+        shell: bash
       - name: install submodule
         run: |
           lerna exec "touch yarn.lock"
