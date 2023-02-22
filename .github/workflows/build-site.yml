@@ -123,7 +123,6 @@ jobs:
             /home/runner/db.json
             /home/runner/public
             /home/runner/tmp
-            /home/runner/build
             /home/runner/source/_posts
             **/dist/**
             **/node_modules
