@@ -6,6 +6,9 @@ const _toArray = require('lodash.toarray');
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
+if (typeof hexo === 'undefined') {
+  global.hexo = {};
+}
 
 function isObject(value) {
   return typeof value === 'object' && value !== null && value !== undefined;
@@ -55,8 +58,6 @@ function compile(data) {
 // hexo Renderer API implicitly requires 'compile' to be a value of the rendering function
 render.compile = compile;
 
-if (typeof hexo !== 'undefined') {
-  // hexo.extend.renderer.register('swig', 'html', render, true);
-  hexo.extend.renderer.register('njk', 'html', render, true);
-  hexo.extend.renderer.register('j2', 'html', render, true);
-}
+// hexo.extend.renderer.register('swig', 'html', render, true);
+hexo.extend.renderer.register('njk', 'html', render, true);
+hexo.extend.renderer.register('j2', 'html', render, true);
