@@ -7680,16 +7680,17 @@ __metadata:
 
 "hexo-theme-next@file:./themes/next::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 8.13.1
-  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=439956&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-theme-next@file:./themes/next#./themes/next::hash=1a6132&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
-    "@next-theme/plugins": ^8.14.2
     css: ^3.0.0
-    hexo-util: ^3.0.1
   peerDependencies:
     hexo-generator-searchdb: ^1.4.1
     hexo-renderer-nunjucks: ^2.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: 0f8ba4c3fa0395aba4fc7b208cbbaeca0012152502b6f2d3e8c7ab79e5b88e1b121354e593c7123a6f398d25bd2a619c3a05ae244b75c40690e7601e0f09dd66
+  dependenciesMeta:
+    css:
+      optional: true
+  checksum: 04a64e641ad3aebfe48646fd5badf1148e0daefea753675d3c06daa90e58a50253ce67bf1c50323086148f0a95e2769a2e93ac16794b42753ed6a4a008cf7425
   languageName: node
   linkType: hard
 
