@@ -73,6 +73,7 @@
 | PrimalHunter | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 | blackblades | | Roll telur illus 30,000 years |
 | maraa | undead | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
+| Pokemonn | | SCAMMER ruby, korban scam **IlmuAkhirZmn** |
 
 ## Daftar player yang dicurigai sebagai scammer
 
@@ -81,7 +82,6 @@
 | ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
 | HODE | LastEmperror | dicurigai sebagai roll drops items chimeraland MAP ILLUSTRIOUS 16 party |
 | Deshwan | | dicurigai sebagai scammer MAP ILLUSTRIOUS 16 |
-| Pokemonn | | dicurigai sebagai SCAMMER ruby |
 | VenKy | | dicurigai sebagai SCAMMER ruby |
 
 ## Daftar Nama Player Yang Dihapus Dari List Diatas
