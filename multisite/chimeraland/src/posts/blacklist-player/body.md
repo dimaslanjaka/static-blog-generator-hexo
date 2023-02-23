@@ -73,7 +73,7 @@
 | PrimalHunter | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 | blackblades | | Roll telur illus 30,000 years |
 | maraa | undead | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
-| Pokemonn | | SCAMMER ruby, korban scam **IlmuAkhirZmn** |
+| Pokemonn | | pemilik pertama akun ini adalah SCAMMER ruby, korban scam **IlmuAkhirZmn** |
 
 ## Daftar player yang dicurigai sebagai scammer
 
