@@ -148,9 +148,9 @@ header:
     # Effective for all pages.
     enable: true
     # You can override it by `header_title` in Front-Matter of .md
-    title: Hello Stun
+    title: WMI
     # You can override it by `header_subtitle` in Front-Matter of .md
-    subtitle: An elegant theme for Hexo
+    subtitle: Website Management Indonesia
   # Mask effect of the background image.
   mask:
     enable: false

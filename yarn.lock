@@ -6394,7 +6394,7 @@ __metadata:
 
 "hexo-generator-redirect@file:./packages/hexo-generator-redirect::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.4.2
-  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=1ebfb2&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=804871&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
@@ -6402,7 +6402,7 @@ __metadata:
     upath: ^2.0.1
   peerDependencies:
     hexo: ">= 4.2.0"
-  checksum: 74e947ea261c5f2e3aea3b12a28a559f594dce604919e73bdc6ec48dfbbaff6c1150463daf28eb5f83722c9bd626a41b457fc3319bd232d30070c6c31b4dd7d2
+  checksum: 3df7bad7781225501df5f4e9aae0b78007477a9314c9589d1dbaaf684cbb95140675e543597c03fef858b66fba83276889800a726d6762476af66092ce4ba242
   languageName: node
   linkType: hard
 
