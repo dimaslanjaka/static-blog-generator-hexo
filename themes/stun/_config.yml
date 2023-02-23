@@ -225,9 +225,9 @@ footer:
     color: '#ff0000'
   # Hexo link
   powered:
-    enable: true
+    enable: false
     # Whether to show version after Hexo link (e.g. vX.X.X)
-    version: true
+    version: false
   # Theme link
   theme:
     enable: true
