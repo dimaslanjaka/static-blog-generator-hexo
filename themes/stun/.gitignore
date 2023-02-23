@@ -28,7 +28,7 @@ tmp/
 temp/
 
 ### VisualStudioCode ###
-.vscode/*
+# .vscode/*
 
 ### MacOS ###
 # General
