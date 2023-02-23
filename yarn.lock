@@ -6394,7 +6394,7 @@ __metadata:
 
 "hexo-generator-redirect@file:./packages/hexo-generator-redirect::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.4.2
-  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=78ca0d&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-generator-redirect@file:./packages/hexo-generator-redirect#./packages/hexo-generator-redirect::hash=6820c6&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
@@ -6402,7 +6402,7 @@ __metadata:
     upath: ^2.0.1
   peerDependencies:
     hexo: ">= 4.2.0"
-  checksum: 62be2e55dda0cf4f6d007fdd401a561baebfbfe1c8e10a90bdf893c9d35a2fbf9d02a3eb1aeadca761f75ce88237dae6dd55d4a2d6c41430e746392c7bdb78f5
+  checksum: 4166c0469c87b93cefe61d27071f79021c365109a5edb601d2028164aa0349655cd75bfc27f0252d7ac84889d18dad29bfe61036870a9d6598faa7456f13d9b6
   languageName: node
   linkType: hard
 
@@ -6426,12 +6426,12 @@ __metadata:
 
 "hexo-github-card@file:./packages/hexo-github-card::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.0.5
-  resolution: "hexo-github-card@file:./packages/hexo-github-card#./packages/hexo-github-card::hash=d956e7&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-github-card@file:./packages/hexo-github-card#./packages/hexo-github-card::hash=15e2ee&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     bluebird: ^3.7.2
     hexo-fs: ^2.0.0
     nunjucks: ^3.2.3
-  checksum: 81d139c0ecba4ea8a81a7b3df57f1223c0433438967564a4b661a46973e6579071ddde569188cac79f7de570be5dd0301a45750f321b506bc3d4ac7958f34d76
+  checksum: dbec7efa900f60a6f1888b4811e085d5cd8dc85d5a7e9e10d7f457ec2b120fde7fd1f79dc3c64adfb91259fafbd4bd128b58cf4693c653d79f2f4b937a39eedb
   languageName: node
   linkType: hard
 
@@ -6664,7 +6664,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo@github:hexojs/hexo":
+"hexo@https://github.com/hexojs/hexo/tarball/master":
   version: 6.3.0
   resolution: "hexo@https://github.com/hexojs/hexo.git#commit=d5f3f82fab2c1ef85525e142b978a904632ef425"
   dependencies:
@@ -12913,7 +12913,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
     gulp: ^4.0.2
-    hexo: "github:hexojs/hexo"
+    hexo: "https://github.com/hexojs/hexo/tarball/master"
     hexo-asset-link: ^2.2.1
     hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
     hexo-excerpt: ^1.3.0
