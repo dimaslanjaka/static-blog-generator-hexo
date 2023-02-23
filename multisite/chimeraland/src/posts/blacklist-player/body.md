@@ -9,7 +9,9 @@
 >
 > Selain daftar diatas merupakan akun palsu orang lain.
 >
-> Admin tidak bertanggung jawab atas hal-hal yang tidak admin lakukan seperti SCAM. Admin sangat membenci SCAMMER.
+> Admin tidak bertanggung jawab atas hal-hal yang tidak admin lakukan seperti SCAM.
+>
+> Admin tidak akan pilih kasih untuk memasukkan IGN player kedalam blacklist, meskipun dia anggota clan maupun saudara sekalipun.
 
 <h2 id="scammer-map-illus-16">Daftar scammer/blacklist player kategori SCAMMER chimeraland MAP ILLUSTRIOUS 16 PARTY</h2>
 
