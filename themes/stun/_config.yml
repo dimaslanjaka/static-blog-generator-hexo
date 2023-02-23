@@ -190,6 +190,8 @@ body:
       default: 0.1
       # Opacity of the mask in night mode.
       night_mode: 0.6
+  scripts:
+    - /r-ads.js
 
 # The footer of site.
 footer:
