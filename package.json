@@ -58,9 +58,11 @@
     "js-yaml": "^4.1.0",
     "lodash.toarray": "^4.4.0",
     "lunr": "2.3.9",
+    "nib": "^1.2.0",
     "nunjucks": "^3.2.3",
     "pug": "^3.0.2",
-    "sharp": "^0.31.0"
+    "sharp": "^0.31.0",
+    "stylus": "^0.59.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.53.0",
