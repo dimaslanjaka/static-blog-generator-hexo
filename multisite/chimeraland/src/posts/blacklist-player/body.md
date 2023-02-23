@@ -36,7 +36,6 @@
 | Sus | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | HEE | | this account got hacked, and new owner is SCAMMER, last activity SCAMMING chimeraland MAP ILLUSTRIOUS 16 |
 | doraemon | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
-<!-- | Deshwan | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 | -->
 
 <h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
 
@@ -44,6 +43,7 @@
 | :--- | :--- | :--- |
 | Shelby | | SCAMMER ruby |
 | NesaMiko | | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
+| Pokemonn | | pemilik pertama akun ini adalah SCAMMER ruby, korban scam **IlmuAkhirZmn** |
 | Tusboll | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
 | Ryujin | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
 | Ryuukendo | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
@@ -73,7 +73,6 @@
 | PrimalHunter | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 | blackblades | | Roll telur illus 30,000 years |
 | maraa | undead | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
-| Pokemonn | | pemilik pertama akun ini adalah SCAMMER ruby, korban scam **IlmuAkhirZmn** |
 
 ## Daftar player yang dicurigai sebagai scammer
 
