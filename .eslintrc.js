@@ -3,7 +3,6 @@ const prettier = require('./.prettierrc');
  * @type {import('eslint').ESLint.ConfigData}
  */
 const config = {
-  extends: 'hexo',
   root: true, // Specifies your current project has own eslint rules without extends parent folder eslint rules
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   env: {
@@ -49,7 +48,7 @@ const config = {
       'error',
       {
         allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
-        allowedNames: ['self'] // Allow `const self = this`; `[]` by default
+        allowedNames: ['self', 'hexo'] // Allow `const self = this`; `[]` by default
       }
     ],
     // "arrow-body-style" and "prefer-arrow-callback" are two ESLint core rules that can cause issues with prettier/prettier plugin, so turn them off.
