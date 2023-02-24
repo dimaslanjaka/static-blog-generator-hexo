@@ -5,7 +5,9 @@ const fs = require('fs');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const { default: axios } = require('axios');
-
+const ansiColors = require('ansi-colors');
+const _hgc_logname = ansiColors.magentaBright('hexo-github-card');
+const _hg_logname = ansiColors.magentaBright('hexo-gist');
 const LIB_PATH = path.resolve(__dirname, './lib');
 const GITHUB_CARD_LIB_NAME = 'githubcard.js';
 const GITHUB_CARD_FILE_PATH = path.resolve(LIB_PATH, GITHUB_CARD_LIB_NAME);
@@ -14,7 +16,8 @@ const GITHUB_CARD_TAG_NAME = 'githubCard';
 const GITHUB_CARD_TEMPLATE = path.resolve(__dirname, 'hexo-github-card.njk');
 const GITHUB_CARD_TEMPLATE_CONTENT = fs.readFileSync(GITHUB_CARD_TEMPLATE, 'utf-8');
 
-nunjucks.configure(__dirname, {
+nunjucks.configure([__dirname], {
+  noCache: true,
   watch: false
 });
 
@@ -79,15 +82,33 @@ async function fetch_raw_code(gist_id) {
   return res.data;
 }
 
+// https://github.com/jekyll/jekyll-gist/blob/master/lib/jekyll-gist/gist_tag.rb
 hexo.extend.tag.register('gist', (args) => {
   /**
    * @type {import('hexo')}
    */
   const self = this;
   return new Promise((resolve, reject) => {
-    console.log(args);
-    console.log(self.config);
+    hexo.log.info(_hg_logname, args);
+    hexo.log.info(_hg_logname, self.config.url);
 
-    resolve('');
+    const payload = {
+      gist_id: args[0]
+    };
+
+    nunjucks.renderString(path.join(__dirname, 'hexo-gist.njk'), payload, (err, res) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(res);
+    });
   });
 });
+
+//
+// Input: {% jsfiddle ccWP7 %}
+// Output: <script async src=\"//jsfiddle.net/ccWP7/embed/js,resources,html,css,result/dark/"></script>
+//
+// Input: {% jsfiddle ccWP7 js,html,result iframe %}
+// Output: <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/ccWP7/embedded/js,html,result/light/"></iframe>
+//

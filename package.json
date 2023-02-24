@@ -69,7 +69,6 @@
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
     "gulp": "^4.0.2",
     "hexo-generator-redirect": "./packages/hexo-generator-redirect",
-    "hexo-github-card": "./packages/hexo-github-card",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz",
     "lerna": "^6.5.1",
