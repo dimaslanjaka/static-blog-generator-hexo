@@ -4,6 +4,7 @@ const Promise = require('bluebird');
 const fs = require('fs');
 const nunjucks = require('nunjucks');
 const path = require('path');
+const { default: axios } = require('axios');
 
 const LIB_PATH = path.resolve(__dirname, './lib');
 const GITHUB_CARD_LIB_NAME = 'githubcard.js';
@@ -69,3 +70,24 @@ hexo.extend.tag.register(
     async: true
   }
 );
+
+// hexo-gist
+
+async function fetch_raw_code(gist_id) {
+  const url = `https://gist.githubusercontent.com/${gist_id}/raw`;
+  const res = await axios.get(url);
+  return res.data;
+}
+
+hexo.extend.tag.register('gist', (args) => {
+  /**
+   * @type {import('hexo')}
+   */
+  const self = this;
+  return new Promise((resolve, reject) => {
+    console.log(args);
+    console.log(self.config);
+
+    resolve('');
+  });
+});
