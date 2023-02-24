@@ -70,6 +70,7 @@
     "gulp": "^4.0.2",
     "hexo-generator-redirect": "./packages/hexo-generator-redirect",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
+    "hexo-shortcodes": "./packages/hexo-shortcodes",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz",
     "lerna": "^6.5.1",
     "npm-run-all": "^4.1.5",
