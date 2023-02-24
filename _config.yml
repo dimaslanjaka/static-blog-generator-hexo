@@ -186,7 +186,7 @@ exclude:
   - '**/vendor/**'
   - '**/ads/**'
   - '**/tmp/**'
-  - '**/hexo-theme-unit-test/**'
+#  - '**/hexo-theme-unit-test/**'
 ignore:
   - '**/.git*'
 # https://hexo.io/docs/configuration.html
@@ -198,7 +198,7 @@ skip_render:
   - 'page/*.html'
   - 'comment.html'
   - 'source/comment.html'
-  - '**/hexo-theme-unit-test/**'
+#  - '**/hexo-theme-unit-test/**'
   - '**/node_modules/**'
   - 'yandex_*'
   - 'ahrefs_*'
@@ -237,7 +237,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: material
+theme: stun
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -368,15 +368,46 @@ analytics:
 # https://github.com/dimaslanjaka/hexo-seo
 seo:
   html:
+    enable: true
     # fix invalid html
     fix: true
     # exclude from minify
     exclude:
       - '*.min.{htm,html}'
-  css: true
-  js: true
-  schema: false
+  # minify css
+  css:
+    enable: true
+    # If you want to customize the css minifier settings, you can put below
+    # exclude css from minifying, multiple supported
+    exclude:
+      - '**/*.min.css'
+  # minify js
+  js:
+    enable: true
+    # If you want to customize the js minifier settings, you can put below
+    # exclude css from minifying, multiple supported
+    exclude:
+      - '**/*.min.js'
+    # this is terser options, you can customize minifier with terser options https://github.com/terser/terser
+    # below is config example
+    options:
+      compress:
+        dead_code: true
+      mangle:
+        toplevel: true
+        safari10: true
+  # add rich snippets on every posts and pages
+  schema:
+    article:
+      enable: true
+    breadcrumb:
+      enable: true
+    sitelink:
+      enable: true
+      searchUrl: https://www.webmanajemen.com/search?q=
+  # this function still under development because JAVASCRIPT HEAP MEMORY and my device is 8GB RAM
   img:
+    enable: true
     # fix broken images
     broken: false
     # default broken images
@@ -393,7 +424,8 @@ seo:
     exclude:
       - webmanajemen.com
       - web-manajemen.blogspot.com
-      - dimaslanjaka.github.io
+  # auto generate seo friendly sitemap on http://yoursite.com/sitemap.xml
+  # forked from yoast seo
   sitemap: true
 
 # static-blog-generator
