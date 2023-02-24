@@ -1,5 +1,3 @@
-/* global hexo */
-
 'use strict';
 
 const Promise = require('bluebird');
