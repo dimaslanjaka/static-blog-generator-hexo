@@ -6609,7 +6609,7 @@ __metadata:
 
 "hexo-shortcodes@file:./packages/hexo-shortcodes::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.0.0
-  resolution: "hexo-shortcodes@file:./packages/hexo-shortcodes#./packages/hexo-shortcodes::hash=377272&locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-shortcodes@file:./packages/hexo-shortcodes#./packages/hexo-shortcodes::hash=b9c25e&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     ansi-colors: ^4.1.3
     axios: ^1.3.4
@@ -6617,7 +6617,7 @@ __metadata:
     hexo-util: ^3.0.1
     nunjucks: ^3.2.3
     sbg-utility: ^1.0.4
-  checksum: 9bd3401eda01884e001a5b347bd7295b6b9545a9e0e2d6089307772d02653f054bb09b8d45660283333040bc64efa00374f39cc0292124a3e097a483836960e2
+  checksum: 264c479fba94995f43902e2a4fcfe2063980a795c1f3e031c8fdac28c49747aa0768fa24addb55a22fc0c36f9f9676d808e7b923797f9ea5c60619b09ffd39ed
   languageName: node
   linkType: hard
 
