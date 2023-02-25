@@ -186,7 +186,7 @@ exclude:
   - '**/vendor/**'
   - '**/ads/**'
   - '**/tmp/**'
-#  - '**/hexo-theme-unit-test/**'
+  - '**/hexo-theme-unit-test/**'
 ignore:
   - '**/.git*'
 # https://hexo.io/docs/configuration.html
@@ -198,7 +198,7 @@ skip_render:
   - 'page/*.html'
   - 'comment.html'
   - 'source/comment.html'
-#  - '**/hexo-theme-unit-test/**'
+  - '**/hexo-theme-unit-test/**'
   - '**/node_modules/**'
   - 'yandex_*'
   - 'ahrefs_*'
