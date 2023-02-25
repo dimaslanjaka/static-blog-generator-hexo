@@ -15,9 +15,6 @@
 
 <h2 id="scammer-map-illus-16">Daftar scammer/blacklist player kategori SCAMMER chimeraland MAP ILLUSTRIOUS 16 PARTY</h2>
 
-
-<h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
-
 > Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
 > - Klik Team
 > - Klik Team Settings
@@ -53,11 +50,13 @@
 | HEE | | this account got hacked, and new owner is SCAMMER, last activity SCAMMING chimeraland MAP ILLUSTRIOUS 16 |
 | doraemon | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 
+<h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
+
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | Shelby | | SCAMMER ruby |
 | NesaMiko | | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
-| Pokemonn | | pemilik pertama akun ini adalah SCAMMER ruby, korban scam **IlmuAkhirZmn** |
+| Pokemonn | | pemilik sebelumnya akun ini adalah SCAMMER ruby, korban scam **IlmuAkhirZmn** |
 | Tusboll | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
 | Ryujin | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
 | Ryuukendo | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
