@@ -15,6 +15,15 @@
 
 <h2 id="scammer-map-illus-16">Daftar scammer/blacklist player kategori SCAMMER chimeraland MAP ILLUSTRIOUS 16 PARTY</h2>
 
+
+<h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
+
+> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
+> - Klik Team
+> - Klik Team Settings
+> - Cek **Auto abadon roll**
+> - Klik Confirm/OK
+
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
 | ASTER | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
@@ -29,6 +38,11 @@
 | jiejie/Jiejie | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | HitsuiTH | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | Glitch | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+| Corleonx | | Roll drops items dan tidak dikembalikan (tidak ada penyelesaian) chimeraland MAP ILLUSTRIOUS 16 |
+| Shelby | | Roll drops items dan tidak dikembalikan (tidak ada penyelesaian) chimeraland MAP ILLUSTRIOUS 16 |
+| PrimalHunter | | Roll drops dan tidak dikembalikan (tidak ada penyelesaian) from chimeraland MAP ILLUSTRIOUS 16 |
+| blackblades | | Roll telur illus 30,000 years dan tidak dikembalikan (tidak ada penyelesaian) |
+| maraa | undead | Roll drops items dan tidak dikembalikan (tidak ada penyelesaian) chimeraland MAP ILLUSTRIOUS 16 |
 | xSOLETAx | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | Elacan | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | YurikoSanGyi | | Roll and SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
@@ -38,8 +52,6 @@
 | Sus | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | HEE | | this account got hacked, and new owner is SCAMMER, last activity SCAMMING chimeraland MAP ILLUSTRIOUS 16 |
 | doraemon | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
-
-<h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
@@ -59,22 +71,6 @@
 | Freecss | | SCAMMER ruby alasan baru main dan new owner |
 | drin | APPOCALYPSE | SCAMMER ruby |
 | Naru/naru | | SCAMMER ruby |
-
-<h2 id="tukang-roll">Daftar player kategori tukang roll drop item dan tidak dikembalikan (tidak ada penyelesaian)</h2>
-
-> Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
-> - Klik Team
-> - Klik Team Settings
-> - Cek **Auto abadon roll**
-> - Klik Confirm/OK
-
-| Nama Player | Clan | Keterangan |
-| :--- | :--- | :--- |
-| Corleonx | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
-| Shelby | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
-| PrimalHunter | | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
-| blackblades | | Roll telur illus 30,000 years |
-| maraa | undead | Roll drops items from chimeraland MAP ILLUSTRIOUS 16 |
 
 ## Daftar player yang dicurigai sebagai scammer
 
