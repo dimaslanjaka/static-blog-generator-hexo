@@ -15,9 +15,6 @@
 
 <h2 id="scammer-map-illus-16">Daftar scammer/blacklist player kategori SCAMMER chimeraland MAP ILLUSTRIOUS 16 PARTY</h2>
 
-
-<h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
-
 > Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
 > - Klik Team
 > - Klik Team Settings
@@ -52,6 +49,8 @@
 | Sus | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
 | HEE | | this account got hacked, and new owner is SCAMMER, last activity SCAMMING chimeraland MAP ILLUSTRIOUS 16 |
 | doraemon | | SCAMMER chimeraland MAP ILLUSTRIOUS 16 |
+
+<h2 id="scammer-ruby">Daftar scammer/blacklist player kategori SCAMMER RUBY</h2>
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
