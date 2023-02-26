@@ -1,9 +1,9 @@
 [submodule "src-posts"]
-	path = src-posts
+	path = site/src-posts
 	url = https://github.com/dimaslanjaka/source-posts.git
 	branch = posts
 [submodule "source"]
-	path = source
+	path = site/source
 	url = https://github.com/dimaslanjaka/public-source.git
 	branch = master
 [submodule "packages/hexo-generator-redirect"]
@@ -15,14 +15,14 @@
 	url = https://github.com/dimaslanjaka/hexo-generator-i18n.git
 	branch = optimize
 [submodule "themes/next"]
-	path = themes/next
+	path = site/themes/next
 	url = https://github.com/dimaslanjaka/hexo-theme-next.git
 	branch = private
 [submodule "themes/butterfly"]
-	path = themes/butterfly
+	path = site/themes/butterfly
 	url = https://github.com/dimaslanjaka/hexo-theme-butterfly
 	branch = private
 [submodule "themes/material"]
-	path = themes/material
+	path = site/themes/material
 	url = https://github.com/dimaslanjaka/hexo-theme-material
 	branch = private
