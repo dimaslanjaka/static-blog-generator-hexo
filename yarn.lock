@@ -7228,16 +7228,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-generator-feed@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "hexo-generator-feed@npm:3.0.0"
-  dependencies:
-    hexo-util: ^2.1.0
-    nunjucks: ^3.0.0
-  checksum: abaa430b1b82ccb646aac731bcd6db9785b3cc4749e3ff0108ae3b0adae9a9837075511b0acecb936408656fab5915fc7bbc5bdc3fb5ab7739105c1115214f04
-  languageName: node
-  linkType: hard
-
 "hexo-generator-index@npm:^3.0.0":
   version: 3.0.0
   resolution: "hexo-generator-index@npm:3.0.0"
@@ -11072,7 +11062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:^3.0.0, nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
+"nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
   version: 3.2.3
   resolution: "nunjucks@npm:3.2.3"
   dependencies:
@@ -16082,6 +16072,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "wmi@workspace:site"
   dependencies:
+    "@types/node": ^18.14.1
     "@typescript-eslint/eslint-plugin": ^5.53.0
     "@typescript-eslint/parser": ^5.53.0
     cheerio: ^0.22.0
@@ -16100,7 +16091,6 @@ __metadata:
     hexo-filter-nofollow: ^2.0.2
     hexo-generator-archive: ^2.0.0
     hexo-generator-category: ^2.0.0
-    hexo-generator-feed: ^3.0.0
     hexo-generator-index: ^3.0.0
     hexo-generator-json-content: ^4.2.3
     hexo-generator-redirect: "workspace:^"
