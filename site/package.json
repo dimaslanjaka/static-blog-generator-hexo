@@ -1,6 +1,6 @@
 {
-  "name": "static-blog-generator-hexo",
-  "version": "1.0.0",
+  "name": "wmi",
+  "version": "3.0.0",
   "private": true,
   "packageManager": "yarn@3.4.1",
   "scripts": {
@@ -39,7 +39,7 @@
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^3.0.0",
     "hexo-generator-json-content": "^4.2.3",
-    "hexo-generator-redirect": "./packages/hexo-generator-redirect",
+    "hexo-generator-redirect": "workspace:^",
     "hexo-generator-searchdb": "^1.4.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-i18n": "^2.0.0",
@@ -48,7 +48,7 @@
     "hexo-renderer-markdown-it": "^6.1.0",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
     "hexo-server": "^3.0.0",
-    "hexo-shortcodes": "file:packages/hexo-shortcodes",
+    "hexo-shortcodes": "workspace:^",
     "hexo-theme-next": "^8.14.2",
     "hexo-util": "^3.0.1",
     "js-yaml": "^4.1.0",
