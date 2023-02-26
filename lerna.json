@@ -1,11 +1,6 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "independent",
-  "packages": [
-    "site/multisite/chimeraland",
-    "packages/agc",
-    "site/src-posts"
-  ],
   "useWorkspaces": true,
   "npmClient": "yarn"
 }
