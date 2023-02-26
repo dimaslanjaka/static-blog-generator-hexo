@@ -56,7 +56,7 @@
 | :--- | :--- | :--- |
 | Shelby | | SCAMMER ruby |
 | NesaMiko | | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
-| Pokemonn | | pemilik sebelumnya akun ini adalah SCAMMER ruby, korban scam **IlmuAkhirZmn** |
+| Pokemonn | | SCAMMER ruby, korban scam terakhir **IlmuAkhirZmn** |
 | Tusboll | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
 | Ryujin | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
 | Ryuukendo | | SCAMMER ruby dengan alasan **harga pensiun bermain** / rate pensiun bermain |
