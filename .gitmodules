@@ -26,3 +26,6 @@
 	path = site/themes/material
 	url = https://github.com/dimaslanjaka/hexo-theme-material
 	branch = private
+[submodule "packages/nodejs-packages-types"]
+	path = packages/nodejs-packages-types
+	url = https://github.com/dimaslanjaka/nodejs-package-types
