@@ -1,0 +1,33 @@
+{
+  "name": "static-blog-generator-hexo",
+  "version": "1.0.0",
+  "description": "```bash npm run build ```",
+  "main": ".eslintrc.js",
+  "bin": "bin/update-version.js",
+  "scripts": {
+    "start": "yarn workspace site run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator-hexo.git"
+  },
+  "keywords": [],
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "name": "dimaslanjaka",
+    "url": "https://webmanajemen.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/static-blog-generator-hexo/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator-hexo#readme",
+  "workspaces": {
+    "packages": [
+      "site",
+      "packages/hexo-shortcodes",
+      "packages/hexo-generator-redirect"
+    ]
+  },
+  "packageManager": "yarn@3.4.1"
+}
