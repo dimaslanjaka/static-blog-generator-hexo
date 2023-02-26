@@ -29,3 +29,6 @@
 [submodule "packages/nodejs-packages-types"]
 	path = packages/nodejs-packages-types
 	url = https://github.com/dimaslanjaka/nodejs-package-types
+[submodule "packages/hexo-seo"]
+	path = packages/hexo-seo
+	url = https://github.com/dimaslanjaka/hexo-seo
