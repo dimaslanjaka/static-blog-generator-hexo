@@ -168,7 +168,12 @@ jobs:
         working-directory: site
       - run: npx sbg deploy safelink
         working-directory: site
-      - name: install site
+      - name: install site/.deploy_git/page
+        shell: bash
+        run: npm install --omit=dev --production
+        continue-on-error: true
+        working-directory: site/.deploy_git/page
+      - name: install site/.deploy_git
         shell: bash
         run: npm install --omit=dev --production
         continue-on-error: true
