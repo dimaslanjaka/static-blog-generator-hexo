@@ -92,8 +92,8 @@ jobs:
         with:
           node-version: 18
           architecture: x64
-          # cache: 'yarn'
-          # check-latest: true
+          cache: 'yarn'
+          check-latest: true
       - name: Set env
         id: set-env
         shell: bash
