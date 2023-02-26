@@ -29,7 +29,10 @@
       "packages/hexo-generator-redirect",
       "site/multisite/chimeraland",
       "packages/agc",
-      "site/src-posts"
+      "site/src-posts",
+      "packages/nodejs-packages-types",
+      "packages/nodejs-packages-types/hexo",
+      "packages/nodejs-packages-types/through2"
     ]
   },
   "packageManager": "yarn@3.4.1"
