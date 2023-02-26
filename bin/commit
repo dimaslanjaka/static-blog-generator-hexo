@@ -8,6 +8,10 @@ if [ -z "$1" ]; then
     exit
 fi
 
+npx lerna exec "git add . | :"
+npx lerna exec "git update-index --refresh | :"
+npx lerna exec "git commit -am \"$1\" | :"
+
 git submodule foreach "
     git add -A .
     git update-index --refresh
