@@ -6619,9 +6619,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-shortcodes@file:./packages/hexo-shortcodes/release/hexo-shortcodes.tgz::locator=static-blog-generator-hexo%40workspace%3A.":
+"hexo-shortcodes@file:./packages/hexo-shortcodes::locator=static-blog-generator-hexo%40workspace%3A.":
   version: 1.0.0
-  resolution: "hexo-shortcodes@file:./packages/hexo-shortcodes/release/hexo-shortcodes.tgz::locator=static-blog-generator-hexo%40workspace%3A."
+  resolution: "hexo-shortcodes@file:./packages/hexo-shortcodes#./packages/hexo-shortcodes::hash=adc44d&locator=static-blog-generator-hexo%40workspace%3A."
   dependencies:
     ansi-colors: ^4.1.3
     axios: ^1.3.4
@@ -6630,7 +6630,7 @@ __metadata:
     hexo-util: ^3.0.1
     nunjucks: ^3.2.3
     sbg-utility: ^1.0.4
-  checksum: 433e1491b6f5c155b7ee1cfadf8ddc903bbbcadf8e9c5d17f7436a737bbc9254023f7f2de6603fd693c58ffb252f0d20b4220f484927dca8eccfffdf83383b54
+  checksum: 133f230d07207c7df41415e36df822b7de153093ecf06e81b1421b76b85399e87210e415f17382f85ebc00f7a62a0d1fcbda89107207abbc9a27cfe37a69c166
   languageName: node
   linkType: hard
 
@@ -12971,7 +12971,7 @@ __metadata:
     hexo-renderer-markdown-it: ^6.1.0
     hexo-seo: "https://github.com/dimaslanjaka/hexo-seo/tarball/master"
     hexo-server: ^3.0.0
-    hexo-shortcodes: ./packages/hexo-shortcodes/release/hexo-shortcodes.tgz
+    hexo-shortcodes: ./packages/hexo-shortcodes
     hexo-theme-next: ^8.14.2
     hexo-util: ^3.0.1
     instant-indexing: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
