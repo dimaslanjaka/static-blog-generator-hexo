@@ -26,7 +26,10 @@
     "packages": [
       "site",
       "packages/hexo-shortcodes",
-      "packages/hexo-generator-redirect"
+      "packages/hexo-generator-redirect",
+      "site/multisite/chimeraland",
+      "packages/agc",
+      "site/src-posts"
     ]
   },
   "packageManager": "yarn@3.4.1"
