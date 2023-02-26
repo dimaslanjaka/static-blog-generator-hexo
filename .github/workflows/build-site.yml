@@ -152,6 +152,10 @@ jobs:
         env:
           DEBUG: chimera-*,chimera,chimera:*
         name: build chimeraland
+      - run: lerna run build --scope=chimeraland
+        env:
+          DEBUG: chimera-*,chimera,chimera:*
+        name: build chimeraland
 
       - run: npx sbg post standalone
       - run: npx sbg post copy
