@@ -8,10 +8,12 @@ if [ -z "$1" ]; then
     exit
 fi
 
-npx lerna exec "git add . | :"
-npx lerna exec "git update-index --refresh | :"
-npx lerna exec "git commit -am \"$1\" | :"
-
+npx lerna exec "git add . | :" --concurrency=1
+wait
+npx lerna exec "git update-index --refresh | :" --concurrency=1
+wait
+npx lerna exec "git commit -am \"$1\" | :" --concurrency=1
+wait
 git submodule foreach "
     git add -A .
     git update-index --refresh
@@ -19,6 +21,6 @@ git submodule foreach "
     if [ ! -z \"\$commits\" ]; then
         git commit -am \"$1\"
     fi"
-
+wait
 git add -A .
 git commit -am "$1"
