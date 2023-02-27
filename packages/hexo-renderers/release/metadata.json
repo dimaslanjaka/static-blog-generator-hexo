@@ -1,0 +1,20 @@
+{
+  "/release/hexo-renderers-1.0.0.tgz": {
+    "integrity": {
+      "sha1": "b57031d12247777672b0b2daee0ba98b64f77320",
+      "sha256": "Cx8LLYbfS/upCQtBwSAR2S5T+HOGS9WAeOEY+myL1O0=",
+      "md5": "ccd639ebec98182e13877ac3bb3ebdd9",
+      "sha512": "9HYoaG2jcJqxX/CNx50fci4XWKwjpTkg5440VQT3Hhze7i56FE5XMr8bEYMhvtTzac0ObRmP6ClaFsAoaLyYPg=="
+    },
+    "size": "246.37 KB"
+  },
+  "/release/hexo-renderers.tgz": {
+    "integrity": {
+      "sha1": "b57031d12247777672b0b2daee0ba98b64f77320",
+      "sha256": "Cx8LLYbfS/upCQtBwSAR2S5T+HOGS9WAeOEY+myL1O0=",
+      "md5": "ccd639ebec98182e13877ac3bb3ebdd9",
+      "sha512": "9HYoaG2jcJqxX/CNx50fci4XWKwjpTkg5440VQT3Hhze7i56FE5XMr8bEYMhvtTzac0ObRmP6ClaFsAoaLyYPg=="
+    },
+    "size": "246.37 KB"
+  }
+}
