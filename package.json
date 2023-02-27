@@ -33,7 +33,8 @@
       "packages/nodejs-packages-types",
       "packages/nodejs-packages-types/hexo",
       "packages/nodejs-packages-types/through2",
-      "packages/hexo-seo"
+      "packages/hexo-seo",
+      "packages/hexo-renderers"
     ]
   },
   "packageManager": "yarn@3.4.1"
