@@ -1455,6 +1455,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/linkify-it@npm:*":
+  version: 3.0.2
+  resolution: "@types/linkify-it@npm:3.0.2"
+  checksum: dff8f10fafb885422474e456596f12d518ec4cdd6c33cca7a08e7c86b912d301ed91cf5a7613e148c45a12600dc9ab3d85ad16d5b48dc1aaeda151a68f16b536
+  languageName: node
+  linkType: hard
+
+"@types/markdown-it@npm:12.2.3":
+  version: 12.2.3
+  resolution: "@types/markdown-it@npm:12.2.3"
+  dependencies:
+    "@types/linkify-it": "*"
+    "@types/mdurl": "*"
+  checksum: 868824a3e4d00718ba9cd4762cf16694762a670860f4b402e6e9f952b6841a2027488bdc55d05c2b960bf5078df21a9d041270af7e8949514645fe88fdb722ac
+  languageName: node
+  linkType: hard
+
+"@types/mdurl@npm:*":
+  version: 1.0.2
+  resolution: "@types/mdurl@npm:1.0.2"
+  checksum: 79c7e523b377f53cf1f5a240fe23d0c6cae856667692bd21bf1d064eafe5ccc40ae39a2aa0a9a51e8c94d1307228c8f6b121e847124591a9a828c3baf65e86e2
+  languageName: node
+  linkType: hard
+
 "@types/mime@npm:*":
   version: 3.0.1
   resolution: "@types/mime@npm:3.0.1"
@@ -1655,7 +1679,7 @@ __metadata:
 
 "@types/through2@file:through2::locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types":
   version: 2.0.38
-  resolution: "@types/through2@file:through2#through2::hash=51c147&locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types"
+  resolution: "@types/through2@file:through2#through2::hash=fe0f9e&locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types"
   dependencies:
     "@types/node": ^12.x
     "@types/vinyl": ^2.0.6
@@ -1663,7 +1687,7 @@ __metadata:
     fs-extra: ^11.1.0
     gulp: ^4.0.2
     upath: ^2.0.1
-  checksum: 53f14fcb1ea29947c418ce9018e84d29daf7d5a67c689c881d8540254ab74fd3a6ea6282fb25cf710f97a1873e8980c15d93e9aa463cd6adaac8c85a97d95af4
+  checksum: e0684ba64476f408cc27c8eae5cc502e707326fa1f8bb53f5688cac31b6682412c34c333423cdd12882108f5148a8db4f9fff1f12d63e89faa9f081b77abc114
   languageName: node
   linkType: hard
 
@@ -11884,6 +11908,7 @@ __metadata:
     "@types/express": ^4.17.16
     "@types/fs-extra": ^11.0.1
     "@types/gulp": ^4.0.10
+    "@types/markdown-it": 12.2.3
     "@types/node": ^18.11.18
     "@types/through2": "file:through2"
     "@typescript-eslint/eslint-plugin": ^5.49.0
