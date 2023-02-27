@@ -1679,7 +1679,7 @@ __metadata:
 
 "@types/through2@file:through2::locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types":
   version: 2.0.38
-  resolution: "@types/through2@file:through2#through2::hash=fe0f9e&locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types"
+  resolution: "@types/through2@file:through2#through2::hash=3a7010&locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types"
   dependencies:
     "@types/node": ^12.x
     "@types/vinyl": ^2.0.6
@@ -1687,7 +1687,7 @@ __metadata:
     fs-extra: ^11.1.0
     gulp: ^4.0.2
     upath: ^2.0.1
-  checksum: e0684ba64476f408cc27c8eae5cc502e707326fa1f8bb53f5688cac31b6682412c34c333423cdd12882108f5148a8db4f9fff1f12d63e89faa9f081b77abc114
+  checksum: 80242fb14c8932cd499369a39535b1cef0d12f6c57268da6a63a36ba1dab22048f6bfe221b07239e95bf33621abd592a654e2a5c584edd6b1ebf283a8359fb0a
   languageName: node
   linkType: hard
 
