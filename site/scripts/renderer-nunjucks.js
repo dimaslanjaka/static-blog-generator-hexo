@@ -1,29 +1,15 @@
 'use strict';
 
-const _toArray = require('lodash.toarray');
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
+const { toArray } = require('./custom-helpers');
 
 /**
  * hexo-renderer-nunjucks
  * @param {import('hexo')} hexo
  */
 function rendererNunjucks(hexo) {
-  function isObject(value) {
-    return typeof value === 'object' && value !== null && value !== undefined;
-  }
-
-  function toArray(value) {
-    if (isObject(value) && typeof value.toArray === 'function') {
-      return value.toArray();
-    } else if (Array.isArray(value)) {
-      return value;
-    }
-
-    return _toArray(value);
-  }
-
   const themeDir = path.join(__dirname, '../themes', hexo.config.theme);
   const env = nunjucks.configure([themeDir, path.join(themeDir, 'layout')], {
     noCache: true,
@@ -50,7 +36,9 @@ function rendererNunjucks(hexo) {
   function compile(data) {
     // console.log('layout loaded', data.path);
     // console.log('text' in data ? data.text : data.path);
-    const compiled = nunjucks.compile('text' in data ? data.text : fs.readFileSync(data.path));
+    const compiled = nunjucks.compile(
+      'text' in data ? data.text : fs.readFileSync(data.path)
+    );
 
     return compiled.render.bind(compiled);
   }
