@@ -17,6 +17,8 @@ function toArray(value) {
   return _toArray(value);
 }
 
+hexo.extend.helper.register('toArray', toArray);
+
 /**
  * Export theme config
  */
