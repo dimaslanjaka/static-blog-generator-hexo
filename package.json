@@ -6,7 +6,8 @@
   "main": ".eslintrc.js",
   "bin": "bin/update-version.js",
   "scripts": {
-    "start": "yarn workspace site run server"
+    "start": "yarn workspace wmi run server",
+    "build": "yarn workspace wmi run build"
   },
   "repository": {
     "type": "git",
