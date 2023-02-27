@@ -2,6 +2,20 @@
 'use strict';
 
 const { parse } = require('url');
+const _toArray = require('lodash.toarray');
+
+function isObject(value) {
+  return typeof value === 'object' && value !== null && value !== undefined;
+}
+function toArray(value) {
+  if (isObject(value) && typeof value.toArray === 'function') {
+    return value.toArray();
+  } else if (Array.isArray(value)) {
+    return value;
+  }
+
+  return _toArray(value);
+}
 
 /**
  * Export theme config
@@ -67,7 +81,9 @@ hexo.extend.helper.register(
     if (Array.isArray(data)) {
       const map = filternames
         .map((filtername) => {
-          const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
+          const filter = data.filter(
+            ({ name }) => String(name).toLowerCase() == filtername.toLowerCase()
+          );
           return filter.map((group) => {
             return group.posts.map(
               /**
@@ -94,3 +110,5 @@ hexo.extend.helper.register(
     return [];
   }
 );
+
+module.exports = { toArray, isObject };

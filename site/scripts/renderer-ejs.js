@@ -1,14 +1,19 @@
 'use strict';
 
 const ejs = require('ejs');
+const { toArray } = require('./custom-helpers');
 
 /**
  * hexo-renderer-ejs
  * @param {import('hexo')} hexo
  */
 function rendererEjs(hexo) {
+  app.locals.toArray = toArray;
   function ejsRenderer(data, locals) {
-    return ejs.render(data.text, Object.assign({ filename: data.path }, locals));
+    return ejs.render(
+      data.text,
+      Object.assign({ filename: data.path }, locals)
+    );
   }
 
   ejsRenderer.compile = function (data) {
