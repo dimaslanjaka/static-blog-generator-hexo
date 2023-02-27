@@ -143,11 +143,9 @@ jobs:
         if: steps.install.outcome == 'failure'
         name: clean install
         shell: bash
-      - run: lerna run build --scope=chimeraland
-        env:
-          DEBUG: chimera-*,chimera,chimera:*
-        name: build chimeraland
-      - run: lerna run build --scope=chimeraland
+      - run: |
+          yarn workspace chimeraland run build
+          yarn workspace chimeraland run build
         env:
           DEBUG: chimera-*,chimera,chimera:*
         name: build chimeraland
