@@ -8,7 +8,7 @@ const { toArray } = require('./custom-helpers');
  * @param {import('hexo')} hexo
  */
 function rendererEjs(hexo) {
-  app.locals.toArray = toArray;
+  ejs.filters.toArray = toArray;
   function ejsRenderer(data, locals) {
     return ejs.render(
       data.text,
