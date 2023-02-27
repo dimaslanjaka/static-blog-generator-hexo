@@ -3,10 +3,41 @@
 
 const { parse } = require('url');
 const _toArray = require('lodash.toarray');
+const yaml = require('yaml');
+const fs = require('fs');
+const path = require('path');
+/**
+ * @type {import('hexo').Config}
+ */
+const config = yaml.parse(
+  fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString()
+);
+const THEME_LOCATION = path.join(process.cwd(), 'themes', config.theme);
+const THEME_SCRIPTS = path.join(THEME_LOCATION, 'scripts');
+
+loadScripts(THEME_SCRIPTS);
+
+/**
+ * load all scripts
+ * @param {string} base
+ */
+function loadScripts(base) {
+  if (fs.existsSync(base)) {
+    fs.readdirSync(base).forEach((p) => {
+      const full = path.join(base, p);
+      if (fs.statSync(full).isFile()) {
+        require(full);
+      } else if (fs.statSync(full).isDirectory()) {
+        loadScripts(full);
+      }
+    });
+  }
+}
 
 function isObject(value) {
   return typeof value === 'object' && value !== null && value !== undefined;
 }
+
 function toArray(value) {
   if (isObject(value) && typeof value.toArray === 'function') {
     return value.toArray();
