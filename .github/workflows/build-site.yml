@@ -151,15 +151,10 @@ jobs:
         name: build chimeraland
 
       - run: yarn workspace wmi run post:standalone
-        working-directory: site
       - run: yarn workspace wmi run post:copy
-        working-directory: site
-      - run: hexo generate
-        working-directory: site
+      - run: yarn workspace wmi "hexo generate"
       - run: yarn workspace wmi run generate:sitemap
-        working-directory: site
       - run: yarn workspace wmi run generate:feed
-        working-directory: site
       - run: gulp deploy:copy
         working-directory: site
       - run: npx sbg deploy seo
