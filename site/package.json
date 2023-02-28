@@ -18,7 +18,7 @@
     "clean": "hexo clean && sbg clean post && sbg clean cache",
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
-    "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
+    "update:updater": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/updater.js > updater.js",
     "update:chimeraland": "cd multisite/chimeraland/chimeraland && yarn run update",
     "update:chimeraland2": "cd multisite/chimeraland && yarn run update",
     "update:ncu": "npm-check-updates -u",
