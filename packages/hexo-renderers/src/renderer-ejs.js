@@ -1,5 +1,3 @@
-'use strict';
-
 const ejs = require('ejs');
 const { toArray } = require('./custom-helpers');
 
