@@ -8365,6 +8365,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-renderers@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/hexo-renderers/release/hexo-renderers.tgz":
+  version: 1.0.0
+  resolution: "hexo-renderers@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/hexo-renderers/release/hexo-renderers.tgz"
+  dependencies:
+    ejs: ^3.1.8
+    nunjucks: ^3.2.3
+    pug: ^3.0.2
+  checksum: 25addc9e81e8c2ec5c5b084e5b4fbd6b43e7cb92e9ba7486585e21950e9e00e4349f9fe9929c554d7e9aedcec77bbf4bd7dc79132176532d7475053ed52f4ad6
+  languageName: node
+  linkType: hard
+
 "hexo-renderers@workspace:packages/hexo-renderers":
   version: 0.0.0-use.local
   resolution: "hexo-renderers@workspace:packages/hexo-renderers"
@@ -18106,6 +18117,7 @@ __metadata:
     hexo-pagination: ^3.0.0
     hexo-pdf: ^1.1.1
     hexo-renderer-markdown-it: ^7.0.0
+    hexo-renderers: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/hexo-renderers/release/hexo-renderers.tgz"
     hexo-seo: "https://github.com/dimaslanjaka/hexo-seo/tarball/master"
     hexo-server: ^3.0.0
     hexo-shortcodes: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/hexo-shortcodes/release/hexo-shortcodes.tgz"
