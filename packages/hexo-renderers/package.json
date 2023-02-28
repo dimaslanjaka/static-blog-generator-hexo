@@ -9,7 +9,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc --build tsconfig.build.json && node packer.js --yarn"
+    "build": "tsc --build tsconfig.build.json && gulp && node packer.js --yarn"
   },
   "keywords": [
     "hexo",
@@ -30,9 +30,11 @@
   "devDependencies": {
     "@types/ejs": "^3.1.2",
     "@types/fs-extra": "^11.0.1",
+    "@types/gulp": "^4.0.10",
     "@types/nunjucks": "^3.2.2",
     "@types/pug": "^2.0.6",
     "eslint": "^8.35.0",
+    "gulp": "^4.0.2",
     "hexo": "^6.3.0",
     "prettier": "^2.8.4",
     "ts-node": "^10.9.1",
