@@ -75,8 +75,8 @@ menu_settings:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/icons/favicon-16x16.png
-  medium: /images/icons/favicon-32x32.png
+  small: /favicon-16x16.png
+  medium: /favicon-32x32.png
   # ! --------------------------------------------------
   # ! If you don't know the following, please ignore it.
   # ! --------------------------------------------------
@@ -113,7 +113,7 @@ layout:
   # The width of the sidebar in website.
   sidebar: 300px
   # The width between the content and the sidebar.
-  content_sidebar_gap: 30px
+  content_sidebar_gap: 10px
   # The padding property of the main tag.
   # e.g. Usage:
   # 20px
@@ -375,7 +375,7 @@ codeblock:
   # Optional values: light | dark | ocean
   highlight: light
   # Whether to wrap when code overflow.
-  word_wrap: false
+  word_wrap: true
 
 # Add a line below h1, h2 tags.
 heading_line: true
