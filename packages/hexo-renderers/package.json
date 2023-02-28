@@ -2,14 +2,18 @@
   "packageManager": "yarn@3.4.1",
   "name": "hexo-renderers",
   "version": "1.0.0",
-  "main": ".eslintrc.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "node packer.js --yarn"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "url": "https://www.webmanajemen.com",
+    "name": "dimaslanjaka"
+  },
+  "license": "MIT",
+  "description": "All in one hexo renderers",
   "devDependencies": {
     "@types/ejs": "^3.1.2",
     "@types/nunjucks": "^3.2.2",
