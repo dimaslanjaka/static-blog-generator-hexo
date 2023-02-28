@@ -16166,6 +16166,9 @@ __metadata:
 "static-blog-generator-hexo@workspace:.":
   version: 0.0.0-use.local
   resolution: "static-blog-generator-hexo@workspace:."
+  dependencies:
+    lerna: ^6.5.1
+    nx: ^15.7.2
   bin:
     static-blog-generator-hexo: bin/update-version.js
   languageName: unknown

@@ -39,5 +39,9 @@
       "site/src-posts"
     ]
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "devDependencies": {
+    "lerna": "^6.5.1",
+    "nx": "^15.7.2"
+  }
 }
