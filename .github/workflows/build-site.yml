@@ -127,9 +127,9 @@ jobs:
             **/dist/**
             **/node_modules
           # ${{ steps.set-env.outputs.cache-yarn }}
-          key: cache-${{ hashFiles('**/.guid') }}
+          key: cache-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            cache-${{ hashFiles('**/.guid') }}
+            cache-${{ hashFiles('**/yarn.lock') }}
             cache-
       - run: corepack enable
         name: enable yarn
