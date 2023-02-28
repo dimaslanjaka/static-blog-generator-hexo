@@ -3,6 +3,7 @@
   "name": "hexo-renderers",
   "version": "1.0.0",
   "main": "dist/renderer-loader.js",
+  "types": "dist/renderer-loader.d.ts",
   "files": [
     "dist",
     "src"
