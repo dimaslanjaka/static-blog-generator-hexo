@@ -8381,6 +8381,7 @@ __metadata:
     nunjucks: ^3.2.3
     prettier: ^2.8.4
     pug: ^3.0.2
+    sass: ^1.58.3
     sbg-utility: ^1.0.4
     stylus: ^0.59.0
     ts-node: ^10.9.1
@@ -15010,7 +15011,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.29.0":
+"sass@npm:^1.29.0, sass@npm:^1.58.3":
   version: 1.58.3
   resolution: "sass@npm:1.58.3"
   dependencies:
