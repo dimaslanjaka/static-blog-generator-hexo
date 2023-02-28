@@ -8118,7 +8118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-fs@npm:^3.0.0, hexo-fs@npm:^3.0.1, hexo-fs@npm:^3.1.0":
+"hexo-fs@npm:^3.0.1, hexo-fs@npm:^3.1.0":
   version: 3.1.0
   resolution: "hexo-fs@npm:3.1.0"
   dependencies:
@@ -8362,17 +8362,6 @@ __metadata:
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
   checksum: b6ad54038c53bac9c3bc7c9b32efe2f6344be89296301706f66217a22c314173f86ffb112807b388a40d16a2fcf368b9768cc7c44592c4a4cf29b3b2149b624d
-  languageName: node
-  linkType: hard
-
-"hexo-renderer-nunjucks@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "hexo-renderer-nunjucks@npm:2.0.0"
-  dependencies:
-    hexo-fs: ^3.0.0
-    lodash.toarray: ^4.4.0
-    nunjucks: ^3.2.1
-  checksum: 42a34e30b582ee0a6c109ddf4d896535530941cd210607c299c0e885d2d04cc0c24ce94c12c00f2ca44fabedad2bb449a6e891db5cf6731c313e895c63396e78
   languageName: node
   linkType: hard
 
@@ -12469,7 +12458,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:^3.2.1, nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
+"nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
   version: 3.2.3
   resolution: "nunjucks@npm:3.2.3"
   dependencies:
@@ -18082,7 +18071,6 @@ __metadata:
     hexo-pagination: ^3.0.0
     hexo-pdf: ^1.1.1
     hexo-renderer-markdown-it: ^7.0.0
-    hexo-renderer-nunjucks: ^2.0.0
     hexo-renderer-stylus: ^2.1.0
     hexo-renderers: "workspace:^"
     hexo-server: ^3.0.0
