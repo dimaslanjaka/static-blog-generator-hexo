@@ -13,24 +13,35 @@ if (typeof hexo === 'undefined') {
 const logname = ansiColors.magenta('hexo-renderers');
 
 if (typeof hexo !== 'undefined') {
-  // const { config } = hexo;
-  // const { renderers } = config;
-  /*
-  const themeDir = path.join(__dirname, '../themes', hexo.config.theme);
-const layoutDir = path.join(themeDir, 'layout');
-  if (fs.existsSync(path.join(layoutDir, '_layout.njk'))) {
-    rendererNunjucks(hexo);
-  } else if (fs.existsSync(path.join(layoutDir, '_layout.ejs'))) {
-    rendererEjs(hexo);
-  } else if (fs.existsSync(path.join(layoutDir, '_layout.pug'))) {
-    rendererPug(hexo);
-  }
-  */
+  const { config } = hexo;
+  const renderers = config['renderers'];
+  // register custom helper
   registerCustomHelper(hexo);
-  rendererNunjucks(hexo);
-  rendererEjs(hexo);
-  rendererPug(hexo);
-  rendererStylus(hexo);
+  if (Array.isArray(renderers)) {
+    for (let i = 0; i < renderers.length; i++) {
+      const renderer = renderers[i];
+      switch (renderer) {
+        case 'ejs':
+          rendererEjs(hexo);
+          break;
+        case 'pug':
+          rendererPug(hexo);
+          break;
+        case 'stylus':
+          rendererStylus(hexo);
+          break;
+        case 'nunjucks':
+        case 'njk':
+          rendererNunjucks(hexo);
+          break;
+      }
+    }
+  } else {
+    rendererNunjucks(hexo);
+    rendererEjs(hexo);
+    rendererPug(hexo);
+    rendererStylus(hexo);
+  }
 } else {
   console.error(logname, 'not hexo instance');
 }
