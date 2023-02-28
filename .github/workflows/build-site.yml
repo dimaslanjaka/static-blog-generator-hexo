@@ -152,7 +152,7 @@ jobs:
 
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
-      - run: yarn workspace wmi "hexo generate"
+      - run: yarn workspace wmi exec "hexo generate"
       - run: yarn workspace wmi run generate:sitemap
       - run: yarn workspace wmi run generate:feed
       - run: gulp deploy:copy
