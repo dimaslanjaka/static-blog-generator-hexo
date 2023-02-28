@@ -13,7 +13,7 @@ if (typeof hexo === 'undefined') {
 const logname = ansiColors.magenta('hexo-renderers');
 
 if (typeof hexo !== 'undefined') {
-  const { config } = hexo;
+  const config = hexo.config;
   const renderers = config['renderers'];
   // register custom helper
   registerCustomHelper(hexo);
