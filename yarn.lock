@@ -4927,6 +4927,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deep-assign@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "deep-assign@npm:2.0.0"
+  dependencies:
+    is-obj: ^1.0.0
+  checksum: f1208e46794d1e8e7c90d5747875e98caed2f4e8f1fae98d221b3cc61949ca2ed3fee2cbd4d990cb481d1f09ffe1721a3489c1308ff70355e9c6734848e03f37
+  languageName: node
+  linkType: hard
+
 "deep-defaults@npm:^1.0.3":
   version: 1.0.5
   resolution: "deep-defaults@npm:1.0.5"
@@ -8093,6 +8102,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-filter-flowchart@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "hexo-filter-flowchart@npm:1.0.4"
+  dependencies:
+    deep-assign: ^2.0.0
+  checksum: 41cc5f1959667343000c6e9eacd01ae466c67092c2d5e8805f6c58b8b518278cbf09fc0e698e5f15040ce1448345af7ba78124ae254480e6512c808f418223cf
+  languageName: node
+  linkType: hard
+
 "hexo-filter-nofollow@npm:^2.0.2":
   version: 2.0.2
   resolution: "hexo-filter-nofollow@npm:2.0.2"
@@ -8371,12 +8389,14 @@ __metadata:
   dependencies:
     "@types/ejs": ^3.1.2
     "@types/fs-extra": ^11.0.1
+    "@types/gulp": ^4.0.10
     "@types/nunjucks": ^3.2.2
     "@types/pug": ^2.0.6
     ansi-colors: ^4.1.3
     ejs: ^3.1.8
     eslint: ^8.35.0
     fs-extra: ^11.1.0
+    gulp: ^4.0.2
     hexo: ^6.3.0
     nunjucks: ^3.2.3
     prettier: ^2.8.4
@@ -8497,6 +8517,7 @@ __metadata:
     git-command-helper: ^1.1.8
     gulp: ^4.0.2
     hexo-util: ^3.0.1
+    nib: ^1.2.0
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     prettier: ^2.8.4
@@ -9506,6 +9527,13 @@ __metadata:
   version: 7.0.0
   resolution: "is-number@npm:7.0.0"
   checksum: 456ac6f8e0f3111ed34668a624e45315201dff921e5ac181f8ec24923b99e9f32ca1a194912dc79d539c97d33dba17dc635202ff0b2cf98326f608323276d27a
+  languageName: node
+  linkType: hard
+
+"is-obj@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "is-obj@npm:1.0.1"
+  checksum: 3ccf0efdea12951e0b9c784e2b00e77e87b2f8bd30b42a498548a8afcc11b3287342a2030c308e473e93a7a19c9ea7854c99a8832a476591c727df2a9c79796c
   languageName: node
   linkType: hard
 
@@ -18031,6 +18059,7 @@ __metadata:
     hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
     hexo-excerpt: ^1.3.0
     hexo-extend-injector2: ^0.3.1
+    hexo-filter-flowchart: ^1.0.4
     hexo-filter-nofollow: ^2.0.2
     hexo-generator-archive: ^2.0.0
     hexo-generator-category: ^2.0.0
@@ -18056,7 +18085,6 @@ __metadata:
     markdown-it-abbr: ^1.0.4
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
-    nib: ^1.2.0
     npm-run-all: ^4.1.5
     nx: ^15.7.2
     prettier: ^2.8.4

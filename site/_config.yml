@@ -237,7 +237,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: stun
+theme: claudia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
