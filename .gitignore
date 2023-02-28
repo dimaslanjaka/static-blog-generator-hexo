@@ -15,6 +15,7 @@ docs/
 **/.yarn/cache/**
 **/.yarn/unplugged/**
 **/.yarn/*.gz
+**/.yarn/version*
 .pnp.*
 **/build
 ___*
