@@ -1,0 +1,10 @@
+# robotstxt.org/
+
+User-agent: *
+Disallow: /sample/
+Disallow: /core/
+Disallow: /images/
+Disallow: /admin/
+Disallow: /css/
+Disallow: /js/
+Disallow: /php/
