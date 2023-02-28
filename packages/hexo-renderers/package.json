@@ -1,7 +1,7 @@
 {
   "packageManager": "yarn@3.4.1",
   "name": "hexo-renderers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/renderer-loader.js",
   "types": "dist/renderer-loader.d.ts",
   "files": [
@@ -31,6 +31,9 @@
     "@types/ejs": "^3.1.2",
     "@types/fs-extra": "^11.0.1",
     "@types/gulp": "^4.0.10",
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
+    "@types/lodash.toarray": "^4.4.7",
+    "@types/node": "^18.14.2",
     "@types/nunjucks": "^3.2.2",
     "@types/pug": "^2.0.6",
     "eslint": "^8.35.0",
