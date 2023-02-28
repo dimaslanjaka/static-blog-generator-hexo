@@ -1,3 +1,4 @@
+"use strict";
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -7,31 +8,32 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-var parse = require('url').parse;
-var _toArray = require('lodash.toarray');
-var yaml = require('yaml');
-var fs = require('fs');
-var path = require('path');
-/**
- * @type {import('hexo').Config}
- */
-var config = yaml.parse(fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString());
-var THEME_LOCATION = path.join(process.cwd(), 'themes', config.theme);
-var THEME_SCRIPTS = path.join(THEME_LOCATION, 'scripts');
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var url_1 = require("url");
+var lodash_toarray_1 = __importDefault(require("lodash.toarray"));
+var yaml_1 = __importDefault(require("yaml"));
+var fs_1 = __importDefault(require("fs"));
+var path_1 = __importDefault(require("path"));
+var config = yaml_1.default.parse(fs_1.default.readFileSync(path_1.default.join(process.cwd(), '_config.yml')).toString());
+var THEME_LOCATION = path_1.default.join(process.cwd(), 'themes', config.theme || 'landscape');
+var _THEME_SCRIPTS = path_1.default.join(THEME_LOCATION, 'scripts');
 // loadScripts(THEME_SCRIPTS);
 /**
  * load all scripts
- * @param {string} base
+ * @param base
  */
-function loadScripts(base) {
-    if (fs.existsSync(base)) {
-        fs.readdirSync(base).forEach(function (p) {
-            var full = path.join(base, p);
-            if (fs.statSync(full).isFile()) {
+function _loadScripts(base) {
+    if (fs_1.default.existsSync(base)) {
+        fs_1.default.readdirSync(base).forEach(function (p) {
+            var full = path_1.default.join(base, p);
+            if (fs_1.default.statSync(full).isFile()) {
                 require(full);
             }
-            else if (fs.statSync(full).isDirectory()) {
-                loadScripts(full);
+            else if (fs_1.default.statSync(full).isDirectory()) {
+                _loadScripts(full);
             }
         });
     }
@@ -46,11 +48,11 @@ function toArray(value) {
     else if (Array.isArray(value)) {
         return value;
     }
-    return _toArray(value);
+    return (0, lodash_toarray_1.default)(value);
 }
 /**
  * register custom helpers
- * @param {import('hexo')} hexo
+ * @param hexo
  */
 function registerCustomHelper(hexo) {
     hexo.extend.helper.register('toArray', toArray);
@@ -58,11 +60,10 @@ function registerCustomHelper(hexo) {
      * Export theme config
      */
     hexo.extend.helper.register('json_config', function () {
-        /** @type {import('hexo')} */
         var hexo = this;
         var config = hexo.config, theme = hexo.theme, url_for = hexo.url_for, __ = hexo.__;
         var theme_config = {
-            hostname: parse(config.url).hostname || config.url,
+            hostname: (0, url_1.parse)(config.url).hostname || config.url,
             root: config.root
         };
         var hexo_config = {
@@ -86,9 +87,7 @@ function registerCustomHelper(hexo) {
      * @returns
      */
     function () {
-        /** @type {import('hexo')} */
-        var hexo = this;
-        var page = hexo.page;
+        var page = this['page'];
         return page.posts;
     });
     hexo.extend.helper.register('getAuthor', function (author, fallback) {
@@ -106,16 +105,12 @@ function registerCustomHelper(hexo) {
     hexo.extend.helper.register('getPostByLabel', 
     /**
      * hexo get post by key with name
-     * @param {'tags'|'categories'} by
-     * @param {string[]} filternames
-     * @returns {Record<string, string>[]}
+     * @param by
+     * @param filternames
+     * @returns
      */
     function (by, filternames) {
-        /** @type {import('hexo')} */
         var hexo = this;
-        /**
-         * @type {any[]}
-         */
         var data = hexo.site[by].data;
         if (Array.isArray(data)) {
             var map = filternames
@@ -125,11 +120,7 @@ function registerCustomHelper(hexo) {
                     return String(name).toLowerCase() == filtername.toLowerCase();
                 });
                 return filter.map(function (group) {
-                    return group.posts.map(
-                    /**
-                     * @param {import('hexo').Post.Data} post
-                     */
-                    function (_a) {
+                    return group.posts.map(function (_a) {
                         var title = _a.title, permalink = _a.permalink, thumbnail = _a.thumbnail, photos = _a.photos;
                         // get title and permalink
                         // for more keys, you can look at https://github.com/dimaslanjaka/nodejs-package-types/blob/ec9b509d81eefdfada79f1658ac02118936a1e5a/index.d.ts#L757-L762

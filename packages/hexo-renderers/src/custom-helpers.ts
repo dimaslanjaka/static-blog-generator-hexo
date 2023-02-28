@@ -1,41 +1,37 @@
-const { parse } = require('url');
-const _toArray = require('lodash.toarray');
-const yaml = require('yaml');
-const fs = require('fs');
-const path = require('path');
-/**
- * @type {import('hexo').Config}
- */
-const config = yaml.parse(
-  fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString()
-);
-const THEME_LOCATION = path.join(process.cwd(), 'themes', config.theme);
-const THEME_SCRIPTS = path.join(THEME_LOCATION, 'scripts');
+import { parse } from 'url';
+import _toArray from 'lodash.toarray';
+import yaml from 'yaml';
+import fs from 'fs';
+import path from 'path';
+
+const config: import('hexo').Config = yaml.parse(fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString());
+const THEME_LOCATION = path.join(process.cwd(), 'themes', config.theme || 'landscape');
+const _THEME_SCRIPTS = path.join(THEME_LOCATION, 'scripts');
 
 // loadScripts(THEME_SCRIPTS);
 
 /**
  * load all scripts
- * @param {string} base
+ * @param base
  */
-function loadScripts(base) {
+function _loadScripts(base: string) {
   if (fs.existsSync(base)) {
     fs.readdirSync(base).forEach((p) => {
       const full = path.join(base, p);
       if (fs.statSync(full).isFile()) {
         require(full);
       } else if (fs.statSync(full).isDirectory()) {
-        loadScripts(full);
+        _loadScripts(full);
       }
     });
   }
 }
 
-function isObject(value) {
+function isObject(value: any) {
   return typeof value === 'object' && value !== null && value !== undefined;
 }
 
-function toArray(value) {
+function toArray(value: any) {
   if (isObject(value) && typeof value.toArray === 'function') {
     return value.toArray();
   } else if (Array.isArray(value)) {
@@ -47,16 +43,15 @@ function toArray(value) {
 
 /**
  * register custom helpers
- * @param {import('hexo')} hexo
+ * @param hexo
  */
-function registerCustomHelper(hexo) {
+function registerCustomHelper(hexo: import('hexo')) {
   hexo.extend.helper.register('toArray', toArray);
 
   /**
    * Export theme config
    */
-  hexo.extend.helper.register('json_config', function () {
-    /** @type {import('hexo')} */
+  hexo.extend.helper.register('json_config', function (this: import('hexo') & Record<string, any>) {
     const hexo = this;
     const { config, theme, url_for, __ } = hexo;
     const theme_config = {
@@ -82,10 +77,8 @@ function registerCustomHelper(hexo) {
     /**
      * @returns
      */
-    function () {
-      /** @type {import('hexo')} */
-      const hexo = this;
-      const { page } = hexo;
+    function (this: import('hexo')) {
+      const page = this['page'];
       return page.posts;
     }
   );
@@ -102,35 +95,32 @@ function registerCustomHelper(hexo) {
     'getPostByLabel',
     /**
      * hexo get post by key with name
-     * @param {'tags'|'categories'} by
-     * @param {string[]} filternames
-     * @returns {Record<string, string>[]}
+     * @param by
+     * @param filternames
+     * @returns
      */
-    function (by, filternames) {
-      /** @type {import('hexo')} */
+    function (
+      this: import('hexo') & Record<string, any>,
+      by: 'tags' | 'categories',
+      filternames: string[]
+    ): Record<string, string>[] {
       const hexo = this;
-      /**
-       * @type {any[]}
-       */
-      const data = hexo.site[by].data;
+      const data: any[] = hexo.site[by].data;
       if (Array.isArray(data)) {
         const map = filternames
           .map((filtername) => {
-            const filter = data.filter(
-              ({ name }) =>
-                String(name).toLowerCase() == filtername.toLowerCase()
-            );
+            const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
             return filter.map((group) => {
-              return group.posts.map(
-                /**
-                 * @param {import('hexo').Post.Data} post
-                 */
-                function ({ title, permalink, thumbnail, photos }) {
-                  // get title and permalink
-                  // for more keys, you can look at https://github.com/dimaslanjaka/nodejs-package-types/blob/ec9b509d81eefdfada79f1658ac02118936a1e5a/index.d.ts#L757-L762
-                  return { title, permalink, thumbnail, photos };
-                }
-              );
+              return group.posts.map(function ({
+                title,
+                permalink,
+                thumbnail,
+                photos
+              }: import('hexo').Post.Data & Record<string, any>) {
+                // get title and permalink
+                // for more keys, you can look at https://github.com/dimaslanjaka/nodejs-package-types/blob/ec9b509d81eefdfada79f1658ac02118936a1e5a/index.d.ts#L757-L762
+                return { title, permalink, thumbnail, photos };
+              });
             });
           })
           // flattern all multidimensional arrays
