@@ -305,7 +305,7 @@ author:
     # Optional values: turn | shake
     animation: turn
   # Your favorite motto.
-  motto: Hello Stun
+  motto: Website Manajemen Indonesia
 
 # Social links
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
@@ -660,7 +660,7 @@ algolia_search:
 # Local Search
 # See: https://github.com/wzpan/hexo-generator-search/
 local_search:
-  enable: false
+  enable: true
 
 # Auxiliary search buttons
 # ! -----------------------------------------------------------------------------------------
