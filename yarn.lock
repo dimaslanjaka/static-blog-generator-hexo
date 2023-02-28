@@ -8396,7 +8396,7 @@ __metadata:
 
 "hexo-seo@https://github.com/dimaslanjaka/hexo-seo/tarball/master":
   version: 1.1.9
-  resolution: "hexo-seo@https://github.com/dimaslanjaka/hexo-seo.git#commit=d4d51d826e8abf3050f818b36dcdc06a6154f496"
+  resolution: "hexo-seo@https://github.com/dimaslanjaka/hexo-seo.git#commit=e408ec478fffdc9e3bece61d6e206c8cf6856e62"
   dependencies:
     bluebird: ^3.7.2
     cheerio: ^1.0.0-rc.12
