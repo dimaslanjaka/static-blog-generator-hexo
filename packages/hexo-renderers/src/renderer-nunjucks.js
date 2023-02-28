@@ -1,9 +1,14 @@
 'use strict';
 
 const nunjucks = require('nunjucks');
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs-extra');
+const path = require('upath');
 const { toArray } = require('./custom-helpers');
+const ansiColors = require('ansi-colors');
+const { writefile } = require('sbg-utility');
+const logname = ansiColors.magentaBright('hexo-renderer-nunjucks');
+const tmpdir = path.join(__dirname, '../tmp');
+const logfile = path.join(tmpdir, 'nunjucks-log.json');
 
 /**
  * hexo-renderer-nunjucks
@@ -21,23 +26,43 @@ function rendererNunjucks(hexo) {
 
   env.addFilter('toArray', toArray);
 
-  // const Environment = nunjucks.Environment;
+  const logs = {
+    render: [],
+    compile: []
+  };
 
+  /**
+   * render
+   * @param {import('hexo').PageData} data
+   * @param {import('hexo').Locals} locals
+   * @returns
+   */
   function render(data, locals) {
     if ('text' in data) {
-      return nunjucks.renderString(data.text, locals);
+      return env.renderString(data.text, locals);
     }
 
-    console.log(data.path);
+    // hexo.log.info(logname, 'render', data.path);
+    logs.render.push(data.path);
+    writefile(logfile, JSON.stringify(logs, null, 2));
 
-    return nunjucks.render(data.path, locals);
+    return env.render(data.path, locals);
   }
 
+  /**
+   * compile
+   * @param {import('hexo').PageData} data
+   * @returns
+   */
   function compile(data) {
-    // console.log('layout loaded', data.path);
-    // console.log('text' in data ? data.text : data.path);
+    // hexo.log.info(logname, 'compile', data.path);
+    logs.compile.push(data.path);
+    writefile(logfile, JSON.stringify(logs, null, 2));
+
+    // hexo.log.info(logname, 'text' in data ? data.text : data.path);
     const compiled = nunjucks.compile(
-      'text' in data ? data.text : fs.readFileSync(data.path)
+      'text' in data ? data.text : fs.readFileSync(data.path),
+      env
     );
 
     return compiled.render.bind(compiled);
@@ -47,8 +72,8 @@ function rendererNunjucks(hexo) {
   render.compile = compile;
 
   // hexo.extend.renderer.register('swig', 'html', render, true);
-  hexo.extend.renderer.register('njk', 'html', render, true);
-  hexo.extend.renderer.register('j2', 'html', render, true);
+  hexo.extend.renderer.register('njk', 'html', render, false);
+  hexo.extend.renderer.register('j2', 'html', render, false);
 }
 
 module.exports = { rendererNunjucks };
