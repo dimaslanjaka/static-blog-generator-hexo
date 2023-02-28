@@ -65,7 +65,8 @@ Stun.utils = Stun.$u = {
   hasMobileUA: function () {
     var nav = window.navigator
     var ua = nav.userAgent
-    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g
+    var pa =
+      /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g
     return pa.test(ua)
   },
   isTablet: function () {
@@ -82,7 +83,7 @@ Stun.utils = Stun.$u = {
     return !this.isTablet() && !this.isMobile()
   },
   Cookies: function () {
-    function extend () {
+    function extend() {
       var i = 0
       var result = {}
       for (; i < arguments.length; i++) {
@@ -94,8 +95,8 @@ Stun.utils = Stun.$u = {
       return result
     }
 
-    function init (converter) {
-      function api (key, value, attributes) {
+    function init(converter) {
+      function api(key, value, attributes) {
         var result
         if (typeof document === 'undefined') {
           return
@@ -213,7 +214,7 @@ Stun.utils = Stun.$u = {
     var stunNameStr =
       '\n\n      ___          ___            ___            ___      \n     /\\  \\        /\\  \\          /\\__\\          /\\__\\     \n    /::\\  \\       \\:\\  \\        /:/  /         /::|  |    \n   /:/\\ \\  \\       \\:\\  \\      /:/  /         /:|:|  |    \n  _\\:\\ \\ \\  \\      /::\\  \\    /:/  /  ___    /:/|:|  |__  \n /\\ \\:\\ \\ \\__\\    /:/\\:\\__\\  /:/__/  /\\__\\  /:/ |:| /\\__\\ \n \\:\\ \\:\\ \\/__/   /:/  \\/__/  \\:\\  \\ /:/  /  \\/__|:|/:/  / \n  \\:\\ \\:\\__\\    /:/  /        \\:\\  /:/  /       |:/:/  /  \n   \\:\\/:/  /    \\/__/          \\:\\/:/  /        |::/  /   \n    \\::/  /                     \\::/  /         /:/  /    \n     \\/__/                       \\/__/          \\/__/     \n                                                          \n'
     var stunInfoStyle =
-      'background-color: #49b1f5; color: #fff; padding: 8px; font-size: 14px;'
+      'background-color: #49b1f5; color: #21130d; padding: 8px; font-size: 14px;'
     var stunURLStyle =
       'background-color: #ffbca2; padding: 8px; font-size: 14px;'
     var stunNameStyle = 'background-color: #eaf8ff;'
@@ -454,9 +455,7 @@ Stun.utils = Stun.$u = {
         return
       }
       isZoom = true
-      $imgClone = $(this)
-        .clone()
-        .addClass('zoomimg-clone')
+      $imgClone = $(this).clone().addClass('zoomimg-clone')
 
       var SIDE_GAP = parseInt(CONFIG.zoomImage.gapAside || 20)
       var imgRect = this.getBoundingClientRect()
@@ -475,9 +474,7 @@ Stun.utils = Stun.$u = {
       var translateY = winH / 2 - (imgRect.y + imgOuterH / 2) + SIDE_GAP
 
       $(this).addClass('zoomimg--hide')
-      $('body')
-        .append($imgMask)
-        .append($imgClone)
+      $('body').append($imgMask).append($imgClone)
       $imgMask.velocity({
         opacity: 1
       })
@@ -497,7 +494,7 @@ Stun.utils = Stun.$u = {
       )
     })
 
-    function closeZoom () {
+    function closeZoom() {
       if (!isZoom) {
         return
       }
@@ -542,9 +539,7 @@ Stun.utils = Stun.$u = {
         }
 
         $(`<figcaption class="custom">${content}</figcaption>`).insertBefore(
-          $(this)
-            .children()
-            .first()
+          $(this).children().first()
         )
       }
     })
@@ -569,9 +564,7 @@ Stun.utils = Stun.$u = {
     $('.copy-button').on('click', function () {
       var container = null
       // Select the container of code block.
-      var codeContainer = $(this)
-        .parents('figure.highlight')
-        .find('td.code')[0]
+      var codeContainer = $(this).parents('figure.highlight').find('td.code')[0]
 
       if (codeContainer) {
         container = codeContainer

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
   Stun.utils.showThemeInConsole()
 
   if (CONFIG.shortcuts && CONFIG.shortcuts.switchPost) {
@@ -46,4 +46,10 @@ $(document).ready(function () {
 
   // Initializaiton
   Stun.utils.pjaxReloadBoot()
+
+  const images = $('#content-wrap img')
+  images.each(function () {
+    const alt = $(this).attr('alt') || $(this).attr('title')
+    $(this).after(`<div class="img-alt-msg">${alt}</div>`)
+  })
 })
