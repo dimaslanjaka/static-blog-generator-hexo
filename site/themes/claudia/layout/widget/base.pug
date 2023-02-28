@@ -57,7 +57,7 @@ html(lang=config.language class= `appearance-${ appearance }`)
         span Copyright ©
         - var author = (theme.user && theme.user.name) || config.author || ''
         span= ' ' + author + ' ' + new Date().getFullYear()
-      div.is-flex.is-justify-content-center.is-flex-wrap-wrap
+      div.is-flex.is-justify-content-center.is-flex-wrap-wrap.none.d-none.hidden
         p Powered by Hexo &verbar;&nbsp;
         p.is-flex.is-justify-content-center
           a(title="Hexo theme author" href='//github.com/haojen' rel='nofollow noopener') Theme by Haojen&nbsp;
