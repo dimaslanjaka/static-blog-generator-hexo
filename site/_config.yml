@@ -376,14 +376,14 @@ seo:
       - '*.min.{htm,html}'
   # minify css
   css:
-    enable: true
+    enable: false
     # If you want to customize the css minifier settings, you can put below
     # exclude css from minifying, multiple supported
     exclude:
       - '**/*.min.css'
   # minify js
   js:
-    enable: true
+    enable: false
     # If you want to customize the js minifier settings, you can put below
     # exclude css from minifying, multiple supported
     exclude:
