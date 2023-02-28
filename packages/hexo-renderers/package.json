@@ -2,9 +2,13 @@
   "packageManager": "yarn@3.4.1",
   "name": "hexo-renderers",
   "version": "1.0.0",
-  "main": "src/renderer-loader.js",
+  "main": "dist/renderer-loader.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build": "node packer.js --yarn"
+    "build": "tsc --build tsconfig.build.json && node packer.js --yarn"
   },
   "keywords": [
     "hexo",
@@ -39,6 +43,7 @@
     "fs-extra": "^11.1.0",
     "nunjucks": "^3.2.3",
     "pug": "^3.0.2",
+    "sass": "^1.58.3",
     "sbg-utility": "^1.0.4",
     "stylus": "^0.59.0",
     "upath": "^2.0.1"
