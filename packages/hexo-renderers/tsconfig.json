@@ -6,6 +6,6 @@
     "allowJs": true,
     "checkJs": false
   },
-  "include": ["./src/**/*", "./src/*"],
+  // "include": ["./src/**/*", "./src/*"],
   "exclude": ["**/dist/**"]
 }
