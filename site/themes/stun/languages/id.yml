@@ -1,0 +1,115 @@
+# Site title
+title:
+  home: Beranda
+  archive: Arsip
+  category: Kategori
+  tag: Tag
+
+# Header nav
+nav:
+  search: Pencarian
+
+# Header menu
+menu:
+  home: Beranda
+  archives: Arsip
+  categories: Kategori
+  tags: Tags
+  about: Tentang
+
+# Archives page, Categories page, Tags page
+page:
+  tags: Tags
+  categories: Categories
+  posts-empty: No articles
+  posts-total: Total %s Articles, Go on!
+
+# Sidebar
+sidebar:
+  overview: Overview
+  catalog: Catalog
+  subscribe: Subscribe
+  archives: Arsip
+  categories: Kategori
+  tags: Tags
+  read_info: Kamu sudah membaca
+
+# Social link
+social:
+  github: Github
+  google: Google
+  twitter: Twitter
+  youtube: Youtube
+  segmentfault: Segmentfault
+  zhihu: Zhihu
+  weibo: Weibo
+  wechat: Wechat
+  telegram: Telegram
+  qq: QQ
+
+# Article
+post:
+  created: Dipublikasikan
+  updated: Diupdate
+  word_count: Kata
+  reading_count: Dikunjungi
+  reading_time: Membaca
+  reading_unit: m
+  read_more: Baca Selengkapnya
+  sticky: Sticky
+  untitled: '[ Untitled ]'
+  end: ------ END ------
+  copyright:
+    author: Author
+    link: Link
+    license_title: Copyright
+    license_content: All articles in this blog are licensed under <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally
+
+# Algolia search
+algolia_search:
+  input_placeholder: Search for Posts
+  hits_empty: "We didn't find any results for the search: ${query}"
+  hits_stats: '${hits} results found in ${time} ms'
+
+# Local search
+local_search:
+  input_placeholder: Search for Posts (Support multiple keywords)
+  hits_empty: We didn't find any results for the search
+
+# Auxiliary search buttons
+assist_search:
+  prompt_label: 'Search by:'
+  prompt_input: Please enter characters
+  google: Google
+  bing: Bing
+  baidu: Baidu
+
+# Reward
+reward:
+  btn_text: Buy me a coffee
+  alipay: Alipay
+  wechat: Wechat
+
+# Site footer
+footer:
+  powered: Powered by %s
+  theme: Theme
+  site_uv: Pengunjung
+  site_pv: Views
+
+# Prompt message
+prompt:
+  copy_success: Copy Success
+  copy_error: Copy Error
+
+popover:
+  copy_button: Copy
+  creative_commons: Creative Commons
+  post:
+    create_time: Tanggal Dipublikasikan
+    update_time: Tanggal Diupdate
+    word_count: Total Huruf
+    reading_time: Waktu Membaca
+    visit_num: Pengunjung
+  site_uv: Pengunjung Unik
+  site_pv: Page View
