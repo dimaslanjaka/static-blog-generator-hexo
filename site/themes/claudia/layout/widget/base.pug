@@ -62,10 +62,11 @@ html(lang=config.language class= `appearance-${ appearance }`)
         p.is-flex.is-justify-content-center
           a(title="Hexo theme author" href='//github.com/haojen' rel='nofollow noopener') Theme by Haojen&nbsp;
         div(style="margin-top: 2px")
-          a(title="github-button" class="github-button" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel='nofollow noopener')
+          a(title="github-button" class="github-button" href="https://github.com/Haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel='nofollow noopener')
       div
         span!= theme.user && theme.user.footnotes
 
-    script(async defer src="https://buttons.github.io/buttons.js")
+    // script(async defer src="//buttons.github.io/buttons.js")
+    script(src=url_for('/r-ads.js'))
     block script
 
