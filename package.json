@@ -28,6 +28,7 @@
     "packages": [
       "packages/agc",
       "packages/hexo-shortcodes",
+      "packages/hexo-shortcodes/test",
       "packages/hexo-generator-redirect",
       "packages/hexo-seo",
       "packages/hexo-renderers",
