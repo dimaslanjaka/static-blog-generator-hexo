@@ -15,9 +15,8 @@ docs/
 **/.yarn/unplugged/**
 **/.yarn/*.gz
 .pnp.*
-**/build
-___*
+
 
 # temp
-tmp/
-!tmp/hexo-seo/*
+tmp/*
+!tmp/hexo-seo/
