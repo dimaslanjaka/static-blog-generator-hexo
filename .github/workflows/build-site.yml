@@ -126,6 +126,7 @@ jobs:
             site/source/_posts
             **/dist
             **/node_modules
+            **/.yarn
           # ${{ steps.set-env.outputs.cache-yarn }}
           key: cache-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/.guid') }}
           restore-keys: |
