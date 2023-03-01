@@ -6,7 +6,6 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
-tmp
 docs/
 *-old
 *-backup
@@ -18,3 +17,7 @@ docs/
 .pnp.*
 **/build
 ___*
+
+# temp
+tmp/
+!tmp/hexo-seo/*
