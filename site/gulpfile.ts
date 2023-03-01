@@ -18,20 +18,35 @@ const api = new Application(__dirname);
  * git clone
  * @param destFolder
  */
-async function clone(destFolder: string, options?: import('child_process').SpawnOptions) {
+async function clone(
+  destFolder: string,
+  options?: import('child_process').SpawnOptions
+) {
   const spawnOpt = Object.assign({ cwd: __dirname }, options);
   if (!fs.existsSync(destFolder)) {
     // clone from root deployment dir
-    await spawnAsync('git', ['clone', api.getConfig().deploy.repo, destFolder], spawnOpt);
+    await spawnAsync(
+      'git',
+      ['clone', api.getConfig().deploy.repo, destFolder],
+      spawnOpt
+    );
     // update submodule from deployment dir
     if (fs.existsSync(path.join(destFolder, '.gitmodules'))) {
-      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], Object.assign(spawnOpt, { cwd: destFolder }));
+      await spawnAsync(
+        'git',
+        ['submodule', 'update', '-i', '-r'],
+        Object.assign(spawnOpt, { cwd: destFolder })
+      );
     }
   }
 }
 
 gulp.task('deploy:copy', function () {
-  return gulp.src('**/*', { cwd: path.join(__dirname, 'public') }).pipe(gulp.dest(path.join(__dirname, '.deploy_git')));
+  return fs.copy(
+    path.join(__dirname, 'public'),
+    path.join(__dirname, '.deploy_git'),
+    { overwrite: true }
+  );
 });
 
 /**
@@ -82,7 +97,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
   if (typeof done === 'function') done();
 }
 
-async function push(done?: gulp.TaskFunctionCallback) {
+async function push(done?: (...args: any[]) => any) {
   // register graceful shutdown
   gracefulShutdown(push.name, done);
 
@@ -101,7 +116,9 @@ async function push(done?: gulp.TaskFunctionCallback) {
     const submodules = gh.submodule.get();
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
-      await doPush(sub.root, 'origin', sub.branch).catch(() => console.log('cannot push', cleanCwd(cwd)));
+      await doPush(sub.root, 'origin', sub.branch).catch(() =>
+        console.log('cannot push', cleanCwd(cwd))
+      );
     }
 
     await doPush(cwd, 'origin', 'master');
@@ -139,10 +156,14 @@ async function commit(done: (...args: any[]) => any) {
   const gh = config.deploy.github || new gch(cwd);
   const doCommit = async (cwd: string) => {
     console.log('commiting', cwd);
-    await spawnAsync('git', ['add', '.'], { cwd }).catch(() => console.log('cannot add', cwd));
-    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())], { cwd }).catch(() =>
-      console.log('cannot commit', cwd)
+    await spawnAsync('git', ['add', '.'], { cwd }).catch(() =>
+      console.log('cannot add', cwd)
     );
+    await spawnAsync(
+      'git',
+      ['commit', '-m', 'Update site from ' + (await getCurrentCommit())],
+      { cwd }
+    ).catch(() => console.log('cannot commit', cwd));
   };
 
   // runners
@@ -193,8 +214,8 @@ gulp.task('env', function (done) {
 });
 
 const callbacks: Record<string, (...args: any[]) => any> = {};
-function gracefulShutdown(key: string, callback: (...args: any[]) => any) {
-  callbacks[key] = callback;
+function gracefulShutdown(key: string, callback?: (...args: any[]) => any) {
+  if (typeof callback === 'function') callbacks[key] = callback;
   process.on('SIGTERM', () => {
     console.info('SIGTERM signal received.');
     console.log('Closing http server.');
