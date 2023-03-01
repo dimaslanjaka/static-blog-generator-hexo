@@ -757,6 +757,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/cli@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/cli@npm:15.8.1"
+  dependencies:
+    nx: 15.8.1
+  checksum: d6b4fb396e5c6dce6ef6c4095df501b2180fec1c14b93702b0420ab5b1aceacb2f37e5a4f6e68feb94deb174e60a7d9202c377684cf3d24d1834b7c471e78e6a
+  languageName: node
+  linkType: hard
+
 "@nrwl/devkit@npm:>=15.5.2 < 16":
   version: 15.7.2
   resolution: "@nrwl/devkit@npm:15.7.2"
@@ -779,9 +788,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-darwin-arm64@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-darwin-arm64@npm:15.8.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "@nrwl/nx-darwin-x64@npm:15.7.2":
   version: 15.7.2
   resolution: "@nrwl/nx-darwin-x64@npm:15.7.2"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@nrwl/nx-darwin-x64@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-darwin-x64@npm:15.8.1"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -793,9 +816,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-linux-arm-gnueabihf@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-linux-arm-gnueabihf@npm:15.8.1"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
 "@nrwl/nx-linux-arm64-gnu@npm:15.7.2":
   version: 15.7.2
   resolution: "@nrwl/nx-linux-arm64-gnu@npm:15.7.2"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@nrwl/nx-linux-arm64-gnu@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-linux-arm64-gnu@npm:15.8.1"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
@@ -807,9 +844,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-linux-arm64-musl@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-linux-arm64-musl@npm:15.8.1"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
 "@nrwl/nx-linux-x64-gnu@npm:15.7.2":
   version: 15.7.2
   resolution: "@nrwl/nx-linux-x64-gnu@npm:15.7.2"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@nrwl/nx-linux-x64-gnu@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-linux-x64-gnu@npm:15.8.1"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
@@ -821,6 +872,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-linux-x64-musl@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-linux-x64-musl@npm:15.8.1"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
 "@nrwl/nx-win32-arm64-msvc@npm:15.7.2":
   version: 15.7.2
   resolution: "@nrwl/nx-win32-arm64-msvc@npm:15.7.2"
@@ -828,9 +886,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-win32-arm64-msvc@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-win32-arm64-msvc@npm:15.8.1"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "@nrwl/nx-win32-x64-msvc@npm:15.7.2":
   version: 15.7.2
   resolution: "@nrwl/nx-win32-x64-msvc@npm:15.7.2"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@nrwl/nx-win32-x64-msvc@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/nx-win32-x64-msvc@npm:15.8.1"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -843,6 +915,17 @@ __metadata:
   bin:
     tao: index.js
   checksum: cbf76f385bffb1bf1bde52d4ad950a8abd1ba9865f47afb67a58bb5dc5d7be0d21c5021a3332d2ab665d99b36ec1f08ee260c1289bb7e69783e69712145d2709
+  languageName: node
+  linkType: hard
+
+"@nrwl/tao@npm:15.8.1":
+  version: 15.8.1
+  resolution: "@nrwl/tao@npm:15.8.1"
+  dependencies:
+    nx: 15.8.1
+  bin:
+    tao: index.js
+  checksum: e318e3b0c10b1234ec053a8de8b0e206b14bf0e39439a8746e63532b792fdbd120d591ef1e09727d3cd1ceb54e2c0bbcc46495d3521b9181c84c696853e76494
   languageName: node
   linkType: hard
 
@@ -1280,7 +1363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:^4.17.16":
+"@types/express@npm:^4.17.16, @types/express@npm:^4.17.17":
   version: 4.17.17
   resolution: "@types/express@npm:4.17.17"
   dependencies:
@@ -1388,8 +1471,8 @@ __metadata:
     "@types/underscore": ^1.11.4
     cross-spawn: ^7.0.3
     fs-extra: ^11.1.0
-    minimist: ^1.2.5
-    moment: ^2.19.4
+    minimist: ^1.2.8
+    moment: ^2.29.4
     upath: ^2.0.1
   languageName: unknown
   linkType: soft
@@ -1410,7 +1493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:*, @types/jquery@npm:^3.5.14":
+"@types/jquery@npm:*, @types/jquery@npm:^3.5.16":
   version: 3.5.16
   resolution: "@types/jquery@npm:3.5.16"
   dependencies:
@@ -1537,7 +1620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.11.18, @types/node@npm:^18.13.0, @types/node@npm:^18.14.0, @types/node@npm:^18.14.1, @types/node@npm:^18.14.2":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.13.0, @types/node@npm:^18.14.2, @types/node@npm:^18.x":
   version: 18.14.2
   resolution: "@types/node@npm:18.14.2"
   checksum: 53c07e721f6ae33de71306f6a0b75dae6066a4f55bd5484c93bd59ff25f0c5f004ceafeef509a4d0cb9e24a247efc34d50489bcc1b05a53ecc68e2fc088e65cb
@@ -1709,15 +1792,15 @@ __metadata:
 
 "@types/through2@file:through2::locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types":
   version: 2.0.38
-  resolution: "@types/through2@file:through2#through2::hash=fef996&locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types"
+  resolution: "@types/through2@file:through2#through2::hash=5fbc40&locator=nodejs-package-types%40workspace%3Apackages%2Fnodejs-packages-types"
   dependencies:
-    "@types/node": ^12.x
-    "@types/vinyl": ^2.0.6
+    "@types/node": ^18.x
+    "@types/vinyl": ^2.0.7
     cross-spawn: ^7.0.3
     fs-extra: ^11.1.0
     gulp: ^4.0.2
     upath: ^2.0.1
-  checksum: 2096cf5ec531907346393db036a2f03480c8a120f92a85690d169ee7dee6a3affed1b271f21b0adcc7774d6a7e396367bc7b258a9a3d1527b1949233b5d2894a
+  checksum: db84da2387b68e55849557d1df461433c5d2430489beec09afe220107c9f0feb9e9b12b3df387b502a3e0d020d47dabcf5988a567d654c2fee166614611b049f
   languageName: node
   linkType: hard
 
@@ -1753,8 +1836,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@types/through2@workspace:packages/nodejs-packages-types/through2"
   dependencies:
-    "@types/node": ^12.x
-    "@types/vinyl": ^2.0.6
+    "@types/node": ^18.x
+    "@types/vinyl": ^2.0.7
     cross-spawn: ^7.0.3
     fs-extra: ^11.1.0
     gulp: ^4.0.2
@@ -1822,7 +1905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/vinyl@npm:*, @types/vinyl@npm:^2.0.6":
+"@types/vinyl@npm:*, @types/vinyl@npm:^2.0.6, @types/vinyl@npm:^2.0.7":
   version: 2.0.7
   resolution: "@types/vinyl@npm:2.0.7"
   dependencies:
@@ -1841,7 +1924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.49.0, @typescript-eslint/eslint-plugin@npm:^5.52.0, @typescript-eslint/eslint-plugin@npm:^5.53.0, @typescript-eslint/eslint-plugin@npm:^5.54.0":
+"@typescript-eslint/eslint-plugin@npm:^5.54.0":
   version: 5.54.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.54.0"
   dependencies:
@@ -1865,7 +1948,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.49.0, @typescript-eslint/parser@npm:^5.52.0, @typescript-eslint/parser@npm:^5.53.0, @typescript-eslint/parser@npm:^5.54.0":
+"@typescript-eslint/parser@npm:^5.54.0":
   version: 5.54.0
   resolution: "@typescript-eslint/parser@npm:5.54.0"
   dependencies:
@@ -2172,18 +2255,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "agc@workspace:packages/agc"
   dependencies:
-    "@types/node": ^18.14.0
-    axios: ^1.3.3
+    "@types/node": ^18.14.2
+    axios: ^1.3.4
     cross-env: ^7.0.3
-    electron: ^23.1.0
-    eslint: ^8.34.0
+    electron: ^23.1.1
+    eslint: ^8.35.0
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.7
+    git-command-helper: ^1.1.8
     hexo-post-parser: ^1.2.6
     nightmare: ^3.0.2
     node-libcurl: ^3.0.0
     prettier: ^2.8.4
-    sbg-utility: ^1.0.3
+    sbg-utility: ^1.0.6
     ts-node: ^10.9.1
     typescript: ^4.9.5
     upath: ^2.0.1
@@ -2786,7 +2869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.0.0, axios@npm:^1.2.1, axios@npm:^1.2.6, axios@npm:^1.3.2, axios@npm:^1.3.3, axios@npm:^1.3.4":
+"axios@npm:^1.0.0, axios@npm:^1.2.6, axios@npm:^1.3.2, axios@npm:^1.3.3, axios@npm:^1.3.4":
   version: 1.3.4
   resolution: "axios@npm:1.3.4"
   dependencies:
@@ -3008,7 +3091,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap-icons@npm:^1.10.2":
+"bootstrap-icons@npm:^1.10.3":
   version: 1.10.3
   resolution: "bootstrap-icons@npm:1.10.3"
   checksum: bef7f83ce09f0ae0b2a92d61b69f3c6d04ba2307e9051ab3f175613837e0dc5252d22e2b3a0403b59995be4e06ebe00f17d0335be6f2cffdbfdbefa9268b6abd
@@ -3106,6 +3189,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browser-sync-client@npm:^2.28.1":
+  version: 2.28.1
+  resolution: "browser-sync-client@npm:2.28.1"
+  dependencies:
+    etag: 1.8.1
+    fresh: 0.5.2
+    mitt: ^1.1.3
+    rxjs: ^5.5.6
+    typescript: ^4.6.2
+  checksum: 74c29c7519a5ca05a23035f1636dfbaa6093125405164a6ad4ca7c50026413ff210cea4e804ce04eea2474da643a1761ee4f19719cedfd897b15a2949405044b
+  languageName: node
+  linkType: hard
+
 "browser-sync-ui@npm:^2.27.12":
   version: 2.27.12
   resolution: "browser-sync-ui@npm:2.27.12"
@@ -3120,7 +3216,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browser-sync@npm:^2.27.11, browser-sync@npm:^2.27.7":
+"browser-sync-ui@npm:^2.28.1":
+  version: 2.28.1
+  resolution: "browser-sync-ui@npm:2.28.1"
+  dependencies:
+    async-each-series: 0.1.1
+    chalk: 4.1.2
+    connect-history-api-fallback: ^1
+    immutable: ^3
+    server-destroy: 1.0.1
+    socket.io-client: ^4.4.1
+    stream-throttle: ^0.1.3
+  checksum: df6d2f322a05ce079d37c66968cde8f383247426a8e533495af1628e45befad43c77189ae713071e9f2af2f582b3125f3e0a731c74c2d6c881f868fd73f56635
+  languageName: node
+  linkType: hard
+
+"browser-sync@npm:^2.27.7":
   version: 2.27.12
   resolution: "browser-sync@npm:2.27.12"
   dependencies:
@@ -3157,6 +3268,46 @@ __metadata:
   bin:
     browser-sync: dist/bin.js
   checksum: 065dfcbbb4c62ee5cf87b44e2e4f8d6ef265fa3ed3e239eff0a3f3a91334c828275b88f0247b217d0c61714303efba08c0e7fb58c8031745e840f19cef080c99
+  languageName: node
+  linkType: hard
+
+"browser-sync@npm:^2.28.1":
+  version: 2.28.1
+  resolution: "browser-sync@npm:2.28.1"
+  dependencies:
+    browser-sync-client: ^2.28.1
+    browser-sync-ui: ^2.28.1
+    bs-recipes: 1.3.4
+    bs-snippet-injector: ^2.0.1
+    chokidar: ^3.5.1
+    connect: 3.6.6
+    connect-history-api-fallback: ^1
+    dev-ip: ^1.0.1
+    easy-extender: ^2.3.4
+    eazy-logger: 4.0.0
+    etag: ^1.8.1
+    fresh: ^0.5.2
+    fs-extra: 3.0.1
+    http-proxy: ^1.18.1
+    immutable: ^3
+    localtunnel: ^2.0.1
+    micromatch: ^4.0.2
+    opn: 5.3.0
+    portscanner: 2.2.0
+    qs: ^6.11.0
+    raw-body: ^2.3.2
+    resp-modifier: 6.0.2
+    rx: 4.1.0
+    send: 0.16.2
+    serve-index: 1.9.1
+    serve-static: 1.13.2
+    server-destroy: 1.0.1
+    socket.io: ^4.4.1
+    ua-parser-js: ^1.0.33
+    yargs: ^17.3.1
+  bin:
+    browser-sync: dist/bin.js
+  checksum: 13d011658adb689b6198be719072e7101c5e07ca409e84136dcea2ba63a7c62129da47a5949a0687eb4c194e498daa52ea2d6884ed55dc64e6e64ca803598ae2
   languageName: node
   linkType: hard
 
@@ -3511,6 +3662,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: ^4.1.0
+    supports-color: ^7.1.0
+  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
+  languageName: node
+  linkType: hard
+
 "chalk@npm:^1.1.3":
   version: 1.1.3
   resolution: "chalk@npm:1.1.3"
@@ -3532,16 +3693,6 @@ __metadata:
     escape-string-regexp: ^1.0.5
     supports-color: ^5.3.0
   checksum: ec3661d38fe77f681200f878edbd9448821924e0f93a9cefc0e26a33b145f1027a2084bf19967160d11e1f03bfe4eaffcabf5493b89098b2782c3fe0b03d80c2
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
 
@@ -3631,49 +3782,49 @@ __metadata:
     "@types/fs-extra": ^11.0.1
     "@types/gulp": ^4.0.10
     "@types/imagemin": ^8.0.1
-    "@types/node": ^18.14.0
+    "@types/node": ^18.14.2
     "@types/prettier": ^2.7.2
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@types/sharp": ^0.31.1
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
-    "@typescript-eslint/eslint-plugin": ^5.52.0
-    "@typescript-eslint/parser": ^5.52.0
+    "@typescript-eslint/eslint-plugin": ^5.54.0
+    "@typescript-eslint/parser": ^5.54.0
     ansi-colors: ^4.1.3
-    axios: ^1.3.3
+    axios: ^1.3.4
     bluebird: ^3.7.2
     cors: ^2.8.5
     cross-env: ^7.0.3
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
     decode-uri-component: ^0.4.1
-    eslint: ^8.34.0
+    eslint: ^8.35.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.32.2
     express: ^4.18.2
     front-matter: ^4.0.2
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.7
-    glob: ^8.1.0
+    git-command-helper: ^1.1.8
+    glob: ^9.1.0
     googleapis: ^111.0.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo-post-parser: ^1.2.6
     js-yaml: ^4.1.0
-    minimatch: ^7.0.0
+    minimatch: ^7.4.1
     moment: ^2.29.4
-    moment-timezone: ^0.5.40
+    moment-timezone: ^0.5.41
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     nodemon: ^2.0.20
     npm-run-all: ^4.1.5
-    open: ^8.4.1
+    open: ^8.4.2
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz"
     prettier: ^2.8.4
     react: ^18.2.0
     react-dom: ^18.2.0
-    safelinkify: ^1.1.16
-    sbg-utility: ^1.0.3
+    safelinkify: ^1.1.17
+    sbg-utility: ^1.0.6
     sharp: ^0.31.3
     slugify: ^1.6.5
     through2: ^4.0.2
@@ -3787,7 +3938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clean-css@npm:^5.1.1, clean-css@npm:^5.3.1, clean-css@npm:^5.3.2":
+"clean-css@npm:^5.1.1, clean-css@npm:^5.3.2":
   version: 5.3.2
   resolution: "clean-css@npm:5.3.2"
   dependencies:
@@ -5508,6 +5659,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eazy-logger@npm:4.0.0":
+  version: 4.0.0
+  resolution: "eazy-logger@npm:4.0.0"
+  checksum: 8c3d228c86e8653a48141a8d3e5ce5d5d7db2bb94911d9beaae8485e2e30ff27ef69db7d4d09c5cf30d3d91303bbd0d727a709513129dd922b5091b084c3e536
+  languageName: node
+  linkType: hard
+
 "ecc-jsbn@npm:~0.1.1":
   version: 0.1.2
   resolution: "ecc-jsbn@npm:0.1.2"
@@ -5584,7 +5742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:^23.1.0":
+"electron@npm:^23.1.1":
   version: 23.1.1
   resolution: "electron@npm:23.1.1"
   dependencies:
@@ -5958,7 +6116,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.5.0, eslint-config-prettier@npm:^8.6.0":
+"eslint-config-prettier@npm:^8.6.0":
   version: 8.6.0
   resolution: "eslint-config-prettier@npm:8.6.0"
   peerDependencies:
@@ -6102,7 +6260,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.29.0, eslint@npm:^8.33.0, eslint@npm:^8.34.0, eslint@npm:^8.35.0":
+"eslint@npm:^8.35.0":
   version: 8.35.0
   resolution: "eslint@npm:8.35.0"
   dependencies:
@@ -7317,7 +7475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@npm:^1.1.6, git-command-helper@npm:^1.1.7, git-command-helper@npm:^1.1.8":
+"git-command-helper@npm:^1.1.8":
   version: 1.1.8
   resolution: "git-command-helper@npm:1.1.8"
   dependencies:
@@ -7508,6 +7666,18 @@ __metadata:
     minimatch: ^5.0.1
     once: ^1.3.0
   checksum: 92fbea3221a7d12075f26f0227abac435de868dd0736a17170663783296d0dd8d3d532a5672b4488a439bf5d7fb85cdd07c11185d6cd39184f0385cbdfb86a47
+  languageName: node
+  linkType: hard
+
+"glob@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "glob@npm:9.1.0"
+  dependencies:
+    fs.realpath: ^1.0.0
+    minimatch: ^7.4.0
+    minipass: ^4.2.4
+    path-scurry: ^1.5.0
+  checksum: f7950386ea24b66571fca1ea42536bda4f5c4e009699b4f01d48a76f1e6c670c9b1083c57ae644200b2cc6ab741864bf263f83b994426f2df2d36b642bd1ed6b
   languageName: node
   linkType: hard
 
@@ -8221,11 +8391,11 @@ __metadata:
     "@types/fs-extra": ^11.0.1
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
-    "@typescript-eslint/eslint-plugin": ^5.53.0
-    "@typescript-eslint/parser": ^5.53.0
+    "@typescript-eslint/eslint-plugin": ^5.54.0
+    "@typescript-eslint/parser": ^5.54.0
     ansi-colors: ^4.1.3
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript"
-    eslint: ^8.34.0
+    eslint: ^8.35.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     fs-extra: ^11.1.0
@@ -8408,7 +8578,7 @@ __metadata:
     prettier: ^2.8.4
     pug: ^3.0.2
     sass: ^1.58.3
-    sbg-utility: ^1.0.4
+    sbg-utility: ^1.0.6
     stylus: ^0.59.0
     ts-node: ^10.9.1
     typescript: ^4.9.5
@@ -8456,7 +8626,7 @@ __metadata:
     hexo-log: ^4.0.1
     html-minifier-terser: ^7.1.0
     jsdom: ^21.1.0
-    minimatch: ^7.3.0
+    minimatch: ^7.4.1
     minimist: ^1.2.8
     moment: ^2.29.4
     moment-timezone: ^0.5.41
@@ -8474,7 +8644,7 @@ __metadata:
     request: ">=2.88.2"
     rimraf: ^4.1.2
     sanitize-filename: ^1.6.3
-    sbg-utility: ^1.0.5
+    sbg-utility: ^1.0.6
     serve-static: ^1.15.0
     terser: ^5.16.5
     ts-node: ^10.9.1
@@ -8519,13 +8689,13 @@ __metadata:
     "@types/fs-extra": ^11.0.1
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
-    "@types/node": ^18.14.1
+    "@types/node": ^18.14.2
     "@types/nunjucks": ^3.2.2
     ansi-colors: ^4.1.3
     axios: ^1.3.4
     bluebird: ^3.7.2
     cross-spawn: ^7.0.3
-    eslint: ^8.34.0
+    eslint: ^8.35.0
     fs-extra: ^11.1.0
     git-command-helper: ^1.1.8
     gulp: ^4.0.2
@@ -8534,7 +8704,7 @@ __metadata:
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     prettier: ^2.8.4
-    sbg-utility: ^1.0.4
+    sbg-utility: ^1.0.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -9847,7 +10017,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jquery@npm:>=1.12.0, jquery@npm:^3.6.1, jquery@npm:^3.6.3":
+"jquery@npm:>=1.12.0, jquery@npm:^3.6.3":
   version: 3.6.3
   resolution: "jquery@npm:3.6.3"
   checksum: 0fd366bdcaa0c84a7a8751ce20f8192290141913978b5059574426d9b01f4365daa675f95aab3eec94fd794d27b08d32078a2236bef404b8ba78073009988ce6
@@ -10794,6 +10964,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru-cache@npm:^7.14.1":
+  version: 7.18.1
+  resolution: "lru-cache@npm:7.18.1"
+  checksum: ab0ec1360c552f1ffa54b1eaf0026126c5116a07bee156b92d1e971f4c8c88e9160f0fad4ab6fed4e0fdea84f25a4590ece085bc57ed9ab1d90b17f0b138c556
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^7.4.4, lru-cache@npm:^7.5.1, lru-cache@npm:^7.7.1":
   version: 7.17.0
   resolution: "lru-cache@npm:7.17.0"
@@ -10936,7 +11113,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-anchor@npm:^8.6.6":
+"markdown-it-anchor@npm:^8.6.6, markdown-it-anchor@npm:^8.6.7":
   version: 8.6.7
   resolution: "markdown-it-anchor@npm:8.6.7"
   peerDependencies:
@@ -11331,12 +11508,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^7.0.0, minimatch@npm:^7.0.1, minimatch@npm:^7.1.3, minimatch@npm:^7.3.0":
+"minimatch@npm:^7.0.0, minimatch@npm:^7.0.1, minimatch@npm:^7.1.3":
   version: 7.3.0
   resolution: "minimatch@npm:7.3.0"
   dependencies:
     brace-expansion: ^2.0.1
   checksum: c4d9af992958339d5fc593c9ce496f4b9615597e57cdd663e57bd3a745ebd208c2bba19c3290c25ed8dcf259586fa1f68e4e1acf304f8694927b84c5381167d0
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^7.4.0, minimatch@npm:^7.4.1":
+  version: 7.4.1
+  resolution: "minimatch@npm:7.4.1"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: fd930530878ba08e5a57eacc0e69fbc980d4c1dfeb98c6c5eba3a05a10b1f6d8dd4ecca59442a1909107b7ef891b43c005720c1a8ed1a02db962fd0327bf9557
   languageName: node
   linkType: hard
 
@@ -11443,7 +11629,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass@npm:^4.0.0":
+"minipass@npm:^4.0.0, minipass@npm:^4.0.2, minipass@npm:^4.2.4":
   version: 4.2.4
   resolution: "minipass@npm:4.2.4"
   checksum: c664f2ae4401408d1e7a6e4f50aca45f87b1b0634bc9261136df5c378e313e77355765f73f59c4a5abcadcdf43d83fcd3eb14e4a7cdcce8e36508e2290345753
@@ -11550,7 +11736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment-timezone@npm:^0.5.34, moment-timezone@npm:^0.5.39, moment-timezone@npm:^0.5.40, moment-timezone@npm:^0.5.41, moment-timezone@npm:latest":
+"moment-timezone@npm:^0.5.34, moment-timezone@npm:^0.5.40, moment-timezone@npm:^0.5.41, moment-timezone@npm:latest":
   version: 0.5.41
   resolution: "moment-timezone@npm:0.5.41"
   dependencies:
@@ -11961,44 +12147,44 @@ __metadata:
   resolution: "nodejs-package-types@workspace:packages/nodejs-packages-types"
   dependencies:
     "@atao60/fse-cli": ^0.1.7
-    "@types/express": ^4.17.16
+    "@types/express": ^4.17.17
     "@types/fs-extra": ^11.0.1
     "@types/gulp": ^4.0.10
     "@types/markdown-it": 12.2.3
-    "@types/node": ^18.11.18
+    "@types/node": ^18.14.2
     "@types/through2": "file:through2"
-    "@typescript-eslint/eslint-plugin": ^5.49.0
-    "@typescript-eslint/parser": ^5.49.0
+    "@typescript-eslint/eslint-plugin": ^5.54.0
+    "@typescript-eslint/parser": ^5.54.0
     ansi-colors: ^4.1.3
-    axios: ^1.2.6
-    browser-sync: ^2.27.11
+    axios: ^1.3.4
+    browser-sync: ^2.28.1
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     depcheck: ^1.4.3
-    eslint: ^8.33.0
+    eslint: ^8.35.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     express: ^4.18.2
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.6
-    glob: ^8.1.0
+    git-command-helper: ^1.1.8
+    glob: ^9.1.0
     gulp: ^4.0.2
     hexo-util: ^3.0.1
     markdown-it: ^13.0.1
     markdown-it-abbr: ^1.0.4
-    markdown-it-anchor: ^8.6.6
+    markdown-it-anchor: ^8.6.7
     markdown-it-attrs: ^4.1.6
     markdown-it-footnote: ^3.0.3
     markdown-it-mark: ^3.0.1
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
-    npm-check-updates: ^16.6.3
+    npm-check-updates: ^16.7.10
     npm-run-all: ^4.1.5
-    prettier: ^2.8.3
+    prettier: ^2.8.4
     semver: ^7.3.8
     slugify: ^1.6.5
     through2: ^4.0.2
     true-case-path: ^2.2.1
-    typedoc: ^0.23.24
+    typedoc: ^0.23.26
     typedoc-plugin-missing-exports: ^1.0.0
     upath: ^2.0.1
   languageName: unknown
@@ -12171,7 +12357,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^16.6.3, npm-check-updates@npm:^16.7.10":
+"npm-check-updates@npm:^16.7.10":
   version: 16.7.10
   resolution: "npm-check-updates@npm:16.7.10"
   dependencies:
@@ -12591,6 +12777,87 @@ __metadata:
   bin:
     nx: bin/nx.js
   checksum: c5765575146bb94f54c1da3d6dec600e6414c0cc64c198821a3de10a72583933f1a752a61452b74f02492e3518f4ead3c287416173b1bb3bbc15ce82bd8d2bb4
+  languageName: node
+  linkType: hard
+
+"nx@npm:15.8.1, nx@npm:^15.8.1":
+  version: 15.8.1
+  resolution: "nx@npm:15.8.1"
+  dependencies:
+    "@nrwl/cli": 15.8.1
+    "@nrwl/nx-darwin-arm64": 15.8.1
+    "@nrwl/nx-darwin-x64": 15.8.1
+    "@nrwl/nx-linux-arm-gnueabihf": 15.8.1
+    "@nrwl/nx-linux-arm64-gnu": 15.8.1
+    "@nrwl/nx-linux-arm64-musl": 15.8.1
+    "@nrwl/nx-linux-x64-gnu": 15.8.1
+    "@nrwl/nx-linux-x64-musl": 15.8.1
+    "@nrwl/nx-win32-arm64-msvc": 15.8.1
+    "@nrwl/nx-win32-x64-msvc": 15.8.1
+    "@nrwl/tao": 15.8.1
+    "@parcel/watcher": 2.0.4
+    "@yarnpkg/lockfile": ^1.1.0
+    "@yarnpkg/parsers": ^3.0.0-rc.18
+    "@zkochan/js-yaml": 0.0.6
+    axios: ^1.0.0
+    chalk: ^4.1.0
+    cli-cursor: 3.1.0
+    cli-spinners: 2.6.1
+    cliui: ^7.0.2
+    dotenv: ~10.0.0
+    enquirer: ~2.3.6
+    fast-glob: 3.2.7
+    figures: 3.2.0
+    flat: ^5.0.2
+    fs-extra: ^11.1.0
+    glob: 7.1.4
+    ignore: ^5.0.4
+    js-yaml: 4.1.0
+    jsonc-parser: 3.2.0
+    lines-and-columns: ~2.0.3
+    minimatch: 3.0.5
+    npm-run-path: ^4.0.1
+    open: ^8.4.0
+    semver: 7.3.4
+    string-width: ^4.2.3
+    strong-log-transformer: ^2.1.0
+    tar-stream: ~2.2.0
+    tmp: ~0.2.1
+    tsconfig-paths: ^4.1.2
+    tslib: ^2.3.0
+    v8-compile-cache: 2.3.0
+    yargs: ^17.6.2
+    yargs-parser: 21.1.1
+  peerDependencies:
+    "@swc-node/register": ^1.4.2
+    "@swc/core": ^1.2.173
+  dependenciesMeta:
+    "@nrwl/nx-darwin-arm64":
+      optional: true
+    "@nrwl/nx-darwin-x64":
+      optional: true
+    "@nrwl/nx-linux-arm-gnueabihf":
+      optional: true
+    "@nrwl/nx-linux-arm64-gnu":
+      optional: true
+    "@nrwl/nx-linux-arm64-musl":
+      optional: true
+    "@nrwl/nx-linux-x64-gnu":
+      optional: true
+    "@nrwl/nx-linux-x64-musl":
+      optional: true
+    "@nrwl/nx-win32-arm64-msvc":
+      optional: true
+    "@nrwl/nx-win32-x64-msvc":
+      optional: true
+  peerDependenciesMeta:
+    "@swc-node/register":
+      optional: true
+    "@swc/core":
+      optional: true
+  bin:
+    nx: bin/nx.js
+  checksum: 4c51f2c96c5b7e2795cb1440232282c923d1b4573742016da61ea6d43730d0a071a61d5fb1d65f8b26730f758f12a329d0f6a8e38d5cccc0b2bff974cafdb9e7
   languageName: node
   linkType: hard
 
@@ -13394,6 +13661,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path-scurry@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "path-scurry@npm:1.5.0"
+  dependencies:
+    lru-cache: ^7.14.1
+    minipass: ^4.0.2
+  checksum: d576186d8a5845edaf2344949e333ecfddf391f9dcffbfe7679006f523b6a92fb751e272c4446dfd17124ba4d63867afd3e77f6afd1bd829767111d98d5d8d94
+  languageName: node
+  linkType: hard
+
 "path-to-regexp@npm:0.1.7":
   version: 0.1.7
   resolution: "path-to-regexp@npm:0.1.7"
@@ -13667,7 +13944,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.1, prettier@npm:^2.8.3, prettier@npm:^2.8.4":
+"prettier@npm:^2.8.4":
   version: 2.8.4
   resolution: "prettier@npm:2.8.4"
   bin:
@@ -15014,7 +15291,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@npm:^1.1.16, safelinkify@npm:^1.1.17":
+"safelinkify@npm:^1.1.17":
   version: 1.1.17
   resolution: "safelinkify@npm:1.1.17"
   dependencies:
@@ -15334,9 +15611,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-utility@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "sbg-utility@npm:1.0.5"
+"sbg-utility@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "sbg-utility@npm:1.0.6"
   dependencies:
     ansi-colors: ^4.1.3
     async: ^3.2.4
@@ -15365,7 +15642,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: 0a0780a61acf58e6d287dad6022d3652faf7a01ca379c4ee7027dee0387c7e568a4cd88559f34b5a193b3e1f90a4cc80a65ee1311ea715a850028f56f0807514
+  checksum: 274f8cec3170aec40773e0cbc2dcc5eca00b1850ca2aa6690417ec20283518f884945c82368b57df0c2c4b4aea5e3b19065b688a5ef03d035c24452ff56957f1
   languageName: node
   linkType: hard
 
@@ -15627,7 +15904,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.31.0, sharp@npm:^0.31.3":
+"sharp@npm:^0.31.3":
   version: 0.31.3
   resolution: "sharp@npm:0.31.3"
   dependencies:
@@ -16697,7 +16974,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"terser@npm:^5.0.0, terser@npm:^5.15.1, terser@npm:^5.16.1, terser@npm:^5.16.5":
+"terser@npm:^5.0.0, terser@npm:^5.15.1, terser@npm:^5.16.5":
   version: 5.16.5
   resolution: "terser@npm:5.16.5"
   dependencies:
@@ -17288,7 +17565,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.23.24":
+"typedoc@npm:^0.23.26":
   version: 0.23.26
   resolution: "typedoc@npm:0.23.26"
   dependencies:
@@ -17324,7 +17601,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ua-parser-js@npm:1.0.33":
+"ua-parser-js@npm:1.0.33, ua-parser-js@npm:^1.0.33":
   version: 1.0.33
   resolution: "ua-parser-js@npm:1.0.33"
   checksum: 460adef51235267345b221842979b6b167543725d03f7c9c4f9ca6af4da835a71d016390da139d2b32828063c4730dcfae6e53b9dce815f4000be4e1fe1c7737
@@ -18059,29 +18336,29 @@ __metadata:
   dependencies:
     "@popperjs/core": ^2.11.6
     "@types/bluebird": ^3.5.38
-    "@types/jquery": ^3.5.14
+    "@types/jquery": ^3.5.16
     "@types/toastr": ^2.1.40
     aes-js: ^3.1.2
-    axios: ^1.2.1
+    axios: ^1.3.4
     bluebird: ^3.7.2
     bootstrap: ^5.2.3
-    bootstrap-icons: ^1.10.2
-    clean-css: ^5.3.1
+    bootstrap-icons: ^1.10.3
+    clean-css: ^5.3.2
     clipboard: ^2.0.11
     crypto-js: ^4.1.1
-    eslint: ^8.29.0
-    eslint-config-prettier: ^8.5.0
+    eslint: ^8.35.0
+    eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     highlight.js: ^11.7.0
     html-minifier-terser: ^7.1.0
-    jquery: ^3.6.1
+    jquery: ^3.6.3
     js-cookie: ^3.0.1
     moment: ^2.29.4
-    moment-timezone: ^0.5.39
+    moment-timezone: ^0.5.41
     npm-run-all: ^4.1.5
-    prettier: ^2.8.1
+    prettier: ^2.8.4
     requirejs: ^2.3.6
-    terser: ^5.16.1
+    terser: ^5.16.5
     toastr: ^2.1.4
   languageName: unknown
   linkType: soft
@@ -18092,12 +18369,12 @@ __metadata:
   dependencies:
     "@types/ejs": ^3.1.2
     "@types/js-yaml": ^4.0.5
-    "@types/node": ^18.14.1
-    "@typescript-eslint/eslint-plugin": ^5.53.0
-    "@typescript-eslint/parser": ^5.53.0
+    "@types/node": ^18.14.2
+    "@typescript-eslint/eslint-plugin": ^5.54.0
+    "@typescript-eslint/parser": ^5.54.0
     cheerio: ^0.22.0
     css: ^3.0.0
-    eslint: ^8.34.0
+    eslint: ^8.35.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
@@ -18134,14 +18411,14 @@ __metadata:
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
     npm-run-all: ^4.1.5
-    nx: ^15.7.2
+    nx: ^15.8.1
     prettier: ^2.8.4
     safelinkify: "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz"
     sbg-api: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz"
     sbg-cli: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz"
     sbg-server: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz"
     sbg-utility: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz"
-    sharp: ^0.31.0
+    sharp: ^0.31.3
     sitemap-crawler: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sitemap-crawler/release/sitemap-crawler.tgz"
     static-blog-generator: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz"
     ts-node: ^10.9.1
