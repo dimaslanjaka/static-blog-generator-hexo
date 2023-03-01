@@ -120,15 +120,16 @@ jobs:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
-            **/db.json
-            **/public
-            **/tmp
-            **site/source/_posts
-            **/dist/**
+            site/db.json
+            site/public
+            site/tmp
+            site/source/_posts
+            **/dist
             **/node_modules
           # ${{ steps.set-env.outputs.cache-yarn }}
-          key: cache-${{ hashFiles('**/yarn.lock') }}
+          key: cache-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/.guid') }}
           restore-keys: |
+            cache-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/.guid') }}
             cache-${{ hashFiles('**/yarn.lock') }}
             cache-
       - run: corepack enable
