@@ -53,7 +53,9 @@
     "**/tmp/**",
     "**/themes/**",
     "**/source/**",
-    "**/packages/**"
+    "**/packages/**",
+    "**/site",
+    "**/dist"
   ],
   "typeAcquisition": {
     "enable": true,
