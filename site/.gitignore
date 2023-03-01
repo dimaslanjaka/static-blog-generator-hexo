@@ -18,6 +18,7 @@ docs/
 
 
 # temp
-tmp/*
-!tmp/hexo-seo/
-tmp/hexo-seo/logs
+tmp
+#tmp/*
+#!tmp/hexo-seo/
+#tmp/hexo-seo/logs
