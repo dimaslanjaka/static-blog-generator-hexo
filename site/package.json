@@ -6,8 +6,8 @@
   "scripts": {
     "prestart": "run-s build:chimera copy",
     "start": "yarn server",
-    "build": "run-s build:*",
-    "build:chimera": "cd multisite/chimeraland && npm install && npm run build",
+    "build": "run-s build:**",
+    "build:chimera": "cd multisite/chimeraland && yarn install && yarn run build",
     "build:post": "yarn post:copy",
     "build:site": "hexo generate",
     "generate:copy": "sbg dp copy",
@@ -22,7 +22,7 @@
     "update:chimeraland": "cd multisite/chimeraland/chimeraland && yarn run update",
     "update:chimeraland2": "cd multisite/chimeraland && yarn run update",
     "update:ncu": "npm-check-updates -u",
-    "update": "run-s update:* && npm install",
+    "update": "run-s update:**",
     "postupdate": "node postinstall.js --commit --yarn"
   },
   "hexo": {
