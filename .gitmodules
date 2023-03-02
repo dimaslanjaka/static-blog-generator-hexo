@@ -36,3 +36,7 @@
 	path = site/.deploy_git
 	url = https://github.com/dimaslanjaka/dimaslanjaka.github.io.git
 	branch = master
+[submodule "packages/hexo-shortcodes/test"]
+	path = packages/hexo-shortcodes/test
+	url = https://github.com/dimaslanjaka/site.git
+	branch = hexo-seo
