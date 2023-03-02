@@ -5694,7 +5694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^2.0.0":
+"entities@npm:^2.0.0, entities@npm:^2.0.3":
   version: 2.2.0
   resolution: "entities@npm:2.2.0"
   checksum: 19010dacaf0912c895ea262b4f6128574f9ccf8d4b3b65c7e8334ad0079b3706376360e28d8843ff50a78aabcb8f08f0a32dbfacdc77e47ed77ca08b713669b3
@@ -8606,10 +8606,12 @@ __metadata:
     gulp: ^4.0.2
     hexo-filter-nofollow: ^2.0.2
     hexo-util: ^3.0.1
+    minimist: ^1.2.8
     nib: ^1.2.0
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     prettier: ^2.8.4
+    rss-parser: ^3.12.0
     sbg-utility: ^1.0.6
     typescript: ^4.9.5
   languageName: unknown
@@ -15088,6 +15090,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rss-parser@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "rss-parser@npm:3.12.0"
+  dependencies:
+    entities: ^2.0.3
+    xml2js: ^0.4.19
+  checksum: aa0f0eb2e3a5c70677a1c7cb6c2e96420f12c8963a8bed922ec2ff1bb9dbbb725fc5783be31ca8140154c3d5589ccd31580ced7d32ebd0dda7572f78ce242a41
+  languageName: node
+  linkType: hard
+
 "run-async@npm:^2.4.0":
   version: 2.4.1
   resolution: "run-async@npm:2.4.1"
@@ -18451,7 +18463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.23":
+"xml2js@npm:^0.4.19, xml2js@npm:^0.4.23":
   version: 0.4.23
   resolution: "xml2js@npm:0.4.23"
   dependencies:
