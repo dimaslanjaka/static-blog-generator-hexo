@@ -3115,7 +3115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browser-sync@npm:^2.18.13, browser-sync@npm:^2.27.7, browser-sync@npm:^2.28.1":
+"browser-sync@npm:^2.27.7, browser-sync@npm:^2.28.1":
   version: 2.28.1
   resolution: "browser-sync@npm:2.28.1"
   dependencies:
@@ -3769,7 +3769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clean-css@npm:^5.1.1, clean-css@npm:^5.1.2, clean-css@npm:^5.3.2":
+"clean-css@npm:^5.1.1, clean-css@npm:^5.3.2":
   version: 5.3.2
   resolution: "clean-css@npm:5.3.2"
   dependencies:
@@ -5342,13 +5342,6 @@ __metadata:
   dependencies:
     domelementtype: ^2.3.0
   checksum: 0f58f4a6af63e6f3a4320aa446d28b5790a009018707bce2859dcb1d21144c7876482b5188395a188dfa974238c019e0a1e610d2fc269a12b2c192ea2b0b131c
-  languageName: node
-  linkType: hard
-
-"dompurify@npm:^2.4.0":
-  version: 2.4.5
-  resolution: "dompurify@npm:2.4.5"
-  checksum: d6d3c3b320f15cdb5b26aa1902c3275a3ab2c3705a9df4420bb94691d7c4df67959ec7b91e486c308320791b0ee000456f042734c45d76721e61c2768eac706e
   languageName: node
   linkType: hard
 
@@ -8063,33 +8056,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-browsersync@https://github.com/hexojs/hexo-browsersync/tarball/master":
+"hexo-browsersync@github:hexojs/hexo-browsersync, hexo-browsersync@https://github.com/hexojs/hexo-browsersync/tarball/master":
   version: 2.0.0
   resolution: "hexo-browsersync@https://github.com/hexojs/hexo-browsersync.git#commit=3991feb273cf24fc297846df2d287b2ef9afce84"
   dependencies:
     browser-sync: ^2.27.7
     connect-injector: ^0.4.4
   checksum: 89ed005f811519e236939dee6cc735e6ca42163299589742d149266d78a32b8bb45c97a9c413e38413dd3f6ece309a9a161605d64c0fa54065796162e1b922f2
-  languageName: node
-  linkType: hard
-
-"hexo-browsersync@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "hexo-browsersync@npm:0.3.0"
-  dependencies:
-    browser-sync: ^2.18.13
-    connect-injector: ^0.4.4
-  checksum: fd1a03471e9bf99061cfde7729f3fb4cb9ddf82556e97bc0c211b8dc0004f46b14d3d2ba8e2969f674161db15ee26fec6146f4110cf4fa062b8fe677073eabd1
-  languageName: node
-  linkType: hard
-
-"hexo-clean-css@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "hexo-clean-css@npm:2.0.0"
-  dependencies:
-    clean-css: ^5.1.2
-    micromatch: ^4.0.4
-  checksum: 125539e1c71a3e3d52fc0dca8a3b7b41581c303ad124d74dd3de75c989e17c651836bd21a019320e2ba0305cdeeac043a0953e487074826498ddbe5beea82aab
   languageName: node
   linkType: hard
 
@@ -8196,6 +8169,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-generator-archive@github:hexojs/hexo-generator-archive":
+  version: 2.0.0
+  resolution: "hexo-generator-archive@https://github.com/hexojs/hexo-generator-archive.git#commit=87a47727728692af3040ee1740ce977922fe9386"
+  dependencies:
+    hexo-pagination: 3.0.0
+  checksum: dd2e4ace5aad04dd390a08b04be9eb546f3e705736f0e665317575e3a256df93d772465a6369a49c4a6ea4ad5da158108c97d6ac5b691e235f6e556774566c78
+  languageName: node
+  linkType: hard
+
 "hexo-generator-archive@npm:^2.0.0":
   version: 2.0.0
   resolution: "hexo-generator-archive@npm:2.0.0"
@@ -8205,22 +8187,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-generator-category@github:hexojs/hexo-generator-category":
+  version: 2.0.0
+  resolution: "hexo-generator-category@https://github.com/hexojs/hexo-generator-category.git#commit=70438b8dd76dfcf8d1052031f2527c2e544adecc"
+  dependencies:
+    hexo-pagination: 3.0.0
+  checksum: ef8d4e2758ee2c69a751061a34dc74342d23373299b4174a4756216257ae508f20f881d02343611ba3bdb5d47df8ea821d41c9a8c66f3925b95bafd45af13ce6
+  languageName: node
+  linkType: hard
+
 "hexo-generator-category@npm:^2.0.0":
   version: 2.0.0
   resolution: "hexo-generator-category@npm:2.0.0"
   dependencies:
     hexo-pagination: 3.0.0
   checksum: 54a0c21e7beca00e67adda08a7317547919e746af58be79144d3b2cb81df02b45fca966bcda8f4b7563ae4a6e0fbcfce6a3d82ae5205d64e2bc3b787773c6813
-  languageName: node
-  linkType: hard
-
-"hexo-generator-feed@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "hexo-generator-feed@npm:3.0.0"
-  dependencies:
-    hexo-util: ^2.1.0
-    nunjucks: ^3.0.0
-  checksum: abaa430b1b82ccb646aac731bcd6db9785b3cc4749e3ff0108ae3b0adae9a9837075511b0acecb936408656fab5915fc7bbc5bdc3fb5ab7739105c1115214f04
   languageName: node
   linkType: hard
 
@@ -8278,14 +8259,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-generator-sitemap@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "hexo-generator-sitemap@npm:3.0.1"
+"hexo-generator-tag@github:hexojs/hexo-generator-tag":
+  version: 2.0.0
+  resolution: "hexo-generator-tag@https://github.com/hexojs/hexo-generator-tag.git#commit=daf7873e17b6623b9bfe4e6f2893f29f28ca485c"
   dependencies:
-    hexo-util: ^2.1.0
-    micromatch: ^4.0.2
-    nunjucks: ^3.1.6
-  checksum: 999c808c077aa8138f5fed53446dc455d3646c14b47ea6015ea551bcfa91dad46b5c3c16dce4600dff2ccdfd85fcb1c62b77f9044bc4b620e9892c456054e8a8
+    hexo-pagination: 3.0.0
+  checksum: 332e5b85d40b6e7d5a2a3db0c1a6bceef8673c5643a2e22ddc82cb53533b450fc3dfec3811587f2e1a5e58ce976ed7eb1896d41af455b8cde08dc5b8eabae8e5
   languageName: node
   linkType: hard
 
@@ -8405,6 +8384,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-renderer-markdown-it@github:hexojs/hexo-renderer-markdown-it":
+  version: 7.0.0
+  resolution: "hexo-renderer-markdown-it@https://github.com/hexojs/hexo-renderer-markdown-it.git#commit=7fba76c7ca1fe579d58e3591a4fb9d930aa200a0"
+  dependencies:
+    hexo-util: ^3.0.1
+    markdown-it: ^13.0.1
+    markdown-it-abbr: ^1.0.4
+    markdown-it-attrs: ^4.1.3
+    markdown-it-cjk-breaks: ^1.1.2
+    markdown-it-container: ^3.0.0
+    markdown-it-deflist: ^2.0.3
+    markdown-it-emoji: ^2.0.0
+    markdown-it-footnote: ^3.0.1
+    markdown-it-ins: ^3.0.0
+    markdown-it-mark: ^3.0.0
+    markdown-it-sub: ^1.0.0
+    markdown-it-sup: ^1.0.0
+  checksum: 8c123ffd6a4d43baebdc3a71dc4ab578f4cf2ed10ebb6931142bafc6580054d4c0946ea54150d2695e6e0b1e340b65a796de0eadd2f845f04382afe5c9c5b4a7
+  languageName: node
+  linkType: hard
+
 "hexo-renderer-markdown-it@npm:^7.0.0":
   version: 7.0.0
   resolution: "hexo-renderer-markdown-it@npm:7.0.0"
@@ -8423,18 +8423,6 @@ __metadata:
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
   checksum: b6ad54038c53bac9c3bc7c9b32efe2f6344be89296301706f66217a22c314173f86ffb112807b388a40d16a2fcf368b9768cc7c44592c4a4cf29b3b2149b624d
-  languageName: node
-  linkType: hard
-
-"hexo-renderer-marked@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "hexo-renderer-marked@npm:6.0.0"
-  dependencies:
-    dompurify: ^2.4.0
-    hexo-util: ^2.7.0
-    jsdom: ^20.0.1
-    marked: ^4.1.1
-  checksum: e62eb397a8b9337934292faed57c872fd94c7207182e91f4422f07931af14f550334535d01aa657b52bbf3b8bfc9fe68ae8ff858a94498862b2f7ef97c705c4f
   languageName: node
   linkType: hard
 
@@ -8569,21 +8557,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hexo-shortcodes-test@workspace:packages/hexo-shortcodes/test"
   dependencies:
-    cheerio: ^0.22.0
+    chalk: ^4.1.2
+    cross-env: ^7.0.3
+    cross-spawn: ^7.0.3
     hexo: ^6.3.0
-    hexo-browsersync: ^0.3.0
-    hexo-clean-css: ^2.0.0
-    hexo-filter-nofollow: ^2.0.2
-    hexo-fs: ^4.0.0
-    hexo-generator-archive: ^2.0.0
-    hexo-generator-feed: ^3.0.0
-    hexo-generator-sitemap: ^3.0.1
-    hexo-renderer-marked: ^6.0.0
+    hexo-browsersync: "github:hexojs/hexo-browsersync"
+    hexo-generator-archive: "github:hexojs/hexo-generator-archive"
+    hexo-generator-category: "github:hexojs/hexo-generator-category"
+    hexo-generator-tag: "github:hexojs/hexo-generator-tag"
+    hexo-renderer-markdown-it: "github:hexojs/hexo-renderer-markdown-it"
     hexo-renderers: "workspace:^"
     hexo-server: ^3.0.0
     hexo-shortcodes: "workspace:^"
-    lunr: 2.3.9
-    sharp: ^0.31.0
+    js-yaml: ^4.1.0
+    moment: ^2.29.4
+    prompt: ^1.3.0
+    yaml: ^2.1.3
   languageName: unknown
   linkType: soft
 
@@ -8617,7 +8606,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"hexo-util@npm:^2.0.0, hexo-util@npm:^2.1.0, hexo-util@npm:^2.7.0":
+"hexo-util@npm:^2.0.0, hexo-util@npm:^2.7.0":
   version: 2.7.0
   resolution: "hexo-util@npm:2.7.0"
   dependencies:
@@ -10027,45 +10016,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^20.0.1":
-  version: 20.0.3
-  resolution: "jsdom@npm:20.0.3"
-  dependencies:
-    abab: ^2.0.6
-    acorn: ^8.8.1
-    acorn-globals: ^7.0.0
-    cssom: ^0.5.0
-    cssstyle: ^2.3.0
-    data-urls: ^3.0.2
-    decimal.js: ^10.4.2
-    domexception: ^4.0.0
-    escodegen: ^2.0.0
-    form-data: ^4.0.0
-    html-encoding-sniffer: ^3.0.0
-    http-proxy-agent: ^5.0.0
-    https-proxy-agent: ^5.0.1
-    is-potential-custom-element-name: ^1.0.1
-    nwsapi: ^2.2.2
-    parse5: ^7.1.1
-    saxes: ^6.0.0
-    symbol-tree: ^3.2.4
-    tough-cookie: ^4.1.2
-    w3c-xmlserializer: ^4.0.0
-    webidl-conversions: ^7.0.0
-    whatwg-encoding: ^2.0.0
-    whatwg-mimetype: ^3.0.0
-    whatwg-url: ^11.0.0
-    ws: ^8.11.0
-    xml-name-validator: ^4.0.0
-  peerDependencies:
-    canvas: ^2.5.0
-  peerDependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 6e2ae21db397133a061b270c26d2dbc0b9051733ea3b896a7ece78d79f475ff0974f766a413c1198a79c793159119169f2335ddb23150348fbfdcfa6f3105536
-  languageName: node
-  linkType: hard
-
 "jsdom@npm:^21.1.0":
   version: 21.1.0
   resolution: "jsdom@npm:21.1.0"
@@ -11166,7 +11116,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:^4.1.1, marked@npm:^4.2.12":
+"marked@npm:^4.2.12":
   version: 4.2.12
   resolution: "marked@npm:4.2.12"
   bin:
@@ -12635,7 +12585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:^3.0.0, nunjucks@npm:^3.1.6, nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
+"nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
   version: 3.2.3
   resolution: "nunjucks@npm:3.2.3"
   dependencies:
@@ -15775,7 +15725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.31.0, sharp@npm:^0.31.3":
+"sharp@npm:^0.31.3":
   version: 0.31.3
   resolution: "sharp@npm:0.31.3"
   dependencies:
@@ -18558,7 +18508,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.2.1":
+"yaml@npm:^2.1.3, yaml@npm:^2.2.1":
   version: 2.2.1
   resolution: "yaml@npm:2.2.1"
   checksum: 84f68cbe462d5da4e7ded4a8bded949ffa912bc264472e5a684c3d45b22d8f73a3019963a32164023bdf3d83cfb6f5b58ff7b2b10ef5b717c630f40bd6369a23

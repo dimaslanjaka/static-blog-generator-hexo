@@ -39,4 +39,4 @@
 [submodule "packages/hexo-shortcodes/test"]
 	path = packages/hexo-shortcodes/test
 	url = https://github.com/dimaslanjaka/site.git
-	branch = hexo-seo
+	branch = hexo-shortcodes
