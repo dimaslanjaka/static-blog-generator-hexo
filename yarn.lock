@@ -3115,7 +3115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browser-sync@npm:^2.27.7, browser-sync@npm:^2.28.1":
+"browser-sync@npm:^2.18.13, browser-sync@npm:^2.27.7, browser-sync@npm:^2.28.1":
   version: 2.28.1
   resolution: "browser-sync@npm:2.28.1"
   dependencies:
@@ -8073,6 +8073,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-browsersync@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "hexo-browsersync@npm:0.3.0"
+  dependencies:
+    browser-sync: ^2.18.13
+    connect-injector: ^0.4.4
+  checksum: fd1a03471e9bf99061cfde7729f3fb4cb9ddf82556e97bc0c211b8dc0004f46b14d3d2ba8e2969f674161db15ee26fec6146f4110cf4fa062b8fe677073eabd1
+  languageName: node
+  linkType: hard
+
 "hexo-clean-css@npm:^2.0.0":
   version: 2.0.0
   resolution: "hexo-clean-css@npm:2.0.0"
@@ -8561,6 +8571,7 @@ __metadata:
   dependencies:
     cheerio: ^0.22.0
     hexo: ^6.3.0
+    hexo-browsersync: ^0.3.0
     hexo-clean-css: ^2.0.0
     hexo-filter-nofollow: ^2.0.2
     hexo-fs: ^4.0.0
@@ -8583,7 +8594,6 @@ __metadata:
   dependencies:
     "@types/fs-extra": ^11.0.1
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
-    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
     "@types/node": ^18.14.2
     "@types/nunjucks": ^3.2.2
     ansi-colors: ^4.1.3
