@@ -5,9 +5,6 @@ on:
     branches: [ "master", "main" ]
     paths:
       - '**/.guid'
-      - '**/_config.yml'
-  pull_request:
-    paths:
       - '**/package-lock.json'
       - '**/yarn.lock'
       - '**/_config.yml'
