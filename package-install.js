@@ -1,5 +1,4 @@
-const path = require('upath');
-const minimist = require('minimist');
+const path = require('path');
 const fs = require('fs');
 const ws_dev = {
   dependencies: {
@@ -42,9 +41,9 @@ const ws_prod = {
 
 const rootpkg = path.resolve(__dirname, 'package.json');
 const webpkg = path.resolve(__dirname, 'site/package.json');
-const argv = minimist(process.argv.slice(2));
+const argv = process.argv.slice(2)
 
-replace_pkg(argv.dev ? 'dev' : 'prod');
+replace_pkg(argv.includes('--dev') ? 'dev' : 'prod');
 
 function replace_pkg(mode) {
   const wspkg = read_pkg(rootpkg);
