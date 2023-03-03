@@ -124,6 +124,7 @@ jobs:
             site/public
             site/tmp
             site/source/_posts
+            site/.deploy_git
             **/dist
             **/node_modules
             **/.yarn
