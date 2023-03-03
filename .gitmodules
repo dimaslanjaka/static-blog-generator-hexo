@@ -32,10 +32,6 @@
 [submodule "packages/hexo-seo"]
 	path = packages/hexo-seo
 	url = https://github.com/dimaslanjaka/hexo-seo
-[submodule "site/.deploy_git"]
-	path = site/.deploy_git
-	url = https://github.com/dimaslanjaka/dimaslanjaka.github.io.git
-	branch = master
 [submodule "packages/hexo-shortcodes/test"]
 	path = packages/hexo-shortcodes/test
 	url = https://github.com/dimaslanjaka/site.git
