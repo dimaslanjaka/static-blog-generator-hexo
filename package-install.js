@@ -43,28 +43,19 @@ const ws_prod = {
 const rootpkg = path.resolve(__dirname, 'package.json');
 const webpkg = path.resolve(__dirname, 'site/package.json');
 
-install_dev();
+replace_pkg('prod');
 
-function install_dev() {
+function replace_pkg(mode) {
   const wspkg = read_pkg(rootpkg);
-  wspkg.workspaces = ws_dev.workspaces;
+  let ws = mode == 'prod' ? ws_prod : ws_dev;
+  wspkg.workspaces = ws.workspaces;
   fs.writeFileSync(rootpkg, JSON.stringify(wspkg, null, 2));
   const sitepkg = read_pkg(webpkg);
-  for (const pkgname in ws_dev.dependencies) {
-    const version = ws_dev.dependencies[pkgname];
+  for (const pkgname in ws.dependencies) {
+    const version = ws.dependencies[pkgname];
     sitepkg.dependencies[pkgname] = version;
   }
   fs.writeFileSync(webpkg, JSON.stringify(sitepkg, null, 2));
-}
-
-function install_prod() {
-  const wspkg = read_pkg(rootpkg);
-  delete wspkg.workspaces;
-  fs.writeFileSync(rootpkg, JSON.stringify(wspkg, null, 2));
-  const sitepkg = read_pkg(webpkg);
-  for (const pkgname in ws_prod.dependencies) {
-    const version = ws_prod.dependencies[pkgname];
-  }
 }
 
 function read_pkg(f) {
