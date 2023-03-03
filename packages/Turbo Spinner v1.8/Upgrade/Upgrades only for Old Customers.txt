@@ -1,2 +1,0 @@
-Upgrades only for old customers, those who already installed the script on their server!
-For fresh installation use "Upload" directory files. (It already up to date & latest version files)
