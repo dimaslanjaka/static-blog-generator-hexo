@@ -25,25 +25,13 @@
     "url": "https://github.com/dimaslanjaka/static-blog-generator-hexo/issues"
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator-hexo#readme",
-  "workspaces": {
-    "packages": [
-      "packages/agc",
-      "packages/hexo-shortcodes",
-      "packages/hexo-shortcodes/test",
-      "packages/hexo-generator-redirect",
-      "packages/hexo-seo",
-      "packages/hexo-renderers",
-      "packages/nodejs-packages-types",
-      "packages/nodejs-packages-types/hexo",
-      "packages/nodejs-packages-types/through2",
-      "site",
-      "site/multisite/chimeraland",
-      "site/src-posts"
-    ]
-  },
   "packageManager": "yarn@3.4.1",
   "devDependencies": {
+    "eslint": "^8.35.0",
     "lerna": "^6.5.1",
-    "nx": "^15.7.2"
+    "minimist": "^1.2.8",
+    "nx": "^15.7.2",
+    "prettier": "^2.8.4",
+    "upath": "^2.0.1"
   }
 }
