@@ -47,3 +47,47 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
       - run: sh ./bin/submodule-install
         shell: bash
+      - name: Checkout .deploy_git
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/dimaslanjaka.github.io
+          ref: master
+          path: site/.deploy_git
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: Checkout site/.deploy_git/chimeraland
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/chimeraland
+          ref: gh-pages
+          path: site/.deploy_git/chimeraland
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: Checkout site/.deploy_git/page
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/page
+          ref: gh-pages
+          path: site/.deploy_git/page
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: Checkout .deploy_git/docs
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/docs
+          ref: master
+          path: .deploy_git/docs
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          architecture: x64
+          cache: 'yarn'
+          check-latest: true
+      - name: Set env
+        id: set-env
+        shell: bash
+        run: |
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+          echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_ENV
+      - run: node package-install.js --prod
+      - run: yarn install

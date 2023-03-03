@@ -42,8 +42,9 @@ const ws_prod = {
 
 const rootpkg = path.resolve(__dirname, 'package.json');
 const webpkg = path.resolve(__dirname, 'site/package.json');
+const argv = minimist(process.argv.slice(2));
 
-replace_pkg('prod');
+replace_pkg(argv.dev ? 'dev' : 'prod');
 
 function replace_pkg(mode) {
   const wspkg = read_pkg(rootpkg);
