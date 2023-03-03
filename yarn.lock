@@ -8169,30 +8169,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-generator-archive@github:hexojs/hexo-generator-archive":
-  version: 2.0.0
-  resolution: "hexo-generator-archive@https://github.com/hexojs/hexo-generator-archive.git#commit=87a47727728692af3040ee1740ce977922fe9386"
-  dependencies:
-    hexo-pagination: 3.0.0
-  checksum: dd2e4ace5aad04dd390a08b04be9eb546f3e705736f0e665317575e3a256df93d772465a6369a49c4a6ea4ad5da158108c97d6ac5b691e235f6e556774566c78
-  languageName: node
-  linkType: hard
-
 "hexo-generator-archive@npm:^2.0.0":
   version: 2.0.0
   resolution: "hexo-generator-archive@npm:2.0.0"
   dependencies:
     hexo-pagination: 3.0.0
   checksum: dd2e4ace5aad04dd390a08b04be9eb546f3e705736f0e665317575e3a256df93d772465a6369a49c4a6ea4ad5da158108c97d6ac5b691e235f6e556774566c78
-  languageName: node
-  linkType: hard
-
-"hexo-generator-category@github:hexojs/hexo-generator-category":
-  version: 2.0.0
-  resolution: "hexo-generator-category@https://github.com/hexojs/hexo-generator-category.git#commit=70438b8dd76dfcf8d1052031f2527c2e544adecc"
-  dependencies:
-    hexo-pagination: 3.0.0
-  checksum: ef8d4e2758ee2c69a751061a34dc74342d23373299b4174a4756216257ae508f20f881d02343611ba3bdb5d47df8ea821d41c9a8c66f3925b95bafd45af13ce6
   languageName: node
   linkType: hard
 
@@ -8256,15 +8238,6 @@ __metadata:
   dependencies:
     nunjucks: ^3.2.2
   checksum: d5c821f02f6124165a6e6a87eb5e43f3d511def5e8479023582878842d0f66f4bbb493647c5254c6337b8472b4841eb54b94297cea691f49728c6bb2e3464630
-  languageName: node
-  linkType: hard
-
-"hexo-generator-tag@github:hexojs/hexo-generator-tag":
-  version: 2.0.0
-  resolution: "hexo-generator-tag@https://github.com/hexojs/hexo-generator-tag.git#commit=daf7873e17b6623b9bfe4e6f2893f29f28ca485c"
-  dependencies:
-    hexo-pagination: 3.0.0
-  checksum: 332e5b85d40b6e7d5a2a3db0c1a6bceef8673c5643a2e22ddc82cb53533b450fc3dfec3811587f2e1a5e58ce976ed7eb1896d41af455b8cde08dc5b8eabae8e5
   languageName: node
   linkType: hard
 
@@ -8562,9 +8535,6 @@ __metadata:
     cross-spawn: ^7.0.3
     hexo: ^6.3.0
     hexo-browsersync: "github:hexojs/hexo-browsersync"
-    hexo-generator-archive: "github:hexojs/hexo-generator-archive"
-    hexo-generator-category: "github:hexojs/hexo-generator-category"
-    hexo-generator-tag: "github:hexojs/hexo-generator-tag"
     hexo-renderer-markdown-it: "github:hexojs/hexo-renderer-markdown-it"
     hexo-renderers: "workspace:^"
     hexo-server: ^3.0.0
@@ -8596,7 +8566,6 @@ __metadata:
     hexo-filter-nofollow: ^2.0.2
     hexo-util: ^3.0.1
     minimist: ^1.2.8
-    nib: ^1.2.0
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     prettier: ^2.8.4
@@ -11800,15 +11769,6 @@ __metadata:
   version: 1.1.0
   resolution: "next-tick@npm:1.1.0"
   checksum: 83b5cf36027a53ee6d8b7f9c0782f2ba87f4858d977342bfc3c20c21629290a2111f8374d13a81221179603ffc4364f38374b5655d17b6a8f8a8c77bdea4fe8b
-  languageName: node
-  linkType: hard
-
-"nib@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "nib@npm:1.2.0"
-  peerDependencies:
-    stylus: "*"
-  checksum: c45c185ae2d8c92727d0e34bea8050a5fc17dc767a8259784c01708aa00ed82263c1c6f346cff699529ad20577341160c725f55571b34ed91f083a3b50484869
   languageName: node
   linkType: hard
 
