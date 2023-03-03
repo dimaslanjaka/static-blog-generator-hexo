@@ -14,6 +14,7 @@ docs/
 **/.yarn/unplugged/**
 **/.yarn/*.gz
 .pnp.*
+.deploy_git
 
 
 # temp
