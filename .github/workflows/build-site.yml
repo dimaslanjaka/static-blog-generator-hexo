@@ -75,6 +75,27 @@ jobs:
           ref: master
           path: .deploy_git/docs
           token: '${{ secrets.ACCESS_TOKEN }}'
+      - uses: actions/cache@v3
+        id: cache
+        name: init cache
+        with:
+          path: |
+            site/db.json
+            site/public
+            site/tmp
+            site/source/_posts
+            site/.deploy_git/**/*.html
+            site/.deploy_git/**/*.js
+            site/.deploy_git/**/*.css
+            **/dist
+            **/node_modules
+            **/.yarn
+          # ${{ steps.set-env.outputs.cache-yarn }}
+          key: cache-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/.guid') }}
+          restore-keys: |
+            cache-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/.guid') }}
+            cache-${{ hashFiles('**/yarn.lock') }}
+            cache-
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -123,3 +144,17 @@ jobs:
         run: npm install --omit=dev --production
         continue-on-error: true
         working-directory: site/.deploy_git
+      - name: commit site/.deploy_git
+        shell: bash
+        id: push-manual
+        continue-on-error: true
+        working-directory: site/.deploy_git
+        run: |
+          git config --global user.name 'dimaslanjaka'
+          git config --global user.email 'dimaslanjaka@gmail.com'
+          git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
+          git submodule foreach "git add -A | :"
+          git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
+          git submodule foreach "git push | :"
+          git add .
+          git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
