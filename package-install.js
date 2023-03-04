@@ -3,7 +3,7 @@ const fs = require('fs');
 const ws_dev = {
   dependencies: {
     'hexo-renderers': 'workspace:^',
-    'hexo-seo': 'workspace:^',
+    'hexo-seo': path.resolve(__dirname, '../hexo-seo'),
     'hexo-shortcodes': 'workspace:^',
     'hexo-generator-redirect': 'workspace:^'
   },
@@ -11,11 +11,10 @@ const ws_dev = {
     'packages/hexo-shortcodes',
     'packages/hexo-shortcodes/test',
     'packages/hexo-generator-redirect',
-    path.resolve(__dirname, '../hexo-seo'),
     'packages/hexo-renderers',
-    path.resolve(__dirname, '../nodejs-packages-types'),
-    path.resolve(__dirname, '../nodejs-packages-types/hexo'),
-    path.resolve(__dirname, '../nodejs-packages-types/through2'),
+    //path.resolve(__dirname, '../nodejs-packages-types'),
+    //path.resolve(__dirname, '../nodejs-packages-types/hexo'),
+    //path.resolve(__dirname, '../nodejs-packages-types/through2'),
     'site',
     'site/multisite/chimeraland',
     'site/src-posts'
@@ -28,20 +27,12 @@ const ws_prod = {
     'hexo-generator-redirect': path.resolve(__dirname, './packages/hexo-generator-redirect'),
     'hexo-seo': 'https://github.com/dimaslanjaka/hexo-seo/tarball/master'
   },
-  workspaces: [
-    'packages/hexo-shortcodes',
-    'packages/hexo-shortcodes/test',
-    'packages/hexo-generator-redirect',
-    'packages/hexo-renderers',
-    'site',
-    'site/multisite/chimeraland',
-    'site/src-posts'
-  ]
+  workspaces: ['site', 'site/multisite/chimeraland', 'site/src-posts']
 };
 
 const rootpkg = path.resolve(__dirname, 'package.json');
 const webpkg = path.resolve(__dirname, 'site/package.json');
-const argv = process.argv.slice(2)
+const argv = process.argv.slice(2);
 
 replace_pkg(argv.includes('--dev') ? 'dev' : 'prod');
 
