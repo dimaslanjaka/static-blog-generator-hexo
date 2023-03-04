@@ -158,3 +158,7 @@ jobs:
           git submodule foreach "git push | :"
           git add .
           git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+      - run: git push origin master --recurse-submodules=on-demand
+        working-directory: site/.deploy_git
+        name: push .deploy_git
+        shell: bash
