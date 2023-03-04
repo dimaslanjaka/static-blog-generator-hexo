@@ -6814,7 +6814,7 @@ __metadata:
 
 "hexo-generator-redirect@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::locator=wmi%40workspace%3Asite":
   version: 1.4.4
-  resolution: "hexo-generator-redirect@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::hash=23456d&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-generator-redirect@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::hash=a76f4c&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
@@ -6822,7 +6822,7 @@ __metadata:
     upath: ^2.0.1
   peerDependencies:
     hexo: ">= 4.2.0"
-  checksum: 775cd0133934892a309ec814388860d57746fb58f0a464236a25a89dd311d63bea50b192e479b3965670a10e2ab904003e2610d190d88da0d6ec6f88a097b3c7
+  checksum: 16d5c1e783a4370170d088dcbb02a8f40252ccbacd4cb87752d21b1d3414e0b04fd437978de8d242cd9fb550ec444bf7a52666f5100dd49e3b0384eca49df341
   languageName: node
   linkType: hard
 
@@ -6974,7 +6974,7 @@ __metadata:
 
 "hexo-renderers@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers::locator=wmi%40workspace%3Asite":
   version: 1.0.2
-  resolution: "hexo-renderers@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers::hash=8638d6&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-renderers@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers::hash=6a8524&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.8
@@ -6986,7 +6986,7 @@ __metadata:
     sbg-utility: ^1.0.6
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: 50e32fcc80b1bba65654aeb8bd42fdc56142fd085b2fab71348a64d799ad8f6d9b15143a1924e1d7b2a855fec075d404f0b316a09a941169ebe75e77bec1932c
+  checksum: 3b23ca52c3a2bbe12576eff88d69e3f5df581c39709befe9c5a94703d907405a057ed208cce8a7faf39cbf1ee0d84db27ee5abbf73752e614f308641283615be
   languageName: node
   linkType: hard
 
@@ -7060,7 +7060,7 @@ __metadata:
 
 "hexo-shortcodes@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes::locator=wmi%40workspace%3Asite":
   version: 1.0.1
-  resolution: "hexo-shortcodes@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes::hash=297ef9&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-shortcodes@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes::hash=a7302a&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     axios: ^1.3.4
@@ -7071,7 +7071,7 @@ __metadata:
     nunjucks: ^3.2.3
     rss-parser: ^3.12.0
     sbg-utility: ^1.0.6
-  checksum: 43b32b82ed6a84bcf22575ce5055ad493e98072fb314a9ab0835b664f8f34206ff4cc766d1a13030873a0e9a20dec852c08f50ae972030663de1ed63f6dbdb75
+  checksum: 572a4e900709df77d84da8cbc82903a4a65bde7d6f4995eb470f692126b4820579449fd5ce48af4941b96f232e626b2d7a4f08ce4bb2f6c0f13d8fb86823d547
   languageName: node
   linkType: hard
 
@@ -9871,6 +9871,15 @@ __metadata:
   version: 1.1.0
   resolution: "next-tick@npm:1.1.0"
   checksum: 83b5cf36027a53ee6d8b7f9c0782f2ba87f4858d977342bfc3c20c21629290a2111f8374d13a81221179603ffc4364f38374b5655d17b6a8f8a8c77bdea4fe8b
+  languageName: node
+  linkType: hard
+
+"nib@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "nib@npm:1.2.0"
+  peerDependencies:
+    stylus: "*"
+  checksum: c45c185ae2d8c92727d0e34bea8050a5fc17dc767a8259784c01708aa00ed82263c1c6f346cff699529ad20577341160c725f55571b34ed91f083a3b50484869
   languageName: node
   linkType: hard
 
@@ -15290,6 +15299,7 @@ __metadata:
     markdown-it-abbr: ^1.0.4
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
+    nib: ^1.2.0
     npm-run-all: ^4.1.5
     nx: ^15.8.1
     prettier: ^2.8.4
