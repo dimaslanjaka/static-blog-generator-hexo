@@ -175,7 +175,7 @@ jobs:
         run: npm install --omit=dev --production
         continue-on-error: true
         working-directory: site/.deploy_git
-      - name: commit .deploy_git
+      - name: commit site/.deploy_git
         shell: bash
         id: push-manual
         continue-on-error: true
