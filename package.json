@@ -35,10 +35,6 @@
     "upath": "^2.0.1"
   },
   "workspaces": [
-    "packages/hexo-shortcodes",
-    "packages/hexo-shortcodes/test",
-    "packages/hexo-generator-redirect",
-    "packages/hexo-renderers",
     "site",
     "site/multisite/chimeraland",
     "site/src-posts"
