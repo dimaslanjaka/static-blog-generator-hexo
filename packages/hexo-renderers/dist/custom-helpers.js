@@ -17,6 +17,7 @@ var lodash_toarray_1 = __importDefault(require("lodash.toarray"));
 var yaml_1 = __importDefault(require("yaml"));
 var fs_1 = __importDefault(require("fs"));
 var path_1 = __importDefault(require("path"));
+var partial_1 = require("./helper/partial");
 var config = yaml_1.default.parse(fs_1.default.readFileSync(path_1.default.join(process.cwd(), '_config.yml')).toString());
 var THEME_LOCATION = path_1.default.join(process.cwd(), 'themes', config.theme || 'landscape');
 var _THEME_SCRIPTS = path_1.default.join(THEME_LOCATION, 'scripts');
@@ -141,4 +142,5 @@ function registerCustomHelper(hexo) {
         return [];
     });
 }
+hexo.extend.helper.register('partialWithLayout', partial_1.partialWithLayout);
 module.exports = { toArray: toArray, isObject: isObject, registerCustomHelper: registerCustomHelper };
