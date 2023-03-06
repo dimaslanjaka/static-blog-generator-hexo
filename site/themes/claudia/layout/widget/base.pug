@@ -1,4 +1,4 @@
-- var pageTitle = page.title || theme.user && theme.user.name + "'s blog"
+- var pageTitle = page.title || config.title || theme.user && theme.user.name + "'s blog"
 - if (is_archive()) pageTitle = 'Archives'
 - if (is_tag()) pageTitle = 'Tag: ' + page.tag
 - if (is_category()) pageTitle = 'Category: ' + page.category
