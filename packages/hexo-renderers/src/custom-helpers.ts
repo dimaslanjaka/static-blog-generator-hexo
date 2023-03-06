@@ -3,6 +3,7 @@ import _toArray from 'lodash.toarray';
 import yaml from 'yaml';
 import fs from 'fs';
 import path from 'path';
+import { partialWithLayout } from './helper/partial';
 
 const config: import('hexo').Config = yaml.parse(fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString());
 const THEME_LOCATION = path.join(process.cwd(), 'themes', config.theme || 'landscape');
@@ -137,5 +138,7 @@ function registerCustomHelper(hexo: import('hexo')) {
     }
   );
 }
+
+hexo.extend.helper.register('partialWithLayout', partialWithLayout);
 
 module.exports = { toArray, isObject, registerCustomHelper };
