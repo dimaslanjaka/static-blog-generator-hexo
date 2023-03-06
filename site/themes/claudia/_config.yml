@@ -63,7 +63,7 @@ friend_links:
 #    link: https://twitter.com/
 
 # Google Analytics
-ga_track_id:
+ga_track_id: UA-106238155-1
 ga_domain:
 
 # Baidu Analytics
