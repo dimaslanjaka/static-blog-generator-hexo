@@ -13,7 +13,12 @@ var jsdom_1 = __importDefault(require("jsdom"));
  * @param as alias name
  */
 function validateFile(file, as, options) {
-    options = Object.assign({ size: true, body: true }, options);
+    if (!options || Object.keys(options).length === 0) {
+        options = { size: true, body: true, verbose: false };
+    }
+    if (options.verbose) {
+        console.log(ansi_colors_1.default.yellowBright('check'), file, options);
+    }
     if (options.size && fs_1.default.statSync(file).size === 0) {
         console.error("".concat(ansi_colors_1.default.redBright('file is empty'), " ").concat(as || file));
         exit();

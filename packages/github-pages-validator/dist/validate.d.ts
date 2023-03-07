@@ -1,4 +1,5 @@
 export interface validateFileOpt {
+    [key: string]: any;
     /**
      * validate file size
      */
@@ -7,6 +8,10 @@ export interface validateFileOpt {
      * validate html body is not empty
      */
     body: boolean;
+    /**
+     * verbose checking
+     */
+    verbose: boolean;
 }
 /**
  * validate file

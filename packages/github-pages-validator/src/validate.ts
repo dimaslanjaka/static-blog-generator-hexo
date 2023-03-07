@@ -3,6 +3,7 @@ import fs from 'fs';
 import jsdom from 'jsdom';
 
 export interface validateFileOpt {
+  [key: string]: any;
   /**
    * validate file size
    */
@@ -11,6 +12,10 @@ export interface validateFileOpt {
    * validate html body is not empty
    */
   body: boolean;
+  /**
+   * verbose checking
+   */
+  verbose: boolean;
 }
 
 /**
@@ -19,7 +24,13 @@ export interface validateFileOpt {
  * @param as alias name
  */
 export function validateFile(file: string, as: string, options?: validateFileOpt) {
-  options = Object.assign({ size: true, body: true }, options);
+  if (!options || Object.keys(options).length === 0) {
+    options = { size: true, body: true, verbose: false };
+  }
+
+  if (options.verbose) {
+    console.log(ansiColors.yellowBright('check'), file, options);
+  }
 
   if (options.size && fs.statSync(file).size === 0) {
     console.error(`${ansiColors.redBright('file is empty')} ${as || file}`);
