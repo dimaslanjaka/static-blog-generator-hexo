@@ -6895,9 +6895,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-generator-redirect@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::locator=wmi%40workspace%3Asite":
+"hexo-generator-redirect@file:D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-generator-redirect::locator=wmi%40workspace%3Asite":
   version: 1.4.4
-  resolution: "hexo-generator-redirect@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::hash=a76f4c&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-generator-redirect@file:/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect#/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::hash=c152f8&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
@@ -6905,7 +6905,7 @@ __metadata:
     upath: ^2.0.1
   peerDependencies:
     hexo: ">= 4.2.0"
-  checksum: 16d5c1e783a4370170d088dcbb02a8f40252ccbacd4cb87752d21b1d3414e0b04fd437978de8d242cd9fb550ec444bf7a52666f5100dd49e3b0384eca49df341
+  checksum: 56ba5b9027c32638d9241297f839a01d40b187550ad11dd37bcc5cb8634d9a1eb24267acf9e7b553a08c01cecb4ee19afd948d34ac192461004a669cf4760d8c
   languageName: node
   linkType: hard
 
@@ -7055,9 +7055,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-renderers@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers::locator=wmi%40workspace%3Asite":
-  version: 1.0.2
-  resolution: "hexo-renderers@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers::hash=29411f&locator=wmi%40workspace%3Asite"
+"hexo-renderers@file:D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-renderers::locator=wmi%40workspace%3Asite":
+  version: 1.0.3
+  resolution: "hexo-renderers@file:/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-renderers#/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-renderers::hash=1cfca5&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.8
@@ -7069,7 +7069,7 @@ __metadata:
     sbg-utility: ^1.0.6
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: b5da0877e38b241c7b49ddb28614615cace23afa0b0c1a0724046d4a6aaa58257ae48cf4e138c464e73a132e8d9ecb8a5eb663fbb021c1ae61e2e7283c3bbc46
+  checksum: 44d822ea5d4a72d7f2cd795c4989424aae4da2ddabd507ea2fc593ba67ab3f29d3c4c54cbd301ad7a6d7ef93d44c0067413522025f056a3b82c6578c005f0918
   languageName: node
   linkType: hard
 
@@ -7141,9 +7141,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-shortcodes@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes::locator=wmi%40workspace%3Asite":
+"hexo-shortcodes@file:D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-shortcodes::locator=wmi%40workspace%3Asite":
   version: 1.0.1
-  resolution: "hexo-shortcodes@file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes#/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes::hash=8d2417&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-shortcodes@file:/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes#/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes::hash=cbafe6&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     axios: ^1.3.4
@@ -7154,7 +7154,7 @@ __metadata:
     nunjucks: ^3.2.3
     rss-parser: ^3.12.0
     sbg-utility: ^1.0.6
-  checksum: b97cb8fe1a0fc449a28e6f21e415ff7dbb29f5019ee151dc81d21a239e01db6c399a817ed61debb9717e0393d296b8624e2dbe621b5760ce8b703254049df339
+  checksum: 735fb0650ecf6c22b935e504af8e89cacc1d3b1f511aca05f1fe4a8b06c44412b72831b289da89528fee935c0c3d81534b31339f893648c4ef0b4283e7c61d42
   languageName: node
   linkType: hard
 
@@ -15413,17 +15413,17 @@ __metadata:
     hexo-generator-category: ^2.0.0
     hexo-generator-index: ^3.0.0
     hexo-generator-json-content: ^4.2.3
-    hexo-generator-redirect: /media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect
+    hexo-generator-redirect: "D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-generator-redirect"
     hexo-generator-searchdb: ^1.4.1
     hexo-generator-tag: ^2.0.0
     hexo-i18n: ^2.0.0
     hexo-pagination: ^3.0.0
     hexo-pdf: ^1.1.1
     hexo-renderer-markdown-it: ^7.0.0
-    hexo-renderers: /media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-renderers
+    hexo-renderers: "D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-renderers"
     hexo-seo: "https://github.com/dimaslanjaka/hexo-seo/tarball/master"
     hexo-server: ^3.0.0
-    hexo-shortcodes: /media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/hexo-shortcodes
+    hexo-shortcodes: "D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-shortcodes"
     hexo-util: ^3.0.1
     instant-indexing: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
     js-yaml: ^4.1.0
