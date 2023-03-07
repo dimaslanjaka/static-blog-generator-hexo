@@ -12,11 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var url_1 = require("url");
-var lodash_toarray_1 = __importDefault(require("lodash.toarray"));
-var yaml_1 = __importDefault(require("yaml"));
 var fs_1 = __importDefault(require("fs"));
+var lodash_toarray_1 = __importDefault(require("lodash.toarray"));
 var path_1 = __importDefault(require("path"));
+var url_1 = require("url");
+var yaml_1 = __importDefault(require("yaml"));
 var partial_1 = require("./helper/partial");
 var config = yaml_1.default.parse(fs_1.default.readFileSync(path_1.default.join(process.cwd(), '_config.yml')).toString());
 var THEME_LOCATION = path_1.default.join(process.cwd(), 'themes', config.theme || 'landscape');
@@ -92,16 +92,25 @@ function registerCustomHelper(hexo) {
         return page.posts;
     });
     hexo.extend.helper.register('getAuthor', function (author, fallback) {
-        if (typeof author === 'string')
-            return author;
+        var getTheAuthor = function (authorObj) {
+            if (typeof authorObj === 'string')
+                return authorObj;
+            if (typeof authorObj.name === 'string')
+                return authorObj.name;
+            if (typeof authorObj.nick === 'string')
+                return authorObj.nick;
+            if (typeof authorObj.nickname === 'string')
+                return authorObj.nickname;
+        };
         if (!author)
             return fallback;
-        if (author.name)
-            return author.name;
-        if (author.nick)
-            return author.nick;
-        if (author.nickname)
-            return author.nickname;
+        var test1 = getTheAuthor(author);
+        if (typeof test1 === 'string')
+            return test1;
+        var test2 = getTheAuthor(this.config.author);
+        if (typeof test2 === 'string')
+            return test2;
+        return 'default user';
     });
     hexo.extend.helper.register('getPostByLabel', 
     /**
