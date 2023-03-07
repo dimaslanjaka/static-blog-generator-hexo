@@ -1,11 +1,12 @@
 import fs from 'fs';
+import Hexo from 'hexo';
 import _toArray from 'lodash.toarray';
 import path from 'path';
 import { parse } from 'url';
 import yaml from 'yaml';
 import { partialWithLayout } from './helper/partial';
 
-const config: import('hexo').Config = yaml.parse(fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString());
+const config: Hexo.Config = yaml.parse(fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString());
 const THEME_LOCATION = path.join(process.cwd(), 'themes', config.theme || 'landscape');
 const _THEME_SCRIPTS = path.join(THEME_LOCATION, 'scripts');
 
@@ -42,17 +43,25 @@ function toArray(value: any) {
   return _toArray(value);
 }
 
+export function getTheAuthor(authorObj: Record<string, any>) {
+  if (typeof authorObj === 'string') return authorObj;
+  if (typeof authorObj.name === 'string') return authorObj.name;
+  if (typeof authorObj.nick === 'string') return authorObj.nick;
+  if (typeof authorObj.nickname === 'string') return authorObj.nickname;
+}
+
 /**
  * register custom helpers
  * @param hexo
  */
-function registerCustomHelper(hexo: import('hexo')) {
+export function registerCustomHelper(hexo: Hexo) {
   hexo.extend.helper.register('toArray', toArray);
+  hexo.extend.helper.register('isObject', isObject);
 
   /**
    * Export theme config
    */
-  hexo.extend.helper.register('json_config', function (this: import('hexo') & Record<string, any>) {
+  hexo.extend.helper.register('json_config', function (this: Hexo & Record<string, any>) {
     const hexo = this;
     const { config, theme, url_for, __ } = hexo;
     const theme_config = {
@@ -78,19 +87,13 @@ function registerCustomHelper(hexo: import('hexo')) {
     /**
      * @returns
      */
-    function (this: import('hexo')) {
+    function (this: Hexo) {
       const page = this['page'];
       return page.posts;
     }
   );
 
   hexo.extend.helper.register('getAuthor', function (author, fallback) {
-    const getTheAuthor = (authorObj: Record<string, any>) => {
-      if (typeof authorObj === 'string') return authorObj;
-      if (typeof authorObj.name === 'string') return authorObj.name;
-      if (typeof authorObj.nick === 'string') return authorObj.nick;
-      if (typeof authorObj.nickname === 'string') return authorObj.nickname;
-    };
     if (!author) return fallback;
     const test1 = getTheAuthor(author);
     if (typeof test1 === 'string') return test1;
@@ -108,7 +111,7 @@ function registerCustomHelper(hexo: import('hexo')) {
      * @returns
      */
     function (
-      this: import('hexo') & Record<string, any>,
+      this: Hexo & Record<string, any>,
       by: 'tags' | 'categories',
       filternames: string[]
     ): Record<string, string>[] {
@@ -124,7 +127,7 @@ function registerCustomHelper(hexo: import('hexo')) {
                 permalink,
                 thumbnail,
                 photos
-              }: import('hexo').Post.Data & Record<string, any>) {
+              }: Hexo.Post.Data & Record<string, any>) {
                 // get title and permalink
                 // for more keys, you can look at https://github.com/dimaslanjaka/nodejs-package-types/blob/ec9b509d81eefdfada79f1658ac02118936a1e5a/index.d.ts#L757-L762
                 return { title, permalink, thumbnail, photos };
@@ -147,5 +150,3 @@ function registerCustomHelper(hexo: import('hexo')) {
 }
 
 hexo.extend.helper.register('partialWithLayout', partialWithLayout);
-
-module.exports = { toArray, isObject, registerCustomHelper };
