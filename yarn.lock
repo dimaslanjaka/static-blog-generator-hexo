@@ -962,7 +962,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/connect@npm:*":
+"@types/bunyan@npm:*":
+  version: 1.8.8
+  resolution: "@types/bunyan@npm:1.8.8"
+  dependencies:
+    "@types/node": "*"
+  checksum: b28966c13579b281ae75560d8c99ee4149348818cd4c4d6424afeee9fdab1039db2a0c06f1ab62fbf8c71f99dcebb70551bb45f2110d6a1fc3e3f891355b6b4b
+  languageName: node
+  linkType: hard
+
+"@types/connect@npm:*, @types/connect@npm:^3.4.35":
   version: 3.4.35
   resolution: "@types/connect@npm:3.4.35"
   dependencies:
@@ -1065,6 +1074,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hexo-util@https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz":
+  version: 1.0.1
+  resolution: "@types/hexo-util@https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
+  checksum: fa57cbb99d7bacf330688afd7044a2ddeee2cb55aeec270ce3820a1c4c5e71f3ae7fc480eff38de132254898dadd2c4d55fa898734eb495c51601894e2f345fe
+  languageName: node
+  linkType: hard
+
+"@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo":
+  version: 3.9.0
+  resolution: "@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=864994765212afd831552566282069f3322b9529"
+  dependencies:
+    "@types/bluebird": ^3.5.38
+    "@types/bunyan": "*"
+    "@types/connect": ^3.4.35
+    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
+    "@types/minimist": ^1.2.2
+    "@types/underscore": ^1.11.4
+    fs-extra: ^11.1.0
+    minimist: ^1.2.8
+    moment: ^2.29.4
+    upath: ^2.0.1
+  checksum: 9691c7f76244c31d5a5a197c27fb15e86741a265b9a9f5fbc92bbf470e45fd029037a80a2872c67fdb2b5c1099bf778ad51727c589bbe5d6aef2f06fbd2e8b19
+  languageName: node
+  linkType: hard
+
 "@types/i18n@npm:^0.13.6":
   version: 0.13.6
   resolution: "@types/i18n@npm:0.13.6"
@@ -1145,7 +1179,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimist@npm:^1.2.0":
+"@types/minimist@npm:^1.2.0, @types/minimist@npm:^1.2.2":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
   checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
@@ -1305,6 +1339,13 @@ __metadata:
   version: 4.0.2
   resolution: "@types/tough-cookie@npm:4.0.2"
   checksum: e055556ffdaa39ad85ede0af192c93f93f986f4bd9e9426efdc2948e3e2632db3a4a584d4937dbf6d7620527419bc99e6182d3daf2b08685e710f2eda5291905
+  languageName: node
+  linkType: hard
+
+"@types/underscore@npm:^1.11.4":
+  version: 1.11.4
+  resolution: "@types/underscore@npm:1.11.4"
+  checksum: db9f8486bc851b732259e51f42d62aad1ae2158be5724612dc125ece5f5d61c51447f9dea28284c2a0f79cb95e788d01cb5ce97709880019213e69fab0dd1696
   languageName: node
   linkType: hard
 
@@ -6896,8 +6937,8 @@ __metadata:
   linkType: hard
 
 "hexo-generator-redirect@file:D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-generator-redirect::locator=wmi%40workspace%3Asite":
-  version: 1.4.4
-  resolution: "hexo-generator-redirect@file:/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect#/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::hash=c152f8&locator=wmi%40workspace%3Asite"
+  version: 1.4.5
+  resolution: "hexo-generator-redirect@file:/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect#/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-generator-redirect::hash=e72625&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
@@ -6905,7 +6946,7 @@ __metadata:
     upath: ^2.0.1
   peerDependencies:
     hexo: ">= 4.2.0"
-  checksum: 56ba5b9027c32638d9241297f839a01d40b187550ad11dd37bcc5cb8634d9a1eb24267acf9e7b553a08c01cecb4ee19afd948d34ac192461004a669cf4760d8c
+  checksum: 79f7ee728eec1be154bf5969ba1cb2185a14df7c551472585e7e2e4b009f35d817fc2dd28d8d466c0c3034e0f03e1627d0dee437aedfc70495cee3e764cc89b9
   languageName: node
   linkType: hard
 
@@ -7056,12 +7097,13 @@ __metadata:
   linkType: hard
 
 "hexo-renderers@file:D:\\Repositories\\static-blog-generator-hexo\\packages\\hexo-renderers::locator=wmi%40workspace%3Asite":
-  version: 1.0.3
-  resolution: "hexo-renderers@file:/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-renderers#/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-renderers::hash=1cfca5&locator=wmi%40workspace%3Asite"
+  version: 1.0.4
+  resolution: "hexo-renderers@file:/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-renderers#/D%3A/Repositories/static-blog-generator-hexo/packages/hexo-renderers::hash=5f0a43&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.8
     fs-extra: ^11.1.0
+    hexo-util: ^3.0.1
     lodash.toarray: ^4.4.0
     nunjucks: ^3.2.3
     pug: ^3.0.2
@@ -7069,7 +7111,7 @@ __metadata:
     sbg-utility: ^1.0.6
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: 44d822ea5d4a72d7f2cd795c4989424aae4da2ddabd507ea2fc593ba67ab3f29d3c4c54cbd301ad7a6d7ef93d44c0067413522025f056a3b82c6578c005f0918
+  checksum: 33a9d18aa2b8e796d7c883ba2526fb249cf8dfbf20117fe3477995e8aab06edbfee053d5079b98c7ec845094434cb2711f247158a168a44bc188b171fca2cbeb
   languageName: node
   linkType: hard
 
@@ -13785,6 +13827,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator-hexo@workspace:."
   dependencies:
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     eslint: ^8.35.0
     lerna: ^6.5.1
     minimist: ^1.2.8
