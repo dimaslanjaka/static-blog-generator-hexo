@@ -1,6 +1,13 @@
 {
   "name": "hexo-theme-claudia",
-  "version": "2.0.0",
+  "version": "2.0.1",
+  "contributors": [
+    {
+      "email": "dimaslanjaka@gmail.com",
+      "name": "dimaslanjaka",
+      "url": "https://www.webmanajemen.com"
+    }
+  ],
   "peerDependencies": {
     "hexo": "^5.0.2",
     "hexo-renderer-pug": "^1.0.0",
