@@ -1,8 +1,8 @@
-import { parse } from 'url';
-import _toArray from 'lodash.toarray';
-import yaml from 'yaml';
 import fs from 'fs';
+import _toArray from 'lodash.toarray';
 import path from 'path';
+import { parse } from 'url';
+import yaml from 'yaml';
 import { partialWithLayout } from './helper/partial';
 
 const config: import('hexo').Config = yaml.parse(fs.readFileSync(path.join(process.cwd(), '_config.yml')).toString());
@@ -85,11 +85,18 @@ function registerCustomHelper(hexo: import('hexo')) {
   );
 
   hexo.extend.helper.register('getAuthor', function (author, fallback) {
-    if (typeof author === 'string') return author;
+    const getTheAuthor = (authorObj: Record<string, any>) => {
+      if (typeof authorObj === 'string') return authorObj;
+      if (typeof authorObj.name === 'string') return authorObj.name;
+      if (typeof authorObj.nick === 'string') return authorObj.nick;
+      if (typeof authorObj.nickname === 'string') return authorObj.nickname;
+    };
     if (!author) return fallback;
-    if (author.name) return author.name;
-    if (author.nick) return author.nick;
-    if (author.nickname) return author.nickname;
+    const test1 = getTheAuthor(author);
+    if (typeof test1 === 'string') return test1;
+    const test2 = getTheAuthor(this.config.author);
+    if (typeof test2 === 'string') return test2;
+    return 'default user';
   });
 
   hexo.extend.helper.register(
