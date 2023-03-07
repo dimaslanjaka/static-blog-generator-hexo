@@ -5,6 +5,7 @@ const root = process.cwd();
 const jsdom = require('jsdom');
 const path = require('path');
 const yaml = require('yaml');
+
 /**
  * @type {import('./tmp/schema.json')}
  */
