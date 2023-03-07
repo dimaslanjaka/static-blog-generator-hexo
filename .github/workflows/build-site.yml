@@ -176,7 +176,7 @@ jobs:
         working-directory: site/.deploy_git
         name: push site/.deploy_git
         shell: bash
-      - name: push site/source and site/src-posts
+      - name: push submodules
         run: |
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
