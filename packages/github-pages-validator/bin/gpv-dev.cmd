@@ -12,5 +12,6 @@ IF NOT EXIST "%NODE_EXE%" (
 )
 
 SET "SBG_CLI=%~dp0\..\src\cli.ts"
+SET NODE_ENV=development
 
 "%NODE_EXE%" -r ts-node/register "%SBG_CLI%" %*
