@@ -5,6 +5,7 @@ const { rendererStylus } = require('./renderer-stylus');
 const ansiColors = require('ansi-colors');
 const { registerCustomHelper } = require('./custom-helpers');
 const { rendererDartSass } = require('./renderer-dartsass');
+const { rendererSass } = require('./renderer-sass');
 
 const logname = ansiColors.magenta('hexo-renderers');
 
@@ -29,6 +30,9 @@ if (typeof hexo !== 'undefined') {
         case 'dartsass':
           rendererDartSass(hexo);
           break;
+        case 'sass':
+          rendererSass(hexo);
+          break;
         case 'stylus':
           rendererStylus(hexo);
           break;
@@ -44,7 +48,8 @@ if (typeof hexo !== 'undefined') {
     rendererEjs(hexo);
     rendererPug(hexo);
     rendererStylus(hexo);
-    rendererDartSass(hexo);
+    // rendererDartSass(hexo);
+    rendererSass(hexo);
   }
 } else {
   console.error(logname, 'not hexo instance');

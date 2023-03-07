@@ -10,13 +10,19 @@ export function rendererDartSass(hexo: Hexo) {
     const config = Object.assign(this.theme.config.sass || {}, this.config.sass || {}, { file: data.path });
 
     return new Promise<string>((resolve, reject) => {
-      sass.render(config, (err, result) => {
+      /*sass.render(config, (err, result) => {
         if (err) {
           reject(err);
           return;
         }
         resolve(result.css.toString());
-      });
+      });*/
+      sass
+        .compileAsync(data.path, config)
+        .then(function (result) {
+          resolve(result.css);
+        })
+        .catch(reject);
     });
   };
   hexo.extend.renderer.register('scss', 'css', make);

@@ -5,6 +5,7 @@ var rendererStylus = require('./renderer-stylus').rendererStylus;
 var ansiColors = require('ansi-colors');
 var registerCustomHelper = require('./custom-helpers').registerCustomHelper;
 var rendererDartSass = require('./renderer-dartsass').rendererDartSass;
+var rendererSass = require('./renderer-sass').rendererSass;
 var logname = ansiColors.magenta('hexo-renderers');
 if (typeof hexo !== 'undefined') {
     global.hexo = hexo;
@@ -26,6 +27,9 @@ if (typeof hexo !== 'undefined') {
                 case 'dartsass':
                     rendererDartSass(hexo);
                     break;
+                case 'sass':
+                    rendererSass(hexo);
+                    break;
                 case 'stylus':
                     rendererStylus(hexo);
                     break;
@@ -42,7 +46,8 @@ if (typeof hexo !== 'undefined') {
         rendererEjs(hexo);
         rendererPug(hexo);
         rendererStylus(hexo);
-        rendererDartSass(hexo);
+        // rendererDartSass(hexo);
+        rendererSass(hexo);
     }
 }
 else {

@@ -27,9 +27,7 @@ function rendererPug(hexo) {
     }
     var config = hasConfig ? require(configPath) : defaultConfig;
     // Validate non-standard keys -- e.g. 'compile'.
-    var hasProp = function (obj, prop) {
-        return Object.prototype.hasOwnProperty.call(obj, prop);
-    };
+    var hasProp = function (obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); };
     var invalidKeys = Object.keys(config).filter(function (k) { return !hasProp(defaultConfig, k); });
     if (invalidKeys.length > 0) {
         throw Error("Unsupported PUG config keys: ".concat(invalidKeys.join(', ')));

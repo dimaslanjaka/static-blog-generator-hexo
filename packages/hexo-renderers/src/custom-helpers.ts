@@ -43,7 +43,7 @@ function toArray(value: any) {
   return _toArray(value);
 }
 
-export function getTheAuthor(authorObj: Record<string, any>) {
+export function getTheAuthor(authorObj: Record<string, any> | string) {
   if (typeof authorObj === 'string') return authorObj;
   if (typeof authorObj.name === 'string') return authorObj.name;
   if (typeof authorObj.nick === 'string') return authorObj.nick;
