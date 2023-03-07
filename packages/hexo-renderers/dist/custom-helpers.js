@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.registerCustomHelper = exports.getTheAuthor = void 0;
 var fs_1 = __importDefault(require("fs"));
 var lodash_toarray_1 = __importDefault(require("lodash.toarray"));
 var path_1 = __importDefault(require("path"));
@@ -51,12 +52,24 @@ function toArray(value) {
     }
     return (0, lodash_toarray_1.default)(value);
 }
+function getTheAuthor(authorObj) {
+    if (typeof authorObj === 'string')
+        return authorObj;
+    if (typeof authorObj.name === 'string')
+        return authorObj.name;
+    if (typeof authorObj.nick === 'string')
+        return authorObj.nick;
+    if (typeof authorObj.nickname === 'string')
+        return authorObj.nickname;
+}
+exports.getTheAuthor = getTheAuthor;
 /**
  * register custom helpers
  * @param hexo
  */
 function registerCustomHelper(hexo) {
     hexo.extend.helper.register('toArray', toArray);
+    hexo.extend.helper.register('isObject', isObject);
     /**
      * Export theme config
      */
@@ -92,16 +105,6 @@ function registerCustomHelper(hexo) {
         return page.posts;
     });
     hexo.extend.helper.register('getAuthor', function (author, fallback) {
-        var getTheAuthor = function (authorObj) {
-            if (typeof authorObj === 'string')
-                return authorObj;
-            if (typeof authorObj.name === 'string')
-                return authorObj.name;
-            if (typeof authorObj.nick === 'string')
-                return authorObj.nick;
-            if (typeof authorObj.nickname === 'string')
-                return authorObj.nickname;
-        };
         if (!author)
             return fallback;
         var test1 = getTheAuthor(author);
@@ -151,5 +154,5 @@ function registerCustomHelper(hexo) {
         return [];
     });
 }
+exports.registerCustomHelper = registerCustomHelper;
 hexo.extend.helper.register('partialWithLayout', partial_1.partialWithLayout);
-module.exports = { toArray: toArray, isObject: isObject, registerCustomHelper: registerCustomHelper };

@@ -1,7 +1,7 @@
 {
   "packageManager": "yarn@3.4.1",
   "name": "hexo-renderers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/renderer-loader.js",
   "types": "dist/renderer-loader.d.ts",
   "files": [

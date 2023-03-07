@@ -5,17 +5,16 @@ const { rendererStylus } = require('./renderer-stylus');
 const ansiColors = require('ansi-colors');
 const { registerCustomHelper } = require('./custom-helpers');
 const { rendererDartSass } = require('./renderer-dartsass');
-if (typeof hexo === 'undefined') {
-  global.hexo = {};
-}
 
 const logname = ansiColors.magenta('hexo-renderers');
 
 if (typeof hexo !== 'undefined') {
+  global.hexo = hexo;
   const config = hexo.config;
   const renderers = config['renderers'];
   // register custom helper
   registerCustomHelper(hexo);
+
   // activate specific engine
   if (Array.isArray(renderers)) {
     for (let i = 0; i < renderers.length; i++) {

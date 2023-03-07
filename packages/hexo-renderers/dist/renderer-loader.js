@@ -5,11 +5,9 @@ var rendererStylus = require('./renderer-stylus').rendererStylus;
 var ansiColors = require('ansi-colors');
 var registerCustomHelper = require('./custom-helpers').registerCustomHelper;
 var rendererDartSass = require('./renderer-dartsass').rendererDartSass;
-if (typeof hexo === 'undefined') {
-    global.hexo = {};
-}
 var logname = ansiColors.magenta('hexo-renderers');
 if (typeof hexo !== 'undefined') {
+    global.hexo = hexo;
     var config = hexo.config;
     var renderers = config['renderers'];
     // register custom helper
