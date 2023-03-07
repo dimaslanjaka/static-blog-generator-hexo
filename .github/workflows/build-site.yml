@@ -80,13 +80,13 @@ jobs:
         name: init cache
         with:
           path: |
-            site/db.json
-            site/public
-            site/tmp
-            site/source/_posts
-            site/.deploy_git/**/*.html
-            site/.deploy_git/**/*.js
-            site/.deploy_git/**/*.css
+            **/site/db.json
+            **/site/public
+            **/site/tmp
+            **/site/source/_posts
+            **/site/.deploy_git/**/*.html
+            **/site/.deploy_git/**/*.js
+            **/site/.deploy_git/**/*.css
             **/dist
             **/node_modules
             **/.yarn
