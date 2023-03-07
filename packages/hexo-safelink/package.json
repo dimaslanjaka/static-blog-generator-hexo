@@ -6,14 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "hexo",
+    "hexo-plugin",
+    "hyperlinks",
+    "seo"
+  ],
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "name": "dimaslanjaka",
+    "url": "https://webmanajemen.com"
+  },
   "license": "ISC",
   "dependencies": {
-    "safelinkify": "github:dimaslanjaka/safelink"
+    "safelinkify": "^1.1.17"
   },
   "devDependencies": {
-    "@types/hexo": "^3.8.8",
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "eslint": "^8.25.0",
