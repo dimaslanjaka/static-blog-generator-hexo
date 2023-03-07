@@ -153,6 +153,6 @@ function registerCustomHelper(hexo) {
         }
         return [];
     });
+    hexo.extend.helper.register('partialWithLayout', partial_1.partialWithLayout);
 }
 exports.registerCustomHelper = registerCustomHelper;
-hexo.extend.helper.register('partialWithLayout', partial_1.partialWithLayout);

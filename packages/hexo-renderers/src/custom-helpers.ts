@@ -147,6 +147,6 @@ export function registerCustomHelper(hexo: Hexo) {
       return [];
     }
   );
-}
 
-hexo.extend.helper.register('partialWithLayout', partialWithLayout);
+  hexo.extend.helper.register('partialWithLayout', partialWithLayout);
+}

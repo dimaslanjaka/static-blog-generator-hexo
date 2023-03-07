@@ -3463,6 +3463,7 @@ __metadata:
     fs-extra: ^11.1.0
     gulp: ^4.0.2
     hexo: ^6.3.0
+    hexo-util: ^3.0.1
     lodash.toarray: ^4.4.0
     nunjucks: ^3.2.3
     prettier: ^2.8.4
