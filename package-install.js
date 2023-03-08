@@ -3,7 +3,7 @@ const fs = require('fs');
 const ws_dev = {
   dependencies: {
     'hexo-renderers': 'workspace:^',
-    'hexo-seo': path.resolve(__dirname, '../hexo-seo'),
+    'hexo-seo': '../../hexo-seo',
     'hexo-shortcodes': 'workspace:^',
     'hexo-generator-redirect': 'workspace:^'
   },
@@ -22,9 +22,9 @@ const ws_dev = {
 };
 const ws_prod = {
   dependencies: {
-    'hexo-renderers': path.resolve(__dirname, './packages/hexo-renderers'),
-    'hexo-shortcodes': path.resolve(__dirname, './packages/hexo-shortcodes'),
-    'hexo-generator-redirect': path.resolve(__dirname, './packages/hexo-generator-redirect'),
+    'hexo-renderers': '../packages/hexo-renderers',
+    'hexo-shortcodes': '../packages/hexo-shortcodes',
+    'hexo-generator-redirect': '../packages/hexo-generator-redirect',
     'hexo-seo': 'https://github.com/dimaslanjaka/hexo-seo/tarball/master'
   },
   workspaces: ['site', 'site/multisite/chimeraland', 'site/src-posts']
