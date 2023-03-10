@@ -54,7 +54,7 @@
     "hexo-renderers": "../packages/hexo-renderers",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
     "hexo-server": "^3.0.0",
-    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/tarball/master",
+    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/master/package/release/hexo-shortcodes.tgz",
     "hexo-theme-claudia": "./themes/claudia",
     "hexo-util": "^3.0.1",
     "js-yaml": "^4.1.0",
