@@ -26,3 +26,7 @@
 	path = site/themes/material
 	url = https://github.com/dimaslanjaka/hexo-theme-material
 	branch = private
+[submodule "packages/hexo-shortcodes"]
+	path = packages/hexo-shortcodes
+	url = https://github.com/dimaslanjaka/hexo-shortcodes
+	branch = master
