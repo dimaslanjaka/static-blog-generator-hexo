@@ -4848,7 +4848,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^2.0.0":
+"entities@npm:^2.0.0, entities@npm:^2.0.3":
   version: 2.2.0
   resolution: "entities@npm:2.2.0"
   checksum: 19010dacaf0912c895ea262b4f6128574f9ccf8d4b3b65c7e8334ad0079b3706376360e28d8843ff50a78aabcb8f08f0a32dbfacdc77e47ed77ca08b713669b3
@@ -6466,7 +6466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^9.1.0, glob@npm:^9.2.0":
+"glob@npm:^9.1.0, glob@npm:^9.2.0, glob@npm:^9.2.1":
   version: 9.2.1
   resolution: "glob@npm:9.2.1"
   dependencies:
@@ -7383,12 +7383,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes/tarball/master":
-  version: 1.0.0
-  resolution: "hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes.git#commit=a4bf5084d650ce5d396d0c46600f3cda206949f2"
+"hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes/raw/master/package/release/hexo-shortcodes.tgz":
+  version: 1.0.3
+  resolution: "hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes/raw/master/package/release/hexo-shortcodes.tgz"
   dependencies:
+    ansi-colors: ^4.1.3
+    axios: ^1.3.4
+    bluebird: ^3.7.2
     fs-extra: ^11.1.0
-  checksum: d9a64589b3c97c3244e41ff361043aab2704d376c99430a48d85f11c7fa76072b0be126cce2ed3639281dd2d569f3a2a5d6ffda92f43093841a6fabb5c147e0c
+    hexo-filter-nofollow: ^2.0.2
+    hexo-util: ^3.0.1
+    nunjucks: ^3.2.3
+    rss-parser: ^3.12.0
+    sbg-utility: ^1.0.8
+  checksum: 6b2cb497a54d9ca8c7bcc8e716fef8885cc8d0226b69af316d7d409db1d067cc75d1ee753a4ca4fe25b81410d66f9833dde75eb9b531c4111f656dda4a48f395
   languageName: node
   linkType: hard
 
@@ -7959,7 +7967,7 @@ __metadata:
     sbg-utility: ^1.0.4
     server-destroy: ^1.0.1
     upath: ^2.0.1
-  checksum: b88279d6ddac154a4dfb206afbf0f5f4f01e137442cebd29040e5b1f3cc43a3ecd18524013c079afce0d10184aa15ef7cea0dfc595728fa1ebf7b9a4c586ecd5
+  checksum: a5396749a55a7269fc2ef977b6288ac9e08561a3b6211eb4fbe2939dcc7b3e184a89f47d8985fea79e3f6ecb44f1c5c8b55cae8c6e999e5783e85216ddb98fb8
   languageName: node
   linkType: hard
 
@@ -10619,7 +10627,7 @@ __metadata:
     through2: ^4.0.2
     true-case-path: ^2.2.1
     upath: ^2.0.1
-  checksum: c8f7a5ff469a48fa1c622058d5a516aa7b0aed029fe2152cb636e6276f4ef6a19de4100fc9d193c5c857724c166d5d4c894d658aa6e4574c1168eb346f9bee57
+  checksum: 8de7e70a165ef214131acae763b874d2c4a50774732e6ee03f7c38cbf82a2435ef58f4bedc3069a779dc8fb5f1d873090a114060edfe3494749fd1095fcb0768
   languageName: node
   linkType: hard
 
@@ -11985,7 +11993,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plugin-error@npm:2.0.1":
+"plugin-error@npm:2.0.1, plugin-error@npm:^2.0.1":
   version: 2.0.1
   resolution: "plugin-error@npm:2.0.1"
   dependencies:
@@ -13167,6 +13175,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rss-parser@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "rss-parser@npm:3.12.0"
+  dependencies:
+    entities: ^2.0.3
+    xml2js: ^0.4.19
+  checksum: aa0f0eb2e3a5c70677a1c7cb6c2e96420f12c8963a8bed922ec2ff1bb9dbbb725fc5783be31ca8140154c3d5589ccd31580ced7d32ebd0dda7572f78ce242a41
+  languageName: node
+  linkType: hard
+
 "run-async@npm:^2.4.0":
   version: 2.4.1
   resolution: "run-async@npm:2.4.1"
@@ -13267,7 +13285,7 @@ __metadata:
     path-browserify: ^1.0.1
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     toastr: ^2.1.4
-  checksum: a309191034f5a4163b879807ad04522ca2824987f326266e7f665e96bc40c32394298b2a71f252a7a3618df1e1dc9ab8926b5412ee79db671c355f811e968342
+  checksum: f83c4d5dd5628038577c8a5db2871d2bcaebb36db8e03c070e7adbbd2c171ca5faf6bcc3232442116b8ba9de38159eb65e729cc552e46e44139cf6f1a21c6b76
   languageName: node
   linkType: hard
 
@@ -13378,7 +13396,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     xmlbuilder2: ^3.0.2
-  checksum: 9e8040cba763585e6fdd828adc6cbdb13784b23cdd78a3ad6facb33c4e36c92fde8cd722a54e05ddd98a931c79280fb6c098f906a5450342423c5329ea8d0c2d
+  checksum: ea23e329c01478782241efdbad6a8687d464892237d6fc14ed3c788046c7c806d401a26d44f2c0fb9b230efe87c7efd32d3c586e9e5a6228482db3b32187d765
   languageName: node
   linkType: hard
 
@@ -13433,7 +13451,7 @@ __metadata:
     yargs: ^17.7.0
   bin:
     sbg: dist/cli.js
-  checksum: f6c64f14ba2e3c888afe6dbc9a6cfe1416836d0871afa9e238c6bd071a438618eaebfc43b1998a20e771cdae09448049b15b754b7a5626bc356339285c296c59
+  checksum: cb65b99cb13d44bb2dbfebd25e96bcf3a85b133300274189899f70084f0433979bd818fd3b813418e32fe55535b335f2df3e534761a9df1b30bbb6c8c3f11ca5
   languageName: node
   linkType: hard
 
@@ -13498,7 +13516,7 @@ __metadata:
     upath: ^2.0.1
     write-file-atomic: ^5.0.0
     yaml: ^2.2.1
-  checksum: 546ece197e20412aa4eed252c4dff77b3650a4d9811dca1294cc95060005265c77b070293c10ad4a2dbbeb7f5f3735b6fea0c8d283df9e3b7cac2864b4675514
+  checksum: 59143a077fb6213c306261a230637254144d53409d35621d664643fa8876c0e3dc6f6f89a04e4c83940126dc2db571fa3e063ec73fbacb184f18e8d24b3bd400
   languageName: node
   linkType: hard
 
@@ -13566,7 +13584,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: fd1a2f45dc481d8c573d20c847c152587e936122b9d63d868a9027700b67db08a56dda8eac19352621ba7e60b09cdd8e277564379627fbc2dade1f6acf767fb4
+  checksum: f90260725af6b5778e4265fd30727cc09f2a3f871ec93cd0ee14f974b7d90ccd814fec6d6626b80133ac989a1f3549fcc0c1bba518adb2ede6c55501c67ffb08
   languageName: node
   linkType: hard
 
@@ -13602,6 +13620,42 @@ __metadata:
     upath: ^2.0.1
     yaml: ^2.2.1
   checksum: 274f8cec3170aec40773e0cbc2dcc5eca00b1850ca2aa6690417ec20283518f884945c82368b57df0c2c4b4aea5e3b19065b688a5ef03d035c24452ff56957f1
+  languageName: node
+  linkType: hard
+
+"sbg-utility@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "sbg-utility@npm:1.0.8"
+  dependencies:
+    ansi-colors: ^4.1.3
+    async: ^3.2.4
+    axios: ^1.3.4
+    bluebird: ^3.7.2
+    cheerio: ^1.0.0-rc.12
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
+    debug: ^4.3.4
+    fs-extra: ^11.1.0
+    git-command-helper: ^1.1.8
+    glob: ^9.2.1
+    gulp: ^4.0.2
+    hexo: ^6.3.0
+    hexo-post-parser: ^1.2.6
+    hexo-util: ^3.0.1
+    jsdom: ^21.1.0
+    jsonc-parser: ^3.2.0
+    minimatch: ^7.4.2
+    node-libcurl: ^3.0.0
+    nunjucks: ^3.2.3
+    plugin-error: ^2.0.1
+    progress: ^2.0.3
+    request: ^2.88.0
+    safelinkify: ^1.1.17
+    slugify: ^1.6.5
+    through2: ^4.0.2
+    true-case-path: ^2.2.1
+    upath: ^2.0.1
+    yaml: ^2.2.1
+  checksum: f90260725af6b5778e4265fd30727cc09f2a3f871ec93cd0ee14f974b7d90ccd814fec6d6626b80133ac989a1f3549fcc0c1bba518adb2ede6c55501c67ffb08
   languageName: node
   linkType: hard
 
@@ -14350,7 +14404,7 @@ __metadata:
     sbg-cli: ^1.0.4
     sbg-server: ^1.0.5
     sbg-utility: ^1.0.4
-  checksum: a709f7f67636989d815c39cf0b1d9041cbab1af105b6281c6c1c6475cbcf533af8615dd6f9e3a834bd9aec14979acfbadc2994e94deac780ef6b86460b60bf9d
+  checksum: bb4d732ffb94d1c5d9f6492e20111b68cb2d67dbfb9c5c47c2509a113e818366d39d630cafab1a4900e2505b33a90b2a73d4ce1feda6c96570dc563c3c0472e9
   languageName: node
   linkType: hard
 
@@ -16011,7 +16065,7 @@ __metadata:
     hexo-renderers: ../packages/hexo-renderers
     hexo-seo: "https://github.com/dimaslanjaka/hexo-seo/tarball/master"
     hexo-server: ^3.0.0
-    hexo-shortcodes: "https://github.com/dimaslanjaka/hexo-shortcodes/tarball/master"
+    hexo-shortcodes: "https://github.com/dimaslanjaka/hexo-shortcodes/raw/master/package/release/hexo-shortcodes.tgz"
     hexo-theme-claudia: ./themes/claudia
     hexo-util: ^3.0.1
     instant-indexing: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
@@ -16186,7 +16240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.23":
+"xml2js@npm:^0.4.19, xml2js@npm:^0.4.23":
   version: 0.4.23
   resolution: "xml2js@npm:0.4.23"
   dependencies:
