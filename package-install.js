@@ -4,12 +4,12 @@ const ws_dev = {
   dependencies: {
     'hexo-renderers': 'workspace:^',
     'hexo-seo': '../../hexo-seo',
-    'hexo-shortcodes': 'workspace:^',
+    'hexo-shortcodes': '../../hexo-shortcodes',
     'hexo-generator-redirect': 'workspace:^'
   },
   workspaces: [
-    'packages/hexo-shortcodes',
-    'packages/hexo-shortcodes/test',
+    //'packages/hexo-shortcodes',
+    //'packages/hexo-shortcodes/test',
     'packages/hexo-generator-redirect',
     'packages/hexo-renderers',
     //path.resolve(__dirname, '../nodejs-packages-types'),
@@ -23,7 +23,7 @@ const ws_dev = {
 const ws_prod = {
   dependencies: {
     'hexo-renderers': '../packages/hexo-renderers',
-    'hexo-shortcodes': '../packages/hexo-shortcodes',
+    'hexo-shortcodes': 'https://github.com/dimaslanjaka/hexo-shortcodes/tarball/master',
     'hexo-generator-redirect': '../packages/hexo-generator-redirect',
     'hexo-seo': 'https://github.com/dimaslanjaka/hexo-seo/tarball/master'
   },

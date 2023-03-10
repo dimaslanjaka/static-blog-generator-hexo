@@ -7383,12 +7383,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-shortcodes@file:../packages/hexo-shortcodes::locator=wmi%40workspace%3Asite":
+"hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes/tarball/master":
   version: 1.0.0
-  resolution: "hexo-shortcodes@file:../packages/hexo-shortcodes#../packages/hexo-shortcodes::hash=8be24f&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes.git#commit=a4bf5084d650ce5d396d0c46600f3cda206949f2"
   dependencies:
     fs-extra: ^11.1.0
-  checksum: 6a5c4f09c4433deb0dc96c268491c8bb6e1d8213fb17c3491bd3d70c57178f8e10b486097ff910c001d807647518468a341dee886863e1264fdcfa84a2b89cb8
+  checksum: d9a64589b3c97c3244e41ff361043aab2704d376c99430a48d85f11c7fa76072b0be126cce2ed3639281dd2d569f3a2a5d6ffda92f43093841a6fabb5c147e0c
   languageName: node
   linkType: hard
 
@@ -16011,7 +16011,7 @@ __metadata:
     hexo-renderers: ../packages/hexo-renderers
     hexo-seo: "https://github.com/dimaslanjaka/hexo-seo/tarball/master"
     hexo-server: ^3.0.0
-    hexo-shortcodes: ../packages/hexo-shortcodes
+    hexo-shortcodes: "https://github.com/dimaslanjaka/hexo-shortcodes/tarball/master"
     hexo-theme-claudia: ./themes/claudia
     hexo-util: ^3.0.1
     instant-indexing: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
