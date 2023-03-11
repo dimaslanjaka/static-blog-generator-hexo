@@ -43,7 +43,7 @@ jobs:
         with:
           ref: master
           repository: dimaslanjaka/static-blog-generator-hexo
-          submodules: recursive
+          # submodules: recursive
           token: '${{ secrets.ACCESS_TOKEN }}'
       - run: sh ./bin/submodule-install
         shell: bash
