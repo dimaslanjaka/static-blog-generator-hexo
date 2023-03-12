@@ -87,7 +87,7 @@ jobs:
         with:
           repository: dimaslanjaka/docs
           ref: master
-          path: .deploy_git/docs
+          path: site/.deploy_git/docs
           token: '${{ secrets.ACCESS_TOKEN }}'
       - uses: actions/cache@v3
         id: cache
