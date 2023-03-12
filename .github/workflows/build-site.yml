@@ -105,10 +105,10 @@ jobs:
             **/node_modules
             **/.yarn
           # ${{ steps.set-env.outputs.cache-yarn }}
-          key: cache-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/.guid') }}
+          key: cache-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            cache-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/.guid') }}
             cache-${{ hashFiles('**/yarn.lock') }}
+            cache-${{ hashFiles('**/.guid') }}
             cache-
       - uses: actions/setup-node@v3
         with:
