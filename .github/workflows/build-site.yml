@@ -181,7 +181,7 @@ jobs:
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
           git submodule foreach "git add -A | :"
-          git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
+          git submodule foreach "git commit -m 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
           git submodule foreach "git push | :"
       - name: push changes current repository
         continue-on-error: true
