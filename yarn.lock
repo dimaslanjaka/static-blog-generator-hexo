@@ -1142,15 +1142,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:*, @types/jquery@npm:^3.5.16":
-  version: 3.5.16
-  resolution: "@types/jquery@npm:3.5.16"
-  dependencies:
-    "@types/sizzle": "*"
-  checksum: 13c995f15d1c2f1d322103dc1cb0a22b95eecc3e7546f00279b8731aea21d7ec04550af40e609ee48e755d4e11bf61c25b4aa9f53df3bcbec4b8fe8e81471732
-  languageName: node
-  linkType: hard
-
 "@types/js-yaml@npm:^4.0.5":
   version: 4.0.5
   resolution: "@types/js-yaml@npm:4.0.5"
@@ -1332,13 +1323,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/sizzle@npm:*":
-  version: 2.3.3
-  resolution: "@types/sizzle@npm:2.3.3"
-  checksum: 586a9fb1f6ff3e325e0f2cc1596a460615f0bc8a28f6e276ac9b509401039dd242fa8b34496d3a30c52f5b495873922d09a9e76c50c2ab2bcc70ba3fb9c4e160
-  languageName: node
-  linkType: hard
-
 "@types/through2@https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2":
   version: 2.0.38
   resolution: "@types/through2@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=94dda5ca58ce878edaaa949897cc269360dd0572"
@@ -1350,15 +1334,6 @@ __metadata:
     gulp: ^4.0.2
     upath: ^2.0.1
   checksum: 476bc77c1fe24af78a624ad37b219d4001b3b244603bede4b25ac71d8a6bbad3b58bc35fa729e36189942ddd1d0728f4eaf2ef5dd3bd66b33a45ce344067f2fc
-  languageName: node
-  linkType: hard
-
-"@types/toastr@npm:^2.1.40":
-  version: 2.1.40
-  resolution: "@types/toastr@npm:2.1.40"
-  dependencies:
-    "@types/jquery": "*"
-  checksum: 2698dcbf1a6e3a437e51d0921b7a37f7be1ad6cfc5079ebc0d566b6c3314a0258d941f9ee17e1b286e5e68edf3e85439a66d741e82f0b293f9b20b3c3680cbd6
   languageName: node
   linkType: hard
 
@@ -1663,13 +1638,6 @@ __metadata:
   version: 1.0.0
   resolution: "add-stream@npm:1.0.0"
   checksum: 3e9e8b0b8f0170406d7c3a9a39bfbdf419ccccb0fd2a396338c0fda0a339af73bf738ad414fc520741de74517acf0dd92b4a36fd3298a47fd5371eee8f2c5a06
-  languageName: node
-  linkType: hard
-
-"aes-js@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "aes-js@npm:3.1.2"
-  checksum: 062154d50b1e433cc8c3b8ca7879f3a6375d5e79c2a507b2b6c4ec920b4cd851bf2afa7f65c98761a9da89c0ab618cbe6529e8e9a1c71f93290b53128fb8f712
   languageName: node
   linkType: hard
 
@@ -2444,13 +2412,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap-icons@npm:^1.10.3":
-  version: 1.10.3
-  resolution: "bootstrap-icons@npm:1.10.3"
-  checksum: bef7f83ce09f0ae0b2a92d61b69f3c6d04ba2307e9051ab3f175613837e0dc5252d22e2b3a0403b59995be4e06ebe00f17d0335be6f2cffdbfdbefa9268b6abd
-  languageName: node
-  linkType: hard
-
 "bootstrap@npm:^5.2.3":
   version: 5.2.3
   resolution: "bootstrap@npm:5.2.3"
@@ -3053,7 +3014,7 @@ __metadata:
     through2: ^4.0.2
     true-case-path: ^2.2.1
     ts-node: ^10.9.1
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     upath: ^2.0.1
     validate: ^5.2.0
     yaml: ^2.2.1
@@ -3197,17 +3158,6 @@ __metadata:
   version: 3.0.0
   resolution: "cli-width@npm:3.0.0"
   checksum: 4c94af3769367a70e11ed69aa6095f1c600c0ff510f3921ab4045af961820d57c0233acfa8b6396037391f31b4c397e1f614d234294f979ff61430a6c166c3f6
-  languageName: node
-  linkType: hard
-
-"clipboard@npm:^2.0.11":
-  version: 2.0.11
-  resolution: "clipboard@npm:2.0.11"
-  dependencies:
-    good-listener: ^1.2.2
-    select: ^1.1.2
-    tiny-emitter: ^2.0.0
-  checksum: 413055a6038e43898e0e895216b58ed54fbf386f091cb00188875ef35b186cefbd258acdf4cb4b0ac87cbc00de936f41b45dde9fe1fd1a57f7babb28363b8748
   languageName: node
   linkType: hard
 
@@ -4312,13 +4262,6 @@ __metadata:
   version: 1.0.0
   resolution: "delayed-stream@npm:1.0.0"
   checksum: 46fe6e83e2cb1d85ba50bd52803c68be9bd953282fa7096f51fc29edd5d67ff84ff753c51966061e5ba7cb5e47ef6d36a91924eddb7f3f3483b1c560f77a0020
-  languageName: node
-  linkType: hard
-
-"delegate@npm:^3.1.2":
-  version: 3.2.0
-  resolution: "delegate@npm:3.2.0"
-  checksum: d943058fe05897228b158cbd1bab05164df28c8f54127873231d6b03b0a5acc1b3ee1f98ac70ccc9b79cd84aa47118a7de111fee2923753491583905069da27d
   languageName: node
   linkType: hard
 
@@ -6581,15 +6524,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"good-listener@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "good-listener@npm:1.2.2"
-  dependencies:
-    delegate: ^3.1.2
-  checksum: f39fb82c4e41524f56104cfd2d7aef1a88e72f3f75139115fbdf98cc7d844e0c1b39218b2e83438c6188727bf904ed78c7f0f2feff67b32833bc3af7f0202b33
-  languageName: node
-  linkType: hard
-
 "google-auth-library@npm:^8.0.2, google-auth-library@npm:^8.7.0":
   version: 8.7.0
   resolution: "google-auth-library@npm:8.7.0"
@@ -7136,15 +7070,13 @@ __metadata:
 
 "hexo-generator-redirect@file:../packages/hexo-generator-redirect::locator=wmi%40workspace%3Asite":
   version: 1.4.5
-  resolution: "hexo-generator-redirect@file:../packages/hexo-generator-redirect#../packages/hexo-generator-redirect::hash=22590f&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-generator-redirect@file:../packages/hexo-generator-redirect#../packages/hexo-generator-redirect::hash=a42685&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
     hexo-util: ^3.0.1
     upath: ^2.0.1
-  peerDependencies:
-    hexo: ">= 4.2.0"
-  checksum: ee4c0640531c1bd73b16f33f74cd09f5088b0fc77c8470e1f37db9aa5e792b44f7d6710c1be3078533882f97b1fd77dd55db45083c628e40b0f1aae9c7ec89bb
+  checksum: 815fbf6c24ab771cf33f1373b7b6122d3e69d22144d7ba35f83b61731d629f666e25fa2dde50a1052695904eff745431af6e49a39c7a17c221e5325939e7d063
   languageName: node
   linkType: hard
 
@@ -7296,7 +7228,7 @@ __metadata:
 
 "hexo-renderers@file:../packages/hexo-renderers::locator=wmi%40workspace%3Asite":
   version: 1.0.7
-  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=e2d06e&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=dc858c&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.8
@@ -7311,7 +7243,7 @@ __metadata:
     sbg-utility: ^1.0.6
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: dc9aeb49389bbac70a25d60c2c85c10a2d95628ce99be15a4dc8fb1e87408dd1834b8a448f2fbabaa3f83011cb2fd15179e65390787e865367210edc2aac9319
+  checksum: 02d11bad427bb61d5ed47f6976c48ab33a32b1393a60f693e059a3f1c58fc4c852f3e388331ae697d9eb921e26b303755e2e2223b88cfa8ef769471345b559d5
   languageName: node
   linkType: hard
 
@@ -7402,7 +7334,7 @@ __metadata:
 
 "hexo-theme-claudia@file:./themes/claudia::locator=wmi%40workspace%3Asite":
   version: 2.0.1
-  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=7fe377&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=f41f0a&locator=wmi%40workspace%3Asite"
   dependencies:
     autoprefixer: ^10.4.13
     bulma: ^0.9.4
@@ -7412,7 +7344,7 @@ __metadata:
     hexo: ^5.0.2
     hexo-renderer-pug: ^1.0.0
     hexo-renderer-sass: ^0.4.0
-  checksum: df8df0e5b4a0d06fbc247873a6822c4dc68e7ed33e71276a1e4a9d5d56a8349c77762e5df6f052e35bdead146f5f0eb4867bf59b8561207def0065f453f4b85d
+  checksum: cdfe4ec76690d85edaf33389a52224f3b89d48c914f63a4868b283495ae46f5db7f11ddda53a8516e0a1558615d55689502b212d6a7e5a9f98ba06afbccb4300
   languageName: node
   linkType: hard
 
@@ -7516,7 +7448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:11.7.0, highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0, highlight.js@npm:^11.7.0":
+"highlight.js@npm:11.7.0, highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0":
   version: 11.7.0
   resolution: "highlight.js@npm:11.7.0"
   checksum: 19e3fb8b56f4b361b057a8523b989dfeb6479bbd1e29cec3fac6fa5c78d09927d5fa61b7dba6631fdb57cfdca9b3084aa4da49405ceaf4a67f67beae2ed5b77d
@@ -8643,13 +8575,6 @@ __metadata:
   version: 2.6.4
   resolution: "js-base64@npm:2.6.4"
   checksum: 5f4084078d6c46f8529741d110df84b14fac3276b903760c21fa8cc8521370d607325dfe1c1a9fbbeaae1ff8e602665aaeef1362427d8fef704f9e3659472ce8
-  languageName: node
-  linkType: hard
-
-"js-cookie@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "js-cookie@npm:3.0.1"
-  checksum: bb48de67e2a6bd1ae3dfd6b2d5a167c33dd0c5a37e909206161eb0358c98f17cb55acd55827a58e9eea3630d89444e7479f7938ef4420dda443218b8c434a4c3
   languageName: node
   linkType: hard
 
@@ -12961,16 +12886,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"requirejs@npm:^2.3.6":
-  version: 2.3.6
-  resolution: "requirejs@npm:2.3.6"
-  bin:
-    r.js: ./bin/r.js
-    r_js: ./bin/r.js
-  checksum: 7c3c006bf5e1887d93ac7adb7f600328918d23cf3d28282a505a2873d4ddde499c7ec560e55cee3440d17fe1205cb4dcb72b07f35b39e8940372eca850e49b62
-  languageName: node
-  linkType: hard
-
 "requires-port@npm:^1.0.0":
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
@@ -13675,13 +13590,6 @@ __metadata:
     js-base64: ^2.4.9
     source-map: ^0.7.3
   checksum: f3697bb155ae23d88c7cd0275988a73231fe675fbbd250b4e56849ba66319fc249a597f3799a92f9890b12007f00f8f6a7f441283e634679e2acdb2287a341d1
-  languageName: node
-  linkType: hard
-
-"select@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "select@npm:1.1.2"
-  checksum: 4346151e94f226ea6131e44e68e6d837f3fdee64831b756dd657cc0b02f4cb5107f867cb34a1d1216ab7737d0bf0645d44546afb030bbd8d64e891f5e4c4814e
   languageName: node
   linkType: hard
 
@@ -14902,13 +14810,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tiny-emitter@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "tiny-emitter@npm:2.1.0"
-  checksum: fbcfb5145751a0e3b109507a828eb6d6d4501352ab7bb33eccef46e22e9d9ad3953158870a6966a59e57ab7c3f9cfac7cab8521db4de6a5e757012f4677df2dd
-  languageName: node
-  linkType: hard
-
 "tiny-typed-emitter@npm:^2.1.0":
   version: 2.1.0
   resolution: "tiny-typed-emitter@npm:2.1.0"
@@ -15327,7 +15228,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^3 || ^4, typescript@npm:^4.6.2, typescript@npm:^4.9.5":
+"typescript@npm:^3 || ^4, typescript@npm:^4.6.2":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -15337,13 +15238,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^3 || ^4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
+"typescript@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "typescript@npm:5.0.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: bef1dcd166acfc6934b2ec4d72f93edb8961a5fab36b8dd2aaf6f4f4cd5c0210f2e0850aef4724f3b4913d5aef203a94a28ded731b370880c8bcff7e4ff91fc1
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^3 || ^4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^5.0.2#~builtin<compat/typescript>":
+  version: 5.0.2
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=1f5320"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: bdbf3d0aac0d6cf010fbe0536753dc19f278eb4aba88140dcd25487dfe1c56ca8b33abc0dcd42078790a939b08ebc4046f3e9bb961d77d3d2c3cfa9829da4d53
   languageName: node
   linkType: hard
 
@@ -15995,39 +15916,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wmi-source-post@workspace:site/src-posts":
-  version: 0.0.0-use.local
-  resolution: "wmi-source-post@workspace:site/src-posts"
-  dependencies:
-    "@popperjs/core": ^2.11.6
-    "@types/bluebird": ^3.5.38
-    "@types/jquery": ^3.5.16
-    "@types/toastr": ^2.1.40
-    aes-js: ^3.1.2
-    axios: ^1.3.4
-    bluebird: ^3.7.2
-    bootstrap: ^5.2.3
-    bootstrap-icons: ^1.10.3
-    clean-css: ^5.3.2
-    clipboard: ^2.0.11
-    crypto-js: ^4.1.1
-    eslint: ^8.35.0
-    eslint-config-prettier: ^8.6.0
-    eslint-plugin-prettier: ^4.2.1
-    highlight.js: ^11.7.0
-    html-minifier-terser: ^7.1.0
-    jquery: ^3.6.3
-    js-cookie: ^3.0.1
-    moment: ^2.29.4
-    moment-timezone: ^0.5.41
-    npm-run-all: ^4.1.5
-    prettier: ^2.8.4
-    requirejs: ^2.3.6
-    terser: ^5.16.5
-    toastr: ^2.1.4
-  languageName: unknown
-  linkType: soft
-
 "wmi@workspace:site":
   version: 0.0.0-use.local
   resolution: "wmi@workspace:site"
@@ -16090,7 +15978,7 @@ __metadata:
     static-blog-generator: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz"
     stylus: ^0.59.0
     ts-node: ^10.9.1
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     yaml: ^2.2.1
   languageName: unknown
   linkType: soft
