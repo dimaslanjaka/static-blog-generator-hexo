@@ -8,7 +8,9 @@
   "bin": "bin/update-version.js",
   "scripts": {
     "start": "yarn workspace wmi run server",
-    "build": "yarn workspace wmi run build"
+    "prebuild": "yarn workspace wmi run prebuild",
+    "build": "yarn workspace wmi run build",
+    "postbuild": "yarn workspace wmi run postbuild"
   },
   "repository": {
     "type": "git",
