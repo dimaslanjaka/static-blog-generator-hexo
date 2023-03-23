@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "www.webmanajemen.com",
-  "main": ".eslintrc.js",
-  "bin": "bin/update-version.js",
+  "main": "package-install.js",
   "scripts": {
     "start": "yarn workspace wmi run server",
     "prebuild": "yarn workspace wmi run prebuild",
