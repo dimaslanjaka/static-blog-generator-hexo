@@ -4,9 +4,9 @@ const nunjucks = require('nunjucks');
 const fs = require('fs-extra');
 const path = require('upath');
 const { toArray } = require('./custom-helpers');
-const ansiColors = require('ansi-colors');
+//const ansiColors = require('ansi-colors');
 const { writefile } = require('sbg-utility');
-const logname = ansiColors.magentaBright('hexo-renderer-nunjucks');
+//const logname = ansiColors.magentaBright('hexo-renderer-nunjucks');
 const tmpdir = path.join(__dirname, '../tmp');
 const logfile = path.join(tmpdir, 'nunjucks-log.json');
 
