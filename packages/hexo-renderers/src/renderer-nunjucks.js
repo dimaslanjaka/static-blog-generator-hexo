@@ -39,14 +39,14 @@ function rendererNunjucks(hexo) {
    */
   function render(data, locals) {
     if ('text' in data) {
-      return env.renderString(data.text, locals);
+      return nunjucks.renderString(data.text, locals);
     }
 
     // hexo.log.info(logname, 'render', data.path);
     logs.render.push(data.path);
     writefile(logfile, JSON.stringify(logs, null, 2));
 
-    return env.render(data.path, locals);
+    return nunjucks.render(data.path, locals);
   }
 
   /**
@@ -60,10 +60,7 @@ function rendererNunjucks(hexo) {
     writefile(logfile, JSON.stringify(logs, null, 2));
 
     // hexo.log.info(logname, 'text' in data ? data.text : data.path);
-    const compiled = nunjucks.compile(
-      'text' in data ? data.text : fs.readFileSync(data.path),
-      env
-    );
+    const compiled = nunjucks.compile('text' in data ? data.text : fs.readFileSync(data.path), env);
 
     return compiled.render.bind(compiled);
   }
