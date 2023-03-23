@@ -614,10 +614,6 @@ __metadata:
     bulma: ^0.9.4
     postcss: ^8.4.21
     postcss-cli: ^10.1.0
-  peerDependencies:
-    hexo: ^5.0.2
-    hexo-renderer-pug: ^1.0.0
-    hexo-renderer-sass: ^0.4.0
   languageName: unknown
   linkType: soft
 

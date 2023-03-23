@@ -8,11 +8,6 @@
       "url": "https://www.webmanajemen.com"
     }
   ],
-  "peerDependencies": {
-    "hexo": "^5.0.2",
-    "hexo-renderer-pug": "^1.0.0",
-    "hexo-renderer-sass": "^0.4.0"
-  },
   "dependencies": {
     "autoprefixer": "^10.4.13",
     "bulma": "^0.9.4",
