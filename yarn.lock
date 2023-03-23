@@ -7296,7 +7296,7 @@ __metadata:
 
 "hexo-renderers@file:../packages/hexo-renderers::locator=wmi%40workspace%3Asite":
   version: 1.0.7
-  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=e2d06e&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=bc0f5b&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.8
@@ -7311,7 +7311,7 @@ __metadata:
     sbg-utility: ^1.0.6
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: dc9aeb49389bbac70a25d60c2c85c10a2d95628ce99be15a4dc8fb1e87408dd1834b8a448f2fbabaa3f83011cb2fd15179e65390787e865367210edc2aac9319
+  checksum: df63fde9b1198c1a096ee545a37c3bea090ca7d82cb301347029ff394f178537adbf603a6f111842a85f0b1651f62a977bc109c6cc0f1ee32f7f186d22725bb6
   languageName: node
   linkType: hard
 
@@ -7402,17 +7402,13 @@ __metadata:
 
 "hexo-theme-claudia@file:./themes/claudia::locator=wmi%40workspace%3Asite":
   version: 2.0.1
-  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=7fe377&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=b8f98b&locator=wmi%40workspace%3Asite"
   dependencies:
     autoprefixer: ^10.4.13
     bulma: ^0.9.4
     postcss: ^8.4.21
     postcss-cli: ^10.1.0
-  peerDependencies:
-    hexo: ^5.0.2
-    hexo-renderer-pug: ^1.0.0
-    hexo-renderer-sass: ^0.4.0
-  checksum: df8df0e5b4a0d06fbc247873a6822c4dc68e7ed33e71276a1e4a9d5d56a8349c77762e5df6f052e35bdead146f5f0eb4867bf59b8561207def0065f453f4b85d
+  checksum: 45dfc2f957251e4bfc665e260b15f9fa8d2450b864bf88d75f7a93d74167389f152fa8773dfb43e56e82e101d71ce91e1fb21d42081c1912d322e25ff819b89e
   languageName: node
   linkType: hard
 
