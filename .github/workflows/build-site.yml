@@ -193,5 +193,6 @@ jobs:
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
           git add site
+          git add yarn.lock
           git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}"
           git push
