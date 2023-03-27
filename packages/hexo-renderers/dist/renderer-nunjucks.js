@@ -3,9 +3,9 @@ var nunjucks = require('nunjucks');
 var fs = require('fs-extra');
 var path = require('upath');
 var toArray = require('./custom-helpers').toArray;
-var ansiColors = require('ansi-colors');
+//const ansiColors = require('ansi-colors');
 var writefile = require('sbg-utility').writefile;
-var logname = ansiColors.magentaBright('hexo-renderer-nunjucks');
+//const logname = ansiColors.magentaBright('hexo-renderer-nunjucks');
 var tmpdir = path.join(__dirname, '../tmp');
 var logfile = path.join(tmpdir, 'nunjucks-log.json');
 /**

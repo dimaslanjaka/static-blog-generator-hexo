@@ -88,6 +88,7 @@ function registerCustomHelper(hexo) {
             project: Object.assign(config, hexo_config)
         };
     });
+    // json_data('main', json_config())
     hexo.extend.helper.register('json_data', function (name) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -126,6 +127,7 @@ function registerCustomHelper(hexo) {
         var hexo = this;
         var data = hexo.site[by].data;
         if (Array.isArray(data)) {
+            console.log(typeof data.filter);
             var map = filternames
                 .map(function (filtername) {
                 var filter = data.filter(function (_a) {

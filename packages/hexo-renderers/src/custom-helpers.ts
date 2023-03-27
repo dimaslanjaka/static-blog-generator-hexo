@@ -77,6 +77,7 @@ export function registerCustomHelper(hexo: Hexo) {
     };
   });
 
+  // json_data('main', json_config())
   hexo.extend.helper.register('json_data', function (name, ...data) {
     const json = data.length === 1 ? data[0] : Object.assign({}, ...data);
     return `<script class="json-config" data-name="${name}" type="application/json">${JSON.stringify(json).replace(/</g, '\\u003c')}</script>`;
@@ -118,6 +119,7 @@ export function registerCustomHelper(hexo: Hexo) {
       const hexo = this;
       const data: any[] = hexo.site[by].data;
       if (Array.isArray(data)) {
+        console.log(typeof data.filter);
         const map = filternames
           .map((filtername) => {
             const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
