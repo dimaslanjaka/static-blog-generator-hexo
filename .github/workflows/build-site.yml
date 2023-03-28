@@ -12,6 +12,10 @@ on:
       - '**codeql**'
       - '**clean-caches**'
   workflow_dispatch:
+  workflow_call:
+    secrets:
+      token:
+        required: true
 
 concurrency:
   # group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
