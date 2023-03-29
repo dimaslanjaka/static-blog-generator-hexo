@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Answers - The Legend Of Neverland</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous">
+  </head>
+  <body>
+    <main class="container">
+      <section class="raw" id="add-quiz-section">
+        <form
+          action="https://backend.webmanajemen.com/tlon/quiz.php"
+          method="post"
+          id="addQuiz"
+          target="_blank"
+          name="form_add_quiz"
+          class="mb-4 text-center">
+          <input type="hidden" name="add" value="add">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="newQ">Add new question</label>
+              <textarea type="text" id="newQ" placeholder="add new question" name="q" class="form-control"></textarea>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-2">
+                Answer of new question (pick one)
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="a" name="q" class="custom-control-input" value="O">
+                <label class="custom-control-label" for="customRadioInline1">(O)</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="a" class="custom-control-input" value="X">
+                <label class="custom-control-label" for="customRadioInline2">(X)</label>
+              </div>
+              <div id="submitter" class="mt-2">
+                <button type="submit" class="btn btn-primary btn-block btn-sm">Send</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"></script>
+    <script src="{{ url_for('test-unit/quiz.js') }}"></script>
+  </body>
+</html></body></html>
