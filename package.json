@@ -26,7 +26,7 @@
     "url": "https://github.com/dimaslanjaka/static-blog-generator-hexo/issues"
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator-hexo#readme",
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.5.0",
   "devDependencies": {
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
     "eslint": "^8.35.0",
