@@ -7501,13 +7501,13 @@ __metadata:
 
 "hexo-theme-claudia@file:./themes/claudia::locator=wmi%40workspace%3Asite":
   version: 2.0.1
-  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=667c18&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=33950b&locator=wmi%40workspace%3Asite"
   dependencies:
     autoprefixer: ^10.4.13
     bulma: ^0.9.4
     postcss: ^8.4.21
     postcss-cli: ^10.1.0
-  checksum: 8325eccdd407048c7f7af535e83b9b6fe1870e4cb9e2af787b7166f2a57bb7c6fcfc36c628330bbcf7d2d5871b76f80ee2a0d372a558a201edc39928b2b3b243
+  checksum: 3828da178eae6418ca423415ba6b995ecfdad92c816f7b819ad8a5df38c1bdd9f7d56183ca5059c46cc3510993c21b6ef44a2c2cffb0f4f7334d9481f891342d
   languageName: node
   linkType: hard
 
