@@ -8,7 +8,7 @@ npm run build
 [![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com)
 
 ## Using automatic deployment with github workflow example
-[https://github.com/dimaslanjaka/dimaslanjaka/blob/posts/.github/workflows/deploy.yml](https://github.com/dimaslanjaka/dimaslanjaka/blob/posts/.github/workflows/deploy.yml)
+https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/a110d0ba7752b6ec9295c353ac6f1aafd22270b8/.github/workflows/build-site.yml
 
 ## My other packages
 
