@@ -21,7 +21,8 @@
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="showOnly">
               <label class="form-check-label" for="showOnly">
-                Show only <b>(O)</b>
+                Show only
+                <b>(O)</b>
               </label>
             </div>
           </form>
@@ -46,13 +47,19 @@
               <div class="mb-2">
                 Answer of new question (pick one)
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline1" name="a" name="q" class="custom-control-input" value="O">
-                <label class="custom-control-label" for="customRadioInline1">(O)</label>
-              </div>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline2" name="a" class="custom-control-input" value="X">
-                <label class="custom-control-label" for="customRadioInline2">(X)</label>
+              <div class="row">
+                <div class="col">
+                  <div class="form-check">
+                    <input type="radio" id="customRadioInline1" name="a" name="q" class="form-check-input" value="O">
+                    <label class="form-check-label" for="customRadioInline1">(O)</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input type="radio" id="customRadioInline2" name="a" class="form-check-input" value="X">
+                    <label class="form-check-label" for="customRadioInline2">(X)</label>
+                  </div>
+                </div>
               </div>
               <div id="submitter" class="mt-2">
                 <button type="submit" class="btn btn-primary btn-block btn-sm">Send</button>
