@@ -13,7 +13,22 @@
   </head>
   <body>
     <main class="container">
-      <section class="raw" id="add-quiz-section">
+      <section id="quiz" class="mb-2">
+        <div class="mb-2">
+          <form class="form-floating" id="nosubmit">
+            <input type="text" class="form-control" id="quizTerm" placeholder="Liz Went Missing at 5" value="">
+            <label for="quizTerm">search question here</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="showOnly">
+              <label class="form-check-label" for="showOnly">
+                Show only <b>(O)</b>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div id="qresult"></div>
+      </section>
+      <section id="add-quiz-section">
         <form
           action="https://backend.webmanajemen.com/tlon/quiz.php"
           method="post"
