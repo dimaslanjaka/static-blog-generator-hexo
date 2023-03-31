@@ -7395,7 +7395,7 @@ __metadata:
 
 "hexo-renderers@file:../packages/hexo-renderers::locator=wmi%40workspace%3Asite":
   version: 1.0.7
-  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=0f4f7d&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=900564&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.9
@@ -7410,7 +7410,7 @@ __metadata:
     sbg-utility: ^1.0.8
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: c3e4d93beb9c23f1d9af0f7b3f4dc33681551443da8b69e24d720512e0253ca33a3b5783be0eb6a0fe7bcb858f9c4942742eb3cb0518a28073a99b4f0770ded8
+  checksum: 9474300f904ca8b8d19b98b0f6462e2332bf2143c34a0491fb700f4e5d5451fa340262f36ec67a4e8ff538582a055f846f5330aefb352c430eb0f61571be9419
   languageName: node
   linkType: hard
 
