@@ -187,6 +187,7 @@ exclude:
   - '**/ads/**'
   - '**/tmp/**'
   - '**/hexo-theme-unit-test/**'
+  - '**/*-backup*'
 ignore:
   - '**/.git*'
 # https://hexo.io/docs/configuration.html
