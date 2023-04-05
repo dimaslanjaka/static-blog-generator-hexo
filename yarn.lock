@@ -7925,7 +7925,7 @@ __metadata:
 
 "hexo-generator-redirect@file:../packages/hexo-generator-redirect::locator=wmi%40workspace%3Asite":
   version: 1.4.5
-  resolution: "hexo-generator-redirect@file:../packages/hexo-generator-redirect#../packages/hexo-generator-redirect::hash=22590f&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-generator-redirect@file:../packages/hexo-generator-redirect#../packages/hexo-generator-redirect::hash=246f05&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     fs-extra: ^11.1.0
@@ -7933,7 +7933,7 @@ __metadata:
     upath: ^2.0.1
   peerDependencies:
     hexo: ">= 4.2.0"
-  checksum: ee4c0640531c1bd73b16f33f74cd09f5088b0fc77c8470e1f37db9aa5e792b44f7d6710c1be3078533882f97b1fd77dd55db45083c628e40b0f1aae9c7ec89bb
+  checksum: 783fab54fa9f8a63a9c74a07eac4fc394b1a55a33ae8f405e905c4f2c729b55fbf81d3a12a05463fa0cd01be91d3946a51b1ebe511c797240b7655403b63d1d1
   languageName: node
   linkType: hard
 
@@ -8085,7 +8085,7 @@ __metadata:
 
 "hexo-renderers@file:../packages/hexo-renderers::locator=wmi%40workspace%3Asite":
   version: 1.0.7
-  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=1e8d19&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-renderers@file:../packages/hexo-renderers#../packages/hexo-renderers::hash=900564&locator=wmi%40workspace%3Asite"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.9
@@ -8100,7 +8100,7 @@ __metadata:
     sbg-utility: ^1.0.8
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: cb166a7f2af71d8cb5022555d981be85d8ac3fe680b4cd1f8fc7986c400964f2309f63034bd149fac1c475b2ef10af284e89c0613c4d03e4058d65bac23cf241
+  checksum: 9474300f904ca8b8d19b98b0f6462e2332bf2143c34a0491fb700f4e5d5451fa340262f36ec67a4e8ff538582a055f846f5330aefb352c430eb0f61571be9419
   languageName: node
   linkType: hard
 
@@ -8191,13 +8191,13 @@ __metadata:
 
 "hexo-theme-claudia@file:./themes/claudia::locator=wmi%40workspace%3Asite":
   version: 2.0.1
-  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=cec013&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=33950b&locator=wmi%40workspace%3Asite"
   dependencies:
     autoprefixer: ^10.4.13
     bulma: ^0.9.4
     postcss: ^8.4.21
     postcss-cli: ^10.1.0
-  checksum: c52807ee2162d893bd1fc5b0473fe9e73068f24ac18db6638b6cc6fade8c7bb0ad13a70a0e838638da5a0ca87d9a9b24fc6068a83553b0c89764199b251e3f6e
+  checksum: 3828da178eae6418ca423415ba6b995ecfdad92c816f7b819ad8a5df38c1bdd9f7d56183ca5059c46cc3510993c21b6ef44a2c2cffb0f4f7334d9481f891342d
   languageName: node
   linkType: hard
 
@@ -8800,7 +8800,7 @@ __metadata:
     sbg-utility: ^1.0.4
     server-destroy: ^1.0.1
     upath: ^2.0.1
-  checksum: b88279d6ddac154a4dfb206afbf0f5f4f01e137442cebd29040e5b1f3cc43a3ecd18524013c079afce0d10184aa15ef7cea0dfc595728fa1ebf7b9a4c586ecd5
+  checksum: a5396749a55a7269fc2ef977b6288ac9e08561a3b6211eb4fbe2939dcc7b3e184a89f47d8985fea79e3f6ecb44f1c5c8b55cae8c6e999e5783e85216ddb98fb8
   languageName: node
   linkType: hard
 
@@ -11666,7 +11666,7 @@ __metadata:
     through2: ^4.0.2
     true-case-path: ^2.2.1
     upath: ^2.0.1
-  checksum: c8f7a5ff469a48fa1c622058d5a516aa7b0aed029fe2152cb636e6276f4ef6a19de4100fc9d193c5c857724c166d5d4c894d658aa6e4574c1168eb346f9bee57
+  checksum: 8de7e70a165ef214131acae763b874d2c4a50774732e6ee03f7c38cbf82a2435ef58f4bedc3069a779dc8fb5f1d873090a114060edfe3494749fd1095fcb0768
   languageName: node
   linkType: hard
 
@@ -14701,7 +14701,7 @@ __metadata:
     path-browserify: ^1.0.1
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     toastr: ^2.1.4
-  checksum: a309191034f5a4163b879807ad04522ca2824987f326266e7f665e96bc40c32394298b2a71f252a7a3618df1e1dc9ab8926b5412ee79db671c355f811e968342
+  checksum: f83c4d5dd5628038577c8a5db2871d2bcaebb36db8e03c070e7adbbd2c171ca5faf6bcc3232442116b8ba9de38159eb65e729cc552e46e44139cf6f1a21c6b76
   languageName: node
   linkType: hard
 
@@ -14812,7 +14812,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     xmlbuilder2: ^3.0.2
-  checksum: c7988a46defc1c46274b2ee03bcf731cccc60bf0e851dbdd8d4fe7ec19bb3644901793823bd0046be777bcda9eedb30340ef330d00d420599af95b3bdf4beaf8
+  checksum: ea23e329c01478782241efdbad6a8687d464892237d6fc14ed3c788046c7c806d401a26d44f2c0fb9b230efe87c7efd32d3c586e9e5a6228482db3b32187d765
   languageName: node
   linkType: hard
 
@@ -14867,7 +14867,7 @@ __metadata:
     yargs: ^17.7.0
   bin:
     sbg: dist/cli.js
-  checksum: 63edf674249f4968aa0c52d09ea1fd55d29a83f4eec3dee762205cc9334517c52871b231ce340b0473b524eb8b8cca46f6cbb3d6c2817458e3e016be8ed3302d
+  checksum: cb65b99cb13d44bb2dbfebd25e96bcf3a85b133300274189899f70084f0433979bd818fd3b813418e32fe55535b335f2df3e534761a9df1b30bbb6c8c3f11ca5
   languageName: node
   linkType: hard
 
@@ -14932,7 +14932,7 @@ __metadata:
     upath: ^2.0.1
     write-file-atomic: ^5.0.0
     yaml: ^2.2.1
-  checksum: ec096eb4a7fee8c3a9eef8bee568e13ca087a6a68c17e8956192f9ff4f863384f7d7134469e7ab7cf5ca668c624ea8103c19ad2e942cf30137982f6bb8e43023
+  checksum: 59143a077fb6213c306261a230637254144d53409d35621d664643fa8876c0e3dc6f6f89a04e4c83940126dc2db571fa3e063ec73fbacb184f18e8d24b3bd400
   languageName: node
   linkType: hard
 
@@ -15000,7 +15000,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: fe35e29581b9fdbb79b0f94f0dec73304a3f83db38162f7cc2d03bc09c90e7367e05c4c2173c9a31d049be71a7745c4b657f089d8409b05c6996ac1e727e93e9
+  checksum: f90260725af6b5778e4265fd30727cc09f2a3f871ec93cd0ee14f974b7d90ccd814fec6d6626b80133ac989a1f3549fcc0c1bba518adb2ede6c55501c67ffb08
   languageName: node
   linkType: hard
 
@@ -15847,7 +15847,7 @@ __metadata:
     sbg-cli: ^1.0.4
     sbg-server: ^1.0.5
     sbg-utility: ^1.0.4
-  checksum: a709f7f67636989d815c39cf0b1d9041cbab1af105b6281c6c1c6475cbcf533af8615dd6f9e3a834bd9aec14979acfbadc2994e94deac780ef6b86460b60bf9d
+  checksum: bb4d732ffb94d1c5d9f6492e20111b68cb2d67dbfb9c5c47c2509a113e818366d39d630cafab1a4900e2505b33a90b2a73d4ce1feda6c96570dc563c3c0472e9
   languageName: node
   linkType: hard
 
