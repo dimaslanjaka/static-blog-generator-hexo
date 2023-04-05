@@ -8191,13 +8191,13 @@ __metadata:
 
 "hexo-theme-claudia@file:./themes/claudia::locator=wmi%40workspace%3Asite":
   version: 2.0.1
-  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=cec013&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=2446ed&locator=wmi%40workspace%3Asite"
   dependencies:
     autoprefixer: ^10.4.13
     bulma: ^0.9.4
     postcss: ^8.4.21
     postcss-cli: ^10.1.0
-  checksum: c52807ee2162d893bd1fc5b0473fe9e73068f24ac18db6638b6cc6fade8c7bb0ad13a70a0e838638da5a0ca87d9a9b24fc6068a83553b0c89764199b251e3f6e
+  checksum: c49917a646f55b037a1818c9111bb83ccb7f00e3f2b3742b234dcad576f49fd0e03bc754f5d0ba86d294b787f69290ed3bb6c6d0ac84a20f3885a345fbe6a19f
   languageName: node
   linkType: hard
 
