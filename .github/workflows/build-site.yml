@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-site:
     runs-on: ubuntu-latest
     permissions: read-all
     timeout-minutes: 120
