@@ -13,8 +13,8 @@ docs/
 **/.yarn/cache/**
 **/.yarn/unplugged/**
 **/.yarn/*.gz
-.pnp.*
-.deploy_git
+**/.pnp.*
+**/.deploy_*
 
 
 # temp
