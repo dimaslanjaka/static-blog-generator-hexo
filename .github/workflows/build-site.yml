@@ -53,42 +53,60 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
       - run: sh ./bin/submodule-install
         shell: bash
-      - name: Checkout site/src-posts
+      - name: checkout site/src-posts
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/source-posts
           ref: posts
           path: site/src-posts
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - name: Checkout site/source
+      - name: checkout site/source
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/public-source
           ref: master
           path: site/source
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - name: Checkout site/.deploy_git
+      - name: checkout site/.deploy_git
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/dimaslanjaka.github.io
           ref: master
           path: site/.deploy_git
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - name: Checkout site/.deploy_git/chimeraland
+      - name: clean some dirs site/.deploy_git
+        run: |
+          [[ -d hexo-seo-js ]] && git rm -r hexo-seo-js
+          [[ -d hexo-shortcodes-lib ]] && git rm -r hexo-shortcodes-lib
+          [[ -d js ]] && git rm -r js
+          [[ -d css ]] && git rm -r css
+          [[ -d fonts]] && git rm -r fonts
+          [[ -d lib ]] && git rm -r lib
+          [[ -d tags ]] && git rm -r tags
+          [[ -d categories ]] && git rm -r categories
+          [[ -d archives ]] && git rm -r archives
+          [[ -d assets ]] && git rm -r assets
+        shell: bash
+        working-directory: site/.deploy_git
+      - name: checkout site/.deploy_git/chimeraland
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/chimeraland
           ref: gh-pages
           path: site/.deploy_git/chimeraland
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - name: Checkout site/.deploy_git/page
+      - name: clean site/.deploy_git/chimeraland
+        run: git rm -r .
+        working-directory: site/.deploy_git/chimeraland
+        shell: bash
+      - name: checkout site/.deploy_git/page
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/page
           ref: gh-pages
           path: site/.deploy_git/page
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - name: Checkout site/.deploy_git/docs
+      - name: checkout site/.deploy_git/docs
         uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/docs
