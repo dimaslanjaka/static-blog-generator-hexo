@@ -8205,13 +8205,13 @@ __metadata:
 
 "hexo-theme-claudia@file:./themes/claudia::locator=wmi%40workspace%3Asite":
   version: 2.0.1
-  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=0e8c33&locator=wmi%40workspace%3Asite"
+  resolution: "hexo-theme-claudia@file:./themes/claudia#./themes/claudia::hash=cf8e17&locator=wmi%40workspace%3Asite"
   dependencies:
     autoprefixer: ^10.4.13
     bulma: ^0.9.4
     postcss: ^8.4.21
     postcss-cli: ^10.1.0
-  checksum: a239524fb3e42b0434e3992ed51b3a270c27311cb10619709bbab04bf7d06d23fcfb15e449580360886d97713e63db0053e81bf3586ed05069f2557036097784
+  checksum: 088ba0d4d08f943159f2bf8ba297e37444533a4329dad73425f6adb23748a4ab472aa2423bed2caa9f425bc02d35e9d20352314a79a94410b73acb91fcdfe0b3
   languageName: node
   linkType: hard
 
@@ -17622,6 +17622,7 @@ __metadata:
   resolution: "wmi@workspace:site"
   dependencies:
     "@types/ejs": ^3.1.2
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/js-yaml": ^4.0.5
     "@types/node": ^18.15.11
     "@typescript-eslint/eslint-plugin": ^5.57.1
