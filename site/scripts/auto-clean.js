@@ -1,3 +1,7 @@
+/* global hexo */
+
+'use strict';
+
 /**
  * clean auto generated files inside .deploy_git
  */
@@ -19,11 +23,10 @@ hexo.extend.filter.register('after_generate', function () {
     'tags',
     'categories',
     'assets'
-  ]
-    .map((str) => path.join(base, str))
-    .filter(fs.existsSync);
+  ].map((str) => path.join(base, str));
+  //.filter(fs.existsSync);
   files.forEach((p) => {
     console.log('deleting', p);
-    fs.rmSync(p, { force: true, recursive: true });
+    if (fs.existsSync(p)) fs.rmSync(p, { force: true, recursive: true });
   });
 });
