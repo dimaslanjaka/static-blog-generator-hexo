@@ -22,7 +22,7 @@ const ws_dev = {
 };
 const ws_prod = {
   dependencies: {
-    'hexo-renderers': '../packages/hexo-renderers',
+    'hexo-renderers': 'https://github.com/dimaslanjaka/hexo-renderers/tarball/master',
     'hexo-shortcodes': 'https://github.com/dimaslanjaka/hexo-shortcodes/raw/master/package/release/hexo-shortcodes.tgz',
     'hexo-generator-redirect': '../packages/hexo-generator-redirect',
     'hexo-seo': 'https://github.com/dimaslanjaka/hexo-seo/tarball/master'
