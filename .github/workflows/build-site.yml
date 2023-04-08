@@ -85,6 +85,7 @@ jobs:
         run: |
           git rm -r .
           git checkout .github
+          git checkout github-actions
         working-directory: site/.deploy_git/chimeraland
         shell: bash
       - name: checkout site/.deploy_git/page
