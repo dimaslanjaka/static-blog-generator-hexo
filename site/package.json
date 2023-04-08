@@ -51,7 +51,7 @@
     "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-markdown-it": "^7.0.0",
-    "hexo-renderers": "../packages/hexo-renderers",
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/master",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
     "hexo-server": "^3.0.0",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/master/package/release/hexo-shortcodes.tgz",
