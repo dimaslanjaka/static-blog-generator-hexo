@@ -82,7 +82,9 @@ jobs:
           path: site/.deploy_git/chimeraland
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: clean site/.deploy_git/chimeraland
-        run: git rm -r .
+        run: |
+          git rm -r .
+          git checkout .github
         working-directory: site/.deploy_git/chimeraland
         shell: bash
       - name: checkout site/.deploy_git/page
