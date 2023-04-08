@@ -76,17 +76,17 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: clean some dirs site/.deploy_git
         run: |
-          [[ -d hexo-seo-js ]] && git rm -r hexo-seo-js
-          [[ -d hexo-shortcodes-lib ]] && git rm -r hexo-shortcodes-lib
-          [[ -d js ]] && git rm -r js
-          [[ -d css ]] && git rm -r css
-          [[ -d fonts]] && git rm -r fonts
-          [[ -d lib ]] && git rm -r lib
-          [[ -d tags ]] && git rm -r tags
-          [[ -d categories ]] && git rm -r categories
-          [[ -d archives ]] && git rm -r archives
-          [[ -d assets ]] && git rm -r assets
-          [[ -d style ]] && git rm -r style
+          [[ -d hexo-seo-js ]] && git rm -r hexo-seo-js;
+          [[ -d hexo-shortcodes-lib ]] && git rm -r hexo-shortcodes-lib;
+          [[ -d js ]] && git rm -r js;
+          [[ -d css ]] && git rm -r css;
+          [[ -d fonts]] && git rm -r fonts;
+          [[ -d lib ]] && git rm -r lib;
+          [[ -d tags ]] && git rm -r tags;
+          [[ -d categories ]] && git rm -r categories;
+          [[ -d archives ]] && git rm -r archives;
+          [[ -d assets ]] && git rm -r assets;
+          [[ -d style ]] && git rm -r style;
         shell: bash
         working-directory: site/.deploy_git
       - name: checkout site/.deploy_git/chimeraland
