@@ -86,6 +86,7 @@ jobs:
           [[ -d categories ]] && git rm -r categories
           [[ -d archives ]] && git rm -r archives
           [[ -d assets ]] && git rm -r assets
+          [[ -d style ]] && git rm -r style
         shell: bash
         working-directory: site/.deploy_git
       - name: checkout site/.deploy_git/chimeraland
