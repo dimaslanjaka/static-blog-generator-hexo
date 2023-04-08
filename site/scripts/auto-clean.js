@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs-extra');
 
 hexo.extend.filter.register('after_generate', function () {
-  const base = path.join(this.base_dir, '.deploy_git');
+  const base = path.join(hexo.base_dir, '.deploy_git');
   const files = [
     'css',
     'style',
