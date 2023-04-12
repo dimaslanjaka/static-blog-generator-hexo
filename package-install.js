@@ -24,7 +24,7 @@ const ws_prod = {
   dependencies: {
     'hexo-renderers': 'https://github.com/dimaslanjaka/hexo-renderers/tarball/master',
     'hexo-shortcodes': 'https://github.com/dimaslanjaka/hexo-shortcodes/raw/master/package/release/hexo-shortcodes.tgz',
-    'hexo-generator-redirect': '../packages/hexo-generator-redirect',
+    'hexo-generator-redirect': 'https://github.com/dimaslanjaka/hexo-generator-redirect/raw/master/release/hexo-generator-redirect.tgz',
     'hexo-seo': 'https://github.com/dimaslanjaka/hexo-seo/tarball/master'
   },
   workspaces: ['site', 'site/multisite/chimeraland', 'site/src-posts']
