@@ -1,6 +1,9 @@
 name: Build Site
 
 on:
+  schedule:
+    # https://crontab.guru/#30_5_*_*_*
+    - cron:  '30 5 * * *'
   push:
     branches:
       - master
