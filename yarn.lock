@@ -1611,6 +1611,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.14.192":
+  version: 4.14.192
+  resolution: "@types/lodash@npm:4.14.192"
+  checksum: 31e1f0543a04158d2c429c45efd7c77882736630d0652f82eb337d6159ec0c249c5d175c0af731537b53271e665ff8d76f43221d75d03646d31cb4bd6f0056b1
+  languageName: node
+  linkType: hard
+
 "@types/mime@npm:*":
   version: 3.0.1
   resolution: "@types/mime@npm:3.0.1"
@@ -3494,6 +3501,7 @@ __metadata:
     "@types/gulp": ^4.0.10
     "@types/i18n": ^0.13.6
     "@types/imagemin": ^8.0.1
+    "@types/lodash": ^4.14.192
     "@types/node": ^18.15.11
     "@types/nunjucks": ^3.2.2
     "@types/prettier": ^2.7.2
@@ -3526,6 +3534,7 @@ __metadata:
     hexo-post-parser: ^1.2.6
     i18n: ^0.15.1
     js-yaml: ^4.1.0
+    lodash: ^4.17.21
     minimatch: ^8.0.3
     moment: ^2.29.4
     moment-timezone: ^0.5.43
