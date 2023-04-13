@@ -17,7 +17,7 @@ npm run build
 ## My other packages
 
 ### [static-blog-generator](https://github.com/dimaslanjaka/static-blog-generator)
-![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square&label=last+commit+dev)
+![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator/master/?style=flat-square&label=last+commit+master)
 ![types](https://badgen.net/npm/types/static-blog-generator?style=flat-square)
 ![version](https://badgen.net/npm/v/static-blog-generator?style=flat-square)
 
