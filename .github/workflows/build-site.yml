@@ -106,14 +106,6 @@ jobs:
           ref: master
           path: site/.deploy_git/docs
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - name: update submodules
-        run: |
-          git config --global user.name 'dimaslanjaka'
-          git config --global user.email 'dimaslanjaka@gmail.com'
-          git submodule foreach "git add -A | :"
-          git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :"
-          git submodule foreach "git pull -X theirs | :"
-          git submodule foreach "git push | :"
       - uses: actions/cache@v3
         id: cache
         name: init cache
@@ -168,6 +160,14 @@ jobs:
       - run: yarn workspace chimeraland build
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
+      - name: update submodules
+        run: |
+          git config --global user.name 'dimaslanjaka'
+          git config --global user.email 'dimaslanjaka@gmail.com'
+          git submodule foreach "git add -A | :"
+          git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :"
+          git submodule foreach "git pull -X theirs | :"
+          git submodule foreach "git push | :"
       - run: yarn workspace wmi exec "hexo generate"
       #- run: yarn workspace wmi run generate:sitemap
       - run: yarn workspace wmi run generate:feed
