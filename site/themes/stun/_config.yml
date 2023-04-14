@@ -191,7 +191,7 @@ body:
       # Opacity of the mask in night mode.
       night_mode: 0.6
   scripts:
-    - /r-ads.js
+    - //www.webmanajemen.com/page/assets/js/r-ads.js
 
 # The footer of site.
 footer:
