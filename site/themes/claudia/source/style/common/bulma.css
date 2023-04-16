@@ -3101,6 +3101,11 @@ a.tag:hover {
   line-height: 1.125;
 }
 
+/* fix .title font size inside pretext */
+pre .title, code .title {
+  font-size: unset;
+}
+
 .title strong {
   color: inherit;
   font-weight: inherit;
