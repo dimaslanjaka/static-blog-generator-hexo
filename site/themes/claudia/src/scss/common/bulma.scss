@@ -1,0 +1,15 @@
+@import 'bulma/css/bulma.css';
+
+//* fix .title font size inside pretext */
+
+pre {
+  .title {
+    font-size: unset;
+  }
+}
+
+code {
+  .title {
+    font-size: unset;
+  }
+}
