@@ -28,7 +28,9 @@ hexo.extend.helper.register(
     const data = hexo.site[by].data;
     const map = filternames
       .map((filtername) => {
-        const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
+        const filter = data.filter(
+          ({ name }) => String(name).toLowerCase() == filtername.toLowerCase()
+        );
         return filter.map((group) => {
           return group.posts.map(
             /**
@@ -53,3 +55,30 @@ hexo.extend.helper.register(
     return map;
   }
 );
+
+/**
+ * Returns a JSON stringified version of the value, safe for inclusion in an
+ * inline <script> tag. The optional argument 'spaces' can be used for
+ * pretty-printing.
+ *
+ * Output is NOT safe for inclusion in HTML! If that's what you need, use the
+ * built-in 'dump' filter instead.
+ *
+ * @example
+ * {{ data | json_stringify }}
+ */
+hexo.extend.helper.register('json_stringify', function (value, spaces) {
+  const nunjucks = require('nunjucks');
+  if (value instanceof nunjucks.runtime.SafeString) {
+    value = value.toString();
+  }
+  const jsonString = JSON.stringify(value, null, spaces).replace(
+    /</g,
+    '\\u003c'
+  );
+  return nunjucks.runtime.markSafe(jsonString);
+});
+
+hexo.extend.helper.register('object_keys', function (obj) {
+  return Object.keys(obj);
+});
