@@ -10281,10 +10281,13 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
 }
 
-pre .title {
-  font-size: unset;
-}
-
+pre .number,
+pre .title,
+code .number,
 code .title {
-  font-size: unset;
+  all: unset;
+}
+pre .title,
+code .title {
+  color: hsl(104, 62.3%, 56.3%);
 }

@@ -3,14 +3,13 @@
 
 //* fix .title font size inside pretext */
 
-pre {
-  .title {
-    font-size: unset;
-  }
-}
-
+pre,
 code {
+  .number,
   .title {
-    font-size: unset;
+    all: unset;
+  }
+  .title {
+    color: hsl(104, 62.3%, 56.3%);
   }
 }
