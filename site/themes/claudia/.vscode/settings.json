@@ -4,5 +4,9 @@
   "editor.formatOnType": false,
   "emmet.includeLanguages": {
     "njk": "html"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
   }
 }
