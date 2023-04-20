@@ -26,3 +26,7 @@
 	path = site/themes/material
 	url = https://github.com/dimaslanjaka/hexo-theme-material
 	branch = private
+[submodule "packages/hexo-theme-claudia"]
+	path = packages/hexo-theme-claudia
+	url = https://github.com/dimaslanjaka/hexo-theme-claudia.git
+	branch = private
