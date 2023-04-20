@@ -37,11 +37,27 @@
     "prettier": "^2.8.7",
     "upath": "^2.0.1"
   },
-  "workspaces": [
-    "site",
-    "site/multisite/chimeraland",
-    "site/src-posts",
-    "packages/hexo-theme-claudia",
-    "packages/hexo"
-  ]
+  "workspaces": {
+    "packages": [
+      "site",
+      "site/multisite/chimeraland",
+      "site/src-posts",
+      "packages/hexo-theme-claudia",
+      "packages/hexo"
+    ],
+    "nohoist": [
+      "**/hexo-theme-claudia",
+      "**/hexo-theme-claudia/**"
+    ]
+  },
+  "resolutions": {
+    "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
+    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
+    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz",
+    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
+    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sitemap-crawler/release/sitemap-crawler.tgz",
+    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz",
+    "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/raw/monorepo/release/hexo-blogger-xml.tgz"
+  }
 }
