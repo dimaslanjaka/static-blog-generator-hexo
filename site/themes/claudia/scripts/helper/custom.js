@@ -28,9 +28,7 @@ hexo.extend.helper.register(
     const data = hexo.site[by].data;
     const map = filternames
       .map((filtername) => {
-        const filter = data.filter(
-          ({ name }) => String(name).toLowerCase() == filtername.toLowerCase()
-        );
+        const filter = data.filter(({ name }) => String(name).toLowerCase() == filtername.toLowerCase());
         return filter.map((group) => {
           return group.posts.map(
             /**
@@ -72,10 +70,7 @@ hexo.extend.helper.register('json_stringify', function (value, spaces) {
   if (value instanceof nunjucks.runtime.SafeString) {
     value = value.toString();
   }
-  const jsonString = JSON.stringify(value, null, spaces).replace(
-    /</g,
-    '\\u003c'
-  );
+  const jsonString = JSON.stringify(value, null, spaces).replace(/</g, '\\u003c');
   return nunjucks.runtime.markSafe(jsonString);
 });
 
