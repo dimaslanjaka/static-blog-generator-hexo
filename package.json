@@ -9,7 +9,8 @@
     "start": "yarn workspace wmi run server",
     "prebuild": "yarn workspace wmi run prebuild",
     "build": "yarn workspace wmi run build",
-    "postbuild": "yarn workspace wmi run postbuild"
+    "postbuild": "yarn workspace wmi run postbuild",
+    "update:ncu": "npm-check-updates -u"
   },
   "repository": {
     "type": "git",
@@ -29,11 +30,11 @@
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
-    "eslint": "^8.35.0",
-    "lerna": "^6.5.1",
+    "eslint": "^8.38.0",
+    "lerna": "^6.6.1",
     "minimist": "^1.2.8",
-    "nx": "^15.7.2",
-    "prettier": "^2.8.4",
+    "nx": "^15.9.2",
+    "prettier": "^2.8.7",
     "upath": "^2.0.1"
   },
   "workspaces": [

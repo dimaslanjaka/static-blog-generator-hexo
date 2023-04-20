@@ -6,13 +6,25 @@
   "configurations": [
     {
       "command": "yarn workspace wmi exec \"hexo clean && hexo server\"",
-      "name": "Server",
+      "name": "clean-serve",
       "request": "launch",
       "type": "node-terminal",
       "env": {
         "NODE_ENV": "production"
       },
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "command": "yarn workspace wmi exec \"hexo server\"",
+      "name": "serve",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "yarn install && yarn workspace wmi exec \"hexo clean && hexo server\"",
+      "name": "install-clean-serve",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }
