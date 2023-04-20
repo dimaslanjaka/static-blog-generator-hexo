@@ -39,6 +39,8 @@
   "workspaces": [
     "site",
     "site/multisite/chimeraland",
-    "site/src-posts"
+    "site/src-posts",
+    "packages/hexo-theme-claudia",
+    "packages/hexo"
   ]
 }
