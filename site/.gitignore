@@ -8,6 +8,7 @@ _multiconfig.yml
 docs/
 *-old
 *-backup
+*-test*
 *.backup.*
 *-private*
 **/.yarn/cache/**
