@@ -17045,9 +17045,7 @@ __metadata:
   dependencies:
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     eslint: ^8.38.0
-    lerna: ^6.6.1
     minimist: ^1.2.8
-    nx: ^15.9.2
     prettier: ^2.8.7
     upath: ^2.0.1
   languageName: unknown

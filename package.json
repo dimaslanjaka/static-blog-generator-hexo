@@ -7,10 +7,11 @@
   "main": "package-install.js",
   "scripts": {
     "start": "yarn workspace wmi run server",
+    "clean": "yarn workspace wmi run clean",
     "prebuild": "yarn workspace wmi run prebuild",
     "build": "yarn workspace wmi run build",
     "postbuild": "yarn workspace wmi run postbuild",
-    "update:ncu": "npm-check-updates -u"
+    "update:ncu": "npm-check-updates -u && yarn cache clean"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,7 @@
   "devDependencies": {
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
     "eslint": "^8.38.0",
-    "lerna": "^6.6.1",
     "minimist": "^1.2.8",
-    "nx": "^15.9.2",
     "prettier": "^2.8.7",
     "upath": "^2.0.1"
   },
