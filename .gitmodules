@@ -33,4 +33,4 @@
 [submodule "packages/hexo"]
 	path = packages/hexo
 	url = https://github.com/dimaslanjaka/hexo.git
-	branch = private
+	branch = v7
