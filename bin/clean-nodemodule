@@ -48,7 +48,14 @@ unset IFS;
 #printf "%s\n" "${node_modules[@]}"
 #printf "%s\n" "${locks[@]}"
 
-paths=("${locks[@]}" "${yarn_caches[@]}" "${node_modules[@]}")
+echo "removing locks"
+for lock in "${locks[@]}"; do
+    rm -rf "$lock" && echo "removed $lock" &
+done
+
+wait
+
+paths=("${yarn_caches[@]}" "${node_modules[@]}")
 #echo ${paths[@]}
 #echo "count ${#paths[@]}"
 
@@ -65,4 +72,16 @@ for i in "${indexes[@]}" ; do
     sorted+=("${paths[i]}")
 done
 
-printf "%s\n" "${sorted[@]}"
+#printf "%s\n" "${sorted[@]}"
+
+echo "removing node_modules and caches"
+
+for file in "${sorted[@]}"; do
+    rm -rf "$file" && echo "removed $file" &
+done
+
+wait
+
+echo "cleaning tmp"
+
+find . -name "tmp" -exec rm -rf '{}' +
