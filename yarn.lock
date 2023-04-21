@@ -8770,9 +8770,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-post-parser@npm:^1.2.6, hexo-post-parser@npm:^1.2.7":
+"hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz":
   version: 1.2.7
-  resolution: "hexo-post-parser@npm:1.2.7"
+  resolution: "hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     axios: ^1.3.5
@@ -8799,7 +8799,7 @@ __metadata:
     upath: ^2.0.1
     yaml: ^2.2.1
     yargs: ^17.7.1
-  checksum: 8dc4bdb0f46e917cec5d1c7d4eb74974e87126a57eebf7c63e033fc9543a48d454849f926ef1b079469b109b57fc10df778adc190db20728d404eceb69dca1ba
+  checksum: 28f608714b2d38749a5d4511a39eccdcf613c20ec02c953da9710ca399746f2d3b41e0cdd3b4601a950d5c06dabccb3edd3d7195299551efec16fa60dacf0e2d
   languageName: node
   linkType: hard
 
