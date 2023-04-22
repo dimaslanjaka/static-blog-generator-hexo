@@ -43,6 +43,7 @@ comment_disqus:
   enable: true
   url: https://www.webmanajemen.com/ # the url of your website main domain like this https://xxx.xxx/
   name: dimaslanjaka # the short name in disqus
+  decode: true
 
 # dark
 # light
