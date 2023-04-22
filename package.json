@@ -11,7 +11,8 @@
     "prebuild": "yarn workspace wmi run prebuild",
     "build": "yarn workspace wmi run build",
     "postbuild": "yarn workspace wmi run postbuild",
-    "update:ncu": "npm-check-updates -u && yarn cache clean"
+    "update:ncu": "npm-check-updates -u && yarn cache clean",
+    "postinstall": "yarn workspace hexo run build"
   },
   "repository": {
     "type": "git",
