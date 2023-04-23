@@ -148,6 +148,7 @@ jobs:
           yarn
           yarn build
         working-directory: ./packages/hexo-renderers
+        name: install hexo-renderers
       - run: yarn install
         id: install
         continue-on-error: true
