@@ -12,7 +12,7 @@
     "build": "yarn workspace wmi run build",
     "postbuild": "yarn workspace wmi run postbuild",
     "update:ncu": "npm-check-updates -u && yarn cache clean",
-    "postinstall": "yarn workspace hexo-monorepo run build"
+    "postinstall": "yarn workspaces foreach run build"
   },
   "repository": {
     "type": "git",
@@ -42,8 +42,7 @@
       "site",
       "site/multisite/chimeraland",
       "site/src-posts",
-      "packages/hexo-theme-claudia",
-      "packages/hexo"
+      "packages/hexo-theme-claudia"
     ],
     "nohoist": [
       "**/hexo-theme-claudia",
@@ -59,6 +58,11 @@
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz",
     "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/raw/monorepo/release/hexo-blogger-xml.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz"
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz",
+    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-asset-link.tgz",
+    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-front-matter.tgz",
+    "hexo": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo.tgz",
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/warehouse.tgz",
+    "hexo-theme-landscape": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-theme-landscape.tgz"
   }
 }
