@@ -12,7 +12,7 @@
     "build": "yarn workspace wmi run build",
     "postbuild": "yarn workspace wmi run postbuild",
     "update:ncu": "npm-check-updates -u && yarn cache clean",
-    "postinstall": "yarn workspaces foreach run build"
+    "post-install": "yarn workspaces foreach run build"
   },
   "repository": {
     "type": "git",
