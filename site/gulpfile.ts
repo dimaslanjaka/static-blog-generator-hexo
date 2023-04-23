@@ -169,7 +169,7 @@ async function commit(done: (...args: any[]) => any) {
   // runners
   try {
     // commit submodules first
-    const submodules = gh.submodule.get();
+    const submodules = (<any>gh.submodule).get();
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
       const cwd = sub.root;
