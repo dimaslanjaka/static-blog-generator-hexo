@@ -63,5 +63,8 @@
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/warehouse.tgz",
     "hexo-theme-landscape": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-theme-landscape.tgz"
+  },
+  "dependencies": {
+    "binary-collections": "https://github.com/dimaslanjaka/bin"
   }
 }
