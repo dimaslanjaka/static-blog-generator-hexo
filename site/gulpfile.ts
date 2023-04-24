@@ -192,7 +192,7 @@ async function commit(done: (...args: any[]) => any) {
 async function generate(done: gulp.TaskFunctionCallback) {
   const hexo = new Hexo(__dirname);
   await hexo.init().catch(noop);
-  await hexo.call('generate').catch(noop);
+  await hexo.call('generate', {}, noop).catch(noop);
   if (typeof done === 'function') done();
 }
 

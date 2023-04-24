@@ -1200,16 +1200,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bunyan@npm:*":
-  version: 1.8.8
-  resolution: "@types/bunyan@npm:1.8.8"
-  dependencies:
-    "@types/node": "*"
-  checksum: b28966c13579b281ae75560d8c99ee4149348818cd4c4d6424afeee9fdab1039db2a0c06f1ab62fbf8c71f99dcebb70551bb45f2110d6a1fc3e3f891355b6b4b
-  languageName: node
-  linkType: hard
-
-"@types/connect@npm:*, @types/connect@npm:^3.4.35":
+"@types/connect@npm:*":
   version: 3.4.35
   resolution: "@types/connect@npm:3.4.35"
   dependencies:
@@ -1349,46 +1340,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz":
-  version: 3.9.0
-  resolution: "@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz"
-  dependencies:
-    "@types/bluebird": ^3.5.38
-    "@types/bunyan": "*"
-    "@types/connect": ^3.4.35
-    "@types/minimist": ^1.2.2
-    "@types/node": latest
-    "@types/underscore": ^1.11.4
-    bluebird: ^3.7.2
-    hexo-util: ^3.0.1
-    minimist: ^1.2.8
-    moment: ^2.29.4
-    underscore: ^1.13.6
-    upath: ^2.0.1
-  checksum: 0dd368fa2776dd8d5f8bd81f0835a9fcf773c45797cacc9efe77d5cb845e600a3932d0102a67efb2065166444121e05f9b554cb87c875774e84de0e5eb9cc799
-  languageName: node
-  linkType: hard
-
-"@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo":
-  version: 3.9.0
-  resolution: "@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=361cf4301b7a989e8868eae58702f1b74d537170"
-  dependencies:
-    "@types/bluebird": ^3.5.38
-    "@types/bunyan": "*"
-    "@types/connect": ^3.4.35
-    "@types/minimist": ^1.2.2
-    "@types/node": latest
-    "@types/underscore": ^1.11.4
-    bluebird: ^3.7.2
-    hexo-util: ^3.0.1
-    minimist: ^1.2.8
-    moment: ^2.29.4
-    underscore: ^1.13.6
-    upath: ^2.0.1
-  checksum: f7d741f2536dc7e38bd10f8b34aeb936e34d3efeffa0d0e44e9016b70e12e8e2f49bf8d225b7c02d9d616277410e4f02e121a46e1eee3e599edf1480ccfce9d1
-  languageName: node
-  linkType: hard
-
 "@types/i18n@npm:^0.13.6":
   version: 0.13.6
   resolution: "@types/i18n@npm:0.13.6"
@@ -1476,7 +1427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimist@npm:^1.2.0, @types/minimist@npm:^1.2.2":
+"@types/minimist@npm:^1.2.0":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
   checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
@@ -1492,7 +1443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.13.0, @types/node@npm:^18.15.11, @types/node@npm:^18.15.12, @types/node@npm:^18.x, @types/node@npm:latest":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.13.0, @types/node@npm:^18.15.11, @types/node@npm:^18.15.12, @types/node@npm:^18.x":
   version: 18.16.0
   resolution: "@types/node@npm:18.16.0"
   checksum: 63e0042136663b9e85ce503a4c65406cc6621fdba63ea66c74b4b1364a9aa9bdb57cadcb76696abab177f38a819b0fa6ace9e7f1647dcb990aedb1b4bd01012f
@@ -1645,13 +1596,6 @@ __metadata:
   version: 4.0.2
   resolution: "@types/tough-cookie@npm:4.0.2"
   checksum: e055556ffdaa39ad85ede0af192c93f93f986f4bd9e9426efdc2948e3e2632db3a4a584d4937dbf6d7620527419bc99e6182d3daf2b08685e710f2eda5291905
-  languageName: node
-  linkType: hard
-
-"@types/underscore@npm:^1.11.4":
-  version: 1.11.4
-  resolution: "@types/underscore@npm:1.11.4"
-  checksum: db9f8486bc851b732259e51f42d62aad1ae2158be5724612dc125ece5f5d61c51447f9dea28284c2a0f79cb95e788d01cb5ce97709880019213e69fab0dd1696
   languageName: node
   linkType: hard
 
@@ -7913,7 +7857,6 @@ __metadata:
     "@types/eslint": ^8
     "@types/gulp": ^4
     "@types/gulp-sass": ^5
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz"
     "@types/prettier": ^2
     "@typescript-eslint/eslint-plugin": ^5.59.0
     "@typescript-eslint/parser": ^5.59.0
@@ -15153,7 +15096,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator-hexo@workspace:."
   dependencies:
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     eslint: ^8.38.0
     minimist: ^1.2.8
     prettier: ^2.8.7
@@ -16928,7 +16870,6 @@ __metadata:
     "@types/ejs": ^3.1.2
     "@types/fs-extra": ^11.0.1
     "@types/gulp": ^4.0.10
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/js-yaml": ^4.0.5
     "@types/node": ^18.15.12
     "@typescript-eslint/eslint-plugin": ^5.59.0
