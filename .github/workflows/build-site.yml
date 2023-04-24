@@ -55,8 +55,6 @@ jobs:
           repository: dimaslanjaka/static-blog-generator-hexo
           # submodules: recursive
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - run: sh ./bin/submodule-install
-        shell: bash
       - name: checkout site/src-posts
         uses: actions/checkout@v3
         with:
@@ -134,7 +132,11 @@ jobs:
           architecture: x64
           cache: 'yarn'
           check-latest: true
-      - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky
+      - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky binary-collections@https://github.com/dimaslanjaka/bin
+      - name: reinstall submodules
+        #run: sh ./node_modules/.bin/submodule-install
+        run: submodule-install
+        shell: bash
       - name: Set env
         id: set-env
         shell: bash

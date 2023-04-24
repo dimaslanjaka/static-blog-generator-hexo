@@ -2619,6 +2619,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"binary-collections@https://github.com/dimaslanjaka/bin":
+  version: 1.0.0
+  resolution: "binary-collections@https://github.com/dimaslanjaka/bin.git#commit=9f87c517378f57bc37eea661783ff196a88d4efb"
+  dependencies:
+    glob: ^10.2.2
+  bin:
+    clean-nodemodule: clean-nodemodule
+    clean-nodemodules: clean-nodemodules
+    dev: dev
+    empty: empty
+    git-reduce-size: git-reduce-size
+    nodekill: nodekill
+    nodekill.cmd: nodekill.cmd
+    nodekill.ps1: nodekill.ps1
+    prod: prod
+    rmpath: rmpath
+    submodule-install: submodule-install
+    submodule-remove: submodule-remove
+  checksum: 9de64a26315a765dc555ffd1459d4677f88fff725067dea2095554aea46dccb27d9a2f6eb7be15b0d6072cc3e1d4fa59b453d0dcc3b76cec7e1683c7a2b21647
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^1.0.0":
   version: 1.13.1
   resolution: "binary-extensions@npm:1.13.1"
@@ -6860,7 +6882,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.0.0, glob@npm:^10.2.1":
+"glob@npm:^10.0.0, glob@npm:^10.2.1, glob@npm:^10.2.2":
   version: 10.2.2
   resolution: "glob@npm:10.2.2"
   dependencies:
@@ -15096,6 +15118,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator-hexo@workspace:."
   dependencies:
+    binary-collections: "https://github.com/dimaslanjaka/bin"
     eslint: ^8.38.0
     minimist: ^1.2.8
     prettier: ^2.8.7
@@ -17165,9 +17188,9 @@ __metadata:
   linkType: hard
 
 "yaml@npm:^2.1.1, yaml@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "yaml@npm:2.2.1"
-  checksum: 84f68cbe462d5da4e7ded4a8bded949ffa912bc264472e5a684c3d45b22d8f73a3019963a32164023bdf3d83cfb6f5b58ff7b2b10ef5b717c630f40bd6369a23
+  version: 2.2.2
+  resolution: "yaml@npm:2.2.2"
+  checksum: d90c235e099e30094dcff61ba3350437aef53325db4a6bcd04ca96e1bfe7e348b191f6a7a52b5211e2dbc4eeedb22a00b291527da030de7c189728ef3f2b4eb3
   languageName: node
   linkType: hard
 
