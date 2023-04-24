@@ -22,7 +22,6 @@
     "safelinkify": "^1.1.17"
   },
   "devDependencies": {
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "eslint": "^8.25.0",
