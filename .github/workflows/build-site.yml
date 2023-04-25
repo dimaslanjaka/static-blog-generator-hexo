@@ -83,6 +83,13 @@ jobs:
           ref: gh-pages
           path: site/.deploy_git/chimeraland
           token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: checkout packages/hexo-theme-claudia
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/hexo-theme-claudia
+          ref: private
+          path: packages/hexo-theme-claudia
+          token: '${{ secrets.ACCESS_TOKEN }}'
       - name: clean site/.deploy_git/chimeraland
         run: |
           git rm -r .
