@@ -19,9 +19,7 @@ async function main(cwd) {
 
   await updatePkgJSON(pjson, cwd);
   if (pjson['workspaces'] && recursive) {
-    let workspaces = Array.isArray(pjson['workspaces'])
-      ? pjson['workspaces']
-      : null;
+    let workspaces = Array.isArray(pjson['workspaces']) ? pjson['workspaces'] : null;
     if (!workspaces && Array.isArray(pjson['workspaces']['packages'])) {
       workspaces = pjson['workspaces']['packages'];
     }
@@ -49,10 +47,8 @@ main();
  */
 async function updatePkgJSON(pkgJSON, cwd = null) {
   if (!cwd) cwd = __dirname;
-  if (pkgJSON.dependencies)
-    await doUpdate(pkgJSON.dependencies, 'production', cwd);
-  if (pkgJSON.devDependencies)
-    await doUpdate(pkgJSON.devDependencies, 'development', cwd);
+  if (pkgJSON.dependencies) await doUpdate(pkgJSON.dependencies, 'production', cwd);
+  if (pkgJSON.devDependencies) await doUpdate(pkgJSON.devDependencies, 'development', cwd);
 }
 
 /**
@@ -78,9 +74,7 @@ async function doUpdate(packages, mode, cwd = null) {
     /**
      * is remote url package
      */
-    let isTarballPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(
-      version
-    );
+    let isTarballPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version);
 
     /**
      * is github package
@@ -94,14 +88,10 @@ async function doUpdate(packages, mode, cwd = null) {
     /**
      * is local tarball package
      */
-    const isLocalTarballpkg =
-      isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
+    const isLocalTarballpkg = isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
 
     if (isLocalPkg && fs.existsSync(path.join(cwd, 'node_modules', pkgname))) {
-      fs.rmSync(path.join(cwd, 'node_modules', pkgname), {
-        recursive: true,
-        force: true
-      });
+      fs.rmSync(path.join(cwd, 'node_modules', pkgname), { recursive: true, force: true });
     }
     if (isLocalTarballpkg || isGitPkg || isTarballPkg || isLocalPkg) {
       /*if (!usingYarn) {
@@ -154,8 +144,8 @@ async function doUpdate(packages, mode, cwd = null) {
   const argsUpdate = [updateArg, ...pkg2update];
   // do update
   pkg2update.forEach((pkg) => {
-    console.log(pkgm, 'updating', saveAs, pkg);
-    // if (pkg.includes('highli')) console.log(pkgm, 'updating', saveAs, pkg, cwd);
+    // console.log(pkgm, 'updating', saveAs, pkg);
+    if (pkg.includes('highli')) console.log(pkgm, 'updating', saveAs, pkg, cwd);
   });
 
   const method = 'update';
@@ -163,23 +153,16 @@ async function doUpdate(packages, mode, cwd = null) {
   if (method === 'update') {
     // update method
     await new Promise((resolve) => {
-      console.log(pkgm, ...argsUpdate);
-      spawn(pkgm, argsUpdate, { cwd, stdio: 'ignore', shell: true }).once(
-        'exit',
-        function () {
-          resolve(null);
-        }
-      );
+      spawn(pkgm, argsUpdate, { cwd, stdio: 'ignore', shell: true }).once('exit', function () {
+        resolve(null);
+      });
     });
   } else {
     // install method
     await new Promise((resolve) => {
-      spawn(pkgm, argsInstall, { cwd, stdio: 'ignore', shell: true }).once(
-        'exit',
-        function () {
-          resolve(null);
-        }
-      );
+      spawn(pkgm, argsInstall, { cwd, stdio: 'ignore', shell: true }).once('exit', function () {
+        resolve(null);
+      });
     });
   }
 }
@@ -197,8 +180,7 @@ function summon(cmd, args = [], opt = {}) {
   const spawnopt = Object.assign(opt);
   // *** Return the promise
   return new Promise(function (resolve) {
-    if (typeof cmd !== 'string' || cmd.trim().length === 0)
-      return resolve(new Error('cmd empty'));
+    if (typeof cmd !== 'string' || cmd.trim().length === 0) return resolve(new Error('cmd empty'));
     let stdout = '';
     let stderr = '';
     let output = '';
@@ -223,8 +205,7 @@ function summon(cmd, args = [], opt = {}) {
 
     child.on('close', function (code) {
       // Should probably be 'exit', not 'close'
-      if (code !== 0)
-        console.log('[ERROR]', cmd, ...args, 'dies with code', code);
+      if (code !== 0) console.log('[ERROR]', cmd, ...args, 'dies with code', code);
       // *** Process completed
       resolve({ stdout, stderr, output });
     });
