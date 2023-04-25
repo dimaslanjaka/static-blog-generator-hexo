@@ -132,11 +132,7 @@ jobs:
           architecture: x64
           cache: 'yarn'
           check-latest: true
-      - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky binary-collections@https://github.com/dimaslanjaka/bin
-      - name: reinstall submodules
-        #run: sh ./node_modules/.bin/submodule-install
-        run: submodule-install
-        shell: bash
+      - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky
       - name: Set env
         id: set-env
         shell: bash
@@ -151,15 +147,15 @@ jobs:
         continue-on-error: true
         name: install
       - run: |
-          yarn build
-        working-directory: ./packages/hexo-renderers
-        name: install hexo-renderers
-        continue-on-error: true
-        id: install2
-      - run: |
-          sh bin/clean-nodemodules && yarn install
-        if: steps.install.outcome == 'failure' || steps.install2.outcome == 'failure'
+          rm -rf yarn.lock node_modules
+          touch yarn.lock
+          yarn install
+        if: steps.install.outcome == 'failure'
         name: clean install
+        shell: bash
+      - name: reinstall submodules
+        #run: sh ./node_modules/.bin/submodule-install
+        run: submodule-install
         shell: bash
       - run: yarn workspace chimeraland build
       - run: yarn workspace chimeraland build
