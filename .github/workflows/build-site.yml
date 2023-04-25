@@ -55,6 +55,11 @@ jobs:
           repository: dimaslanjaka/static-blog-generator-hexo
           # submodules: recursive
           token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: update submodules
+        run: |
+          curl -L https://github.com/dimaslanjaka/bin/raw/master/submodule-install > bin/submodule-install
+          sh ./bin/submodule-install
+        shell: bash
       - name: checkout site/src-posts
         uses: actions/checkout@v3
         with:
@@ -160,10 +165,6 @@ jobs:
           yarn install --check-cache
         if: steps.install.outcome == 'failure'
         name: clean install
-        shell: bash
-      - name: reinstall submodules
-        #run: sh ./node_modules/.bin/submodule-install
-        run: submodule-install
         shell: bash
       - run: yarn workspace chimeraland build
       - run: yarn workspace chimeraland build
