@@ -1500,22 +1500,22 @@ __metadata:
   linkType: hard
 
 "@types/react-dom@npm:^18.0.11":
-  version: 18.0.11
-  resolution: "@types/react-dom@npm:18.0.11"
+  version: 18.2.0
+  resolution: "@types/react-dom@npm:18.2.0"
   dependencies:
     "@types/react": "*"
-  checksum: 579691e4d5ec09688087568037c35edf8cfb1ab3e07f6c60029280733ee7b5c06d66df6fcc90786702c93ac8cb13bc7ff16c79ddfc75d082938fbaa36e1cdbf4
+  checksum: 9212b3793707a763f10e2c608f6ccb5f729029da6cb84204f333634d3d7baafbc1b20b7faf7cf788a8fd385050a1fb579902031f9462473ef10607116f33f33c
   languageName: node
   linkType: hard
 
 "@types/react@npm:*, @types/react@npm:^18.0.35":
-  version: 18.0.38
-  resolution: "@types/react@npm:18.0.38"
+  version: 18.2.0
+  resolution: "@types/react@npm:18.2.0"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 34481c79f4f7ea2aefbaa45281319dc183200230d932d968463eba1643bd3635073d0a17c5c613150a69e36ca18b811ecffafea6384fa3dff3b5203866339d69
+  checksum: db3d92b423150222a666329f7aa3023e3e942044700557b8a7d161530847e621aec9f56c9e7f71761b06dd164c8a7b17ad52355863efe80963dffa5537e8e5fd
   languageName: node
   linkType: hard
 
@@ -6029,13 +6029,13 @@ __metadata:
   linkType: hard
 
 "file-type@npm:^18.2.1":
-  version: 18.2.1
-  resolution: "file-type@npm:18.2.1"
+  version: 18.3.0
+  resolution: "file-type@npm:18.3.0"
   dependencies:
     readable-web-to-node-stream: ^3.0.2
     strtok3: ^7.0.0
     token-types: ^5.0.1
-  checksum: bbc9381292e96a72ecd892f9f5e1a9a8d3f9717955841346e55891acfe099135bfa149f7dad51f35ee52b5e7e0a1a02d7375061b2800758011682c2e9d96953e
+  checksum: 7b2a08cc1f8737b65837a83b8077ba4ea624e5de82fa866814e634f03e19695fefd755fac440a6eb81a273601a342b05cee1f70f2bc032be8424d7c7d135eb51
   languageName: node
   linkType: hard
 
@@ -6704,23 +6704,6 @@ __metadata:
 "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz":
   version: 1.1.9
   resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
-  dependencies:
-    "@expo/spawn-async": ^1.7.2
-    bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
-    deepmerge-ts: ^5.1.0
-    fs-extra: ^11.1.1
-    hexo-util: ^3.0.1
-    ini: ^4.1.0
-    true-case-path: ^2.2.1
-    upath: ^2.0.1
-  checksum: ee19643bc40d9f71939a376df4cece31a557fa7afcccf410c37204263b676dce1bd346522d0b7252c4bd769f537aba00930e6e1d2227309e4dc68ea56611fd09
-  languageName: node
-  linkType: hard
-
-"git-command-helper@npm:*, git-command-helper@npm:^1.1.8, git-command-helper@npm:^1.1.9":
-  version: 1.1.9
-  resolution: "git-command-helper@npm:1.1.9"
   dependencies:
     "@expo/spawn-async": ^1.7.2
     bluebird: ^3.7.2
@@ -8464,27 +8447,6 @@ __metadata:
     server-destroy: ^1.0.1
     upath: ^2.0.1
   checksum: a5396749a55a7269fc2ef977b6288ac9e08561a3b6211eb4fbe2939dcc7b3e184a89f47d8985fea79e3f6ecb44f1c5c8b55cae8c6e999e5783e85216ddb98fb8
-  languageName: node
-  linkType: hard
-
-"instant-indexing@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "instant-indexing@npm:1.0.3"
-  dependencies:
-    "@google-cloud/local-auth": ^2.1.1
-    "@googleapis/docs": ^2.0.0
-    "@googleapis/indexing": ^1.0.0
-    "@googleapis/searchconsole": ^1.0.0
-    axios: ^1.3.3
-    fs-extra: ^11.1.0
-    google-auth-library: ^8.7.0
-    googleapis: ^111.0.0
-    open: ^8.4.1
-    request: ^2.88.2
-    sbg-utility: ^1.0.4
-    server-destroy: ^1.0.1
-    upath: ^2.0.1
-  checksum: d015b1230ca9b1aae67753ca1913a9dc5ef27ac7efa4511c1450df04cdbe0ae2ac3408af7e1390dd8a30f645216d0aeb726656a96327580e15d52e34c5663ff5
   languageName: node
   linkType: hard
 
@@ -12035,7 +11997,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^8.0.9, open@npm:^8.4.0, open@npm:^8.4.1, open@npm:^8.4.2":
+"open@npm:^8.0.9, open@npm:^8.4.0, open@npm:^8.4.2":
   version: 8.4.2
   resolution: "open@npm:8.4.2"
   dependencies:
@@ -16905,7 +16867,7 @@ __metadata:
     fs-extra: ^11.1.1
     git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
     gulp: ^4.0.2
-    hexo: "*"
+    hexo: "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo.tgz"
     hexo-asset-link: ^2.2.1
     hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
     hexo-excerpt: ^1.3.0
