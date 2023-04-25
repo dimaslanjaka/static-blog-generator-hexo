@@ -128,8 +128,8 @@ jobs:
             cache-
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-          architecture: x64
+          node-version: "19.x"
+          architecture: "x64"
           cache: 'yarn'
           check-latest: true
       - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky
