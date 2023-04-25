@@ -3,7 +3,7 @@ name: Build Site
 on:
   schedule:
     # https://crontab.guru/#30_5_*_*_*
-    - cron:  '30 5 * * *'
+    - cron: '30 5 * * *'
   push:
     branches:
       - master
@@ -148,8 +148,9 @@ jobs:
         name: install
       - run: |
           rm -rf yarn.lock node_modules
+          yarn cache clean
           touch yarn.lock
-          yarn install
+          yarn install --check-cache
         if: steps.install.outcome == 'failure'
         name: clean install
         shell: bash
