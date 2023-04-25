@@ -504,4 +504,103 @@ function isPackageInstalled(packageName) {
 function checkNodeModules() {
   const exists = Array.from(toUpdate).map(
     (pkgname) =>
-      fs.existsSync(path.join(__dirname, 'node_modules', pkgnam
+      fs.existsSync(path.join(__dirname, 'node_modules', pkgname)) &&
+      fs.existsSync(path.join(__dirname, 'node_modules', pkgname, 'package.json'))
+  );
+  //console.log({ exists });
+  return exists.every((exist) => exist === true);
+}
+
+/**
+ * read file with validation
+ * @param {string} str
+ * @param {import('fs').EncodingOption} encoding
+ * @returns
+ */
+function readfile(str, encoding = 'utf-8') {
+  if (fs.existsSync(str)) {
+    if (fs.statSync(str).isFile()) {
+      return fs.readFileSync(str, encoding);
+    } else {
+      throw str + ' is directory';
+    }
+  } else {
+    throw str + ' not found';
+  }
+}
+
+/**
+ * write to file recursively
+ * @param {string} dest
+ * @param {any} data
+ */
+function writefile(dest, data) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(dest)) {
+    if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
+  }
+  fs.writeFileSync(dest, data);
+}
+
+/**
+ * get hashes from folder
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
+ * @param {string} folder
+ * @param {{ ignored: string[], encoding: import('crypto').BinaryToTextEncoding, pattern: string }} options
+ * @returns {Promise<{ filesWithHash: Record<string, string>, hash: string }>}
+ */
+async function folder_to_hash(alogarithm, folder, options) {
+  return new Promise((resolve, reject) => {
+    options = Object.assign({ encoding: 'hex', ignored: [] }, options || {});
+    if (folder.startsWith('file:')) folder = folder.replace('file:', '');
+    // fix non exist
+    if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);
+    // run only if exist
+    if (fs.existsSync(folder)) {
+      glob(
+        options.pattern || '**/*',
+        {
+          cwd: folder,
+          ignore: (
+            options.ignored || [
+              '**/tmp/**',
+              '**/build/**',
+              '**/.cache/**',
+              '**/dist/**',
+              '**/.vscode/**',
+              '**/coverage/**',
+              '**/release/**',
+              '**/bin/**',
+              '**/*.json'
+            ]
+          ).concat('**/.git*/**', '**/node_modules/**'),
+          dot: true,
+          noext: true
+        },
+        async function (err, matches) {
+          if (!err) {
+            const filesWithHash = {};
+            for (let i = 0; i < matches.length; i++) {
+              const item = matches[i];
+              const fullPath = upath.join(folder, item);
+              const statInfo = fs.statSync(fullPath);
+              if (statInfo.isFile()) {
+                const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
+                const hash = await data_to_hash(alogarithm, fileInfo, options.encoding);
+                filesWithHash[fullPath] = hash;
+              }
+            }
+            resolve({
+              filesWithHash,
+              hash: await data_to_hash(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
+            });
+          } else {
+            reject(err);
+          }
+        }
+      );
+    } else {
+      console.log(coloredScriptName, folder + ' not found');
+    }
+  });
+}
