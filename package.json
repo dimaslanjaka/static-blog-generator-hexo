@@ -49,6 +49,7 @@
     ]
   },
   "resolutions": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
     "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
     "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz",

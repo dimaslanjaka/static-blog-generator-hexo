@@ -4222,16 +4222,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz":
-  version: 7.0.4
-  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
-  dependencies:
-    shebang-command: ^2.0.0
-    which: ^3.0.0
-  checksum: 0baad950b8c37a09990a92e4a771e632e60b17e8d664841c049019a71055ccbe24a69091c14cb08ed0c3fd2df463e4d1bf1a531644128e0382d3226d2f05d3e7
-  languageName: node
-  linkType: hard
-
 "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/tarball/private":
   version: 7.0.4
   resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn.git#commit=e5611698e20ee545f8c3fc13691bc8dc36884e90"
@@ -4239,41 +4229,6 @@ __metadata:
     shebang-command: ^2.0.0
     which: ^3.0.0
   checksum: 0baad950b8c37a09990a92e4a771e632e60b17e8d664841c049019a71055ccbe24a69091c14cb08ed0c3fd2df463e4d1bf1a531644128e0382d3226d2f05d3e7
-  languageName: node
-  linkType: hard
-
-"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript":
-  version: 7.0.3
-  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn.git#commit=e48f170a12c0651ee2f770a41dd043459be336e0"
-  dependencies:
-    path-key: ^3.1.0
-    shebang-command: ^2.0.0
-    which: ^2.0.1
-  checksum: bbf7a558b8efae5b7e54a7790999908167005fe1f3a78535067d84f779ac8ce2a1a813288a7d8f19321e8e9c95285e9d42b2eccf48237f538f706865a204e383
-  languageName: node
-  linkType: hard
-
-"cross-spawn@npm:^6.0.5":
-  version: 6.0.5
-  resolution: "cross-spawn@npm:6.0.5"
-  dependencies:
-    nice-try: ^1.0.4
-    path-key: ^2.0.1
-    semver: ^5.5.0
-    shebang-command: ^1.2.0
-    which: ^1.2.9
-  checksum: f893bb0d96cd3d5751d04e67145bdddf25f99449531a72e82dcbbd42796bbc8268c1076c6b3ea51d4d455839902804b94bc45dfb37ecbb32ea8e54a6741c3ab9
-  languageName: node
-  linkType: hard
-
-"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.1, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
-  version: 7.0.3
-  resolution: "cross-spawn@npm:7.0.3"
-  dependencies:
-    path-key: ^3.1.0
-    shebang-command: ^2.0.0
-    which: ^2.0.1
-  checksum: 671cc7c7288c3a8406f3c69a3ae2fc85555c04169e9d611def9a675635472614f1c0ed0ef80955d5b6d4e724f6ced67f0ad1bb006c2ea643488fcfef994d7f52
   languageName: node
   linkType: hard
 
@@ -7429,7 +7384,7 @@ __metadata:
     upath: ^2.0.1
   peerDependencies:
     hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  checksum: 07e767a1df1d340602f8ccf3126062ab484a22916c51fdf7a4a8b579c4dfdf6bca557bd76f4ea11342d71bc879b7a713d132d2b3b23dc10921df3821ca286b78
+  checksum: 53ba56d7d9377b304c8400ad07f91bb5d604585fad8826f6f831718174a8dd0bf0514b5e83614a1f90e65365758a889d0455fe656c780385f1e769ddb0a10716
   languageName: node
   linkType: hard
 
@@ -7710,7 +7665,7 @@ __metadata:
     upath: ^2.0.1
     yaml: ^2.2.1
     yargs: ^17.7.1
-  checksum: 28f608714b2d38749a5d4511a39eccdcf613c20ec02c953da9710ca399746f2d3b41e0cdd3b4601a950d5c06dabccb3edd3d7195299551efec16fa60dacf0e2d
+  checksum: a19fa7456c36301cc2f1e1b330c388277ab6bf35719ded7260a84663186206dbf37b96750f6b9aeee607169daea359054b56f8dc7d0a1092399e4c523f20c9f3
   languageName: node
   linkType: hard
 
@@ -7877,7 +7832,7 @@ __metadata:
     postcss: ^8.4.23
     postcss-cli: ^10.1.0
     prettier: ^2.8.7
-    sbg-utility: "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz"
+    sbg-utility: ^1.0.9
   languageName: unknown
   linkType: soft
 
@@ -7943,7 +7898,7 @@ __metadata:
     warehouse: ^5.0.0
   bin:
     hexo: ./bin/hexo
-  checksum: 22efa1a41778bc50c9cba49f7a25a9103ac7b02fb708102eb86c933bda9ede680cefab340ea84174b189df102aaec8ab78239016e9488f68b822a0805442b706
+  checksum: 64cc5f0cf59b40377b8b5616ccc6b7d7aa5baf3a3cbcf04be5a7b05437c41e59fff5e9d86f2b9f4db87f53b836af3438a7e082e8e88b782126d69f9b18db2c3e
   languageName: node
   linkType: hard
 
@@ -8446,7 +8401,7 @@ __metadata:
     sbg-utility: ^1.0.6
     server-destroy: ^1.0.1
     upath: ^2.0.1
-  checksum: a5396749a55a7269fc2ef977b6288ac9e08561a3b6211eb4fbe2939dcc7b3e184a89f47d8985fea79e3f6ecb44f1c5c8b55cae8c6e999e5783e85216ddb98fb8
+  checksum: 9bf59eb5d68330bbf58aa333267e23137cf7bd042cb35524f801005bb7f792f3c177a5fc75d406c4b8bb9e4719770680c9a0593487118331cf465d36f31f6c8a
   languageName: node
   linkType: hard
 
@@ -10966,13 +10921,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nice-try@npm:^1.0.4":
-  version: 1.0.5
-  resolution: "nice-try@npm:1.0.5"
-  checksum: 0b4af3b5bb5d86c289f7a026303d192a7eb4417231fe47245c460baeabae7277bcd8fd9c728fb6bd62c30b3e15cd6620373e2cf33353b095d8b403d3e8a15aff
-  languageName: node
-  linkType: hard
-
 "no-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "no-case@npm:3.0.4"
@@ -12502,14 +12450,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-key@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "path-key@npm:2.0.1"
-  checksum: f7ab0ad42fe3fb8c7f11d0c4f849871e28fbd8e1add65c370e422512fc5887097b9cf34d09c1747d45c942a8c1e26468d6356e2df3f740bf177ab8ca7301ebfd
-  languageName: node
-  linkType: hard
-
-"path-key@npm:^3.0.0, path-key@npm:^3.1.0":
+"path-key@npm:^3.0.0":
   version: 3.1.1
   resolution: "path-key@npm:3.1.1"
   checksum: 55cd7a9dd4b343412a8386a743f9c746ef196e57c823d90ca3ab917f90ab9f13dd0ded27252ba49dbdfcab2b091d998bc446f6220cd3cea65db407502a740020
@@ -14215,7 +14156,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     xmlbuilder2: ^3.0.2
-  checksum: ea23e329c01478782241efdbad6a8687d464892237d6fc14ed3c788046c7c806d401a26d44f2c0fb9b230efe87c7efd32d3c586e9e5a6228482db3b32187d765
+  checksum: bdf509037631e29aa6c1c2ba8db3b05fd930b1a2d44053b0a6c4268294371aeb06babb5ce20efc17a3c09e65a14c3dbe1f43a8bd56edce808172a2402b938251
   languageName: node
   linkType: hard
 
@@ -14240,7 +14181,7 @@ __metadata:
     yargs: ^17.7.0
   bin:
     sbg: dist/cli.js
-  checksum: cb65b99cb13d44bb2dbfebd25e96bcf3a85b133300274189899f70084f0433979bd818fd3b813418e32fe55535b335f2df3e534761a9df1b30bbb6c8c3f11ca5
+  checksum: f75d09324ab0f89bffed5c12244805c826bbf759e3f8a9eeb027b1366cfaf3137855a82a06fa118ef8f36315a3bf3649a894856c4d174836559a407aab055431
   languageName: node
   linkType: hard
 
@@ -14281,7 +14222,7 @@ __metadata:
     upath: ^2.0.1
     write-file-atomic: ^5.0.0
     yaml: ^2.2.1
-  checksum: 59143a077fb6213c306261a230637254144d53409d35621d664643fa8876c0e3dc6f6f89a04e4c83940126dc2db571fa3e063ec73fbacb184f18e8d24b3bd400
+  checksum: 41265bec4e5ee3157f961225bf706a69a2d40a1fa9107668fca2124001923ae122bd97c6437f8ed8a750aa84d70e0eb51f86ecb9ca4bad1a8fff7acf1327c543
   languageName: node
   linkType: hard
 
@@ -14317,7 +14258,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: 8386603952e49b6aa24bec20f3f4190c4194d06cdfb7db375c4ce22760a8c8e464f108e6bad54c7e50202a6cde8230fa13fbf3600fad463507dd0cd7cc0000f9
+  checksum: 764a5823593034e2e73b7309a2a8da6dfb0fff546ede389b35e60acf02e1e17bd81b9e799430f7894c3accba93887be388d39696410efcda82377a294ef1b33a
   languageName: node
   linkType: hard
 
@@ -14356,7 +14297,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:2 || 3 || 4 || 5, semver@npm:^5.5.0, semver@npm:^5.6.0, semver@npm:^5.7.1":
+"semver@npm:2 || 3 || 4 || 5, semver@npm:^5.6.0, semver@npm:^5.7.1":
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
   bin:
@@ -14575,28 +14516,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shebang-command@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "shebang-command@npm:1.2.0"
-  dependencies:
-    shebang-regex: ^1.0.0
-  checksum: 9eed1750301e622961ba5d588af2212505e96770ec376a37ab678f965795e995ade7ed44910f5d3d3cb5e10165a1847f52d3348c64e146b8be922f7707958908
-  languageName: node
-  linkType: hard
-
 "shebang-command@npm:^2.0.0":
   version: 2.0.0
   resolution: "shebang-command@npm:2.0.0"
   dependencies:
     shebang-regex: ^3.0.0
   checksum: 6b52fe87271c12968f6a054e60f6bde5f0f3d2db483a1e5c3e12d657c488a15474121a1d55cd958f6df026a54374ec38a4a963988c213b7570e1d51575cea7fa
-  languageName: node
-  linkType: hard
-
-"shebang-regex@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "shebang-regex@npm:1.0.0"
-  checksum: 404c5a752cd40f94591dfd9346da40a735a05139dac890ffc229afba610854d8799aaa52f87f7e0c94c5007f2c6af55bdcaeb584b56691926c5eaf41dc8f1372
   languageName: node
   linkType: hard
 
@@ -15102,7 +15027,7 @@ __metadata:
     sbg-cli: ^1.0.4
     sbg-server: ^1.0.5
     sbg-utility: ^1.0.6
-  checksum: bb4d732ffb94d1c5d9f6492e20111b68cb2d67dbfb9c5c47c2509a113e818366d39d630cafab1a4900e2505b33a90b2a73d4ce1feda6c96570dc563c3c0472e9
+  checksum: a0a70bf9599f3ac6e7e6d4dd7636a1cc7095ae828a699fe0ef08294b87a284428b40c999f95b8235830b35904d36f89c68fc14cdf868d17c82a1ded002b91d55
   languageName: node
   linkType: hard
 
@@ -16761,7 +16686,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"which@npm:^1.2.14, which@npm:^1.2.9":
+"which@npm:^1.2.14":
   version: 1.3.1
   resolution: "which@npm:1.3.1"
   dependencies:
@@ -16772,7 +16697,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"which@npm:^2.0.1, which@npm:^2.0.2":
+"which@npm:^2.0.2":
   version: 2.0.2
   resolution: "which@npm:2.0.2"
   dependencies:
