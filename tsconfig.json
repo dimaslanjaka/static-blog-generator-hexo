@@ -48,6 +48,9 @@
       "WebWorker"
     ]
   },
+  "include": [
+    "**/*"
+  ],
   "exclude": [
     "**/node_modules/**",
     "**/tmp/**",
