@@ -128,7 +128,7 @@ jobs:
             cache-
       - uses: actions/setup-node@v3
         with:
-          node-version: "19.x"
+          node-version: "16.9.1"
           architecture: "x64"
           cache: 'yarn'
           check-latest: true
