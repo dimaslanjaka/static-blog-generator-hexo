@@ -217,6 +217,7 @@ jobs:
           git submodule foreach "git push | :"
       - name: push changes current repository
         continue-on-error: true
+        if: contains(github.event.head_commit.message, 'chore') == false
         run: |
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
