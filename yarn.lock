@@ -152,7 +152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@googleapis/docs@npm:^2.0.0, @googleapis/docs@npm:^2.0.1":
+"@googleapis/docs@npm:^2.0.1":
   version: 2.0.1
   resolution: "@googleapis/docs@npm:2.0.1"
   dependencies:
@@ -593,13 +593,14 @@ __metadata:
   linkType: hard
 
 "@types/express-serve-static-core@npm:^4.17.33":
-  version: 4.17.33
-  resolution: "@types/express-serve-static-core@npm:4.17.33"
+  version: 4.17.34
+  resolution: "@types/express-serve-static-core@npm:4.17.34"
   dependencies:
     "@types/node": "*"
     "@types/qs": "*"
     "@types/range-parser": "*"
-  checksum: dce580d16b85f207445af9d4053d66942b27d0c72e86153089fa00feee3e96ae336b7bedb31ed4eea9e553c99d6dd356ed6e0928f135375d9f862a1a8015adf2
+    "@types/send": "*"
+  checksum: 3b5242e7d6cfecca5300635fd2af0f63aca3a92754da79a4a355c4d85b57099aa2cabb1c8557fc38a8a9e6f0be996339140ad017e5be405ea1b877a8294a136d
   languageName: node
   linkType: hard
 
@@ -632,16 +633,6 @@ __metadata:
     "@types/glob": ~7.2.0
     "@types/node": "*"
   checksum: 04ed2606d47c3cbf5fcd6d512b25386b5900b449b94cea1a063ce54b58ae9a4a5348e7f828cb58e085cfc0fb70ecd1eec5a98db24d75350e71db41e1168de0e9
-  languageName: node
-  linkType: hard
-
-"@types/glob@npm:*":
-  version: 8.1.0
-  resolution: "@types/glob@npm:8.1.0"
-  dependencies:
-    "@types/minimatch": ^5.1.2
-    "@types/node": "*"
-  checksum: 9101f3a9061e40137190f70626aa0e202369b5ec4012c3fabe6f5d229cce04772db9a94fa5a0eb39655e2e4ad105c38afbb4af56a56c0996a8c7d4fc72350e3d
   languageName: node
   linkType: hard
 
@@ -749,7 +740,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimatch@npm:*, @types/minimatch@npm:^5.1.2":
+"@types/mime@npm:^1":
+  version: 1.3.2
+  resolution: "@types/mime@npm:1.3.2"
+  checksum: 0493368244cced1a69cb791b485a260a422e6fcc857782e1178d1e6f219f1b161793e9f87f5fae1b219af0f50bee24fcbe733a18b4be8fdd07a38a8fb91146fd
+  languageName: node
+  linkType: hard
+
+"@types/minimatch@npm:*":
   version: 5.1.2
   resolution: "@types/minimatch@npm:5.1.2"
   checksum: 0391a282860c7cb6fe262c12b99564732401bdaa5e395bee9ca323c312c1a0f45efbf34dce974682036e857db59a5c9b1da522f3d6055aeead7097264c8705a8
@@ -773,9 +771,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.13.0, @types/node@npm:^18.15.11, @types/node@npm:^18.15.12, @types/node@npm:^18.x":
-  version: 18.16.0
-  resolution: "@types/node@npm:18.16.0"
-  checksum: 63e0042136663b9e85ce503a4c65406cc6621fdba63ea66c74b4b1364a9aa9bdb57cadcb76696abab177f38a819b0fa6ace9e7f1647dcb990aedb1b4bd01012f
+  version: 18.16.1
+  resolution: "@types/node@npm:18.16.1"
+  checksum: 799026b949a48993cba7c9b81b2eabfdfb34c880744cb44c1c990fbedc9e315f3634d126eb2cf9a6e0795577c01016e2326d98565bef695ada9d363fadeb6946
   languageName: node
   linkType: hard
 
@@ -822,11 +820,11 @@ __metadata:
   linkType: hard
 
 "@types/react-dom@npm:^18.0.11":
-  version: 18.2.0
-  resolution: "@types/react-dom@npm:18.2.0"
+  version: 18.2.1
+  resolution: "@types/react-dom@npm:18.2.1"
   dependencies:
     "@types/react": "*"
-  checksum: 9212b3793707a763f10e2c608f6ccb5f729029da6cb84204f333634d3d7baafbc1b20b7faf7cf788a8fd385050a1fb579902031f9462473ef10607116f33f33c
+  checksum: 4e607a9d08f707ae2bd6b377f1da32989dcbe4e38ac39110423a1f6bc95dd53a5484f7f952b34e9d12b5f29a265d52a8c74c1a7d1d1e25be0fa69ccf9d64209f
   languageName: node
   linkType: hard
 
@@ -841,16 +839,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/rimraf@npm:^2.0.3":
-  version: 2.0.5
-  resolution: "@types/rimraf@npm:2.0.5"
-  dependencies:
-    "@types/glob": "*"
-    "@types/node": "*"
-  checksum: e388f546840704a240fb31536498921623bca4ec1230925013d6b6d7c7d2211c8ec07fcbbd2606151d7549cbbc28a01c18fb0df502107a9293860a5ff64bc147
-  languageName: node
-  linkType: hard
-
 "@types/scheduler@npm:*":
   version: 0.16.3
   resolution: "@types/scheduler@npm:0.16.3"
@@ -862,6 +850,16 @@ __metadata:
   version: 7.3.13
   resolution: "@types/semver@npm:7.3.13"
   checksum: 00c0724d54757c2f4bc60b5032fe91cda6410e48689633d5f35ece8a0a66445e3e57fa1d6e07eb780f792e82ac542948ec4d0b76eb3484297b79bd18b8cf1cb0
+  languageName: node
+  linkType: hard
+
+"@types/send@npm:*":
+  version: 0.17.1
+  resolution: "@types/send@npm:0.17.1"
+  dependencies:
+    "@types/mime": ^1
+    "@types/node": "*"
+  checksum: 10b620a5960058ef009afbc17686f680d6486277c62f640845381ec4baa0ea683fdd77c3afea4803daf5fcddd3fb2972c8aa32e078939f1d4e96f83195c89793
   languageName: node
   linkType: hard
 
@@ -940,14 +938,13 @@ __metadata:
   linkType: hard
 
 "@types/vinyl-fs@npm:*":
-  version: 3.0.1
-  resolution: "@types/vinyl-fs@npm:3.0.1"
+  version: 3.0.2
+  resolution: "@types/vinyl-fs@npm:3.0.2"
   dependencies:
     "@types/glob-stream": "*"
     "@types/node": "*"
-    "@types/rimraf": ^2.0.3
     "@types/vinyl": "*"
-  checksum: 3d5749caa60c18e5bcf14e24eb503548a8436e6cd316d80b21d2a792d5a8b05aae66d4cdf0ddedca7d64c2358131b89d566588a0d78437cd474fe1cf2a79750c
+  checksum: 1aa8d356be165c9bbd4f93edb02dad50465e0583364592df688cfbe909d50ad5da122c3da692f9060f4d806f9c88a7d2fd829cd40f88b9befdef4b7c5bd2b475
   languageName: node
   linkType: hard
 
@@ -1700,7 +1697,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.3.2, axios@npm:^1.3.3, axios@npm:^1.3.4, axios@npm:^1.3.5, axios@npm:^1.3.6":
+"axios@npm:^1.3.2, axios@npm:^1.3.4, axios@npm:^1.3.5, axios@npm:^1.3.6":
   version: 1.3.6
   resolution: "axios@npm:1.3.6"
   dependencies:
@@ -1821,7 +1818,7 @@ __metadata:
 
 "binary-collections@https://github.com/dimaslanjaka/bin":
   version: 1.0.0
-  resolution: "binary-collections@https://github.com/dimaslanjaka/bin.git#commit=274618aa4dd4b64ac8c80193342d73a706bccc96"
+  resolution: "binary-collections@https://github.com/dimaslanjaka/bin.git#commit=94456f7a1c6c3ce852e8890e13031b6bfeabb91e"
   dependencies:
     glob: ^10.2.2
   bin:
@@ -1829,6 +1826,7 @@ __metadata:
     clean-nodemodules: clean-nodemodules
     dev: dev
     empty: empty
+    git-fix-encoding: git-fix-encoding
     git-reduce-size: git-reduce-size
     nodekill: nodekill
     nodekill.cmd: nodekill.cmd
@@ -1837,7 +1835,7 @@ __metadata:
     rmpath: rmpath
     submodule-install: submodule-install
     submodule-remove: submodule-remove
-  checksum: 958ad0b911e2b2d9c1013849b6c88b877597e2ddd2f8421481a434c7360afd4566cc45147d03d08b5e40bd53038720e378c9519c611280e1ca17565381d9705a
+  checksum: 03b666c599a6fb67c66f0101078491fb5568bff32341543caad462cc6a9e3575d16283380239c4ea326d9567ee963b0d3c0c87fa66f1eb47b4e35adf4ce5ef74
   languageName: node
   linkType: hard
 
@@ -2506,7 +2504,6 @@ __metadata:
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.4
     open: ^9.1.0
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz"
     prettier: ^2.8.7
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -3029,7 +3026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.28.0":
+"core-js@npm:^3.30.1":
   version: 3.30.1
   resolution: "core-js@npm:3.30.1"
   checksum: 6d4a00b488694d4c715c424e15dfef31433ac7aa395c39c518a0cfacec918ada1c716fed74682033197e0164e23bbf38bfd598ee9a239c4aaa590ab1ba862ac8
@@ -3118,11 +3115,11 @@ __metadata:
 
 "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/tarball/private":
   version: 7.0.4
-  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn.git#commit=e5611698e20ee545f8c3fc13691bc8dc36884e90"
+  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn.git#commit=e5c4f6200a97cba60fcdec614c9ce278c12fa633"
   dependencies:
     shebang-command: ^2.0.0
     which: ^3.0.0
-  checksum: 0baad950b8c37a09990a92e4a771e632e60b17e8d664841c049019a71055ccbe24a69091c14cb08ed0c3fd2df463e4d1bf1a531644128e0382d3226d2f05d3e7
+  checksum: 7f2a056431fb3ed98cf575cd9aa676d1c77acd04f57bde59d9a23ab31ad9a145be95b5905ca3b8422399c9778e113081426486f70e3d763ff08c220fcffda884
   languageName: node
   linkType: hard
 
@@ -3377,13 +3374,6 @@ __metadata:
   version: 0.1.4
   resolution: "deep-is@npm:0.1.4"
   checksum: edb65dd0d7d1b9c40b2f50219aef30e116cedd6fc79290e740972c132c09106d2e80aa0bc8826673dd5a00222d4179c84b36a790eef63a4c4bca75a37ef90804
-  languageName: node
-  linkType: hard
-
-"deepmerge-ts@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "deepmerge-ts@npm:4.3.0"
-  checksum: d5f8a96df9a2bc7177d59544b9390ba76e50fb725f776669068ca04eef319e98ee8870cf7b7ecca9f636b711d57cea571ac61553ee01101a614c045f7a86e0be
   languageName: node
   linkType: hard
 
@@ -3875,9 +3865,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.284":
-  version: 1.4.371
-  resolution: "electron-to-chromium@npm:1.4.371"
-  checksum: 69ce19a83047e1d91f7d3cc607330c5b77efe8daaafe983bc353409e3395ed963e8d36eb2484a8e8ed50f0d626a7f73c7b7e3e939b53cba5f369cc51c752c926
+  version: 1.4.372
+  resolution: "electron-to-chromium@npm:1.4.372"
+  checksum: 946c50f1ec5df2408fc90164ab3814081dacd20cad7c440b829da391f864fefcda202e9e5a7016ce9d06d3c8746a505ffad820dfc51aa269dd13a6fdbf71d15d
   languageName: node
   linkType: hard
 
@@ -4687,7 +4677,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-type@npm:^18.2.1":
+"file-type@npm:^18.3.0":
   version: 18.3.0
   resolution: "file-type@npm:18.3.0"
   dependencies:
@@ -4880,7 +4870,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flowbite@npm:^1.6.3":
+"flowbite@npm:^1.6.5":
   version: 1.6.5
   resolution: "flowbite@npm:1.6.5"
   dependencies:
@@ -5384,7 +5374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.0.1, glob@npm:^8.1.0":
+"glob@npm:^8.0.1":
   version: 8.1.0
   resolution: "glob@npm:8.1.0"
   dependencies:
@@ -5394,18 +5384,6 @@ __metadata:
     minimatch: ^5.0.1
     once: ^1.3.0
   checksum: 92fbea3221a7d12075f26f0227abac435de868dd0736a17170663783296d0dd8d3d532a5672b4488a439bf5d7fb85cdd07c11185d6cd39184f0385cbdfb86a47
-  languageName: node
-  linkType: hard
-
-"glob@npm:^9.2.0":
-  version: 9.3.5
-  resolution: "glob@npm:9.3.5"
-  dependencies:
-    fs.realpath: ^1.0.0
-    minimatch: ^8.0.2
-    minipass: ^4.2.4
-    path-scurry: ^1.6.1
-  checksum: 94b093adbc591bc36b582f77927d1fb0dbf3ccc231828512b017601408be98d1fe798fc8c0b19c6f2d1a7660339c3502ce698de475e9d938ccbb69b47b647c84
   languageName: node
   linkType: hard
 
@@ -5538,7 +5516,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-news-sitemap@npm:^1.0.9":
+"google-news-sitemap@npm:^1.0.10":
   version: 1.0.10
   resolution: "google-news-sitemap@npm:1.0.10"
   dependencies:
@@ -5574,16 +5552,6 @@ __metadata:
     url-template: ^2.0.8
     uuid: ^9.0.0
   checksum: 718db6b533bdbfaef8f50df8ad9c7cf5a145a346dde16601e7380c5a845920c0801fa84b915e82998f9c4fc1ca77022b585fa5e94c3a40ec35600def7b9d94fe
-  languageName: node
-  linkType: hard
-
-"googleapis@npm:^111.0.0":
-  version: 111.0.0
-  resolution: "googleapis@npm:111.0.0"
-  dependencies:
-    google-auth-library: ^8.0.2
-    googleapis-common: ^6.0.0
-  checksum: d50876b146018704897c53656f7646fcf0a59085186d67509f60b153f324fa614b67e7cd92db9308ca473cc9ca744301097a9c50e671c448b7635969e6fbaf21
   languageName: node
   linkType: hard
 
@@ -6147,11 +6115,11 @@ __metadata:
   linkType: hard
 
 "hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz":
-  version: 1.2.7
+  version: 1.2.8
   resolution: "hexo-post-parser@https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz"
   dependencies:
     ansi-colors: ^4.1.3
-    axios: ^1.3.5
+    axios: ^1.3.6
     bluebird: ^3.7.2
     chalk: ^4.1.2
     front-matter: ^4.0.2
@@ -6168,7 +6136,7 @@ __metadata:
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
     moment-timezone: ^0.5.43
-    sbg-utility: ^1.0.8
+    sbg-utility: ^1.0.9
     showdown: ^2.1.0
     tiny-typed-emitter: ^2.1.0
     true-case-path: ^2.2.1
@@ -6237,23 +6205,23 @@ __metadata:
 
 "hexo-seo@https://github.com/dimaslanjaka/hexo-seo/tarball/master":
   version: 1.2.2
-  resolution: "hexo-seo@https://github.com/dimaslanjaka/hexo-seo.git#commit=5c5c94333a5ed57dbb8e2949e78b767b8919019c"
+  resolution: "hexo-seo@https://github.com/dimaslanjaka/hexo-seo.git#commit=03d5ff1130d54b30066467bda8b03090b24b0cfa"
   dependencies:
     ansi-colors: ^4.1.3
-    axios: ^1.3.4
+    axios: ^1.3.6
     bluebird: ^3.7.2
     cheerio: ^1.0.0-rc.12
     clean-css: ^5.3.2
     deepmerge-ts: ^5.1.0
-    file-type: ^18.2.1
+    file-type: ^18.3.0
     fs-extra: ^11.1.1
     glob-parent: ">=6.0.2"
     hexo: ^6.3.0
     hexo-is: ^1.0.5
     hexo-log: ^4.0.1
-    html-minifier-terser: ^7.1.0
+    html-minifier-terser: ^7.2.0
     jsdom: ^21.1.1
-    minimatch: ^8.0.3
+    minimatch: ^9.0.0
     minimist: ^1.2.8
     moment: ^2.29.4
     moment-timezone: ^0.5.43
@@ -6262,18 +6230,17 @@ __metadata:
     node-libcurl: ^3.0.0
     node.extend: ">=2.0.2"
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     request: ">=2.88.2"
-    rimraf: ^4.4.1
+    rimraf: ^5.0.0
     sanitize-filename: ^1.6.3
-    sbg-utility: ^1.0.8
+    sbg-utility: ^1.0.9
     serve-static: ^1.15.0
-    terser: ^5.16.8
+    terser: ^5.17.1
     underscore: ^1.13.6
     upath: ^2.0.1
     url-parse: ^1.5.10
     uuid: ">=9.0.0"
-    xmlbuilder2: ^3.0.2
+    xmlbuilder2: ^3.1.0
   dependenciesMeta:
     glob-parent:
       optional: true
@@ -6283,7 +6250,7 @@ __metadata:
       optional: true
     uuid:
       optional: true
-  checksum: b405e00621d91ea260a2f60be9d1b85d6c88c4698c0173c60f0b650d4db37d18b672f7a8b0a7259631713a9043ee27c888a7c45c17b39ced9b01d9656a16e1d7
+  checksum: d15d3eebb6acbb33f48a465cebe60f9f2d6fc29c89d339d6944b41adcc1bbc40809a4f6455bafb49430306b03ffd79828abf27e1bf6c1acfc2200d176b21df03
   languageName: node
   linkType: hard
 
@@ -6465,7 +6432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-minifier-terser@npm:^7.1.0":
+"html-minifier-terser@npm:^7.1.0, html-minifier-terser@npm:^7.2.0":
   version: 7.2.0
   resolution: "html-minifier-terser@npm:7.2.0"
   dependencies:
@@ -6778,20 +6745,20 @@ __metadata:
   linkType: hard
 
 "instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz":
-  version: 1.0.3
+  version: 1.0.4
   resolution: "instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
   dependencies:
     "@google-cloud/local-auth": ^2.1.1
-    "@googleapis/docs": ^2.0.0
+    "@googleapis/docs": ^2.0.1
     "@googleapis/indexing": ^1.0.0
     "@googleapis/searchconsole": ^1.0.0
-    axios: ^1.3.3
-    fs-extra: ^11.1.0
+    axios: ^1.3.5
+    fs-extra: ^11.1.1
     google-auth-library: ^8.7.0
-    googleapis: ^111.0.0
-    open: ^8.4.2
+    googleapis: ^118.0.0
+    open: ^9.1.0
     request: ^2.88.2
-    sbg-utility: ^1.0.6
+    sbg-utility: ^1.0.9
     server-destroy: ^1.0.1
     upath: ^2.0.1
   checksum: 9bf59eb5d68330bbf58aa333267e23137cf7bd042cb35524f801005bb7f792f3c177a5fc75d406c4b8bb9e4719770680c9a0593487118331cf465d36f31f6c8a
@@ -8568,15 +8535,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^8.0.2, minimatch@npm:^8.0.3":
-  version: 8.0.4
-  resolution: "minimatch@npm:8.0.4"
-  dependencies:
-    brace-expansion: ^2.0.1
-  checksum: 2e46cffb86bacbc524ad45a6426f338920c529dd13f3a732cc2cf7618988ee1aae88df4ca28983285aca9e0f45222019ac2d14ebd17c1edadd2ee12221ab801a
-  languageName: node
-  linkType: hard
-
 "minimatch@npm:^9.0.0":
   version: 9.0.0
   resolution: "minimatch@npm:9.0.0"
@@ -8688,7 +8646,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass@npm:^4.0.0, minipass@npm:^4.2.4":
+"minipass@npm:^4.0.0":
   version: 4.2.8
   resolution: "minipass@npm:4.2.8"
   checksum: 7f4914d5295a9a30807cae5227a37a926e6d910c03f315930fde52332cf0575dfbc20295318f91f0baf0e6bb11a6f668e30cde8027dea7a11b9d159867a3c830
@@ -8762,7 +8720,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment-timezone@npm:^0.5.34, moment-timezone@npm:^0.5.40, moment-timezone@npm:^0.5.41, moment-timezone@npm:^0.5.43, moment-timezone@npm:latest":
+"moment-timezone@npm:^0.5.34, moment-timezone@npm:^0.5.41, moment-timezone@npm:^0.5.43, moment-timezone@npm:latest":
   version: 0.5.43
   resolution: "moment-timezone@npm:0.5.43"
   dependencies:
@@ -9571,7 +9529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^8.0.9, open@npm:^8.4.2":
+"open@npm:^8.0.9":
   version: 8.4.2
   resolution: "open@npm:8.4.2"
   dependencies:
@@ -9913,7 +9871,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-scurry@npm:^1.6.1, path-scurry@npm:^1.7.0":
+"path-scurry@npm:^1.7.0":
   version: 1.7.0
   resolution: "path-scurry@npm:1.7.0"
   dependencies:
@@ -9981,25 +9939,6 @@ __metadata:
   version: 2.1.0
   resolution: "performance-now@npm:2.1.0"
   checksum: 534e641aa8f7cba160f0afec0599b6cecefbb516a2e837b512be0adbe6c1da5550e89c78059c7fabc5c9ffdf6627edabe23eb7c518c4500067a898fa65c2b550
-  languageName: node
-  linkType: hard
-
-"persistent-cache@https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz":
-  version: 1.1.5
-  resolution: "persistent-cache@https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz"
-  dependencies:
-    fs-extra: ^11.1.0
-    glob-parent: ">=6.0.2"
-    mkdirp-no-bin: ^0.5.1
-    node.extend: ">=2.0.2"
-    rmdir: ^1.2.0
-    upath: ^2.0.1
-  dependenciesMeta:
-    glob-parent:
-      optional: true
-    node.extend:
-      optional: true
-  checksum: 7ca018801d296955601d9ad26dafe34c866ff10fd14195a0123b934feec4514609199e29b8b7715b4e109e614566fbdedad56976b280b08850a6b6b6a801ae64
   languageName: node
   linkType: hard
 
@@ -11099,17 +11038,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "rimraf@npm:4.4.1"
-  dependencies:
-    glob: ^9.2.0
-  bin:
-    rimraf: dist/cjs/src/bin.js
-  checksum: b786adc02651e2e24bbedb04bbdea80652fc9612632931ff2d9f898c5e4708fe30956186597373c568bd5230a4dc2fadfc816ccacba8a1daded3a006a6b74f1a
-  languageName: node
-  linkType: hard
-
 "rimraf@npm:^5.0.0":
   version: 5.0.0
   resolution: "rimraf@npm:5.0.0"
@@ -11276,15 +11204,15 @@ __metadata:
   linkType: hard
 
 "sass@npm:^1.61.0, sass@npm:^1.62.0":
-  version: 1.62.0
-  resolution: "sass@npm:1.62.0"
+  version: 1.62.1
+  resolution: "sass@npm:1.62.1"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: d5f606aa25afdf3ed9f316602811a40cf3b29f64cb70ea02f4198ae4288f9687de6fcef9f4fd2d58e06c28282d859aa249bdbf7d7d97a3a6a582eeaa8e5607fa
+  checksum: 1b1b3584b38a63dd94156b65f13b90e3f84b170a38c3d5e3fa578b7a32a37aeb349b4926b0eaf9448d48e955e86b1ee01b13993f19611dad8068af07a607c13b
   languageName: node
   linkType: hard
 
@@ -11305,54 +11233,53 @@ __metadata:
   linkType: hard
 
 "sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz":
-  version: 1.0.4
+  version: 1.0.5
   resolution: "sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    fs-extra: ^11.1.0
-    git-command-helper: ^1.1.8
-    glob: ^8.1.0
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+    fs-extra: ^11.1.1
+    git-command-helper: ^1.1.9
+    glob: ^10.2.2
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: ^6.3.0
     hexo-is: ^1.0.5
-    hexo-post-parser: ^1.2.6
+    hexo-post-parser: ^1.2.8
     hexo-util: ^3.0.1
     micromatch: ^4.0.5
-    moment-timezone: ^0.5.40
+    moment-timezone: ^0.5.43
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    nunjucks: ^3.2.3
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    safelinkify: ^1.1.17
-    sbg-utility: ^1.0.6
+    nunjucks: ^3.2.4
+    safelinkify: ^1.1.18
+    sbg-utility: ^1.0.9
     true-case-path: ^2.2.1
     upath: ^2.0.1
-    xmlbuilder2: ^3.0.2
-  checksum: bdf509037631e29aa6c1c2ba8db3b05fd930b1a2d44053b0a6c4268294371aeb06babb5ce20efc17a3c09e65a14c3dbe1f43a8bd56edce808172a2402b938251
+    xmlbuilder2: ^3.1.0
+  checksum: d358bb6d5575438f1315d301ff04d65a8768ce38d15cbc07645fd3c9a49721ff194d5ed78bd9fc32d2013caaa6b9604c429f83a6cd1eaff6a679b2e2f1df99ed
   languageName: node
   linkType: hard
 
 "sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz":
-  version: 1.0.4
+  version: 1.0.5
   resolution: "sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    deepmerge-ts: ^4.3.0
-    git-command-helper: ^1.1.8
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+    deepmerge-ts: ^5.1.0
+    git-command-helper: ^1.1.9
     he: ^1.2.0
     hexo: ^6.3.0
-    hexo-blogger-xml: ^1.0.28
-    jsdom: ^21.1.0
-    safelinkify: ^1.1.17
-    sbg-api: ^1.0.4
-    sbg-server: ^1.0.5
-    sbg-utility: ^1.0.6
-    xml2js: ^0.4.23
-    yargs: ^17.7.0
+    hexo-blogger-xml: ^1.0.29
+    jsdom: ^21.1.1
+    safelinkify: ^1.1.18
+    sbg-api: ^1.0.5
+    sbg-server: ^1.0.6
+    sbg-utility: ^1.0.9
+    xml2js: ^0.5.0
+    yargs: ^17.7.1
   bin:
     sbg: dist/cli.js
   checksum: f75d09324ab0f89bffed5c12244805c826bbf759e3f8a9eeb027b1366cfaf3137855a82a06fa118ef8f36315a3bf3649a894856c4d174836559a407aab055431
@@ -11360,43 +11287,43 @@ __metadata:
   linkType: hard
 
 "sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz":
-  version: 1.0.5
+  version: 1.0.6
   resolution: "sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz"
   dependencies:
-    "@popperjs/core": ^2.11.6
+    "@popperjs/core": ^2.11.7
     ansi-colors: ^4.1.3
-    axios: ^1.3.3
+    axios: ^1.3.6
     bagpipe: ^0.3.5
     bluebird: ^3.7.2
     codemirror: 5.65.11
     cookie-parser: ^1.4.6
-    core-js: ^3.28.0
+    core-js: ^3.30.1
     cors: ^2.8.5
     debug: ^4.3.4
     dotenv: ^16.0.3
     express: ^4.18.2
     express-session: ^1.17.3
     find-yarn-workspace-root: ^2.0.0
-    flowbite: ^1.6.3
-    fs-extra: ^11.1.0
-    git-command-helper: ^1.1.8
-    glob: ^8.1.0
+    flowbite: ^1.6.5
+    fs-extra: ^11.1.1
+    git-command-helper: ^1.1.9
+    glob: ^10.2.2
     highlight.js: 11.7.0
-    instant-indexing: ^1.0.3
+    instant-indexing: ^1.0.4
     kruptein: ^3.0.6
     markdown-it: ^13.0.1
-    moment-timezone: ^0.5.40
-    nunjucks: ^3.2.3
+    moment-timezone: ^0.5.43
+    nunjucks: ^3.2.4
     object-assign: ^4.1.1
     retry: ^0.13.1
-    safelinkify: ^1.1.17
-    sbg-api: ^1.0.4
-    sbg-utility: ^1.0.6
+    safelinkify: ^1.1.18
+    sbg-api: ^1.0.5
+    sbg-utility: ^1.0.9
     serve-index: ^1.9.1
     upath: ^2.0.1
     write-file-atomic: ^5.0.0
-    yaml: ^2.2.1
-  checksum: 41265bec4e5ee3157f961225bf706a69a2d40a1fa9107668fca2124001923ae122bd97c6437f8ed8a750aa84d70e0eb51f86ecb9ca4bad1a8fff7acf1327c543
+    yaml: ^2.2.2
+  checksum: 4aa7885769f2dab32fdb7c1dbd55544d164d14db26d8b20b452794c901d8b14798efd51a274012e87116ccd41a1d407263648b0b9774f32370446494f29311d8
   languageName: node
   linkType: hard
 
@@ -11416,10 +11343,10 @@ __metadata:
     glob: ^10.2.1
     gulp: ^4.0.2
     hexo: ^6.3.0
-    hexo-post-parser: ^1.2.7
     hexo-util: ^3.0.1
     jsdom: ^21.1.1
     jsonc-parser: ^3.2.0
+    micromatch: ^4.0.5
     minimatch: ^9.0.0
     node-libcurl: ^3.0.0
     nunjucks: ^3.2.4
@@ -11430,9 +11357,10 @@ __metadata:
     slugify: ^1.6.6
     through2: ^4.0.2
     true-case-path: ^2.2.1
+    tslib: ^2.5.0
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: 764a5823593034e2e73b7309a2a8da6dfb0fff546ede389b35e60acf02e1e17bd81b9e799430f7894c3accba93887be388d39696410efcda82377a294ef1b33a
+  checksum: d337edac0e1a7186585334e6e0ea6c13999b9a14f26db030d23755087f15925ee44817a6ff8db8f1fc3d9b5e7652e8df680bbfb9b725c06c4b58a9448c434c9a
   languageName: node
   linkType: hard
 
@@ -11784,9 +11712,9 @@ __metadata:
   linkType: hard
 
 "slash@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "slash@npm:5.0.0"
-  checksum: 1fa799ee165f7eacf0122ea4252bcf44290db402eb9d3058624ff1d421b8dfe262100dffb0b2cc23f36858666bf661476e2a4c40ebaf3e7b61107cad55a1de88
+  version: 5.0.1
+  resolution: "slash@npm:5.0.1"
+  checksum: c0f5262d80730a22fa9eb06a4999fb382e6acb0fe045ed7894462e8fcd8bf487ee57377c7915be678847a5a1d01bacfb5b1b1f181aea7c0142f1e5e0386a14bb
   languageName: node
   linkType: hard
 
@@ -12108,19 +12036,19 @@ __metadata:
   linkType: soft
 
 "static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz":
-  version: 3.0.0
+  version: 3.0.1
   resolution: "static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz"
   dependencies:
-    git-command-helper: ^1.1.8
-    google-news-sitemap: ^1.0.9
-    hexo-blogger-xml: ^1.0.28
-    hexo-post-parser: ^1.2.6
-    instant-indexing: ^1.0.3
-    safelinkify: ^1.1.17
-    sbg-api: ^1.0.4
-    sbg-cli: ^1.0.4
-    sbg-server: ^1.0.5
-    sbg-utility: ^1.0.6
+    git-command-helper: ^1.1.9
+    google-news-sitemap: ^1.0.10
+    hexo-blogger-xml: ^1.0.29
+    hexo-post-parser: ^1.2.8
+    instant-indexing: ^1.0.4
+    safelinkify: ^1.1.18
+    sbg-api: ^1.0.5
+    sbg-cli: ^1.0.5
+    sbg-server: ^1.0.6
+    sbg-utility: ^1.0.9
   checksum: a0a70bf9599f3ac6e7e6d4dd7636a1cc7095ae828a699fe0ef08294b87a284428b40c999f95b8235830b35904d36f89c68fc14cdf868d17c82a1ded002b91d55
   languageName: node
   linkType: hard
@@ -12504,7 +12432,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"terser@npm:^5.0.0, terser@npm:^5.15.1, terser@npm:^5.16.5, terser@npm:^5.16.8":
+"terser@npm:^5.0.0, terser@npm:^5.15.1, terser@npm:^5.16.5, terser@npm:^5.17.1":
   version: 5.17.1
   resolution: "terser@npm:5.17.1"
   dependencies:
@@ -13753,16 +13681,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.23":
-  version: 0.4.23
-  resolution: "xml2js@npm:0.4.23"
-  dependencies:
-    sax: ">=0.6.0"
-    xmlbuilder: ~11.0.0
-  checksum: ca0cf2dfbf6deeaae878a891c8fbc0db6fd04398087084edf143cdc83d0509ad0fe199b890f62f39c4415cf60268a27a6aed0d343f0658f8779bd7add690fa98
-  languageName: node
-  linkType: hard
-
 "xml2js@npm:^0.5.0":
   version: 0.5.0
   resolution: "xml2js@npm:0.5.0"
@@ -13773,7 +13691,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xmlbuilder2@npm:^3.0.2":
+"xmlbuilder2@npm:^3.1.0":
   version: 3.1.0
   resolution: "xmlbuilder2@npm:3.1.0"
   dependencies:
@@ -13842,7 +13760,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.1.1, yaml@npm:^2.2.1":
+"yaml@npm:^2.1.1, yaml@npm:^2.2.1, yaml@npm:^2.2.2":
   version: 2.2.2
   resolution: "yaml@npm:2.2.2"
   checksum: d90c235e099e30094dcff61ba3350437aef53325db4a6bcd04ca96e1bfe7e348b191f6a7a52b5211e2dbc4eeedb22a00b291527da030de7c189728ef3f2b4eb3
@@ -13888,7 +13806,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.0.0, yargs@npm:^17.2.1, yargs@npm:^17.3.1, yargs@npm:^17.7.0, yargs@npm:^17.7.1":
+"yargs@npm:^17.0.0, yargs@npm:^17.2.1, yargs@npm:^17.3.1, yargs@npm:^17.7.1":
   version: 17.7.1
   resolution: "yargs@npm:17.7.1"
   dependencies:
