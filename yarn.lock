@@ -2492,7 +2492,7 @@ __metadata:
     googleapis: ^118.0.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
-    hexo-post-parser: ^1.2.6
+    hexo-post-parser: ^1.2.8
     i18n: ^0.15.1
     js-yaml: ^4.1.0
     lodash: ^4.17.21
