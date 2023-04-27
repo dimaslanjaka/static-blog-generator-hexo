@@ -13567,7 +13567,6 @@ __metadata:
     hexo-i18n: ^2.0.0
     hexo-pagination: ^3.0.0
     hexo-pdf: ^1.1.1
-    hexo-post-parser: ^1.2.8
     hexo-renderer-markdown-it: ^7.0.0
     hexo-renderers: "https://github.com/dimaslanjaka/hexo-renderers/tarball/master"
     hexo-seo: "https://github.com/dimaslanjaka/hexo-seo/tarball/master"
@@ -13587,7 +13586,7 @@ __metadata:
     prettier: ^2.8.7
     safelinkify: ^1.1.18
     sbg-api: ^1.0.5
-    sbg-cli: ^1.0.5
+    sbg-cli: ^1.0.6
     sbg-server: ^1.0.6
     sbg-utility: ^1.0.9
     sharp: ^0.32.0
