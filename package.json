@@ -6,6 +6,7 @@
   "description": "www.webmanajemen.com",
   "main": "package-install.js",
   "scripts": {
+    "prestart": "yarn run postinstall",
     "start": "yarn workspace wmi run server",
     "clean": "yarn workspace wmi run clean",
     "prebuild": "yarn workspace wmi run prebuild",
