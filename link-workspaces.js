@@ -7,7 +7,7 @@ const fs = require('fs-extra');
   const config = [
     {
       src: path.join(__dirname, 'packages/hexo-theme-claudia'),
-      dest: path.join(__dirname, 'site/node_modules/hexo-theme-claudia')
+      dest: path.join(__dirname, 'site/themes/claudia')
     }
   ];
   config.forEach(({ src, dest }) => {
