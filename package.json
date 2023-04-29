@@ -14,7 +14,7 @@
     "postbuild": "yarn workspace wmi run postbuild",
     "update:ncu": "npm-check-updates -u && yarn cache clean",
     "build:packages": "yarn workspaces foreach --no-private run build",
-    "postinstall": "yarn build:packages && node link-workspaces.js"
+    "postinstall": "yarn build:packages"
   },
   "repository": {
     "type": "git",
