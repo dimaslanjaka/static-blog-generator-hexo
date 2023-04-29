@@ -9,3 +9,4 @@ Thumbs.db
 db.json
 *.log
 **/*.tsbuildinfo
+site/themes/claudia
