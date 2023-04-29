@@ -14,7 +14,7 @@
     "postbuild": "yarn workspace wmi run postbuild",
     "update:ncu": "npm-check-updates -u && yarn cache clean",
     "build:packages": "yarn workspaces foreach --no-private run build",
-    "postinstall": "yarn build:packages"
+    "postinstall": "yarn build:packages && node link-workspaces.js"
   },
   "repository": {
     "type": "git",
@@ -67,10 +67,14 @@
   },
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
     "binary-collections": "https://github.com/dimaslanjaka/bin",
     "eslint": "^8.38.0",
     "minimist": "^1.2.8",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.7"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
     "upath": "^2.0.1"
   }
 }
