@@ -12,7 +12,8 @@
     "build": "yarn workspace wmi run build",
     "postbuild": "yarn workspace wmi run postbuild",
     "update:ncu": "npm-check-updates -u && yarn cache clean",
-    "post-install": "yarn workspaces foreach run build"
+    "build:packages": "yarn workspaces foreach --no-private run build",
+    "postinstall": "yarn build:packages && node link-workspaces.js"
   },
   "repository": {
     "type": "git",
@@ -29,13 +30,6 @@
     "url": "https://github.com/dimaslanjaka/static-blog-generator-hexo/issues"
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator-hexo#readme",
-  "packageManager": "yarn@3.5.0",
-  "devDependencies": {
-    "eslint": "^8.38.0",
-    "minimist": "^1.2.8",
-    "prettier": "^2.8.7",
-    "upath": "^2.0.1"
-  },
   "workspaces": {
     "packages": [
       "site",
@@ -63,11 +57,19 @@
     "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-front-matter.tgz",
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/warehouse.tgz",
-    "hexo-theme-landscape": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-theme-landscape.tgz",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
-    "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
+    "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz",
+    "hexo-generator-redirect": "https://github.com/dimaslanjaka/hexo-generator-redirect/raw/master/release/hexo-generator-redirect.tgz",
+    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
+    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/tarball/pre-release",
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/master"
   },
-  "dependencies": {
-    "binary-collections": "https://github.com/dimaslanjaka/bin"
+  "packageManager": "yarn@3.5.0",
+  "devDependencies": {
+    "binary-collections": "https://github.com/dimaslanjaka/bin",
+    "eslint": "^8.38.0",
+    "minimist": "^1.2.8",
+    "prettier": "^2.8.7",
+    "upath": "^2.0.1"
   }
 }
