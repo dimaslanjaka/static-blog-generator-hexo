@@ -10,3 +10,4 @@ db.json
 *.log
 **/*.tsbuildinfo
 site/themes/claudia
+bin/submodule-install
