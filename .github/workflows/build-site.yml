@@ -57,7 +57,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: update submodules
         run: |
-          curl -L https://github.com/dimaslanjaka/bin/raw/master/submodule-install > bin/submodule-install
+          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
           bash ./bin/submodule-install
         shell: bash
       - name: checkout site/src-posts
