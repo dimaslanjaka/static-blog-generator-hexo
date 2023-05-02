@@ -58,7 +58,7 @@ jobs:
       - name: update submodules
         run: |
           curl -L https://github.com/dimaslanjaka/bin/raw/master/submodule-install > bin/submodule-install
-          sh ./bin/submodule-install
+          bash ./bin/submodule-install
         shell: bash
       - name: checkout site/src-posts
         uses: actions/checkout@v3
