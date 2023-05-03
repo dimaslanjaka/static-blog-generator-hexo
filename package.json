@@ -70,11 +70,12 @@
     "@types/fs-extra": "^11.0.1",
     "binary-collections": "https://github.com/dimaslanjaka/bin",
     "eslint": "^8.38.0",
-    "minimist": "^1.2.8",
     "prettier": "^2.8.7"
   },
   "dependencies": {
     "fs-extra": "^11.1.1",
-    "upath": "^2.0.1"
+    "minimist": "^1.2.8",
+    "upath": "^2.0.1",
+    "yaml": "^2.2.2"
   }
 }
