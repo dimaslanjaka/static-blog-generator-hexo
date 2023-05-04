@@ -62,7 +62,7 @@
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz",
     "hexo-generator-redirect": "https://github.com/dimaslanjaka/hexo-generator-redirect/raw/master/release/hexo-generator-redirect.tgz",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
-    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/tarball/pre-release",
+    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/master"
   },
   "packageManager": "yarn@3.5.0",
