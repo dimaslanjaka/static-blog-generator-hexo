@@ -63,7 +63,7 @@
     "hexo-generator-redirect": "https://github.com/dimaslanjaka/hexo-generator-redirect/raw/master/release/hexo-generator-redirect.tgz",
     "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz",
-    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/master"
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz"
   },
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
