@@ -72,8 +72,8 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "binary-collections": "https://github.com/dimaslanjaka/bin",
-    "eslint": "^8.38.0",
-    "prettier": "^2.8.7"
+    "eslint": "^8.40.0",
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "fs-extra": "^11.1.1",
