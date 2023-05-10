@@ -33,7 +33,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "css": "^3.0.0",
-    "git-command-helper": "^1.2.0",
+    "git-command-helper": "^1.2.2",
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/2f222d3/releases/hexo.tgz",
     "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/2f222d3/releases/hexo-asset-link.tgz",
     "hexo-browsersync": "^0.3.0",
