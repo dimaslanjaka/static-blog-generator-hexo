@@ -88,7 +88,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.formatOnSave": true, // enable json formating with default vscode formatter
+    "editor.formatOnSave": false, // enable json formating with default vscode formatter
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[markdown]": {
