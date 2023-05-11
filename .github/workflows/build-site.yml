@@ -138,7 +138,6 @@ jobs:
             **/site/.deploy_git/**/*.js
             **/site/.deploy_git/**/*.css
             **/dist
-            **/node_modules
             **/.yarn
           # ${{ steps.set-env.outputs.cache-yarn }}
           key: ${{ runner.os }}-${{ env.node_version }}
