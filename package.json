@@ -53,16 +53,7 @@
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz",
     "hexo-generator-redirect": "https://github.com/dimaslanjaka/hexo-generator-redirect/raw/master/release/hexo-generator-redirect.tgz",
-    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master",
-    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/tarball/fcf62aed54a3d8eef9553f5c2f9dc19290331b91",
-    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/bfe4b2d45625e1543c079d5cb87393af248137a1",
-    "hexo": "https://github.com/dimaslanjaka/hexo/raw/b3fdaec4a1c70ca1cf56f2b4f2607fc049c588a0/releases/hexo.tgz",
-    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/b3fdaec4a1c70ca1cf56f2b4f2607fc049c588a0/releases/hexo-asset-link.tgz",
-    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/b3fdaec4a1c70ca1cf56f2b4f2607fc049c588a0/releases/hexo-cli.tgz",
-    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/b3fdaec4a1c70ca1cf56f2b4f2607fc049c588a0/releases/hexo-front-matter.tgz",
-    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/b3fdaec4a1c70ca1cf56f2b4f2607fc049c588a0/releases/hexo-log.tgz",
-    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/b3fdaec4a1c70ca1cf56f2b4f2607fc049c588a0/releases/hexo-util.tgz",
-    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/b3fdaec4a1c70ca1cf56f2b4f2607fc049c588a0/releases/warehouse.tgz"
+    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/tarball/master"
   },
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
