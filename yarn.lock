@@ -2749,10 +2749,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"codemirror@npm:5.65.11":
-  version: 5.65.11
-  resolution: "codemirror@npm:5.65.11"
-  checksum: b3ace051cdf0809b377d50cc6ddfe5a40e6425aa980a55c2f965b6ba15f0315a77ea60dfd20f40624b3f944fb1d7bf0d68be4bc157f9b24899423df94ea9c878
+"codemirror@npm:5.65.13":
+  version: 5.65.13
+  resolution: "codemirror@npm:5.65.13"
+  checksum: 47060461edaebecd03b3fba4e73a30cdccc0c51ce3a3a05bafae3c9cafd682101383e94d77d54081eaf1ae18da5b74343e98343c637c52cea409956469039098
   languageName: node
   linkType: hard
 
@@ -3077,7 +3077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.30.1":
+"core-js@npm:^3.30.2":
   version: 3.30.2
   resolution: "core-js@npm:3.30.2"
   checksum: 73d47e2b9d9f502800973982d08e995bbf04832e20b04e04be31dd7607247158271315e9328788a2408190e291c7ffbefad141167b1e57dea9f983e1e723541e
@@ -5414,7 +5414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.0.0, glob@npm:^10.2.1, glob@npm:^10.2.2, glob@npm:^10.2.3":
+"glob@npm:^10.0.0, glob@npm:^10.2.2, glob@npm:^10.2.3":
   version: 10.2.3
   resolution: "glob@npm:10.2.3"
   dependencies:
@@ -6421,7 +6421,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.6.0, highlight.js@npm:^11.8.0":
+"highlight.js@npm:11.8.0, highlight.js@npm:^11.6.0, highlight.js@npm:^11.8.0":
   version: 11.8.0
   resolution: "highlight.js@npm:11.8.0"
   checksum: d2578a57aee7315946ff19379053fd0a28b127baabf7617ab1d28d62cdc4eaf3d75053569cb8479a5afdc7a68f1ba9a6c1d612d8ae399b4b9aa43093b4fb6831
@@ -7500,7 +7500,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^21.1.0, jsdom@npm:^21.1.1":
+"jsdom@npm:21.1.2, jsdom@npm:^21.1.0, jsdom@npm:^21.1.1":
   version: 21.1.2
   resolution: "jsdom@npm:21.1.2"
   dependencies:
@@ -11242,72 +11242,77 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz":
-  version: 1.0.5
-  resolution: "sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz"
+"sbg-api@npm:^1.0.5, sbg-api@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "sbg-api@npm:1.1.0"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
     fs-extra: ^11.1.1
-    git-command-helper: ^1.1.9
-    glob: ^10.2.2
+    git-command-helper: ^1.2.2
+    glob: ^10.2.3
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
-    hexo: ^6.3.0
+    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
+    hexo-asset-link: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-asset-link.tgz"
+    hexo-cli: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-cli.tgz"
+    hexo-front-matter: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-front-matter.tgz"
     hexo-is: ^1.0.5
+    hexo-log: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
     hexo-post-parser: ^1.2.8
-    hexo-util: ^3.0.1
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
     micromatch: ^4.0.5
+    moment: ^2.29.4
     moment-timezone: ^0.5.43
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     nunjucks: ^3.2.4
     safelinkify: ^1.1.18
-    sbg-utility: ^1.0.9
+    sbg-utility: ^1.1.0
     true-case-path: ^2.2.1
     upath: ^2.0.1
-    xmlbuilder2: ^3.1.0
-  checksum: d358bb6d5575438f1315d301ff04d65a8768ce38d15cbc07645fd3c9a49721ff194d5ed78bd9fc32d2013caaa6b9604c429f83a6cd1eaff6a679b2e2f1df99ed
+    warehouse: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/warehouse.tgz"
+    xmlbuilder2: ^3.1.1
+  checksum: 0e0bbc52db3600d7be994b77d016e8813a32e03a47757c65b9e328a7a51970a29ac7132897ebd0714656fc9b2a1a4c3c75a660d3e5a5c3cb143c42e3303ea4d1
   languageName: node
   linkType: hard
 
-"sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz":
-  version: 1.0.5
-  resolution: "sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz"
+"sbg-cli@npm:^1.0.5, sbg-cli@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "sbg-cli@npm:1.1.0"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
     deepmerge-ts: ^5.1.0
-    git-command-helper: ^1.1.9
+    git-command-helper: ^1.2.2
     he: ^1.2.0
-    hexo: ^6.3.0
-    hexo-blogger-xml: ^1.0.29
-    jsdom: ^21.1.1
+    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
+    hexo-blogger-xml: "https://github.com/dimaslanjaka/hexo-blogger-xml/tarball/master"
+    jsdom: 21.1.2
     safelinkify: ^1.1.18
-    sbg-api: ^1.0.5
-    sbg-server: ^1.0.6
-    sbg-utility: ^1.0.9
+    sbg-api: ^1.1.0
+    sbg-server: ^1.1.0
+    sbg-utility: ^1.1.0
     xml2js: ^0.5.0
-    yargs: ^17.7.1
+    yargs: ^17.7.2
   bin:
     sbg: dist/cli.js
-  checksum: f75d09324ab0f89bffed5c12244805c826bbf759e3f8a9eeb027b1366cfaf3137855a82a06fa118ef8f36315a3bf3649a894856c4d174836559a407aab055431
+  checksum: 94f5b88a8b3f5430d53a9c4fb7b0b6aadd55921eebf2bb852bdf21564309faeadbac5dfafa50939948876c052a3c780af4b8da544712d468584e65321b084cd3
   languageName: node
   linkType: hard
 
-"sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz":
-  version: 1.0.6
-  resolution: "sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz"
+"sbg-server@npm:^1.0.6, sbg-server@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "sbg-server@npm:1.1.0"
   dependencies:
     "@popperjs/core": ^2.11.7
     ansi-colors: ^4.1.3
-    axios: ^1.3.6
+    axios: ^1.4.0
     bagpipe: ^0.3.5
     bluebird: ^3.7.2
-    codemirror: 5.65.11
+    codemirror: 5.65.13
     cookie-parser: ^1.4.6
-    core-js: ^3.30.1
+    core-js: ^3.30.2
     cors: ^2.8.5
     debug: ^4.3.4
     dotenv: ^16.0.3
@@ -11316,9 +11321,10 @@ __metadata:
     find-yarn-workspace-root: ^2.0.0
     flowbite: ^1.6.5
     fs-extra: ^11.1.1
-    git-command-helper: ^1.1.9
-    glob: ^10.2.2
-    highlight.js: 11.7.0
+    git-command-helper: ^1.2.2
+    glob: ^10.2.3
+    hexo-post-parser: ^1.2.8
+    highlight.js: 11.8.0
     instant-indexing: ^1.0.4
     kruptein: ^3.0.6
     markdown-it: ^13.0.1
@@ -11327,34 +11333,35 @@ __metadata:
     object-assign: ^4.1.1
     retry: ^0.13.1
     safelinkify: ^1.1.18
-    sbg-api: ^1.0.5
-    sbg-utility: ^1.0.9
+    sbg-api: ^1.1.0
+    sbg-utility: ^1.1.0
     serve-index: ^1.9.1
     upath: ^2.0.1
-    write-file-atomic: ^5.0.0
+    write-file-atomic: ^5.0.1
     yaml: ^2.2.2
-  checksum: 4aa7885769f2dab32fdb7c1dbd55544d164d14db26d8b20b452794c901d8b14798efd51a274012e87116ccd41a1d407263648b0b9774f32370446494f29311d8
+  checksum: 7f7612a947d03988bede44061262318b4e20ecbef61f90efa2d995b4cb1d2e35850259c8219cf59047277608d7f009c4a04a21e0e1d360067796df9579637e0e
   languageName: node
   linkType: hard
 
-"sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz":
-  version: 1.0.9
-  resolution: "sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz"
+"sbg-utility@npm:^1.0.9, sbg-utility@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "sbg-utility@npm:1.1.0"
   dependencies:
     ansi-colors: ^4.1.3
     async: ^3.2.4
-    axios: ^1.3.6
+    axios: ^1.4.0
     bluebird: ^3.7.2
     cheerio: ^1.0.0-rc.12
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
     debug: ^4.3.4
     fs-extra: ^11.1.1
-    git-command-helper: ^1.1.9
-    glob: ^10.2.1
+    git-command-helper: ^1.2.2
+    glob: ^10.2.3
     gulp: ^4.0.2
-    hexo: ^6.3.0
-    hexo-util: ^3.0.1
-    jsdom: ^21.1.1
+    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
+    hexo-log: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
+    jsdom: 21.1.2
     jsonc-parser: ^3.2.0
     micromatch: ^4.0.5
     minimatch: ^9.0.0
@@ -11369,8 +11376,8 @@ __metadata:
     true-case-path: ^2.2.1
     tslib: ^2.5.0
     upath: ^2.0.1
-    yaml: ^2.2.1
-  checksum: d337edac0e1a7186585334e6e0ea6c13999b9a14f26db030d23755087f15925ee44817a6ff8db8f1fc3d9b5e7652e8df680bbfb9b725c06c4b58a9448c434c9a
+    yaml: ^2.2.2
+  checksum: 6fc5ff6fa5b4defe6aacb494cc3341b28c299471f21f34f55e9b3b86bf7698aba2f234e050c04fe65eefbf37880154aac6240725ac4a7fbd7e7625ac200f79f0
   languageName: node
   linkType: hard
 
@@ -13682,7 +13689,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"write-file-atomic@npm:^5.0.0":
+"write-file-atomic@npm:^5.0.1":
   version: 5.0.1
   resolution: "write-file-atomic@npm:5.0.1"
   dependencies:
@@ -13739,7 +13746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xmlbuilder2@npm:^3.1.0":
+"xmlbuilder2@npm:^3.1.0, xmlbuilder2@npm:^3.1.1":
   version: 3.1.1
   resolution: "xmlbuilder2@npm:3.1.1"
   dependencies:
@@ -13853,7 +13860,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.0.0, yargs@npm:^17.2.1, yargs@npm:^17.3.1, yargs@npm:^17.7.1":
+"yargs@npm:^17.0.0, yargs@npm:^17.2.1, yargs@npm:^17.3.1, yargs@npm:^17.7.1, yargs@npm:^17.7.2":
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:

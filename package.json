@@ -46,10 +46,6 @@
   "resolutions": {
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/5560156be9745d682c7a5e727cffeee0b0179ab1",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
-    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
-    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz",
-    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz",
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz",
     "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/raw/monorepo/release/hexo-blogger-xml.tgz",
