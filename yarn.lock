@@ -6216,9 +6216,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz":
+"hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers/tarball/bfe4b2d45625e1543c079d5cb87393af248137a1":
   version: 1.0.9
-  resolution: "hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz"
+  resolution: "hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers.git#commit=bfe4b2d45625e1543c079d5cb87393af248137a1"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.9
@@ -6244,10 +6244,10 @@ __metadata:
     nunjucks: ^3.2.3
     pug: ^3.0.2
     sass: ^1.61.0
-    sbg-utility: ^1.0.8
+    sbg-utility: ^1.0.9
     stylus: ^0.59.0
     upath: ^2.0.1
-  checksum: 30a3f6ec4e68bdbbb6387e42e648efb980de5936842c986184205e639c54806dcf23e1aeaf156b3ec44a8f6b6949f296a82cabf2eac220eb3a19f68b187ac75c
+  checksum: 0ff6c80e006f454a27318450ab56c9a8ea55501d04f42e94cd4ae696d80b26aa2e59ae25c14425549b07afb3b9c43ca69aaef70db6d54bf92df145fb1cfe0897
   languageName: node
   linkType: hard
 
@@ -6318,22 +6318,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes/tarball/master":
-  version: 1.0.6
-  resolution: "hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes.git#commit=8316c22dc07ca8b0481c299c8a32348e2c88db04"
+"hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes/tarball/fcf62aed54a3d8eef9553f5c2f9dc19290331b91":
+  version: 1.0.7
+  resolution: "hexo-shortcodes@https://github.com/dimaslanjaka/hexo-shortcodes.git#commit=fcf62aed54a3d8eef9553f5c2f9dc19290331b91"
   dependencies:
     ansi-colors: ^4.1.3
     axios: ^1.4.0
     bluebird: ^3.7.2
     fs-extra: ^11.1.1
     git-embed: ^0.1.0
-    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/9476cf4b/releases/hexo-util.tgz"
+    hexo-shortcodes: ^1.0.6
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/2f222d3/releases/hexo-util.tgz"
     nunjucks: ^3.2.4
     rss-parser: ^3.13.0
     sbg-utility: ^1.0.9
   peerDependencies:
     hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  checksum: e37d6321a512ff8eb7478bc3e477c54707ac9058249e532169013d9db72d575a4a53323003b6a0229c6985aa1f909af514328525aa59e1325ceb8d78c4b597b5
+  checksum: a613e17c5daab6c13e0cd0756984b4ee0f31f813be954cd446668be24651053616e976f703a6d427b9c3bcfdef71befcc2e8cd6d78012a1285bc8e401c850dea
   languageName: node
   linkType: hard
 
