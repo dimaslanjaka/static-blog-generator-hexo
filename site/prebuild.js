@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('upath');
 const spawn = require('cross-spawn');
+const git = require('git-command-helper')
 
 const tokenBase = `https://${process.env.ACCESS_TOKEN}@github.com`
-
+//this.data = moment(date);
 const cfg = [
   {
     dest: path.join(__dirname, '.deploy_git'),
@@ -22,7 +23,7 @@ const cfg = [
     const { dest, remote, branch } = cfg[i];
     if (!fs.existsSync(dest)) {
       const destArg = dest.replace(path.toUnix(__dirname), '');
-      console.log('cloning', remote, destArg);
+      console.log('cloning', destArg);
       await spawn.async('git', ['clone', remote, destArg], {
         cwd: __dirname
       });
