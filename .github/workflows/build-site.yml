@@ -37,6 +37,7 @@ jobs:
       NODE_OPTIONS: '--max_old_space_size=8192' #8192 4096 --expose-gc
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      node_version: 14.x
 
     steps:
       - run: git config --global core.autocrlf false
@@ -140,14 +141,13 @@ jobs:
             **/node_modules
             **/.yarn
           # ${{ steps.set-env.outputs.cache-yarn }}
-          key: cache-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ env.node_version }}
           restore-keys: |
-            cache-${{ hashFiles('**/yarn.lock') }}
-            cache-${{ hashFiles('**/.guid') }}
-            cache-
+            ${{ runner.os }}-${{ env.node_version }}
+            ${{ runner.os }}-
       - uses: actions/setup-node@v3
         with:
-          node-version: "16.9.1"
+          node-version: ${{ env.node_version }}
           architecture: "x64"
           cache: 'yarn'
           check-latest: true
