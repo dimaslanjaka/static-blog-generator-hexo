@@ -782,6 +782,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.1.5":
+  version: 20.1.5
+  resolution: "@types/node@npm:20.1.5"
+  checksum: 0d073ed7b9cc51e2354dcf3a8ccca84d08c7d513fa8fac9462cabc164435b30f2ad296e9f2f911e6ce72da837b704f1075379be84a93bb24f76d328a2d9e8561
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
@@ -1003,6 +1010,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/eslint-plugin@npm:^5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.59.6"
+  dependencies:
+    "@eslint-community/regexpp": ^4.4.0
+    "@typescript-eslint/scope-manager": 5.59.6
+    "@typescript-eslint/type-utils": 5.59.6
+    "@typescript-eslint/utils": 5.59.6
+    debug: ^4.3.4
+    grapheme-splitter: ^1.0.4
+    ignore: ^5.2.0
+    natural-compare-lite: ^1.4.0
+    semver: ^7.3.7
+    tsutils: ^3.21.0
+  peerDependencies:
+    "@typescript-eslint/parser": ^5.0.0
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: fc495b5eadc70603f0d677921a70f151ac94453ebd76b77abbf7ed213c09daf05a3e2b2e2b16139b30dc6574d068d988e4e53c017759f3d3307fa394cfd4ae39
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/parser@npm:^5.59.2, @typescript-eslint/parser@npm:^5.59.5":
   version: 5.59.5
   resolution: "@typescript-eslint/parser@npm:5.59.5"
@@ -1020,6 +1051,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/parser@npm:^5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/parser@npm:5.59.6"
+  dependencies:
+    "@typescript-eslint/scope-manager": 5.59.6
+    "@typescript-eslint/types": 5.59.6
+    "@typescript-eslint/typescript-estree": 5.59.6
+    debug: ^4.3.4
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 1f6e259f501e3d13f9632bd71da2cf3d11150f1276079522e8d5c392a07c3aea867c855481981fca3bf32beb6bef046ef64cdfceba8ea4150f27099e44d9a92c
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/scope-manager@npm:5.59.5":
   version: 5.59.5
   resolution: "@typescript-eslint/scope-manager@npm:5.59.5"
@@ -1027,6 +1075,16 @@ __metadata:
     "@typescript-eslint/types": 5.59.5
     "@typescript-eslint/visitor-keys": 5.59.5
   checksum: b3d8a5b70e741b9bef60d0a297da77e844cb744895f31fb6880fdac4c53f7c58f3e04065a7d644afb6e1dc51591285ec866eca2fbd2ad50de6b376031aaccfbd
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/scope-manager@npm:5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/scope-manager@npm:5.59.6"
+  dependencies:
+    "@typescript-eslint/types": 5.59.6
+    "@typescript-eslint/visitor-keys": 5.59.6
+  checksum: 65cce7b3fc320e264ef966da9a26bb7cba014ec5a0c9c5518cb08a624d67ac6eb67dd8e2df49b33eeaaaacaf42c73f291d56f93a9d1ec82c58bd1e7e872e530b
   languageName: node
   linkType: hard
 
@@ -1047,10 +1105,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/type-utils@npm:5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/type-utils@npm:5.59.6"
+  dependencies:
+    "@typescript-eslint/typescript-estree": 5.59.6
+    "@typescript-eslint/utils": 5.59.6
+    debug: ^4.3.4
+    tsutils: ^3.21.0
+  peerDependencies:
+    eslint: "*"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: f8e09dc16f413090ec464d48bd86e1b44a569e5a6ed78370f3e8132e80a464dfcdc1525f4f0706b79e397841b1865016cb38353475264beec49851d78a7fdd36
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/types@npm:5.59.5":
   version: 5.59.5
   resolution: "@typescript-eslint/types@npm:5.59.5"
   checksum: 98c93d354d6410934f468ba8bd468d2746f20b2910c0ef5b08fc788c0742aa7cb82eb2edc4194c85d3fabac5563c1a91d377e84bf5c25caeb4ac9e871aabd4bb
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/types@npm:5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/types@npm:5.59.6"
+  checksum: e898ca629d95b69f5dbfb7c9a3d28f943e5a372d37bf7efaefb41341d2d7147372cd4956b35b637e9b3a1b8555d64a5b35776650b815c4227b114513247ec2b5
   languageName: node
   linkType: hard
 
@@ -1072,6 +1154,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/typescript-estree@npm:5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/typescript-estree@npm:5.59.6"
+  dependencies:
+    "@typescript-eslint/types": 5.59.6
+    "@typescript-eslint/visitor-keys": 5.59.6
+    debug: ^4.3.4
+    globby: ^11.1.0
+    is-glob: ^4.0.3
+    semver: ^7.3.7
+    tsutils: ^3.21.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 65b7879e8cd4ccb987c1e1fa75cd84250cb46799ba0de6cdcaec70f6700b45ae4efcebb24163ca7946152e1b12595ee58e35bfb31ea6d35b3f39deaf973d4f1a
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/utils@npm:5.59.5":
   version: 5.59.5
   resolution: "@typescript-eslint/utils@npm:5.59.5"
@@ -1090,6 +1190,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/utils@npm:5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/utils@npm:5.59.6"
+  dependencies:
+    "@eslint-community/eslint-utils": ^4.2.0
+    "@types/json-schema": ^7.0.9
+    "@types/semver": ^7.3.12
+    "@typescript-eslint/scope-manager": 5.59.6
+    "@typescript-eslint/types": 5.59.6
+    "@typescript-eslint/typescript-estree": 5.59.6
+    eslint-scope: ^5.1.1
+    semver: ^7.3.7
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  checksum: 40ffe1d2f1fbf6c30aa05f4a68785fb1e77aa09772ea45b001daf4068e504830cf60a441a819b2c6ffe4a19216aba404869300b2ce6bc2a67d093f74ded504a7
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/visitor-keys@npm:5.59.5":
   version: 5.59.5
   resolution: "@typescript-eslint/visitor-keys@npm:5.59.5"
@@ -1097,6 +1215,16 @@ __metadata:
     "@typescript-eslint/types": 5.59.5
     eslint-visitor-keys: ^3.3.0
   checksum: 94db281ec8ea3a7ede46763aaa0d3349e035b19334fd03e2e560f89c70faebcfa937d51b53d2eaad2506b60a5d901428cc8b5a65ad8e90ca1c12a133dbe977fc
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:5.59.6":
+  version: 5.59.6
+  resolution: "@typescript-eslint/visitor-keys@npm:5.59.6"
+  dependencies:
+    "@typescript-eslint/types": 5.59.6
+    eslint-visitor-keys: ^3.3.0
+  checksum: 8f216411344f5ed618ab838fa3fc4b04f3041f33e08d9b160df4db988f496c71f934c4b0362f686ce63ecf7f5d926c67190d5116c91945c1957544728449ec6b
   languageName: node
   linkType: hard
 
@@ -6102,26 +6230,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-cli@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-cli.tgz":
-  version: 4.3.1
-  resolution: "hexo-cli@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-cli.tgz"
-  dependencies:
-    abbrev: ^2.0.0
-    bluebird: ^3.7.2
-    command-exists: ^1.2.9
-    hexo-fs: ^4.1.1
-    hexo-log: ^4.0.1
-    hexo-util: ^2.5.0
-    minimist: ^1.2.5
-    picocolors: ^1.0.0
-    resolve: ^1.20.0
-    tildify: ^2.0.0
-  bin:
-    hexo: ./bin/hexo
-  checksum: c318b71de697ae7b2f8c6567bec4ae73a64256e0fd52f6b5072a2d0e181697976a9092a5c5e519eb64f77433e419abfa6baf0d74b5501ce808bb7a2347eb5c4f
-  languageName: node
-  linkType: hard
-
 "hexo-cli@https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-cli.tgz":
   version: 4.3.0
   resolution: "hexo-cli@https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-cli.tgz"
@@ -6159,6 +6267,26 @@ __metadata:
   bin:
     hexo: bin/hexo
   checksum: fabe6fbec769f7bcad2d4214d9fbdaef3d6d9e3cd9eb95c854a86986df72f578442453985901d2eded533f41389a43fa1938656adff10a7df0aec04a0daf5ae9
+  languageName: node
+  linkType: hard
+
+"hexo-cli@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "hexo-cli@npm:4.3.1"
+  dependencies:
+    abbrev: ^2.0.0
+    bluebird: ^3.7.2
+    command-exists: ^1.2.9
+    hexo-fs: ^4.1.1
+    hexo-log: ^4.0.1
+    hexo-util: ^2.5.0
+    minimist: ^1.2.5
+    picocolors: ^1.0.0
+    resolve: ^1.20.0
+    tildify: ^2.0.0
+  bin:
+    hexo: bin/hexo
+  checksum: 4eff066c82f6a7c033152f744b202b6d390417af0f9b5eac62b1ecce4bffaae82b467a6714b13293195e36c0b17661ca67479587525c26c07097c951686dd9d8
   languageName: node
   linkType: hard
 
@@ -6358,15 +6486,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-log@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-log.tgz":
-  version: 4.0.1
-  resolution: "hexo-log@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-log.tgz"
-  dependencies:
-    picocolors: ^1.0.0
-  checksum: f73e7ee1854b9e85616b34d36087e858cd2a79da81b84dbb2f2f1a61bf089f273aebbd64c61b34cb8f10a5ae79b3334f7c157668e9793620ea7add4dfab19b38
-  languageName: node
-  linkType: hard
-
 "hexo-log@https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz":
   version: 4.0.1
   resolution: "hexo-log@https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
@@ -6476,14 +6595,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-renderers@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "hexo-renderers@npm:1.0.10"
+"hexo-renderers@npm:^1.0.11":
+  version: 1.0.11
+  resolution: "hexo-renderers@npm:1.0.11"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.9
     fs-extra: ^11.1.1
-    hexo-util: ^3.0.1
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/bad3309/releases/hexo-util.tgz"
     lodash.toarray: ^4.4.0
     markdown-it: ^13.0.1
     markdown-it-abbr: ^1.0.4
@@ -6511,7 +6630,7 @@ __metadata:
     yaml: ^2.2.2
   peerDependencies:
     hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  checksum: e5581d0abf873f50c7fc1ae5b03d5114a2038dd9e00979f2c6239443a2504c91a0f5047b041f69cd092e2e446457a6fd5077372bd6819306c24bb82b0d194903
+  checksum: 1fbbc79fd3c83932ed80e728d6295c2e627f0f28f2fdc3f121cc52d2f08858d5548946006a8d3fcc5935cf04c1102f5479985c3b96d9fa5148c9de598ce887b3
   languageName: node
   linkType: hard
 
@@ -6644,9 +6763,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-util@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-util.tgz":
+"hexo-util@https://github.com/dimaslanjaka/hexo/raw/bad3309/releases/hexo-util.tgz":
   version: 3.0.1
-  resolution: "hexo-util@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-util.tgz"
+  resolution: "hexo-util@https://github.com/dimaslanjaka/hexo/raw/bad3309/releases/hexo-util.tgz"
   dependencies:
     camel-case: ^4.1.2
     cross-spawn: ^7.0.3
@@ -6655,7 +6774,7 @@ __metadata:
     htmlparser2: ^8.0.1
     prismjs: ^1.29.0
     strip-indent: ^3.0.0
-  checksum: 0bd0885389cad4d1af28e863e81e149ee425836c15f85604d52c61d1cde0572b5ddba9f892da19505fc224c5fd47adf796292079c13cea6cdcd5975f84896ed5
+  checksum: 2772a533870ebae7a8312b6379d19ebefcad9800336fcf03b5b571978b1dedc116605ba6ae68e66c0d692aa9375eadd225aaff1c3ccb7de7111bf02816054e41
   languageName: node
   linkType: hard
 
@@ -6718,40 +6837,6 @@ __metadata:
     prismjs: ^1.29.0
     strip-indent: ^3.0.0
   checksum: 0156262b935ae958999b25c7b279d8266bfd595b08f2df6624cd026e7308219b094b375f39832c8df5380df8c7f450c6af5edde3f80f071f1c19ca8ec6a960bd
-  languageName: node
-  linkType: hard
-
-"hexo@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo.tgz":
-  version: 7.0.0-rc1
-  resolution: "hexo@https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo.tgz"
-  dependencies:
-    abbrev: ^2.0.0
-    archy: ^1.0.0
-    bluebird: ^3.7.2
-    hexo-cli: ^4.3.0
-    hexo-front-matter: ^4.0.0
-    hexo-fs: ^4.1.1
-    hexo-i18n: ^2.0.0
-    hexo-log: ^4.0.1
-    hexo-util: ^3.0.1
-    js-yaml: ^4.1.0
-    js-yaml-js-types: ^1.0.0
-    micromatch: ^4.0.4
-    moize: ^6.1.0
-    moment: ^2.29.1
-    moment-timezone: ^0.5.34
-    nunjucks: ^3.2.3
-    picocolors: ^1.0.0
-    pretty-hrtime: ^1.0.3
-    resolve: ^1.22.0
-    strip-ansi: ^6.0.0
-    text-table: ^0.2.0
-    tildify: ^2.0.0
-    titlecase: ^1.1.3
-    warehouse: ^5.0.0
-  bin:
-    hexo: ./bin/hexo
-  checksum: 3127ed2bf99c828ed89ff946d097bc838cf2f21ff95ba6d6184f12228c2935d107754bbbe47eb695a2503ebc26bd403ea4b8901dbb91bd70f92d37f6e0941a0c
   languageName: node
   linkType: hard
 
@@ -6820,6 +6905,40 @@ __metadata:
   bin:
     hexo: bin/hexo
   checksum: 3d090e727d8ce50b74ee72190b75086493269b5e8c89b34bdd69d1a6f84dc48dd8fab63ae0888c237f2c5ae6c57838ebd392fa9e99949af076d1a11535049e1a
+  languageName: node
+  linkType: hard
+
+"hexo@npm:^7.0.0-rc1":
+  version: 7.0.0-rc1
+  resolution: "hexo@npm:7.0.0-rc1"
+  dependencies:
+    abbrev: ^2.0.0
+    archy: ^1.0.0
+    bluebird: ^3.7.2
+    hexo-cli: ^4.3.0
+    hexo-front-matter: ^4.0.0
+    hexo-fs: ^4.1.1
+    hexo-i18n: ^2.0.0
+    hexo-log: ^4.0.1
+    hexo-util: ^3.0.1
+    js-yaml: ^4.1.0
+    js-yaml-js-types: ^1.0.0
+    micromatch: ^4.0.4
+    moize: ^6.1.0
+    moment: ^2.29.1
+    moment-timezone: ^0.5.34
+    nunjucks: ^3.2.3
+    picocolors: ^1.0.0
+    pretty-hrtime: ^1.0.3
+    resolve: ^1.22.0
+    strip-ansi: ^6.0.0
+    text-table: ^0.2.0
+    tildify: ^2.0.0
+    titlecase: ^1.1.3
+    warehouse: ^5.0.0
+  bin:
+    hexo: bin/hexo
+  checksum: 5290b0a53f3bf7b80b13e2ebf6e044bf61476cb44b67c21eb0bdee191f0d92a8bc515923805fd08bca774cf3b037d1fe2d4887c3d34df87aadce9aafd86de955
   languageName: node
   linkType: hard
 
@@ -7194,9 +7313,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instant-indexing@npm:^1.0.4":
+"instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/instant-indexing/release/instant-indexing.tgz":
   version: 1.0.4
-  resolution: "instant-indexing@npm:1.0.4"
+  resolution: "instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/instant-indexing/release/instant-indexing.tgz"
   dependencies:
     "@google-cloud/local-auth": ^2.1.1
     "@googleapis/docs": ^2.0.1
@@ -7211,7 +7330,7 @@ __metadata:
     sbg-utility: ^1.1.0
     server-destroy: ^1.0.1
     upath: ^2.0.1
-  checksum: 15eb53f70826040e3786b89d9a9a4854755995f5ccf2a2f93e777b3ccc2aa0b395b586d588e2f08ab0f98b954b49003c43b68e2a371e507fbe7b612a3160cf3a
+  checksum: 057cc74f88a407719ce81a99f50c9c7cff82c20fb8057aa185182f2353dc71a959d36c9d6575847fc28a10c5a74a062f8b7877d1f36e2250b410f59686c589a3
   languageName: node
   linkType: hard
 
@@ -7964,6 +8083,42 @@ __metadata:
     canvas:
       optional: true
   checksum: 6b3cf2d15e5a5712b3db5ff56eba82b97c9a879b52e95063cc8323bdf8837b6ca15cfec85b57ab71c95c6b4a4098bf67f274c6ff4e9ff519aa4811a04f290610
+  languageName: node
+  linkType: hard
+
+"jsdom@npm:^22.0.0":
+  version: 22.0.0
+  resolution: "jsdom@npm:22.0.0"
+  dependencies:
+    abab: ^2.0.6
+    cssstyle: ^3.0.0
+    data-urls: ^4.0.0
+    decimal.js: ^10.4.3
+    domexception: ^4.0.0
+    form-data: ^4.0.0
+    html-encoding-sniffer: ^3.0.0
+    http-proxy-agent: ^5.0.0
+    https-proxy-agent: ^5.0.1
+    is-potential-custom-element-name: ^1.0.1
+    nwsapi: ^2.2.4
+    parse5: ^7.1.2
+    rrweb-cssom: ^0.6.0
+    saxes: ^6.0.0
+    symbol-tree: ^3.2.4
+    tough-cookie: ^4.1.2
+    w3c-xmlserializer: ^4.0.0
+    webidl-conversions: ^7.0.0
+    whatwg-encoding: ^2.0.0
+    whatwg-mimetype: ^3.0.0
+    whatwg-url: ^12.0.1
+    ws: ^8.13.0
+    xml-name-validator: ^4.0.0
+  peerDependencies:
+    canvas: ^2.5.0
+  peerDependenciesMeta:
+    canvas:
+      optional: true
+  checksum: 5d554ccb1637035d1c3baa832ce6f6c66549b6fa43cc7c39295250092e74a10c2e6c674cb40a208ae850d80436dd109862f95d293528345ab5d6cc5213847f8e
   languageName: node
   linkType: hard
 
@@ -11719,9 +11874,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "sbg-api@npm:1.1.0"
+"sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-api/release/sbg-api.tgz":
+  version: 1.0.5
+  resolution: "sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-api/release/sbg-api.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
@@ -11744,18 +11899,18 @@ __metadata:
     moment-timezone: ^0.5.43
     nunjucks: ^3.2.4
     safelinkify: ^1.1.18
-    sbg-utility: ^1.1.0
+    sbg-utility: ^1.0.9
     true-case-path: ^2.2.1
     upath: ^2.0.1
     warehouse: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/warehouse.tgz"
     xmlbuilder2: ^3.1.1
-  checksum: 0e0bbc52db3600d7be994b77d016e8813a32e03a47757c65b9e328a7a51970a29ac7132897ebd0714656fc9b2a1a4c3c75a660d3e5a5c3cb143c42e3303ea4d1
+  checksum: 2b13a84533fab8b12886903374c4320a599363f1c5d9fdfc0b1ae9a33716b663bdb943660ff4e24786fe79854e2a3ae11fd749ed04154c3152e3b882ee5f8728
   languageName: node
   linkType: hard
 
-"sbg-cli@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "sbg-cli@npm:1.1.0"
+"sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-cli/release/sbg-cli.tgz":
+  version: 1.0.6
+  resolution: "sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-cli/release/sbg-cli.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
@@ -11765,22 +11920,22 @@ __metadata:
     he: ^1.2.0
     hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
     hexo-blogger-xml: "https://github.com/dimaslanjaka/hexo-blogger-xml/tarball/master"
-    jsdom: 21.1.2
+    jsdom: ^22.0.0
     safelinkify: ^1.1.18
-    sbg-api: ^1.1.0
-    sbg-server: ^1.1.0
-    sbg-utility: ^1.1.0
+    sbg-api: ^1.0.5
+    sbg-server: ^1.0.7
+    sbg-utility: ^1.0.9
     xml2js: ^0.5.0
     yargs: ^17.7.2
   bin:
     sbg: dist/cli.js
-  checksum: 94f5b88a8b3f5430d53a9c4fb7b0b6aadd55921eebf2bb852bdf21564309faeadbac5dfafa50939948876c052a3c780af4b8da544712d468584e65321b084cd3
+  checksum: 821804145ebb22b506e3e8536b1711028daa1f906e788ebf074f8d7a2720bcb607bbefa30f872dd42ce2fda908da37e522ce09dd5ea92c2bc8047dbccec8c318
   languageName: node
   linkType: hard
 
-"sbg-server@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "sbg-server@npm:1.1.0"
+"sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-server/release/sbg-server.tgz":
+  version: 1.0.7
+  resolution: "sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-server/release/sbg-server.tgz"
   dependencies:
     "@popperjs/core": ^2.11.7
     ansi-colors: ^4.1.3
@@ -11810,19 +11965,19 @@ __metadata:
     object-assign: ^4.1.1
     retry: ^0.13.1
     safelinkify: ^1.1.18
-    sbg-api: ^1.1.0
-    sbg-utility: ^1.1.0
+    sbg-api: ^1.0.5
+    sbg-utility: ^1.0.9
     serve-index: ^1.9.1
     upath: ^2.0.1
     write-file-atomic: ^5.0.1
     yaml: ^2.2.2
-  checksum: 7f7612a947d03988bede44061262318b4e20ecbef61f90efa2d995b4cb1d2e35850259c8219cf59047277608d7f009c4a04a21e0e1d360067796df9579637e0e
+  checksum: ade4b0779075520073f613358a8d2b8515760323552372f8e0da522f332356eedc879cf7d0b4cb07fcfed61476d9c9b54da88d34a29e584b656404a9540c6e01
   languageName: node
   linkType: hard
 
-"sbg-utility@npm:^1.0.6, sbg-utility@npm:^1.0.9, sbg-utility@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "sbg-utility@npm:1.1.0"
+"sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-utility/release/sbg-utility.tgz":
+  version: 1.0.10
+  resolution: "sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-utility/release/sbg-utility.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     async: ^3.2.4
@@ -11854,7 +12009,7 @@ __metadata:
     tslib: ^2.5.0
     upath: ^2.0.1
     yaml: ^2.2.2
-  checksum: 6fc5ff6fa5b4defe6aacb494cc3341b28c299471f21f34f55e9b3b86bf7698aba2f234e050c04fe65eefbf37880154aac6240725ac4a7fbd7e7625ac200f79f0
+  checksum: bbe5c84c0b8f8a1e589a58d0d041875ca9519cf9c57a19add14390756fdc09dd9053c285687ad36b1145c12f5edf9f3d7e237d4d9544d9bdc4abbc4513bc33c3
   languageName: node
   linkType: hard
 
@@ -12549,20 +12704,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"static-blog-generator@npm:^3.0.1":
+"static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/static-blog-generator/release/static-blog-generator.tgz":
   version: 3.0.1
-  resolution: "static-blog-generator@npm:3.0.1"
+  resolution: "static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/static-blog-generator/release/static-blog-generator.tgz"
   dependencies:
     git-command-helper: ^1.2.2
     google-news-sitemap: ^1.0.10
     hexo-post-parser: ^1.2.8
     instant-indexing: ^1.0.4
     safelinkify: ^1.1.18
-    sbg-api: ^1.1.0
-    sbg-cli: ^1.1.0
-    sbg-server: ^1.1.0
-    sbg-utility: ^1.1.0
-  checksum: 6251cb2814ca1efdba8ad1b7e628672be4c7c0906fabbcd6f9ff9a441c730be75bb88a47ed8d45e32053ef6cbb7337f45f8ec6b72192af5233340bb5afa37309
+    sbg-api: ^1.0.5
+    sbg-cli: ^1.0.6
+    sbg-server: ^1.0.7
+    sbg-utility: ^1.0.9
+  checksum: c8d33cd14c75637bb15a3912fc5c28fdb4558509c5825f01bba7a60a1927c42ae2d801a3dbfb0d877fbe924b4c76244cc3ae0c50ea8a30ecce8ff17418951589
   languageName: node
   linkType: hard
 
@@ -14120,9 +14275,9 @@ __metadata:
     "@types/fs-extra": ^11.0.1
     "@types/gulp": ^4.0.10
     "@types/js-yaml": ^4.0.5
-    "@types/node": ^20.1.2
-    "@typescript-eslint/eslint-plugin": ^5.59.5
-    "@typescript-eslint/parser": ^5.59.5
+    "@types/node": ^20.1.5
+    "@typescript-eslint/eslint-plugin": ^5.59.6
+    "@typescript-eslint/parser": ^5.59.6
     cheerio: ^0.22.0
     css: ^3.0.0
     eslint: ^8.40.0
@@ -14131,10 +14286,10 @@ __metadata:
     fs-extra: ^11.1.1
     git-command-helper: ^1.2.3
     gulp: ^4.0.2
-    hexo: "https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo.tgz"
+    hexo: ^7.0.0-rc1
     hexo-asset-link: "https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-asset-link.tgz"
     hexo-browsersync: ^0.3.0
-    hexo-cli: "https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-cli.tgz"
+    hexo-cli: ^4.3.1
     hexo-excerpt: ^1.3.0
     hexo-extend-injector2: ^0.3.1
     hexo-filter-flowchart: ^1.0.4
@@ -14148,16 +14303,16 @@ __metadata:
     hexo-generator-searchdb: ^1.4.1
     hexo-generator-tag: ^2.0.0
     hexo-i18n: ^2.0.0
-    hexo-log: "https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-log.tgz"
+    hexo-log: ^4.0.1
     hexo-pagination: ^3.0.0
     hexo-pdf: ^1.1.1
     hexo-renderer-markdown-it: ^7.0.0
-    hexo-renderers: ^1.0.10
+    hexo-renderers: ^1.0.11
     hexo-seo: ^1.2.1
     hexo-server: ^3.0.0
     hexo-shortcodes: ^1.1.2
     hexo-theme-claudia: "workspace:^"
-    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/6c2393c/releases/hexo-util.tgz"
+    hexo-util: ^3.0.1
     instant-indexing: ^1.0.4
     js-yaml: ^4.1.0
     lodash.toarray: ^4.4.0
