@@ -164,11 +164,12 @@ jobs:
         continue-on-error: true
         name: install
       - run: |
+          yarn cache clean --all
           find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
           find . -name 'yarn.lock' -type d -prune -exec rm -rf '{}' +
           yarn cache clean
           touch yarn.lock
-          yarn install --check-cache
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
           yarn run postinstall
         if: steps.install.outcome == 'failure'
         name: clean install
