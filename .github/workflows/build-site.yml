@@ -148,6 +148,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node_version }}
+      - run: corepack enable
       - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky
       - name: Set env
         id: set-env
