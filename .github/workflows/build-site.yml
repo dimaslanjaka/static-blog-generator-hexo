@@ -161,7 +161,7 @@ jobs:
       - run: yarn install
         id: install
         continue-on-error: true
-        name: install
+        name: "YARN: install"
       - run: |
           yarn cache clean --all
           find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
@@ -169,7 +169,7 @@ jobs:
           touch yarn.lock
           YARN_CHECKSUM_BEHAVIOR=update yarn install
         if: steps.install.outcome == 'failure'
-        name: clean install
+        name: "YARN: clean install"
         shell: bash
       - run: yarn run postinstall
       - run: yarn workspace chimeraland build
