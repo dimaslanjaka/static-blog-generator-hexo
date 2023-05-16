@@ -11,3 +11,4 @@ db.json
 **/*.tsbuildinfo
 site/themes/claudia
 bin/submodule-install
+*bfg*
