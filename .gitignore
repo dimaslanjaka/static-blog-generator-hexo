@@ -12,3 +12,4 @@ db.json
 site/themes/claudia
 bin/submodule-install
 *bfg*
+.env
