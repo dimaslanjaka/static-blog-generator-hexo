@@ -91,6 +91,16 @@ jobs:
           ref: master
           path: site/.deploy_git
           token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: clean site/.deploy_git
+        working-directory: site/.deploy_git
+        shell: bash
+        run: |
+          git rm --cached -rf .
+          git add .
+          git config core.eol lf
+          git config core.autocrlf input
+          git checkout-index --force --all
+          git commit -m "fix index"
       - name: checkout site/.deploy_git/chimeraland
         uses: actions/checkout@v3
         with:
