@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const Axios = require('axios');
 const glob = require('glob');
 const crypto = require('crypto');
-const { spawnAsync } = require('git-command-helper/dist/spawn');
+const { spawnAsync } = require('cross-spawn');
 const gulp = require('gulp');
 const { persistentCache } = require('persistent-cache');
 
