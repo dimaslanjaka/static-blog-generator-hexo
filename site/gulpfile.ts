@@ -2,14 +2,13 @@
 import './gulpfile-github-actions';
 ///
 
+import { spawnAsync } from 'cross-spawn';
 import fs from 'fs-extra';
 import gch from 'git-command-helper';
-import { default as noop } from 'git-command-helper/dist/noop';
-import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'path';
-// import { Application } from 'static-blog-generator';
+import { noop } from 'sbg-utility';
 import { Application } from 'static-blog-generator';
 
 const api = new Application(__dirname);
