@@ -2607,13 +2607,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "chalk@npm:5.2.0"
-  checksum: 03d8060277de6cf2fd567dc25fcf770593eb5bb85f460ce443e49255a30ff1242edd0c90a06a03803b0466ff0687a939b41db1757bec987113e83de89a003caa
-  languageName: node
-  linkType: hard
-
 "character-parser@npm:^2.2.0":
   version: 2.2.0
   resolution: "character-parser@npm:2.2.0"
@@ -5653,6 +5646,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:^10.0.0, glob@npm:^10.2.4":
+  version: 10.2.4
+  resolution: "glob@npm:10.2.4"
+  dependencies:
+    foreground-child: ^3.1.0
+    jackspeak: ^2.0.3
+    minimatch: ^9.0.0
+    minipass: ^5.0.0 || ^6.0.0
+    path-scurry: ^1.7.0
+  bin:
+    glob: dist/cjs/src/bin.js
+  checksum: 29845faaa1a8bd2d1f2f26e0c4e5040898c7b4ccfb42e0a558319f6229d124dbc7ccf0ff214402505c5b62c1a39d9d2a1de9c582a74ad415591b96fa53cef466
+  languageName: node
+  linkType: hard
+
 "glob@npm:^10.2.2, glob@npm:^10.2.3":
   version: 10.2.3
   resolution: "glob@npm:10.2.3"
@@ -5665,21 +5673,6 @@ __metadata:
   bin:
     glob: dist/cjs/src/bin.js
   checksum: 338c7522a60728397faa26a1197d6d1348444042d47de1456bbeae50228b32cd6c7423485f8f4e8eec577c6162b592a6098239752f8d4d03b8d2d2580c932666
-  languageName: node
-  linkType: hard
-
-"glob@npm:^10.2.4":
-  version: 10.2.4
-  resolution: "glob@npm:10.2.4"
-  dependencies:
-    foreground-child: ^3.1.0
-    jackspeak: ^2.0.3
-    minimatch: ^9.0.0
-    minipass: ^5.0.0 || ^6.0.0
-    path-scurry: ^1.7.0
-  bin:
-    glob: dist/cjs/src/bin.js
-  checksum: 29845faaa1a8bd2d1f2f26e0c4e5040898c7b4ccfb42e0a558319f6229d124dbc7ccf0ff214402505c5b62c1a39d9d2a1de9c582a74ad415591b96fa53cef466
   languageName: node
   linkType: hard
 
@@ -6201,21 +6194,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-blogger-xml@https://github.com/dimaslanjaka/hexo-blogger-xml/tarball/master":
-  version: 1.0.26
-  resolution: "hexo-blogger-xml@https://github.com/dimaslanjaka/hexo-blogger-xml.git#commit=23d7cb7321ce2c8e8a72d7327a4e98158118e6f7"
+"hexo-blogger-xml@npm:^1.0.30":
+  version: 1.0.30
+  resolution: "hexo-blogger-xml@npm:1.0.30"
   dependencies:
-    chalk: ^5.2.0
+    fs-extra: ^11.1.1
     he: ^1.2.0
-    js-prototypes: "github:dimaslanjaka/js-prototypes"
-    jsdom: ^21.1.0
-    merge2: ^1.4.1
+    jsdom: 21
     moment: ^2.29.4
-    rimraf: ^4.1.2
+    rimraf: ^5.0.0
     sanitize-filename: ^1.6.3
-    xml2js: ^0.4.23
-    yaml: ^2.2.1
-  checksum: 6b086dbe27986b831caee9dfeaf7a89c1312c28ee296ab2aac54acdc74ebbf41e450a1a26d4f852de83a0402df77a51e2cd20b3494e48bacc0095d93551e59c0
+    sbg-utility: ^1.1.0
+    upath: ^2.0.1
+    xml2js: ^0.5.0
+    yaml: ^2.2.2
+  peerDependencies:
+    hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+  checksum: 71a19ea0a305cc0f47f6ccdcc0740518f45a30e0abb882e19f50ed0f832ba74c18ba857fb3135e13d9fe806528490e219675f3fd3c606113c46755c34bccb87a
   languageName: node
   linkType: hard
 
@@ -7054,9 +7049,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/instant-indexing/release/instant-indexing.tgz":
+"instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/instant-indexing/release/instant-indexing.tgz":
   version: 1.0.4
-  resolution: "instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/instant-indexing/release/instant-indexing.tgz"
+  resolution: "instant-indexing@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/instant-indexing/release/instant-indexing.tgz"
   dependencies:
     "@google-cloud/local-auth": ^2.1.1
     "@googleapis/docs": ^2.0.1
@@ -7071,7 +7066,7 @@ __metadata:
     sbg-utility: ^1.1.0
     server-destroy: ^1.0.1
     upath: ^2.0.1
-  checksum: 057cc74f88a407719ce81a99f50c9c7cff82c20fb8057aa185182f2353dc71a959d36c9d6575847fc28a10c5a74a062f8b7877d1f36e2250b410f59686c589a3
+  checksum: 718bc9fc8e3c4172649c6936f2322a94ae49f3897d374db43b16c8d94db5acc6d971acb427fff1186c58c23b596c392f49fc2a27bd9de5b869981d4ef3aedc4f
   languageName: node
   linkType: hard
 
@@ -7719,13 +7714,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-prototypes@github:dimaslanjaka/js-prototypes":
-  version: 1.2.0
-  resolution: "js-prototypes@https://github.com/dimaslanjaka/js-prototypes.git#commit=1a5e85c3e4572cc7bebb18215251eef4ee04926f"
-  checksum: 7bb6902daf143297b113951c51dd153eebe9d244950a388c5eeb8ed2036cfa08a0aba6774d62a2c823e0cc307f3886a560ba2380c2be27b3c3a7142ce4c20191
-  languageName: node
-  linkType: hard
-
 "js-sdsl@npm:^4.1.4":
   version: 4.4.0
   resolution: "js-sdsl@npm:4.4.0"
@@ -7788,7 +7776,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:21.1.2, jsdom@npm:^21.1.0, jsdom@npm:~21.1.2":
+"jsdom@npm:21, jsdom@npm:21.1.2, jsdom@npm:^21.1.0, jsdom@npm:~21.1.2":
   version: 21.1.2
   resolution: "jsdom@npm:21.1.2"
   dependencies:
@@ -7824,42 +7812,6 @@ __metadata:
     canvas:
       optional: true
   checksum: 6b3cf2d15e5a5712b3db5ff56eba82b97c9a879b52e95063cc8323bdf8837b6ca15cfec85b57ab71c95c6b4a4098bf67f274c6ff4e9ff519aa4811a04f290610
-  languageName: node
-  linkType: hard
-
-"jsdom@npm:^22.0.0":
-  version: 22.0.0
-  resolution: "jsdom@npm:22.0.0"
-  dependencies:
-    abab: ^2.0.6
-    cssstyle: ^3.0.0
-    data-urls: ^4.0.0
-    decimal.js: ^10.4.3
-    domexception: ^4.0.0
-    form-data: ^4.0.0
-    html-encoding-sniffer: ^3.0.0
-    http-proxy-agent: ^5.0.0
-    https-proxy-agent: ^5.0.1
-    is-potential-custom-element-name: ^1.0.1
-    nwsapi: ^2.2.4
-    parse5: ^7.1.2
-    rrweb-cssom: ^0.6.0
-    saxes: ^6.0.0
-    symbol-tree: ^3.2.4
-    tough-cookie: ^4.1.2
-    w3c-xmlserializer: ^4.0.0
-    webidl-conversions: ^7.0.0
-    whatwg-encoding: ^2.0.0
-    whatwg-mimetype: ^3.0.0
-    whatwg-url: ^12.0.1
-    ws: ^8.13.0
-    xml-name-validator: ^4.0.0
-  peerDependencies:
-    canvas: ^2.5.0
-  peerDependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 5d554ccb1637035d1c3baa832ce6f6c66549b6fa43cc7c39295250092e74a10c2e6c674cb40a208ae850d80436dd109862f95d293528345ab5d6cc5213847f8e
   languageName: node
   linkType: hard
 
@@ -11428,7 +11380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^4.1.2, rimraf@npm:^4.2.0":
+"rimraf@npm:^4.2.0":
   version: 4.4.1
   resolution: "rimraf@npm:4.4.1"
   dependencies:
@@ -11436,6 +11388,17 @@ __metadata:
   bin:
     rimraf: dist/cjs/src/bin.js
   checksum: b786adc02651e2e24bbedb04bbdea80652fc9612632931ff2d9f898c5e4708fe30956186597373c568bd5230a4dc2fadfc816ccacba8a1daded3a006a6b74f1a
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "rimraf@npm:5.0.0"
+  dependencies:
+    glob: ^10.0.0
+  bin:
+    rimraf: dist/cjs/src/bin.js
+  checksum: 60c5a7f152014d4f6bbf23f48e6badd145960a9be1115b719a07ba688c760b1bb8270abd6650bbd184ae2011843d8e9c775409652c89ff97550418aa5d581b27
   languageName: node
   linkType: hard
 
@@ -11622,68 +11585,68 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-api/release/sbg-api.tgz":
-  version: 1.0.5
-  resolution: "sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-api/release/sbg-api.tgz"
+"sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-api/release/sbg-api.tgz":
+  version: 1.1.0
+  resolution: "sbg-api@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-api/release/sbg-api.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
     fs-extra: ^11.1.1
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     glob: ^10.2.3
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
-    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
-    hexo-asset-link: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-asset-link.tgz"
-    hexo-cli: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-cli.tgz"
-    hexo-front-matter: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-front-matter.tgz"
+    hexo: ^7.0.0-rc1
+    hexo-asset-link: ^2.2.1
+    hexo-cli: ^4.3.1
+    hexo-front-matter: ^4.1.0
     hexo-is: ^1.0.5
-    hexo-log: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
-    hexo-post-parser: ^1.2.8
-    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
+    hexo-log: ^4.0.1
+    hexo-post-parser: ^1.2.10
+    hexo-util: ^3.0.1
     micromatch: ^4.0.5
     moment: ^2.29.4
     moment-timezone: ^0.5.43
     nunjucks: ^3.2.4
     safelinkify: ^1.1.18
-    sbg-utility: ^1.0.9
+    sbg-utility: ^1.1.0
     true-case-path: ^2.2.1
     upath: ^2.0.1
-    warehouse: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/warehouse.tgz"
+    warehouse: ^5.0.0
     xmlbuilder2: ^3.1.1
-  checksum: 2b13a84533fab8b12886903374c4320a599363f1c5d9fdfc0b1ae9a33716b663bdb943660ff4e24786fe79854e2a3ae11fd749ed04154c3152e3b882ee5f8728
+  checksum: aa57607be601b01f08c156b65c83f50c99a9770f70213418987a3f7dc5575b1ccd38afb9ef2f5a81687d358c41a1053e225b6a4475ad30bf6fb5ce070116592f
   languageName: node
   linkType: hard
 
-"sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-cli/release/sbg-cli.tgz":
-  version: 1.0.6
-  resolution: "sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-cli/release/sbg-cli.tgz"
+"sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-cli/release/sbg-cli.tgz":
+  version: 1.1.0
+  resolution: "sbg-cli@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-cli/release/sbg-cli.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
     deepmerge-ts: ^5.1.0
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     he: ^1.2.0
-    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
-    hexo-blogger-xml: "https://github.com/dimaslanjaka/hexo-blogger-xml/tarball/master"
-    jsdom: ^22.0.0
+    hexo: ^7.0.0-rc1
+    hexo-blogger-xml: ^1.0.30
+    jsdom: 21.1.2
     safelinkify: ^1.1.18
-    sbg-api: ^1.0.5
-    sbg-server: ^1.0.7
-    sbg-utility: ^1.0.9
+    sbg-api: ^1.1.0
+    sbg-server: ^1.1.0
+    sbg-utility: ^1.1.0
     xml2js: ^0.5.0
     yargs: ^17.7.2
   bin:
     sbg: dist/cli.js
-  checksum: 821804145ebb22b506e3e8536b1711028daa1f906e788ebf074f8d7a2720bcb607bbefa30f872dd42ce2fda908da37e522ce09dd5ea92c2bc8047dbccec8c318
+  checksum: 79dd29c667bfc392c5ed248f884da4b8c1129adb31160ebb32fa186843e1db0e5ee01727cedf6088f2586b03dc8f753aac65ebfab3191475d726ff99a02e0ee6
   languageName: node
   linkType: hard
 
-"sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-server/release/sbg-server.tgz":
-  version: 1.0.7
-  resolution: "sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-server/release/sbg-server.tgz"
+"sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-server/release/sbg-server.tgz":
+  version: 1.1.0
+  resolution: "sbg-server@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-server/release/sbg-server.tgz"
   dependencies:
     "@popperjs/core": ^2.11.7
     ansi-colors: ^4.1.3
@@ -11701,9 +11664,9 @@ __metadata:
     find-yarn-workspace-root: ^2.0.0
     flowbite: ^1.6.5
     fs-extra: ^11.1.1
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     glob: ^10.2.3
-    hexo-post-parser: ^1.2.8
+    hexo-post-parser: ^1.2.10
     highlight.js: 11.8.0
     instant-indexing: ^1.0.4
     kruptein: ^3.0.6
@@ -11713,19 +11676,19 @@ __metadata:
     object-assign: ^4.1.1
     retry: ^0.13.1
     safelinkify: ^1.1.18
-    sbg-api: ^1.0.5
-    sbg-utility: ^1.0.9
+    sbg-api: ^1.1.0
+    sbg-utility: ^1.1.0
     serve-index: ^1.9.1
     upath: ^2.0.1
     write-file-atomic: ^5.0.1
     yaml: ^2.2.2
-  checksum: ade4b0779075520073f613358a8d2b8515760323552372f8e0da522f332356eedc879cf7d0b4cb07fcfed61476d9c9b54da88d34a29e584b656404a9540c6e01
+  checksum: dd0c6fa03f0a2500fe071f2195414454ee4c90181cbfad1b69e026ed956738ca264104554c578838ec2108035cd7afa8ddf6ed57121a2ee308d960bad369b76c
   languageName: node
   linkType: hard
 
-"sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-utility/release/sbg-utility.tgz":
+"sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz":
   version: 1.0.10
-  resolution: "sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/sbg-utility/release/sbg-utility.tgz"
+  resolution: "sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz"
   dependencies:
     ansi-colors: ^4.1.3
     async: ^3.2.4
@@ -12452,20 +12415,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/static-blog-generator/release/static-blog-generator.tgz":
+"static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/static-blog-generator/release/static-blog-generator.tgz":
   version: 3.0.1
-  resolution: "static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/9dcd8edf27523cd26689045aea2db47921cde50e/packages/static-blog-generator/release/static-blog-generator.tgz"
+  resolution: "static-blog-generator@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/static-blog-generator/release/static-blog-generator.tgz"
   dependencies:
-    git-command-helper: ^1.2.2
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    git-command-helper: ^1.2.3
     google-news-sitemap: ^1.0.10
-    hexo-post-parser: ^1.2.8
+    hexo-post-parser: ^1.2.10
     instant-indexing: ^1.0.4
     safelinkify: ^1.1.18
-    sbg-api: ^1.0.5
-    sbg-cli: ^1.0.6
-    sbg-server: ^1.0.7
-    sbg-utility: ^1.0.9
-  checksum: c8d33cd14c75637bb15a3912fc5c28fdb4558509c5825f01bba7a60a1927c42ae2d801a3dbfb0d877fbe924b4c76244cc3ae0c50ea8a30ecce8ff17418951589
+    sbg-api: ^1.1.0
+    sbg-cli: ^1.1.0
+    sbg-server: ^1.1.0
+    sbg-utility: ^1.1.0
+  checksum: cbae6ab5c2b7632deca6d1d5e26fc2bde811ae65eac7e0d476020b99773cfc4bfee0cd9b079183204f09eee5e9278af5648493d5cc062d5ba56db81bca16edba
   languageName: node
   linkType: hard
 
@@ -14132,16 +14096,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.23":
-  version: 0.4.23
-  resolution: "xml2js@npm:0.4.23"
-  dependencies:
-    sax: ">=0.6.0"
-    xmlbuilder: ~11.0.0
-  checksum: ca0cf2dfbf6deeaae878a891c8fbc0db6fd04398087084edf143cdc83d0509ad0fe199b890f62f39c4415cf60268a27a6aed0d343f0658f8779bd7add690fa98
-  languageName: node
-  linkType: hard
-
 "xml2js@npm:^0.5.0":
   version: 0.5.0
   resolution: "xml2js@npm:0.5.0"
@@ -14220,7 +14174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.1.1, yaml@npm:^2.2.1, yaml@npm:^2.2.2":
+"yaml@npm:^2.1.1, yaml@npm:^2.2.2":
   version: 2.2.2
   resolution: "yaml@npm:2.2.2"
   checksum: d90c235e099e30094dcff61ba3350437aef53325db4a6bcd04ca96e1bfe7e348b191f6a7a52b5211e2dbc4eeedb22a00b291527da030de7c189728ef3f2b4eb3
