@@ -149,5 +149,5 @@
   "npm.packageManager": "yarn",
   "git.enabled": true,
   "eslint.packageManager": "yarn",
-  "explorer.autoReveal": false
+  "explorer.autoReveal": true
 }
