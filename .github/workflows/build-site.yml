@@ -177,11 +177,10 @@ jobs:
       - run: yarn workspace chimeraland build
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
-      - run: "yarn workspace wmi exec \"hexo generate\""
+      - run: yarn workspace wmi exec "hexo generate"
       #- run: yarn workspace wmi run generate:sitemap
       - run: yarn workspace wmi run generate:feed
-      - run: gulp deploy:copy
-        working-directory: site
+      - run: yarn workspace wmi exec "gulp deploy:copy"
       - run: yarn workspace wmi exec "sbg deploy seo"
       - run: yarn workspace wmi exec "sbg deploy safelink"
       - name: install site/.deploy_git/page
