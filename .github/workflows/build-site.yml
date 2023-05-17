@@ -182,10 +182,8 @@ jobs:
       - run: yarn workspace wmi run generate:feed
       - run: gulp deploy:copy
         working-directory: site
-      - run: npx sbg deploy seo
-        working-directory: site
-      - run: npx sbg deploy safelink
-        working-directory: site
+      - run: yarn workspace wmi exec "sbg deploy seo"
+      - run: yarn workspace wmi exec "sbg deploy safelink"
       - name: install site/.deploy_git/page
         shell: bash
         run: npm install --omit=dev --production
