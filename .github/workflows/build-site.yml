@@ -48,6 +48,7 @@ jobs:
           timezoneLinux: 'Asia/Jakarta'
           timezoneMacos: 'Asia/Jakarta'
           timezoneWindows: 'Indonesia Standard Time'
+      - run: git config --global  core.ignorecase false
       - uses: actions/checkout@v3
         name: checkout root project
         with:
