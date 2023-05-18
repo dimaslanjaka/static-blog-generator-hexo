@@ -228,16 +228,16 @@ jobs:
         run: |
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
-          git submodule foreach-- recursive '
+          git submodule foreach --recursive '
             case $name in
                 source-posts|src-posts)
                  git submodule foreach "git add -A | :";
-                 git submodule foreach "git commit -m \'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}\' | :"
+                 git submodule foreach "git commit -m \'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}\' | :";
                  git submodule foreach "git pull -X theirs | :";
                  git submodule foreach "git push | :";
                  ;;
                 *)     # default "catchall"
-                 echo "skip push submodule $name"
+                 echo "skip push submodule $name";
                 ;;
             esac';
       - name: push changes current repository
