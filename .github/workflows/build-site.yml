@@ -95,6 +95,8 @@ jobs:
         working-directory: site/.deploy_git
         shell: bash
         run: |
+          git config --global user.name 'dimaslanjaka'
+          git config --global user.email 'dimaslanjaka@gmail.com'
           git rm --cached -rf .
           git add .
           git config core.eol lf
