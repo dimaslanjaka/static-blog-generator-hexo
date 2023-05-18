@@ -228,17 +228,18 @@ jobs:
         run: |
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
-          case $name in # $name is available to `submodule foreach`
-              source-posts|another-repo-name)
-               git submodule foreach "git add -A | :"
-               git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :"
-               git submodule foreach "git pull -X theirs | :"
-               git submodule foreach "git push | :"
-               ;;
-              *)     # default "catchall"
-               echo "skip push submodule $name"
-              ;;
-          esac
+          git submodule foreach --recursive '
+            case $name in
+                source-posts|src-posts)
+                 git submodule foreach "git add -A | :"
+                 git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :"
+                 git submodule foreach "git pull -X theirs | :"
+                 git submodule foreach "git push | :"
+                 ;;
+                *)     # default "catchall"
+                 echo "skip push submodule $name"
+                ;;
+            esac'
       - name: push changes current repository
         continue-on-error: true
         if: contains(github.event.head_commit.message, 'chore:') == false
