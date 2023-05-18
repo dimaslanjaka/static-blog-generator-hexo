@@ -229,13 +229,14 @@ jobs:
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
           case $name in # $name is available to `submodule foreach`
-              hexo-generator-redirect|5|6)
-               ;;
-              *)     # default "catchall"
+              source-posts|another-repo-name)
                git submodule foreach "git add -A | :"
                git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :"
                git submodule foreach "git pull -X theirs | :"
                git submodule foreach "git push | :"
+               ;;
+              *)     # default "catchall"
+               echo "skip push submodule $name"
               ;;
           esac
       - name: push changes current repository
