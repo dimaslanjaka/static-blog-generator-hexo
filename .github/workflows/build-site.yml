@@ -148,9 +148,6 @@ jobs:
             **/site/public
             **/site/tmp
             **/site/source/_posts
-            **/site/.deploy_git/**/*.html
-            **/site/.deploy_git/**/*.js
-            **/site/.deploy_git/**/*.css
             **/dist
             **/.yarn
           # ${{ steps.set-env.outputs.cache-yarn }}
