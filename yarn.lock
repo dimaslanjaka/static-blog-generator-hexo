@@ -6603,9 +6603,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-shortcodes@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "hexo-shortcodes@npm:1.2.1"
+"hexo-shortcodes@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "hexo-shortcodes@npm:1.2.2"
   dependencies:
     ansi-colors: ^4.1.3
     axios: ^1.4.0
@@ -6618,7 +6618,7 @@ __metadata:
     sbg-utility: ^1.1.0
   peerDependencies:
     hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  checksum: 6d38e9ff137612541d77dc18ae38e3b914574f2874022081dc3f54be10c6b200ae76fb38435847fc100a10e98093af3220c7bbc717da7bb1e3620c5da50cfba8
+  checksum: bbf8ae0b239fb832d0f5c311929456670a397ae740dd1aba38ee3f8596ffc28ddc8cd87c302f35f0a4c2fb56c408e34949f74b6e47f38d225030a7e3b4ef2e7a
   languageName: node
   linkType: hard
 
@@ -13976,7 +13976,7 @@ __metadata:
     hexo-renderers: ^1.0.11
     hexo-seo: ^1.2.3
     hexo-server: ^3.0.0
-    hexo-shortcodes: ^1.2.1
+    hexo-shortcodes: ^1.2.2
     hexo-theme-claudia: "workspace:^"
     hexo-util: ^3.0.1
     instant-indexing: ^1.0.4
