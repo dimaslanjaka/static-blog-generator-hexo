@@ -9,7 +9,7 @@
     "prebuild": "node prebuild.js && yarn post:standalone && yarn post:copy",
     "build": "hexo generate",
     "postbuild": "yarn generate:copy && yarn generate:feed && yarn generate:sitemap && yarn generate:install && yarn generate:install2",
-    "generate:copy": "sbg dp copy",
+    "generate:copy": "sbg deploy copy",
     "generate:feed": "sbg generate feed",
     "generate:sitemap": "sbg generate sitemap",
     "generate:install": "cd .deploy_git && npm install --production --omit=dev",
