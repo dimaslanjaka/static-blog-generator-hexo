@@ -25,7 +25,7 @@
     "update:chimeraland": "cd multisite/chimeraland/chimeraland && yarn run update",
     "update:chimeraland2": "cd multisite/chimeraland && yarn run update",
     "update:ncu": "npx npm-check-updates -u",
-    "update": "run-s update:**",
+    "update": "run-s \"update:**\"",
     "postupdate": "node postinstall.js --commit --yarn"
   },
   "hexo": {
