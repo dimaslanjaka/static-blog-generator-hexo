@@ -7,3 +7,5 @@ https://www.webmanajemen.com/docs/nodejs-package-types/
 https://www.webmanajemen.com/docs/
 https://www.webmanajemen.com/docs/static-blog-generator/
 https://www.webmanajemen.com/docs/hexo-post-parser/
+https://www.webmanajemen.com/docs/hexo-shortcodes/
+https://www.webmanajemen.com/docs/git-command-helper/
