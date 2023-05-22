@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "master", "main" ]
     paths:
-      - '**/.guid'
+      - '**/package.json'
       - '**/package-lock.json'
       - '**/yarn.lock'
       - '**/_config.yml'
