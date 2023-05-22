@@ -238,7 +238,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: claudia
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
