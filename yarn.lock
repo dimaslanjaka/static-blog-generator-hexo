@@ -12523,6 +12523,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.59.6
     "@typescript-eslint/parser": ^5.59.6
     binary-collections: "https://github.com/dimaslanjaka/bin"
+    cross-env: ^7.0.3
     eslint: ^8.41.0
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^4.2.1
