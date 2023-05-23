@@ -12530,6 +12530,8 @@ __metadata:
     fs-extra: ^11.1.1
     minimist: ^1.2.8
     prettier: ^2.8.8
+    ts-node: ^10.9.1
+    typescript: ^5.0.4
     upath: ^2.0.1
     yaml: ^2.2.2
   languageName: unknown
