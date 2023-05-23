@@ -197,12 +197,16 @@ jobs:
       - run: yarn workspace wmi exec "sbg deploy safelink"
       - name: install site/.deploy_git/page
         shell: bash
-        run: npm install --omit=dev --production
+        run: |
+          rm -rf node_modules
+          npm install --omit=dev --production
         continue-on-error: true
         working-directory: site/.deploy_git/page
       - name: install site/.deploy_git
         shell: bash
-        run: npm install --omit=dev --production
+        run: |
+          rm -rf node_modules
+          npm install --omit=dev --production
         continue-on-error: true
         working-directory: site/.deploy_git
 
