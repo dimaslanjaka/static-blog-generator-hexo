@@ -119,7 +119,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: clean site/.deploy_git/chimeraland
         run: |
-          git rm -r .
+          git rm -rf .
           git restore --staged --worktree -- .github
           git restore --staged --worktree -- github-actions
           git restore --staged --worktree -- github-actions-validator.config.yml
