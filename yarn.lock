@@ -6599,9 +6599,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers/tarball/be00f361ffb4e1728463a2c9a714cfeb7c83913e":
+"hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers/tarball/92320a0683ccb3efff2173b2cc5888b299ebc96a":
   version: 1.0.12
-  resolution: "hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers.git#commit=be00f361ffb4e1728463a2c9a714cfeb7c83913e"
+  resolution: "hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers.git#commit=92320a0683ccb3efff2173b2cc5888b299ebc96a"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.9
@@ -6635,7 +6635,7 @@ __metadata:
     yaml: ^2.2.2
   peerDependencies:
     hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  checksum: 68a0461fee93df50fad47b8267c0cff49b790ac5a798f4d731fb19a0b61f28a779e58aaccbb5dc663cdd67a9b8f6100ae9a22ef604e82afc4e8407e3f335f163
+  checksum: 9093ed4ffca6ab3a4642b693a6eb5f392c6d6f50c196dfd856395bf6b33c0fe128879f5585edf79e290b9aad327be7ebbf010bb03c06bf78e8eb279602081d1d
   languageName: node
   linkType: hard
 
@@ -14110,7 +14110,7 @@ __metadata:
     hexo-log: ^4.0.1
     hexo-pagination: ^3.0.0
     hexo-pdf: ^1.1.1
-    hexo-renderers: "https://github.com/dimaslanjaka/hexo-renderers/tarball/be00f361ffb4e1728463a2c9a714cfeb7c83913e"
+    hexo-renderers: "https://github.com/dimaslanjaka/hexo-renderers/tarball/92320a0683ccb3efff2173b2cc5888b299ebc96a"
     hexo-seo: ^1.2.3
     hexo-server: ^3.0.0
     hexo-shortcodes: ^1.2.2
