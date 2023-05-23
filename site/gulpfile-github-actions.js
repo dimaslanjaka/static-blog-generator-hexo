@@ -46,7 +46,7 @@ async function compile() {
 async function cleanPostCopy(done) {
   await compile();
 
-  const { Application } = require('./packages/static-blog-generator');
+  const { Application } = require('static-blog-generator');
   const api = new Application(__dirname);
 
   try {
@@ -72,7 +72,7 @@ async function cleanPostCopy(done) {
 async function postCopy(done) {
   await compile();
 
-  const { Application } = require('./packages/static-blog-generator');
+  const { Application } = require('static-blog-generator');
   const api = new Application(__dirname);
 
   try {
