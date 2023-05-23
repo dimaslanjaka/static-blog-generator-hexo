@@ -79,7 +79,7 @@
     "static-blog-generator": "^3.0.1",
     "stylus": "^0.59.0",
     "warehouse": "^5.0.0",
-    "yaml": "^2.2.2"
+    "yaml": "^2.3.0"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.2",
