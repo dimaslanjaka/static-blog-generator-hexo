@@ -6599,30 +6599,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-renderer-markdown-it@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "hexo-renderer-markdown-it@npm:7.0.0"
-  dependencies:
-    hexo-util: ^3.0.1
-    markdown-it: ^13.0.1
-    markdown-it-abbr: ^1.0.4
-    markdown-it-attrs: ^4.1.3
-    markdown-it-cjk-breaks: ^1.1.2
-    markdown-it-container: ^3.0.0
-    markdown-it-deflist: ^2.0.3
-    markdown-it-emoji: ^2.0.0
-    markdown-it-footnote: ^3.0.1
-    markdown-it-ins: ^3.0.0
-    markdown-it-mark: ^3.0.0
-    markdown-it-sub: ^1.0.0
-    markdown-it-sup: ^1.0.0
-  checksum: b6ad54038c53bac9c3bc7c9b32efe2f6344be89296301706f66217a22c314173f86ffb112807b388a40d16a2fcf368b9768cc7c44592c4a4cf29b3b2149b624d
-  languageName: node
-  linkType: hard
-
-"hexo-renderers@npm:^1.0.12":
+"hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers/tarball/be00f361ffb4e1728463a2c9a714cfeb7c83913e":
   version: 1.0.12
-  resolution: "hexo-renderers@npm:1.0.12"
+  resolution: "hexo-renderers@https://github.com/dimaslanjaka/hexo-renderers.git#commit=be00f361ffb4e1728463a2c9a714cfeb7c83913e"
   dependencies:
     ansi-colors: ^4.1.3
     ejs: ^3.1.9
@@ -6656,7 +6635,7 @@ __metadata:
     yaml: ^2.2.2
   peerDependencies:
     hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  checksum: ec554abfc4dc212b0b780ef6fc6d8ed6160f23325d0662dcce0b19599e01bacdad4495dec8a384f1fda18c0fb43cdd02cd5d768d62aa47655176dcd0037ac5d3
+  checksum: 68a0461fee93df50fad47b8267c0cff49b790ac5a798f4d731fb19a0b61f28a779e58aaccbb5dc663cdd67a9b8f6100ae9a22ef604e82afc4e8407e3f335f163
   languageName: node
   linkType: hard
 
@@ -8638,7 +8617,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-attrs@npm:^4.1.3, markdown-it-attrs@npm:^4.1.6":
+"markdown-it-attrs@npm:^4.1.6":
   version: 4.1.6
   resolution: "markdown-it-attrs@npm:4.1.6"
   peerDependencies:
@@ -8654,7 +8633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-cjk-breaks@npm:^1.1.2, markdown-it-cjk-breaks@npm:^1.1.3":
+"markdown-it-cjk-breaks@npm:^1.1.3":
   version: 1.1.3
   resolution: "markdown-it-cjk-breaks@npm:1.1.3"
   dependencies:
@@ -8670,35 +8649,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-deflist@npm:^2.0.3, markdown-it-deflist@npm:^2.1.0":
+"markdown-it-deflist@npm:^2.1.0":
   version: 2.1.0
   resolution: "markdown-it-deflist@npm:2.1.0"
   checksum: 6d5b0cc8c0e729cb8d0add4cbfa98cc39bf3cbc8aa33a8bd7dab50da10273aac834b5fc85a36985235ff945048a246ec3688ecaf5469e64668e94b4449f79531
   languageName: node
   linkType: hard
 
-"markdown-it-emoji@npm:^2.0.0, markdown-it-emoji@npm:^2.0.2":
+"markdown-it-emoji@npm:^2.0.2":
   version: 2.0.2
   resolution: "markdown-it-emoji@npm:2.0.2"
   checksum: e93ca19591b8dd543029e1997763e094a0861185f71403ffa522f09860da0a6457b3a2bd50e6e59cf1551b28ff464a2c2f596045a577323bd1d546cd1f0cc377
   languageName: node
   linkType: hard
 
-"markdown-it-footnote@npm:^3.0.1, markdown-it-footnote@npm:^3.0.3":
+"markdown-it-footnote@npm:^3.0.3":
   version: 3.0.3
   resolution: "markdown-it-footnote@npm:3.0.3"
   checksum: 3657f943f938603ec74e86a41883bfac5564eec7733b8d74e00894cb2b2b73f823c072bccd8aa07c418ae1e017a4f5d22c6309627dfc2800100fcb2c6c71e24b
   languageName: node
   linkType: hard
 
-"markdown-it-ins@npm:^3.0.0, markdown-it-ins@npm:^3.0.1":
+"markdown-it-ins@npm:^3.0.1":
   version: 3.0.1
   resolution: "markdown-it-ins@npm:3.0.1"
   checksum: f4ddc456bf67eeae872bd77146723cd6c6a035b2dfa4c8a6f282c1fc6eb35b503836ac567aee4d6550bbd5e67a014003f52bad4c28661387662e215c3c1ab2ae
   languageName: node
   linkType: hard
 
-"markdown-it-mark@npm:^3.0.0, markdown-it-mark@npm:^3.0.1":
+"markdown-it-mark@npm:^3.0.1":
   version: 3.0.1
   resolution: "markdown-it-mark@npm:3.0.1"
   checksum: cb9d8bee158440938e615d9f2866b6ee3b98666aba7d4c1a78d9df2e0c121a23f2c9172d1f92680883eae9229794a5e6e7e15e76bfd151fadf8be2299330905f
@@ -14128,8 +14107,7 @@ __metadata:
     hexo-log: ^4.0.1
     hexo-pagination: ^3.0.0
     hexo-pdf: ^1.1.1
-    hexo-renderer-markdown-it: ^7.0.0
-    hexo-renderers: ^1.0.12
+    hexo-renderers: "https://github.com/dimaslanjaka/hexo-renderers/tarball/be00f361ffb4e1728463a2c9a714cfeb7c83913e"
     hexo-seo: ^1.2.3
     hexo-server: ^3.0.0
     hexo-shortcodes: ^1.2.2
