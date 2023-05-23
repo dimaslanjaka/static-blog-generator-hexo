@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "formulahendry.code-runner",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "eseom.nunjucks-template",
+    "k--kato.intellij-idea-keybindings"
+  ]
+}
