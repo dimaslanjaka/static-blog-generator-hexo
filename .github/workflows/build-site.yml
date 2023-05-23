@@ -184,7 +184,7 @@ jobs:
         shell: bash
       - run: yarn run postinstall
       - run: yarn workspace chimeraland build
-      - run: yarn workspace chimeraland build
+      #- run: yarn workspace chimeraland build
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
       - run: yarn workspace wmi exec "hexo generate"
