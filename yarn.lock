@@ -14136,6 +14136,7 @@ __metadata:
     stylus: ^0.59.0
     ts-node: ^10.9.1
     typescript: ^5.0.4
+    upath: ^2.0.1
     warehouse: ^5.0.0
     yaml: ^2.3.0
   languageName: unknown
