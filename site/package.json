@@ -35,6 +35,7 @@
     "binary-collections": "^1.0.3",
     "bluebird": "^3.7.2",
     "cheerio": "^0.22.0",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
     "css": "^3.0.0",
     "git-command-helper": "^1.2.3",
     "hexo": "^7.0.0-rc1",
