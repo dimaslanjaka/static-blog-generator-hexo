@@ -110,13 +110,7 @@ jobs:
           ref: gh-pages
           path: site/.deploy_git/chimeraland
           token: '${{ secrets.ACCESS_TOKEN }}'
-      - name: checkout packages/hexo-theme-claudia
-        uses: actions/checkout@v3
-        with:
-          repository: dimaslanjaka/hexo-theme-claudia
-          ref: private
-          path: packages/hexo-theme-claudia
-          token: '${{ secrets.ACCESS_TOKEN }}'
+
       - name: clean site/.deploy_git/chimeraland
         run: |
           git rm -rf .
@@ -125,6 +119,14 @@ jobs:
           git restore --staged --worktree -- github-actions-validator.config.yml
         working-directory: site/.deploy_git/chimeraland
         shell: bash
+
+      - name: checkout packages/hexo-theme-claudia
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/hexo-theme-claudia
+          ref: private
+          path: packages/hexo-theme-claudia
+          token: '${{ secrets.ACCESS_TOKEN }}'
       - name: checkout site/.deploy_git/page
         uses: actions/checkout@v3
         with:
@@ -222,7 +224,23 @@ jobs:
         working-directory: site/.deploy_git
         name: push site/.deploy_git
         shell: bash
-      - name: push src-posts
+      - name: push site/.deploy_git/chimeraland
+        shell: bash
+        working-directory: site/.deploy_git/chimeraland
+        run: |
+          git add .
+          git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+          git push
+        continue-on-error: true
+      - name: push site/.deploy_git/docs
+        shell: bash
+        working-directory: site/.deploy_git/docs
+        run: |
+          git add .
+          git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+          git push
+        continue-on-error: true
+      - name: push site/src-posts
         shell: bash
         working-directory: site/src-posts
         run: |
