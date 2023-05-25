@@ -9,6 +9,8 @@ import path from 'upath';
 
 const hexo = new Hexo(__dirname, { silent: true });
 
+console.log(process.env);
+
 (async () => {
   // init hexo
   await hexo.init();
