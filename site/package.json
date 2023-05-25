@@ -10,6 +10,8 @@
     "build:post": "npm run post",
     "build:site": "hexo generate",
     "build": "run-s \"build:**\"",
+    "generate:seo": "sbg deploy seo",
+    "generate:safelink": "sbg deploy safelink",
     "generate:copy": "sbg deploy copy",
     "generate:feed": "sbg generate feed",
     "generate:sitemap": "sbg generate sitemap",

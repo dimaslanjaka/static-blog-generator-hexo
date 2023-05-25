@@ -194,8 +194,8 @@ jobs:
       #- run: yarn workspace wmi run generate:sitemap
       #- run: yarn workspace wmi run generate:feed
       - run: yarn workspace wmi exec "gulp deploy:copy"
-      - run: yarn workspace wmi exec "sbg deploy seo"
-      - run: yarn workspace wmi exec "sbg deploy safelink"
+      - run: yarn workspace wmi run generate:seo
+      - run: yarn workspace wmi run generate:safelink
       - name: install site/.deploy_git/page
         shell: bash
         run: |
