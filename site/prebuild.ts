@@ -35,6 +35,16 @@ const cfg = [
     dest: path.join(__dirname, '.deploy_git/docs'),
     branch: 'master',
     remote: `${tokenBase}/dimaslanjaka/docs.git`
+  },
+  {
+    dest: path.join(__dirname, '.deploy_git/chimeraland'),
+    branch: 'gh-pages',
+    remote: `${tokenBase}/dimaslanjaka/chimeraland.git`
+  },
+  {
+    dest: path.join(__dirname, '.deploy_git/page'),
+    branch: 'gh-pages',
+    remote: `${tokenBase}/dimaslanjaka/page.git`
   }
 ];
 
