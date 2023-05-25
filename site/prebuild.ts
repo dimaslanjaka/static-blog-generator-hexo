@@ -30,22 +30,22 @@ const hexo = new Hexo(__dirname, { silent: true });
 
   const cfg = [
     {
-      dest: path.join(__dirname, '.deploy_git'),
+      dest: path.join(hexo.base_dir, '.deploy_git'),
       branch: 'master',
       remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`
     },
     {
-      dest: path.join(__dirname, '.deploy_git/docs'),
+      dest: path.join(hexo.base_dir, '.deploy_git/docs'),
       branch: 'master',
       remote: `${tokenBase}/dimaslanjaka/docs.git`
     },
     {
-      dest: path.join(__dirname, '.deploy_git/chimeraland'),
+      dest: path.join(hexo.base_dir, '.deploy_git/chimeraland'),
       branch: 'gh-pages',
       remote: `${tokenBase}/dimaslanjaka/chimeraland.git`
     },
     {
-      dest: path.join(__dirname, '.deploy_git/page'),
+      dest: path.join(hexo.base_dir, '.deploy_git/page'),
       branch: 'gh-pages',
       remote: `${tokenBase}/dimaslanjaka/page.git`
     }
@@ -53,10 +53,10 @@ const hexo = new Hexo(__dirname, { silent: true });
   for (let i = 0; i < cfg.length; i++) {
     const { dest, remote, branch } = cfg[i];
     if (!fs.existsSync(dest)) {
-      const destArg = dest.replace(path.toUnix(__dirname), '');
+      const destArg = dest.replace(path.toUnix(hexo.base_dir), '');
       console.log('cloning', destArg);
       await spawn.async('git', ['clone', '-b', branch, remote, destArg], {
-        cwd: __dirname
+        cwd: hexo.base_dir
       });
     }
   }
