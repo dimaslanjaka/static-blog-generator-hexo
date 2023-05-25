@@ -4,16 +4,18 @@
   "private": true,
   "packageManager": "yarn@3.4.1",
   "scripts": {
-    "prestart": "run-s build:chimera copy",
+    "prestart": "run-s build:prepare build:post",
     "start": "yarn server",
-    "prebuild": "node prebuild.js && yarn post:standalone && yarn post:copy",
-    "build": "hexo generate",
-    "postbuild": "yarn generate:copy && yarn generate:feed && yarn generate:sitemap && yarn generate:install && yarn generate:install2",
+    "build:prepare": "node -r ts-node/register prebuild.ts",
+    "build:post": "npm run post",
+    "build:site": "hexo generate",
+    "build": "run-s \"build:**\"",
     "generate:copy": "sbg deploy copy",
     "generate:feed": "sbg generate feed",
     "generate:sitemap": "sbg generate sitemap",
     "generate:install": "cd .deploy_git && npm install --production --omit=dev",
     "generate:install2": "cd .deploy_git/page && npm install --production --omit=dev",
+    "generate": "run-s \"generate:**\"",
     "post:chimera": "cd multisite/chimeraland && yarn install && yarn run build",
     "post:standalone": "sbg post standalone",
     "post:copy": "sbg post copy",
@@ -26,7 +28,7 @@
     "update:chimeraland2": "cd multisite/chimeraland && yarn run update",
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s \"update:**\"",
-    "postupdate": "node postinstall.js --commit --yarn"
+    "post-update": "node postinstall.js --commit --yarn"
   },
   "hexo": {
     "version": "7.0.0-rc1"
