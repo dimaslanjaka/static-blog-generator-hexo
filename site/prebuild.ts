@@ -1,8 +1,10 @@
 import spawn from 'cross-spawn';
+import * as dotenv from 'dotenv';
 import fs from 'fs-extra';
 import git, { SpawnOptions } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'upath';
+dotenv.config({ path: __dirname });
 
 /**
  * prepare all sources
