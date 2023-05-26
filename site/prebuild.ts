@@ -45,26 +45,38 @@ async function setUserEmail(options: SpawnOptions) {
     {
       dest: path.join(hexo.base_dir, '.deploy_git'),
       branch: 'master',
-      remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`
+      remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`,
+      callback: async function () {
+        //
+      }
     },
     {
       dest: path.join(hexo.base_dir, '.deploy_git/docs'),
       branch: 'master',
-      remote: `${tokenBase}/dimaslanjaka/docs.git`
+      remote: `${tokenBase}/dimaslanjaka/docs.git`,
+      callback: async function () {
+        //
+      }
     },
     {
       dest: path.join(hexo.base_dir, '.deploy_git/chimeraland'),
       branch: 'gh-pages',
-      remote: `${tokenBase}/dimaslanjaka/chimeraland.git`
+      remote: `${tokenBase}/dimaslanjaka/chimeraland.git`,
+      callback: async function () {
+        //
+      }
     },
     {
       dest: path.join(hexo.base_dir, '.deploy_git/page'),
       branch: 'gh-pages',
-      remote: `${tokenBase}/dimaslanjaka/page.git`
+      remote: `${tokenBase}/dimaslanjaka/page.git`,
+      callback: async function () {
+        //
+      }
     }
   ];
   for (let i = 0; i < cfg.length; i++) {
-    const { dest, remote, branch } = cfg[i];
+    const { dest, remote, branch, callback } = cfg[i];
     if (!fs.existsSync(dest)) {
       const destArg = dest.replace(path.toUnix(hexo.base_dir), '');
       console.log('cloning', destArg);
@@ -75,6 +87,9 @@ async function setUserEmail(options: SpawnOptions) {
     if (fs.existsSync(dest)) {
       const _github = new git(dest);
       await setUserEmail({ cwd: dest });
+      if (typeof callback === 'function') {
+        await callback();
+      }
     }
   }
 })();
