@@ -47,7 +47,8 @@ async function setUserEmail(options: SpawnOptions) {
       branch: 'master',
       remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`,
       callback: async function () {
-        //
+        // update submodule
+        await spawn.async('git', ['submodule', 'update', '-i', '-r']);
       }
     },
     {
