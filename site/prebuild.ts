@@ -88,20 +88,20 @@ async function setUserEmail(options: SpawnOptions) {
     }
   ];
   for (let i = 0; i < cfg.length; i++) {
-    const { dest, remote, branch, callback } = cfg[i];
-    if (!fs.existsSync(dest)) {
-      const destArg = dest.replace(path.toUnix(hexo.base_dir), '');
+    const info = cfg[i];
+    if (!fs.existsSync(info.dest)) {
+      const destArg = info.dest.replace(path.toUnix(hexo.base_dir), '');
       console.log('cloning', destArg);
-      await spawn.async('git', ['clone', '-b', branch, remote, destArg], {
+      await spawn.async('git', ['clone', '-b', info.branch, info.remote, destArg], {
         cwd: hexo.base_dir
       });
     }
-    if (fs.existsSync(dest)) {
-      const github = new git(dest);
-      await setUserEmail({ cwd: dest });
-      await spawn.async('git', ['checkout', '-f', 'origin/' + branch], { cwd: dest });
-      if (typeof callback === 'function') {
-        await callback(github);
+    if (fs.existsSync(info.dest)) {
+      const github = new git(info.dest);
+      await setUserEmail({ cwd: info.dest });
+      await spawn.async('git', ['checkout', '-f', 'origin/' + info.branch], { cwd: info.dest });
+      if (typeof info.callback === 'function') {
+        await info.callback(github);
       }
     }
   }
