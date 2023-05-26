@@ -102,7 +102,9 @@ jobs:
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
-          git commit -m "fix index"
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -m "fix index"
+          fi
       - name: checkout site/.deploy_git/chimeraland
         uses: actions/checkout@v3
         with:
