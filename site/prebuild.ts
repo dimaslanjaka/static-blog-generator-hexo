@@ -29,15 +29,11 @@ async function setUserEmail(options: SpawnOptions) {
   await setUserEmail({ cwd: __dirname });
 
   // copy views into theme directory
-  try {
-    fs.copySync(path.join(__dirname, 'views'), hexo.theme_dir, {
-      overwrite: true,
-      /** useful for symlink by yarn workspace */
-      dereference: true
-    });
-  } catch (e) {
-    console.log(e.message);
-  }
+  fs.copySync(path.join(__dirname, 'views'), hexo.theme_dir, {
+    overwrite: true,
+    /** useful for symlink by yarn workspace */
+    dereference: true
+  });
 
   // clone deployment directory
 
