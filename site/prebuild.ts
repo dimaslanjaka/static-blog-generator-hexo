@@ -1,5 +1,6 @@
 import spawn from 'cross-spawn';
 import fs from 'fs-extra';
+import git, { SpawnOptions } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'upath';
 
@@ -9,11 +10,21 @@ import path from 'upath';
 
 const hexo = new Hexo(__dirname, { silent: true });
 
-console.log(process.env);
+const isGithubCI =
+  typeof process.env['GITHUB_WORKFLOW'] === 'string' && typeof process.env['GITHUB_WORKFLOW_SHA'] === 'string';
+async function setUserEmail(options: SpawnOptions) {
+  if (isGithubCI) {
+    // set username and email on github workflow
+    await spawn.spawnAsync('git', ['config', '--global', 'user.name', "'dimaslanjaka'"], options);
+    await spawn.spawnAsync('git', ['config', '--global', 'user.email', "'dimaslanjaka@gmail.com'"], options);
+  }
+}
 
 (async () => {
   // init hexo
   await hexo.init();
+
+  await setUserEmail({ cwd: __dirname });
 
   // copy views into theme directory
   try {
@@ -60,6 +71,10 @@ console.log(process.env);
       await spawn.async('git', ['clone', '-b', branch, remote, destArg], {
         cwd: hexo.base_dir
       });
+    }
+    if (fs.existsSync(dest)) {
+      const _github = new git(dest);
+      await setUserEmail({ cwd: dest });
     }
   }
 })();
