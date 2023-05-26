@@ -91,7 +91,10 @@ async function setUserEmail(options: SpawnOptions) {
     const info = cfg[i];
     if (!fs.existsSync(info.dest)) {
       const destArg = info.dest.replace(path.toUnix(hexo.base_dir), '');
-      console.log('cloning', destArg);
+      console.log('cloning', {
+        arg: destArg,
+        dest: info.dest
+      });
       await spawn.async('git', ['clone', '-b', info.branch, info.remote, destArg], {
         cwd: hexo.base_dir
       });
