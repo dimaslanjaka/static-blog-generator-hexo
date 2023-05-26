@@ -47,6 +47,8 @@ async function setUserEmail(options: SpawnOptions) {
       branch: 'master',
       remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`,
       callback: async function (github: git) {
+        // reset
+        await github.reset(github.branch);
         // update submodule
         await spawn.async(
           'git',
@@ -60,7 +62,8 @@ async function setUserEmail(options: SpawnOptions) {
       branch: 'master',
       remote: `${tokenBase}/dimaslanjaka/docs.git`,
       callback: async function (github: git) {
-        //
+        // reset
+        await github.reset(github.branch);
       }
     },
     {
@@ -68,7 +71,8 @@ async function setUserEmail(options: SpawnOptions) {
       branch: 'gh-pages',
       remote: `${tokenBase}/dimaslanjaka/chimeraland.git`,
       callback: async function (github: git) {
-        //
+        // reset
+        await github.reset(github.branch);
       }
     },
     {
@@ -76,7 +80,8 @@ async function setUserEmail(options: SpawnOptions) {
       branch: 'gh-pages',
       remote: `${tokenBase}/dimaslanjaka/page.git`,
       callback: async function (github: git) {
-        //
+        // reset
+        await github.reset(github.branch);
       }
     }
   ];
