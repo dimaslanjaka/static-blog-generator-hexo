@@ -48,11 +48,11 @@ async function setUserEmail(options: SpawnOptions) {
         // reset
         await github.reset(github.branch);
         // update submodule
-        await spawn.async(
+        /*await spawn.async(
           'git',
           ['submodule', 'update', '-i', '-r'],
           github.spawnOpt({ cwd: github.cwd, stdio: 'inherit' })
-        );
+        );*/
       }
     },
     {
