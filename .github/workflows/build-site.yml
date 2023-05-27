@@ -232,7 +232,7 @@ jobs:
       - name: commit site/.deploy_git
         shell: bash
         id: push-manual
-        continue-on-error: true
+        #continue-on-error: true
         working-directory: site/.deploy_git
         run: |
           git config --global user.name 'dimaslanjaka'
