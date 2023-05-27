@@ -20,7 +20,7 @@ const api = new Application(__dirname);
 async function clone(destFolder: string, options?: import('child_process').SpawnOptions) {
   const spawnOpt = Object.assign({ cwd: __dirname }, options);
   if (!fs.existsSync(destFolder)) {
-    // clone from root deployment dir
+    // clone from deployment dir
     await spawnAsync('git', ['clone', api.getConfig().deploy.repo, destFolder], spawnOpt);
     // update submodule from deployment dir
     if (fs.existsSync(path.join(destFolder, '.gitmodules'))) {
@@ -50,7 +50,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
         cwd
       });
     } catch (e) {
-      // console.log(e.message, sub.root);
+      // console.log(e.message, sub.cwd);
     }
 
     try {
@@ -68,11 +68,11 @@ async function pull(done: gulp.TaskFunctionCallback) {
     await clone('.deploy_git', { cwd: __dirname });
     await doPull(cwd);
     if (gh) {
-      const submodules = gh.submodule.get();
+      const submodules = gh.submodule?.get() || [];
       for (let i = 0; i < submodules.length; i++) {
         const sub = submodules[i];
 
-        await doPull(sub.root);
+        await doPull(sub.cwd);
       }
     }
   } catch (e) {
@@ -97,10 +97,10 @@ async function push(done?: (...args: any[]) => any) {
   };
 
   if (gh) {
-    const submodules = gh.submodule.get();
+    const submodules = gh.submodule?.get() || [];
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
-      await doPush(sub.root, 'origin', sub.branch).catch(() => console.log('cannot push', cleanCwd(cwd)));
+      await doPush(sub.cwd, 'origin', sub.branch).catch(() => console.log('cannot push', cleanCwd(cwd)));
     }
 
     await doPush(cwd, 'origin', 'master');
@@ -150,11 +150,11 @@ async function commit(done: (...args: any[]) => any) {
     const submodules = (<any>gh.submodule).get();
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
-      const cwd = sub.root;
+      const cwd = sub.cwd;
       await doCommit(cwd);
     }
 
-    // commit root repo
+    // commit repo directory
     await doCommit(cwd);
   } catch (e) {
     console.log(e.message);
