@@ -100,6 +100,7 @@ async function setUserEmail(options: SpawnOptions) {
       await setUserEmail({ cwd: info.dest });
       await github.setbranch(info.branch);
       await spawn.async('git', ['checkout', '-f', 'origin/' + info.branch], { cwd: info.dest });
+      //await spawn.async('git', ['reset', '--hard', 'origin/' + info.branch], { cwd: info.dest });
       if (typeof info.callback === 'function') {
         await info.callback(github);
       }
