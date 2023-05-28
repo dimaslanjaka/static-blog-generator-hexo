@@ -93,6 +93,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: clean site/.deploy_git
         working-directory: site/.deploy_git
+        if: ${{ false }}
         shell: bash
         run: |
           git config --global user.name 'dimaslanjaka'
@@ -114,6 +115,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
 
       - name: clean site/.deploy_git/chimeraland
+        if: ${{ false }}
         run: |
           git rm -rf .
           git restore --staged --worktree -- .github
