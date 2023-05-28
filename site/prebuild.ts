@@ -119,7 +119,7 @@ const cfg = [
       });
     }
 
-    console.log(info.dest, fs.existsSync(info.dest));
+    console.log(info.dest.replace(path.toUnix(__dirname) + '/', ''), fs.existsSync(info.dest));
     if (fs.existsSync(info.dest)) {
       const indexLock = path.join(info.dest, '.git/index.lock');
       if (fs.existsSync(indexLock)) {
@@ -153,7 +153,7 @@ const cfg = [
   const deployDir = path.join(hexo.base_dir, '.deploy_git');
   const source = path.join(deployDir, 'github-actions');
   const dest = path.join(deployDir, 'chimeraland', 'github-actions');
-  fs.copySync(source, dest, { overwrite: true });
+  fs.copySync(source, dest, { overwrite: true, dereference: true });
 })();
 
 export function cleanAutoGenFiles(hexo: Hexo) {
