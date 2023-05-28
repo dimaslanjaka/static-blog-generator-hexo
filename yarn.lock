@@ -5691,9 +5691,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/9b13ba9721af620ea03cc572774c959348fecef6/release/git-command-helper.tgz":
+"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/e11598b769c55fbf44418d3f610b41278f8adae1/release/git-command-helper.tgz":
   version: 1.2.5
-  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/9b13ba9721af620ea03cc572774c959348fecef6/release/git-command-helper.tgz"
+  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/e11598b769c55fbf44418d3f610b41278f8adae1/release/git-command-helper.tgz"
   dependencies:
     "@expo/spawn-async": ^1.7.2
     binary-collections: ^1.0.3
@@ -5709,7 +5709,7 @@ __metadata:
     minimatch: ^9.0.1
     sbg-utility: ^1.1.0
     upath: ^2.0.1
-  checksum: 39db1251a264d40f94d4b3b9380bf19215b6bb0451869d9d181e422d82876a331720ac4e861d75241b874448d8f9a8e86ccb256baa641fcf3b76bd650e93b9fe
+  checksum: e4e17ae6e9179e3c8b79e6fae37d18c76720ee56153e0bca2450bddc5e45bf724e238ca9c6997f8e3b239d775ce63fb2a7d6aa08ed9e1f66100231b4894ae548
   languageName: node
   linkType: hard
 
