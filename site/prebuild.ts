@@ -136,9 +136,9 @@ const cfg = [
       await spawn.async('git', ['fetch'], { cwd: info.dest, stdio: 'inherit' });
       await spawn.async('git', ['fetch', '--all', '--prune'], { cwd: info.dest, stdio: 'inherit' });
       console.log('checkout', info.branch);
-      await spawn.async('git', ['checkout', '-f', 'origin/' + info.branch], { cwd: info.dest, stdio: 'inherit' });
+      await spawn.async('git', ['checkout', '-f', info.branch], { cwd: info.dest, stdio: 'inherit' });
       console.log('resetting...');
-      // await spawn.async('git', ['reset', '--hard', 'origin/' + info.branch], { cwd: info.dest, stdio: 'inherit' });
+      await spawn.async('git', ['reset', '--hard', 'origin/' + info.branch], { cwd: info.dest, stdio: 'inherit' });
       if (typeof info.callback === 'function') {
         console.log('running callback...');
         await info.callback(github);
@@ -147,9 +147,9 @@ const cfg = [
   }
 
   // copy github-actions validator
-  const base = path.join(hexo.base_dir, '.deploy_git');
-  const source = path.join(base, 'github-actions');
-  const dest = path.join(base, 'chimeraland', 'github-actions');
+  const deployDir = path.join(hexo.base_dir, '.deploy_git');
+  const source = path.join(deployDir, 'github-actions');
+  const dest = path.join(deployDir, 'chimeraland', 'github-actions');
   fs.copySync(source, dest, { overwrite: true });
 
   /**
@@ -168,7 +168,7 @@ const cfg = [
     'categories',
     'assets'
   ]
-    .map((str) => path.join(base, str))
+    .map((str) => path.join(deployDir, str))
     .filter(fs.existsSync);
   files.forEach((p) => {
     // console.log('deleting', p);
@@ -176,7 +176,7 @@ const cfg = [
   });
 
   // clean auto generated page
-  const base_page = path.join(base, 'page');
+  const base_page = path.join(deployDir, 'page');
   fs.readdirSync(base_page).forEach((file) => {
     const fullpath = path.join(base_page, file);
     if (isNumeric(file)) fs.rmSync(fullpath, { force: true, recursive: true });
