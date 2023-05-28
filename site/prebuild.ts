@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import git, { SpawnOptions } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'upath';
-dotenv.config({ path: __dirname });
+dotenv.config({ path: path.join(__dirname, '.env'), override: true });
 
 /**
  * prepare all sources
@@ -22,6 +22,71 @@ async function setUserEmail(options: SpawnOptions) {
   }
 }
 
+function killProcess(name: string) {
+  const isWin = process.platform === 'win32';
+  if (isWin) {
+    spawn.sync('taskkill', ['/f', '/im', name]);
+  } else {
+    spawn.sync('killall', [name]);
+  }
+}
+
+const tokenBase = `https://${process.env.ACCESS_TOKEN}@github.com`;
+
+const cfg = [
+  {
+    dest: path.join(hexo.base_dir, '.deploy_git'),
+    branch: 'master',
+    remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`,
+    callback: async function (github: git) {
+      // reset
+      //await github.reset(github.branch);
+      // update submodule
+      /*await spawn.async(
+        'git',
+        ['submodule', 'update', '-i', '-r'],
+        github.spawnOpt({ cwd: github.cwd, stdio: 'inherit' })
+      );*/
+    }
+  },
+  {
+    dest: path.join(hexo.base_dir, '.deploy_git/docs'),
+    branch: 'master',
+    remote: `${tokenBase}/dimaslanjaka/docs.git`,
+    callback: async function (github: git) {
+      // reset
+      //await github.reset(github.branch);
+    }
+  },
+  {
+    dest: path.join(hexo.base_dir, '.deploy_git/chimeraland'),
+    branch: 'gh-pages',
+    remote: `${tokenBase}/dimaslanjaka/chimeraland.git`,
+    callback: async function (github: git) {
+      // reset
+      //await github.reset(github.branch);
+    }
+  },
+  {
+    dest: path.join(hexo.base_dir, '.deploy_git/page'),
+    branch: 'gh-pages',
+    remote: `${tokenBase}/dimaslanjaka/page.git`,
+    callback: async function (github: git) {
+      // reset
+      //await github.reset(github.branch);
+    }
+  },
+  {
+    dest: path.join(hexo.base_dir, '.deploy_git/Web-Manajemen'),
+    branch: 'gh-pages',
+    remote: `${tokenBase}/dimaslanjaka/Web-Manajemen.git`,
+    callback: async function (github: git) {
+      // reset
+      //await github.reset(github.branch);
+    }
+  }
+];
+
 (async () => {
   // init hexo
   await hexo.init();
@@ -37,55 +102,10 @@ async function setUserEmail(options: SpawnOptions) {
 
   // clone deployment directory
 
-  const tokenBase = `https://${process.env.ACCESS_TOKEN}@github.com`;
-
-  const cfg = [
-    {
-      dest: path.join(hexo.base_dir, '.deploy_git'),
-      branch: 'master',
-      remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`,
-      callback: async function (github: git) {
-        // reset
-        //await github.reset(github.branch);
-        // update submodule
-        /*await spawn.async(
-          'git',
-          ['submodule', 'update', '-i', '-r'],
-          github.spawnOpt({ cwd: github.cwd, stdio: 'inherit' })
-        );*/
-      }
-    },
-    {
-      dest: path.join(hexo.base_dir, '.deploy_git/docs'),
-      branch: 'master',
-      remote: `${tokenBase}/dimaslanjaka/docs.git`,
-      callback: async function (github: git) {
-        // reset
-        //await github.reset(github.branch);
-      }
-    },
-    {
-      dest: path.join(hexo.base_dir, '.deploy_git/chimeraland'),
-      branch: 'gh-pages',
-      remote: `${tokenBase}/dimaslanjaka/chimeraland.git`,
-      callback: async function (github: git) {
-        // reset
-        //await github.reset(github.branch);
-      }
-    },
-    {
-      dest: path.join(hexo.base_dir, '.deploy_git/page'),
-      branch: 'gh-pages',
-      remote: `${tokenBase}/dimaslanjaka/page.git`,
-      callback: async function (github: git) {
-        // reset
-        //await github.reset(github.branch);
-      }
-    }
-  ];
   for (let i = 0; i < cfg.length; i++) {
     const info = cfg[i];
     if (!fs.existsSync(info.dest)) {
+      // clone
       const destArg = info.dest.replace(path.toUnix(hexo.base_dir), '');
       console.log('cloning', {
         arg: destArg,
@@ -95,13 +115,32 @@ async function setUserEmail(options: SpawnOptions) {
         cwd: hexo.base_dir
       });
     }
+
+    console.log(info.dest, fs.existsSync(info.dest));
     if (fs.existsSync(info.dest)) {
+      const indexLock = path.join(info.dest, '.git/index.lock');
+      if (fs.existsSync(indexLock)) {
+        killProcess('git');
+        fs.rmSync(indexLock);
+      }
       const github = new git(info.dest);
       await setUserEmail({ cwd: info.dest });
-      await github.setbranch(info.branch);
-      await spawn.async('git', ['checkout', '-f', 'origin/' + info.branch], { cwd: info.dest });
-      //await spawn.async('git', ['reset', '--hard', 'origin/' + info.branch], { cwd: info.dest });
+
+      const hasRemote = (await spawn.async('git', ['config', 'remote.origin.url'], { cwd: info.dest })).output;
+      // await spawn.async('git', ['remote', 'remove', 'origin'], { cwd: info.dest, stdio: 'inherit' });
+      if (hasRemote.trim() !== info.remote) {
+        console.log('update remote');
+        await spawn.async('git', ['remote', 'add', 'origin', info.remote], { cwd: info.dest, stdio: 'inherit' });
+      }
+      console.log('fetching...');
+      await spawn.async('git', ['fetch'], { cwd: info.dest, stdio: 'inherit' });
+      await spawn.async('git', ['fetch', '--all', '--prune'], { cwd: info.dest, stdio: 'inherit' });
+      console.log('checkout', info.branch);
+      await spawn.async('git', ['checkout', '-f', 'origin/' + info.branch], { cwd: info.dest, stdio: 'inherit' });
+      console.log('resetting...');
+      // await spawn.async('git', ['reset', '--hard', 'origin/' + info.branch], { cwd: info.dest, stdio: 'inherit' });
       if (typeof info.callback === 'function') {
+        console.log('running callback...');
         await info.callback(github);
       }
     }
