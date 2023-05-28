@@ -158,7 +158,9 @@ const cfg = [
   const source = path.join(deployDir, 'github-actions');
   const dest = path.join(deployDir, 'chimeraland', 'github-actions');
   fs.copySync(source, dest, { overwrite: true });
+})();
 
+export function cleanAutoGenFiles(deployDir: string) {
   /**
    * clean auto generated files inside .deploy_git
    */
@@ -188,7 +190,7 @@ const cfg = [
     const fullpath = path.join(base_page, file);
     if (isNumeric(file)) fs.rmSync(fullpath, { force: true, recursive: true });
   });
-})();
+}
 
 function isNumeric(str: string | number) {
   const int = typeof str === 'number' ? str : parseInt(str);
