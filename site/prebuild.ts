@@ -19,6 +19,9 @@ async function setUserEmail(options: SpawnOptions) {
     // set username and email on github workflow
     await spawn.spawnAsync('git', ['config', '--global', 'user.name', "'dimaslanjaka'"], options);
     await spawn.spawnAsync('git', ['config', '--global', 'user.email', "'dimaslanjaka@gmail.com'"], options);
+    // set local user email
+    await spawn.spawnAsync('git', ['config', 'user.name', "'dimaslanjaka'"], options);
+    await spawn.spawnAsync('git', ['config', 'user.email', "'dimaslanjaka@gmail.com'"], options);
   }
 }
 
