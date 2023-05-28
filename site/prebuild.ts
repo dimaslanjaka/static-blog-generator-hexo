@@ -2,6 +2,7 @@ import spawn from 'cross-spawn';
 import * as dotenv from 'dotenv';
 import fs from 'fs-extra';
 import git, { SpawnOptions } from 'git-command-helper';
+import extractSubmodule from 'git-command-helper/dist/utils/extract-submodule';
 import Hexo from 'hexo';
 import path from 'upath';
 dotenv.config({ path: path.join(__dirname, '.env'), override: true });
@@ -42,7 +43,7 @@ function killProcess(name: string) {
   }
 }
 
-const tokenBase = `https://${process.env.ACCESS_TOKEN}@github.com`;
+const tokenBase = new URL(`https://${process.env.ACCESS_TOKEN}@github.com`);
 
 const cfg = [
   {
@@ -94,7 +95,26 @@ const cfg = [
   }
 ];
 
-(async () => {
+(async function () {
+  // init hexo
+  await hexo.init();
+  const github = new git({
+    cwd: path.join(hexo.base_dir, '.deploy_git'),
+    branch: 'master',
+    remote: `https://${process.env.ACCESS_TOKEN}@github.com/dimaslanjaka/dimaslanjaka.github.io.git`,
+    user: 'dimaslanjaka',
+    email: 'dimaslanjaka@gmail.com'
+  });
+  if (fs.existsSync(path.join(github.cwd, '.gitmodules'))) {
+    const submodules = extractSubmodule(path.join(github.cwd, '.gitmodules'));
+    console.log(submodules);
+    /*for (let i = 0; i < github.submodules.length; i++) {
+    const submodule = github.submodules[i];
+  }*/
+  }
+})();
+
+export async function prebuild() {
   // init hexo
   await hexo.init();
 
@@ -154,7 +174,7 @@ const cfg = [
   const source = path.join(deployDir, 'github-actions');
   const dest = path.join(deployDir, 'chimeraland', 'github-actions');
   fs.copySync(source, dest, { overwrite: true, dereference: true });
-})();
+}
 
 export function cleanAutoGenFiles(hexo: Hexo) {
   const deployDir = path.join(hexo.base_dir, '.deploy_git');
