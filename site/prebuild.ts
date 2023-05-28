@@ -101,11 +101,7 @@ const cfg = [
   await fixGitConfig({ cwd: __dirname });
 
   // copy views into theme directory
-  fs.copySync(path.join(__dirname, 'views'), hexo.theme_dir, {
-    overwrite: true,
-    /** useful for symlink by yarn workspace */
-    dereference: true
-  });
+  copyViewsAsset(hexo);
 
   // clone deployment directory
 
@@ -160,7 +156,9 @@ const cfg = [
   fs.copySync(source, dest, { overwrite: true });
 })();
 
-export function cleanAutoGenFiles(deployDir: string) {
+export function cleanAutoGenFiles(hexo: Hexo) {
+  const deployDir = path.join(hexo.base_dir, '.deploy_git');
+
   /**
    * clean auto generated files inside .deploy_git
    */
@@ -200,4 +198,12 @@ function isNumeric(str: string | number) {
   // (`parseFloat` alone does not do this).
   // Also ensure that the strings whitespaces fail
   return !isNaN(int) && !isNaN(float);
+}
+
+function copyViewsAsset(hexo: Hexo) {
+  fs.copySync(path.join(__dirname, 'views'), hexo.theme_dir, {
+    overwrite: true,
+    /** useful for symlink by yarn workspace */
+    dereference: true
+  });
 }
