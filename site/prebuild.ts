@@ -182,7 +182,7 @@ const cfg = [
     if (fs.existsSync(p)) fs.rmSync(p, { force: true, recursive: true });
   });
 
-  // clean auto generated page
+  // clean auto generated page/{n}
   const base_page = path.join(deployDir, 'page');
   fs.readdirSync(base_page).forEach((file) => {
     const fullpath = path.join(base_page, file);

@@ -672,6 +672,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/gulp@npm:^4.0.11":
+  version: 4.0.11
+  resolution: "@types/gulp@npm:4.0.11"
+  dependencies:
+    "@types/undertaker": ">=1.2.6"
+    "@types/vinyl-fs": "*"
+    chokidar: ^3.3.1
+  checksum: 55b84c83bcbc55b20d3d4018dd229f46fbfa05d2b8852477bd88c3ae4ac2ee9a28c8767484bd052ecadbbb73007848655015006f9a4277d00b881f4d273670ed
+  languageName: node
+  linkType: hard
+
 "@types/i18n@npm:^0.13.6":
   version: 0.13.6
   resolution: "@types/i18n@npm:0.13.6"
@@ -786,6 +797,13 @@ __metadata:
   version: 20.2.3
   resolution: "@types/node@npm:20.2.3"
   checksum: 576065e8fc1fa45798c8f59a6bf809169582d04abc2e25fab1a048ffc734975b9992ae31be0d960cf705a21fb37112f7fcde11aa322beddf7491e73d5a5a988c
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.2.5":
+  version: 20.2.5
+  resolution: "@types/node@npm:20.2.5"
+  checksum: 38ce7c7e9d76880dc632f71d71e0d5914fcda9d5e9a7095d6c339abda55ca4affb0f2a882aeb29398f8e09d2c5151f0b6586c81c8ccdfe529c34b1ea3337425e
   languageName: node
   linkType: hard
 
@@ -13944,9 +13962,9 @@ __metadata:
     "@types/bluebird": ^3.5.38
     "@types/ejs": ^3.1.2
     "@types/fs-extra": ^11.0.1
-    "@types/gulp": ^4.0.10
+    "@types/gulp": ^4.0.11
     "@types/js-yaml": ^4.0.5
-    "@types/node": ^20.2.3
+    "@types/node": ^20.2.5
     "@typescript-eslint/eslint-plugin": ^5.59.7
     "@typescript-eslint/parser": ^5.59.7
     binary-collections: ^1.0.3
@@ -14010,7 +14028,7 @@ __metadata:
     typescript: ^5.0.4
     upath: ^2.0.1
     warehouse: ^5.0.0
-    yaml: ^2.3.0
+    yaml: ^2.3.1
   languageName: unknown
   linkType: soft
 
@@ -14192,10 +14210,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "yaml@npm:2.3.0"
-  checksum: 9c3d16c226472041fbdc9fb55e1645786d3a3e8d4fde67a502ed7bfbd9067b811e466679db590a0731b4405d4a3bef1f35d098fb650d2cf4bc24732fc829b961
+"yaml@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "yaml@npm:2.3.1"
+  checksum: 2c7bc9a7cd4c9f40d3b0b0a98e370781b68b8b7c4515720869aced2b00d92f5da1762b4ffa947f9e795d6cd6b19f410bd4d15fdd38aca7bd96df59bd9486fb54
   languageName: node
   linkType: hard
 
