@@ -42,7 +42,7 @@
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
     "css": "^3.0.0",
     "fs-extra": "^11.1.1",
-    "git-command-helper": "^1.2.5",
+    "git-command-helper": "workspace:^",
     "hexo": "^7.0.0-rc1",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "^0.3.0",
