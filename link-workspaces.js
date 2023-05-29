@@ -8,7 +8,9 @@ const yarnrc = yaml.parse(fs.readFileSync(path.join(__dirname, '.yarnrc.yml'), '
 
 (async function main() {
   if (yarnrc.nmHoistingLimits !== 'none') {
-    return console.log('yarn workspace hoisting isn\'t none, linker only work within hoisting workspaces or dependencies');
+    return console.log(
+      "yarn workspace hoisting isn't none, linker only work within hoisting workspaces or dependencies"
+    );
   }
   const config = [
     {
