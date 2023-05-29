@@ -13,3 +13,4 @@ site/themes/claudia
 bin/submodule-install
 *bfg*
 .env
+yarn.lock
