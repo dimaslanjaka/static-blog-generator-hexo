@@ -105,12 +105,26 @@ const cfg = [
     user: 'dimaslanjaka',
     email: 'dimaslanjaka@gmail.com'
   });
+  if (!fs.existsSync(path.join(github.cwd, '.gitmodules'))) {
+    const totalFiles = fs.readdirSync(path.join(github.cwd)).length;
+    if (totalFiles < 10) {
+      console.log('re-init');
+      await github.spawn('git', ['init']);
+      if ((await github.getremote()).push.url !== github.remote && github.remote) {
+        await github.setremote(github.remote);
+      }
+      await github.fetch(['origin', github.branch]);
+      await github.setbranch(github.branch);
+    }
+  }
+  // pull
+  await github.pull(['--recurse-submodule']);
   if (fs.existsSync(path.join(github.cwd, '.gitmodules'))) {
     const submodules = extractSubmodule(path.join(github.cwd, '.gitmodules'));
-    console.log(submodules);
-    /*for (let i = 0; i < github.submodules.length; i++) {
-    const submodule = github.submodules[i];
-  }*/
+    for (let i = 0; i < submodules.length; i++) {
+      const submodule = submodules[i];
+      console.log(submodule.cwd, submodule.branch, submodule.github?.branch);
+    }
   }
 })();
 
