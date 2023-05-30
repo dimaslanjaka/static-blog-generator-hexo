@@ -41,7 +41,7 @@
     "googleapis": "^118.0.0",
     "i18n": "^0.15.1",
     "js-yaml": "^4.1.0",
-    "jsdom": "21",
+    "jsdom": "22",
     "lodash": "^4.17.21",
     "minimatch": "^9.0.1",
     "moment": "^2.29.4",
