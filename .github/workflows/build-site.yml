@@ -150,13 +150,12 @@ jobs:
         name: init cache
         with:
           path: |
-            **/site/db.json
-            **/site/public
-            **/site/tmp
-            **/site/source/_posts
+            ./site/db.json
+            ./site/public
+            ./site/tmp
+            ./site/source/_posts
             **/dist
             **/.yarn
-          # ${{ steps.set-env.outputs.cache-yarn }}
           key: ${{ runner.os }}-${{ env.node_version }}
           restore-keys: |
             ${{ runner.os }}-${{ env.node_version }}
