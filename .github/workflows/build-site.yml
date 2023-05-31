@@ -93,7 +93,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: clean site/.deploy_git
         working-directory: site/.deploy_git
-        if: ${{ false }}
+        #if: ${{ false }}
         shell: bash
         run: |
           git config --global user.name 'dimaslanjaka'
@@ -112,6 +112,14 @@ jobs:
           repository: dimaslanjaka/chimeraland
           ref: gh-pages
           path: site/.deploy_git/chimeraland
+          token: '${{ secrets.ACCESS_TOKEN }}'
+
+      - name: checkout site/.deploy_git/Web-Manajemen
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/Web-Manajemen
+          ref: gh-pages
+          path: site/.deploy_git/Web-Manajemen
           token: '${{ secrets.ACCESS_TOKEN }}'
 
       - name: clean site/.deploy_git/chimeraland
