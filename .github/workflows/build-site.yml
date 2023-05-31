@@ -106,6 +106,9 @@ jobs:
           if [ $(git status --porcelain | wc -l) -gt "0" ]; then
             git commit -m "fix index"
           fi
+          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
+          rm -rf .git/modules
+          bash ./bin/submodule-install
       - name: checkout site/.deploy_git/chimeraland
         uses: actions/checkout@v3
         with:
