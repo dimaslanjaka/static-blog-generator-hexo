@@ -100,6 +100,7 @@ jobs:
           git config --global user.email 'dimaslanjaka@gmail.com'
           git rm --cached -rf .
           git add .
+          git rm -rf node_modules
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
@@ -254,6 +255,7 @@ jobs:
           #git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
           #git submodule foreach "git pull -X theirs | :";
           #git submodule foreach "git push | :"
+          npm install --production
           git add .
           git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
       - run: git push origin master --recurse-submodules=on-demand
