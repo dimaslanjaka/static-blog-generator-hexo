@@ -61,12 +61,6 @@
     "yaml": "^2.2.2"
   },
   "resolutions": {
-    "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/hexo.tgz",
-    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/hexo-asset-link.tgz",
-    "@types/hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/hexo-front-matter.tgz",
-    "@types/hexo-log": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/hexo-log.tgz",
-    "@types/hexo-util": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/hexo-util.tgz",
-    "@types/warehouse": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/warehouse.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/static-blog-generator/release/static-blog-generator.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/instant-indexing/release/instant-indexing.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz",
