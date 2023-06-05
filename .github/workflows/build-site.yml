@@ -226,64 +226,78 @@ jobs:
         working-directory: site/.deploy_git
 
       - name: push site/.deploy_git/chimeraland
-        shell: bash
-        working-directory: site/.deploy_git/chimeraland
-        run: |
-          git add .
-          git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git push
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/.deploy_git/chimeraland
+            git add .
+            # if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
         continue-on-error: true
       - name: push site/.deploy_git/docs
-        shell: bash
-        working-directory: site/.deploy_git/docs
-        run: |
-          git add .
-          git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git push
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            site/.deploy_git/docs
+            git add .
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
         continue-on-error: true
       - name: commit site/.deploy_git
-        shell: bash
         id: push-manual
-        #continue-on-error: true
-        working-directory: site/.deploy_git
-        run: |
-          git config --global user.name 'dimaslanjaka'
-          git config --global user.email 'dimaslanjaka@gmail.com'
-          git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
-          git submodule foreach "git add -A | :"
-          git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
-          git submodule foreach "git pull -X theirs | :";
-          git submodule foreach "git push | :"
-          git add .
-          git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git pull -X theirs
-      - run: git push origin master --recurse-submodules=on-demand
-        working-directory: site/.deploy_git
-        name: push site/.deploy_git
-        shell: bash
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/.deploy_git
+            git config --global user.name 'dimaslanjaka'
+            git config --global user.email 'dimaslanjaka@gmail.com'
+            git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
+            git submodule foreach "git add -A | :"
+            git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
+            git submodule foreach "git pull -X theirs | :";
+            git submodule foreach "git push | :"
+            git add .
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git pull -X theirs
+      - name: push site/.deploy_git
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/.deploy_git
+            git push origin master --recurse-submodules=on-demand
       - name: push site/src-posts
-        shell: bash
-        working-directory: site/src-posts
-        run: |
-          git add .
-          git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git push
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/src-posts
+            git add .
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
         continue-on-error: true
       - name: push submodules
-        shell: bash
         if: ${{ false }}
-        run: |
-          git config --global user.name 'dimaslanjaka'
-          git config --global user.email 'dimaslanjaka@gmail.com'
-          git submodule foreach "git add -A | :";
-          git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :";
-          git submodule foreach "git pull -X theirs | :";
-          git submodule foreach "git push | :";
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            git config --global user.name 'dimaslanjaka'
+            git config --global user.email 'dimaslanjaka@gmail.com'
+            git submodule foreach "git add -A | :";
+            git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :";
+            git submodule foreach "git pull -X theirs | :";
+            git submodule foreach "git push | :";
       - name: push changes current repository
         uses: dimaslanjaka/action-post-run@master
         continue-on-error: true
         if: contains(github.event.head_commit.message, 'chore') == false
         with:
+          shell: bash
           run: |
             git config --global user.name 'dimaslanjaka'
             git config --global user.email 'dimaslanjaka@gmail.com'
