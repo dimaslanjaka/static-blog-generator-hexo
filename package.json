@@ -61,6 +61,7 @@
     "yaml": "^2.2.2"
   },
   "resolutions": {
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/pre-release",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/static-blog-generator/release/static-blog-generator.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/instant-indexing/release/instant-indexing.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz",
