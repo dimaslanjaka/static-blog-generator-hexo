@@ -1,0 +1,308 @@
+name: Build Site
+
+on:
+  schedule:
+    # https://crontab.guru/#30_5_*_*_*
+    - cron: '30 5 * * *'
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**/*.tgz'
+      - '**/*.gz'
+      - '**/release/**'
+      - '.github/codeql/*'
+      - '**codeql**'
+      - '**clean-caches**'
+      - '**/yarn.lock'
+  workflow_dispatch:
+  workflow_call:
+    secrets:
+      token:
+        required: true
+      ACCESS_TOKEN:
+        required: true
+
+concurrency:
+  # group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    permissions: read-all
+    timeout-minutes: 120
+    env:
+      NODE_OPTIONS: '--max_old_space_size=8192' #8192 4096 --expose-gc
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      node_version: 18.x
+      YARN_CHECKSUM_BEHAVIOR: update
+
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: szenius/set-timezone@v1.2
+        name: set os timezone
+        with:
+          timezoneLinux: 'Asia/Jakarta'
+          timezoneMacos: 'Asia/Jakarta'
+          timezoneWindows: 'Indonesia Standard Time'
+      - run: git config --global  core.ignorecase false
+      - uses: actions/checkout@v3
+        name: checkout root project
+        with:
+          ref: master
+          repository: dimaslanjaka/static-blog-generator-hexo
+          # submodules: recursive
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: update submodules
+        run: |
+          echo "init submodules"
+          git submodule init
+          git submodule foreach "git submodule init"
+          echo "sync submodules"
+          git submodule sync
+          git submodule foreach "git submodule sync"
+          echo "update submodules"
+          mkdir -p bin >/dev/null 2>&1
+          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
+          rm -rf .git/modules
+          bash ./bin/submodule-install
+        shell: bash
+      - name: checkout site/src-posts
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/source-posts
+          ref: posts
+          path: site/src-posts
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: checkout site/source
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/public-source
+          ref: master
+          path: site/source
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: checkout site/.deploy_git
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/dimaslanjaka.github.io
+          ref: master
+          path: site/.deploy_git
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: clean site/.deploy_git
+        working-directory: site/.deploy_git
+        #if: ${{ false }}
+        shell: bash
+        run: |
+          git config --global user.name 'dimaslanjaka'
+          git config --global user.email 'dimaslanjaka@gmail.com'
+          git rm --cached -rf .
+          git add .
+          git config core.eol lf
+          git config core.autocrlf input
+          git checkout-index --force --all
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -m "fix index"
+          fi
+          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
+          rm -rf .git/modules
+          bash ./bin/submodule-install
+      - name: checkout site/.deploy_git/chimeraland
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/chimeraland
+          ref: gh-pages
+          path: site/.deploy_git/chimeraland
+          token: '${{ secrets.ACCESS_TOKEN }}'
+
+      - name: checkout site/.deploy_git/Web-Manajemen
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/Web-Manajemen
+          ref: gh-pages
+          path: site/.deploy_git/Web-Manajemen
+          token: '${{ secrets.ACCESS_TOKEN }}'
+
+      - name: clean site/.deploy_git/chimeraland
+        if: ${{ false }}
+        run: |
+          git rm -rf .
+          git restore --staged --worktree -- .github
+          git restore --staged --worktree -- github-actions
+          git restore --staged --worktree -- github-actions-validator.config.yml
+        working-directory: site/.deploy_git/chimeraland
+        shell: bash
+
+      - name: checkout packages/hexo-theme-claudia
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/hexo-theme-claudia
+          ref: private
+          path: packages/hexo-theme-claudia
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: checkout site/.deploy_git/page
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/page
+          ref: gh-pages
+          path: site/.deploy_git/page
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: checkout site/.deploy_git/docs
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/docs
+          ref: master
+          path: site/.deploy_git/docs
+          token: '${{ secrets.ACCESS_TOKEN }}'
+      - uses: actions/cache@v3
+        id: cache
+        name: init cache
+        with:
+          path: |
+            ./site/db.json
+            ./site/public
+            ./site/tmp
+            ./site/source/_posts
+            **/dist
+            **/.yarn
+          key: ${{ runner.os }}-${{ env.node_version }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.node_version }}
+            ${{ runner.os }}-
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+      - run: corepack enable
+      - run: npm i -g npm-run-all lerna nx gulp-cli hexo-cli typescript ts-node depcheck husky
+      - name: Set env
+        id: set-env
+        shell: bash
+        run: |
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+          echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_ENV
+      #- run: node package-install.js --prod
+      - run: yarn install --inline-builds
+        id: install
+        continue-on-error: true
+        name: "YARN: install"
+      - run: |
+          yarn cache clean --all
+          find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+          find . -name 'yarn.lock' -type d -prune -exec rm -rf '{}' +
+          touch yarn.lock
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
+        if: steps.install.outcome == 'failure'
+        name: "YARN: clean install"
+        shell: bash
+      - run: yarn run postinstall
+      - run: yarn workspace wmi run build:prepare
+      - run: yarn workspace wmi run post:chimera
+      - run: yarn workspace wmi run post:chimera
+      - run: yarn workspace wmi run post:standalone
+      - run: yarn workspace wmi run post:copy
+      - run: yarn workspace wmi run build:site
+      #- run: yarn workspace wmi run generate:sitemap
+      #- run: yarn workspace wmi run generate:feed
+      - run: yarn workspace wmi exec "gulp deploy:copy"
+      - run: yarn workspace wmi run generate:seo
+      - run: yarn workspace wmi run generate:safelink
+      - name: install site/.deploy_git/page
+        shell: bash
+        run: |
+          rm -rf node_modules
+          npm install --omit=dev --production
+        continue-on-error: true
+        working-directory: site/.deploy_git/page
+      - name: install site/.deploy_git
+        shell: bash
+        run: |
+          rm -rf node_modules
+          npm install --omit=dev --production
+        continue-on-error: true
+        working-directory: site/.deploy_git
+
+      - name: push site/.deploy_git/chimeraland
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/.deploy_git/chimeraland
+            git add .
+            # if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
+        continue-on-error: true
+      - name: push site/.deploy_git/docs
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            site/.deploy_git/docs
+            git add .
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
+        continue-on-error: true
+      - name: commit site/.deploy_git
+        id: push-manual
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/.deploy_git
+            git config --global user.name 'dimaslanjaka'
+            git config --global user.email 'dimaslanjaka@gmail.com'
+            git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
+            git submodule foreach "git add -A | :"
+            git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
+            git submodule foreach "git pull -X theirs | :";
+            git submodule foreach "git push | :"
+            git add .
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git pull -X theirs
+      - name: push site/.deploy_git
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/.deploy_git
+            git push origin master --recurse-submodules=on-demand
+      - name: push site/src-posts
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            cd site/src-posts
+            git add .
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
+        continue-on-error: true
+      - name: push submodules
+        if: ${{ false }}
+        uses: dimaslanjaka/action-post-run@master
+        with:
+          shell: bash
+          run: |
+            git config --global user.name 'dimaslanjaka'
+            git config --global user.email 'dimaslanjaka@gmail.com'
+            git submodule foreach "git add -A | :";
+            git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :";
+            git submodule foreach "git pull -X theirs | :";
+            git submodule foreach "git push | :";
+      - name: push changes current repository
+        uses: dimaslanjaka/action-post-run@master
+        continue-on-error: true
+        if: contains(github.event.head_commit.message, 'chore') == false
+        with:
+          shell: bash
+          run: |
+            git config --global user.name 'dimaslanjaka'
+            git config --global user.email 'dimaslanjaka@gmail.com'
+            git add site
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}"
+            git pull -X theirs
+            git push
+            git status --porcelain
