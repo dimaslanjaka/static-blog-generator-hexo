@@ -12,7 +12,7 @@
     "prebuild": "yarn workspace wmi run prebuild",
     "build": "yarn workspace wmi run build",
     "postbuild": "yarn workspace wmi run postbuild",
-    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo && yarn cache clean",
+    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo --enginesNode && yarn cache clean",
     "build:packages": "yarn workspaces foreach --no-private run build",
     "postinstall": "yarn build:packages && node link-workspaces.js"
   },
@@ -40,7 +40,7 @@
       "packages/hexo-generator-redirect"
     ]
   },
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.0",
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
@@ -59,6 +59,9 @@
     "minimist": "^1.2.8",
     "upath": "^2.0.1",
     "yaml": "^2.2.2"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "resolutions": {
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/pre-release",
