@@ -150,7 +150,7 @@
   "git.enabled": true,
   "eslint.packageManager": "yarn",
   "explorer.autoReveal": true,
-  "git.autofetch": false,
-  "git.autorefresh": false,
+  "git.autofetch": true,
+  "git.autorefresh": true,
   "git.autoStash": false
 }
