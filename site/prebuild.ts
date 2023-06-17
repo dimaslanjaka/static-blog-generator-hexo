@@ -2,7 +2,7 @@ import spawn from 'cross-spawn';
 import * as dotenv from 'dotenv';
 import fs from 'fs-extra';
 import git, { SpawnOptions } from 'git-command-helper';
-import extractSubmodule from 'git-command-helper/dist/src/utils/extract-submodule';
+import extractSubmodule from 'git-command-helper/dist/utils/extract-submodule';
 import Hexo from 'hexo';
 import path from 'upath';
 dotenv.config({ path: path.join(__dirname, '.env'), override: true });
