@@ -137,7 +137,7 @@
   "code-runner.clearPreviousOutput": true,
   "code-runner.respectShebang": true,
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "typescript.format.enable": true,
+  "typescript.format.enable": false,
   "typescript.tsserver.enableTracing": false,
   "typescript.tsserver.log": "off",
   "typescript.tsserver.trace": "off",

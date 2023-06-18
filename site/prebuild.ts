@@ -18,8 +18,7 @@ if (fs.existsSync(envPath)) {
 const hexo = new Hexo(__dirname, { silent: true });
 
 const isGithubCI =
-  typeof process.env['GITHUB_WORKFLOW'] === 'string' &&
-  typeof process.env['GITHUB_WORKFLOW_SHA'] === 'string';
+  typeof process.env['GITHUB_WORKFLOW'] === 'string' && typeof process.env['GITHUB_WORKFLOW_SHA'] === 'string';
 /**
  * fix git config
  * @param options
@@ -27,36 +26,16 @@ const isGithubCI =
 async function fixGitConfig(options: SpawnOptions) {
   if (isGithubCI) {
     // set username and email on github workflow
-    await spawn.spawnAsync(
-      'git',
-      ['config', '--global', 'user.name', "'dimaslanjaka'"],
-      options
-    );
-    await spawn.spawnAsync(
-      'git',
-      ['config', '--global', 'user.email', "'dimaslanjaka@gmail.com'"],
-      options
-    );
+    await spawn.spawnAsync('git', ['config', '--global', 'user.name', "'dimaslanjaka'"], options);
+    await spawn.spawnAsync('git', ['config', '--global', 'user.email', "'dimaslanjaka@gmail.com'"], options);
     // set local user email
-    await spawn.spawnAsync(
-      'git',
-      ['config', 'user.name', "'dimaslanjaka'"],
-      options
-    );
-    await spawn.spawnAsync(
-      'git',
-      ['config', 'user.email', "'dimaslanjaka@gmail.com'"],
-      options
-    );
+    await spawn.spawnAsync('git', ['config', 'user.name', "'dimaslanjaka'"], options);
+    await spawn.spawnAsync('git', ['config', 'user.email', "'dimaslanjaka@gmail.com'"], options);
   }
   // set EOL LF
   await spawn.spawnAsync('git', ['config', 'core.eol', 'lf'], options);
   await spawn.spawnAsync('git', ['config', 'core.autocrlf', 'input'], options);
-  await spawn.spawnAsync(
-    'git',
-    ['config', 'checkout-index', '--force', '--all'],
-    options
-  );
+  await spawn.spawnAsync('git', ['config', 'checkout-index', '--force', '--all'], options);
 }
 
 function killProcess(name: string) {
@@ -79,11 +58,7 @@ const cfg = [
       // reset
       //await github.reset(github.branch);
       // update submodule
-      await spawn.async(
-        'git',
-        ['submodule', 'update', '-i', '-r'],
-        github.spawnOpt({ cwd: github.cwd })
-      );
+      await spawn.async('git', ['submodule', 'update', '-i', '-r'], github.spawnOpt({ cwd: github.cwd }));
     }
   },
   {
@@ -139,10 +114,7 @@ const cfg = [
     if (totalFiles < 10) {
       console.log('re-init');
       await github.spawn('git', ['init']);
-      if (
-        (await github.getremote()).push.url !== github.remote &&
-        github.remote
-      ) {
+      if ((await github.getremote()).push.url !== github.remote && github.remote) {
         await github.setremote(github.remote);
       }
       await github.fetch(['origin', github.branch]);
@@ -180,19 +152,12 @@ export async function prebuild() {
         arg: destArg,
         dest: info.dest
       });
-      await spawn.async(
-        'git',
-        ['clone', '-b', info.branch, info.remote, destArg],
-        {
-          cwd: hexo.base_dir
-        }
-      );
+      await spawn.async('git', ['clone', '-b', info.branch, info.remote, destArg], {
+        cwd: hexo.base_dir
+      });
     }
 
-    console.log(
-      info.dest.replace(path.toUnix(__dirname) + '/', ''),
-      fs.existsSync(info.dest)
-    );
+    console.log(info.dest.replace(path.toUnix(__dirname) + '/', ''), fs.existsSync(info.dest));
     if (fs.existsSync(info.dest)) {
       const indexLock = path.join(info.dest, '.git/index.lock');
       if (fs.existsSync(indexLock)) {
