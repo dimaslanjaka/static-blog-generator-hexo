@@ -207,7 +207,7 @@ noticeOutdate:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2014
   custom_text:
   copyright: true # Copyright of theme and framework
 
@@ -231,9 +231,9 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/dimaslanjaka
   card_announcement:
-    enable: true
+    enable: false
     content: This is my Blog
   card_recent_post:
     enable: true
@@ -361,7 +361,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # Preload the search data when the page loads.
   preload: false
   # Show top n results per article, show all results by setting to -1
@@ -416,7 +416,7 @@ comments:
 # disqus
 # https://disqus.com/
 disqus:
-  shortname:
+  shortname: dimaslanjaka
   apikey: # For newest comments widget
 
 # Alternative Disqus - Render comments with Disqus API
