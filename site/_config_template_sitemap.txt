@@ -9,3 +9,4 @@ https://www.webmanajemen.com/docs/static-blog-generator/
 https://www.webmanajemen.com/docs/hexo-post-parser/
 https://www.webmanajemen.com/docs/hexo-shortcodes/
 https://www.webmanajemen.com/docs/git-command-helper/
+https://www.webmanajemen.com/page/bot-detect.html
