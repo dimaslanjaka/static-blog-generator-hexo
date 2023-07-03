@@ -55,8 +55,9 @@ const cfg = [
     branch: 'master',
     remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`,
     callback: async function (github: git) {
-      // reset
-      //await github.reset(github.branch);
+      console.log('running callback');
+      console.log('remote', github.remote);
+      console.log('branch', github.branch);
       // update submodule
       await spawn.async('git', ['submodule', 'update', '-i', '-r'], github.spawnOpt({ cwd: github.cwd }));
     }
@@ -66,8 +67,9 @@ const cfg = [
     branch: 'master',
     remote: `${tokenBase}/dimaslanjaka/docs.git`,
     callback: async function (github: git) {
-      // reset
-      //await github.reset(github.branch);
+      console.log('running callback');
+      console.log('remote', github.remote);
+      console.log('branch', github.branch);
     }
   },
   {
@@ -75,8 +77,9 @@ const cfg = [
     branch: 'gh-pages',
     remote: `${tokenBase}/dimaslanjaka/chimeraland.git`,
     callback: async function (github: git) {
-      // reset
-      //await github.reset(github.branch);
+      console.log('running callback');
+      console.log('remote', github.remote);
+      console.log('branch', github.branch);
     }
   },
   {
@@ -84,8 +87,9 @@ const cfg = [
     branch: 'gh-pages',
     remote: `${tokenBase}/dimaslanjaka/page.git`,
     callback: async function (github: git) {
-      // reset
-      //await github.reset(github.branch);
+      console.log('running callback');
+      console.log('remote', github.remote);
+      console.log('branch', github.branch);
     }
   },
   {
@@ -93,8 +97,9 @@ const cfg = [
     branch: 'gh-pages',
     remote: `${tokenBase}/dimaslanjaka/Web-Manajemen.git`,
     callback: async function (github: git) {
-      // reset
-      //await github.reset(github.branch);
+      console.log('running callback');
+      console.log('remote', github.remote);
+      console.log('branch', github.branch);
     }
   }
 ];
