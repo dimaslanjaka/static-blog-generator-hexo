@@ -44,7 +44,7 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^5.59.6",
+    "@typescript-eslint/parser": "^6.0.0",
     "binary-collections": "https://github.com/dimaslanjaka/bin",
     "cross-env": "^7.0.3",
     "eslint": "^8.41.0",
