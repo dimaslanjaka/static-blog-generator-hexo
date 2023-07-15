@@ -256,7 +256,10 @@ function isNumeric(str: string | number) {
 }
 
 function copyViewsAsset(hexo: Hexo) {
-  fs.copySync(path.join(__dirname, 'views'), hexo.theme_dir, {
+  const src = path.join(__dirname, 'views');
+  const dest = hexo.theme_dir;
+  console.log('copyViewsAsset', src, '=>', dest);
+  fs.copySync(src, dest, {
     overwrite: true,
     /** useful for symlink by yarn workspace */
     dereference: true
