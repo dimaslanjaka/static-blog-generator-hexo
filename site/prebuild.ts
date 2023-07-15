@@ -107,6 +107,9 @@ const cfg = [
 (async function () {
   // init hexo
   await hexo.init();
+  // run pre-build script
+  await prebuild();
+
   const github = new git({
     cwd: path.join(hexo.base_dir, '.deploy_git'),
     branch: 'master',
