@@ -12,7 +12,7 @@
     "prebuild": "yarn workspace wmi run prebuild",
     "build": "yarn workspace wmi run build",
     "postbuild": "yarn workspace wmi run postbuild",
-    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo --enginesNode && yarn cache clean",
+    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo,deepmerge-ts --enginesNode && yarn cache clean",
     "build:packages": "yarn workspaces foreach --no-private run build",
     "postinstall": "yarn build:packages && node link-workspaces.js"
   },
@@ -58,7 +58,7 @@
     "fs-extra": "^11.1.1",
     "minimist": "^1.2.8",
     "upath": "^2.0.1",
-    "yaml": "^2.2.2"
+    "yaml": "^2.3.1"
   },
   "engines": {
     "node": ">=14"
