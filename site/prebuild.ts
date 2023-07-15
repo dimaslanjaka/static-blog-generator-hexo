@@ -108,7 +108,7 @@ const cfg = [
   // init hexo
   await hexo.init();
   // run pre-build script
-  await prebuild();
+  await prebuild(hexo);
 
   const github = new git({
     cwd: path.join(hexo.base_dir, '.deploy_git'),
@@ -140,10 +140,7 @@ const cfg = [
   }
 })();
 
-export async function prebuild() {
-  // init hexo
-  await hexo.init();
-
+export async function prebuild(hexo: Hexo) {
   await fixGitConfig({ cwd: __dirname });
 
   // copy views into theme directory
