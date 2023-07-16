@@ -39,7 +39,7 @@
     "binary-collections": "^1.0.3",
     "bluebird": "^3.7.2",
     "cheerio": "^0.22.0",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
+    "cross-spawn": "^7.0.3",
     "css": "^3.0.0",
     "fs-extra": "^11.1.1",
     "git-command-helper": "^2.0.1",
