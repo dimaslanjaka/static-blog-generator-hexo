@@ -2,6 +2,8 @@ import * as dotenv from 'dotenv';
 import fs from 'fs-extra';
 import Hexo from 'hexo';
 import path from 'upath';
+import { deployConfig } from './config';
+import { deploymentInitialize, sequentialPromises } from './src/deployment-initializer';
 
 const envPath = path.join(__dirname, '.env');
 if (fs.existsSync(envPath)) {
@@ -24,6 +26,9 @@ const hexo = new Hexo(__dirname, { silent: true });
 export async function prebuild(hexo: Hexo) {
   // copy views into theme directory
   copyViewsAsset(hexo);
+
+  // initialize deployment
+  sequentialPromises(deployConfig.map((c) => () => deploymentInitialize(c)));
 
   // copy github-actions validator
   const deployDir = path.join(hexo.base_dir, '.deploy_git');

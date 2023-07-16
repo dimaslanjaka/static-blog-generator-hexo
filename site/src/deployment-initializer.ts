@@ -7,7 +7,7 @@ import { deployConfig, hexoDir } from '../config';
 
 const hexo = new Hexo(hexoDir);
 
-async function init(config: (typeof deployConfig)[number]) {
+export async function deploymentInitialize(config: (typeof deployConfig)[number]) {
   await hexo.init();
   // load .env file
   const envFile = path.join(hexo.base_dir, '.env');
@@ -100,8 +100,6 @@ export const sequentialPromises = <T>(promiseFactories: (() => Promise<T>)[]): P
 
   return promiseChain?.then(() => results);
 };
-
-sequentialPromises(deployConfig.map((c) => () => init(c)));
 
 // init(deployConfig[0]);
 
