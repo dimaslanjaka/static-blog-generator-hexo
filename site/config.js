@@ -7,7 +7,7 @@ const deployConfig = [
   {
     dest: path.join(hexo.base_dir, '.deploy_git'),
     branch: 'master',
-    remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io.git`,
+    remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io`,
     callback: async function (github) {
       console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexo.base_dir), ''));
       console.log('remote', github.remote);
@@ -19,7 +19,7 @@ const deployConfig = [
   {
     dest: path.join(hexo.base_dir, '.deploy_git/docs'),
     branch: 'master',
-    remote: `${tokenBase}/dimaslanjaka/docs.git`,
+    remote: `${tokenBase}/dimaslanjaka/docs`,
     callback: async function (github) {
       console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexo.base_dir), ''));
       console.log('remote', github.remote);
@@ -29,7 +29,7 @@ const deployConfig = [
   {
     dest: path.join(hexo.base_dir, '.deploy_git/chimeraland'),
     branch: 'gh-pages',
-    remote: `${tokenBase}/dimaslanjaka/chimeraland.git`,
+    remote: `${tokenBase}/dimaslanjaka/chimeraland`,
     callback: async function (github) {
       console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexo.base_dir), ''));
       console.log('remote', github.remote);
@@ -39,7 +39,7 @@ const deployConfig = [
   {
     dest: path.join(hexo.base_dir, '.deploy_git/page'),
     branch: 'gh-pages',
-    remote: `${tokenBase}/dimaslanjaka/page.git`,
+    remote: `${tokenBase}/dimaslanjaka/page`,
     callback: async function (github) {
       console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexo.base_dir), ''));
       console.log('remote', github.remote);
@@ -49,7 +49,7 @@ const deployConfig = [
   {
     dest: path.join(hexo.base_dir, '.deploy_git/Web-Manajemen'),
     branch: 'gh-pages',
-    remote: `${tokenBase}/dimaslanjaka/Web-Manajemen.git`,
+    remote: `${tokenBase}/dimaslanjaka/Web-Manajemen`,
     callback: async function (github) {
       console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexo.base_dir), ''));
       console.log('remote', github.remote);
