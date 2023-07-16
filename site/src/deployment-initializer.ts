@@ -21,8 +21,9 @@ hexo.init().then(async () => {
     // remove existing folder
     if (fs.existsSync(config.dest)) fs.rmSync(config.dest, { force: true, recursive: true });
     // clone start
-    await spawnAsync('git', ['clone', '-b', config.branch, config.remote, 'Web-Manajemen'], {
-      cwd: path.join(hexo.base_dir, '.deploy_git'),
+    await spawnAsync('git', ['clone', '-b', config.branch, config.remote, config.folderName], {
+      // cwd spawn clone
+      cwd: config.folderName !== '.deploy_git' ? path.join(hexo.base_dir, '.deploy_git') : hexo.base_dir,
       shell: true,
       stdio: 'inherit'
     });
