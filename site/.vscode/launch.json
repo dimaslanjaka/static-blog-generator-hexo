@@ -9,6 +9,18 @@
       "name": "clean-serve",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "command": "hexo server",
+      "name": "serve",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "hexo --safe",
+      "name": "safe",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }
