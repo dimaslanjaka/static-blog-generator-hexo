@@ -49,9 +49,6 @@
       "WebWorker"
     ]
   },
-  "include": [
-    "**/*"
-  ],
   "exclude": [
     "**/node_modules/**",
     "**/tmp/**",
@@ -59,7 +56,9 @@
     "**/source/**",
     "**/packages/**",
     "**/site",
-    "**/dist"
+    "**/dist",
+    "**/.deploy_git",
+    "**/multisite"
   ],
   "typeAcquisition": {
     "enable": true,
