@@ -75,7 +75,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
         await doPull(sub.cwd);
       }
     }
-  } catch (e) {
+  } catch (e: any) {
     console.log(e.message);
   }
   if (typeof done === 'function') done();
@@ -156,7 +156,7 @@ async function commit(done: (...args: any[]) => any) {
 
     // commit repo directory
     await doCommit(cwd);
-  } catch (e) {
+  } catch (e: any) {
     console.log(e.message);
   }
 
