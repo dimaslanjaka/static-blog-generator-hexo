@@ -1,7 +1,7 @@
 const spawn = require('cross-spawn');
 const { path } = require('sbg-utility');
 
-const hexoDir = __dirname;
+const hexoDir = path.toUnix(__dirname);
 const tokenBase = new URL(`https://${process.env.ACCESS_TOKEN}@github.com`);
 const deployConfig = [
   {
