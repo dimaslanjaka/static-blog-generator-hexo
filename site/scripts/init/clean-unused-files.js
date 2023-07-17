@@ -1,6 +1,8 @@
 const { path, fs } = require('sbg-utility');
 const { hexoDir } = require('../../config');
 
+// clean unused files in source/_posts
+
 hexo.extend.filter.register('after_init', function () {
   const files = ['.frontmatter', '.github', '.vscode'].map((p) => path.join(hexoDir, 'source/_posts', p));
 
