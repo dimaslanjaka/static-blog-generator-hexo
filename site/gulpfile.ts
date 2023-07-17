@@ -195,11 +195,10 @@ const callbacks: Record<string, (...args: any[]) => any> = {};
 function gracefulShutdown(key: string, callback?: (...args: any[]) => any) {
   if (typeof callback === 'function') callbacks[key] = callback;
   process.on('SIGTERM', () => {
-    console.info('SIGTERM signal received.');
-    console.log('Closing http server.');
+    console.info('SIGTERM signal received, closing existing process');
     for (const fkey in callbacks) {
       const func = callbacks[fkey];
-      func.apply(null);
+      if (typeof func === 'function') func.apply(null);
     }
     process.exit(0);
   });
