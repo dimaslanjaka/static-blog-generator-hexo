@@ -55,6 +55,7 @@
 | DWB23 | | Out party sebelum giliran map-nya, dilaporkan oleh **wolfPACK** & **hendro** _June 16, 2023 10:18 PM_ [screenshot](#DWB23-j-screenshots) |
 | Oldestdream | | Roll **Plans: Ortzi Pauldron** milik **Kolten** pada map illus free entry no roll, dilaporkan oleh **Kolten** **June 19, 2023 9:06 AM** [screenshot](#Oldestdream-screenshots) |
 | Reus | | Roll **Plans: Ortzi Earrings** milik **Kuuhaku** pada map polar feathered steed free entry no roll, dilaporkan oleh **Kuuhaku** **June 29, 2023 10:30 AM** [screenshot](#Reus-screenshots) |
+| monarch2 | | Roll drop items milik **kimprit** pada map armadilo free entry no roll, dilaporkan oleh **kimprit** pada tanggal July 27, 2023 9:27 PM [screenshot](#kimprit-party) |
 
 ## Scammer Jual-Beli
 > Daftar scammer/blacklist player kategori SCAMMER Jual-Beli (pembelian, penjualan, dan transaksi pembayaran lainnya) dalam bentuk ruby, mata uang, dan lain sebagainya.
@@ -82,7 +83,8 @@
 | Devil God | | SCAMMER sebagai pembeli |
 | Sofys | | SCAMMER seller ruby, korban terakhir **Kazeoo** |
 | BabyLordz | APPOCALYPZE | SCAM daily service 500,000 IDR, reported by **Ell** at 03-07-2023. [screenshots](#baby-lordz-screenshots) |
-| | | WhatsApp +6289657373191 scam ruby IDR 100,000 S117-121. Dilaporkan oleh **Goldark** _June 15, 2023 07:30 PM_ |
+| - | | WhatsApp +6289657373191 scam ruby IDR 100,000 S117-121. Dilaporkan oleh **Goldark** _June 15, 2023 07:30 PM_ |
+| Ray119 | | scam jual-beli telur di dalam game, dilaporkan oleh **kendrugk** pada tanggal _August 4, 2023 8:47 PM_. [screenshots](#ray119-screenshots) |
 
 ## Scammer Bitter
 > Daftar scammer/blacklist player kategori SCAMMER BITTER COLD SPRING
@@ -103,10 +105,11 @@
 
 | Nama Player | Clan | Keterangan |
 | :--- | :--- | :--- |
-| ChipsChips | - | dicurigai sebagai scammer chimeraland MAP ILLUSTRIOUS 16 party |
 | Deshwan | | dicurigai sebagai scammer MAP ILLUSTRIOUS 16 |
 | VenKy | | dicurigai sebagai SCAMMER ruby |
-| Salony | | dicurigai sebagai scammer MAP ILLUSTRIOUS 16 |
+| Meeeii | | mencoba roll drop item pada [party free **kimprit** armadilo illus map no roll (click to see all the evidence) ](#kimprit-party) dilaporkan oleh **kimprit** pada tanggal July 27, 2023 9:27 PM |
+
+<!-- | infinite | | mencoba roll drop item pada [party free **kimprit** armadilo illus map no roll (click to see all the evidence) ](#kimprit-party) dilaporkan oleh **kimprit** pada tanggal July 27, 2023 9:27 PM | -->
 
 ## Nama player yang sudah bersih
 > Daftar Nama Player Yang Dihapus Dari Daftar Hitam Diatas
@@ -129,6 +132,20 @@
 - [GamersBahagia Blacklist](https://www.gamersbahagia.com/blacklist)
 
 <h2 id="screenshots">Kumpulan Tangkapan Layar (screenshot) tentang scammer</h2>
+
+## Ray119 screenshots
+![Ray119](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/4ec065ac-17f3-46aa-b555-d4034754bacf)
+![image](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/8d826e8e-ae06-47ed-900f-d0accb4eb56f)
+![Untitled](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/90785c3b-243c-4f39-b6af-b56eda608a7d)
+![Untitled-1](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/32189f54-94e2-49c3-8e73-a8ead3c2d76c)
+
+## kimprit party
+> free  entry _armadilo map_ no roll
+
+![Meeeii](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/fefc8b35-b83c-430b-b1d4-e71f3c30fe8f)
+![Meeeii](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/c78d58cf-1db7-42db-b482-d1b1f91c9075)
+![monarch2](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/a918a768-febd-4ff2-87f7-3031b3d3ffce)
+![image](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/0d739620-2635-4e20-bd2c-384a5536ff7d)
 
 ## Reus Screenshots
 ![image](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/33c3942e-2daf-4007-8e8a-3f624726505c)
