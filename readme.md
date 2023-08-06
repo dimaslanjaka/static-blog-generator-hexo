@@ -1,5 +1,7 @@
 ## static blog generator with hexo compiler
 
+![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator-hexo?label=Repository%20Size&style=flat-square)
+
 ```bash
 npm run build
 ```
