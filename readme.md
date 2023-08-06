@@ -1,11 +1,10 @@
 ## static blog generator with hexo compiler
 
-![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator-hexo?label=Repository%20Size&style=flat-square)
-
 ```bash
 npm run build
 ```
 
+![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator-hexo?label=Repository%20Size&style=flat-square)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label=master&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/master)
 [![Build Site CI](https://github.com/dimaslanjaka/static-blog-generator-hexo/actions/workflows/build-site.yml/badge.svg)](https://github.com/dimaslanjaka/static-blog-generator-hexo/actions/workflows/build-site.yml)
 [![Reusable Build Site CI](https://github.com/dimaslanjaka/source-posts/actions/workflows/post-update.yml/badge.svg)](https://github.com/dimaslanjaka/source-posts/actions/workflows/post-update.yml)
