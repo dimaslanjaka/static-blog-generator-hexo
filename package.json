@@ -48,7 +48,7 @@
     "binary-collections": "https://github.com/dimaslanjaka/bin",
     "cross-env": "^7.0.3",
     "eslint": "^8.41.0",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
