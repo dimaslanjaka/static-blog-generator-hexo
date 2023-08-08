@@ -79,6 +79,7 @@
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
+    "moment-timezone": "^0.5.43",
     "nib": "^1.2.0",
     "safelinkify": "^1.1.18",
     "sbg-api": "^1.1.0",

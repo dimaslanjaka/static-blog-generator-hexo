@@ -3,11 +3,13 @@ const glob = require('glob');
 const parse = require('hexo-post-parser');
 const yaml = require('yaml');
 const { path, fs } = require('sbg-utility');
+const moment = require('moment-timezone');
 
 const scrape = glob.glob('src-posts/**/*.md', {
   absolute: true,
   ignore: ['**/node_modules/**', '**/License*', '**/readme*']
 });
+
 Bluebird.all(scrape).each(async (file) => {
   try {
     const post = await parse.parsePost(fs.readFileSync(file, 'utf-8'), {
@@ -15,6 +17,8 @@ Bluebird.all(scrape).each(async (file) => {
       fix: true,
       config: yaml.parse(fs.readFileSync(path.join(__dirname, '_config.yml'), 'utf-8'))
     });
+
+    // lowercase taxonomy
     if (post.metadata) {
       let save;
       if ('category' in post.metadata) {
@@ -34,6 +38,7 @@ Bluebird.all(scrape).each(async (file) => {
       }
 
       if (save) {
+        post.metadata.updated = moment(new Date()).tz('Asia/Jakarta').format();
         const build = parse.buildPost(post);
         fs.writeFileSync(file, build);
       }
