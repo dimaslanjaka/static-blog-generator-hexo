@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator-hexo/issues"
   },
-  "homepage": "https://github.com/dimaslanjaka/static-blog-generator-hexo#readme",
+  "homepage": "https://www.webmanajemen.com/",
   "workspaces": {
     "packages": [
       "site",
