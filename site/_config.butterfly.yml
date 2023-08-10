@@ -16,6 +16,7 @@ menu:
   List||fas fa-list:
     Bot Detector: /page/bot-detect.html || fas fa-robot
     Cookies Manager: /page/cookies.html || fas fa-cookie
+    Moment Timezone Playground: /page/moment-timezone.html || fas fa-clock
   # Link: /link/ || fas fa-link
   # About: /about/ || fas fa-heart
 
