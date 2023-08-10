@@ -7,8 +7,8 @@
 
 **scam** adalah sebuah upaya penipuan untuk mendapatkan uang atau sesuatu yang berharga dari korbannya. _Pelaku yang melakukan scam_ disebut dengan **scammer**. Tindak kejahatan ini biasanya dilakukan oleh kelompok, individu, atau bahkan perusahaan yang terlibat dalam jaringan penipuan.
 
-## Scammer Map Illus 16
-> Daftar scammer/blacklist player kategori SCAMMER chimeraland MAP ILLUSTRIOUS 16 PARTY
+## Scammer Map Party
+> Daftar scammer/blacklist player kategori SCAMMER chimeraland MAP ILLUSTRIOUS/CASUALITY ART PARTY
 
 > Pastikan **Auto abadon roll sudah cek** pada **Team Settings** setiap masuk sebuah team.
 > - Klik Team
@@ -55,7 +55,8 @@
 | DWB23 | | Out party sebelum giliran map-nya, dilaporkan oleh **wolfPACK** & **hendro** _June 16, 2023 10:18 PM_ [screenshot](#DWB23-j-screenshots) |
 | Oldestdream | | Roll **Plans: Ortzi Pauldron** milik **Kolten** pada map illus free entry no roll, dilaporkan oleh **Kolten** **June 19, 2023 9:06 AM** [screenshot](#Oldestdream-screenshots) |
 | Reus | | Roll **Plans: Ortzi Earrings** milik **Kuuhaku** pada map polar feathered steed free entry no roll, dilaporkan oleh **Kuuhaku** **June 29, 2023 10:30 AM** [screenshot](#Reus-screenshots) |
-| monarch2 | | Roll drop items milik **kimprit** pada map armadilo free entry no roll, dilaporkan oleh **kimprit** pada tanggal July 27, 2023 9:27 PM [screenshot](#kimprit-party) |
+| monarch2 | | Roll drop items milik **kimprit** pada map armadilo free entry no roll, dilaporkan oleh **kimprit** pada tanggal _July 27, 2023 9:27 PM_ [screenshot](#kimprit-party) |
+| Avillio | | Roll Ortzi Divine cludgel milik **UnknowN** dilaporkan oleh **Unknown** pada tanggal _August 7, 2023 11:46 AM_ [bukti video](#avillio-screenshots) |
 
 ## Scammer Jual-Beli
 > Daftar scammer/blacklist player kategori SCAMMER Jual-Beli (pembelian, penjualan, dan transaksi pembayaran lainnya) dalam bentuk ruby, mata uang, dan lain sebagainya.
@@ -85,6 +86,7 @@
 | BabyLordz | APPOCALYPZE | SCAM daily service 500,000 IDR, reported by **Ell** at 03-07-2023. [screenshots](#baby-lordz-screenshots) |
 | - | | WhatsApp +6289657373191 scam ruby IDR 100,000 S117-121. Dilaporkan oleh **Goldark** _June 15, 2023 07:30 PM_ |
 | Ray119 | | scam jual-beli telur di dalam game, dilaporkan oleh **kendrugk** pada tanggal _August 4, 2023 8:47 PM_. [screenshots](#ray119-screenshots) |
+| Khimiauw | | Scam jasa hunting Serpenine Xiangliu Map 150 ruby dilaporkan oleh **UnknowN** pada tanggal _August 7, 2023 11:46 AM_ [screenshots](#khimiauw-screenshots) |
 
 ## Scammer Bitter
 > Daftar scammer/blacklist player kategori SCAMMER BITTER COLD SPRING
@@ -133,7 +135,16 @@
 
 <h2 id="screenshots">Kumpulan Tangkapan Layar (screenshot) tentang scammer</h2>
 
-## Ray119 screenshots
+## Avillio Screenshots
+
+<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://drive.google.com/file/d/12kUkNogalG-rVXZLR94GKijRzgrL2Ivy/preview" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe></div>
+
+## Khimiauw Screenshots
+![kronologi](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/65ae7aee-0acb-442b-a56f-a1790ea5e851)
+![bukti sudah memasang plans fenix](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/fbdef4b4-55f7-4a0d-83b5-c0b5386c52b3)
+![bukti sudah di-buyout](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/9562ea54-f2d2-43f5-aad1-faafb65e187f)
+
+## Ray119 Screenshots
 ![Ray119](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/4ec065ac-17f3-46aa-b555-d4034754bacf)
 ![image](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/8d826e8e-ae06-47ed-900f-d0accb4eb56f)
 ![Untitled](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/90785c3b-243c-4f39-b6af-b56eda608a7d)
