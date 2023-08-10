@@ -14,8 +14,8 @@ menu:
   # Tags: /tags/ || fas fa-tags
   # Categories: /categories/ || fas fa-folder-open
   List||fas fa-list:
-    Music: /page/bot-detect.html || fas fa-robot
-    Movie: /page/cookies.html || fas fa-cookie
+    Bot Detector: /page/bot-detect.html || fas fa-robot
+    Cookies Manager: /page/cookies.html || fas fa-cookie
   # Link: /link/ || fas fa-link
   # About: /about/ || fas fa-heart
 
@@ -152,7 +152,7 @@ toc:
   number: true
   expand: false
   style_simple: false # for post
-  scroll_percent: true
+  scroll_percent: false
 
 post_copyright:
   enable: true
