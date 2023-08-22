@@ -10,5 +10,11 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "git.ignoredRepositories": ["dimaslanjaka.github.io"]
+  "git.ignoredRepositories": ["dimaslanjaka.github.io"],
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": false
+    }
+  }
 }
