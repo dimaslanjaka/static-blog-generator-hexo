@@ -169,6 +169,7 @@ jobs:
         name: init cache
         with:
           path: |
+            ./site/db.json
             ./site/public
             ./site/tmp
             ./site/source/_posts
