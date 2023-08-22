@@ -43,19 +43,7 @@ export function cleanAutoGenFiles(hexo: Hexo) {
   /**
    * clean auto generated files inside .deploy_git
    */
-  const files = [
-    'css',
-    'style',
-    'archives',
-    'fonts',
-    'lib',
-    'hexo-seo-js',
-    'js',
-    'hexo-shortcodes-lib',
-    'tags',
-    'categories',
-    'assets'
-  ]
+  const files = ['css', 'style', 'fonts', 'lib', 'hexo-seo-js', 'js', 'hexo-shortcodes-lib', 'assets']
     .map((str) => path.join(deployDir, str))
     .filter(fs.existsSync);
   files.forEach((p) => {
