@@ -123,6 +123,7 @@
 | Dikoo | | masalah out party map illus dikarenakan masalah jaringan dan tidak ada masalah dari Dikoo lainnya. Sudah admin validasi oleh beberapa orang bahwa Dikoo berprilaku baik. |
 | PrimalHunter | | masalah out party map illus dikarenakan masalah jaringan dan tidak ada masalah dari PrimalHunter lainnya. Sudah admin validasi oleh beberapa orang bahwa PrimalHunter berprilaku baik. |
 | JELLYOE2022 | | **saayaang** selaku korban sudah memaafkannya pada _June 12, 2023 11:28 PM_ |
+| kimporr | | sudah mengembalikan semua tiket 4 rare egg kepada semua partisipan [screenshots](#kimporr-screenshots) |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut chimeraland MAP ILLUSTRIOUS dengan tiket telur grand orang yang tidak dikenal atau tanpa referensi kenalan (kadang orang-orang ini kadang hanya akan mengambil telur anda lalu keluar/kabur dari tim). (DWYOR).
@@ -134,6 +135,13 @@
 - [GamersBahagia Blacklist](https://www.gamersbahagia.com/blacklist)
 
 <h2 id="screenshots">Kumpulan Tangkapan Layar (screenshot) tentang scammer</h2>
+
+## kimporr Screenshots
+> kimporr sudah mengembalikan semua tiket rare egg
+
+![pengakuan partisipan Nazreen](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/e9044371-c9c1-4919-b17b-593b4c80fc69)
+![pengakuan partisipan Dy](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/383aae9d-2170-450b-8d54-6dc820595824)
+![pengakuan partisipan Sus Ahli 3](https://github.com/dimaslanjaka/static-blog-generator-hexo/assets/12471057/9400064a-b3ee-45ac-a1ff-7a753200f012)
 
 ## Avillio Screenshots
 

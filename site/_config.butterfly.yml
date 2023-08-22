@@ -23,7 +23,7 @@ menu:
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: light #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: false #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
@@ -565,11 +565,13 @@ baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics:
+# <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+google_analytics: UA-106238155-1
 
 # Cloudflare Analytics
 # https://www.cloudflare.com/zh-tw/web-analytics/
-cloudflare_analytics:
+# <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2157c0f3b9e74a92badffe39156166b9"}'></script><!-- End Cloudflare Web Analytics -->
+cloudflare_analytics: 2157c0f3b9e74a92badffe39156166b9
 
 # Microsoft Clarity
 # https://clarity.microsoft.com/
@@ -903,10 +905,10 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/node_modules/highlight.js/styles/kimbie-dark.css">
   bottom:
     - <script src="https://webmanajemen.com/r-ads.js"></script>
-    #- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    - <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

@@ -165,6 +165,7 @@ jobs:
             ./site/public
             ./site/tmp
             ./site/source/_posts
+            ./site/multisite/chimeraland/tmp
             **/dist
             **/.yarn
           key: ${{ runner.os }}-${{ env.node_version }}
