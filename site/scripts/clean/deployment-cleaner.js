@@ -1,13 +1,17 @@
 const { path, fs, jsonStringifyWithCircularRefs, jsonParseWithCircularRefs } = require('sbg-utility');
 const { hexoDir } = require('../../config');
 
-// auto create database file
+/** database json file */
 const dbfile = path.join(hexoDir, 'tmp/clean-list.json');
+// auto create database file
 if (!fs.existsSync(dbfile)) {
   fs.writeFileSync(dbfile, jsonStringifyWithCircularRefs([]));
 }
 
-/** @type {string[]} */
+/**
+ * files to clean
+ * @type {string[]}
+ */
 const files = jsonParseWithCircularRefs(fs.readFileSync(dbfile, 'utf-8'));
 
 hexo.extend.filter.register('after_clean', function () {
