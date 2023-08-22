@@ -125,6 +125,14 @@ jobs:
           path: site/.deploy_git/Web-Manajemen
           token: '${{ secrets.ACCESS_TOKEN }}'
 
+      - name: checkout site/.deploy_git/archives
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/archives
+          ref: gh-pages
+          path: site/.deploy_git/archives
+          token: '${{ secrets.ACCESS_TOKEN }}'
+
       - name: clean site/.deploy_git/chimeraland
         if: ${{ false }}
         run: |
