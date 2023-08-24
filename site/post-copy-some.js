@@ -23,6 +23,7 @@ Promise.all(glob.glob(['**/*.*'], { ignore: ['**/.*', '**/node_modules/**'], cwd
     };
   })
   .then(async (o) => {
+    if (!(await fs.exists(dest))) await fs.mkdir(dest, { recursive: true });
     // empty source/_posts
     await fs.emptyDir(dest);
     return o;
