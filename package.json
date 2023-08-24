@@ -40,7 +40,7 @@
       "packages/hexo-generator-redirect"
     ]
   },
-  "packageManager": "yarn@3.6.0",
+  "packageManager": "yarn@3.6.3",
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
