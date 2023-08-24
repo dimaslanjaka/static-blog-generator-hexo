@@ -66,7 +66,7 @@ export async function cleanAutoGenFiles(hexo: Hexo) {
         return true;
       })
       .each((file) => {
-        fs.rmSync(file, { recursive: true, force: true });
+        return fs.rm(file, { recursive: true, force: true });
       });
   });
 
