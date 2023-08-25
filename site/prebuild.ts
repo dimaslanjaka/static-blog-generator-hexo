@@ -23,6 +23,8 @@ const hexo = new Hexo(__dirname, { silent: true });
   await hexo.init();
   // run pre-build script
   await prebuild(hexo);
+  // clean unused files in source/_posts
+  cleanUnusedFilesInSourcePosts();
 })();
 
 export async function prebuild(hexo: Hexo) {

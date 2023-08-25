@@ -2,8 +2,10 @@ const { path, fs } = require('sbg-utility');
 const { hexoDir } = require('../../../config');
 const Promise = require('bluebird');
 
-// clean unused files in source/_posts
-
+/**
+ * clean unused files in source/_posts
+ * @returns
+ */
 function cleanUnusedFilesInSourcePosts() {
   const files = ['.frontmatter', '.github', '.vscode', 'tmp', 'node_modules'].map((p) =>
     path.join(hexoDir, 'source/_posts', p)
