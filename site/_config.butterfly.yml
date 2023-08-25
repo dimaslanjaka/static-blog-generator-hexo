@@ -908,7 +908,7 @@ inject:
     - <link rel="stylesheet" href="/node_modules/highlight.js/styles/kimbie-dark.css">
   bottom:
     - <script src="https://webmanajemen.com/r-ads.js"></script>
-    - <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    - <script src="/page/assets/js/highlight.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
