@@ -43,10 +43,6 @@
   "typescript.tsc.autoDetect": "on",
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "files.associations": {
-    "*.njk": "html",
-    "*.ejs": "html"
-  },
   "emmet.includeLanguages": {
     "ejs": "html",
     "njk": "html",
@@ -148,7 +144,6 @@
   "prettier.printWidth": 180,
   "npm.packageManager": "yarn",
   "git.enabled": true,
-  "eslint.packageManager": "yarn",
   "explorer.autoReveal": true,
   "git.autofetch": true,
   "git.autorefresh": true,
