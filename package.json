@@ -72,7 +72,7 @@
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/71c10678/releases/hexo-log.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/71c10678/releases/hexo-util.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/71c10678/releases/warehouse.tgz",
-    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/tarball/pre-release",
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/b1a0513/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/tarball/pre-release",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/3d352a6c2fa9217d57b8e049c40563c0a2ab41de/packages/static-blog-generator/release/static-blog-generator.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/3d352a6c2fa9217d57b8e049c40563c0a2ab41de/packages/instant-indexing/release/instant-indexing.tgz",
