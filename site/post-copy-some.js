@@ -1,7 +1,8 @@
 const glob = require('glob');
 const path = require('upath');
 const Promise = require('bluebird');
-const { fs } = require('sbg-utility');
+const { fs, writefile } = require('sbg-utility');
+const parser = require('hexo-post-parser');
 
 // copy only some post into source/_posts
 
@@ -20,14 +21,15 @@ Promise.all(
     if (/(license|changelog|readme).md$/gim.test(file)) return false;
     if (file.trim().length === 0) return false;
     // only allow these patterns
-    //if (/^[0-9]{1,4}\//.test(file)) return true;
-    if (/^2017\//.test(file)) return true;
+    if (/^[0-9]{1,4}\//.test(file)) return true;
+    //if (/^2017\//.test(file)) return true;
     //if (/^hexo-theme-unit-test\//.test(file)) return true;
     // skip by default
     return false;
   })
   .map(async (str) => {
     const o = {
+      origin: str,
       src: path.join(base, str),
       dest: path.join(dest, str).replace('hexo-theme-unit-test/', '')
     };
@@ -47,5 +49,15 @@ Promise.all(
     return files;
   })
   .each(async (o) => {
-    return fs.copy(o.src, o.dest);
+    if (o.origin.endsWith('.md')) {
+      try {
+        const parse = await parser.parsePost(o.src);
+        const build = parser.buildPost(parse);
+        writefile(o.dest, build);
+      } catch {
+        console.log('fail parse', o.origin);
+      }
+    } else {
+      await fs.copy(o.src, o.dest, { overwrite: true, dereference: true });
+    }
   });
