@@ -217,6 +217,7 @@ jobs:
       #- run: yarn workspace wmi run generate:sitemap
       #- run: yarn workspace wmi run generate:feed
       #- run: yarn workspace wmi exec "gulp deploy:copy"
+      - run: yarn workspace wmi run generate:copy
       - run: yarn workspace wmi run generate:seo
       - run: yarn workspace wmi run generate:safelink
       - name: install site/.deploy_git/page
@@ -266,7 +267,7 @@ jobs:
           fi
           git push
         continue-on-error: true
-        
+
       - name: push site/.deploy_git/docs
         shell: bash
         working-directory: site/.deploy_git/docs

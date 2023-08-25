@@ -1,5 +1,5 @@
 const { path, fs } = require('sbg-utility');
-const { hexoDir } = require('../../config');
+const { hexoDir } = require('../../../config');
 const Promise = require('bluebird');
 
 // clean unused files in source/_posts

@@ -1,5 +1,5 @@
 const { path, fs } = require('sbg-utility');
-const { hexoDir } = require('../../config');
+const { hexoDir } = require('../../../config');
 
 hexo.extend.filter.register('after_generate', function () {
   // copy public directory into .deploy_git

@@ -1,5 +1,5 @@
 const { path, fs, jsonStringifyWithCircularRefs, jsonParseWithCircularRefs } = require('sbg-utility');
-const { hexoDir } = require('../../config');
+const { hexoDir } = require('../../../config');
 
 /** database json file */
 const dbfile = path.join(hexoDir, 'tmp/clean-list.json');
