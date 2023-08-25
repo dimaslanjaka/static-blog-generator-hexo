@@ -289,13 +289,13 @@ jobs:
           git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
           git submodule foreach "git add -A | :"
           git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
-          git submodule foreach "git pull -X theirs | :";
+          #git submodule foreach "git pull -X theirs | :";
           git submodule foreach "git push | :"
           git add .
           if [ $(git status --porcelain | wc -l) -gt "0" ]; then
             git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
           fi
-          git pull -X theirs
+          #git pull -X theirs
       - run: git push origin master --recurse-submodules=on-demand
         working-directory: site/.deploy_git
         name: push site/.deploy_git
@@ -318,7 +318,7 @@ jobs:
           git config --global user.email 'dimaslanjaka@gmail.com'
           git submodule foreach "git add -A | :";
           git submodule foreach "git commit -m 'refactor: update submodule ${{ env.GITHUB_COMMIT_URL }}' | :";
-          git submodule foreach "git pull -X theirs | :";
+          #git submodule foreach "git pull -X theirs | :";
           git submodule foreach "git push | :";
       - name: push changes current repository
         uses: dimaslanjaka/action-post-run@master
@@ -330,8 +330,8 @@ jobs:
             git config --global user.email 'dimaslanjaka@gmail.com'
             git add site
             if [ $(git status --porcelain | wc -l) -gt "0" ]; then
-              git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}"
+              git commit -m "chore: changes from ${{ env.GITHUB_COMMIT_URL }}"
             fi
-            git pull -X theirs
+            #git pull -X theirs
             git push
-            git status --porcelain
+      - run: git status --porcelain
