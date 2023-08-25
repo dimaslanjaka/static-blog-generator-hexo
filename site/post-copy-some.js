@@ -51,7 +51,12 @@ Promise.all(
   .each(async (o) => {
     if (o.origin.endsWith('.md')) {
       try {
-        const parse = await parser.parsePost(o.src);
+        const parse = await parser.parsePost(o.src, {
+          sourceFile: o.src,
+          cache: false,
+          fix: true,
+          shortcodes: true
+        });
         const build = parser.buildPost(parse);
         writefile(o.dest, build);
       } catch {
