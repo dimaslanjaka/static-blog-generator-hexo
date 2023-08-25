@@ -6,7 +6,6 @@
 ___*
 .DS_Store
 Thumbs.db
-db.json
 *.log
 **/*.tsbuildinfo
 site/themes/claudia
