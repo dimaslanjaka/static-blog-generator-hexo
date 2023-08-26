@@ -10,7 +10,7 @@ basecwd=${PWD}
 # base script directory
 basedir=`dirname "$0"`
 # absolute path script directory
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
 # get script path
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
@@ -92,12 +92,14 @@ update_submodule() {
             GIT_MODULES="${RELATIVE_MODULE_PATH}/.gitmodules"
             cd "${RELATIVE_MODULE_PATH}"
             git remote set-url origin "${URL_WITH_TOKEN}"
-            git fetch --all
-            git pull origin "${BRANCH}" -X theirs
-            if [ -f "${GIT_MODULES}" ]; then
-              echo "${MODULE_PATH} has submodules"
-              bash -e "${SCRIPT}" -cwd ${RELATIVE_MODULE_PATH}
-            fi
+          fi
+          # fetch
+          git fetch --all
+          # pull
+          git pull origin "${BRANCH}"
+          if [ -f "${GIT_MODULES}" ]; then
+            echo "${MODULE_PATH} has submodules"
+            bash -e "${SCRIPT}" -cwd ${RELATIVE_MODULE_PATH}
           fi
       done
 
