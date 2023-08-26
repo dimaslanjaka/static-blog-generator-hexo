@@ -6,6 +6,7 @@ import Hexo from 'hexo';
 import path from 'upath';
 import { deployConfig } from './config';
 import { deploymentInitialize, sequentialPromises } from './src/deployment-initializer';
+import { cleanUnusedFilesInSourcePosts } from './src/events/init/clean-unused-files';
 
 const envPath = path.join(__dirname, '.env');
 if (fs.existsSync(envPath)) {
