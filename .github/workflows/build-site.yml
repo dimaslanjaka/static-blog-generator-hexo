@@ -321,17 +321,15 @@ jobs:
           #git submodule foreach "git pull -X theirs | :";
           git submodule foreach "git push | :";
       - name: push changes current repository
-        uses: dimaslanjaka/action-post-run@master
         continue-on-error: true
         if: contains(github.event.head_commit.message, 'chore') == false
-        with:
-          run: |
-            git config --global user.name 'dimaslanjaka'
-            git config --global user.email 'dimaslanjaka@gmail.com'
-            git add site
-            if [ $(git status --porcelain | wc -l) -gt "0" ]; then
-              git commit -m "chore: changes from ${{ env.GITHUB_COMMIT_URL }}"
-            fi
-            #git pull -X theirs
-            git push
+        run: |
+          git config --global user.name 'dimaslanjaka'
+          git config --global user.email 'dimaslanjaka@gmail.com'
+          git add site
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -m "chore: changes from ${{ env.GITHUB_COMMIT_URL }}"
+          fi
+          #git pull -X theirs
+          git push
       - run: git status --porcelain
