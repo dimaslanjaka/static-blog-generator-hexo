@@ -132,7 +132,8 @@ case $1 in
     remove_submodule
     ;;
   *)
-    echo "no option found"
-    echo "usage $SCRIPT [install|i|uninstall|u|x]"
+    echo "no option found. Usage:"
+    echo "update submodule $SCRIPT [install|i]"
+    echo "remove submodule $SCRIPT [uninstall|u|x]"
     ;;
 esac
