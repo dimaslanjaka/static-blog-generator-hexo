@@ -15,6 +15,7 @@ on:
       - '**codeql**'
       - '**clean-caches**'
       - '**/yarn.lock'
+      - '!**/.git*'
   workflow_dispatch:
   workflow_call:
     secrets:
