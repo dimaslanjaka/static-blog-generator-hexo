@@ -214,7 +214,7 @@ jobs:
       - run: yarn workspace wmi run post:chimera
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
-      #- run: yarn workspace wmi exec "hexo clean"
+      - run: yarn workspace wmi exec "hexo clean"
       - run: yarn workspace wmi run build:site
       #- run: yarn workspace wmi run generate:sitemap
       #- run: yarn workspace wmi run generate:feed
