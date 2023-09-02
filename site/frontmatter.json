@@ -68,24 +68,8 @@
   "frontMatter.content.publicFolder": "hexo:post_asset_folder",
   "frontMatter.content.pageFolders": [
     {
-      "path": "[[workspace]]/src-posts/2021",
-      "title": "2021"
-    },
-    {
-      "title": "2022",
-      "path": "[[workspace]]/src-posts/2022"
-    },
-    {
-      "title": "2023",
-      "path": "[[workspace]]/src-posts/2023"
-    },
-    {
-      "title": "2017",
-      "path": "[[workspace]]/src-posts/2017"
-    },
-    {
-      "title": "2018",
-      "path": "[[workspace]]/src-posts/2018"
+      "path": "[[workspace]]/src-posts",
+      "title": "Source Posts"
     }
   ],
   "frontMatter.site.baseURL": "https://www.webmanajemen.com/"
