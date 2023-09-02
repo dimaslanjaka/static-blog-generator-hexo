@@ -21,20 +21,33 @@ Bluebird.all(scrape).each(async (file) => {
     // lowercase taxonomy
     if (post.metadata) {
       let save;
+
+      // delete category metadata
+      // try moving to categories metadata
       if ('category' in post.metadata) {
-        post.metadata.category = lowercaseTaxonomy(post.metadata.category);
+        post.metadata.categories = post.metadata.category;
+        delete post.metadata.category;
         save = true;
       }
-      if ('categories' in post.metadata) {
-        post.metadata.categories = lowercaseTaxonomy(post.metadata.categories);
+
+      // lowercase categories
+      const categories = post.metadata.categories || [];
+      if (categories.some((str) => /[A-Z]/g.test(str))) {
+        post.metadata.categories = lowercaseTaxonomy(categories);
         save = true;
       }
-      if ('tags' in post.metadata) {
-        post.metadata.tags = lowercaseTaxonomy(post.metadata.tags);
+
+      // lowercase tags
+      const tags = post.metadata.tags || [];
+      if (tags.some((str) => /[A-Z]/g.test(str))) {
+        post.metadata.tags = lowercaseTaxonomy(tags);
         save = true;
       }
+
+      // metadata empty - dont save
       if (Object.keys(post.metadata).length === 0) {
         console.log('meta empty', file);
+        save = false;
       }
 
       if (save) {
