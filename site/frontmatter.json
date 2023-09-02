@@ -1,0 +1,92 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.autoUpdateDate": false,
+  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Thumbnail",
+          "name": "thumbnail",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "boolean"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "updated",
+          "name": "updated",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isModifiedDate": true
+        },
+        {
+          "name": "permalink",
+          "editable": true,
+          "type": "slug"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "divider"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "hexo",
+  "frontMatter.content.publicFolder": "hexo:post_asset_folder",
+  "frontMatter.content.pageFolders": [
+    {
+      "path": "[[workspace]]/src-posts/2021",
+      "title": "2021"
+    },
+    {
+      "title": "2022",
+      "path": "[[workspace]]/src-posts/2022"
+    },
+    {
+      "title": "2023",
+      "path": "[[workspace]]/src-posts/2023"
+    },
+    {
+      "title": "2017",
+      "path": "[[workspace]]/src-posts/2017"
+    },
+    {
+      "title": "2018",
+      "path": "[[workspace]]/src-posts/2018"
+    }
+  ],
+  "frontMatter.site.baseURL": "https://www.webmanajemen.com/"
+}
