@@ -6,7 +6,6 @@
     "iliazeus.vscode-ansi",
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
-    "yzhang.markdown-all-in-one",
-    "k--kato.intellij-idea-keybindings"
+    "yzhang.markdown-all-in-one"
   ]
 }
