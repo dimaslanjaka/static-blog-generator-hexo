@@ -41,10 +41,10 @@
     ]
   },
   "include": [
-    "./*.js",
-    "./*.ts",
     "./src/**/*.*",
     "./*.json",
+    "./gulpfile*",
+    "./prebuild.ts",
     "./scripts/**/*"
   ],
   "exclude": [
