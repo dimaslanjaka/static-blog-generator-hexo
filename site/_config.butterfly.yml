@@ -906,7 +906,7 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z4nvW1dqK0SKXLbn9h4KwZTNtAyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    - <link rel="stylesheet" href="//cdn.statically.io/gh/dimaslanjaka/Web-Manajemen/gh-pages/highlight.js/styles/github-dark.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   bottom:
     - <script src="https://webmanajemen.com/r-ads.js"></script>
     - <script src="/page/assets/js/highlight.js"></script>
