@@ -908,7 +908,7 @@ inject:
   head:
     - <link rel="stylesheet" href="//cdn.statically.io/gh/dimaslanjaka/Web-Manajemen/gh-pages/highlight.js/styles/github-dark.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   bottom:
-    - <script src="https://webmanajemen.com/r-ads.js"></script>
+    - <script src="https://www.webmanajemen.com/page/assets/js/r-ads.js"></script>
     - <script src="/page/assets/js/highlight.js"></script>
 
 # CDN
