@@ -70,7 +70,7 @@ export function createMarkdownAttendants(hexoProject: string) {
       attr.tags = ['chimeraland', 'monster', 'pet']
       attr.categories = ['games', 'chimeraland', 'monsters']
     } else {
-      attr.tags = ['chimeraland', 'Attendant']
+      attr.tags = ['chimeraland', 'attendant']
       attr.categories = ['games', 'chimeraland', 'attendants']
     }
 
