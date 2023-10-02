@@ -50,7 +50,7 @@ jobs:
           timezoneMacos: 'Asia/Jakarta'
           timezoneWindows: 'Indonesia Standard Time'
       - run: git config --global  core.ignorecase false
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: checkout root project
         with:
           ref: master
@@ -72,21 +72,21 @@ jobs:
           bash ./bin/submodule-install
         shell: bash
       - name: checkout site/src-posts
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/source-posts
           ref: posts
           path: site/src-posts
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: checkout site/source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/public-source
           ref: master
           path: site/source
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: checkout site/.deploy_git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/dimaslanjaka.github.io
           ref: master
@@ -111,7 +111,7 @@ jobs:
           rm -rf .git/modules
           bash ./bin/submodule-install
       - name: checkout site/.deploy_git/chimeraland
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/chimeraland
           ref: gh-pages
@@ -119,7 +119,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
 
       - name: checkout site/.deploy_git/Web-Manajemen
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/Web-Manajemen
           ref: gh-pages
@@ -127,7 +127,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
 
       - name: checkout site/.deploy_git/archives
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/archives
           ref: gh-pages
@@ -145,21 +145,21 @@ jobs:
         shell: bash
 
       - name: checkout packages/hexo-theme-claudia
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/hexo-theme-claudia
           ref: private
           path: packages/hexo-theme-claudia
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: checkout site/.deploy_git/page
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/page
           ref: gh-pages
           path: site/.deploy_git/page
           token: '${{ secrets.ACCESS_TOKEN }}'
       - name: checkout site/.deploy_git/docs
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/docs
           ref: master
