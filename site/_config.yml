@@ -113,7 +113,7 @@ highlight:
   auto_detect: false
   tab_replace: '  ' # replace tabs with 2 spaces
   wrap: false
-  hljs: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
@@ -165,6 +165,8 @@ include:
 exclude:
   - '**/.git*'
   - '**/.git'
+  - '**/.*'
+  - '**/.husky'
   - '**/.vscode'
   - '**/.idea'
   - '**/.env'
