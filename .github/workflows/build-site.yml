@@ -27,7 +27,7 @@ on:
 concurrency:
   # group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
   group: deploy
-  cancel-in-progress: true
+  # cancel-in-progress: true
 
 jobs:
   build-site:
