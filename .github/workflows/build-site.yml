@@ -165,6 +165,14 @@ jobs:
           ref: master
           path: site/.deploy_git/docs
           token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: checkout site/.deploy_git/assets
+        uses: actions/checkout@v4
+        with:
+          repository: dimaslanjaka/assets
+          ref: master
+          path: site/.deploy_git/assets
+          token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: 'true'
       - uses: actions/cache@v3
         id: cache
         name: init cache
