@@ -55,6 +55,8 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+# post_dir: hexo-theme-unit-test # for theme testing
+post_dir: src-posts # production posts
 
 # Writing
 new_post_name: :year/:month/:title.md # File name of new posts
