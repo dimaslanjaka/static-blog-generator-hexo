@@ -18,15 +18,16 @@ menu:
     Bot Detector: /page/bot-detect.html || fas fa-robot
     Cookies Manager: /page/cookies.html || fas fa-cookie
     Moment Timezone Playground: /page/moment-timezone.html || fas fa-clock
+  Quiz The Legend Of Neverland: /The Legend Of Neverland/Quiz.html || fas fa-folder-open
   # Link: /link/ || fas fa-link
   # About: /about/ || fas fa-heart
 
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: false #  darker / pale night / light / ocean / mac / mac light / false
-highlight_copy: true # copy button
-highlight_lang: true # show the code language
+highlight_theme: pale night #  darker / pale night / light / ocean / mac / mac light / false
+highlight_copy: false # copy button
+highlight_lang: false # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
 highlight_height_limit: false # unit: px
 code_word_wrap: true
@@ -37,12 +38,13 @@ code_word_wrap: true
 social:
   fab fa-github: https://github.com/dimaslanjaka || Github || '#24292e'
   fas fa-envelope: mailto:dimaslanjaka@gmail.com || Email || '#4a7dbe'
+  fab fa-facebook: https://facebook.com/dimaslanjaka1 || Facebook || '#4267B2'
 
 # Image (圖片設置)
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /images/image2vector.svg
+favicon: /logo.svg
 
 # Avatar (頭像)
 avatar:

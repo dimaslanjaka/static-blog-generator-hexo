@@ -4,6 +4,30 @@
 npm run build
 ```
 
+### manage source posts
+
+change `post_dir` in `site/_config.yml`
+
+to clean generated post
+
+```bash
+npx sbg clean post
+```
+
+to copy source post to `source/_posts`
+
+```bash
+npx sbg post copy
+```
+
+to execute `*.standalone.js` scripts inside `source/_posts`
+
+```bash
+npx sbg post standalone
+```
+
+## Badges
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator-hexo?label=Repository%20Size&style=flat-square)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label=master&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/master)
 [![Build Site CI](https://github.com/dimaslanjaka/static-blog-generator-hexo/actions/workflows/build-site.yml/badge.svg)](https://github.com/dimaslanjaka/static-blog-generator-hexo/actions/workflows/build-site.yml)
