@@ -13,7 +13,7 @@
     "build": "yarn workspace wmi run build",
     "build-sort": "yarn workspace wmi run build:prepare && yarn workspace wmi run post:copy && yarn workspace wmi run build:site",
     "postbuild": "yarn workspace wmi run postbuild",
-    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo,deepmerge-ts --enginesNode && yarn cache clean",
+    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo,deepmerge-ts --enginesNode --root --workspaces && yarn cache clean",
     "build:packages": "yarn workspaces foreach --no-private run build",
     "postinstall": "yarn build:packages && node link-workspaces.js"
   },
