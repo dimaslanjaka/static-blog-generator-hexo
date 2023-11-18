@@ -186,9 +186,9 @@ jobs:
             ./site/src-posts/chimeraland
             **/dist
             **/.yarn
-          key: ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('**/yarn.lock', '**/package.json') }}
+          key: ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('./site/db.json', './site/package.json', './package.json', './site/db.json') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('**/yarn.lock', '**/package.json') }}
+            ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('./site/db.json', './site/package.json', './package.json', './site/db.json') }}
             ${{ runner.os }}-${{ env.node_version }}
             ${{ runner.os }}-
       - uses: actions/setup-node@v4
