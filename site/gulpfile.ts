@@ -135,7 +135,7 @@ async function commit(done: (...args: any[]) => any) {
 
   const config = api.getConfig();
   const cwd = config.deploy.deployDir;
-  const gh = config.deploy.github || new gch(cwd);
+  const gh = new gch(cwd);
   const doCommit = async (cwd: string) => {
     console.log('commiting', cwd);
     await spawnAsync('git', ['add', '.'], { cwd }).catch(() => console.log('cannot add', cwd));
