@@ -33,7 +33,7 @@
     "post-update": "node postinstall.js --commit --yarn"
   },
   "hexo": {
-    "version": "7.0.0-rc2"
+    "version": "7.0.0"
   },
   "dependencies": {
     "binary-collections": "^2.0.2",
