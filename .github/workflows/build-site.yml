@@ -174,6 +174,17 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN }}'
           lfs: 'true'
       - uses: actions/cache@v3
+        id: cache-lockfile
+        name: cache lockfile
+        with:
+          path: |
+            **/yarn.lock
+          key: ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
+            ${{ runner.os }}-${{ env.node_version }}-lock
+            ${{ runner.os }}-
+      - uses: actions/cache@v3
         id: cache
         name: init cache
         with:
@@ -186,9 +197,9 @@ jobs:
             ./site/src-posts/chimeraland
             **/dist
             **/.yarn
-          key: ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
+          key: ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
+            ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('**/yarn.lock') }}
             ${{ runner.os }}-${{ env.node_version }}
             ${{ runner.os }}-
       - uses: actions/setup-node@v4
