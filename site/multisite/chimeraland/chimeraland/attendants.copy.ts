@@ -61,7 +61,7 @@ export async function attendantCopy(publicDir: string) {
           } else {
             const item = attendants.data[index]
             if (!item.buff) item.buff = []
-            if (!item.delicacies) item.delicacies = []
+            if (!item.delicacies) item.delicacies = [] as any[]
             attendants.data[index] = item
           }
         })
@@ -75,8 +75,8 @@ export async function attendantCopy(publicDir: string) {
     return new Bluebird((resolve) => {
       Bluebird.all(attendants.data as Extended[])
         .map(async (item) => {
-          if ('images' in item === false) item.images = []
-          if ('videos' in item === false) item.videos = []
+          if ('images' in item === false) item.images = [] as any[]
+          if ('videos' in item === false) item.videos = [] as any[]
           item.type = 'attendants'
           item.pathname =
             '/' +
