@@ -19,7 +19,7 @@ const outputJSON = join(__dirname, '../src/utils/chimeraland-attendants.json')
 const inputJSON = join(__dirname, 'attendants.json')
 const inputDIR = join(__dirname, 'attendants')
 
-type Extended = (typeof attendants)['data'][number] & {
+export type Extended = (typeof attendants)['data'][number] & {
   images: any[]
   videos: any[]
   pathname: string
