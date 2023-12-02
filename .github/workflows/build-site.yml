@@ -179,6 +179,7 @@ jobs:
         with:
           path: |
             **/yarn.lock
+            !**/node_modules/**
           key: ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
