@@ -86,7 +86,7 @@
     "sbg-cli": "^1.1.0",
     "sbg-server": "^1.1.0",
     "sbg-utility": "^1.1.6",
-    "sharp": "^0.32.1",
+    "sharp": "^0.33.0",
     "static-blog-generator": "^3.0.1",
     "stylus": "^0.61.0",
     "upath": "^2.0.1",
