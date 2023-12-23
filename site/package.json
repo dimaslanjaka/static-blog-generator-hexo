@@ -76,7 +76,7 @@
     "js-yaml": "^4.1.0",
     "lodash.toarray": "^4.4.0",
     "lunr": "2.3.9",
-    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-abbr": "^2.0.0",
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^1.0.0",
     "moment-timezone": "^0.5.43",

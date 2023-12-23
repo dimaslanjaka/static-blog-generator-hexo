@@ -10104,6 +10104,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"markdown-it-abbr@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "markdown-it-abbr@npm:2.0.0"
+  checksum: 13405f1485f0c2bf1c31bf719e9ee6d4f4dd45804d4bb958d147c02f024a89a03e822abd8f27acddea89d458b6a96ff076fd51b8ff169e5eabba3668e11ddd33
+  languageName: node
+  linkType: hard
+
 "markdown-it-anchor@npm:^8.6.7":
   version: 8.6.7
   resolution: "markdown-it-anchor@npm:8.6.7"
@@ -16568,7 +16575,7 @@ __metadata:
     js-yaml: ^4.1.0
     lodash.toarray: ^4.4.0
     lunr: 2.3.9
-    markdown-it-abbr: ^1.0.4
+    markdown-it-abbr: ^2.0.0
     markdown-it-sub: ^2.0.0
     markdown-it-sup: ^1.0.0
     moment-timezone: ^0.5.43
