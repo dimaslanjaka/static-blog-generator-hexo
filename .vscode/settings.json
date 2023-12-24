@@ -58,8 +58,8 @@
   "javascript.suggestionActions.enabled": false,
   "typescript.suggestionActions.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true // let ESLint take formating and linting
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
   },
   "eslint.validate": [
     "javascript",
@@ -91,8 +91,8 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": false,
-      "source.fixAll.eslint": false
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "never"
     }
   },
   "[jsonc]": {
@@ -107,7 +107,7 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": false
+      "source.organizeImports": "never"
     }
   },
   "editor.formatOnSave": false,
