@@ -7,14 +7,14 @@
     "njk": "html"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "git.ignoredRepositories": ["dimaslanjaka.github.io", ".deploy_git"],
   "[javascript]": {
     "editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      "source.organizeImports": false
+      "source.fixAll": "explicit",
+      "source.organizeImports": "never"
     }
   }
 }
