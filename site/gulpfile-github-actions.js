@@ -9,7 +9,7 @@ const glob = require('glob');
 const crypto = require('crypto');
 const { spawnAsync } = require('cross-spawn');
 const gulp = require('gulp');
-const { persistentCache } = require('persistent-cache');
+const { persistentCache } = require('sbg-utility');
 
 gulp.task('actions:clean', function (done) {
   const cache = persistentCache({ name: 'actions-clean', base: path.join(__dirname, 'node_modules/.cache') });
