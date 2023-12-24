@@ -17,7 +17,7 @@ docs/
 **/.yarn/*.gz
 **/.pnp.*
 **/.deploy_*
-
+db.json
 
 # temp
 tmp

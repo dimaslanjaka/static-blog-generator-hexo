@@ -57,6 +57,7 @@ jobs:
           repository: dimaslanjaka/static-blog-generator-hexo
           # submodules: recursive
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
       - name: update submodules
         run: |
           echo "init submodules"
@@ -78,6 +79,7 @@ jobs:
           ref: posts
           path: site/src-posts
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
       - name: checkout site/source
         uses: actions/checkout@v4
         with:
@@ -85,6 +87,7 @@ jobs:
           ref: master
           path: site/source
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
       - name: checkout site/.deploy_git
         uses: actions/checkout@v4
         with:
@@ -92,6 +95,7 @@ jobs:
           ref: master
           path: site/.deploy_git
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
       - name: clean site/.deploy_git
         working-directory: site/.deploy_git
         #if: ${{ false }}
@@ -117,6 +121,7 @@ jobs:
           ref: gh-pages
           path: site/.deploy_git/chimeraland
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
 
       - name: checkout site/.deploy_git/Web-Manajemen
         uses: actions/checkout@v4
@@ -125,6 +130,7 @@ jobs:
           ref: gh-pages
           path: site/.deploy_git/Web-Manajemen
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
 
       - name: checkout site/.deploy_git/archives
         uses: actions/checkout@v4
@@ -133,6 +139,7 @@ jobs:
           ref: gh-pages
           path: site/.deploy_git/archives
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
 
       - name: clean site/.deploy_git/chimeraland
         if: ${{ false }}
@@ -151,6 +158,7 @@ jobs:
           ref: private
           path: packages/hexo-theme-claudia
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
       - name: checkout site/.deploy_git/page
         uses: actions/checkout@v4
         with:
@@ -158,6 +166,7 @@ jobs:
           ref: gh-pages
           path: site/.deploy_git/page
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
       - name: checkout site/.deploy_git/docs
         uses: actions/checkout@v4
         with:
@@ -165,6 +174,7 @@ jobs:
           ref: master
           path: site/.deploy_git/docs
           token: '${{ secrets.ACCESS_TOKEN }}'
+          lfs: ''
       - name: checkout site/.deploy_git/assets
         uses: actions/checkout@v4
         with:
@@ -180,9 +190,9 @@ jobs:
           path: |
             **/yarn.lock
             !**/node_modules/**
-          key: ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
+          key: ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/package.json', './package.json') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/db.json', './site/package.json', './package.json') }}
+            ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/package.json', './package.json') }}
             ${{ runner.os }}-${{ env.node_version }}-lock
             ${{ runner.os }}-
       - uses: actions/cache@v3
