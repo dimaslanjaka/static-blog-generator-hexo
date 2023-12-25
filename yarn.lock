@@ -10501,16 +10501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^9.0.0, minimatch@npm:^9.0.1":
-  version: 9.0.1
-  resolution: "minimatch@npm:9.0.1"
-  dependencies:
-    brace-expansion: "npm:^2.0.1"
-  checksum: b4e98f4dc740dcf33999a99af23ae6e5e1c47632f296dc95cb649a282150f92378d41434bf64af4ea2e5975255a757d031c3bf014bad9214544ac57d97f3ba63
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^9.0.3":
+"minimatch@npm:^9.0.0, minimatch@npm:^9.0.1, minimatch@npm:^9.0.3":
   version: 9.0.3
   resolution: "minimatch@npm:9.0.3"
   dependencies:
