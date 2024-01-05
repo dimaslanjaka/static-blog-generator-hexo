@@ -231,15 +231,15 @@ jobs:
         id: install
         continue-on-error: true
         name: "YARN: install"
-      - run: |
+      - if: steps.install.outcome == 'failure'
+        name: "YARN: clean install"
+        shell: bash
+        run: |
           yarn cache clean --all
           find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
           find . -name 'yarn.lock' -type d -prune -exec rm -rf '{}' +
           touch yarn.lock
           YARN_CHECKSUM_BEHAVIOR=update yarn install
-        if: steps.install.outcome == 'failure'
-        name: "YARN: clean install"
-        shell: bash
       - run: yarn run postinstall
       - run: yarn workspace wmi run build:prepare
       - run: yarn workspace wmi run post:chimera
