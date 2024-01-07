@@ -72,8 +72,10 @@ export async function monstersCopy(publicDIR: string) {
     return new Bluebird((resolve) => {
       Bluebird.all(monsters.data as Extended[])
         .map(async (item) => {
-          if ('images' in item === false) item.images = []
-          if ('videos' in item === false) item.videos = []
+          // if ('images' in item === false) item.images = []
+          // if ('videos' in item === false) item.videos = []
+          if (!item['images']) item['images'] = []
+          if (!item['videos']) item['videos'] = []
           item.type = 'monsters'
           item.pathname =
             '/' +

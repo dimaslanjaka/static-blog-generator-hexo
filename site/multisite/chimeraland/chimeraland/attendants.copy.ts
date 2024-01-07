@@ -77,8 +77,8 @@ export async function attendantCopy(publicDir: string) {
         .map(async (item: Extended) => {
           // if ('images' in item === false) item['images'] = [] as any[]
           // if ('videos' in item === false) item['videos'] = [] as any[]
-          if (!item['images']) item['images'] = [];
-          if (!item['videos']) item['videos'] = [];
+          if (!item['images']) item['images'] = []
+          if (!item['videos']) item['videos'] = []
           item.type = 'attendants'
           item.pathname =
             '/' +
