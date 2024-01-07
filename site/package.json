@@ -111,7 +111,7 @@
     "prettier": "^3.1.0",
     "sitemap-crawler": "^1.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=14"
