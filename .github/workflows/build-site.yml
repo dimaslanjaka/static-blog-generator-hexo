@@ -231,7 +231,9 @@ jobs:
       #   shell: bash
       #   run: |
       #     yarn set version
-      - run: yarn install --inline-builds
+      - run: |
+            touch yarn.lock
+            yarn install --inline-builds
         id: install
         continue-on-error: true
         name: "YARN: install"
