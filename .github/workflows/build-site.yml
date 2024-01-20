@@ -40,6 +40,18 @@ jobs:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       node_version: 18.x
       YARN_CHECKSUM_BEHAVIOR: update
+      cache-key: mySiteCache
+      cache-paths: |
+        **/yarn.lock
+        ./site/db.json
+        ./site/public
+        ./site/tmp
+        ./site/source/_posts
+        ./site/multisite/chimeraland/tmp
+        ./site/src-posts/chimeraland
+        **/dist
+        **/.yarn/cache*
+        **/node_modules
 
     steps:
       - run: git config --global core.autocrlf false
@@ -183,36 +195,12 @@ jobs:
           path: site/.deploy_git/assets
           token: '${{ secrets.ACCESS_TOKEN }}'
           lfs: 'true'
-      - uses: actions/cache@v3
-        id: cache-lockfile
-        name: cache lockfile
+      - uses: actions/cache/restore@v4
+        id: cache-restore
+        name: restore cache
         with:
-          path: |
-            **/yarn.lock
-            !**/node_modules/**
-          key: ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/package.json', './package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.node_version }}-lock-${{ hashFiles('./site/package.json', './package.json') }}
-            ${{ runner.os }}-${{ env.node_version }}-lock
-            ${{ runner.os }}-
-      - uses: actions/cache@v3
-        id: cache
-        name: init cache
-        with:
-          path: |
-            ./site/db.json
-            ./site/public
-            ./site/tmp
-            ./site/source/_posts
-            ./site/multisite/chimeraland/tmp
-            ./site/src-posts/chimeraland
-            **/dist
-            **/.yarn
-          key: ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.node_version }}-${{ hashFiles('**/yarn.lock') }}
-            ${{ runner.os }}-${{ env.node_version }}
-            ${{ runner.os }}-
+          path: ${{ env.cache-paths }}
+          key: ${{ env.cache-key }}
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node_version }}
@@ -374,3 +362,18 @@ jobs:
           #git pull -X theirs
           git push
       - run: git status --porcelain
+      # overwrite cache key
+      - name: delete previous cache
+        if: ${{ steps.cache-restore.outputs.cache-hit }}
+        continue-on-error: true
+        run: |
+          gh extension install actions/gh-actions-cache
+          gh actions-cache delete "${{ env.cache-key }}" --confirm
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/cache/save@v4
+        id: cache-save
+        name: save cache
+        with:
+          path: ${{ env.cache-paths }}
+          key: ${{ env.cache-key }}
