@@ -912,6 +912,8 @@ inject:
   bottom:
     - <script src="https://www.webmanajemen.com/page/assets/js/r-ads.js"></script>
     - <script src="/page/assets/js/highlight.js"></script>
+    - <div id="top-ge-counter-container" data-site-id="113359"></div><script async src="//counter.top.ge/counter.js"></script>
+    - <a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?3860842&101" alt="myspace tracker" border="0"></a>
 
 # CDN
 # Don't modify the following settings unless you know how they work
