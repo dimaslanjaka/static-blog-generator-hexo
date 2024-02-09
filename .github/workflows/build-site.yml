@@ -19,8 +19,6 @@ on:
   workflow_dispatch:
   workflow_call:
     secrets:
-      token:
-        required: true
       ACCESS_TOKEN:
         required: true
 
