@@ -42,7 +42,6 @@
   },
   "include": [
     "./src/**/*.*",
-    "./*.json",
     "./gulpfile*",
     "./prebuild.ts",
     "./scripts/**/*"
@@ -55,8 +54,8 @@
     "**/packages/**",
     "**/site",
     "**/dist",
-    "**/.deploy_git",
-    "**/multisite"
+    "**/.deploy_git/**",
+    "**/multisite/**"
   ],
   "typeAcquisition": {
     "enable": true,
