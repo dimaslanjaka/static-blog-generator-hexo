@@ -9,8 +9,8 @@ description: Website Management Indonesia is a blog about scripts, tips and tric
 keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
 timezone: 'Asia/Jakarta'
 language:
-  - id # Bahasa Indonesia
   - en # Default language
+  - id # Bahasa Indonesia
   - zh-TW # Traditional Chinese
   - zh-CN # Simplified Chinese
   - zh-HK
