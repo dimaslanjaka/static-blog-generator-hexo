@@ -46,7 +46,7 @@
     "@types/fs-extra": "^11.0.4",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/26bf141/releases/bin.tgz",
+    "binary-collections": "^2.0.5",
     "cross-env": "^7.0.3",
     "depcheck": "^1.4.7",
     "eslint": "^8.41.0",
@@ -68,6 +68,7 @@
   },
   "resolutions": {
     "node-sass": "9.0.0",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/master/releases/bin.tgz",
     "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo.tgz",
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo.tgz",
     "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-asset-link.tgz",
