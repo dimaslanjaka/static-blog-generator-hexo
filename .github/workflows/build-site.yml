@@ -38,7 +38,7 @@ jobs:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       node_version: 18.x
       YARN_CHECKSUM_BEHAVIOR: update
-      cache-key: mySiteCache
+      cache-key: mySiteCache-${{ hashFiles('**/lockfiles') }}
       cache-paths: |
         **/yarn.lock
         ./site/db.json
