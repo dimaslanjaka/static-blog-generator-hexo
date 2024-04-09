@@ -13,15 +13,15 @@ menu:
   # Archives: /archives/ || fas fa-archive
   # Tags: /tags/ || fas fa-tags
   # Categories: /categories/ || fas fa-folder-open
-  Login: /page/google/login.html || fab fa-google
   Tools||fas fa-list:
     Android Traffic Exchanger: /android-traffic-exchange || fas fa-robot
     Bot Detector: /page/bot-detect.html || fas fa-robot
     Cookies Manager: /page/cookies.html || fas fa-cookie
     Moment Timezone Playground: /page/moment-timezone.html || fas fa-clock
-  Quiz The Legend Of Neverland: /The Legend Of Neverland/Quiz.html || fas fa-folder-open
+    Login: /page/google/login.html || fab fa-google
+    Quiz The Legend Of Neverland: /The Legend Of Neverland/Quiz.html || fas fa-folder-open
   # Link: /link/ || fas fa-link
-  # About: /about/ || fas fa-heart
+  About: /about/ || fas fa-heart
 
 # Code Blocks (代碼相關)
 # --------------------------------------
