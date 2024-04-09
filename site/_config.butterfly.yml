@@ -15,6 +15,7 @@ menu:
   # Categories: /categories/ || fas fa-folder-open
   Login: /page/google/login.html || fab fa-google
   Tools||fas fa-list:
+    Android Traffic Exchanger: /android-traffic-exchange || fas fa-robot
     Bot Detector: /page/bot-detect.html || fas fa-robot
     Cookies Manager: /page/cookies.html || fas fa-cookie
     Moment Timezone Playground: /page/moment-timezone.html || fas fa-clock
