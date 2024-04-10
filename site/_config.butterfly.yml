@@ -20,6 +20,7 @@ menu:
     Moment Timezone Playground: /page/moment-timezone.html || fas fa-clock
     Login: /page/google/login.html || fab fa-google
     Quiz The Legend Of Neverland: /The Legend Of Neverland/Quiz.html || fas fa-folder-open
+    Android Engineer: /android-engineer/ || fab fa-android
   # Link: /link/ || fas fa-link
   About: /about/ || fas fa-heart
 
