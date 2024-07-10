@@ -21,6 +21,7 @@ menu:
     Login: /page/google/login.html || fab fa-google
     Quiz The Legend Of Neverland: /The Legend Of Neverland/Quiz.html || fas fa-folder-open
     Android Engineer: /android-engineer/ || fab fa-android
+    Free Proxy List: https://sh.webmanajemen.com || fas fa-globe
   # Link: /link/ || fas fa-link
   About: /about/ || fas fa-heart
 
