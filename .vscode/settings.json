@@ -51,6 +51,8 @@
   "emmet.syntaxProfiles": {
     "njk": "html",
   },
+  "eslint.debug": true,
+  "eslint.useFlatConfig": false,
   "eslint.format.enable": true,
   "eslint.trace.server": "messages",
   "editor.wordWrap": "on",
@@ -67,7 +69,21 @@
   ],
   "[nunjucks]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
+  },
+  "[njk]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
   },
   "[ejs]": {
     "editor.formatOnSave": false,
@@ -84,8 +100,35 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.formatOnSave": false, // enable json formating with default vscode formatter
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    },
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
   },
   "[markdown]": {
     "editor.formatOnSave": false,
@@ -94,10 +137,6 @@
       "source.organizeImports": "never",
       "source.fixAll.eslint": "never"
     }
-  },
-  "[jsonc]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescript]": {
     "editor.formatOnSave": false,
