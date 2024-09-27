@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const prettier = require('./.prettierrc.json');
+const prettier = require('./.prettierrc.json')
 
 /**
  * @type {import('eslint').ESLint.Options}
@@ -69,12 +69,14 @@ const config = {
   },
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '*.cjs'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off'
+        '@typescript-eslint/no-var-requires': 'off', // disable require warning on js files
+        '@typescript-eslint/no-require-imports': 'off', // disable ES6-style imports over require()
+        '@typescript-eslint/triple-slash-reference': 'off' // disable include refenrences definition files on js
       }
     }
   ]
-};
+}
 
-module.exports = config;
+module.exports = config
