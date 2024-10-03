@@ -913,7 +913,7 @@ inject:
   head:
     - <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/94406c3ac26b8fede322ec31e7895cf9b5f4e2d0/highlight.js/styles/github-dark.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   bottom:
-    - <script src="https://www.webmanajemen.com/page/assets/js/r-ads.js"></script>
+    # - <script src="https://www.webmanajemen.com/page/assets/js/r-ads.js"></script>
     - <script src="/page/assets/js/highlight.js"></script>
     - '<div style="display: none"><div id="top-ge-counter-container" data-site-id="113359"></div><script async src="//counter.top.ge/counter.js"></script><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?3860842&101" alt="myspace tracker" border="0"></a></div>'
     - '<script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script> <script> (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => { basicSubscriptions.init({ type: "NewsArticle", isPartOfType: ["Product"], isPartOfProductId: "CAow3ImsDA:openaccess", clientOptions: { theme: "light", lang: "en" }, }); }); </script>'
