@@ -1,0 +1,58 @@
+{
+  "name": "hexo-theme-flowbite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "files": [
+    "docs",
+    "languages",
+    "layout",
+    "scripts",
+    "source",
+    "_config.yml",
+    "_vendors.yml"
+  ],
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "name": "Dimas Lanjaka",
+    "url": "https://webmanajemen.com"
+  },
+  "license": "MIT",
+  "description": "Hexo theme made with flowbite",
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "cheerio": "^1.0.0",
+    "fs-extra": "^11.2.0",
+    "hexo-post-parser": "^1.2.14",
+    "hexo-renderers": "^2.0.5",
+    "highlight.js": "^11.10.0",
+    "jquery": "^3.7.1",
+    "lodash": "^4.17.21",
+    "sbg-utility": "^1.1.8"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/google.accounts": "^0.0.15",
+    "@types/jquery": "^3",
+    "@types/lodash": "^4",
+    "autoprefixer": "^10.4.20",
+    "flowbite": "^2.5.2",
+    "flowbite-typography": "^1.0.4",
+    "hexo": "^7.3.0",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-loader": "^8.1.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-embed": "^0.4.15",
+    "prettier-plugin-sql": "^0.18.1",
+    "rollup": "^4.24.0",
+    "sass": "^1.79.4",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2"
+  }
+}
