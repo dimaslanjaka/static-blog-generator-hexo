@@ -194,12 +194,15 @@ jobs:
           path: site/.deploy_git/assets
           token: '${{ secrets.ACCESS_TOKEN }}'
           lfs: 'true'
-      - uses: actions/cache/restore@v4
-        id: cache-restore
-        name: restore cache
+      - name: Cache initialize
+        id: cache
+        uses: actions/cache@v4
         with:
           path: ${{ env.cache-paths }}
-          key: ${{ env.cache-key }}
+          key: ${{ env.cache-key }}-${{ hashFiles('**/package.json', '**/package-lock.json', '**/yarn.lock') }}
+          restore-keys: |
+            ${{ env.cache-key }}-*
+            ${{ env.cache-key }}
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node_version }}
@@ -358,18 +361,3 @@ jobs:
           #git pull -X theirs
           git push
       - run: git status --porcelain
-      # overwrite cache key
-      - name: delete previous cache
-        if: ${{ steps.cache-restore.outputs.cache-hit }}
-        continue-on-error: true
-        run: |
-          gh extension install actions/gh-actions-cache
-          gh actions-cache delete "${{ env.cache-key }}" --confirm
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/cache/save@v4
-        id: cache-save
-        name: save cache
-        with:
-          path: ${{ env.cache-paths }}
-          key: ${{ env.cache-key }}
