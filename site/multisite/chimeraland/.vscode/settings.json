@@ -11,9 +11,9 @@
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "editor.formatOnSave": false,
   "[json]": {
@@ -40,7 +40,7 @@
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": false
+      "source.organizeImports": "never"
     }
   },
   "[css]": {

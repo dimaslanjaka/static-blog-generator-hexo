@@ -2,7 +2,6 @@
   "name": "wmi",
   "version": "3.0.0",
   "private": true,
-  "packageManager": "yarn@3.4.1",
   "scripts": {
     "prestart": "run-s build:prepare build:post",
     "start": "yarn server",
@@ -35,6 +34,11 @@
   "hexo": {
     "version": "7.1.1"
   },
+  "workspaces": [
+    "themes/flowbite",
+    "themes/claudia",
+    "themes/butterfly"
+  ],
   "dependencies": {
     "binary-collections": "^2.0.5",
     "bluebird": "^3.7.2",
@@ -70,7 +74,6 @@
     "hexo-seo": "^1.3.0",
     "hexo-server": "^3.0.0",
     "hexo-shortcodes": "^1.2.3",
-    "hexo-theme-claudia": "workspace:^",
     "hexo-util": "^3.3.0",
     "instant-indexing": "^1.0.4",
     "js-yaml": "^4.1.0",
