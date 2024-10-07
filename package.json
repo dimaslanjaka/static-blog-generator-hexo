@@ -88,7 +88,7 @@
     "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/43b9229/packages/sbg-cli/release/sbg-cli.tgz",
     "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/43b9229/packages/sbg-server/release/sbg-server.tgz",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/a2e797bc27975cba20ef4c87547841e6341bfcf4/release/nodejs-package-types.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/e445450/release/hexo-post-parser.tgz",
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/c955d99/release/hexo-post-parser.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/b5c7406/release/git-command-helper.tgz",
     "@types/git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/b5c7406/release/git-command-helper.tgz",
