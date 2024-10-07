@@ -1,4 +1,4 @@
-import spawn from 'cross-spawn';
+import * as spawn from 'cross-spawn';
 import dotenv from 'dotenv';
 import git, { SpawnOptions, spawnAsync } from 'git-command-helper';
 import Hexo from 'hexo';
