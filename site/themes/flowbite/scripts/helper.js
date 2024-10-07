@@ -4,11 +4,14 @@ var require$$0 = require('cheerio');
 var require$$1 = require('nunjucks');
 var require$$2 = require('hexo-util');
 var require$$0$1 = require('fs-extra');
-var require$$1$1 = require('path');
-var require$$0$2 = require('lodash');
-var require$$0$3 = require('hexo-post-parser');
-var require$$3 = require('sbg-utility');
-var require$$4 = require('sanitize-filename');
+var path = require('path');
+var hexoPostParser = require('hexo-post-parser');
+var sanitize = require('sanitize-filename');
+var sbgUtility = require('sbg-utility');
+var _ = require('lodash');
+var require$$0$2 = require('hexo');
+var require$$3 = require('yaml');
+var require$$4 = require('deepmerge-ts');
 
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -267,10 +270,10 @@ function requireInjector () {
 	if (hasRequiredInjector) return injector;
 	hasRequiredInjector = 1;
 	const fs = require$$0$1;
-	const path = require$$1$1;
+	const path$1 = path;
 
 	hexo.extend.helper.register("injectHeadHtml", function () {
-	  const file = path.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/head.html");
+	  const file = path$1.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/head.html");
 	  if (fs.existsSync(file)) {
 	    return fs.readFileSync(file, "utf-8");
 	  }
@@ -278,7 +281,7 @@ function requireInjector () {
 	});
 
 	hexo.extend.helper.register("injectBodyHtml", function () {
-	  const file = path.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/body.html");
+	  const file = path$1.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/body.html");
 	  if (fs.existsSync(file)) {
 	    return fs.readFileSync(file, "utf-8");
 	  }
@@ -286,7 +289,7 @@ function requireInjector () {
 	});
 
 	hexo.extend.helper.register("injectBeforePostHtml", function () {
-	  const file = path.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/before-post.html");
+	  const file = path$1.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/before-post.html");
 	  if (fs.existsSync(file)) {
 	    return fs.readFileSync(file, "utf-8");
 	  }
@@ -294,7 +297,7 @@ function requireInjector () {
 	});
 
 	hexo.extend.helper.register("injectAfterPostHtml", function () {
-	  const file = path.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/after-post.html");
+	  const file = path$1.join(hexo.base_dir, "source/_data/hexo-theme-flowbite/after-post.html");
 	  if (fs.existsSync(file)) {
 	    return fs.readFileSync(file, "utf-8");
 	  }
@@ -328,199 +331,200 @@ function requirePaginator () {
 	return paginator;
 }
 
-var post = {};
-
-var author = {};
-
 /**
  * get author name
- * @param {Partial<string|Record<string, any>|import("hexo/dist/hexo/index-d").HexoConfig>} author
+ * @param author
  * @returns
  */
-
-var hasRequiredAuthor;
-
-function requireAuthor () {
-	if (hasRequiredAuthor) return author;
-	hasRequiredAuthor = 1;
-	function getAuthorName(author) {
-	  if (typeof author === "string") return author;
-	  if (author && typeof author === "object" && !Array.isArray(author)) {
-	    if (typeof author.name === "string") return author.name;
-	    if (typeof author.nick === "string") return author.nick;
-	    if (typeof author.nickname === "string") return author.nickname;
-	    if (typeof author.author_obj === "object") return getAuthorName(author.author_obj);
-	  }
-	}
-
-	hexo.extend.helper.register("getAuthorName", function (author, fallback) {
-	  const resultAuthor = getAuthorName(author);
-	  if (resultAuthor) return resultAuthor;
-	  const resultFallback = getAuthorName(fallback);
-	  if (resultFallback) return resultFallback;
-	  return getAuthorName(hexo.config) || "Unknown";
-	});
-	return author;
+function getAuthorName(author) {
+    if (typeof author === "string")
+        return author;
+    if (author && typeof author === "object" && !Array.isArray(author)) {
+        if (typeof author.name === "string")
+            return author.name;
+        if (typeof author.nick === "string")
+            return author.nick;
+        if (typeof author.nickname === "string")
+            return author.nickname;
+        if (typeof author.author_obj === "object")
+            return getAuthorName(author.author_obj);
+    }
 }
+hexo.extend.helper.register("getAuthorName", function (author, fallback) {
+    var resultAuthor = getAuthorName(author);
+    if (resultAuthor)
+        return resultAuthor;
+    var resultFallback = getAuthorName(fallback);
+    if (resultFallback)
+        return resultFallback;
+    return getAuthorName(hexo.config) || "Unknown";
+});
 
-var thumbnail = {};
-
-var hasRequiredThumbnail;
-
-function requireThumbnail () {
-	if (hasRequiredThumbnail) return thumbnail;
-	hasRequiredThumbnail = 1;
-	const _ = require$$0$2;
-	const cheerio = require$$0;
-
-	/**
-	 * get all images from page/post
-	 * @param {Partial<import("hexo/dist/types").PageSchema|import("hexo/dist/types").PostSchema>} page
-	 */
-	function getImages(page) {
-	  /**
-	   * @type {string[]}
-	   */
-	  const results = [];
-	  if (page && typeof page === "object") {
-	    if (typeof page.thumbnail === "string") results.push(page.thumbnail);
-	    if (typeof page.cover === "string") results.push(page.cover);
-	    if (Array.isArray(page.photos)) {
-	      results.push(...page.photos);
-	    }
-	  }
-	  if (page.content || page._content) {
-	    // Collect all image URLs from url
-	    const $ = cheerio.load(page.content || page._content);
-	    $("img").each((_, img) => {
-	      const element = $(img);
-
-	      // Collect URLs from 'src', 'data-src', and 'srcset'
-	      const src = element.attr("src");
-	      const dataSrc = element.attr("data-src");
-	      const srcset = element.attr("srcset");
-
-	      if (src) results.push(src);
-	      if (dataSrc) results.push(dataSrc);
-
-	      // If 'srcset' exists, split it into individual URLs (ignoring size descriptors)
-	      if (srcset) {
-	        const srcsetUrls = srcset.split(",").map((entry) => entry.trim().split(" ")[0]);
-	        results.push(...srcsetUrls);
-	      }
-	    });
-	  }
-	  const final = _.filter(_.uniq(results), _.identity).filter((str) => !str.includes("no-image-svgrepo-com"));
-	  return final;
-	}
-
-	hexo.extend.helper.register("getImages", getImages);
-
-	/**
-	 * get thumbnail url
-	 * @param {import("hexo/dist/hexo/locals-d").HexoLocalsData} page
-	 */
-	function getThumbnail(page) {
-	  if (page && typeof page === "object") {
-	    // priority defined thumbnail in frontmatter
-	    if (typeof page.thumbnail === "string") return page.thumbnail;
-	    if (typeof page.cover === "string") return page.cover;
-	  }
-	  return _.sample(getImages(page));
-	}
-
-	hexo.extend.helper.register("getThumbnail", function (page) {
-	  const result = getThumbnail(page);
-	  if (result) return result;
-	  return "https://rawcdn.githack.com/dimaslanjaka/public-source/6a0117ddb2ea327c80dbcc7327cceca1e1b7794e/images/no-image-svgrepo-com.svg";
-	});
-	return thumbnail;
+hexoPostParser.setConfig(hexo.config);
+// Queue to hold the pages to be processed
+var pageQueue = [];
+var isProcessing = false;
+function getCachePath(page) {
+    var hash;
+    if (page && "full_source" in page)
+        sbgUtility.md5FileSync(page.full_source);
+    if (!hash)
+        hash = sbgUtility.md5(page.content || page._content);
+    return path.join(process.cwd(), "tmp/hexo-theme-flowbite/caches/post-" +
+        sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
 }
-
-var metadata = {};
-
-var hasRequiredMetadata;
-
-function requireMetadata () {
-	if (hasRequiredMetadata) return metadata;
-	hasRequiredMetadata = 1;
-	const hexoPostParser = require$$0$3;
-	const _ = require$$0$2;
-	const path = require$$1$1;
-	const { md5, fs, jsonStringifyWithCircularRefs, jsonParseWithCircularRefs } = require$$3;
-	const sanitize = require$$4;
-
-	hexoPostParser.setConfig(hexo.config);
-
-	/**
-	 *
-	 * @param {import("hexo/dist/types").PostSchema|import("hexo/dist/types").PageSchema} page
-	 */
-	function preprocess(page) {
-	  const cachePath = path.join(
-	    process.cwd(),
-	    "tmp/hexo-theme-flowbite/caches/post-" +
-	      sanitize((page.title || page._id).substring(0, 100) + "-" + md5(page.content || page._content))
-	  );
-	  fs.ensureDirSync(path.dirname(cachePath));
-	  hexoPostParser
-	    .parsePost(page.full_source, { fix: true })
-	    .then((result) => {
-	      // Remove keys with undefined or null values
-	      Object.keys(result.metadata).forEach((key) => {
-	        if (result.metadata[key] === undefined || result.metadata[key] === null) {
-	          delete result.metadata[key];
-	        }
-	      });
-	      try {
-	        fs.writeFileSync(cachePath, jsonStringifyWithCircularRefs(result));
-	      } catch (error) {
-	        hexo.log.error("fail save post info", error.message);
-	      }
-	    })
-	    .catch(_.noop);
-	  if (fs.existsSync(cachePath)) {
-	    try {
-	      const extract = jsonParseWithCircularRefs(fs.readFileSync(cachePath, "utf-8"));
-	      return extract;
-	    } catch (error) {
-	      hexo.log.error("fail load post info", error.message);
-	    }
-	  }
-	}
-
-	hexo.extend.helper.register("pageInfo", (page) => {
-	  const result = preprocess(page);
-	  if (result && result.metadata) {
-	    // Assign values to the page object if they exist and are not undefined or null
-	    for (const key in result.metadata) {
-	      if (["type"].includes(key)) continue;
-	      if (Object.hasOwnProperty.call(result.metadata, key)) {
-	        const value = result.metadata[key];
-	        if (value !== undefined && value !== null && !page[key]) {
-	          // fix: thumbnail always undefined
-	          if (key === "cover" && value.includes("no-image-svgrepo")) continue;
-	          if (key === "thumbnail" && value.includes("no-image-svgrepo")) continue;
-	          page[key] = value;
-	        }
-	      }
-	    }
-	  }
-	  return page;
-	});
-	return metadata;
+/**
+ * Preprocess a page and save its parsed result to a cache file
+ *
+ * @param page - The page object to be processed.
+ * @param callback - The callback that handles the result or error.
+ */
+function preprocess(page, callback) {
+    var cachePath = getCachePath(page);
+    sbgUtility.fs.ensureDirSync(path.dirname(cachePath));
+    hexoPostParser
+        .parsePost(page.full_source, { fix: true })
+        .then(function (result) {
+        // Remove keys with undefined or null values
+        Object.keys(result.metadata).forEach(function (key) {
+            if (result.metadata[key] === undefined || result.metadata[key] === null) {
+                delete result.metadata[key];
+            }
+        });
+        try {
+            sbgUtility.fs.writeFileSync(cachePath, sbgUtility.jsonStringifyWithCircularRefs(result));
+            callback(null, { result: result, cachePath: cachePath }); // Pass cachePath in the callback
+        }
+        catch (error) {
+            hexo.log.error("fail save post info", error.message);
+            callback(error, null); // Invoke callback on error
+        }
+    })
+        .catch(function (err) {
+        callback(err, null); // Catch parsePost errors
+    });
 }
-
-var hasRequiredPost;
-
-function requirePost () {
-	if (hasRequiredPost) return post;
-	hasRequiredPost = 1;
-	requireAuthor();
-	requireThumbnail();
-	requireMetadata();
-	return post;
+/**
+ * Schedule the processing of pages one by one.
+ */
+function scheduleProcessing() {
+    if (isProcessing || pageQueue.length === 0) {
+        return; // If already processing or no items in the queue, exit
+    }
+    isProcessing = true;
+    var page = pageQueue.shift(); // Get the first item in the queue
+    if (page) {
+        preprocess(page, function (err, _data) {
+            if (err) {
+                hexo.log.error("Error processing page:", err.message);
+            }
+            else {
+                isProcessing = false;
+                setTimeout(scheduleProcessing, 500); // Continue to next item after delay (optional)
+            }
+        });
+    }
 }
+/**
+ * Add pages to the queue and start processing.
+ *
+ * @param page - The page object to be added to the queue.
+ */
+function addToQueue(page) {
+    pageQueue.push(page);
+    scheduleProcessing(); // Start processing if not already running
+}
+hexo.extend.helper.register("pageInfo", function (page) {
+    addToQueue(page);
+    var cachePath = getCachePath(page);
+    if (sbgUtility.fs.existsSync(cachePath)) {
+        try {
+            var result = sbgUtility.jsonParseWithCircularRefs(sbgUtility.fs.readFileSync(cachePath, "utf-8"));
+            if (result && result.metadata) {
+                // Assign values to the page object if they exist and are not undefined or null
+                for (var key in result.metadata) {
+                    if (["type"].includes(key))
+                        continue;
+                    if (Object.hasOwnProperty.call(result.metadata, key)) {
+                        var value = result.metadata[key];
+                        if (value !== undefined && value !== null && !page[key]) {
+                            // fix: thumbnail always undefined
+                            if (key === "cover" && value.includes("no-image-svgrepo"))
+                                continue;
+                            if (key === "thumbnail" && value.includes("no-image-svgrepo"))
+                                continue;
+                            page[key] = value;
+                        }
+                    }
+                }
+            }
+        }
+        catch (error) {
+            hexo.log.error("fail load post info", error.message);
+        }
+    }
+    return page; // Return the original page for now
+});
+
+/**
+ * get all images from page/post
+ * @param page
+ */
+function getImages(page) {
+    var results = [];
+    if (page && typeof page === "object") {
+        if (typeof page.thumbnail === "string")
+            results.push(page.thumbnail);
+        if (typeof page.cover === "string")
+            results.push(page.cover);
+        if (Array.isArray(page.photos)) {
+            results.push.apply(results, page.photos);
+        }
+    }
+    if (page.content || page._content) {
+        // Collect all image URLs from url
+        var $_1 = require$$0.load(page.content || page._content);
+        $_1("img").each(function (_, img) {
+            var element = $_1(img);
+            // Collect URLs from 'src', 'data-src', and 'srcset'
+            var src = element.attr("src");
+            var dataSrc = element.attr("data-src");
+            var srcset = element.attr("srcset");
+            if (src)
+                results.push(src);
+            if (dataSrc)
+                results.push(dataSrc);
+            // If 'srcset' exists, split it into individual URLs (ignoring size descriptors)
+            if (srcset) {
+                var srcsetUrls = srcset.split(",").map(function (entry) { return entry.trim().split(" ")[0]; });
+                results.push.apply(results, srcsetUrls);
+            }
+        });
+    }
+    var final = _.filter(_.uniq(results), _.identity).filter(function (str) { return !str.includes("no-image-svgrepo-com"); });
+    return final;
+}
+hexo.extend.helper.register("getImages", getImages);
+/**
+ * get thumbnail url
+ * @param {import("hexo/dist/hexo/locals-d").HexoLocalsData} page
+ */
+function getThumbnail(page) {
+    if (page && typeof page === "object") {
+        // priority defined thumbnail in frontmatter
+        if (typeof page.thumbnail === "string")
+            return page.thumbnail;
+        if (typeof page.cover === "string")
+            return page.cover;
+    }
+    return _.sample(getImages(page));
+}
+hexo.extend.helper.register("getThumbnail", function (page) {
+    var result = getThumbnail(page);
+    if (result)
+        return result;
+    return "https://rawcdn.githack.com/dimaslanjaka/public-source/6a0117ddb2ea327c80dbcc7327cceca1e1b7794e/images/no-image-svgrepo-com.svg";
+});
 
 var utils = {};
 
@@ -552,6 +556,69 @@ function requireUtils () {
 	return utils;
 }
 
+var config;
+var hasRequiredConfig;
+
+function requireConfig () {
+	if (hasRequiredConfig) return config;
+	hasRequiredConfig = 1;
+	const Hexo = require$$0$2;
+	const path$1 = path;
+	const fs = require$$0$1;
+	const yaml = require$$3;
+	const { deepmerge } = require$$4;
+
+	// themes/<your_theme>/scripts/example.js
+	function themeConfig() {
+	  let config = {};
+
+	  const theme_names = [hexo.config.theme, "hexo-theme-" + hexo.config.theme];
+	  const theme_dirs = theme_names
+	    .map((name) => {
+	      return [path$1.join(hexo.base_dir, "themes", name), path$1.join(hexo.base_dir, "node_modules", name)];
+	    })
+	    .flat()
+	    .filter(fs.existsSync);
+	  const theme_config_file = theme_dirs
+	    .map((dir) => path$1.join(dir, "_config.yml"))
+	    .filter((filePath) => fs.existsSync(filePath))[0];
+	  if (theme_config_file) {
+	    config = yaml.parse(fs.readFileSync(theme_config_file, "utf-8"));
+	  }
+
+	  const user_defined_theme_config_file = theme_names
+	    .map((name) => {
+	      return [
+	        path$1.join(hexo.base_dir, `_config.${name}.yml`),
+	        path$1.join(hexo.base_dir, `_config.hexo-theme-${name}.yml`)
+	      ];
+	    })
+	    .flat()
+	    .filter((filePath) => fs.existsSync(filePath))[0];
+	  if (user_defined_theme_config_file) {
+	    config = Object.assign(config, yaml.parse(fs.readFileSync(user_defined_theme_config_file, "utf-8")));
+	  }
+
+	  if (this instanceof Hexo) {
+	    config = deepmerge(config, this.config.theme_config);
+	  } else {
+	    config = deepmerge(config, hexo.config.theme_config);
+	  }
+
+	  return config;
+	}
+
+	// Please see: https://hexo.io/api/filter
+	// hexo.extend.filter.register("after_init", themeConfig);
+
+	// Also you can use it in a template engine (e.g: EJS)
+	// https://hexo.io/docs/helpers
+	hexo.extend.helper.register("getThemeConfig", themeConfig);
+
+	config = themeConfig;
+	return config;
+}
+
 var hasRequiredScripts;
 
 function requireScripts () {
@@ -562,8 +629,11 @@ function requireScripts () {
 	requireHelpers();
 	requireInjector();
 	requirePaginator();
-	requirePost();
+
+
+
 	requireUtils();
+	requireConfig();
 	return scripts;
 }
 

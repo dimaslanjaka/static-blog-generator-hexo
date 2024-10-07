@@ -17,7 +17,7 @@
           href="//www.webmanajemen.com/favicon.ico" />
     <link rel="stylesheet"
           href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css" />
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ url_for("/css/style.css") }}">
     {{ injectHeadHtml() }}
   </head>
   <body class="bg-white dark:bg-slate-800 dark:text-slate-200">
@@ -27,7 +27,7 @@
     </main>
     {% include 'partials/footer.njk' %}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="{{ url_for('/js/script.js') }}"></script>
     {{ injectBodyHtml() }}
   </body>
 </html>
