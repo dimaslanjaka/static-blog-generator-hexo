@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+# absolute path working directory
+basecwd=${PWD}
+# base script directory
+basedir=$(dirname "$0")
+# absolute path script directory
+SCRIPT_DIR=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
+# get script path
+SCRIPT=$(realpath "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
+# Detect Cygwin or MinGW
+case "$(uname)" in
+  *CYGWIN*)
+    basedir=$(cygpath -w "$basedir")
+    # make cygwin bin as priority
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+    ;;
+  *MINGW*)
+    # make mingw bin as priority
+    export PATH="/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+    ;;
+esac
+
+# parse and export .env file (dotenv)
+if [ -f ".env" ]; then
+  # Export the vars in .env into your shell:
+  export $(egrep -v '^#' .env | xargs)
+fi
+
+# Helper function to check if it's time to run a job
+should_run_job() {
+  local file_path=$1
+  local interval_hours=$2
+
+  current_time=$(date +%s)                       # Current timestamp in seconds
+  interval_seconds=$((interval_hours * 60 * 60)) # Convert hours to seconds
+
+  # Check if timestamp file exists
+  if [ -f "$file_path" ]; then
+    last_fetch=$(cat "$file_path")
+    elapsed_time=$((current_time - last_fetch))
+
+    if [ $elapsed_time -ge $interval_seconds ]; then
+      # Update the timestamp file with the current time
+      echo "$current_time" >"$file_path"
+      return 0 # True, it's time to run the job
+    else
+      return 1 # False, it's not time to run the job
+    fi
+  else
+    # Create the file and update it with the current time
+    echo "$current_time" >"$file_path"
+    return 0 # True, file not found, so it's time to run the job
+  fi
+}
+
+mkdir -p tmp/crontab
+
+# run every 7 days
+if should_run_job "tmp/crontab/7-d" 168; then
+  yarn cache clean
+fi
