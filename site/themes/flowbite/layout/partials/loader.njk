@@ -10,7 +10,7 @@
       <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 dark:border-blue-300"></div>
     </div>
   {% endif %}
-{% else if theme.loading_animation %}
+{% elif theme.loading_animation %}
   {# show full page loading animation when theme.loading_animation is boolean #}
   <div id="preloader"
        class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
