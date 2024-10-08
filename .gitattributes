@@ -8,6 +8,9 @@
 *.yml       text eol=lf
 *.ini       text eol=lf
 *.conf      text eol=lf
+*.md        text eol=lf
+*.markdown   text eol=lf
+*.rst       text eol=lf
 *.vcproj    text eol=crlf
 *.sh        text eol=lf
 *.ts        text eol=lf
