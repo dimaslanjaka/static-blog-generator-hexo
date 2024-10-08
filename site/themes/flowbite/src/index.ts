@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initFancybox();
   initToc();
   initClickable();
-  initloader();
 
   // layout/partials/nav.njk
   const mobileMenuButton = document.querySelector('button[aria-controls="mobile-menu"]');
@@ -23,4 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileMenu.classList.toggle("hidden");
     });
   }
+});
+
+window.addEventListener("load", function () {
+  // fix: loader not hidden after page load
+  initloader();
 });

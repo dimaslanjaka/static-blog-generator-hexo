@@ -61372,12 +61372,17 @@
         }
     }
 
+    /**
+     * loading animation remover.
+     * this should run inside `window.addEventListener("load"` or in global scope
+     */
     function initloader() {
-        window.addEventListener("load", function () {
-            var preloader = document.getElementById("preloader");
-            if (preloader)
-                preloader.style.display = "none";
-        });
+        var preloader = document.getElementById("preloader");
+        var preloaderMini = document.getElementById("preloader-mini");
+        if (preloader)
+            preloader.style.display = "none";
+        if (preloaderMini)
+            preloaderMini.style.display = "none";
     }
 
     function initToc() {
@@ -61414,7 +61419,6 @@
         initFancybox();
         initToc();
         initClickable();
-        initloader();
         // layout/partials/nav.njk
         var mobileMenuButton = document.querySelector('button[aria-controls="mobile-menu"]');
         var mobileMenu = document.getElementById("mobile-menu");
@@ -61426,6 +61430,10 @@
                 mobileMenu.classList.toggle("hidden");
             });
         }
+    });
+    window.addEventListener("load", function () {
+        // fix: loader not hidden after page load
+        initloader();
     });
 
 })();

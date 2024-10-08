@@ -45,7 +45,11 @@ Show loading animation before page fully loaded. (`boolean`)
 - apply to **theme yaml config**
 
 ```yaml
-loading_animation: true
+loading_animation:
+  enable: true
+  # type mini: small loader fixed on top right
+  # type full: full page loader
+  type: mini
 ```
 
 ### Gallery
