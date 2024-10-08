@@ -21,6 +21,7 @@
     {{ injectHeadHtml() }}
   </head>
   <body class="bg-white dark:bg-slate-800 dark:text-slate-200">
+    {% include 'partials/loader.njk' %}
     {% include 'partials/header-dropdown.njk' %}
     <main class="mx-4">
       {% block content %}{% endblock %}

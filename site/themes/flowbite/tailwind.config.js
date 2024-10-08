@@ -26,6 +26,17 @@ module.exports = {
         silver: "#c0c0c0",
         mutedGray: "#b0b0b0",
         lightGray: "#d3d3d3"
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            pre: {
+              // background color should same with .hljs background color
+              // see src/highlight
+              "background-color": "#22272e"
+            }
+          }
+        }
       }
     }
   },

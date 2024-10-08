@@ -61372,6 +61372,14 @@
         }
     }
 
+    function initloader() {
+        window.addEventListener("load", function () {
+            var preloader = document.getElementById("preloader");
+            if (preloader)
+                preloader.style.display = "none";
+        });
+    }
+
     function initToc() {
         // Table of content click event
         // Select all TOC links
@@ -61406,6 +61414,7 @@
         initFancybox();
         initToc();
         initClickable();
+        initloader();
         // layout/partials/nav.njk
         var mobileMenuButton = document.querySelector('button[aria-controls="mobile-menu"]');
         var mobileMenu = document.getElementById("mobile-menu");

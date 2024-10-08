@@ -1,4 +1,18 @@
+## Preview
+
+- [https://www.webmanajemen.com/hexo-themes/hexo-theme-flowbite/](https://www.webmanajemen.com/hexo-themes/hexo-theme-flowbite/)
+
+## Installation
+
+[Read Here](https://github.com/dimaslanjaka/hexo-themes#readme)
+
 ## Configuration
+
+> Before starting. Make sure the location of your theme is.
+>
+> when theme in `themes/flowbite` the yaml config filename is `_config.flowbite.yml`
+>
+> when theme in `themes/hexo-theme-flowbite` the yaml config filename is `_config.hexo-theme-flowbite.yml`
 
 ### Syntax highlighter
 
@@ -24,11 +38,21 @@ prismjs:
   tab_replace: '  ' # replace tabs with 2 spaces
 ```
 
+### Loading animation
+
+Show loading animation before page fully loaded. (`boolean`)
+
+- apply to **theme yaml config**
+
+```yaml
+loading_animation: true
+```
+
 ### Gallery
 
 Show gallery each post (`boolean`)
 
-- apply to `_config.flowbite.yml`
+- apply to **theme yaml config**
 
 ```yml
 gallery: true
@@ -38,7 +62,7 @@ gallery: true
 
 Integrate disqus comment system (`string`)
 
-- apply to `_config.yml`
+- apply to **site yaml config**
 
 ```yaml
 disqus_shortname: YOUR_DISQUS_USERNAME

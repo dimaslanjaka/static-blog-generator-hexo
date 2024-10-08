@@ -1,6 +1,7 @@
 import { initClickable } from "./clickable";
 import initFancybox from "./fancybox";
 import { highlightMain, initClipBoard } from "./highlight";
+import initloader from "./loader";
 import initToc from "./toc";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFancybox();
   initToc();
   initClickable();
+  initloader();
 
   // layout/partials/nav.njk
   const mobileMenuButton = document.querySelector('button[aria-controls="mobile-menu"]');

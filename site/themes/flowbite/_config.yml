@@ -1,3 +1,5 @@
+# Navigation menu links
+# footer navigation not support submenu yet, just print single navigation link.
 nav:
   - text: About
     link: /about
@@ -16,5 +18,9 @@ nav:
       - text: "Sub Menu 3"
         link: "#"
         divider: true
+# Top navbar icon
 nav_icon: https://flowbite.com/docs/images/logo.svg
+# Show gallery images after post/page
 gallery: true
+# Show loading animation before page fully loaded
+loading_animation: true
