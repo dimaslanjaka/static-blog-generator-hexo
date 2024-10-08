@@ -82,7 +82,7 @@ jobs:
             **/.yarn/cache*
             **/node_modules
             ./tmp
-          key: mySiteCache-cache-cleaner
+          key: mySiteCache-${{ hashFiles('**/.husky/hash.txt', '_config.yml', '**/yarn.lock') }}
           restore-keys: |
             mySiteCache-
             mySiteCache

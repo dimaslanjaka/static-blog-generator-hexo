@@ -199,7 +199,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.cache-paths }}
-          key: ${{ env.cache-key }}-${{ hashFiles('**/package.json', '**/package-lock.json', '**/yarn.lock') }}
+          key: ${{ env.cache-key }}-${{ hashFiles('**/.husky/hash.txt', '**/package.json', '**/package-lock.json', '**/yarn.lock') }}
           restore-keys: |
             ${{ env.cache-key }}-*
             ${{ env.cache-key }}
