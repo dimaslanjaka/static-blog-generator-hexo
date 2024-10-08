@@ -17,7 +17,7 @@
     "generate:sitemap": "sbg generate sitemap",
     "generate": "run-s \"generate:**\"",
     "generate:copy": "sbg deploy copy",
-    "post--chimera": "cd multisite/chimeraland && yarn install && yarn run build",
+    "post-chimera": "cd multisite/chimeraland && yarn install && yarn run build",
     "post:standalone": "sbg post standalone",
     "post:copy": "sbg post copy",
     "post": "run-s \"post:**\"",

@@ -68,30 +68,24 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            ~/.cache/pip
-            ./dist/
-            ./tmp/
-            src/*.sqlite*
-            src/*.mmdb
-            node_modules/
-            .yarn/caches/
-            .yarn/*.gz
-            ./venv/
             ${{ env.pip_cache_dir }}
             ${{ env.NUITKA_CACHE_DIR }}
-            *.lock
-            *.txt
-            package-lock.json
-            assets/proxies/
-            vendor/
-            ${{ env.USERPROFILE }}\AppData\Local\Nuitka\Nuitka\Cache
-            $HOME/AppData/Local/Nuitka/Nuitka/Cache
-            config/
-            .cache/
-            working.json
-          key: ${{ runner.os }}-cache-cleaner
+            ~/.cache/pip
+            **/yarn.lock
+            ./site/db.json
+            ./site/public
+            ./site/tmp
+            ./site/source/_posts
+            ./site/multisite/chimeraland/tmp
+            ./site/src-posts/chimeraland
+            **/dist
+            **/.yarn/cache*
+            **/node_modules
+            ./tmp
+          key: mySiteCache-cache-cleaner
           restore-keys: |
-            ${{ runner.os }}-
+            mySiteCache-
+            mySiteCache
 
       - name: Install Dependencies
         run: |
