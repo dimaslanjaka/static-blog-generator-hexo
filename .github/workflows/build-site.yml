@@ -235,8 +235,8 @@ jobs:
           YARN_CHECKSUM_BEHAVIOR=update yarn install
       - run: yarn run postinstall
       - run: yarn workspace wmi run build:prepare
-      - run: yarn workspace wmi run post:chimera
-      - run: yarn workspace wmi run post:chimera
+      #- run: yarn workspace wmi run post:chimera
+      #- run: yarn workspace wmi run post:chimera
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
       - run: yarn workspace wmi exec "hexo clean"
