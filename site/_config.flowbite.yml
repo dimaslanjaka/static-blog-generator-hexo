@@ -1,3 +1,5 @@
+# Navigation menu links
+# footer navigation not support submenu yet, just print single navigation link.
 nav:
   - text: About
     link: /about
@@ -11,10 +13,22 @@ nav:
     submenu:
       - text: "Quiz The Legend Of Neverland"
         link: "https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html"
+  - text: Utilities
+    submenu:
       - text: "PHP Proxy Hunter"
         link: "https://sh.webmanajemen.com/proxyManager.html"
       - text: "Python Proxy Hunter"
         link: "https://sh.webmanajemen.com:8443/proxy/"
+      - text: "Android Flashtool Utility"
+        link: "/android-engineer"
         divider: true
+# Top navbar icon
 nav_icon: /logo.svg
+# Show gallery images after post/page
 gallery: true
+# Show loading animation before page fully loaded
+loading_animation:
+  enable: true
+  # type mini: small loader fixed on top right
+  # type full: full page loader
+  type: mini
