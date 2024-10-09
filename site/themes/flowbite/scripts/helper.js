@@ -365,11 +365,17 @@ hexoPostParser.setConfig(hexo.config);
 var pageQueue = [];
 var isProcessing = false;
 function getCachePath(page) {
-    var hash;
-    if (page && "full_source" in page)
+    var hash = "empty-hash";
+    if (page && "full_source" in page && page.full_source)
         sbgUtility.md5FileSync(page.full_source);
-    if (!hash)
-        hash = sbgUtility.md5(page.content || page._content);
+    if (hash === "empty-hash") {
+        if (page.content) {
+            hash = sbgUtility.md5(page.content);
+        }
+        else if (page._content) {
+            hash = sbgUtility.md5(page._content);
+        }
+    }
     return path.join(process.cwd(), "tmp/hexo-theme-flowbite/caches/post-" +
         sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
 }
@@ -380,23 +386,37 @@ function getCachePath(page) {
  * @param callback - The callback that handles the result or error.
  */
 function preprocess(page, callback) {
+    if (!page.full_source) {
+        hexo.log.warn("fail parse metadata from", page.title || page.subtitle || page.permalink);
+        return;
+    }
     var cachePath = getCachePath(page);
+    if (sbgUtility.fs.existsSync(cachePath)) {
+        // skip already parsed metadata
+        return;
+    }
     sbgUtility.fs.ensureDirSync(path.dirname(cachePath));
     hexoPostParser
         .parsePost(page.full_source, { fix: true })
         .then(function (result) {
+        if (!result.metadata)
+            return;
         // Remove keys with undefined or null values
-        Object.keys(result.metadata).forEach(function (key) {
+        var keys = Object.keys(result.metadata);
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
             if (result.metadata[key] === undefined || result.metadata[key] === null) {
                 delete result.metadata[key];
             }
-        });
+        }
         try {
             sbgUtility.fs.writeFileSync(cachePath, sbgUtility.jsonStringifyWithCircularRefs(result));
             callback(null, { result: result, cachePath: cachePath }); // Pass cachePath in the callback
         }
         catch (error) {
             hexo.log.error("fail save post info", error.message);
+            if (sbgUtility.fs.existsSync(cachePath))
+                sbgUtility.fs.rm(cachePath, { force: true, recursive: true });
             callback(error, null); // Invoke callback on error
         }
     })

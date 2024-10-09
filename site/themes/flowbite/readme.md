@@ -14,6 +14,9 @@
 >
 > when theme in `themes/hexo-theme-flowbite` the yaml config filename is `_config.hexo-theme-flowbite.yml`
 
+- [Full hexo-theme-flowbite config and description here](https://github.com/dimaslanjaka/hexo-themes/blob/master/themes/hexo-theme-flowbite/_config.yml)
+- [Full hexo-theme-flowbite config on production](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/site/_config.flowbite.yml)
+
 ### Syntax highlighter
 
 This theme only working for highlight.js with below configuration
@@ -76,9 +79,12 @@ disqus_shortname: YOUR_DISQUS_USERNAME
 
 ### Code injection
 
+Inject your own widget html [see folder](./source/_data/hexo-theme-flowbite/)
+
 | File Path | Description |
 | :--- | :--- |
 | `source/_data/hexo-theme-flowbite/head.html` | inject html codes before `</head>` |
 | `source/_data/hexo-theme-flowbite/body.html` | inject html codes before `</body>` |
 | `source/_data/hexo-theme-flowbite/before-post.html` | inject html before post |
 | `source/_data/hexo-theme-flowbite/after-post.html` | inject html after post |
+
