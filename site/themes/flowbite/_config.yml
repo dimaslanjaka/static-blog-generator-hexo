@@ -15,6 +15,15 @@ nav:
         link: "#"
       - text: "Sub Menu 2"
         link: "#"
+        divider: true # add divider before this item
+      - text: "Sub Menu 3"
+        link: "#"
+  - text: Sub Menu 2
+    submenu:
+      - text: "Sub Menu 1"
+        link: "#"
+      - text: "Sub Menu 2"
+        link: "#"
       - text: "Sub Menu 3"
         link: "#"
         divider: true # add divider before this item
