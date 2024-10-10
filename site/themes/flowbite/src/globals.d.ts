@@ -1,4 +1,4 @@
-import google from '@types/google.accounts';
+import google from "@types/google.accounts";
 
 // Code Splitting and Loading Other Resources
 declare let require: {

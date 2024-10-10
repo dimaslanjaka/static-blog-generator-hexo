@@ -74,6 +74,7 @@
     "hexo-seo": "^1.3.0",
     "hexo-server": "^3.0.0",
     "hexo-shortcodes": "^1.2.3",
+    "hexo-theme-flowbite": "*",
     "hexo-util": "^3.3.0",
     "instant-indexing": "^1.0.4",
     "js-yaml": "^4.1.0",

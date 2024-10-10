@@ -1,9 +1,8 @@
 <nav class="bg-gray-900 mb-4">
-  <!-- Changed from bg-gray-800 to bg-gray-900 -->
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
+      <!-- Mobile Menu Button -->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button -->
         <button type="button"
                 class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white"
                 aria-controls="mobile-menu"
@@ -25,20 +24,38 @@
           </svg>
         </button>
       </div>
+      <!-- Logo and Title -->
       <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-        <div class="flex-shrink-0">
-          <a href="{{ url_for("/") }}" class="text-white text-lg font-semibold">Fingerprint Browser</a>
+        <div class="flex-shrink-0 flex items-center">
+          <a href="{{ url_for("/") }}">
+            <img src="{{ url_for(theme.nav_icon) }}" alt="Logo" class="h-8 w-auto">
+          </a>
+          <a href="{{ url_for("/") }}" class="text-white text-lg font-semibold ml-2">{{ config.title }}</a>
         </div>
-        <div class="hidden sm:block sm:ml-6">
-          <div class="flex space-x-4">
-            <a href="{{ url_for("/") }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            {% if theme.nav %}
-              {% for item in theme.nav %}
+      </div>
+      <!-- Desktop Navigation Menu -->
+      <div class="hidden sm:block sm:ml-6">
+        <div class="flex space-x-4">
+          {% if theme.nav %}
+            {% for item in theme.nav %}
+              <div class="relative group">
                 <a href="{{ item.link }}"
-                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ item.text }}</a>
-              {% endfor %}
-            {% endif %}
-          </div>
+                   class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  {{ item.text }}
+                  {% if item.submenu %}<i class="fa-thin fa-caret-down ml-2"></i>{% endif %}
+                </a>
+                <!-- Dropdown for submenu -->
+                {% if item.submenu %}
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    {% for submenu in item.submenu %}
+                      <a href="{{ submenu.link }}"
+                         class="block px-4 py-2 text-sm hover:bg-gray-700">{{ submenu.text }}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
     </div>
@@ -49,8 +66,21 @@
       <a href="{{ url_for("/") }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
       {% if theme.nav %}
         {% for item in theme.nav %}
-          <a href="{{ item.link }}"
-             class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{ item.text }}</a>
+          <div class="relative group">
+            <a href="{{ item.link }}"
+               class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              {{ item.text }}
+              {% if item.submenu %}<i class="fa-thin fa-caret-down ml-2"></i>{% endif %}
+            </a>
+            {% if item.submenu %}
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                {% for submenu in item.submenu %}
+                  <a href="{{ submenu.link }}"
+                     class="block px-4 py-2 text-sm hover:bg-gray-700">{{ submenu.text }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
         {% endfor %}
       {% endif %}
     </div>

@@ -1,14 +1,15 @@
-# Navigation menu links
-# footer navigation not support submenu yet, just print single navigation link.
+# Top navigation menu links
 nav:
-  - text: About
-    link: /about
-  - text: Privacy Policy
-    link: https://www.webmanajemen.com/p/privacy.html
-  - text: Terms Of Service
-    link: https://www.webmanajemen.com/p/tos.html
-  - text: Contact
-    link: /contact
+  - text: Site Overview
+    submenu:
+      - text: About
+        link: /about
+      - text: Privacy Policy
+        link: https://www.webmanajemen.com/p/privacy.html
+      - text: Terms Of Service
+        link: https://www.webmanajemen.com/p/tos.html
+      - text: Contact
+        link: /contact
   - text: Games
     submenu:
       - text: "Quiz The Legend Of Neverland"
@@ -22,6 +23,16 @@ nav:
       - text: "Android Flashtool Utility"
         link: "/android-engineer"
         divider: true
+# Footer navigation menu links
+footer_nav:
+  - text: About
+    link: /about
+  - text: Privacy Policy
+    link: https://www.webmanajemen.com/p/privacy.html
+  - text: Terms Of Service
+    link: https://www.webmanajemen.com/p/tos.html
+  - text: Contact
+    link: /contact
 # Top navbar icon
 nav_icon: /logo.svg
 # Show gallery images after post/page

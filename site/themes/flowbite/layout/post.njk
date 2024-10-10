@@ -5,7 +5,8 @@
 {% set tocdatas = parseToc(post.content) %}
 {% block content %}
   <div class="w-full mx-auto max-w-8xl">
-    <div class="flex w-full">
+    <div class="flex flex-col lg:flex-row w-full">
+      {# Use flex-col on mobile #}
       <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
         {# page overview #}
         <div id="accordion-collapse-metadata" data-accordion="collapse">
@@ -39,11 +40,11 @@
         <div class="p-5">{{ partial('macro/labels.njk', { post: post }) }}</div>
         <div class="max-w-none format lg:format-lg dark:format-invert format-red post">{{ post.content }}</div>
         {% if theme.gallery %}{{ partial('macro/gallery-mansonry.njk', { post: post }) }}{% endif %}
+        {{ injectAfterPostHtml() }}
         {% include 'partials/post-pagination.njk' %}
         {% include 'partials/disqus.njk' %}
-        {{ injectAfterPostHtml() }}
       </main>
-      <div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm lg:block">
+      <div class="flex-none w-full mt-4 lg:mt-0 lg:w-64 lg:ml-2 xl:text-sm">
         <div class="flex overflow-y-auto sticky top-5 flex-col justify-between">
           {# accordion start #}
           <div id="accordion-collapse-aside" data-accordion="collapse">

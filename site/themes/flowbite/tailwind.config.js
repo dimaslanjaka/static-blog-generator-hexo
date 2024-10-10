@@ -1,5 +1,13 @@
+const path = require("upath");
+const glob = require("glob");
+
+const configs = glob.globSync("_config.*.yml", { cwd: process.cwd() }).map((p) => path.join(process.cwd(), p));
+const injectionFiles = glob
+  .globSync("**/*.html", { cwd: path.join(process.cwd(), "source") })
+  .map((p) => path.join(process.cwd(), "source", p));
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const tailwindConfig = {
   darkMode: "class", // Enables dark mode based on class
   content: [
     "./node_modules/flowbite/**/*.js",
@@ -7,8 +15,9 @@ module.exports = {
     "./layout/**/*.html",
     "./source/**/*.js",
     "./source/**/*.cjs",
-    "./src/**/*"
-  ],
+    "./src/**/*",
+    "./_config.yml"
+  ].concat(configs, injectionFiles),
   theme: {
     extend: {
       colors: {
@@ -42,3 +51,5 @@ module.exports = {
   },
   plugins: [require("flowbite/plugin"), require("flowbite-typography")]
 };
+
+module.exports = tailwindConfig;

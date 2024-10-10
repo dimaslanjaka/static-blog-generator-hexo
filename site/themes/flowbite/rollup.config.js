@@ -3,9 +3,10 @@ const json = require("@rollup/plugin-json");
 const resolve = require("@rollup/plugin-node-resolve");
 const typescript = require("@rollup/plugin-typescript");
 const fs = require("fs");
+const { dts } = require("rollup-plugin-dts");
 
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
-const _deps = Object.keys(pkg.dependencies).concat(Object.keys(pkg.devDependencies));
+const deps = Object.keys(pkg.dependencies).concat(Object.keys(pkg.devDependencies));
 const globals = {
   jquery: "$",
   lodash: "_",
@@ -13,7 +14,10 @@ const globals = {
   "highlight.js": "hljs"
 };
 
-module.exports = {
+/**
+ * @type {import("rollup").RollupOptions}
+ */
+const browserJS = {
   input: "src/index.ts", // Replace with your entry file(s)
   output: [
     {
@@ -42,5 +46,51 @@ module.exports = {
       include: ["./package.json", "./src/**/*", "./src/globals.d.ts", "./src/**/*.json"]
     })
   ]
-  // external: deps // Exclude external dependencies from the bundle
 };
+
+/**
+ * @type {import("rollup").RollupOptions}
+ */
+const apiJS = {
+  input: "src/api.ts",
+  output: {
+    file: "dist/hexo-theme-flowbite-api.js", // Output file
+    format: "cjs", // Browser-compatible format
+    sourcemap: false // Enable sourcemaps for easier debugging
+  },
+  plugins: [
+    json.default(),
+    resolve.nodeResolve({
+      browser: true, // Resolve for browser environment
+      extensions: [".mjs", ".js", ".json", ".node", "ts"] // Resolve both JavaScript and TypeScript
+    }),
+    commonjs.default({
+      include: "node_modules/**" // Include node_modules
+    }),
+    typescript.default({
+      tsconfig: false,
+      compilerOptions: {
+        lib: ["DOM", "DOM.Iterable", "ES2020"],
+        typeRoots: ["./src/types", "./node_modules/@types", "./node_modules/nodejs-package-types/typings"]
+      },
+      include: ["./package.json", "./src/**/*", "./src/globals.d.ts", "./src/**/*.json"]
+    })
+  ],
+  external: deps // Exclude external dependencies from the bundle
+};
+
+/**
+ * @type {import("rollup").RollupOptions}
+ */
+const apiDts = {
+  input: "src/api.ts",
+  output: {
+    file: "dist/hexo-theme-flowbite-api.d.ts", // Output file
+    format: "cjs", // Browser-compatible format
+    sourcemap: false // Enable sourcemaps for easier debugging
+  },
+  plugins: [json.default(), dts({ tsconfig: "tsconfig.json" })],
+  external: deps // Exclude external dependencies from the bundle
+};
+
+module.exports = [browserJS, apiDts, apiJS];

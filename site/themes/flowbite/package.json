@@ -1,7 +1,8 @@
 {
   "name": "hexo-theme-flowbite",
-  "version": "1.0.1",
-  "main": "index.js",
+  "version": "1.0.2",
+  "main": "dist/hexo-theme-flowbite-api.js",
+  "types": "dist/hexo-theme-flowbite-api.d.ts",
   "bin": "bin/hexo-theme-flowbite.js",
   "scripts": {
     "build": "node build.cjs"
@@ -18,17 +19,21 @@
     "directory": "themes/hexo-theme-flowbite"
   },
   "files": [
-    "docs",
+    "bin",
     "languages",
     "layout",
     "scripts",
     "source",
     "_config.yml",
-    "_vendors.yml",
     "src",
     "*.cjs",
-    "*.js"
+    "*.js",
+    "dist"
   ],
+  "directories": {
+    "bin": "bin",
+    "lib": "dist"
+  },
   "author": {
     "email": "dimaslanjaka@gmail.com",
     "name": "Dimas Lanjaka",
@@ -40,14 +45,17 @@
     "@fancyapps/ui": "^5.0.36",
     "axios": "^1.7.7",
     "cheerio": "^1.0.0",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac7a7031a81e11ddb5fab0f8ba433041c98/release/cross-spawn.tgz",
     "deepmerge-ts": "^7.1.1",
     "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
     "hexo-post-parser": "^1.2.14",
-    "hexo-renderers": "^2.0.5",
+    "hexo-renderers": "*",
     "highlight.js": "^11.10.0",
     "jquery": "^3.7.1",
     "lodash": "^4.17.21",
     "sbg-utility": "^1.1.8",
+    "upath": "^2.0.1",
     "yaml": "^2.5.1"
   },
   "devDependencies": {
@@ -71,6 +79,7 @@
     "prettier-plugin-embed": "^0.4.15",
     "prettier-plugin-sql": "^0.18.1",
     "rollup": "^4.24.0",
+    "rollup-plugin-dts": "^6.1.1",
     "sass": "^1.79.4",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2"

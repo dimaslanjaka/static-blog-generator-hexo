@@ -4,7 +4,7 @@
 
 ## Installation
 
-[Read Here](https://github.com/dimaslanjaka/hexo-themes#readme)
+[Read Here](https://github.com/dimaslanjaka/hexo-themes?tab=readme-ov-file#how-to-install)
 
 ## Configuration
 
