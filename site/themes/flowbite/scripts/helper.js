@@ -9,9 +9,9 @@ var hexoPostParser = require('hexo-post-parser');
 var sanitize = require('sanitize-filename');
 var sbgUtility = require('sbg-utility');
 var _ = require('lodash');
-var require$$0$1 = require('hexo');
-var require$$3 = require('yaml');
-var require$$4$1 = require('deepmerge-ts');
+var deepmergeTs = require('deepmerge-ts');
+var Hexo = require('hexo');
+var yaml = require('yaml');
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -18002,6 +18002,228 @@ function requireToHtml () {
 
 var toHtmlExports = requireToHtml();
 
+function getHexoArgs() {
+    // detect hexo arguments
+    var hexoCmd = "";
+    if (hexo.env.args._ && hexo.env.args._.length > 0) {
+        for (var i = 0; i < hexo.env.args._.length; i++) {
+            if (hexo.env.args._[i] == "s" || hexo.env.args._[i] == "server") {
+                hexoCmd = "server";
+                break;
+            }
+            if (hexo.env.args._[i] == "d" || hexo.env.args._[i] == "deploy") {
+                hexoCmd = "deploy";
+                break;
+            }
+            if (hexo.env.args._[i] == "g" || hexo.env.args._[i] == "generate") {
+                hexoCmd = "generate";
+                break;
+            }
+            if (hexo.env.args._[i] == "c" || hexo.env.args._[i] == "clean") {
+                hexoCmd = "clean";
+                break;
+            }
+        }
+    }
+    return hexoCmd;
+}
+
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
+
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
+var searchFiles = [
+    path.join(hexo.base_dir, hexo.config.source_dir, "hexo-search.json"),
+    path.join(hexo.base_dir, hexo.config.public_dir, "hexo-search.json")
+];
+// Queue to hold the save operations
+var saveQueue = [];
+var isProcessing$1 = false;
+/**
+ * Initializes the search files if they don't exist.
+ */
+function initializeSearchFiles() {
+    return __awaiter(this, void 0, void 0, function () {
+        var _i, searchFiles_1, file;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _i = 0, searchFiles_1 = searchFiles;
+                    _a.label = 1;
+                case 1:
+                    if (!(_i < searchFiles_1.length)) return [3 /*break*/, 5];
+                    file = searchFiles_1[_i];
+                    if (!!fs.existsSync(file)) return [3 /*break*/, 4];
+                    return [4 /*yield*/, fs.ensureDir(path.dirname(file))];
+                case 2:
+                    _a.sent();
+                    return [4 /*yield*/, fs.writeJSON(file, [])];
+                case 3:
+                    _a.sent();
+                    _a.label = 4;
+                case 4:
+                    _i++;
+                    return [3 /*break*/, 1];
+                case 5: return [2 /*return*/];
+            }
+        });
+    });
+}
+/**
+ * Saves data as search in JSON files, processing requests in a queue.
+ *
+ * @param data - The object containing url, title, and description to save.
+ */
+function saveAsSearch(data) {
+    return __awaiter(this, void 0, void 0, function () {
+        var saveOperation;
+        var _this = this;
+        return __generator(this, function (_a) {
+            saveOperation = function () { return __awaiter(_this, void 0, void 0, function () {
+                var existingDataPromises, existingDataArray, writePromises;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, initializeSearchFiles()];
+                        case 1:
+                            _a.sent(); // Ensure the files are initialized
+                            existingDataPromises = searchFiles.map(function (file) { return fs.readJSON(file); });
+                            return [4 /*yield*/, Promise.all(existingDataPromises)];
+                        case 2:
+                            existingDataArray = _a.sent();
+                            existingDataArray.forEach(function (existingData) {
+                                appendOrReplace(existingData, data); // Append or replace data in each existing data array
+                            });
+                            writePromises = searchFiles.map(function (file, index) { return fs.writeJSON(file, existingDataArray[index]); });
+                            return [4 /*yield*/, Promise.all(writePromises)];
+                        case 3:
+                            _a.sent(); // Wait for all write operations to complete
+                            return [2 /*return*/];
+                    }
+                });
+            }); };
+            // Add the save operation to the queue
+            saveQueue.push(saveOperation);
+            // Process the queue if not already processing
+            scheduleProcessing$1();
+            return [2 /*return*/];
+        });
+    });
+}
+/**
+ * Processes the save queue one operation at a time.
+ */
+function scheduleProcessing$1() {
+    return __awaiter(this, void 0, void 0, function () {
+        var currentOperation, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (isProcessing$1 || saveQueue.length === 0) {
+                        return [2 /*return*/]; // If already processing or no items in the queue, exit
+                    }
+                    isProcessing$1 = true;
+                    currentOperation = saveQueue.shift();
+                    if (!currentOperation) return [3 /*break*/, 5];
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, 4, 5]);
+                    return [4 /*yield*/, currentOperation()];
+                case 2:
+                    _a.sent(); // Execute the operation
+                    return [3 /*break*/, 5];
+                case 3:
+                    error_1 = _a.sent();
+                    hexo.log.error("Error saving search data:", error_1.message);
+                    return [3 /*break*/, 5];
+                case 4:
+                    isProcessing$1 = false; // Mark processing as complete
+                    scheduleProcessing$1(); // Continue to the next item in the queue
+                    return [7 /*endfinally*/];
+                case 5: return [2 /*return*/];
+            }
+        });
+    });
+}
+/**
+ * Appends a new object to the array or replaces an existing object
+ * based on the 'url' property, after validating that the 'url' is not empty.
+ *
+ * @param array - The array of objects to update.
+ * @param newObj - The new object to add or replace.
+ */
+function appendOrReplace(array, newObj) {
+    // Validate that the url is not empty
+    if (!newObj.url || typeof newObj.url !== "string") {
+        hexo.log.warn("Invalid URL: The 'url' property must be a non-empty string.");
+        return; // Exit the function if the URL is invalid
+    }
+    var index = array.findIndex(function (item) { return item.url === newObj.url; });
+    if (index !== -1) {
+        // Replace the existing object
+        array[index] = newObj;
+    }
+    else {
+        // Append the new object
+        array.push(newObj);
+    }
+}
+
 hexoPostParser.setConfig(hexo.config);
 // Queue to hold the pages to be processed
 var pageQueue = [];
@@ -18018,8 +18240,9 @@ function getCachePath(page) {
             hash = sbgUtility.md5(page._content);
         }
     }
-    return path.join(process.cwd(), "tmp/hexo-theme-flowbite/caches/post-" +
-        sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
+    var result = path.join(process.cwd(), "tmp/hexo-themes/caches/post-" + sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
+    sbgUtility.fs.ensureDirSync(path.dirname(result));
+    return result;
 }
 /**
  * Preprocess a page and save its parsed result to a cache file
@@ -18033,11 +18256,10 @@ function metadataProcess(page, callback) {
         return;
     }
     var cachePath = getCachePath(page);
-    if (sbgUtility.fs.existsSync(cachePath)) {
+    if (sbgUtility.fs.existsSync(cachePath) && getHexoArgs() === "generate") {
         // skip already parsed metadata
         return;
     }
-    sbgUtility.fs.ensureDirSync(path.dirname(cachePath));
     hexoPostParser
         .parsePost(page.full_source, { fix: true })
         .then(function (result) {
@@ -18050,6 +18272,9 @@ function metadataProcess(page, callback) {
             if (result.metadata[key] === undefined || result.metadata[key] === null) {
                 delete result.metadata[key];
             }
+        }
+        if (!result.metadata.permalink && page.permalink) {
+            result.metadata.permalink = require$$2$1.url_for.bind(hexo)(page.path);
         }
         try {
             sbgUtility.fs.writeFileSync(cachePath, sbgUtility.jsonStringifyWithCircularRefs(result));
@@ -18089,6 +18314,15 @@ function metadataProcess(page, callback) {
                                 "https://rawcdn.githack.com/dimaslanjaka/public-source/6a0117ddb2ea327c80dbcc7327cceca1e1b7794e/images/no-image-svgrepo-com.svg";
                         }
                     }
+                    if (!parse.attributes.permalink) {
+                        if (page.permalink) {
+                            parse.attributes.permalink = page.permalink;
+                        }
+                        else {
+                            // const parsePermalink = hexoPostParser.parsePermalink(page.full_source as string, hexo.config as any);
+                            // if (parsePermalink && parsePermalink.length > 0) parse.attributes.permalink = parsePermalink;
+                        }
+                    }
                     var result = { metadata: parse.attributes, rawbody: parse.body };
                     // Remove keys with undefined or null values
                     var keys = Object.keys(result.metadata);
@@ -18126,12 +18360,19 @@ function scheduleProcessing() {
     isProcessing = true;
     var page = pageQueue.shift(); // Get the first item in the queue
     if (page) {
-        metadataProcess(page, function (err, _data) {
+        metadataProcess(page, function (err, data) {
             if (err) {
                 hexo.log.error("Error processing page:", err.message);
             }
             else {
                 isProcessing = false;
+                if ((data === null || data === void 0 ? void 0 : data.result) && data.result.metadata) {
+                    saveAsSearch({
+                        url: data.result.metadata.permalink || "",
+                        title: data.result.metadata.title || "",
+                        description: data.result.metadata.description || ""
+                    });
+                }
                 setTimeout(scheduleProcessing, 500); // Continue to next item after delay (optional)
             }
         });
@@ -18269,68 +18510,45 @@ function requireUtils () {
 	return utils;
 }
 
-var config;
-var hasRequiredConfig;
-
-function requireConfig () {
-	if (hasRequiredConfig) return config;
-	hasRequiredConfig = 1;
-	const Hexo = require$$0$1;
-	const path$1 = path;
-	const fs$1 = fs;
-	const yaml = require$$3;
-	const { deepmerge } = require$$4$1;
-
-	// themes/<your_theme>/scripts/example.js
-	function themeConfig() {
-	  let config = {};
-
-	  const theme_names = [hexo.config.theme, "hexo-theme-" + hexo.config.theme];
-	  const theme_dirs = theme_names
-	    .map((name) => {
-	      return [path$1.join(hexo.base_dir, "themes", name), path$1.join(hexo.base_dir, "node_modules", name)];
-	    })
-	    .flat()
-	    .filter(fs$1.existsSync);
-	  const theme_config_file = theme_dirs
-	    .map((dir) => path$1.join(dir, "_config.yml"))
-	    .filter((filePath) => fs$1.existsSync(filePath))[0];
-	  if (theme_config_file) {
-	    config = yaml.parse(fs$1.readFileSync(theme_config_file, "utf-8"));
-	  }
-
-	  const user_defined_theme_config_file = theme_names
-	    .map((name) => {
-	      return [
-	        path$1.join(hexo.base_dir, `_config.${name}.yml`),
-	        path$1.join(hexo.base_dir, `_config.hexo-theme-${name}.yml`)
-	      ];
-	    })
-	    .flat()
-	    .filter((filePath) => fs$1.existsSync(filePath))[0];
-	  if (user_defined_theme_config_file) {
-	    config = Object.assign(config, yaml.parse(fs$1.readFileSync(user_defined_theme_config_file, "utf-8")));
-	  }
-
-	  if (this instanceof Hexo) {
-	    config = deepmerge(config, this.config.theme_config);
-	  } else {
-	    config = deepmerge(config, hexo.config.theme_config);
-	  }
-
-	  return config;
-	}
-
-	// Please see: https://hexo.io/api/filter
-	// hexo.extend.filter.register("after_init", themeConfig);
-
-	// Also you can use it in a template engine (e.g: EJS)
-	// https://hexo.io/docs/helpers
-	hexo.extend.helper.register("getThemeConfig", themeConfig);
-
-	config = themeConfig;
-	return config;
+// themes/<your_theme>/scripts/example.js
+function themeConfig() {
+    var config = {};
+    var instance = this instanceof Hexo ? this : hexo;
+    var theme_names = [instance.config.theme, "hexo-theme-" + instance.config.theme];
+    var theme_dirs = theme_names
+        .map(function (name) {
+        return [path.join(instance.base_dir, "themes", name), path.join(instance.base_dir, "node_modules", name)];
+    })
+        .flat()
+        .filter(fs.existsSync);
+    var theme_config_file = theme_dirs
+        .map(function (dir) { return path.join(dir, "_config.yml"); })
+        .filter(function (filePath) { return fs.existsSync(filePath); })[0];
+    if (theme_config_file) {
+        config = yaml.parse(fs.readFileSync(theme_config_file, "utf-8"));
+    }
+    var user_defined_theme_config_file = theme_names
+        .map(function (name) {
+        return [
+            path.join(instance.base_dir, "_config.".concat(name, ".yml")),
+            path.join(instance.base_dir, "_config.hexo-theme-".concat(name, ".yml"))
+        ];
+    })
+        .flat()
+        .filter(function (filePath) { return fs.existsSync(filePath); })[0];
+    if (user_defined_theme_config_file) {
+        config = Object.assign(config, yaml.parse(fs.readFileSync(user_defined_theme_config_file, "utf-8")));
+    }
+    if ("nav" in instance.config.theme_config) {
+        delete instance.config.theme_config.nav;
+    }
+    if ("footer_nav" in instance.config.theme_config) {
+        delete instance.config.theme_config.footer_nav;
+    }
+    config = deepmergeTs.deepmerge(instance.config.theme_config, config);
+    return config;
 }
+hexo.extend.helper.register("themeConfig", themeConfig);
 
 // clean build and temp folder on `hexo clean`
 hexo.extend.filter.register("after_clean", function () {
@@ -18341,8 +18559,11 @@ hexo.extend.filter.register("after_clean", function () {
         path.join(hexo.base_dir, "tmp/hexo-theme-claudia"),
         path.join(hexo.base_dir, "tmp/hexo-post-parser"),
         path.join(hexo.base_dir, "tmp/hexo-renderers"),
+        path.join(hexo.base_dir, "tmp/hexo-themes"),
         path.join(hexo.base_dir, "tmp/hexo-shortcodes")
-    ];
+    ]
+        .concat(searchFiles)
+        .flat();
     for (var i = 0; i < folders.length; i++) {
         var folder = folders[i];
         try {
@@ -18369,7 +18590,6 @@ function requireScripts () {
 
 
 	requireUtils();
-	requireConfig();
 	return scripts;
 }
 

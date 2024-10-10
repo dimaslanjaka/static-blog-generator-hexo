@@ -17,6 +17,10 @@
 - [Full hexo-theme-flowbite config and description here](https://github.com/dimaslanjaka/hexo-themes/blob/master/themes/hexo-theme-flowbite/_config.yml)
 - [Full hexo-theme-flowbite config on production](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/site/_config.flowbite.yml)
 
+### Search box
+
+[Read Here](https://github.com/dimaslanjaka/hexo-themes?tab=readme-ov-file#search-data)
+
 ### Syntax highlighter
 
 This theme only working for highlight.js with below configuration

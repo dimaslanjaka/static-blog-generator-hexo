@@ -2,7 +2,7 @@ import { initClickable } from "./clickable";
 import initFancybox from "./fancybox";
 import { highlightMain, initClipBoard } from "./highlight";
 import initloader from "./loader";
-import initNavigationMenu from "./nav";
+import initNavigationMenu, { initSearch } from "./nav";
 import initToc from "./toc";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initToc();
   initClickable();
   initNavigationMenu();
+  initSearch();
 });
 
 window.addEventListener("load", function () {

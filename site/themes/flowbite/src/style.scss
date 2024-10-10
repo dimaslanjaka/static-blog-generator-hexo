@@ -177,3 +177,19 @@ img + figcaption,
 .masonry-item:nth-child(odd) {
   grid-row-end: span 2; /* Makes odd items taller */
 }
+
+// search modal
+.search-modal {
+  position: fixed;
+  top: 15%; /* Adjust this value as needed */
+  left: 50%;
+  transform: translate(-50%, 0); /* Center it horizontally and keep it at the set top */
+  height: 70vh; /* Set a fixed height for the modal */
+  width: 100%; /* Ensure it takes the full width */
+  max-width: 600px; /* Set a max width for larger screens */
+}
+
+#searchResults {
+  max-height: calc(70vh - 150px); /* Adjust based on the other content (header + input height) */
+  overflow-y: auto; /* Enable vertical scrolling for the search results */
+}

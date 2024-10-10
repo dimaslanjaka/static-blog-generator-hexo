@@ -112,3 +112,56 @@ function closeAllSubmenus(navItems: NodeListOf<Element>) {
     }
   });
 }
+
+export function initSearch() {
+  // Open and close the search modal
+  const searchModal = document.getElementById("searchModal");
+  const openSearchBtn = document.getElementById("openSearchModal");
+  const closeSearchBtn = document.getElementById("closeSearchModal");
+
+  openSearchBtn.addEventListener("click", () => {
+    searchModal.classList.remove("hidden");
+  });
+
+  closeSearchBtn.addEventListener("click", () => {
+    searchModal.classList.add("hidden");
+  });
+
+  // Search functionality
+  document.getElementById("searchInput").addEventListener("input", async function (this: HTMLInputElement) {
+    const query = this.value.toLowerCase();
+    // Get the meta tag by its name attribute
+    const metaTag = document.querySelector('meta[name="search"]');
+    // Get the content attribute
+    const searchUrl = metaTag ? metaTag.getAttribute("content") : null;
+    if (searchUrl) {
+      // Fetch the search data
+      const response = await fetch(searchUrl);
+      const searchData = await response.json();
+
+      // Filter the data based on the query
+      const results = searchData.filter(
+        (item: { title: string; description: string }) =>
+          item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+      );
+
+      // Display the results
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = "";
+
+      if (results.length > 0) {
+        results.forEach((result: { url: any; title: any; description: any }) => {
+          const resultItem = document.createElement("div");
+          resultItem.className = "p-2 hover:bg-gray-700";
+          resultItem.innerHTML = `
+        <a href="${result.url}" class="block text-sm font-medium text-white">${result.title}</a>
+        <p class="text-sm text-gray-400">${result.description}</p>
+      `;
+          resultsContainer.appendChild(resultItem);
+        });
+      } else {
+        resultsContainer.innerHTML = '<p class="p-2 text-gray-400">No results found</p>';
+      }
+    }
+  });
+}

@@ -8,7 +8,8 @@
       {% block title %}{% endblock %}
     </title>
     <meta name="description" content="{% block description %}{% endblock %}" />
-    <meta name="keywords" content="keyword1, keyword2, keyword3, keyword4">
+    <meta name="keywords" content="{{ page.tags }}">
+    <meta name="search" content="{{ url_for("/hexo-search.json") }}">
     <meta name="author"
           content="{{ getAuthorName(page.author, config.author) }}">
     <link rel="icon"
