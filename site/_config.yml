@@ -241,7 +241,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: flowbite
+theme: hexo-theme-flowbite
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

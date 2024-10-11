@@ -35,7 +35,7 @@
     "version": "7.3.0"
   },
   "workspaces": [
-    "themes/flowbite",
+    "themes/hexo-theme-flowbite",
     "themes/claudia",
     "themes/butterfly"
   ],
