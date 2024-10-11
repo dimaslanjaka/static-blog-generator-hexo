@@ -51,3 +51,5 @@ loading_animation:
   # type mini: small loader fixed on top right
   # type full: full page loader
   type: mini
+# favicon meta
+favicon: //www.webmanajemen.com/favicon.ico

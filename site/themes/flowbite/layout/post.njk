@@ -3,6 +3,13 @@
 {% block title %}{{ post.title }} - {{ config.title }}{% endblock %}
 {% block description %}{{ config.title }} - {{ post.description }}{% endblock %}
 {% set tocdatas = parseToc(post.content) %}
+{%- set all_tags = [] %}
+{%- if post.tags %}
+  {%- set all_tags = all_tags.concat(post.tags.toArray()) %}
+{%- endif %}
+{%- if site.tags %}
+  {%- set all_tags = all_tags.concat(site.tags.toArray()) %}
+{%- endif %}
 {% block content %}
   <div class="w-full mx-auto max-w-8xl">
     <div class="flex flex-col lg:flex-row w-full">
@@ -140,13 +147,6 @@
                    class="hidden"
                    aria-labelledby="accordion-post-tags">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                  {%- set all_tags = [] %}
-                  {%- if post.tags %}
-                    {%- set all_tags = all_tags.concat(post.tags.toArray()) %}
-                  {%- endif %}
-                  {%- if site.tags %}
-                    {%- set all_tags = all_tags.concat(site.tags.toArray()) %}
-                  {%- endif %}
                   <div class="flex flex-wrap justify-center">
                     {%- for tag in all_tags %}
                       <a href="{{ url_for(tag.path) }}"
@@ -159,14 +159,7 @@
             {% endif %}
           </div>
           {# accordion ends #}
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-2188063137129806"
-               data-ad-slot="1136979979"
-               data-ad-format="auto"
-               data-full-width-responsive="true"
-               data-adtest="on"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          {{ injectAsideHtml() }}
         </div>
       </div>
     </div>

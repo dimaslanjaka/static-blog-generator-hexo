@@ -1,6 +1,7 @@
 import { initClickable } from "./clickable";
 import initFancybox from "./fancybox";
 import { highlightMain, initClipBoard } from "./highlight";
+import initKatex from "./katex";
 import initloader from "./loader";
 import initNavigationMenu, { initSearch } from "./nav";
 import initToc from "./toc";
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initClickable();
   initNavigationMenu();
   initSearch();
+  initKatex();
 });
 
 window.addEventListener("load", function () {

@@ -193,3 +193,37 @@ img + figcaption,
   max-height: calc(70vh - 150px); /* Adjust based on the other content (header + input height) */
   overflow-y: auto; /* Enable vertical scrolling for the search results */
 }
+
+// KaTeX
+.katex {
+  font-family: "KaTeX_Main", sans-serif; /* Change the font family */
+  color: var(--text-color, #473e3e); /* Change the text color with fallback */
+  border: 1px solid var(--border-color, #ccc); /* Add border with fallback color */
+  border-radius: 4px; /* Optional: add rounded corners */
+  padding: 8px; /* Optional: add some padding */
+}
+
+/* Error messages and parentheses color */
+.katex .katex-error {
+  color: var(--error-color, red); /* Change the color of error messages */
+}
+
+.katex .katex-parentheses {
+  color: var(--parentheses-color, #007bff); /* Change the color of parentheses */
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .katex {
+    color: var(--dark-text-color, #d1d5db); /* Adjust text color for dark theme */
+    border: 1px solid var(--dark-border-color, #555); /* Adjust border color for dark theme */
+  }
+
+  .katex .katex-error {
+    color: var(--dark-error-color, #f87171); /* Adjust error color for dark theme */
+  }
+
+  .katex .katex-parentheses {
+    color: var(--dark-parentheses-color, #60a5fa); /* Adjust parentheses color for dark theme */
+  }
+}

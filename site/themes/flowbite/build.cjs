@@ -14,7 +14,8 @@ const compile = async (outputCSS) => {
     await fs.ensureDir(path.dirname(outputCSS));
     // First, compile SCSS using the new compile method
     const sassResult = sass.compile(inputSCSS, {
-      style: "compressed"
+      style: "compressed",
+      loadPaths: [path.join(process.cwd(), "node_modules"), path.join(__dirname, "node_modules")]
     });
 
     // Write the compiled CSS

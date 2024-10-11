@@ -43,7 +43,9 @@ const tailwindConfig = {
               // background color should same with .hljs background color
               // see src/highlight
               "background-color": "#22272e"
-            }
+            },
+            // drop styling for katex math
+            '[class^="katex"]': false
           }
         }
       }
