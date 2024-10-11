@@ -2,7 +2,7 @@ name: Clean GitHub Actions Cache
 
 on:
   schedule:
-    - cron: "0 * * * *" # Schedule every hour
+    - cron: "0 0 * * *"
   push:
     branches:
       - master
