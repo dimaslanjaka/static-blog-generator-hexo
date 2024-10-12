@@ -98,4 +98,10 @@ jobs:
         shell: cmd
         run: |
           call "${{ github.workspace }}/bin/clear-github-actions-cache.cmd"
-          yarn workspace wmi run clean
+
+      - name: Crontab runner
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        shell: bash
+        run: |
+          bash "${{ github.workspace }}/.crontab.sh"
