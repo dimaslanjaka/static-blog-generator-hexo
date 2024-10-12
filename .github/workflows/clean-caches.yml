@@ -2,7 +2,7 @@ name: Clean GitHub Actions Cache
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
   push:
     branches:
       - master
@@ -16,9 +16,9 @@ jobs:
   clean-cache:
     runs-on: windows-latest
     env:
-      PIP_CACHE_DIR: "${{ github.workspace }}/project/tmp/pip"
-      NUITKA_CACHE_DIR: "${{ github.workspace }}/project/tmp/nuitka-cache"
-      NODE_OPTIONS: "--max_old_space_size=4096" #8192 4096 --expose-gc
+      PIP_CACHE_DIR: '${{ github.workspace }}/project/tmp/pip'
+      NUITKA_CACHE_DIR: '${{ github.workspace }}/project/tmp/nuitka-cache'
+      NODE_OPTIONS: '--max_old_space_size=4096' #8192 4096 --expose-gc
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -29,8 +29,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: "dimaslanjaka/static-blog-generator-hexo"
-          ref: master
           token: ${{ secrets.ACCESS_TOKEN }}
           lfs: true
 
@@ -52,8 +50,8 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-          architecture: "x64"
+          python-version: '3.11'
+          architecture: 'x64'
 
       - uses: actions/setup-node@v4
         with:

@@ -94,7 +94,7 @@ disqus_shortname: YOUR_DISQUS_USERNAME
 
 ### Code injection
 
-Inject your own widget html [see folder](./source/_data/hexo-theme-flowbite/)
+Inject your own widget html [see folder](../../source/_data/hexo-theme-flowbite/)
 
 | File Path | Description |
 | :--- | :--- |

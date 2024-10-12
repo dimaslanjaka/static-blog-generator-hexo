@@ -18252,7 +18252,7 @@ function getCachePath(page) {
             hash = utility.md5(page._content);
         }
     }
-    var result = path.join(process.cwd(), "tmp/hexo-themes/caches/post-" + sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
+    var result = path.join(process.cwd(), "tmp", "metadata", hexo.config.theme, "post-" + sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
     utility.fs.ensureDirSync(path.dirname(result));
     return result;
 }
@@ -18569,10 +18569,7 @@ hexo.extend.filter.register("after_clean", function () {
     var folders = [
         path.join(hexo.base_dir, "tmp/hexo-theme-flowbite"),
         path.join(hexo.base_dir, "tmp/hexo-theme-claudia"),
-        path.join(hexo.base_dir, "tmp/hexo-post-parser"),
-        path.join(hexo.base_dir, "tmp/hexo-renderers"),
-        path.join(hexo.base_dir, "tmp/hexo-themes"),
-        path.join(hexo.base_dir, "tmp/hexo-shortcodes")
+        path.join(hexo.base_dir, "tmp/hexo-theme-butterfly")
     ]
         .concat(searchFiles)
         .flat();
