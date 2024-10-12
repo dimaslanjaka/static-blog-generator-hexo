@@ -159,25 +159,6 @@ img + figcaption,
   // padding-top: 0.5rem;
 }
 
-// mansonry
-.masonry-grid {
-  max-height: 300px;
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusts based on screen size */
-  grid-auto-rows: 150px; /* Set a base height for grid items */
-  gap: 8px; /* Adjust gap between grid items */
-}
-
-.masonry-item {
-  position: relative; /* Required for absolute positioning of hover effect */
-}
-
-/* Optional: For different image heights */
-.masonry-item:nth-child(odd) {
-  grid-row-end: span 2; /* Makes odd items taller */
-}
-
 // search modal
 .search-modal {
   position: fixed;
@@ -225,5 +206,137 @@ img + figcaption,
 
   .katex .katex-parentheses {
     color: var(--dark-parentheses-color, #60a5fa); /* Adjust parentheses color for dark theme */
+  }
+}
+
+// Responsive image fix
+.post {
+  img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    &:not([id^="masonry"]):not([class*="gallery-group-img"]) {
+      height: auto;
+    }
+  }
+}
+
+// {% galleryGroup %}
+// Light theme styles
+.gallery-group-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  .gallery-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Center align the content vertically
+  }
+}
+
+.gallery-group {
+  background-color: #f9f9f9; // Light background
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 300px; // Fixed height for the entire gallery item
+
+  .gallery-group-img {
+    width: 100%;
+    height: 200px; // Fixed height for images
+    object-fit: cover; // Maintain aspect ratio
+  }
+
+  .gallery-group-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; // Darker text
+  }
+
+  figcaption {
+    padding: 15px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555; // Muted text
+  }
+
+  a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Dark theme styles
+.dark {
+  .gallery-group {
+    background-color: #2d3748; // Dark background
+    color: #e2e8f0; // Light text
+
+    .gallery-group-name {
+      color: #cbd5e0; // Lighter text in dark mode
+    }
+
+    p {
+      color: #a0aec0; // Muted text for dark mode
+    }
+
+    a {
+      color: #63b3ed; // Lighter link color in dark mode
+
+      &:hover {
+        color: #90cdf4;
+      }
+    }
+  }
+}
+
+// {% gallery %} - ./media.ts
+// masonry gallery - layout\macro\gallery-mansonry.njk
+
+.masonry-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Adjusts based on screen size
+  // grid-template-columns: repeat(4, 1fr); // Creates 4 equal columns
+  grid-auto-rows: 150px; // Set a base height for grid items
+  gap: 8px; // Adjust gap between grid items
+
+  &:not(.gallery-items) {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .masonry-item {
+    // position: relative; // Required for absolute positioning of hover effect
+    @apply relative overflow-hidden rounded-lg;
+    min-height: 0;
+    height: auto;
+
+    // &:nth-child(odd) {
+    //   grid-row-end: span 2; // Makes odd items taller
+    // }
+    // &:nth-child(1) {
+    //   grid-row-end: span 2;
+    // }
+    // &:nth-child(3) {
+    //   grid-row-end: span 2;
+    // }
+    // &:nth-child(5) {
+    //   grid-row-end: span 2;
+    // }
   }
 }

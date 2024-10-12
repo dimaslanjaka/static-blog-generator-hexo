@@ -149,7 +149,7 @@
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
                   <div class="flex flex-wrap justify-center">
                     {%- for tag in all_tags %}
-                      <a href="{{ url_for(tag.path) }}"
+                      <a href="{{ urlFor(tag.path) }}"
                          rel="tag"
                          class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> {{ tag.name }}</a>
                     {%- endfor %}

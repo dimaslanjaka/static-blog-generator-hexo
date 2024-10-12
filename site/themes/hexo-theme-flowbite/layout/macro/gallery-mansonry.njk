@@ -5,7 +5,7 @@
     <div class="masonry-grid">
       {% for imageUrl in images %}
         <div class="masonry-item relative overflow-hidden rounded-lg">
-          <img src="{{ url_for(imageUrl) }}"
+          <img src="{{ urlFor(imageUrl) }}"
                id="image-{{ loop.index }}"
                alt="Gallery Image {{ loop.index }}"
                class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300">

@@ -7,7 +7,7 @@ var fs = require('fs-extra');
 var path = require('path');
 var hexoPostParser = require('hexo-post-parser');
 var sanitize = require('sanitize-filename');
-var sbgUtility = require('sbg-utility');
+var utility = require('sbg-utility');
 var _ = require('lodash');
 var deepmergeTs = require('deepmerge-ts');
 var Hexo = require('hexo');
@@ -18243,17 +18243,17 @@ var isProcessing = false;
 function getCachePath(page) {
     var hash = "empty-hash";
     if (page && "full_source" in page && page.full_source)
-        sbgUtility.md5FileSync(page.full_source);
+        utility.md5FileSync(page.full_source);
     if (hash === "empty-hash") {
         if (page.content) {
-            hash = sbgUtility.md5(page.content);
+            hash = utility.md5(page.content);
         }
         else if (page._content) {
-            hash = sbgUtility.md5(page._content);
+            hash = utility.md5(page._content);
         }
     }
     var result = path.join(process.cwd(), "tmp/hexo-themes/caches/post-" + sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
-    sbgUtility.fs.ensureDirSync(path.dirname(result));
+    utility.fs.ensureDirSync(path.dirname(result));
     return result;
 }
 /**
@@ -18268,7 +18268,7 @@ function metadataProcess(page, callback) {
         return;
     }
     var cachePath = getCachePath(page);
-    if (sbgUtility.fs.existsSync(cachePath) && getHexoArgs() === "generate") {
+    if (utility.fs.existsSync(cachePath) && getHexoArgs() === "generate") {
         // skip already parsed metadata
         return;
     }
@@ -18289,13 +18289,13 @@ function metadataProcess(page, callback) {
             result.metadata.permalink = require$$2$2.url_for.bind(hexo)(page.path);
         }
         try {
-            sbgUtility.fs.writeFileSync(cachePath, sbgUtility.jsonStringifyWithCircularRefs(result));
+            utility.fs.writeFileSync(cachePath, utility.jsonStringifyWithCircularRefs(result));
             callback(null, { result: result, cachePath: cachePath }); // Pass cachePath in the callback
         }
         catch (error) {
             hexo.log.error("fail save post info", error.message);
-            if (sbgUtility.fs.existsSync(cachePath))
-                sbgUtility.fs.rm(cachePath, { force: true, recursive: true });
+            if (utility.fs.existsSync(cachePath))
+                utility.fs.rm(cachePath, { force: true, recursive: true });
             callback(error, null); // Invoke callback on error
         }
     })
@@ -18345,13 +18345,13 @@ function metadataProcess(page, callback) {
                         }
                     }
                     try {
-                        sbgUtility.fs.writeFileSync(cachePath, sbgUtility.jsonStringifyWithCircularRefs(result));
+                        utility.fs.writeFileSync(cachePath, utility.jsonStringifyWithCircularRefs(result));
                         callback(null, { result: result, cachePath: cachePath }); // Pass cachePath in the callback
                     }
                     catch (error) {
                         hexo.log.error("fail save post info", error.message);
-                        if (sbgUtility.fs.existsSync(cachePath))
-                            sbgUtility.fs.rm(cachePath, { force: true, recursive: true });
+                        if (utility.fs.existsSync(cachePath))
+                            utility.fs.rm(cachePath, { force: true, recursive: true });
                         callback(error, null); // Invoke callback on error
                     }
                 }
@@ -18402,9 +18402,9 @@ function addToQueue(page) {
 var metadataHelper = function (page) {
     addToQueue(page);
     var cachePath = getCachePath(page);
-    if (sbgUtility.fs.existsSync(cachePath)) {
+    if (utility.fs.existsSync(cachePath)) {
         try {
-            var result = sbgUtility.jsonParseWithCircularRefs(sbgUtility.fs.readFileSync(cachePath, "utf-8"));
+            var result = utility.jsonParseWithCircularRefs(utility.fs.readFileSync(cachePath, "utf-8"));
             if (result && result.metadata) {
                 // Assign values to the page object if they exist and are not undefined or null
                 for (var key in result.metadata) {
@@ -18590,6 +18590,8 @@ hexo.extend.filter.register("after_clean", function () {
 
 function getKeywords(page) {
     var results = [];
+    if (page.keywords && Array.isArray(page.keywords))
+        return page.keywords;
     if (page.tags) {
         page.tags.each(function (label) {
             results.push(label.name);
@@ -18603,6 +18605,118 @@ function getKeywords(page) {
     return results;
 }
 hexo.extend.helper.register("getKeywords", getKeywords);
+
+function fix_url_for(source) {
+    var instance = this instanceof Hexo ? this : hexo;
+    var _a = instance.config.root, root = _a === void 0 ? null : _a;
+    // skip hash source or global protocol url
+    if (source.startsWith("#") || source.startsWith("//"))
+        return source;
+    // process non url source
+    if (!utility.isValidHttpUrl(source) && root) {
+        if (!source.startsWith(root))
+            return require$$2$2.url_for.bind(instance)(source);
+        return source;
+    }
+    return source;
+}
+hexo.extend.helper.register("urlFor", fix_url_for);
+
+// re-implementation fixer of hexo-seo
+/**
+ * fix SEO on anchors
+ * @param $ CherrioAPI
+ * @returns
+ */
+function fixAnchor($, data) {
+    $("a").each(function () {
+        // avoid duplicate rels
+        var currentRel = $(this).attr("rel");
+        if (currentRel) {
+            // Create a Set to store unique rels
+            var rels = new Set(currentRel.split(" "));
+            // Update the rel attribute with unique values
+            $(this).attr("rel", Array.from(rels).join(" "));
+        }
+        // add anchor title
+        if ($(this).attr("title")) {
+            $(this).attr("title", data.title ? "".concat(data.title, " ").concat($(this).attr("href")) : $(this).attr("href"));
+        }
+    });
+    return $;
+}
+function fixImages($, data) {
+    $("img").each(function () {
+        var src = $(this).attr("src") || $(this).attr("data-src");
+        var alt = $(this).attr("alt") || "";
+        if (alt.length === 0) {
+            $(this).attr("alt", data.title ? "".concat(data.title, " ").concat(src) : src);
+        }
+        var title = $(this).attr("title") || "";
+        if (title.length === 0) {
+            $(this).attr("title", data.title ? "".concat(data.title, " ").concat(src) : src);
+        }
+        var itemprop = $(this).attr("itemprop");
+        if (!itemprop || itemprop.trim() === "") {
+            $(this).attr("itemprop", "image");
+        }
+    });
+    return $;
+}
+/**
+ * callback for after_render:html
+ * @param content rendered html string
+ * @param data current page data
+ */
+function htmlSeoFixer(content, data) {
+    var $ = require$$0.load(content);
+    $ = fixAnchor($, data);
+    $ = fixImages($, data);
+    return $.html();
+}
+hexo.extend.filter.register("after_render:html", htmlSeoFixer);
+
+// forked from hexo-theme-butterfly
+// do not include this into hexo-theme-butterfly scripts
+/**
+ * Function to process the content inside the gallery block and return an array of images with captions and URLs.
+ * @param content - The content between {% gallery %} and {% endgallery %}
+ * @returns An array of objects containing the image URL and caption
+ */
+function processGalleryContent(content) {
+    // Split the content by newlines to get individual image markdown
+    var imageLines = content.trim().split("\n");
+    // Initialize an array to store image data
+    var images = [];
+    // Iterate over each image line
+    imageLines.forEach(function (line) {
+        // Extract the caption and URL from the markdown image format ![caption](URL)
+        var match = line.match(/!\[([^\]]*)\]\((.*)\)/);
+        if (match) {
+            var caption = match[1]; // The image caption
+            var url = match[2]; // The image URL
+            images.push({
+                url: url,
+                caption: caption || "" // If no caption, set as an empty string
+            });
+        }
+    });
+    return images;
+}
+hexo.extend.tag.register("gallery", function (_args, content) {
+    // Call the processGalleryContent function to get image data
+    var images = processGalleryContent(content).map(function (o) {
+        o.alt = o.caption;
+        return o;
+    });
+    // Return the JSON array
+    return "<div class=\"gallery-container\"><div class=\"gallery-items\">".concat(JSON.stringify(images, null, 2), "</div></div>");
+}, { ends: true });
+hexo.extend.tag.register("galleryGroup", function (args) {
+    var name = args[0], description = args[1], url = args[2], imgUrl = args[3];
+    // Return the required HTML structure
+    return "\n      <figure class=\"gallery-group\">\n        <img class=\"gallery-group-img\" src=\"".concat(imgUrl, "\" alt=\"Group Image Gallery\" title=\"Group Image Gallery\" itemprop=\"image\">\n        <figcaption>\n          <div class=\"gallery-group-name\">").concat(name, "</div>\n          <p>").concat(description, "</p>\n          <a href=\"").concat(url, "\"></a>\n        </figcaption>\n      </figure>\n    ");
+});
 
 var hasRequiredScripts;
 

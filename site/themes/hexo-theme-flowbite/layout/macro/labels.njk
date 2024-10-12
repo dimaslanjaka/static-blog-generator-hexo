@@ -3,7 +3,7 @@
     <i class="far fa-folder mr-1"></i>
     {%- for cat in post.categories.toArray() %}
       <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="{{ url_for(cat.path) }}"
+        <a href="{{ urlFor(cat.path) }}"
            itemprop="url"
            rel="index"
            class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
@@ -19,7 +19,7 @@
       <i class="far fa-tags mr-1"></i>
       {%- for tag in post.tags.toArray() %}
         <span itemprop="keywords" itemscope itemtype="http://schema.org/Thing">
-          <a href="{{ url_for(tag.path) }}"
+          <a href="{{ urlFor(tag.path) }}"
              itemprop="url"
              rel="index"
              class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">

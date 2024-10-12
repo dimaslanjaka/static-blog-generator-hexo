@@ -1,3 +1,14 @@
+# hexo-theme-flowbite
+
+HexoJS theme build with TailwindCSS and Flowbite
+
+## Features
+
+- Responsive
+- Auto SEO
+- Custom HTML Injection
+- FancyBox multimedia display
+
 ## Preview
 
 - [https://www.webmanajemen.com/hexo-themes/hexo-theme-flowbite/](https://www.webmanajemen.com/hexo-themes/hexo-theme-flowbite/)
@@ -91,4 +102,4 @@ Inject your own widget html [see folder](./source/_data/hexo-theme-flowbite/)
 | `source/_data/hexo-theme-flowbite/body.html` | inject html codes before `</body>` |
 | `source/_data/hexo-theme-flowbite/before-post.html` | inject html before post |
 | `source/_data/hexo-theme-flowbite/after-post.html` | inject html after post |
-
+| `source/_data/hexo-theme-flowbite/aside.html` | inject html on aside bottom section |

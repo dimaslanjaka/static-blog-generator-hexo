@@ -13,7 +13,7 @@
     <title>{{ pageTitle | trim }}</title>
     <meta name="description" content="{{ pageDescription | trim }}" />
     <meta name="keywords" content="{{ getKeywords(page).toString() }}">
-    <meta name="search" content="{{ url_for("/hexo-search.json") }}">
+    <meta name="search" content="{{ urlFor("/hexo-search.json") }}">
     <meta name="author"
           content="{{ getAuthorName(page.author, config.author) | trim }}">
     <!-- Added SEO meta tags -->
@@ -26,10 +26,10 @@
     <meta name="twitter:title" content="{{ pageTitle | trim }}">
     <meta name="twitter:description" content="{{ pageDescription | trim }}">
     <meta name="twitter:image" content="{{ page.image }}">
-    <link rel="icon" type="image/x-icon" href="{{ url_for(theme.favicon | default("//www.webmanajemen.com/favicon.ico") ) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ urlFor(theme.favicon | default("//www.webmanajemen.com/favicon.ico") ) }}" />
     <link rel="stylesheet"
           href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css" />
-    <link rel="stylesheet" href="{{ url_for("/css/style.css") }}">
+    <link rel="stylesheet" href="{{ urlFor("/css/style.css") }}">
     {{ injectHeadHtml() }}
   </head>
   <body class="bg-white dark:bg-slate-800 dark:text-slate-200">
@@ -40,7 +40,7 @@
     </main>
     {% include 'partials/footer.njk' %}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script src="{{ url_for('/js/script.js') }}"></script>
+    <script src="{{ urlFor('/js/script.js') }}"></script>
     {{ injectBodyHtml() }}
   </body>
 </html>

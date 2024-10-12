@@ -4,7 +4,7 @@
   <div class="flex justify-between items-center py-4">
     <div class="post-nav-item">
       {%- if prev %}
-        <a href="{{ url_for(prev.path) }}"
+        <a href="{{ urlFor(prev.path) }}"
            rel="prev"
            title="{{ prev.title }}"
            class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -18,7 +18,7 @@
     </div>
     <div class="post-nav-item">
       {%- if next %}
-        <a href="{{ url_for(next.path) }}"
+        <a href="{{ urlFor(next.path) }}"
            rel="next"
            title="{{ next.title }}"
            class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">

@@ -12,11 +12,9 @@ const tailwindConfig = {
   content: [
     "./node_modules/flowbite/**/*.js",
     "./layout/**/*.njk",
-    "./layout/**/*.html",
-    "./source/**/*.js",
-    "./source/**/*.cjs",
     "./src/**/*",
-    "./_config.yml"
+    "./_config.yml",
+    "./scripts/**/*"
   ].concat(configs, injectionFiles),
   theme: {
     extend: {
@@ -45,7 +43,16 @@ const tailwindConfig = {
               "background-color": "#22272e"
             },
             // drop styling for katex math
-            '[class^="katex"]': false
+            '[class^="katex"]': {
+              all: "initial"
+            } // false
+            // drop styling for images with any class
+            // "img[class]": {
+            // all: "initial" // Reset all styles
+            // display: "inline", // Default display
+            // "max-width": "100%", // Reset max-width
+            // height: "auto" // Reset height
+            // }
           }
         }
       }

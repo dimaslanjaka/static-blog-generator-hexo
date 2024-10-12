@@ -1,20 +1,22 @@
 import { initClickable } from "./clickable";
-import initFancybox from "./fancybox";
+import initDisqus from "./disqus";
 import { highlightMain, initClipBoard } from "./highlight";
 import initKatex from "./katex";
 import initloader from "./loader";
+import initMedia from "./media";
 import initNavigationMenu, { initSearch } from "./nav";
 import initToc from "./toc";
 
 document.addEventListener("DOMContentLoaded", () => {
-  highlightMain();
-  initClipBoard();
-  initFancybox();
+  initNavigationMenu();
+  initMedia();
   initToc();
   initClickable();
-  initNavigationMenu();
+  highlightMain();
+  initClipBoard();
   initSearch();
   initKatex();
+  initDisqus();
 });
 
 window.addEventListener("load", function () {
