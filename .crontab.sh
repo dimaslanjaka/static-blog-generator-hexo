@@ -106,7 +106,7 @@ should_run_job() {
 
 mkdir -p tmp/crontab
 
-# run every 24 hours
-if should_run_job "tmp/crontab/24-h" 24; then
+# run every 1 week
+if should_run_job "tmp/crontab/168-h" 168; then
   yarn workspace wmi run clean
 fi
