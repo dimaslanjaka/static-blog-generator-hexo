@@ -293,6 +293,64 @@ sitemap:
   tags: true
   categories: true
 
+# https://github.com/dimaslanjaka/hexo-renderers
+renderers:
+  html_tags: [strike, summary, 'gcse:searchresults-only']
+
+markdown:
+  preset: default
+  render:
+    html: true
+    xhtmlOut: false
+    langPrefix: language-
+    breaks: true
+    linkify: false
+    typographer: true
+    quotes: “”‘’
+  enable_rules: null
+  disable_rules: null
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-attrs
+    - markdown-it-bracketed-spans
+    - markdown-it-sup
+    - markdown-it-cjk-breaks
+    - markdown-it-sub
+    - markdown-it-deflist
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-mark
+    - name: "@renbaoshuo/markdown-it-katex"
+      options:
+        skipDelimitersCheck: true
+    # - name: markdown-it-emoji
+    #   options:
+    #     shortcuts:
+    #       laughing: :D
+    #       smile: [":)", ":-)"]
+    # - name: markdown-it-table-of-contents
+    #   options:
+    #     includeLevel:
+    #       - 1
+    #       - 2
+    #       - 3
+    #       - 4
+    #       - 5
+    #       - 6
+  anchors:
+    level: 2
+    collisionSuffix: ""
+    permalink: false
+    permalinkClass: header-anchor
+    permalinkSide: left
+    permalinkSymbol: ¶
+    case: 0
+    separator: "-"
+  images:
+    lazyload: false
+    prepend_root: false
+    post_asset: false
+
 # https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus.git
 markdown_it_plus:
   highlight: true
