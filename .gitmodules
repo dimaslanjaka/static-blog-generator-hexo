@@ -10,15 +10,3 @@
 	path = packages/hexo-generator-i18n
 	url = https://github.com/dimaslanjaka/hexo-generator-i18n.git
 	branch = optimize
-[submodule "themes/next"]
-	path = site/themes/next
-	url = https://github.com/dimaslanjaka/hexo-theme-next.git
-	branch = private
-[submodule "themes/butterfly"]
-	path = site/themes/butterfly
-	url = https://github.com/dimaslanjaka/hexo-theme-butterfly
-	branch = private
-[submodule "themes/material"]
-	path = site/themes/material
-	url = https://github.com/dimaslanjaka/hexo-theme-material
-	branch = private
