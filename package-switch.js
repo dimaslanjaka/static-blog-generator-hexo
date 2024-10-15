@@ -18,7 +18,7 @@ const production = {
   warehouse: 'https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz',
   'hexo-seo': 'https://github.com/dimaslanjaka/hexo-seo/raw/8c814eb/release/hexo-seo.tgz',
   'markdown-it': 'https://github.com/dimaslanjaka/markdown-it/raw/95599a5/release/markdown-it.tgz',
-  'hexo-renderers': 'https://github.com/dimaslanjaka/hexo-renderers/raw/aa6d64d/release/hexo-renderers.tgz',
+  'hexo-renderers': 'https://github.com/dimaslanjaka/hexo-renderers/raw/3f727de/release/hexo-renderers.tgz',
   'hexo-shortcodes': 'https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz',
   'static-blog-generator':
     'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/static-blog-generator/release/static-blog-generator.tgz',
@@ -26,7 +26,7 @@ const production = {
     'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/instant-indexing/release/instant-indexing.tgz',
   'sbg-utility':
     'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/sbg-utility/release/sbg-utility.tgz',
-  'sbg-api': 'https://github.com/dimaslanjaka/static-blog-generator/raw/dc7fe71/packages/sbg-api/release/sbg-api.tgz',
+  'sbg-api': 'https://github.com/dimaslanjaka/static-blog-generator/raw/7cdb47e/packages/sbg-api/release/sbg-api.tgz',
   'sbg-cli': 'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/sbg-cli/release/sbg-cli.tgz',
   'sbg-server':
     'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/sbg-server/release/sbg-server.tgz',

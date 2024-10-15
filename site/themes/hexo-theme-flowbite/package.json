@@ -50,7 +50,7 @@
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
     "hexo-post-parser": "^1.2.14",
-    "hexo-renderers": "*",
+    "hexo-renderers": "^3.0.0",
     "highlight.js": "^11.10.0",
     "imagesloaded": "^5.0.0",
     "jquery": "^3.7.1",
