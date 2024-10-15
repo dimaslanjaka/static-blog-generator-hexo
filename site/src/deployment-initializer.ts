@@ -1,8 +1,9 @@
 import * as spawn from 'cross-spawn';
 import dotenv from 'dotenv';
+import fs from 'fs-extra';
 import git, { SpawnOptions, spawnAsync } from 'git-command-helper';
 import Hexo from 'hexo';
-import { fs, path } from 'sbg-utility';
+import path from 'path';
 import { deployConfig, hexoDir } from '../config';
 
 const hexo = new Hexo(hexoDir);
