@@ -103,6 +103,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "sitemap-crawler": "^1.0.0",

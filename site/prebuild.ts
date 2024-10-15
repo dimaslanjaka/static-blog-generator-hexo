@@ -2,6 +2,7 @@ import Promise from 'bluebird';
 import * as dotenv from 'dotenv';
 import fs from 'fs-extra';
 import glob from 'glob';
+import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'upath';
 import { deployConfig } from './config';
@@ -97,12 +98,17 @@ function isNumeric(str: any) {
 }
 
 function copyViewsAsset(hexo: Hexo) {
+  const ignore = [] as string[];
+  if (!hexo.config.theme.includes('-flowbite')) {
+    ignore.push('**/scripts/**');
+  }
   const src = path.join(__dirname, 'views');
   const dest = hexo.theme_dir;
   console.log('copyViewsAsset', src, '=>', dest);
-  fs.copySync(src, dest, {
-    overwrite: true,
-    /** useful for symlink by yarn workspace */
-    dereference: true
-  });
+  // fs.copySync(src, dest, {
+  //   overwrite: true,
+  //   /** useful for symlink by yarn workspace */
+  //   dereference: true
+  // });
+  gulp.src(['**/*.*'], { cwd: src, ignore }).pipe(gulp.dest(dest));
 }
