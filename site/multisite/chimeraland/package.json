@@ -52,7 +52,7 @@
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sbg-utility": "^1.1.8",
+    "sbg-utility": "^2.0.1",
     "sharp": "^0.33.5",
     "slugify": "^1.6.6",
     "through2": "^4.0.2",

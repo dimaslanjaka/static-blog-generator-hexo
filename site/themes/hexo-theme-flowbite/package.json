@@ -57,7 +57,7 @@
     "lodash": "^4.17.21",
     "masonry-layout": "^4.2.2",
     "remove": "^0.1.5",
-    "sbg-utility": "^1.1.8",
+    "sbg-utility": "^2.0.1",
     "upath": "^2.0.1",
     "yaml": "^2.5.1"
   },
