@@ -69,7 +69,6 @@
     "node": ">=14"
   },
   "resolutions": {
-    "node-sass": "9.0.0",
     "binary-collections": "https://github.com/dimaslanjaka/bin/raw/fcd1121/releases/bin.tgz",
     "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo.tgz",
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo.tgz",
@@ -86,7 +85,7 @@
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/9cad7a0/packages/static-blog-generator/release/static-blog-generator.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/9cad7a0/packages/instant-indexing/release/instant-indexing.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/9cad7a0/packages/sbg-utility/release/sbg-utility.tgz",
-    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/9cad7a0/packages/sbg-api/release/sbg-api.tgz",
+    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/a95a949/packages/sbg-api/release/sbg-api.tgz",
     "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/9cad7a0/packages/sbg-cli/release/sbg-cli.tgz",
     "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/9cad7a0/packages/sbg-server/release/sbg-server.tgz",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/a2e797bc27975cba20ef4c87547841e6341bfcf4/release/nodejs-package-types.tgz",
