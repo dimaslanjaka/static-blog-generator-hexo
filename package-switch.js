@@ -1,7 +1,7 @@
 const fs = require('fs');
 const pkg = require('./package.json');
 const path = require('path');
-
+//D:\Repositories\static-blog-generator\packages\sbg-cli\test\post-copy.runner.ts
 const local = {
   'sbg-api': 'file:../sbg-api/packages/sbg-api/release/sbg-api.tgz'
 };
@@ -21,15 +21,15 @@ const production = {
   'hexo-renderers': 'https://github.com/dimaslanjaka/hexo-renderers/raw/3f727de/release/hexo-renderers.tgz',
   'hexo-shortcodes': 'https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz',
   'static-blog-generator':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/static-blog-generator/release/static-blog-generator.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/886c885/packages/static-blog-generator/release/static-blog-generator.tgz',
   'instant-indexing':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/instant-indexing/release/instant-indexing.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/886c885/packages/instant-indexing/release/instant-indexing.tgz',
   'sbg-utility':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/sbg-utility/release/sbg-utility.tgz',
-  'sbg-api': 'https://github.com/dimaslanjaka/static-blog-generator/raw/7cdb47e/packages/sbg-api/release/sbg-api.tgz',
-  'sbg-cli': 'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/sbg-cli/release/sbg-cli.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/886c885/packages/sbg-utility/release/sbg-utility.tgz',
+  'sbg-api': 'https://github.com/dimaslanjaka/static-blog-generator/raw/886c885/packages/sbg-api/release/sbg-api.tgz',
+  'sbg-cli': 'https://github.com/dimaslanjaka/static-blog-generator/raw/886c885/packages/sbg-cli/release/sbg-cli.tgz',
   'sbg-server':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/53ca04c/packages/sbg-server/release/sbg-server.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/886c885/packages/sbg-server/release/sbg-server.tgz',
   'nodejs-package-types':
     'https://github.com/dimaslanjaka/nodejs-package-types/raw/a2e797bc27975cba20ef4c87547841e6341bfcf4/release/nodejs-package-types.tgz',
   'hexo-post-parser': 'https://github.com/dimaslanjaka/hexo-post-parser/raw/c955d99/release/hexo-post-parser.tgz',
@@ -44,6 +44,9 @@ const production = {
 // node package-switch.js [local|production]
 const args = process.argv.slice(2);
 
-pkg.resolutions = Object.assign(pkg.resolutions, args.includes('local') ? local : production);
+pkg.resolutions = Object.assign(
+  pkg.resolutions,
+  args.includes('local') ? Object.assign(production, local) : production
+);
 
 fs.writeFileSync(path.join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
