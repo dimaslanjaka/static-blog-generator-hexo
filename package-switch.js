@@ -22,18 +22,18 @@ const production = {
   'hexo-renderers': 'https://github.com/dimaslanjaka/hexo-renderers/raw/3f727de/release/hexo-renderers.tgz',
   'hexo-shortcodes': 'https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz',
   'static-blog-generator':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/6387b5c/packages/static-blog-generator/release/static-blog-generator.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/static-blog-generator/release/static-blog-generator.tgz',
   'instant-indexing':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/6387b5c/packages/instant-indexing/release/instant-indexing.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/instant-indexing/release/instant-indexing.tgz',
   'sbg-utility':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/6387b5c/packages/sbg-utility/release/sbg-utility.tgz',
-  'sbg-api': 'https://github.com/dimaslanjaka/static-blog-generator/raw/6387b5c/packages/sbg-api/release/sbg-api.tgz',
-  'sbg-cli': 'https://github.com/dimaslanjaka/static-blog-generator/raw/6387b5c/packages/sbg-cli/release/sbg-cli.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-utility/release/sbg-utility.tgz',
+  'sbg-api': 'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-api/release/sbg-api.tgz',
+  'sbg-cli': 'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-cli/release/sbg-cli.tgz',
   'sbg-server':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/6387b5c/packages/sbg-server/release/sbg-server.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-server/release/sbg-server.tgz',
   'nodejs-package-types':
     'https://github.com/dimaslanjaka/nodejs-package-types/raw/a2e797bc27975cba20ef4c87547841e6341bfcf4/release/nodejs-package-types.tgz',
-  'hexo-post-parser': 'https://github.com/dimaslanjaka/hexo-post-parser/raw/c955d99/release/hexo-post-parser.tgz',
+  'hexo-post-parser': 'https://github.com/dimaslanjaka/hexo-post-parser/raw/b655653/release/hexo-post-parser.tgz',
   'cross-spawn': 'https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz',
   'git-command-helper': 'https://github.com/dimaslanjaka/git-command-helper/raw/8849c22/release/git-command-helper.tgz',
   '@types/git-command-helper':
