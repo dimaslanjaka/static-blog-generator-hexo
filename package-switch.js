@@ -22,18 +22,20 @@ const production = {
   'hexo-renderers': 'https://github.com/dimaslanjaka/hexo-renderers/raw/3f727de/release/hexo-renderers.tgz',
   'hexo-shortcodes': 'https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz',
   'static-blog-generator':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/static-blog-generator/release/static-blog-generator.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/253a8b5033ffc0611d68d9f247595af077a86c1b/packages/static-blog-generator/release/static-blog-generator.tgz',
   'instant-indexing':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/instant-indexing/release/instant-indexing.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/253a8b5033ffc0611d68d9f247595af077a86c1b/packages/instant-indexing/release/instant-indexing.tgz',
   'sbg-utility':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-utility/release/sbg-utility.tgz',
-  'sbg-api': 'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-api/release/sbg-api.tgz',
-  'sbg-cli': 'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-cli/release/sbg-cli.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/253a8b5033ffc0611d68d9f247595af077a86c1b/packages/sbg-utility/release/sbg-utility.tgz',
+  'sbg-api':
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/253a8b5033ffc0611d68d9f247595af077a86c1b/packages/sbg-api/release/sbg-api.tgz',
+  'sbg-cli':
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/253a8b5033ffc0611d68d9f247595af077a86c1b/packages/sbg-cli/release/sbg-cli.tgz',
   'sbg-server':
-    'https://github.com/dimaslanjaka/static-blog-generator/raw/44c6055/packages/sbg-server/release/sbg-server.tgz',
+    'https://github.com/dimaslanjaka/static-blog-generator/raw/253a8b5033ffc0611d68d9f247595af077a86c1b/packages/sbg-server/release/sbg-server.tgz',
   'nodejs-package-types':
     'https://github.com/dimaslanjaka/nodejs-package-types/raw/a2e797bc27975cba20ef4c87547841e6341bfcf4/release/nodejs-package-types.tgz',
-  'hexo-post-parser': 'https://github.com/dimaslanjaka/hexo-post-parser/raw/b655653/release/hexo-post-parser.tgz',
+  'hexo-post-parser': 'https://github.com/dimaslanjaka/hexo-post-parser/raw/5b752e3/release/hexo-post-parser.tgz',
   'cross-spawn': 'https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz',
   'git-command-helper': 'https://github.com/dimaslanjaka/git-command-helper/raw/8849c22/release/git-command-helper.tgz',
   '@types/git-command-helper':
@@ -45,9 +47,10 @@ const production = {
 // node package-switch.js [local|production]
 const args = process.argv.slice(2);
 
-pkg.resolutions = Object.assign(
-  pkg.resolutions,
-  args.includes('local') ? Object.assign(production, local) : production
-);
+if (args.includes('local')) {
+  pkg.resolutions = Object.assign(production, local);
+} else {
+  pkg.resolutions = production;
+}
 
 fs.writeFileSync(path.join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
