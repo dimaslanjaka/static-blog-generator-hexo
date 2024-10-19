@@ -60,4 +60,8 @@ if (args.includes('local')) {
   pkg.resolutions = production;
 }
 
+pkg.resolutions = Object.fromEntries(
+  Object.entries(pkg.resolutions).sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+);
+
 fs.writeFileSync(path.join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
