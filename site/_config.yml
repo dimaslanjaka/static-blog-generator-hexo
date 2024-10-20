@@ -349,7 +349,7 @@ markdown:
   images:
     lazyload: false
     prepend_root: false
-    post_asset: false
+    post_asset: true
 
 # https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus.git
 markdown_it_plus:
