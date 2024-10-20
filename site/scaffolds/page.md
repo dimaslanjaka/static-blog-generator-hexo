@@ -1,5 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
-type: page
+updated: {{ date }}
+layout: {{ layout }}
+description:
+categories:
+tags:
 ---
