@@ -295,7 +295,7 @@ sitemap:
 
 # https://github.com/dimaslanjaka/hexo-renderers
 renderers:
-  html_tags: [strike, summary, 'gcse:searchresults-only']
+  html_tags: [strike, summary, details, detail, 'gcse:searchresults-only', 'amp-social-share']
 
 markdown:
   preset: default
