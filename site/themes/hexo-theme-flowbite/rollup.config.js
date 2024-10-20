@@ -1,57 +1,65 @@
-const commonjs = require("@rollup/plugin-commonjs");
-const json = require("@rollup/plugin-json");
-const resolve = require("@rollup/plugin-node-resolve");
-const typescript = require("@rollup/plugin-typescript");
-const fs = require("fs");
+const commonjs = require("@rollup/plugin-commonjs").default;
+const json = require("@rollup/plugin-json").default;
+const resolve = require("@rollup/plugin-node-resolve").nodeResolve;
+const typescript = require("@rollup/plugin-typescript").default;
 const { dts } = require("rollup-plugin-dts");
-const terser = require("@rollup/plugin-terser");
+const terser = require("@rollup/plugin-terser").default;
 
-const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
-const deps = Object.keys(pkg.dependencies).concat(Object.keys(pkg.devDependencies));
-const globals = {
-  jquery: "$",
-  lodash: "_",
-  axios: "axios",
-  "highlight.js": "hljs"
-};
+const pkg = require("./package.json");
+const deps = Object.keys(pkg.dependencies || {}).concat(Object.keys(pkg.devDependencies || {}));
+const globals = { jquery: "$", lodash: "_", axios: "axios", "highlight.js": "hljs" };
+
+/**
+ * Common TypeScript plugin configuration
+ */
+const tsPlugin = typescript({
+  tsconfig: false,
+  compilerOptions: {
+    lib: ["DOM", "DOM.Iterable", "ES2020"],
+    module: "NodeNext",
+    moduleResolution: "NodeNext",
+    skipLibCheck: true,
+    esModuleInterop: true,
+    allowSyntheticDefaultImports: true
+  },
+  include: ["./src/**/*", "./package.json"],
+  resolveJsonModule: true
+});
+
+/**
+ * Common resolve and commonjs plugin configuration for browser
+ */
+const resolveAndCommonJSBrowser = [
+  resolve({
+    browser: true,
+    extensions: [".mjs", ".js", ".json", ".node", ".ts"]
+  }),
+  commonjs()
+];
+
+/**
+ * Common resolve and commonjs plugin configuration for Node.js
+ */
+const resolveAndCommonJSNode = [
+  resolve({
+    extensions: [".mjs", ".js", ".json", ".node", ".ts"]
+  }),
+  commonjs()
+];
 
 /**
  * @type {import("rollup").RollupOptions}
  */
 const browserJS = {
-  input: "src/index.ts", // Replace with your entry file(s)
-  output: [
-    {
-      file: "source/js/script.js", // Output file
-      format: "iife", // Browser-compatible format
-      name: "HexoThemeFlowbite", // Global name for your bundle
-      sourcemap: false, // Enable sourcemaps for easier debugging
-      globals
-    }
-  ],
-  plugins: [
-    typescript.default({
-      tsconfig: false,
-      compilerOptions: {
-        lib: ["DOM", "DOM.Iterable", "ES2020"],
-        typeRoots: ["./src/types", "./node_modules/@types", "./node_modules/nodejs-package-types/typings"],
-        skipDefaultLibCheck: true,
-        skipLibCheck: true,
-        esModuleInterop: true,
-        allowSyntheticDefaultImports: true
-      },
-      include: ["./package.json", "./src/**/*", "./src/globals.d.ts", "./src/**/*.json"]
-    }),
-    json.default(),
-    resolve.nodeResolve({
-      browser: true, // Resolve for browser environment
-      extensions: [".mjs", ".js", ".json", ".node", "ts"] // Resolve both JavaScript and TypeScript
-    }),
-    commonjs.default({
-      include: "node_modules/**" // Include node_modules
-    }),
-    terser()
-  ]
+  input: "src/index.ts",
+  output: {
+    file: "source/js/script.js",
+    format: "iife",
+    name: "HexoThemeFlowbite",
+    sourcemap: false,
+    globals
+  },
+  plugins: [tsPlugin, json(), ...resolveAndCommonJSBrowser, terser()]
 };
 
 /**
@@ -60,33 +68,12 @@ const browserJS = {
 const apiJS = {
   input: "src/api.ts",
   output: {
-    file: "dist/hexo-theme-flowbite-api.js", // Output file
-    format: "cjs", // Browser-compatible format
-    sourcemap: false // Enable sourcemaps for easier debugging
+    file: "dist/hexo-theme-flowbite-api.js",
+    format: "cjs",
+    sourcemap: false
   },
-  plugins: [
-    typescript.default({
-      tsconfig: false,
-      compilerOptions: {
-        lib: ["DOM", "DOM.Iterable", "ES2020"],
-        typeRoots: ["./src/types", "./node_modules/@types", "./node_modules/nodejs-package-types/typings"],
-        skipDefaultLibCheck: true,
-        skipLibCheck: true,
-        esModuleInterop: true,
-        allowSyntheticDefaultImports: true
-      },
-      include: ["./package.json", "./src/**/*", "./src/globals.d.ts", "./src/**/*.json"]
-    }),
-    json.default(),
-    resolve.nodeResolve({
-      browser: true, // Resolve for browser environment
-      extensions: [".mjs", ".js", ".json", ".node", "ts"] // Resolve both JavaScript and TypeScript
-    }),
-    commonjs.default({
-      include: "node_modules/**" // Include node_modules
-    })
-  ],
-  external: deps // Exclude external dependencies from the bundle
+  plugins: [tsPlugin, json(), ...resolveAndCommonJSNode],
+  external: deps
 };
 
 /**
@@ -95,12 +82,12 @@ const apiJS = {
 const apiDts = {
   input: "src/api.ts",
   output: {
-    file: "dist/hexo-theme-flowbite-api.d.ts", // Output file
-    format: "cjs", // Browser-compatible format
-    sourcemap: false // Enable sourcemaps for easier debugging
+    file: "dist/hexo-theme-flowbite-api.d.ts",
+    format: "cjs",
+    sourcemap: false
   },
-  plugins: [json.default(), dts({ tsconfig: "tsconfig.json" })],
-  external: deps // Exclude external dependencies from the bundle
+  plugins: [dts()],
+  external: deps
 };
 
 module.exports = [browserJS, apiDts, apiJS];
