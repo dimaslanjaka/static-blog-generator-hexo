@@ -428,32 +428,6 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
-function getHexoArgs() {
-    // detect hexo arguments
-    var hexoCmd = "";
-    if (hexo.env.args._ && hexo.env.args._.length > 0) {
-        for (var i = 0; i < hexo.env.args._.length; i++) {
-            if (hexo.env.args._[i] == "s" || hexo.env.args._[i] == "server") {
-                hexoCmd = "server";
-                break;
-            }
-            if (hexo.env.args._[i] == "d" || hexo.env.args._[i] == "deploy") {
-                hexoCmd = "deploy";
-                break;
-            }
-            if (hexo.env.args._[i] == "g" || hexo.env.args._[i] == "generate") {
-                hexoCmd = "generate";
-                break;
-            }
-            if (hexo.env.args._[i] == "c" || hexo.env.args._[i] == "clean") {
-                hexoCmd = "clean";
-                break;
-            }
-        }
-    }
-    return hexoCmd;
-}
-
 var searchFiles = [
     path.join(hexo.base_dir, hexo.config.source_dir, "hexo-search.json"),
     path.join(hexo.base_dir, hexo.config.public_dir, "hexo-search.json")
@@ -628,7 +602,7 @@ function metadataProcess(page, callback) {
                         return [2 /*return*/];
                     }
                     cachePath = getCachePath(page);
-                    if (utility.fs.existsSync(cachePath) && getHexoArgs() === "generate") {
+                    if (utility.fs.existsSync(cachePath) /* && getHexoArgs() === "generate"*/) {
                         return [2 /*return*/]; // Skip if already parsed
                     }
                     cleanMetadata = function (metadata) {
@@ -757,11 +731,18 @@ function scheduleProcessing() {
             else {
                 isProcessing = false;
                 if ((data === null || data === void 0 ? void 0 : data.result) && data.result.metadata) {
-                    saveAsSearch({
-                        url: data.result.metadata.permalink || "",
-                        title: data.result.metadata.title || "",
-                        description: data.result.metadata.description || ""
-                    });
+                    if (!data.result.metadata.permalink) {
+                        if (typeof hexo !== "undefined") {
+                            hexo.log.error("permalink empty for ".concat(data.result.metadata.title));
+                        }
+                    }
+                    else {
+                        saveAsSearch({
+                            url: data.result.metadata.permalink,
+                            title: data.result.metadata.title || "",
+                            description: data.result.metadata.description || ""
+                        });
+                    }
                 }
                 setTimeout(scheduleProcessing, 500); // Continue to next item after delay (optional)
             }

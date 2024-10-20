@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "run-s build:prepare build:post",
     "start": "yarn server",
-    "build:prepare": "node -r ts-node/register prebuild.ts",
+    "build:prepare": "node -r ts-node/register prebuild.ts && npx hexo-theme-flowbite",
     "build:post": "npm run post",
     "build:site": "hexo generate",
     "build": "run-s \"build:**\"",
