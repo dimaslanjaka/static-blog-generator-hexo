@@ -15,9 +15,8 @@ const globals = { jquery: "$", lodash: "_", axios: "axios", "highlight.js": "hlj
 const tsPlugin = typescript({
   tsconfig: false,
   compilerOptions: {
-    lib: ["DOM", "DOM.Iterable", "ES2020"],
-    module: "NodeNext",
-    moduleResolution: "NodeNext",
+    lib: ["DOM", "DOM.Iterable", "ES2020", "ESNext"],
+    module: "ESNext",
     skipLibCheck: true,
     esModuleInterop: true,
     allowSyntheticDefaultImports: true

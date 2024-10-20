@@ -47,6 +47,16 @@ img + figcaption,
   }
 }
 
+.post {
+  a {
+    word-wrap: break-word; /* For older browsers */
+    overflow-wrap: break-word; /* Modern browsers */
+    white-space: normal; /* Allow text to wrap */
+    display: inline-block; /* Necessary for the width to take effect */
+    max-width: 100%; /* Ensure it doesn’t exceed container */
+  }
+}
+
 // Pagination
 .pagination {
   display: flex;
