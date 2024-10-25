@@ -1,3 +1,0 @@
-#!/bin/sh
-
-node package-switch.js local
