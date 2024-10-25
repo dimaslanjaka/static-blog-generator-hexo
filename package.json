@@ -41,7 +41,7 @@
       "packages/hexo-generator-redirect"
     ]
   },
-  "packageManager": "yarn@4.5.0",
+  "packageManager": "yarn@4.5.1",
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.7.5",
