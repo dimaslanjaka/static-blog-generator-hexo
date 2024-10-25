@@ -10503,6 +10503,9 @@ input:checked + .toggle-bg{
 .grid{
   display: grid;
 }
+.contents{
+  display: contents;
+}
 .hidden{
   display: none;
 }
@@ -10746,6 +10749,11 @@ input:checked + .toggle-bg{
 }
 .overflow-y-auto{
   overflow-y: auto;
+}
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .whitespace-nowrap{
   white-space: nowrap;

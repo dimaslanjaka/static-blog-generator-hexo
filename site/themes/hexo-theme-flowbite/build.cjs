@@ -15,7 +15,11 @@ const compile = async (outputCSS) => {
     // First, compile SCSS using the new compile method
     const sassResult = sass.compile(inputSCSS, {
       style: "expanded",
-      loadPaths: [path.join(process.cwd(), "node_modules"), path.join(__dirname, "node_modules")]
+      loadPaths: [
+        path.join(process.cwd(), "node_modules"),
+        path.join(__dirname, "node_modules"),
+        path.join(__dirname, "src")
+      ]
     });
 
     // Then, process with PostCSS

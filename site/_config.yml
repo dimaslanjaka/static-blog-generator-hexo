@@ -295,6 +295,7 @@ sitemap:
 
 # https://github.com/dimaslanjaka/hexo-renderers
 renderers:
+  engines: ['marked', 'nunjucks', 'ejs', 'pug']
   html_tags: [strike, summary, details, detail, 'gcse:searchresults-only', 'amp-social-share']
 
 markdown:

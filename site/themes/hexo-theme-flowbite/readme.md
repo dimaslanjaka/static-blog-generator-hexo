@@ -1,6 +1,10 @@
 # hexo-theme-flowbite
 
-HexoJS theme build with TailwindCSS and Flowbite
+HexoJS theme build with TailwindCSS and Flowbite.
+
+<div style="text-align: center;">
+  <img src="https://rawcdn.githack.com/dimaslanjaka/site/fc74340976ee56f1ea362506f98b0218ffa1615e/source/themes/screenshots/Flowbite.png" alt="Flowbite Screenshot" />
+</div>
 
 ## Features
 
@@ -9,13 +13,42 @@ HexoJS theme build with TailwindCSS and Flowbite
 - Custom HTML Injection
 - FancyBox multimedia display
 
+## Requirements
+
+- Hexo renderer nunjucks
+
 ## Preview
 
 - [https://www.webmanajemen.com/hexo-themes/hexo-theme-flowbite/](https://www.webmanajemen.com/hexo-themes/hexo-theme-flowbite/)
 
 ## Installation
 
-[Read Here](https://github.com/dimaslanjaka/hexo-themes?tab=readme-ov-file#how-to-install)
+<!-- [Read Here](https://github.com/dimaslanjaka/hexo-themes?tab=readme-ov-file#how-to-install) -->
+
+- [Download tarball](https://github.com/dimaslanjaka/hexo-themes/raw/refs/heads/master/releases/hexo-theme-flowbite.tgz)
+- Extract [downloaded tarball](https://github.com/dimaslanjaka/hexo-themes/raw/refs/heads/master/releases/hexo-theme-flowbite.tgz) into **themes/hexo-theme-flowbite**
+- Create **_config.hexo-theme-flowbite.yml** [see content configuration](./_config.yml) or using bash
+
+```bash
+curl https://raw.githubusercontent.com/dimaslanjaka/hexo-themes/refs/heads/master/themes/hexo-theme-flowbite/_config.yml > _config.hexo-theme-flowbite.yml
+```
+
+- Install dependencies
+
+```bash
+npm i -D hexo-theme-flowbite
+# OR using latest development
+# npm i -D hexo-theme-flowbite@https://github.com/dimaslanjaka/hexo-themes/raw/refs/heads/master/releases/hexo-theme-flowbite.tgz
+```
+
+## How to update
+
+```bash
+npx hexo-theme-flowbite
+```
+
+![image](https://github.com/user-attachments/assets/7a965587-6781-4ab2-b661-ae0109e6b593)
+
 
 ## Configuration
 
