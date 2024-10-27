@@ -247,6 +247,10 @@ jobs:
       - run: yarn workspace wmi run generate:copy
       - run: yarn workspace wmi run generate:seo
       - run: yarn workspace wmi run generate:safelink
+      - run: hexo seo-feed
+        working-directory: site
+      - run: hexo seo-search
+        working-directory: site
       - name: install site/.deploy_git/page
         shell: bash
         run: |
