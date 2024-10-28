@@ -70,7 +70,7 @@
     "hexo-post-parser": "^3.0.1",
     "hexo-renderer-nunjucks": "^2.0.0",
     "hexo-renderers": "^3.0.0",
-    "hexo-seo": "^1.4.3",
+    "hexo-seo": "^2.0.0",
     "hexo-server": "^3.0.0",
     "hexo-shortcodes": "^1.2.3",
     "hexo-util": "^3.3.0",
