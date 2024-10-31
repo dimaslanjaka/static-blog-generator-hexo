@@ -64,7 +64,7 @@
     "axios": "^1.7.7",
     "fs-extra": "^11.2.0",
     "minimist": "^1.2.8",
-    "sbg-utility": "^2.0.1",
+    "sbg-utility": "^2.0.5",
     "upath": "^2.0.1",
     "yaml": "^2.5.1"
   },
