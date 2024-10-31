@@ -312,7 +312,6 @@ markdown:
   disable_rules: null
   plugins:
     - markdown-it-abbr
-    - markdown-it-attrs
     - markdown-it-bracketed-spans
     - markdown-it-sup
     - markdown-it-cjk-breaks
@@ -321,6 +320,13 @@ markdown:
     - markdown-it-footnote
     - markdown-it-ins
     - markdown-it-mark
+    - # https://www.npmjs.com/package/markdown-it-attrs
+      name: markdown-it-attrs
+      enable: true
+      options:
+        leftDelimiter: '{'
+        rightDelimiter: '}'
+        allowedAttributes: [] # empty array = all attributes are allowed
     - name: "@renbaoshuo/markdown-it-katex"
       options:
         skipDelimitersCheck: true
@@ -352,27 +358,6 @@ markdown:
     prepend_root: false
     post_asset: true
 
-# https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus.git
-markdown_it_plus:
-  highlight: true
-  html: true
-  xhtmlOut: true
-  breaks: true
-  langPrefix:
-  linkify: true
-  typographer:
-  #quotes: “”‘’
-  pre_class: highlight
-  plugins:
-    - plugin:
-        # https://www.npmjs.com/package/markdown-it-attrs
-        name: markdown-it-attrs
-        enable: true
-        options:
-          leftDelimiter: '{'
-          rightDelimiter: '}'
-          allowedAttributes: [] # empty array = all attributes are allowed
-
 # https://github.com/hexojs/hexo-browsersync
 browsersync:
   logLevel: 'warn'
@@ -395,11 +380,11 @@ adsense:
   enable: false
   #pub: ca-pub-1165447249910969 # mine
   #pub: ca-pub-2188063137129806 # kiki
-  pub: ca-pub-2974518380815858
+  pub: ca-pub-1048456668116270
   # in-article ads source
   article_ads:
-    #- "source/ads/in_article.html"
-    #- "source/ads/in_article2.html"
+    - "source/ads/in_article.html"
+    - "source/ads/in_article2.html"
   # ads field
   field: 'site' # post=only post, site=all pages and posts
   # auto redirect to https

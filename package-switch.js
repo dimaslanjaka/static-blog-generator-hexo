@@ -182,6 +182,13 @@ async function main() {
     );
     await updatePackageSha(
       'dimaslanjaka',
+      'hexo-adsense',
+      'master',
+      'hexo-adsense',
+      'https://github.com/dimaslanjaka/hexo-adsense/raw/{sha}/release/hexo-adsense.tgz'
+    );
+    await updatePackageSha(
+      'dimaslanjaka',
       'hexo-renderers',
       'pre-release',
       'hexo-renderers',
