@@ -175,6 +175,13 @@ async function main() {
     );
     await updatePackageSha(
       'dimaslanjaka',
+      'hexo-is',
+      'master',
+      'hexo-is',
+      'https://github.com/dimaslanjaka/hexo-is/raw/{sha}/release/hexo-is.tgz'
+    );
+    await updatePackageSha(
+      'dimaslanjaka',
       'hexo-seo',
       'pre-release',
       'hexo-seo',
