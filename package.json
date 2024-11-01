@@ -78,7 +78,7 @@
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/pre-release/release/git-command-helper.tgz",
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo.tgz",
-    "hexo-adsense": "https://github.com/dimaslanjaka/hexo-adsense/raw/b482d0f66f9bb1dcd8c10b5f3c41ac596b36bfbc/release/hexo-adsense.tgz",
+    "hexo-adsense": "https://github.com/dimaslanjaka/hexo-adsense/raw/f1bc48e54bd804e0afae0088e622905b052bc91a/release/hexo-adsense.tgz",
     "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-asset-link.tgz",
     "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-cli.tgz",
     "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-front-matter.tgz",

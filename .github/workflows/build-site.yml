@@ -239,7 +239,7 @@ jobs:
       #- run: yarn workspace wmi run post:chimera
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
-      - run: yarn workspace wmi exec "hexo clean"
+      # - run: yarn workspace wmi exec "hexo clean"
       - run: yarn workspace wmi run build:site
       #- run: yarn workspace wmi run generate:sitemap
       #- run: yarn workspace wmi run generate:feed
@@ -247,10 +247,8 @@ jobs:
       - run: yarn workspace wmi run generate:copy
       - run: yarn workspace wmi run generate:seo
       - run: yarn workspace wmi run generate:safelink
-      - run: hexo seo-feed
-        working-directory: site
-      - run: hexo seo-search
-        working-directory: site
+      - run: yarn workspace wmi exec "hexo seo-feed"
+      - run: yarn workspace wmi exec "hexo seo-search"
       - name: install site/.deploy_git/page
         shell: bash
         run: |
