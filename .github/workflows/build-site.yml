@@ -226,6 +226,9 @@ jobs:
           touch yarn.lock
           YARN_CHECKSUM_BEHAVIOR=update yarn install
       - run: yarn run postinstall
+      - name: Delete site/public
+        run: rm -rf site/public
+        shell: bash
       - run: yarn workspace wmi run build:prepare
       - run: yarn workspace wmi run post:chimera
       - run: yarn workspace wmi run post:chimera
