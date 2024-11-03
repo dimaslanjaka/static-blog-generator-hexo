@@ -1,4 +1,4 @@
-import { path } from 'sbg-utility'
+import path from 'upath'
 import { hexoProject } from './project'
 import * as src from './src'
 
