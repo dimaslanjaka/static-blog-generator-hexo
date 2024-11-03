@@ -1,11 +1,11 @@
 ---
 title: Chimeraland Unofficial Wikipedia
 date: 2022-09-10 12:13:30
-updated: 2023-08-26T16:00:57+07:00
+updated: 2024-11-03T17:24:21+07:00
 tags: [chimeraland]
 categories: [games, chimeraland]
 permalink: /chimeraland/index.html
-thumbnail: https://www.levelinfinite.com/wp-content/uploads/2022/05/chimeraland_1.jpg
+thumbnail: index2/chimeraland.jpg
 ---
 
 ## [Cooking Recipes](/chimeraland/recipes.html)
@@ -29,7 +29,7 @@ All in one recipes
 
 ## [Chimeraland Unofficial Wikipedia](/chimeraland/index.html)
 
-![Chimeraland Unofficial Wikipedia](https://www.levelinfinite.com/wp-content/uploads/2022/05/chimeraland_1.jpg)
+![Chimeraland Unofficial Wikipedia](./index2/chimeraland.jpg)
 
 ## [Taming Pets Chimeraland](/chimeraland/Taming.html)
 
