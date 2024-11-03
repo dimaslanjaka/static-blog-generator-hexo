@@ -46,7 +46,6 @@
     "fs-extra": "^11.2.0",
     "git-command-helper": "^2.0.2",
     "hexo": "^7",
-    "hexo-adsense": "^2.0.0",
     "hexo-asset-link": "^2.2.3",
     "hexo-browsersync": "^0.3.0",
     "hexo-cli": "^4.3.2",
