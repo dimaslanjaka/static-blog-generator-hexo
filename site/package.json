@@ -33,9 +33,7 @@
     "version": "7.3.0"
   },
   "workspaces": [
-    "themes/hexo-theme-flowbite",
-    "themes/claudia",
-    "themes/butterfly"
+    "themes/hexo-theme-flowbite"
   ],
   "dependencies": {
     "binary-collections": "^2.0.6",
@@ -54,17 +52,18 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^4.0.0",
-    "hexo-generator-json-content": "^4.2.3",
     "hexo-generator-redirect": "^1.4.0",
     "hexo-generator-tag": "^2.0.0",
     "hexo-pagination": "^4.0.0",
     "hexo-post-parser": "^3.0.1",
-    "hexo-renderer-nunjucks": "^2.0.0",
     "hexo-renderers": "^3.0.0",
     "hexo-seo": "^2.0.0",
     "hexo-server": "^3.0.0",
     "hexo-shortcodes": "^1.2.4",
     "hexo-util": "^3.3.0",
+    "sbg-api": "^1.1.1",
+    "sbg-cli": "^1.1.0",
+    "sbg-utility": "^2.0.8",
     "static-blog-generator": "^3.0.1",
     "upath": "^2.0.1",
     "warehouse": "^5.0.1",
