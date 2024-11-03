@@ -10,6 +10,14 @@ nav:
         link: https://www.webmanajemen.com/p/tos.html
       - text: Contact
         link: /contact
+  - text: HexoJS
+    submenu:
+      - text: hexo-adsense
+        link: https://www.webmanajemen.com/docs/hexo-adsense/
+      - text: hexo-shortcodes
+        link: https://www.webmanajemen.com/docs/hexo-shortcodes/
+      - text: hexo-seo
+        link: https://github.com/dimaslanjaka/hexo-seo
   - text: Games
     submenu:
       - text: "Quiz The Legend Of Neverland"
