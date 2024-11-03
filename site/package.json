@@ -82,7 +82,7 @@
     "safelinkify": "^1.2.2",
     "sbg-api": "^1.1.1",
     "sbg-cli": "^1.1.0",
-    "sbg-utility": "^2.0.5",
+    "sbg-utility": "^2.0.8",
     "static-blog-generator": "^3.0.1",
     "upath": "^2.0.1",
     "warehouse": "^5.0.1",
