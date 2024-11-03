@@ -162,14 +162,6 @@ jobs:
         working-directory: site/.deploy_git/chimeraland
         shell: bash
 
-      - name: checkout packages/hexo-theme-claudia
-        uses: actions/checkout@v4
-        with:
-          repository: dimaslanjaka/hexo-theme-claudia
-          ref: private
-          path: packages/hexo-theme-claudia
-          token: '${{ secrets.ACCESS_TOKEN }}'
-          lfs: ''
       - name: checkout site/.deploy_git/page
         uses: actions/checkout@v4
         with:
