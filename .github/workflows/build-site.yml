@@ -241,6 +241,7 @@ jobs:
       - name: Generate site
         run: yarn workspace wmi run build:site
         id: build_site
+        continue-on-error: true
       - name: Clean generate site
         if: steps.build_site.outcome == 'failure'
         run: |
