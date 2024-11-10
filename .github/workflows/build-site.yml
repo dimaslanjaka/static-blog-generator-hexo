@@ -225,6 +225,10 @@ jobs:
           find . -name 'yarn.lock' -type d -prune -exec rm -rf '{}' +
           touch yarn.lock
           YARN_CHECKSUM_BEHAVIOR=update yarn install
+      - name: Update resolutions
+        run: |
+          node package-switch.js production
+          yarn install
       - run: yarn run postinstall
       - name: Delete site/public
         run: rm -rf site/public
