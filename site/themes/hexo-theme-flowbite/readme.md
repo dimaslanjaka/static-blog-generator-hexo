@@ -49,6 +49,24 @@ npx hexo-theme-flowbite
 
 ![image](https://github.com/user-attachments/assets/7a965587-6781-4ab2-b661-ae0109e6b593)
 
+## How to rebuild
+
+You need to rebuild the theme when
+
+- inject tailwind elements into [Injection html](#code-injection)
+- modify layout/partial layout
+
+rebuild with
+
+```bash
+npm rebuild
+```
+
+or cd into theme directory (eg: themes/hexo-theme-flowbite) then run
+
+```bash
+npm run build
+```
 
 ## Configuration
 

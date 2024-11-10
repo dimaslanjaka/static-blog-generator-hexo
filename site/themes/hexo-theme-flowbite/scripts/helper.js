@@ -29,6 +29,7 @@ function _interopNamespaceDefault(e) {
 }
 
 var cheerio__namespace = /*#__PURE__*/_interopNamespaceDefault(cheerio);
+var utility__namespace = /*#__PURE__*/_interopNamespaceDefault(utility);
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -1271,7 +1272,7 @@ function getCachePath(page) {
         }
     }
     var result = path.join(process.cwd(), "tmp", "metadata", hexo.config.theme, "post-" + sanitize((page.title || new String(page._id)).substring(0, 100) + "-" + hash));
-    utility.fs.ensureDirSync(path.dirname(result));
+    fs.ensureDirSync(path.dirname(result));
     return result;
 }
 /**
@@ -1292,7 +1293,7 @@ function metadataProcess(page, callback) {
                         return [2 /*return*/];
                     }
                     cachePath = getCachePath(page);
-                    if (utility.fs.existsSync(cachePath) /* && getHexoArgs() === "generate"*/) {
+                    if (fs.existsSync(cachePath) /* && getHexoArgs() === "generate"*/) {
                         return [2 /*return*/]; // Skip if already parsed
                     }
                     cleanMetadata = function (metadata) {
@@ -1315,7 +1316,7 @@ function metadataProcess(page, callback) {
                                     _a.label = 1;
                                 case 1:
                                     _a.trys.push([1, 3, , 6]);
-                                    return [4 /*yield*/, utility.fs.promises.writeFile(cachePath, utility.jsonStringifyWithCircularRefs(result))];
+                                    return [4 /*yield*/, fs.promises.writeFile(cachePath, utility.jsonStringifyWithCircularRefs(result))];
                                 case 2:
                                     _a.sent();
                                     callback(null, { result: result, cachePath: cachePath });
@@ -1323,8 +1324,8 @@ function metadataProcess(page, callback) {
                                 case 3:
                                     error_2 = _a.sent();
                                     hexo.log.error("fail save post info", error_2.message);
-                                    if (!utility.fs.existsSync(cachePath)) return [3 /*break*/, 5];
-                                    return [4 /*yield*/, utility.fs.promises.rm(cachePath, { force: true, recursive: true })];
+                                    if (!fs.existsSync(cachePath)) return [3 /*break*/, 5];
+                                    return [4 /*yield*/, fs.promises.rm(cachePath, { force: true, recursive: true })];
                                 case 4:
                                     _a.sent();
                                     _a.label = 5;
@@ -1387,7 +1388,7 @@ function metadataProcess(page, callback) {
                     _a.label = 7;
                 case 7:
                     _a.trys.push([7, 9, , 12]);
-                    return [4 /*yield*/, utility.fs.promises.writeFile(cachePath, utility.jsonStringifyWithCircularRefs(result))];
+                    return [4 /*yield*/, fs.promises.writeFile(cachePath, utility.jsonStringifyWithCircularRefs(result))];
                 case 8:
                     _a.sent();
                     callback(null, { result: result, cachePath: cachePath });
@@ -1395,8 +1396,8 @@ function metadataProcess(page, callback) {
                 case 9:
                     error_1 = _a.sent();
                     hexo.log.error("fail save post info", error_1.message);
-                    if (!utility.fs.existsSync(cachePath)) return [3 /*break*/, 11];
-                    return [4 /*yield*/, utility.fs.promises.rm(cachePath, { force: true, recursive: true })];
+                    if (!fs.existsSync(cachePath)) return [3 /*break*/, 11];
+                    return [4 /*yield*/, fs.promises.rm(cachePath, { force: true, recursive: true })];
                 case 10:
                     _a.sent();
                     _a.label = 11;
@@ -1461,9 +1462,9 @@ function addToQueue(page) {
 var metadataHelper = function (page) {
     addToQueue(page);
     var cachePath = getCachePath(page);
-    if (utility.fs.existsSync(cachePath)) {
+    if (fs.existsSync(cachePath)) {
         try {
-            var result = utility.jsonParseWithCircularRefs(utility.fs.readFileSync(cachePath, "utf-8"));
+            var result = utility.jsonParseWithCircularRefs(fs.readFileSync(cachePath, "utf-8"));
             if (result && result.metadata) {
                 // Assign values to the page object if they exist and are not undefined or null
                 for (var key in result.metadata) {
@@ -1707,7 +1708,7 @@ function fix_url_for(source) {
     if (source.startsWith("#") || source.startsWith("//"))
         return source;
     // process non url source
-    if (!utility.isValidHttpUrl(source) && root) {
+    if (!utility__namespace.isValidHttpUrl(source) && root) {
         if (!source.startsWith(root))
             return hutil.url_for.bind(instance)(source);
         return source;
