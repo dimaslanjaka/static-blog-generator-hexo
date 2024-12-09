@@ -50,7 +50,7 @@
     "open": "^10.1.0",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.0.0",
     "sbg-utility": "^2.0.8",
     "sharp": "^0.33.5",
     "slugify": "^1.6.6",
