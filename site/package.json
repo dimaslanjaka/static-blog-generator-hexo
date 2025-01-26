@@ -43,7 +43,7 @@
     "binary-collections": "^2.0.6",
     "bluebird": "^3.7.2",
     "cross-spawn": "^7.0.3",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "git-command-helper": "^2.0.2",
     "hexo": "^7.3.0",
     "hexo-adsense": "^2.0.0",
