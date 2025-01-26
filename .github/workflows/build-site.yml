@@ -238,15 +238,17 @@ jobs:
       - run: yarn workspace wmi run post:chimera
       - run: yarn workspace wmi run post:standalone
       - run: yarn workspace wmi run post:copy
+      - name: Clean site
+        run: yarn workspace wmi exec "hexo clean"
       - name: Generate site
         run: yarn workspace wmi run build:site
         id: build_site
         continue-on-error: true
-      - name: Clean generate site
-        if: steps.build_site.outcome == 'failure'
-        run: |
-          yarn workspace wmi exec "hexo clean"
-          yarn workspace wmi run build:site
+      # - name: Clean generate site
+      #   if: steps.build_site.outcome == 'failure'
+      #   run: |
+      #     yarn workspace wmi exec "hexo clean"
+      #     yarn workspace wmi run build:site
       #- run: yarn workspace wmi run generate:sitemap
       #- run: yarn workspace wmi run generate:feed
       #- run: yarn workspace wmi exec "gulp deploy:copy"
