@@ -100,10 +100,10 @@ filename_case: 0
 render_drafts: false
 
 # https://hexo.io/docs/asset-folders
-post_asset_folder: true
+post_asset_folder: false
 marked:
   prependRoot: true
-  postAsset: true
+  postAsset: false
 
 relative_link: false
 future: true
@@ -356,7 +356,7 @@ markdown:
   images:
     lazyload: false
     prepend_root: false
-    post_asset: true
+    post_asset: false
 
 # https://github.com/hexojs/hexo-browsersync
 browsersync:
