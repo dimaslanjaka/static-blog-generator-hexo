@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import Hexo from 'hexo';
 import path from 'upath';
 
-const currentDirname = path.toUnix(__dirname);
 const hexo = new Hexo(__dirname, { silent: true });
 
 interface deployInfo {
