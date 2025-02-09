@@ -42,7 +42,7 @@
   "dependencies": {
     "binary-collections": "^2.0.6",
     "bluebird": "^3.7.2",
-    "cross-spawn": "^7.0.3",
+    "cross-spawn": "^7.0.6",
     "fs-extra": "^11.3.0",
     "git-command-helper": "^2.0.2",
     "hexo": "^7.3.0",
@@ -69,27 +69,27 @@
     "sbg-utility": "^2.0.8",
     "static-blog-generator": "^3.0.1",
     "upath": "^2.0.1",
-    "warehouse": "^5.0.1",
-    "yaml": "^2.6.0"
+    "warehouse": "^6.0.0",
+    "yaml": "^2.7.0"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.42",
     "@types/fs-extra": "^11.0.4",
     "@types/gulp": "^4.0.17",
-    "@types/node": "^22.8.7",
-    "@typescript-eslint/eslint-plugin": "^8.12.2",
-    "@typescript-eslint/parser": "^8.12.2",
-    "dotenv": "^16.4.5",
-    "eslint": "^9.14.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "@types/node": "^22.13.1",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "@typescript-eslint/parser": "^8.23.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "gulp": "^5.0.0",
     "gulp-cli": "^3.0.0",
     "hexo-theme-flowbite": "*",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.2",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.3"
   },
   "engines": {
     "node": ">=14"
