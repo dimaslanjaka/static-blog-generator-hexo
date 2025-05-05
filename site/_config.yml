@@ -40,7 +40,7 @@ search:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.webmanajemen.com/
 root: /
-permalink: :title.html
+permalink: :filepath.html
 permalink_defaults:
   lang: en
 pretty_urls:

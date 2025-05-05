@@ -125,6 +125,10 @@ jobs:
           curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
           rm -rf .git/modules
           bash ./bin/submodule-install
+          # restore required files
+          #git restore --staged --worktree -- .github
+          #git restore --staged --worktree -- github-actions
+          #git restore --staged --worktree -- github-actions-validator.config.yml
       - name: checkout site/.deploy_git/chimeraland
         uses: actions/checkout@v4
         with:
