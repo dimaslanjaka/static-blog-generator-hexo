@@ -5,6 +5,12 @@
   "private": true,
   "description": "www.webmanajemen.com",
   "main": "package-install.js",
+  "author": {
+    "name": "dimaslanjaka",
+    "email": "dimaslanjaka@gmail.com",
+    "url": "https://webmanajemen.com"
+  },
+  "license": "MIT",
   "scripts": {
     "prestart": "yarn run postinstall",
     "start": "yarn workspace wmi run server",
@@ -13,27 +19,16 @@
     "build": "yarn workspace wmi run build",
     "build-sort": "yarn workspace wmi run build:prepare && yarn workspace wmi run post:copy && yarn workspace wmi run build:site",
     "postbuild": "yarn workspace wmi run postbuild",
-    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo,deepmerge-ts,husky --root --workspaces",
     "build:packages": "yarn workspaces foreach --no-private --all run build",
     "postinstall": "yarn build:packages && node link-workspaces.js",
     "prepare": "husky",
-    "pkg-switch": "node package-switch.js production"
+    "pkg-switch": "node package-switch.js production",
+    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo,deepmerge-ts,husky --root --workspaces"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dimaslanjaka/static-blog-generator-hexo.git"
+  "engines": {
+    "node": ">=14"
   },
-  "keywords": [],
-  "author": {
-    "email": "dimaslanjaka@gmail.com",
-    "name": "dimaslanjaka",
-    "url": "https://webmanajemen.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dimaslanjaka/static-blog-generator-hexo/issues"
-  },
-  "homepage": "https://www.webmanajemen.com/",
+  "packageManager": "yarn@4.5.1",
   "workspaces": {
     "packages": [
       "site",
@@ -42,7 +37,14 @@
       "packages/hexo-generator-redirect"
     ]
   },
-  "packageManager": "yarn@4.5.1",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "fs-extra": "^11.3.0",
+    "minimist": "^1.2.8",
+    "sbg-utility": "^2.0.8",
+    "upath": "^2.0.1",
+    "yaml": "^2.5.1"
+  },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.7.5",
@@ -59,17 +61,6 @@
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
-  },
-  "dependencies": {
-    "axios": "^1.7.7",
-    "fs-extra": "^11.3.0",
-    "minimist": "^1.2.8",
-    "sbg-utility": "^2.0.8",
-    "upath": "^2.0.1",
-    "yaml": "^2.5.1"
-  },
-  "engines": {
-    "node": ">=14"
   },
   "resolutions": {
     "@types/git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/pre-release/release/git-command-helper.tgz",
@@ -100,5 +91,14 @@
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/840f63d269216f134b84414cf300499703090071/packages/sbg-utility/release/sbg-utility.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/static-blog-generator/release/static-blog-generator.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/7026ac85e44d3fc77c7d7fa38561260e5afa9bc9/releases/warehouse.tgz"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator-hexo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/static-blog-generator-hexo/issues"
+  },
+  "homepage": "https://www.webmanajemen.com/",
+  "keywords": []
 }
