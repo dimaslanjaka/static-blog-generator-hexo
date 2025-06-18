@@ -23,7 +23,7 @@
     "postinstall": "yarn build:packages && node link-workspaces.js",
     "prepare": "node -e \"try { require.resolve('husky'); } catch (e) { process.exit(0); }\" && husky",
     "pkg-switch": "node package-switch.js production",
-    "update:ncu": "npx npm-check-updates -u -x jsdom,chalk,hexo,deepmerge-ts,husky --root --workspaces"
+    "update:ncu": "npx npm-check-updates -u -x \"jsdom,chalk,hexo,deepmerge-ts,husky,react,react-dom,*react*\" --root --workspaces"
   },
   "engines": {
     "node": ">=14"
@@ -38,29 +38,29 @@
     ]
   },
   "dependencies": {
-    "axios": "^1.7.7",
+    "axios": "^1.10.0",
     "fs-extra": "^11.3.0",
     "minimist": "^1.2.8",
     "sbg-utility": "^2.0.8",
     "upath": "^2.0.1",
-    "yaml": "^2.5.1"
+    "yaml": "^2.8.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.7.5",
-    "@typescript-eslint/eslint-plugin": "^8.8.1",
-    "@typescript-eslint/parser": "^8.8.1",
+    "@types/node": "^24.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
     "binary-collections": "^2.0.6",
     "cross-env": "^7.0.3",
     "depcheck": "^1.4.7",
-    "eslint": "^9.12.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
     "husky": "^9.1.7",
-    "npm-check-updates": "^17.1.3",
-    "prettier": "^3.3.3",
+    "npm-check-updates": "^18.0.1",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.8.3"
   },
   "resolutions": {
     "@types/git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/pre-release/release/git-command-helper.tgz",
