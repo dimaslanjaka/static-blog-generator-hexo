@@ -69,6 +69,9 @@ jobs:
           # submodules: recursive
           token: '${{ secrets.ACCESS_TOKEN }}'
           lfs: ''
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node_version }}
       - name: update submodules
         run: |
           echo "init submodules"
@@ -79,9 +82,9 @@ jobs:
           git submodule foreach "git submodule sync"
           echo "update submodules"
           mkdir -p bin >/dev/null 2>&1
-          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
-          rm -rf .git/modules
-          bash ./bin/submodule-install
+          npm install -g rimraf binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz
+          npx rimraf .git/modules
+          npx submodule-install
         shell: bash
       - name: checkout site/src-posts
         uses: actions/checkout@v4
@@ -122,9 +125,9 @@ jobs:
           #if [ $(git status --porcelain | wc -l) -gt "0" ]; then
             #git commit -m "fix index"
           #fi
-          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
-          rm -rf .git/modules
-          bash ./bin/submodule-install
+          npm install -g rimraf binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz
+          npx rimraf .git/modules
+          npx submodule-install
           # restore required files
           #git restore --staged --worktree -- .github
           #git restore --staged --worktree -- github-actions
@@ -199,9 +202,6 @@ jobs:
           restore-keys: |
             ${{ env.cache-key }}-*
             ${{ env.cache-key }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.node_version }}
       - run: corepack enable
       - name: Set env
         id: set-env
