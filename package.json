@@ -22,7 +22,6 @@
     "build:packages": "yarn workspaces foreach --no-private --all run build",
     "postinstall": "yarn build:packages && node link-workspaces.js",
     "prepare": "node -e \"try { require.resolve('husky'); } catch (e) { process.exit(0); }\" && husky",
-    "pkg-switch": "node package-switch.js production",
     "update:ncu": "npx npm-check-updates -u -x \"jsdom,chalk,hexo,deepmerge-ts,husky,react,react-dom,*react*\" --root --workspaces"
   },
   "engines": {
