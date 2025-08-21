@@ -219,7 +219,7 @@ jobs:
         run: bash bin/cronjob
       - run: |
             touch yarn.lock
-            yarn install --inline-builds
+            node setup.mjs --inline-builds
         id: install
         continue-on-error: true
         name: "YARN: install"
@@ -231,10 +231,10 @@ jobs:
           find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
           find . -name 'yarn.lock' -type d -prune -exec rm -rf '{}' +
           touch yarn.lock
-          YARN_CHECKSUM_BEHAVIOR=update yarn install
+          YARN_CHECKSUM_BEHAVIOR=update node setup.mjs
       - name: Update resolutions
         run: |
-          yarn install
+          node setup.mjs
       - run: yarn run postinstall
       - name: Delete site/public
         run: rm -rf site/public
