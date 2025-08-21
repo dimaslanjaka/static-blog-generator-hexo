@@ -49,11 +49,13 @@ export async function buildChimeralandPosts() {
         dates.push(moment(String(updated)).valueOf())
 
         // thumbnail fix
+        const cdnList = [
+          'https://placehold.co/700x500/ffffff/000000?text=',
+          'https://dummyimage.com/700x500/ffffff/000000&text='
+        ]
+        const randomCdn = cdnList[Math.floor(Math.random() * cdnList.length)]
         if (!thumbnail || thumbnail.trim().length === 0) {
-          thumbnail = `https://via.placeholder.com/700x500/FFFFFF/000000/?text=${title.replace(
-            /\s/gim,
-            '+'
-          )}`
+          thumbnail = `${randomCdn}${title.replace(/\s/gim, '+')}`
         }
 
         // permalink fix
