@@ -28,6 +28,12 @@ const dates = AttendantsData.concat(
 ).map((o) => moment(o.dateModified).valueOf())
 
 export async function buildChimeralandPosts() {
+  // Helper to add memory limit to ts-node
+  const tsNodeArgs = (scriptPath) => [
+    '--max-old-space-size=2048',
+    'ts-node',
+    scriptPath
+  ]
   try {
     const paths = await glob('**/*.md', {
       cwd: base,
@@ -95,13 +101,53 @@ thumbnail: https://www.levelinfinite.com/wp-content/uploads/2022/05/chimeraland_
     const markdown = metadata + body
     writefile(path.join(chimeralandProject, 'src-posts/index.md'), markdown)
   } finally {
-    await import('./attendant-list')
-    await import('./blacklist-player')
-    await import('./material-location')
+    const { spawn } = await import('child_process')
+
+    console.log('Building attendant list')
+    await new Promise((resolve, reject) => {
+      const child = spawn(
+        'npx',
+        tsNodeArgs(path.join(__dirname, 'attendant-list', 'index.ts')),
+        { stdio: 'inherit', shell: true }
+      )
+      child.on('exit', (code) =>
+        code === 0
+          ? resolve(undefined)
+          : reject(new Error('attendant-list failed'))
+      )
+    })
+
+    console.log('Building blacklist player')
+    await new Promise((resolve, reject) => {
+      const child = spawn(
+        'npx',
+        tsNodeArgs(path.join(__dirname, 'blacklist-player', 'index.ts')),
+        { stdio: 'inherit', shell: true }
+      )
+      child.on('exit', (code) =>
+        code === 0
+          ? resolve(undefined)
+          : reject(new Error('blacklist-player failed'))
+      )
+    })
+
+    console.log('Building material location')
+    await new Promise((resolve, reject) => {
+      const child = spawn(
+        'npx',
+        tsNodeArgs(path.join(__dirname, 'material-location', 'index.ts')),
+        { stdio: 'inherit', shell: true }
+      )
+      child.on('exit', (code) =>
+        code === 0
+          ? resolve(undefined)
+          : reject(new Error('material-location failed'))
+      )
+    })
   }
 }
 
-if (require.main === module) {
+if (process.argv.some((arg) => /chimeraland.*index/i.test(arg))) {
   // run standalone
   buildChimeralandPosts()
 }
