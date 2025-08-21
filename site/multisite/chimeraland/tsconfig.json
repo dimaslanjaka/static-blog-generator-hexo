@@ -20,7 +20,7 @@
   "include": [
     "chimeraland",
     "src",
-    "project.js",
+    "project.cjs",
     "package.json",
     "sync",
     "build.ts"

@@ -14,16 +14,16 @@
   "scripts": {
     "start": "node -r ts-node/register src/manager.ts",
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
-    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
+    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.cjs",
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s update:** && node packer.js --yarn",
-    "build": "ts-node build.ts",
+    "build": "node build.mjs",
     "copy": "node test/copy.js",
     "deploy": "node deploy.js",
     "lint": "run-s lint:**",
     "lint:src": "npx eslint --fix src/**/*.{ts,tsx,js,json}",
     "lint:sync": "npx eslint --fix sync/**/*.{ts,tsx,js,json}",
-    "pack": "node packer.js --yarn"
+    "pack": "node packer.cjs --yarn"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^3.0.1",
@@ -77,6 +77,7 @@
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
+    "binary-collections": "^2.0.9",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
