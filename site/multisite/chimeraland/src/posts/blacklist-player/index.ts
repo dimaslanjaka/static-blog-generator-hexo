@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird'
 import { readFileSync } from 'fs-extra'
-import { buildPost, postMap, postMeta, renderMarkdown } from 'hexo-post-parser'
+import { buildPost, postMap, postMeta, renderMarkdownIt } from 'hexo-post-parser'
 import { Options, minify } from 'html-minifier-terser'
 import { JSDOM } from 'jsdom'
 import { EOL } from 'os'
@@ -32,7 +32,7 @@ const metadata: postMeta = {
 const translator = readFileSync(join(__dirname, 'translator.html')).toString()
 const bodyfile = join(__dirname, 'body.md')
 const bodymd = readFileSync(bodyfile).toString()
-const bodyhtml = renderMarkdown(bodymd)
+const bodyhtml = renderMarkdownIt(bodymd)
 const dom = new JSDOM(bodyhtml)
 
 Array.from(dom.window.document.querySelectorAll('table')).forEach(
