@@ -45,7 +45,12 @@ async function installDependencies() {
 
   // Compare checksum when not yet installed
   if (!isInstalled) {
-    const checksum = sbgUtility.getChecksum(path.join(__dirname, 'package.json'));
+    // Support both default and named export for getChecksum
+    const getChecksum = sbgUtility.getChecksum || (sbgUtility.default && sbgUtility.default.getChecksum);
+    if (typeof getChecksum !== 'function') {
+      throw new Error('getChecksum is not a function in sbg-utility');
+    }
+    const checksum = getChecksum(path.join(__dirname, 'package.json'));
     const fileChecksum = path.join(__dirname, 'tmp/checksum.txt');
     const previousChecksum = fs.existsSync(fileChecksum) ? fs.readFileSync(fileChecksum, 'utf-8') : '';
     if (checksum !== previousChecksum) {
