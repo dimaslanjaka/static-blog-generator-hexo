@@ -52,7 +52,7 @@
     "njk": "html",
   },
   "eslint.debug": true,
-  "eslint.useFlatConfig": false,
+  "eslint.useFlatConfig": true,
   "eslint.format.enable": true,
   "eslint.trace.server": "messages",
   "editor.wordWrap": "on",
@@ -60,12 +60,31 @@
   "javascript.suggestionActions.enabled": false,
   "typescript.suggestionActions.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
-    "source.fixAll": "explicit"
+    "source.organizeImports": "always",
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+    "source.fixAll.ts": "always",
+    "source.addMissingImports.ts": "always"
   },
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "markdown",
+    "json",
+    "jsonc"
+  ],
   "eslint.validate": [
     "javascript",
-    "typescript"
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "markdown",
+    "json",
+    "jsonc"
   ],
   "[nunjucks]": {
     "editor.formatOnSave": true,
