@@ -1,5 +1,5 @@
 import path from 'upath'
-import { hexoProject } from './project'
+import { hexoProject } from './project.cjs'
 import * as src from './src'
 
 async function copy() {
