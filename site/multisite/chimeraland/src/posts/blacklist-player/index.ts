@@ -1,17 +1,12 @@
-import Bluebird from 'bluebird'
-import { readFileSync } from 'fs-extra'
-import {
-  buildPost,
-  postMap,
-  postMeta,
-  renderMarkdownIt
-} from 'hexo-post-parser'
+import fs from 'fs-extra'
+import { buildPost, postMap, postMeta } from 'hexo-post-parser'
 import { Options, minify } from 'html-minifier-terser'
 import { JSDOM } from 'jsdom'
+import { marked } from 'marked'
 import { EOL } from 'os'
 import sbgutil from 'sbg-utility'
 import slugify from 'slugify'
-import { join } from 'upath'
+import path from 'upath'
 import { chimeralandProject } from '../../../project.cjs'
 import { screenshotsGlob } from './screenshot'
 
@@ -34,11 +29,34 @@ const metadata: postMeta = {
     'https://rawcdn.githack.com/dimaslanjaka/source-posts/d8f65abfe4e6d85cc18fd71cb1658227582bec67/chimeraland/blacklist-player/thumbnail.png',
   author: 'L3n4r0x'
 }
-const translator = readFileSync(join(__dirname, 'translator.html')).toString()
-const bodyfile = join(__dirname, 'body.md')
-const bodymd = readFileSync(bodyfile).toString()
-const bodyhtml = renderMarkdownIt(bodymd)
-const dom = new JSDOM(bodyhtml)
+const translator = fs
+  .readFileSync(path.join(__dirname, 'translator.html'))
+  .toString()
+const bodyfile = path.join(__dirname, 'body.md')
+
+let bodymd = ''
+let bodyhtml = ''
+let dom: JSDOM
+try {
+  bodymd = fs.readFileSync(bodyfile).toString()
+  console.log('body.md size:', bodymd.length, 'characters')
+} catch (err) {
+  console.error('Error reading body.md:', err)
+  throw err
+}
+try {
+  bodyhtml = marked.parse(bodymd, { async: false }) as string
+  console.log('bodyhtml size:', bodyhtml.length, 'characters')
+} catch (err) {
+  console.error('Error rendering markdown:', err)
+  throw err
+}
+try {
+  dom = new JSDOM(bodyhtml)
+} catch (err) {
+  console.error('Error creating JSDOM:', err)
+  throw err
+}
 
 Array.from(dom.window.document.querySelectorAll('table')).forEach(
   function (table) {
@@ -82,31 +100,38 @@ let body = dom.window.document.body.innerHTML
 dom.window.close()
 // console.log(body)
 
+console.log('Processing screenshots...')
+
 // include screenshots
 screenshotsGlob().then(function (ss) {
   body = body.replace('<!-- tangkapan.layar -->', ss.join(EOL))
 
+  // Free up memory by releasing dom and related objects
+  if (typeof global.gc === 'function') {
+    global.gc()
+  }
+
+  // Do the <!-- ss --> replacement only once
+  const finalBody = body.replace('<!-- ss -->', translator + '\n')
+
   const opt: Options = {
-    // false = keep attribute has space
     removeTagWhitespace: false,
-    // false = keep attribute quotes
     removeAttributeQuotes: false,
     minifyCSS: true,
     minifyJS: true
   }
 
-  Bluebird.all([
-    minify(body.replace('<!-- ss -->', translator + '\n'), opt),
-    minify(body.replace('<!-- ss -->', translator + '\n'), opt)
-  ]).then((arr) => {
+  minify(finalBody, opt).then((minified) => {
     const post: postMap = {
       metadata,
-      body: arr[0],
-      rawbody: arr[1]
+      body: minified,
+      rawbody: minified
     }
     const build = buildPost(post)
-    const saveTo = join(chimeralandProject, 'src-posts/blacklist-player.md')
-
+    const saveTo = path.join(
+      chimeralandProject,
+      'src-posts/blacklist-player.md'
+    )
     console.log('blacklist saved', sbgutil.writefile(saveTo, build).file)
   })
 })
