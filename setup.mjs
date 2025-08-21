@@ -54,13 +54,16 @@ async function installDependencies() {
   const sbgUtility = await import('sbg-utility');
   const upath = await import('upath').then((mod) => mod.default ?? mod);
 
+  const tmpDir = upath.join(__dirname, 'tmp');
+  fs.ensureDirSync(tmpDir); // Ensure tmp directory exists
+
   // Always check checksum, even if packages are installed
   const getChecksum = sbgUtility.getChecksum || (sbgUtility.default && sbgUtility.default.getChecksum);
   if (typeof getChecksum !== 'function') {
     throw new Error('getChecksum is not a function in sbg-utility');
   }
   const checksum = getChecksum(upath.join(__dirname, 'package.json'));
-  const fileChecksum = upath.join(__dirname, 'tmp/checksum.txt');
+  const fileChecksum = upath.join(tmpDir, 'checksum.txt');
   const previousChecksum = fs.existsSync(fileChecksum) ? fs.readFileSync(fileChecksum, 'utf-8') : '';
   if (checksum !== previousChecksum) {
     const result = spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
