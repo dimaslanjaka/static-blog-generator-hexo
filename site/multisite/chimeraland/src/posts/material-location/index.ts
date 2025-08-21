@@ -6,7 +6,7 @@ import nunjucks from 'nunjucks'
 import { writefile } from 'sbg-utility'
 import slugify from 'slugify'
 import path from 'upath'
-import { chimeralandProject } from '../../../project'
+import { chimeralandProject } from '../../../project.cjs'
 import { MaterialsData } from '../../utils/chimeraland'
 
 interface pMap extends postMap {

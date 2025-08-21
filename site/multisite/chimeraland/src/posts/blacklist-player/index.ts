@@ -1,13 +1,18 @@
 import Bluebird from 'bluebird'
 import { readFileSync } from 'fs-extra'
-import { buildPost, postMap, postMeta, renderMarkdownIt } from 'hexo-post-parser'
+import {
+  buildPost,
+  postMap,
+  postMeta,
+  renderMarkdownIt
+} from 'hexo-post-parser'
 import { Options, minify } from 'html-minifier-terser'
 import { JSDOM } from 'jsdom'
 import { EOL } from 'os'
 import sbgutil from 'sbg-utility'
 import slugify from 'slugify'
 import { join } from 'upath'
-import { chimeralandProject } from '../../../project'
+import { chimeralandProject } from '../../../project.cjs'
 import { screenshotsGlob } from './screenshot'
 
 const metadata: postMeta = {

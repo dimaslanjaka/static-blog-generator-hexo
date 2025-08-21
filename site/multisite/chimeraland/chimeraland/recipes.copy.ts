@@ -4,7 +4,7 @@ import { writefile } from 'sbg-utility'
 import sharp from 'sharp'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
-import { hexoProject } from '../project'
+import { hexoProject } from '../project.cjs'
 import { array_unique } from '../src/utils/array'
 import recipes from './recipes.json'
 

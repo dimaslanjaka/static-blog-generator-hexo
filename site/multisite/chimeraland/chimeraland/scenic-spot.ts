@@ -3,7 +3,7 @@ import { writefile } from 'sbg-utility'
 import sharp from 'sharp'
 import slugify from 'slugify'
 import { basename, dirname, extname, join, toUnix } from 'upath'
-import { hexoProject } from '../project'
+import { hexoProject } from '../project.cjs'
 import { capitalizer } from '../src/utils/string'
 import { scenicArr } from './star-location'
 

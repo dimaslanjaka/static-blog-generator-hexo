@@ -7,7 +7,7 @@ import moment from 'moment-timezone'
 import { trueCasePathSync, writefile } from 'sbg-utility'
 
 import path from 'upath'
-import { chimeralandProject } from '../../project'
+import { chimeralandProject } from '../../project.cjs'
 import {
   AttendantsData,
   MaterialsData,

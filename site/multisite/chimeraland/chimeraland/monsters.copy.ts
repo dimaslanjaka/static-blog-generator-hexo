@@ -6,7 +6,7 @@ import { isValidHttpUrl, writefile } from 'sbg-utility'
 import sharp from 'sharp'
 import slugify from 'slugify'
 import { basename, dirname, extname, join } from 'upath'
-import { chimeralandProject, hexoProject } from '../project'
+import { chimeralandProject, hexoProject } from '../project.cjs'
 import monsters from './monsters.json'
 
 const outputJSON = join(__dirname, '../src/utils/chimeraland-monsters.json')

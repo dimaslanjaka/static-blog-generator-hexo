@@ -11,7 +11,7 @@ import { writefile } from 'sbg-utility'
 import sharp from 'sharp'
 import slugify from 'slugify'
 import { basename, dirname, extname, join } from 'upath'
-import { chimeralandProject } from '../project'
+import { chimeralandProject } from '../project.cjs'
 import attendants from './attendants.json'
 
 const outputJSON = join(__dirname, '../src/utils/chimeraland-attendants.json')

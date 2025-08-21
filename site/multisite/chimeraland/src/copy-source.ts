@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import { join } from 'upath'
-import { hexoProject } from '../project'
+import { hexoProject } from '../project.cjs'
 
 const sourceFolder = join(__dirname, '../source')
 // const sourceOutputFolder = join(hexoProject, 'source/chimeraland')

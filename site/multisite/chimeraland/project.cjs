@@ -1,10 +1,10 @@
-const { join, toUnix } = require('upath')
+const upath = require('upath')
 const spawn = require('cross-spawn')
 
 /** hexo project location */
-const hexoProject = join(__dirname, '../../')
+const hexoProject = upath.join(__dirname, '../../')
 /** current project root location */
-const chimeralandProject = toUnix(__dirname)
+const chimeralandProject = upath.toUnix(__dirname)
 
 /**
  * run post:copy
