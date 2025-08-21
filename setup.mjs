@@ -4,14 +4,25 @@ import path from 'path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-async function isAlreadyInstalled() {
+function isPackageInstalledSync(packageName) {
+  try {
+    // Use import.meta.resolve if available (Node 20+), fallback to require.resolve
+    if (typeof import.meta.resolve === 'function') {
+      import.meta.resolve(packageName);
+    } else {
+      require.resolve(packageName);
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function isAlreadyInstalled() {
   // List of packages to check
   const packages = ['gulp', 'glob', 'sbg-utility', 'upath', 'fs-extra'];
-
-  // Check if any package is not installed
-  const missingPackages = packages.filter((packageName) => !isPackageInstalled(packageName));
+  const missingPackages = packages.filter((packageName) => !isPackageInstalledSync(packageName));
   let isInstalled = false;
-
   if (missingPackages.length > 0) {
     console.log('Some packages are missing:', missingPackages.join(', '));
     console.log('Running yarn install...');
@@ -24,7 +35,6 @@ async function isAlreadyInstalled() {
   } else {
     console.log('All packages are installed.');
   }
-
   return isInstalled;
 }
 
@@ -38,30 +48,28 @@ async function isAlreadyInstalled() {
  * @returns {Promise<void>} Resolves when dependency installation and checksum update are complete.
  */
 async function installDependencies() {
-  const isInstalled = await isAlreadyInstalled();
+  const isInstalled = isAlreadyInstalled();
+  // Only import after install check, so dependencies are present
   const fs = await import('fs-extra').then((mod) => mod.default ?? mod);
   const sbgUtility = await import('sbg-utility');
-  const path = await import('upath').then((mod) => mod.default ?? mod);
+  const upath = await import('upath').then((mod) => mod.default ?? mod);
 
-  // Compare checksum when not yet installed
-  if (!isInstalled) {
-    // Support both default and named export for getChecksum
-    const getChecksum = sbgUtility.getChecksum || (sbgUtility.default && sbgUtility.default.getChecksum);
-    if (typeof getChecksum !== 'function') {
-      throw new Error('getChecksum is not a function in sbg-utility');
+  // Always check checksum, even if packages are installed
+  const getChecksum = sbgUtility.getChecksum || (sbgUtility.default && sbgUtility.default.getChecksum);
+  if (typeof getChecksum !== 'function') {
+    throw new Error('getChecksum is not a function in sbg-utility');
+  }
+  const checksum = getChecksum(upath.join(__dirname, 'package.json'));
+  const fileChecksum = upath.join(__dirname, 'tmp/checksum.txt');
+  const previousChecksum = fs.existsSync(fileChecksum) ? fs.readFileSync(fileChecksum, 'utf-8') : '';
+  if (checksum !== previousChecksum) {
+    const result = spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
+    if (result.error) {
+      console.error('Failed to run yarn install:', result.error);
+      process.exit(result.status || 1);
     }
-    const checksum = getChecksum(path.join(__dirname, 'package.json'));
-    const fileChecksum = path.join(__dirname, 'tmp/checksum.txt');
-    const previousChecksum = fs.existsSync(fileChecksum) ? fs.readFileSync(fileChecksum, 'utf-8') : '';
-    if (checksum !== previousChecksum) {
-      const result = spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
-      if (result.error) {
-        console.error('Failed to run yarn install:', result.error);
-        process.exit(result.status || 1);
-      }
-      fs.writeFileSync(fileChecksum, checksum);
-      console.log('Checksum updated:', checksum);
-    }
+    fs.writeFileSync(fileChecksum, checksum);
+    console.log('Checksum updated:', checksum);
   }
 }
 
@@ -70,20 +78,6 @@ async function installDependencies() {
  */
 async function runSetup() {
   spawnSync('npx', ['--yes', 'update-browserslist-db@latest'], { stdio: 'inherit', shell: true });
-}
-
-/**
- * Checks if a package is installed (resolvable) in ESM context.
- * @param {string} packageName - The name of the package to check.
- * @returns {Promise<boolean>} - Resolves to true if installed, false otherwise.
- */
-async function isPackageInstalled(packageName) {
-  try {
-    await import(packageName);
-    return true;
-  } catch {
-    return false;
-  }
 }
 
 // run the setup tasks
