@@ -35,7 +35,7 @@ jobs:
     env:
       NODE_OPTIONS: '--max_old_space_size=8192' #8192 4096 --expose-gc
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
       node_version: 20.x
       YARN_CHECKSUM_BEHAVIOR: update
       cache-key: mySiteCache
@@ -67,11 +67,15 @@ jobs:
           ref: master
           repository: dimaslanjaka/static-blog-generator-hexo
           # submodules: recursive
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.node_version }}
+          cache-dependency-path: '**/package.json'
+          package-manager-cache: false
+          cache: 'yarn'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
       - name: Install libcurl dev
         run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
         shell: bash
@@ -95,7 +99,7 @@ jobs:
           repository: dimaslanjaka/source-posts
           ref: posts
           path: site/src-posts
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/source
         uses: actions/checkout@v5
@@ -103,7 +107,7 @@ jobs:
           repository: dimaslanjaka/public-source
           ref: master
           path: site/source
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/.deploy_git
         uses: actions/checkout@v5
@@ -111,7 +115,7 @@ jobs:
           repository: dimaslanjaka/dimaslanjaka.github.io
           ref: master
           path: site/.deploy_git
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: clean site/.deploy_git
         working-directory: site/.deploy_git
@@ -141,7 +145,7 @@ jobs:
           repository: dimaslanjaka/chimeraland
           ref: gh-pages
           path: site/.deploy_git/chimeraland
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
 
       - name: checkout site/.deploy_git/Web-Manajemen
@@ -150,7 +154,7 @@ jobs:
           repository: dimaslanjaka/Web-Manajemen
           ref: gh-pages
           path: site/.deploy_git/Web-Manajemen
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
 
       - name: checkout site/.deploy_git/archives
@@ -159,7 +163,7 @@ jobs:
           repository: dimaslanjaka/archives
           ref: gh-pages
           path: site/.deploy_git/archives
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
 
       - name: clean site/.deploy_git/chimeraland
@@ -178,7 +182,7 @@ jobs:
           repository: dimaslanjaka/page
           ref: gh-pages
           path: site/.deploy_git/page
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/.deploy_git/docs
         uses: actions/checkout@v5
@@ -186,7 +190,7 @@ jobs:
           repository: dimaslanjaka/docs
           ref: master
           path: site/.deploy_git/docs
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/.deploy_git/assets
         uses: actions/checkout@v5
@@ -194,7 +198,7 @@ jobs:
           repository: dimaslanjaka/assets
           ref: master
           path: site/.deploy_git/assets
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: 'true'
       - name: Cache initialize
         id: cache
@@ -329,7 +333,7 @@ jobs:
         run: |
           git config --global user.name 'dimaslanjaka'
           git config --global user.email 'dimaslanjaka@gmail.com'
-          git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
+          git remote set-url origin https://${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}@github.com/dimaslanjaka/dimaslanjaka.github.io
           git submodule foreach "git add -A | :"
           git submodule foreach "git commit -am 'chore: released from ${{ env.GITHUB_COMMIT_URL }}' | :"
           #git submodule foreach "git pull -X theirs | :";
