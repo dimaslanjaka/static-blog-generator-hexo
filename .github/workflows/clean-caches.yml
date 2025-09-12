@@ -39,7 +39,11 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: 18.x
+          node-version: 20.x
+          cache-dependency-path: '**/package.json'
+          package-manager-cache: false
+          cache: 'yarn'
+          token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
 
       - name: Update Submodules
         run: |
