@@ -51,7 +51,7 @@
     "nunjucks": "^3.2.4",
     "open": "^10.1.2",
     "prettier": "^3.5.3",
-    "react": "^18.3.1",
+    "react": "^19.2.0",
     "react-dom": "^18.3.1",
     "sbg-utility": "^2.0.9",
     "sharp": "^0.34.2",
