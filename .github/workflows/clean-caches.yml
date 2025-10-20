@@ -37,7 +37,7 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: 20.x
           cache-dependency-path: '**/package.json'
