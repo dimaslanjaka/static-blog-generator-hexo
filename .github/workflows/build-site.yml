@@ -61,7 +61,7 @@ jobs:
           timezoneMacos: 'Asia/Jakarta'
           timezoneWindows: 'Indonesia Standard Time'
       - run: git config --global  core.ignorecase false
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         name: checkout root project
         with:
           ref: master
@@ -94,7 +94,7 @@ jobs:
           npx submodule-install
         shell: bash
       - name: checkout site/src-posts
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/source-posts
           ref: posts
@@ -102,7 +102,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/source
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/public-source
           ref: master
@@ -110,7 +110,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/.deploy_git
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/dimaslanjaka.github.io
           ref: master
@@ -140,7 +140,7 @@ jobs:
           #git restore --staged --worktree -- github-actions
           #git restore --staged --worktree -- github-actions-validator.config.yml
       - name: checkout site/.deploy_git/chimeraland
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/chimeraland
           ref: gh-pages
@@ -149,7 +149,7 @@ jobs:
           lfs: ''
 
       - name: checkout site/.deploy_git/Web-Manajemen
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/Web-Manajemen
           ref: gh-pages
@@ -158,7 +158,7 @@ jobs:
           lfs: ''
 
       - name: checkout site/.deploy_git/archives
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/archives
           ref: gh-pages
@@ -177,7 +177,7 @@ jobs:
         shell: bash
 
       - name: checkout site/.deploy_git/page
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/page
           ref: gh-pages
@@ -185,7 +185,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/.deploy_git/docs
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/docs
           ref: master
@@ -193,7 +193,7 @@ jobs:
           token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
       - name: checkout site/.deploy_git/assets
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: dimaslanjaka/assets
           ref: master
