@@ -6,7 +6,10 @@ import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'upath';
 import { deployConfig } from './config';
-import { deploymentInitialize, sequentialPromises } from './src/deployment-initializer';
+import {
+  deploymentInitialize,
+  sequentialPromises
+} from './src/deployment-initializer';
 import { cleanUnusedFilesInSourcePosts } from './src/events/init/clean-unused-files';
 
 const envPath = path.join(__dirname, '.env');
@@ -40,7 +43,18 @@ export async function prebuild(hexo: Hexo) {
   const deployDir = path.join(hexo.base_dir, '.deploy_git');
   const source = path.join(deployDir, 'github-actions');
   const dest = path.join(deployDir, 'chimeraland', 'github-actions');
-  fs.copySync(source, dest, { overwrite: true, dereference: true });
+
+  if (fs.existsSync(source)) {
+    fs.copySync(source, dest, {
+      overwrite: true,
+      /** useful for symlink by yarn workspace */
+      dereference: true
+    });
+  } else {
+    console.warn(
+      'github-actions validator not found in .deploy_git, skipping copy'
+    );
+  }
 }
 
 export async function cleanAutoGenFiles(hexo: Hexo) {
@@ -50,9 +64,16 @@ export async function cleanAutoGenFiles(hexo: Hexo) {
    * clean auto generated files inside .deploy_git
    */
   await Promise.all(
-    ['css', 'style', 'fonts', 'lib', 'hexo-seo-js', 'js', 'hexo-shortcodes-lib', 'assets'].map((str) =>
-      path.join(deployDir, str)
-    )
+    [
+      'css',
+      'style',
+      'fonts',
+      'lib',
+      'hexo-seo-js',
+      'js',
+      'hexo-shortcodes-lib',
+      'assets'
+    ].map((str) => path.join(deployDir, str))
   )
     .filter((file) => fs.existsSync(file))
     .each((file) => {
@@ -61,8 +82,12 @@ export async function cleanAutoGenFiles(hexo: Hexo) {
     });
 
   // empty taxonomies folder without .git files
-  await Promise.all(['archives', 'categories', 'tags'].map((str) => path.join(deployDir, str))).each((base) => {
-    return Promise.all(glob.glob(['**/*.*'], { ignore: ['**/.git*'], cwd: base, posix: true }))
+  await Promise.all(
+    ['archives', 'categories', 'tags'].map((str) => path.join(deployDir, str))
+  ).each((base) => {
+    return Promise.all(
+      glob.glob(['**/*.*'], { ignore: ['**/.git*'], cwd: base, posix: true })
+    )
       .filter((result) => {
         if (/^[0-9]{1,4}\//.test(result)) return false;
         if (/^node_modules\//.test(result)) return false;
