@@ -28,7 +28,40 @@ concurrency:
   # cancel-in-progress: true
 
 jobs:
+  check-schedule:
+    name: Check schedule recent run
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - name: Check last scheduled run
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "skip=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          TOKEN="${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}"
+          REPO="${{ github.repository }}"
+          CURRENT=${{ github.run_id }}
+          LAST_RUN=$(curl -s -H "Authorization: token $TOKEN" "https://api.github.com/repos/$REPO/actions/runs?event=schedule&branch=master&per_page=5" | jq -r '.workflow_runs[] | select(.id != '"$CURRENT"') | .run_started_at' | head -n1)
+          if [ -z "$LAST_RUN" ] || [ "$LAST_RUN" = "null" ]; then
+            echo "skip=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          LAST_EPOCH=$(date -d "$LAST_RUN" +%s)
+          NOW_EPOCH=$(date +%s)
+          DIFF=$((NOW_EPOCH - LAST_EPOCH))
+          MAX_SECS=21600
+          if [ "$DIFF" -le "$MAX_SECS" ]; then
+            echo "Skipping scheduled run: last run $DIFF seconds ago"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
   build-site:
+    needs: check-schedule
+    if: needs.check-schedule.outputs.skip != 'true'
     runs-on: ubuntu-latest
     permissions: read-all
     timeout-minutes: 120
@@ -222,13 +255,13 @@ jobs:
       - name: Cronjob
         run: bash bin/cronjob
       - run: |
-            touch yarn.lock
-            node setup.mjs --inline-builds
+          touch yarn.lock
+          node setup.mjs --inline-builds
         id: install
         continue-on-error: true
-        name: "YARN: install"
+        name: 'YARN: install'
       - if: steps.install.outcome == 'failure'
-        name: "YARN: clean install"
+        name: 'YARN: clean install'
         shell: bash
         run: |
           yarn cache clean --all
