@@ -17,20 +17,55 @@ const api = new Application(__dirname);
  * git clone
  * @param destFolder
  */
-async function clone(destFolder: string, options?: import('child_process').SpawnOptions) {
+async function clone(
+  destFolder: string,
+  options?: import('child_process').SpawnOptions
+) {
   const spawnOpt = Object.assign({ cwd: __dirname }, options);
   if (!fs.existsSync(destFolder)) {
-    // clone from deployment dir
-    await spawnAsync('git', ['clone', api.getConfig().deploy.repo, destFolder], spawnOpt);
-    // update submodule from deployment dir
+    // perform a shallow/partial clone to speed up large repos
+    // - `--depth 1` keeps only the latest history
+    // - `--single-branch` clones only the default branch
+    // - `--recurse-submodules --shallow-submodules` fetches submodules shallowly
+    // - `--filter=blob:none` avoids downloading file contents (requires newer Git)
+    const repo = api.getConfig().deploy.repo;
+    const cloneArgs = [
+      'clone',
+      '--depth',
+      '1',
+      '--single-branch',
+      '--recurse-submodules',
+      '--shallow-submodules',
+      '--filter=blob:none',
+      repo,
+      destFolder
+    ];
+    await spawnAsync('git', cloneArgs, spawnOpt).catch(async () => {
+      // Fallback for older Git versions that may not support `--filter` or `--shallow-submodules`
+      await spawnAsync(
+        'git',
+        ['clone', '--depth', '1', '--single-branch', repo, destFolder],
+        spawnOpt
+      );
+    });
+
+    // update submodule from deployment dir (shallow)
     if (fs.existsSync(path.join(destFolder, '.gitmodules'))) {
-      await spawnAsync('git', ['submodule', 'update', '-i', '-r'], Object.assign(spawnOpt, { cwd: destFolder }));
+      await spawnAsync(
+        'git',
+        ['submodule', 'update', '--init', '--recursive', '--depth', '1'],
+        Object.assign(spawnOpt, { cwd: destFolder })
+      );
     }
   }
 }
 
 gulp.task('deploy:copy', function () {
-  return fs.copy(path.join(__dirname, 'public'), path.join(__dirname, '.deploy_git'), { overwrite: true });
+  return fs.copy(
+    path.join(__dirname, 'public'),
+    path.join(__dirname, '.deploy_git'),
+    { overwrite: true }
+  );
 });
 
 /**
@@ -100,7 +135,9 @@ async function push(done?: (...args: any[]) => any) {
     const submodules = gh.submodule?.get() || [];
     for (let i = 0; i < submodules.length; i++) {
       const sub = submodules[i];
-      await doPush(sub.cwd, 'origin', sub.branch).catch(() => console.log('cannot push', cleanCwd(cwd)));
+      await doPush(sub.cwd, 'origin', sub.branch).catch(() =>
+        console.log('cannot push', cleanCwd(cwd))
+      );
     }
 
     await doPush(cwd, 'origin', 'master');
@@ -138,10 +175,14 @@ async function commit(done: (...args: any[]) => any) {
   const gh = new gch(cwd);
   const doCommit = async (cwd: string) => {
     console.log('commiting', cwd);
-    await spawnAsync('git', ['add', '.'], { cwd }).catch(() => console.log('cannot add', cwd));
-    await spawnAsync('git', ['commit', '-m', 'Update site from ' + (await getCurrentCommit())], { cwd }).catch(() =>
-      console.log('cannot commit', cwd)
+    await spawnAsync('git', ['add', '.'], { cwd }).catch(() =>
+      console.log('cannot add', cwd)
     );
+    await spawnAsync(
+      'git',
+      ['commit', '-m', 'Update site from ' + (await getCurrentCommit())],
+      { cwd }
+    ).catch(() => console.log('cannot commit', cwd));
   };
 
   // runners

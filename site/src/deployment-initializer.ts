@@ -20,11 +20,33 @@ export async function deploymentInitialize(config: (typeof deployConfig)[number]
     // remove existing folder
     if (fs.existsSync(config.dest)) fs.rmSync(config.dest, { force: true, recursive: true });
     // clone start
-    await spawnAsync('git', ['clone', '-b', config.branch, config.remote, config.folderName], {
-      // cwd spawn clone
-      cwd: config.folderName !== '.deploy_git' ? path.join(hexo.base_dir, '.deploy_git') : hexo.base_dir,
-      shell: true,
-      stdio: 'inherit'
+    // perform a shallow/partial clone to speed up large repos
+    // - `--depth 1` keeps only the latest history
+    // - `--single-branch` clones only the requested branch
+    // - `--recurse-submodules --shallow-submodules` fetches submodules shallowly
+    // - `--filter=blob:none` avoids downloading file contents (newer Git required)
+    const cloneCwd = config.folderName !== '.deploy_git' ? path.join(hexo.base_dir, '.deploy_git') : hexo.base_dir;
+    const shallowArgs = [
+      'clone',
+      '-b',
+      config.branch,
+      '--depth',
+      '1',
+      '--single-branch',
+      '--recurse-submodules',
+      '--shallow-submodules',
+      '--filter=blob:none',
+      config.remote,
+      config.folderName
+    ];
+
+    await spawnAsync('git', shallowArgs, { cwd: cloneCwd, shell: true, stdio: 'inherit' }).catch(async () => {
+      // Fallback for older Git versions that may not support `--filter` or `--shallow-submodules`
+      await spawnAsync('git', ['clone', '-b', config.branch, '--depth', '1', '--single-branch', config.remote, config.folderName], {
+        cwd: cloneCwd,
+        shell: true,
+        stdio: 'inherit'
+      });
     });
   }
   /** spawn option */
