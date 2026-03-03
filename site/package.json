@@ -27,6 +27,7 @@
     "clean": "run-s \"clean:**\"",
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
+    "preview": "run-s server-php",
     "site:safe": "hexo generate --safe --expose-gc",
     "update:chimeraland": "cd multisite/chimeraland/chimeraland && yarn run update",
     "update:chimeraland2": "cd multisite/chimeraland && yarn run update",
