@@ -2,6 +2,7 @@ import * as spawn from 'cross-spawn';
 import { SpawnOptions, Submodule } from 'git-command-helper';
 import path from 'upath';
 import { execSync } from 'child_process';
+import fs from 'fs-extra';
 
 /**
  * Executes a list of promises sequentially.
@@ -105,12 +106,74 @@ export function killProcess(name: string) {
   }
 }
 
-export function resetSubmodule(submodule: Submodule) {
-  const submodulePath = path.join(__dirname, submodule.path);
+/**
+ * Remove a potentially stale Git index lock and terminate any running `git` processes.
+ *
+ * This attempts to remove `.git/index.lock` under the provided `cwd`. If the lock
+ * file exists the function calls `killProcess('git')` to terminate running Git
+ * processes (to help release locks) and then removes the lock file.
+ *
+ * @param {string} cwd - Filesystem path to the repository root where `.git/index.lock` may exist.
+ */
+export function killGitLock(cwd: string) {
+  // kill any running git processes to avoid lock issues
+  const indexLock = path.join(cwd, '.git/index.lock');
+  if (fs.existsSync(indexLock)) {
+    killProcess('git');
+    fs.rmSync(indexLock);
+  }
+}
+
+/**
+ * Reset or initialize a git submodule on disk.
+ *
+ * Clones the submodule into the provided `rootProjectPath` if missing (attempts a shallow
+ * clone first, then falls back to a full clone), fetches branches and tags, ensures the
+ * requested branch exists, checks it out and resets it to the remote state.
+ *
+ * This function performs shell `git` calls via `execSync` and will print progress to
+ * stdout/stderr. If all recovery attempts fail it will call `process.exit(1)`.
+ *
+ * @param {Submodule} submodule - Submodule metadata (contains `path`, `url`, `branch`).
+ * @param {string} rootProjectPath - Filesystem path to the repository that contains the submodule.
+ * @throws Will throw or call `process.exit(1)` if git operations ultimately fail.
+ */
+export function resetSubmodule(submodule: Submodule, rootProjectPath: string) {
+  const submodulePath = path.join(rootProjectPath, submodule.path);
   console.log(`Resetting submodule:`);
   console.log(`- Path: ${submodulePath}`);
   console.log(`- URL: ${submodule.url}`);
   console.log(`- Branch: ${submodule.branch}`);
+  // clone if submodule path doesn't exist
+  if (!fs.existsSync(submodulePath)) {
+    // attempt a shallow clone first to speed up cloning large repos
+    try {
+      execSync(
+        `git clone --branch ${submodule.branch} --single-branch --depth 1 --no-tags ${submodule.url} ${submodulePath}`,
+        {
+          stdio: 'inherit',
+          cwd: rootProjectPath
+        }
+      );
+    } catch (cloneErr) {
+      console.warn(
+        'Shallow clone failed, falling back to full clone:',
+        cloneErr && (cloneErr as any).message
+          ? (cloneErr as any).message
+          : cloneErr
+      );
+      execSync(
+        `git clone --branch ${submodule.branch} --single-branch ${submodule.url} ${submodulePath}`,
+        {
+          stdio: 'inherit',
+          cwd: rootProjectPath
+        }
+      );
+    }
+  }
+  // kill any running git processes to avoid lock issues
+  killGitLock(submodulePath);
+  // fetch all branches and tags for the submodule
   execSync(`git fetch --all`, {
     stdio: 'inherit',
     cwd: submodulePath
@@ -173,6 +236,18 @@ export function resetSubmodule(submodule: Submodule) {
         process.exit(1); // exit with error if all attempts fail
       }
     }
+  }
+  // pull latest changes for the submodule
+  try {
+    execSync(`git pull --recurse-submodules`, {
+      stdio: 'inherit',
+      cwd: submodulePath
+    });
+  } catch (pullErr) {
+    console.warn(
+      `git pull failed for submodule ${submodule.path}:`,
+      pullErr && (pullErr as any).message ? (pullErr as any).message : pullErr
+    );
   }
   console.log('=='.repeat(40));
 }
