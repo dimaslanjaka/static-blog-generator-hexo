@@ -1,5 +1,7 @@
 import * as spawn from 'cross-spawn';
-import { SpawnOptions } from 'git-command-helper';
+import { SpawnOptions, Submodule } from 'git-command-helper';
+import path from 'upath';
+import { execSync } from 'child_process';
 
 /**
  * Executes a list of promises sequentially.
@@ -101,4 +103,76 @@ export function killProcess(name: string) {
   } else {
     spawn.sync('killall', [name]);
   }
+}
+
+export function resetSubmodule(submodule: Submodule) {
+  const submodulePath = path.join(__dirname, submodule.path);
+  console.log(`Resetting submodule:`);
+  console.log(`- Path: ${submodulePath}`);
+  console.log(`- URL: ${submodule.url}`);
+  console.log(`- Branch: ${submodule.branch}`);
+  execSync(`git fetch --all`, {
+    stdio: 'inherit',
+    cwd: submodulePath
+  });
+  // show remotes and branches
+  execSync(`git remote -v`, {
+    stdio: 'inherit',
+    cwd: submodulePath
+  });
+  execSync(`git branch -a`, {
+    stdio: 'inherit',
+    cwd: submodulePath
+  });
+  // ensure a local branch is checked out before resetting
+  try {
+    execSync(`git checkout ${submodule.branch}`, {
+      stdio: 'inherit',
+      cwd: submodulePath
+    });
+    execSync(`git reset --hard origin/${submodule.branch}`, {
+      stdio: 'inherit',
+      cwd: submodulePath
+    });
+  } catch (error) {
+    console.warn(
+      `Local branch ${submodule.branch} not found or checkout failed for ${submodule.path}, fetching and creating it...`
+    );
+    try {
+      // fetch into the remote-tracking ref so `origin/<branch>` exists
+      execSync(
+        `git fetch origin ${submodule.branch}:refs/remotes/origin/${submodule.branch}`,
+        {
+          stdio: 'inherit',
+          cwd: submodulePath
+        }
+      );
+      // create/update local branch to track origin/<branch> and check it out
+      execSync(
+        `git checkout -B ${submodule.branch} origin/${submodule.branch}`,
+        {
+          stdio: 'inherit',
+          cwd: submodulePath
+        }
+      );
+      execSync(`git reset --hard ${submodule.branch}`, {
+        stdio: 'inherit',
+        cwd: submodulePath
+      });
+    } catch (err) {
+      console.warn(
+        `Failed to create/checkout ${submodule.branch}, attempting reset to FETCH_HEAD...`
+      );
+      try {
+        execSync(`git reset --hard FETCH_HEAD`, {
+          stdio: 'inherit',
+          cwd: submodulePath
+        });
+      } catch (err2) {
+        console.error(`Failed to reset submodule ${submodule.path}:`, err2);
+        process.exit(1); // exit with error if all attempts fail
+      }
+    }
+  }
+  console.log('=='.repeat(40));
 }
