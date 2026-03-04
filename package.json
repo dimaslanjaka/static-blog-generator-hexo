@@ -38,30 +38,31 @@
     ]
   },
   "dependencies": {
-    "axios": "^1.10.0",
-    "fs-extra": "^11.3.1",
+    "axios": "^1.13.6",
+    "fs-extra": "^11.3.4",
     "minimist": "^1.2.8",
-    "sbg-utility": "^2.0.9",
+    "sbg-utility": "^2.0.11",
     "upath": "^2.0.1",
-    "yaml": "^2.8.0"
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^11",
-    "@types/node": "^24.0.3",
+    "@types/node": "^25.3.3",
     "@typescript-eslint/eslint-plugin": "^8.40.0",
     "@typescript-eslint/parser": "^8.40.0",
-    "binary-collections": "^2.0.9",
-    "cross-env": "^7.0.3",
+    "binary-collections": "^2.0.10",
+    "cross-env": "^10.1.0",
     "depcheck": "^1.4.7",
     "eslint": "^9.33.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.4",
+    "git-command-helper": "^2.1.0",
     "husky": "^9.1.7",
     "jsonc-parser": "^3.3.1",
-    "npm-check-updates": "^18.0.1",
+    "npm-check-updates": "^19.6.3",
     "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "resolutions": {
     "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo.tgz",
