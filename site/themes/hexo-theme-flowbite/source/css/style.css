@@ -9126,7 +9126,7 @@ html.with-fancybox body.hide-scrollbar{width:auto;margin-right:calc(var(--fancyb
   --tw-contain-style:  ;
 }
 /*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
 */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -10469,8 +10469,14 @@ input:checked + .toggle-bg{
 .mb-6{
   margin-bottom: 1.5rem;
 }
+.me-2{
+  margin-inline-end: 0.5rem;
+}
 .me-4{
   margin-inline-end: 1rem;
+}
+.me-auto{
+  margin-inline-end: auto;
 }
 .ml-1{
   margin-left: 0.25rem;
@@ -10975,6 +10981,9 @@ input:checked + .toggle-bg{
 }
 .text-center{
   text-align: center;
+}
+.text-end{
+  text-align: end;
 }
 .text-2xl{
   font-size: 1.5rem;
@@ -11696,10 +11705,12 @@ pre {
   overflow-wrap: break-word; /* Similar to word-wrap */
   padding: 10px 55px 10px 10px; /* Add padding-right to give space for the button */
   text-indent: -0.7em; /* Adjust negative indent as necessary */
-  /* copy button on pre tag */
 }
 pre code {
   padding: 0px 0px 10px 10px !important;
+}
+pre {
+  /* copy button on pre tag */
 }
 pre .copy-code-button {
   box-sizing: inherit;
