@@ -1,20 +1,41 @@
 const spawn = require('cross-spawn');
 const { path } = require('sbg-utility');
+const dotenv = require('dotenv');
+
+dotenv.config({ quiet: true, override: true });
 
 const hexoDir = path.toUnix(__dirname);
-const tokenBase = new URL(`https://${process.env.ACCESS_TOKEN}@github.com`);
+const tokenBase = new URL(
+  `https://${process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN}@github.com`
+);
 const deployConfig = [
   {
     dest: path.join(hexoDir, '.deploy_git'),
     branch: 'master',
     remote: `${tokenBase}/dimaslanjaka/dimaslanjaka.github.io`,
     folderName: '.deploy_git',
+    /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
-      console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexoDir), ''));
-      console.log('remote', github.remote);
-      console.log('branch', github.branch);
-      // update submodule
-      await spawn.async('git', ['submodule', 'update', '-i', '-r'], github.spawnOpt({ cwd: github.cwd }));
+      if (!github) return;
+      const _relative_cwd = path
+        .toUnix(github.cwd)
+        .replace(path.toUnix(hexoDir), '');
+      // update submodules
+      // try {
+      //   console.log('Updating submodules...');
+      //   await spawn.async(
+      //     'npx',
+      //     [
+      //       '-y',
+      //       'binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz',
+      //       'submodule-install'
+      //     ],
+      //     { cwd: github.cwd, shell: true, stdio: 'inherit', env: process.env }
+      //   );
+      //   console.log('Submodules updated successfully.');
+      // } catch (error) {
+      //   console.error('Failed to update submodules:', error);
+      // }
       /*if (!fs.existsSync(path.join(github.cwd, '.gitmodules'))) {
         const totalFiles = fs.readdirSync(path.join(github.cwd)).length;
         if (totalFiles < 10) {
@@ -43,10 +64,12 @@ const deployConfig = [
     folderName: 'docs',
     branch: 'master',
     remote: `${tokenBase}/dimaslanjaka/docs`,
+    /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
-      console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexoDir), ''));
-      console.log('remote', github.remote);
-      console.log('branch', github.branch);
+      if (!github) return;
+      const _relative_cwd = path
+        .toUnix(github.cwd)
+        .replace(path.toUnix(hexoDir), '');
     }
   },
   {
@@ -54,10 +77,12 @@ const deployConfig = [
     branch: 'gh-pages',
     folderName: 'chimeraland',
     remote: `${tokenBase}/dimaslanjaka/chimeraland`,
+    /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
-      console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexoDir), ''));
-      console.log('remote', github.remote);
-      console.log('branch', github.branch);
+      if (!github) return;
+      const _relative_cwd = path
+        .toUnix(github.cwd)
+        .replace(path.toUnix(hexoDir), '');
     }
   },
   {
@@ -65,10 +90,12 @@ const deployConfig = [
     branch: 'gh-pages',
     folderName: 'page',
     remote: `${tokenBase}/dimaslanjaka/page`,
+    /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
-      console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexoDir), ''));
-      console.log('remote', github.remote);
-      console.log('branch', github.branch);
+      if (!github) return;
+      const _relative_cwd = path
+        .toUnix(github.cwd)
+        .replace(path.toUnix(hexoDir), '');
     }
   },
   {
@@ -76,11 +103,52 @@ const deployConfig = [
     branch: 'gh-pages',
     folderName: 'Web-Manajemen',
     remote: `${tokenBase}/dimaslanjaka/Web-Manajemen`,
+    /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
-      console.log('cwd', path.toUnix(github.cwd).replace(path.toUnix(hexoDir), ''));
-      console.log('remote', github.remote);
-      console.log('branch', github.branch);
+      if (!github) return;
+      const _relative_cwd = path
+        .toUnix(github.cwd)
+        .replace(path.toUnix(hexoDir), '');
     }
+  },
+  {
+    dest: path.join(hexoDir, '.deploy_git/tags'),
+    branch: 'gh-pages',
+    folderName: 'tags',
+    remote: `${tokenBase}/dimaslanjaka/tags`,
+    /** @param {import('git-command-helper').default} [github] */
+    callback: async function (github) {
+      if (!github) return;
+      const _relative_cwd = path
+        .toUnix(github.cwd)
+        .replace(path.toUnix(hexoDir), '');
+      // delete all files in the repository using git command
+      // try {
+      //   console.log('Deleting old files in tags repository:', _relative_cwd);
+      //   await github.spawn('git', ['rm', '-rf', '.']);
+      //   console.log('Old files deleted successfully for', _relative_cwd);
+      // } catch (error) {
+      //   console.error('Failed to delete old files for', _relative_cwd, error);
+      // }
+    }
+  },
+  {
+    dest: path.join(hexoDir, '.deploy_git/categories'),
+    branch: 'gh-pages',
+    folderName: 'categories',
+    remote: `${tokenBase}/dimaslanjaka/categories`
+  },
+  {
+    dest: path.join(hexoDir, '.deploy_git/archives'),
+    branch: 'gh-pages',
+    folderName: 'archives',
+    remote: `${tokenBase}/dimaslanjaka/archives`
+  },
+  {
+    dest: path.join(hexoDir, '.deploy_git/assets'),
+    branch: 'master',
+    folderName: 'assets',
+    remote: `${tokenBase}/dimaslanjaka/assets`
   }
 ];
 
