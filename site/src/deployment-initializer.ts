@@ -1,6 +1,7 @@
 import * as spawn from 'cross-spawn';
 import dotenv from 'dotenv';
 import fs from 'fs-extra';
+import Bluebird from 'bluebird';
 import git, { SpawnOptions, spawnAsync } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'path';
@@ -74,7 +75,9 @@ export async function deploymentInitialize(
     killProcess('git');
     fs.rmSync(indexLock);
   }
-  await config.callback(github);
+  if (typeof config.callback === 'function') {
+    await Bluebird.try(() => config.callback(github));
+  }
 }
 
 // init(deployConfig[0]);
