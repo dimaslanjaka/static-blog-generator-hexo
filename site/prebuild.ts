@@ -6,10 +6,8 @@ import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'upath';
 import { deployConfig } from './config';
-import {
-  deploymentInitialize,
-  sequentialPromises
-} from './src/deployment-initializer';
+import { deploymentInitialize } from './src/deployment-initializer';
+import { sequentialPromises } from './src/deployment/utils';
 import { cleanUnusedFilesInSourcePosts } from './src/events/init/clean-unused-files';
 
 const envPath = path.join(__dirname, '.env');
@@ -37,7 +35,9 @@ export async function prebuild(hexo: Hexo) {
   copyViewsAsset(hexo);
 
   // initialize deployment
-  sequentialPromises(deployConfig.map((c) => () => deploymentInitialize(c)));
+  await sequentialPromises(
+    deployConfig.map((c) => () => deploymentInitialize(c))
+  );
 
   // copy github-actions validator
   const deployDir = path.join(hexo.base_dir, '.deploy_git');
