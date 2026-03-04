@@ -15,7 +15,6 @@
     "prestart": "yarn run postinstall",
     "start": "yarn workspace wmi run server",
     "clean": "yarn workspace wmi run clean",
-    "prebuild": "yarn workspace wmi run prebuild",
     "build": "yarn workspace wmi run build",
     "build-sort": "yarn workspace wmi run build:prepare && yarn workspace wmi run post:copy && yarn workspace wmi run build:site",
     "postbuild": "yarn workspace wmi run postbuild",
