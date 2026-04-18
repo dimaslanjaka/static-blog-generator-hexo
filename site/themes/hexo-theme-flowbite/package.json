@@ -55,7 +55,7 @@
     "hexo-post-parser": "^3.0.1",
     "highlight.js": "^11.10.0",
     "imagesloaded": "^5.0.0",
-    "jquery": "^3.7.1",
+    "jquery": "^4.0.0",
     "lodash": "^4.17.21",
     "masonry-layout": "^4.2.2",
     "remove": "^0.1.5",
