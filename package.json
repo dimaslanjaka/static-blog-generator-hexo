@@ -27,7 +27,7 @@
   "engines": {
     "node": ">=14"
   },
-  "packageManager": "yarn@4.5.1",
+  "packageManager": "yarn@4.14.1",
   "workspaces": {
     "packages": [
       "site",
@@ -65,9 +65,9 @@
   },
   "resolutions": {
     "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo.tgz",
-    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/9d2f7ebf4c37cf1d58487951c9e2ad3a20b917c1/releases/bin.tgz",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/e11581a8f3adba3aa1b79be265347658d0aad69b/releases/bin.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac7a7031a81e11ddb5fab0f8ba433041c98/release/cross-spawn.tgz",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/678044cf286b2bd122e3ee937852a739e804e0a5/release/git-command-helper.tgz",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/95832a5230359ec8a57d67d49d2e8f6a7305401e/release/git-command-helper.tgz",
     "hexo-adsense": "https://github.com/dimaslanjaka/hexo-adsense/raw/2208f2391cd06046f7548bfe7b87a6e442c66345/release/hexo-adsense.tgz",
     "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-cli.tgz",
     "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-front-matter.tgz",
@@ -81,10 +81,10 @@
     "markdown-it": "https://github.com/dimaslanjaka/markdown-it/raw/7f4f9d5ec08ebcfde42affb517ea7c8e6a305534/release/markdown-it.tgz",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/5f18f2e8c4d8230f71f3f327ac14756d7eeae9ce/release/nodejs-package-types.tgz",
     "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/95400dd87106542a640092fa2073ee7d5c9b83e6/packages/sbg-api/release/sbg-api.tgz",
-    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/8c0f903cb1643add882c32d7a2180d2b99e1154f/packages/sbg-cli/release/sbg-cli.tgz",
-    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/8c0f903cb1643add882c32d7a2180d2b99e1154f/packages/sbg-server/release/sbg-server.tgz",
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/3f36c7384fa414d0207460e00c0d7d362dba995f/packages/sbg-utility/release/sbg-utility.tgz",
-    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/8c0f903cb1643add882c32d7a2180d2b99e1154f/packages/static-blog-generator/release/static-blog-generator.tgz"
+    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/14873e9b3bc94ec35337d7cf77090d2fde7b6264/packages/sbg-cli/release/sbg-cli.tgz",
+    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/14873e9b3bc94ec35337d7cf77090d2fde7b6264/packages/sbg-server/release/sbg-server.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/edcb554e02b9d428611c62dd1893da180289ce0b/packages/sbg-utility/release/sbg-utility.tgz",
+    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/14873e9b3bc94ec35337d7cf77090d2fde7b6264/packages/static-blog-generator/release/static-blog-generator.tgz"
   },
   "repository": {
     "type": "git",
