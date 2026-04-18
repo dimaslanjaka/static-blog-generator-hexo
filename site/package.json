@@ -69,9 +69,9 @@
     "sbg-cli": "^1.1.0",
     "sbg-utility": "^2.0.11",
     "static-blog-generator": "^3.0.1",
-    "upath": "^2.0.1",
+    "upath": "^3.0.6",
     "warehouse": "^6.0.0",
-    "yaml": "^2.8.2"
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.42",
