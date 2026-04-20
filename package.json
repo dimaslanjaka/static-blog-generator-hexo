@@ -24,7 +24,8 @@
     "prepare": "node .npmrc.builder.cjs && npm run init:husky",
     "update:ncu": "npx -y npm-check-updates -u -x \"jsdom,chalk,hexo,deepmerge-ts,husky,react,react-dom,*react*,prettier,eslint-config-prettier,eslint-plugin-prettier,eslint,@typescript-eslint/parser,@typescript-eslint/eslint-plugin,globals,@eslint/js,@eslint/eslintrc\" --root --workspaces",
     "serve": "yarn workspace wmi run serve",
-    "server": "yarn workspace wmi run serve"
+    "server": "yarn workspace wmi run serve",
+    "preview": "php -S localhost:4000 -t site/public"
   },
   "engines": {
     "node": ">=14"
