@@ -25,6 +25,7 @@
     "clean:post": "sbg clean post",
     "clean:cache": "sbg clean cache",
     "clean": "run-s \"clean:**\"",
+    "serve": "npm run server",
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
     "preview": "run-s server-php",

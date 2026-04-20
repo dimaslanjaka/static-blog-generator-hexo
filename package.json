@@ -22,7 +22,9 @@
     "postinstall": "yarn build:packages && node link-workspaces.js",
     "init:husky": "node -e \"try { require.resolve('husky'); } catch (e) { process.exit(0); }\" && husky",
     "prepare": "node .npmrc.builder.cjs && npm run init:husky",
-    "update:ncu": "npx -y npm-check-updates -u -x \"jsdom,chalk,hexo,deepmerge-ts,husky,react,react-dom,*react*,prettier,eslint-config-prettier,eslint-plugin-prettier,eslint,@typescript-eslint/parser,@typescript-eslint/eslint-plugin,globals,@eslint/js,@eslint/eslintrc\" --root --workspaces"
+    "update:ncu": "npx -y npm-check-updates -u -x \"jsdom,chalk,hexo,deepmerge-ts,husky,react,react-dom,*react*,prettier,eslint-config-prettier,eslint-plugin-prettier,eslint,@typescript-eslint/parser,@typescript-eslint/eslint-plugin,globals,@eslint/js,@eslint/eslintrc\" --root --workspaces",
+    "serve": "yarn workspace wmi run serve",
+    "server": "yarn workspace wmi run serve"
   },
   "engines": {
     "node": ">=14"
