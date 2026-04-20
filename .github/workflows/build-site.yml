@@ -102,7 +102,7 @@ jobs:
           # submodules: recursive
           token: '${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}'
           lfs: ''
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.node_version }}
           cache-dependency-path: '**/package.json'
