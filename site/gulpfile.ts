@@ -10,8 +10,9 @@ import Hexo from 'hexo';
 import path from 'path';
 import { noop } from 'sbg-utility';
 import { Application } from 'static-blog-generator';
+import { projectRoot } from './config';
 
-const api = new Application(__dirname);
+const api = new Application(projectRoot);
 
 /**
  * git clone
@@ -21,7 +22,7 @@ async function clone(
   destFolder: string,
   options?: import('child_process').SpawnOptions
 ) {
-  const spawnOpt = Object.assign({ cwd: __dirname }, options);
+  const spawnOpt = Object.assign({ cwd: projectRoot }, options);
   if (!fs.existsSync(destFolder)) {
     // perform a shallow/partial clone to speed up large repos
     // - `--depth 1` keeps only the latest history
@@ -62,8 +63,8 @@ async function clone(
 
 gulp.task('deploy:copy', function () {
   return fs.copy(
-    path.join(__dirname, 'public'),
-    path.join(__dirname, '.deploy_git'),
+    path.join(projectRoot, 'public'),
+    path.join(projectRoot, '.deploy_git'),
     { overwrite: true }
   );
 });
@@ -100,7 +101,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
   };
 
   try {
-    await clone('.deploy_git', { cwd: __dirname });
+    await clone('.deploy_git', { cwd: projectRoot });
     await doPull(cwd);
     if (gh) {
       const submodules = gh.submodule?.get() || [];
@@ -149,7 +150,7 @@ async function push(done?: (...args: any[]) => any) {
 gulp.task('push', push);
 
 function cleanCwd(cwd: string) {
-  return cwd.replace(__dirname, '');
+  return cwd.replace(projectRoot, '');
 }
 
 /**
@@ -157,7 +158,7 @@ function cleanCwd(cwd: string) {
  * @returns
  */
 async function getCurrentCommit() {
-  const git = new gch(__dirname);
+  const git = new gch(projectRoot);
   const commit = await git.latestCommit();
   const remote = await git.getremote();
   return remote.fetch.url.replace(/(.git|\/)$/, '') + '/commit/' + commit;
@@ -209,7 +210,7 @@ async function commit(done: (...args: any[]) => any) {
  * @param done
  */
 async function generate(done: gulp.TaskFunctionCallback) {
-  const hexo = new Hexo(__dirname);
+  const hexo = new Hexo(projectRoot);
   await hexo.init().catch(noop);
   await hexo.call('generate', {}, noop).catch(noop);
   if (typeof done === 'function') done();

@@ -2,8 +2,9 @@ import { spawnAsync } from 'cross-spawn';
 import fs from 'fs-extra';
 import Hexo from 'hexo';
 import path from 'upath';
+import { projectRoot } from './config';
 
-const hexo = new Hexo(__dirname, { silent: true });
+const hexo = new Hexo(projectRoot, { silent: true });
 
 interface deployInfo {
   name: string;
@@ -15,7 +16,7 @@ interface deployInfo {
 const deployInfo = [
   {
     name: 'root',
-    dest: path.join(__dirname, '.deploy_git'),
+    dest: path.join(projectRoot, '.deploy_git'),
     url: 'https://github.com/dimaslanjaka/dimaslanjaka.github.io',
     ref: 'master',
     callback: async function (this: deployInfo) {
@@ -34,7 +35,7 @@ const deployInfo = [
   },
   {
     name: 'docs',
-    dest: path.join(__dirname, '.deploy_git/docs'),
+    dest: path.join(projectRoot, '.deploy_git/docs'),
     url: 'https://github.com/dimaslanjaka/docs',
     ref: 'master',
     callback: async function (this: deployInfo) {
@@ -50,7 +51,7 @@ const deployInfo = [
   },
   {
     name: 'chimeraland',
-    dest: path.join(__dirname, '.deploy_git/chimeraland'),
+    dest: path.join(projectRoot, '.deploy_git/chimeraland'),
     url: 'https://github.com/dimaslanjaka/chimeraland',
     ref: 'gh-pages',
     callback: async function (this: deployInfo) {
@@ -73,7 +74,7 @@ const deployInfo = [
   },
   {
     name: 'page',
-    dest: path.join(__dirname, '.deploy_git/page'),
+    dest: path.join(projectRoot, '.deploy_git/page'),
     url: 'https://github.com/dimaslanjaka/page',
     ref: 'gh-pages',
     callback: async function (this: deployInfo) {
@@ -91,7 +92,7 @@ const deployInfo = [
 
 /** copy generated site to deployment directory */
 const _copy = () =>
-  fs.copy(hexo.public_dir, path.join(__dirname, '.deploy_git'), {
+  fs.copy(hexo.public_dir, path.join(projectRoot, '.deploy_git'), {
     overwrite: true
   });
 
