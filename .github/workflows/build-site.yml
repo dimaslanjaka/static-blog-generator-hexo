@@ -272,7 +272,7 @@ jobs:
       - name: Update resolutions
         run: |
           node setup.mjs
-      - run: yarn run postinstall
+      - run: yarn run afterinstall
       - name: Delete site/public
         run: rm -rf site/public
         shell: bash
