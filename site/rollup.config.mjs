@@ -19,8 +19,18 @@ const inputFile = process.env.ROLLUP_INPUT || 'src/index.ts';
 // 2. Uses a non-capturing group (?:...) for slight performance improvement
 const outputFile = (process.env.ROLLUP_OUTPUT || 'dist/index.js').replace(/\.(d\.ts|mjs|cjs|ts|js)$/, '');
 
+// Clean output directory when ROLLUP_CLEAN=true
+const shouldClean = process.env.ROLLUP_CLEAN === 'true';
+const outputDir = path.dirname(path.resolve(`${outputFile}.js`));
+
+if (shouldClean && fs.existsSync(outputDir)) {
+  console.log(`Cleaning Rollup output directory: ${outputDir}`);
+  fs.rmSync(outputDir, { recursive: true, force: true });
+}
+
 /** @type {import('rollup').InputPluginOption} */
 const plugins = [];
+
 if (inputFile.endsWith('.ts')) {
   plugins.push(
     typescript({
@@ -28,10 +38,6 @@ if (inputFile.endsWith('.ts')) {
 
       compilerOptions: {
         ...tsconfigContent.compilerOptions,
-
-        // target: 'ES2020',
-        // module: 'ESNext',
-        // moduleResolution: 'bundler',
 
         declaration: false,
         composite: false,
@@ -45,6 +51,7 @@ if (inputFile.endsWith('.ts')) {
         skipLibCheck: true,
         skipDefaultLibCheck: true
       },
+
       exclude: tsconfigContent.exclude || ['node_modules', 'dist']
     })
   );
