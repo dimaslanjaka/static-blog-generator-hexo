@@ -273,6 +273,7 @@ jobs:
         run: |
           node setup.mjs
       - run: yarn run afterinstall
+      - run: node site/update-theme.cjs
       - name: Delete site/public
         run: rm -rf site/public
         shell: bash
