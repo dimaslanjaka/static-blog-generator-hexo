@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "run-s build:prepare build:post",
     "start": "yarn server",
-    "build:prepare": "tsc --noEmit false && cross-env-shell ROLLUP_CLEAN=true ROLLUP_INPUT=tmp/dist/prebuild.js ROLLUP_OUTPUT=dist/prebuild.cjs rollup -c rollup.config.mjs && node dist/prebuild.cjs && node update-theme.cjs",
+    "build:prepare": "tsc -p tsconfig.build.json && cross-env-shell ROLLUP_CLEAN=true ROLLUP_INPUT=tmp/dist/prebuild.js ROLLUP_OUTPUT=dist/prebuild.cjs rollup -c rollup.config.mjs && node dist/prebuild.cjs && node update-theme.cjs",
     "build:post": "npm run post",
     "build:site": "hexo generate --expose-gc",
     "build": "run-s \"build:**\"",
