@@ -1,7 +1,8 @@
 import Bluebird from 'bluebird';
+import { spawnAsync } from 'cross-spawn';
 import dotenv from 'dotenv';
 import fs from 'fs-extra';
-import git, { spawnAsync } from 'git-command-helper';
+import { gitCommandHelper, SpawnOptions } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'path';
 import { deployConfig, hexoDir } from '../config';
@@ -42,7 +43,7 @@ export async function deploymentInitialize(
     );
   }
   /** spawn option */
-  const spawnOpt: spawnAsync.SpawnOptions = {
+  const spawnOpt: SpawnOptions = {
     cwd: config.dest,
     shell: true,
     stdio: 'inherit'
@@ -61,7 +62,7 @@ export async function deploymentInitialize(
   // dump branches
   await spawnAsync('git', ['branch'], spawnOpt);
   // run callback
-  const github = new git({
+  const github = new gitCommandHelper({
     cwd: config.dest,
     remote: config.remote,
     user: 'dimaslanjaka',

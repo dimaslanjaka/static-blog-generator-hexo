@@ -1,5 +1,6 @@
 import { spawnAsync } from 'cross-spawn';
 import fs from 'fs-extra';
+import { gitCommandHelper } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'upath';
 import { projectRoot } from './config';
@@ -118,7 +119,6 @@ const cloneInfo = deployInfo;
       console.log('calling callback', info.name);
       if (typeof info.callback === 'function') {
         try {
-          const gitCommandHelper = (await import('git-command-helper')).default;
           const github = new gitCommandHelper(info.dest);
           await github.setremote(info.url, 'origin');
           console.log(await github.getremote());
