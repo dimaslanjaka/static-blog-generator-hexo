@@ -1,13 +1,23 @@
-const spawn = require('cross-spawn');
-const { path } = require('sbg-utility');
+const { path, fs } = require('sbg-utility');
 const dotenv = require('dotenv');
 
-dotenv.config({ quiet: true, override: true });
+const projectRoot = [path.join(__dirname, '..'), __dirname, path.join(__dirname, '..', '..')].find((dir) => {
+  return (
+    fs.existsSync(path.join(dir, 'views')) &&
+    fs.existsSync(path.join(dir, 'package.json')) &&
+    fs.existsSync(path.join(dir, 'source')) &&
+    fs.existsSync(path.join(dir, 'scaffolds'))
+  );
+});
+
+if (!projectRoot) {
+  throw new Error('Project root not found');
+}
+
+dotenv.config({ path: path.join(projectRoot, '.env'), quiet: true, override: true });
 
 const hexoDir = path.toUnix(__dirname);
-const tokenBase = new URL(
-  `https://${process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN}@github.com`
-);
+const tokenBase = new URL(`https://${process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN}@github.com`);
 const deployConfig = [
   {
     dest: path.join(hexoDir, '.deploy_git'),
@@ -17,9 +27,7 @@ const deployConfig = [
     /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
       if (!github) return;
-      const _relative_cwd = path
-        .toUnix(github.cwd)
-        .replace(path.toUnix(hexoDir), '');
+      const _relative_cwd = path.toUnix(github.cwd).replace(path.toUnix(hexoDir), '');
       // update submodules
       // try {
       //   console.log('Updating submodules...');
@@ -67,9 +75,7 @@ const deployConfig = [
     /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
       if (!github) return;
-      const _relative_cwd = path
-        .toUnix(github.cwd)
-        .replace(path.toUnix(hexoDir), '');
+      const _relative_cwd = path.toUnix(github.cwd).replace(path.toUnix(hexoDir), '');
     }
   },
   {
@@ -80,9 +86,7 @@ const deployConfig = [
     /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
       if (!github) return;
-      const _relative_cwd = path
-        .toUnix(github.cwd)
-        .replace(path.toUnix(hexoDir), '');
+      const _relative_cwd = path.toUnix(github.cwd).replace(path.toUnix(hexoDir), '');
     }
   },
   {
@@ -93,9 +97,7 @@ const deployConfig = [
     /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
       if (!github) return;
-      const _relative_cwd = path
-        .toUnix(github.cwd)
-        .replace(path.toUnix(hexoDir), '');
+      const _relative_cwd = path.toUnix(github.cwd).replace(path.toUnix(hexoDir), '');
     }
   },
   {
@@ -106,9 +108,7 @@ const deployConfig = [
     /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
       if (!github) return;
-      const _relative_cwd = path
-        .toUnix(github.cwd)
-        .replace(path.toUnix(hexoDir), '');
+      const _relative_cwd = path.toUnix(github.cwd).replace(path.toUnix(hexoDir), '');
     }
   },
   {
@@ -119,9 +119,7 @@ const deployConfig = [
     /** @param {import('git-command-helper').default} [github] */
     callback: async function (github) {
       if (!github) return;
-      const _relative_cwd = path
-        .toUnix(github.cwd)
-        .replace(path.toUnix(hexoDir), '');
+      const _relative_cwd = path.toUnix(github.cwd).replace(path.toUnix(hexoDir), '');
       // delete all files in the repository using git command
       // try {
       //   console.log('Deleting old files in tags repository:', _relative_cwd);
@@ -152,4 +150,4 @@ const deployConfig = [
   }
 ];
 
-module.exports = { hexoDir, deployConfig };
+module.exports = { hexoDir, deployConfig, projectRoot };

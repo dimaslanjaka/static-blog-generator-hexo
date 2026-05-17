@@ -1,25 +1,21 @@
 import Promise from 'bluebird';
-import * as dotenv from 'dotenv';
 import fs from 'fs-extra';
 import * as glob from 'glob';
 import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'upath';
-import { deployConfig } from './config';
+import { deployConfig, projectRoot } from './config';
 import { deploymentInitialize } from './src/deployment-initializer';
 import { sequentialPromises } from './src/deployment/utils';
 import { cleanUnusedFilesInSourcePosts } from './src/events/init/clean-unused-files';
 
-const envPath = path.join(__dirname, '.env');
-if (fs.existsSync(envPath)) {
-  dotenv.config({ path: envPath, override: true });
-}
+process.chdir(projectRoot);
 
 /**
  * prepare all sources
  */
 
-const hexo = new Hexo(__dirname, { silent: true });
+const hexo = new Hexo(projectRoot, { silent: true });
 
 (async function () {
   // init hexo
