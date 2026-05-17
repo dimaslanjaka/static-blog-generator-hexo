@@ -1,8 +1,7 @@
-import * as spawn from 'cross-spawn';
+import Bluebird from 'bluebird';
 import dotenv from 'dotenv';
 import fs from 'fs-extra';
-import Bluebird from 'bluebird';
-import git, { SpawnOptions, spawnAsync } from 'git-command-helper';
+import git, { spawnAsync } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'path';
 import { deployConfig, hexoDir } from '../config';
@@ -14,9 +13,9 @@ export async function deploymentInitialize(
   config: (typeof deployConfig)[number]
 ) {
   await hexo.init();
-  // load .env file
+  // load .env file after hexo init to ensure hexo config and env vars are loaded
   const envFile = path.join(hexo.base_dir, '.env');
-  if (fs.existsSync(envFile)) dotenv.config({ path: envFile, override: true });
+  if (fs.existsSync(envFile)) dotenv.config({ path: envFile, override: true, quiet: true });
   const clone =
     !fs.existsSync(config.dest) ||
     !fs.existsSync(path.join(config.dest, '.git'));
