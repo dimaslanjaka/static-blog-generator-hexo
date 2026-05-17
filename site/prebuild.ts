@@ -1,7 +1,7 @@
 import Promise from 'bluebird';
 import * as dotenv from 'dotenv';
 import fs from 'fs-extra';
-import glob from 'glob';
+import * as glob from 'glob';
 import gulp from 'gulp';
 import Hexo from 'hexo';
 import path from 'upath';
