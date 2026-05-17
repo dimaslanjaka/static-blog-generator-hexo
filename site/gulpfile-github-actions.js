@@ -1,4 +1,5 @@
-process.cwd = () => __dirname;
+const { projectRoot } = require('./config');
+process.cwd = () => projectRoot;
 process.env.DEBUG = 'post:permalink,post:error';
 
 const path = require('path');
@@ -12,9 +13,9 @@ const gulp = require('gulp');
 const { persistentCache } = require('sbg-utility');
 
 gulp.task('actions:clean', function (done) {
-  const cache = persistentCache({ name: 'actions-clean', base: path.join(__dirname, 'node_modules/.cache') });
+  const cache = persistentCache({ name: 'actions-clean', base: path.join(projectRoot, 'node_modules/.cache') });
   const currentHash = cache.getSync('folder-hash');
-  const newHash = [path.join(__dirname, 'packages/static-blog-generator')].map((p) =>
+  const newHash = [path.join(projectRoot, 'packages/static-blog-generator')].map((p) =>
     folder_to_hash('sha1', p, {
       ignored: ['**/release/**'],
       pattern: '**/src/**/*.ts'
@@ -35,7 +36,7 @@ gulp.task('actions:clean', function (done) {
 });
 
 async function compile() {
-  const sbgPath = path.join(__dirname, 'packages/static-blog-generator');
+  const sbgPath = path.join(projectRoot, 'packages/static-blog-generator');
   // await fs.rm(path.join(sbgPath, 'dist'), { recursive: true, force: true });
   await spawnAsync('npm', ['run', 'build'], { cwd: sbgPath }).then((_) => {
     // console.log(_.output.join('\n'));
@@ -47,7 +48,7 @@ async function cleanPostCopy(done) {
   await compile();
 
   const { Application } = require('static-blog-generator');
-  const api = new Application(__dirname);
+  const api = new Application(projectRoot);
 
   try {
     console.log('clean-start');
@@ -73,7 +74,7 @@ async function postCopy(done) {
   await compile();
 
   const { Application } = require('static-blog-generator');
-  const api = new Application(__dirname);
+  const api = new Application(projectRoot);
 
   try {
     console.log('standalone-start');
@@ -152,7 +153,7 @@ function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
   return new Promise((resolve, reject) => {
-    let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
+    let outputLocationPath = path.join(projectRoot, 'node_modules/.cache/postinstall', path.basename(url));
     // remove slashes when url ends with slash
     if (!path.basename(url).endsWith('/')) {
       outputLocationPath = outputLocationPath.replace(/\/$/, '');
@@ -175,7 +176,7 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
       });
       writer.on('close', async () => {
         if (!error) {
-          // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
+          // console.log('package downloaded', outputLocationPath.replace(projectRoot, ''));
           file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
             resolve(checksum);
           });
@@ -195,7 +196,7 @@ function isPackageInstalled(packageName) {
   try {
     const modules = Array.from(process.moduleLoadList).filter((str) => !str.startsWith('NativeModule internal/'));
     return modules.indexOf('NativeModule ' + packageName) >= 0 || fs.existsSync(require.resolve(packageName));
-  } catch (e) {
+  } catch (_) {
     return false;
   }
 }
@@ -245,7 +246,7 @@ async function folder_to_hash(alogarithm, folder, options) {
     options = Object.assign({ encoding: 'hex', ignored: [] }, options || {});
     if (folder.startsWith('file:')) folder = folder.replace('file:', '');
     // fix non exist
-    if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);
+    if (!fs.existsSync(folder)) folder = path.join(projectRoot, folder);
     // run only if exist
     if (fs.existsSync(folder)) {
       glob(

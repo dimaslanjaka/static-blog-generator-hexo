@@ -1,5 +1,5 @@
 ///
-import './gulpfile-github-actions';
+import './gulpfile-github-actions.js';
 ///
 
 import { spawnAsync } from 'cross-spawn';
@@ -10,7 +10,7 @@ import Hexo from 'hexo';
 import path from 'path';
 import { noop } from 'sbg-utility';
 import { Application } from 'static-blog-generator';
-import { projectRoot } from './config';
+import { projectRoot } from './config.js';
 
 const api = new Application(projectRoot);
 

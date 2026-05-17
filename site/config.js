@@ -14,6 +14,8 @@ if (!projectRoot) {
   throw new Error('Project root not found');
 }
 
+console.log('Project root found at:', projectRoot);
+
 dotenv.config({ path: path.join(projectRoot, '.env'), quiet: true, override: true });
 
 const hexoDir = path.toUnix(__dirname);
