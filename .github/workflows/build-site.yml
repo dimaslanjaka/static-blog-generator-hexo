@@ -73,13 +73,14 @@ jobs:
       YARN_CHECKSUM_BEHAVIOR: update
       cache-key: mySiteCache
       cache-paths: |
-        **/yarn.lock
+        **/yarn*
         ./site/db.json
         ./site/public
         ./site/tmp
         ./site/source/_posts
         ./site/multisite/chimeraland/tmp
         ./site/src-posts/chimeraland
+        ./site/themes/hexo-theme-flowbite
         **/dist
         **/.yarn/cache*
         **/node_modules
