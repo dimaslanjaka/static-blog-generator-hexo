@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "run-s build:prepare build:post",
     "start": "yarn server",
-    "build:prepare": "node -r ts-node/register prebuild.ts && npx hexo-theme-flowbite",
+    "build:prepare": "tsc --noEmit false && cross-env-shell ROLLUP_INPUT=tmp/dist/prebuild.js ROLLUP_OUTPUT=dist/prebuild.cjs rollup -c rollup.config.mjs && node dist/prebuild.cjs && node update-theme.cjs",
     "build:post": "npm run post",
     "build:site": "hexo generate --expose-gc",
     "build": "run-s \"build:**\"",
@@ -76,12 +76,16 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
     "@types/bluebird": "^3.5.42",
     "@types/fs-extra": "^11.0.4",
     "@types/gulp": "^4.0.18",
     "@types/node": "^25.8.0",
     "@typescript-eslint/eslint-plugin": "^8.59.3",
     "@typescript-eslint/parser": "^8.59.3",
+    "cross-env": "^10.1.0",
     "dotenv": "^17.4.2",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
@@ -92,11 +96,12 @@
     "hexo-theme-flowbite": "*",
     "prettier": "^3.8.3",
     "rimraf": "^6.1.3",
+    "rollup": "^4.60.4",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.3"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18.0.0"
   }
 }

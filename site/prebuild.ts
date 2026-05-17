@@ -127,7 +127,10 @@ function copyViewsAsset(hexo: Hexo) {
   if (!hexo.config.theme.includes('-flowbite')) {
     ignore.push('**/scripts/**');
   }
-  const src = path.join(__dirname, 'views');
+  const src = path.join(process.cwd(), 'views');
+  if (!fs.existsSync(src)) {
+    throw new Error(`views directory (${src}) not found`);
+  }
   const dest = hexo.theme_dir;
   console.log('copyViewsAsset', src, '=>', dest);
   // fs.copySync(src, dest, {
