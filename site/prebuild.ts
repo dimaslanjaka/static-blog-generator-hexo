@@ -128,7 +128,7 @@ function copyViewsAsset(hexo: Hexo) {
     throw new Error(`views directory (${src}) not found`);
   }
   const dest = hexo.theme_dir;
-  console.log('copyViewsAsset', src, '=>', dest);
+  console.log('copyViewsAsset', path.relative(projectRoot, src) + '->' + path.relative(projectRoot, dest));
   // fs.copySync(src, dest, {
   //   overwrite: true,
   //   /** useful for symlink by yarn workspace */
