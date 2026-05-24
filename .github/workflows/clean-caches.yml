@@ -1,19 +1,20 @@
 name: Clean GitHub Actions Cache
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
-  push:
-    branches:
-      - master
   workflow_dispatch:
   workflow_call:
     secrets:
       ACCESS_TOKEN:
         required: true
+  workflow_run:
+    workflows:
+      - Build Site
+    types:
+      - completed
 
 jobs:
   clean-cache:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: windows-latest
     env:
       PIP_CACHE_DIR: '${{ github.workspace }}/project/tmp/pip'
