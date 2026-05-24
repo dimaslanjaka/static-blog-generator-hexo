@@ -32,4 +32,4 @@ if [ -f ".env" ]; then
 fi
 
 # run clean-node.cjs with node within current script directory
-node "$SCRIPT_DIR/clean-node.cjs"
+node "$SCRIPT_DIR/clean-node.cjs" "$@"

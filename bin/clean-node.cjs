@@ -7,7 +7,7 @@ const minimist = require('minimist');
 // ----------------------
 const argv = minimist(process.argv.slice(2), {
   boolean: ['force', 'help'],
-  alias: { h: 'help' },
+  alias: { h: 'help', f: 'force' },
   default: { force: false }
 });
 
