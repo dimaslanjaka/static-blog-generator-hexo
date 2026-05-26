@@ -48,6 +48,7 @@ function isAlreadyInstalled() {
  * @returns {Promise<void>} Resolves when dependency installation and checksum update are complete.
  */
 async function installDependencies() {
+  let fs = await import('fs').then((mod) => mod.default ?? mod);
   const isInstalled = isAlreadyInstalled();
   if (!isInstalled) {
     // install using yarn if not already installed
@@ -57,7 +58,7 @@ async function installDependencies() {
     spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
   }
   // Only import after install check, so dependencies are present
-  const fs = await import('fs-extra').then((mod) => mod.default ?? mod);
+  fs = await import('fs-extra').then((mod) => mod.default ?? mod);
   const sbgUtility = await import('sbg-utility');
   const upath = await import('upath').then((mod) => mod.default ?? mod);
 
