@@ -270,9 +270,9 @@ jobs:
           find . -name 'yarn.lock' -type d -prune -exec rm -rf '{}' +
           touch yarn.lock
           YARN_CHECKSUM_BEHAVIOR=update node setup.mjs
-      - name: Update resolutions
-        run: |
-          node setup.mjs
+      # - name: Update resolutions
+      #   run: |
+      #     node setup.mjs
       # - run: yarn run afterinstall
       - run: node site/update-theme.cjs
       - name: Delete site/public
