@@ -23,13 +23,12 @@ on:
         required: true
 
 concurrency:
-  # group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
   group: deploy
-  # cancel-in-progress: true
+  cancel-in-progress: true
 
 jobs:
   check-schedule:
-    name: Check schedule recent run
+    name: "Check schedule recent run ${{ github.event.push.number || github.event.pull_request.number || github.ref }}"
     runs-on: ubuntu-latest
     outputs:
       skip: ${{ steps.check.outputs.skip }}
