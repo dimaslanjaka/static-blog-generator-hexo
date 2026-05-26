@@ -1,95 +1,101 @@
+import fs from 'fs';
+import path from 'path';
 import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
-import path from 'path';
+import crypto from 'crypto';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-function isPackageInstalledSync(packageName) {
+const REQUIRED_PACKAGES = ['gulp', 'glob', 'sbg-utility', 'upath', 'fs-extra'];
+const PACKAGE_JSON = path.join(__dirname, 'package.json');
+const YARN_LOCK = path.join(__dirname, 'yarn.lock');
+const TMP_DIR = path.join(__dirname, 'tmp');
+const CHECKSUM_FILE = path.join(TMP_DIR, 'checksum.txt');
+
+function resolvePackage(name) {
   try {
-    // Use import.meta.resolve if available (Node 20+), fallback to require.resolve
-    if (typeof import.meta.resolve === 'function') {
-      import.meta.resolve(packageName);
-    } else {
-      require.resolve(packageName);
-    }
+    import.meta.resolve(name);
     return true;
   } catch {
     return false;
   }
 }
 
-function isAlreadyInstalled() {
-  // List of packages to check
-  const packages = ['gulp', 'glob', 'sbg-utility', 'upath', 'fs-extra'];
-  const missingPackages = packages.filter((packageName) => !isPackageInstalledSync(packageName));
-  let isInstalled = false;
+function getMissingPackages() {
+  return REQUIRED_PACKAGES.filter((pkg) => !resolvePackage(pkg));
+}
+
+function run(command, args) {
+  const result = spawnSync(command, args, {
+    stdio: 'inherit',
+    shell: process.platform === 'win32'
+  });
+
+  if (result.error || result.status !== 0) {
+    console.error(`Command failed: ${command} ${args.join(' ')}`);
+    process.exit(result.status || 1);
+  }
+}
+
+function ensureYarnLock() {
+  if (!fs.existsSync(YARN_LOCK)) {
+    fs.writeFileSync(YARN_LOCK, '');
+  }
+}
+
+function getPackageChecksum() {
+  const content = fs.readFileSync(PACKAGE_JSON);
+  return crypto.createHash('sha256').update(content).digest('hex');
+}
+
+function getStoredChecksum() {
+  if (!fs.existsSync(CHECKSUM_FILE)) {
+    return '';
+  }
+
+  return fs.readFileSync(CHECKSUM_FILE, 'utf8').trim();
+}
+
+function saveChecksum(checksum) {
+  fs.mkdirSync(TMP_DIR, { recursive: true });
+  fs.writeFileSync(CHECKSUM_FILE, checksum);
+}
+
+function installDependenciesIfNeeded() {
+  const missingPackages = getMissingPackages();
+  const currentChecksum = getPackageChecksum();
+  const previousChecksum = getStoredChecksum();
+
+  const shouldInstall = missingPackages.length > 0 || currentChecksum !== previousChecksum;
+
+  if (!shouldInstall) {
+    console.log('Dependencies are up to date.');
+    return;
+  }
+
   if (missingPackages.length > 0) {
-    console.log('Some packages are missing:', missingPackages.join(', '));
-    console.log('Running yarn install...');
-    const result = spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
-    if (result.error) {
-      console.error('Failed to run yarn install:', result.error);
-      process.exit(result.status || 1);
-    }
-    isInstalled = true;
+    console.log('Missing packages:', missingPackages.join(', '));
   } else {
-    console.log('All packages are installed.');
+    console.log('package.json changed.');
   }
-  return isInstalled;
+
+  ensureYarnLock();
+
+  console.log('Running yarn install...');
+  run('yarn', ['install']);
+
+  saveChecksum(currentChecksum);
+
+  console.log('Checksum updated:', currentChecksum);
 }
 
-/**
- * Installs dependencies if not already installed or if the checksum of package.json has changed.
- * Uses fs-extra, sbg-utility, and upath for file and checksum operations.
- *
- * - If dependencies are not installed, compares the checksum of package.json with a stored value.
- * - If the checksum differs, runs 'yarn install' and updates the stored checksum.
- *
- * @returns {Promise<void>} Resolves when dependency installation and checksum update are complete.
- */
-async function installDependencies() {
-  let fs = await import('fs').then((mod) => mod.default ?? mod);
-  const isInstalled = isAlreadyInstalled();
-  if (!isInstalled) {
-    // install using yarn if not already installed
-    if (!fs.existsSync(path.join(__dirname, 'yarn.lock'))) {
-      fs.writeFileSync(path.join(__dirname, 'yarn.lock'), '');
-    }
-    spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
-  }
-  // Only import after install check, so dependencies are present
-  fs = await import('fs-extra').then((mod) => mod.default ?? mod);
-  const sbgUtility = await import('sbg-utility');
-  const upath = await import('upath').then((mod) => mod.default ?? mod);
-
-  const tmpDir = upath.join(__dirname, 'tmp');
-  fs.ensureDirSync(tmpDir); // Ensure tmp directory exists
-
-  // Always check checksum, even if packages are installed
-  const getChecksum = sbgUtility.getChecksum || (sbgUtility.default && sbgUtility.default.getChecksum);
-  if (typeof getChecksum !== 'function') {
-    throw new Error('getChecksum is not a function in sbg-utility');
-  }
-  const checksum = getChecksum(upath.join(__dirname, 'package.json'));
-  const fileChecksum = upath.join(tmpDir, 'checksum.txt');
-  const previousChecksum = fs.existsSync(fileChecksum) ? fs.readFileSync(fileChecksum, 'utf-8') : '';
-  if (checksum !== previousChecksum) {
-    const result = spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
-    if (result.error) {
-      console.error('Failed to run yarn install:', result.error);
-      process.exit(result.status || 1);
-    }
-    fs.writeFileSync(fileChecksum, checksum);
-    console.log('Checksum updated:', checksum);
-  }
+function runSetup() {
+  run('npx', ['--yes', 'update-browserslist-db@latest']);
 }
 
-/**
- * Runs the setup tasks after dependencies are installed.
- */
-async function runSetup() {
-  spawnSync('npx', ['--yes', 'update-browserslist-db@latest'], { stdio: 'inherit', shell: true });
+function main() {
+  installDependenciesIfNeeded();
+  runSetup();
 }
 
-// run the setup tasks
-installDependencies().then(runSetup);
+main();
