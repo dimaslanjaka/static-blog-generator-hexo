@@ -49,6 +49,13 @@ function isAlreadyInstalled() {
  */
 async function installDependencies() {
   const isInstalled = isAlreadyInstalled();
+  if (!isInstalled) {
+    // install using yarn if not already installed
+    if (!fs.existsSync(path.join(__dirname, 'yarn.lock'))) {
+      fs.writeFileSync(path.join(__dirname, 'yarn.lock'), '');
+    }
+    spawnSync('yarn', ['install'], { stdio: 'inherit', shell: true });
+  }
   // Only import after install check, so dependencies are present
   const fs = await import('fs-extra').then((mod) => mod.default ?? mod);
   const sbgUtility = await import('sbg-utility');
