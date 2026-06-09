@@ -90,7 +90,8 @@
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/1ca385787f7287155b547c5b97d5ffd5bcfab482/packages/sbg-utility/release/sbg-utility.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/9b6038c46b6d5e4294a67dc6a70310ed41dad28c/packages/static-blog-generator/release/static-blog-generator.tgz",
     "hexo-theme-flowbite": "https://github.com/dimaslanjaka/hexo-themes/raw/b24e34bc82eba77cd2fbe97581434a30872ad9cc/releases/hexo-theme-flowbite.tgz",
-    "@dimaslanjaka/eslint-base-config": "https://github.com/dimaslanjaka/eslint-base-config/raw/c21437dd8072edf4d78531932ecd586708cd7e43/release/dimaslanjaka-eslint-base-config.tgz"
+    "@dimaslanjaka/eslint-base-config": "https://github.com/dimaslanjaka/eslint-base-config/raw/c21437dd8072edf4d78531932ecd586708cd7e43/release/dimaslanjaka-eslint-base-config.tgz",
+    "ai-toolkit": "https://github.com/dimaslanjaka/ai-toolkit/raw/633040ea8a63b7f93f48650bcd835f525b8ed260/release/ai-toolkit.tgz"
   },
   "repository": {
     "type": "git",
