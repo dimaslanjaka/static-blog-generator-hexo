@@ -204,16 +204,32 @@ export function resetSubmodule(submodule: SubmoduleEntry, rootProjectPath: strin
         cwd: submodulePath
       });
     } catch (_) {
-      console.warn(`Failed to create/checkout ${submodule.branch}, attempting reset to FETCH_HEAD...`);
-      try {
-        execSync(`git -c gc.auto=0 reset --hard FETCH_HEAD`, {
-          env: NO_PAGER_ENV,
-          stdio: 'inherit',
-          cwd: submodulePath
-        });
-      } catch (err2) {
-        console.error(`Failed to reset submodule ${submodule.path}:`, err2);
-        process.exit(1); // exit with error if all attempts fail
+      // requested branch doesn't exist on remote — try common fallback branches
+      console.warn(
+        `Branch '${submodule.branch}' not found on remote for ${submodule.path}, trying fallback branches...`
+      );
+      const fallbackBranches = ['master', 'main'];
+      let fallbackOk = false;
+      for (const fb of fallbackBranches) {
+        try {
+          execSync(`git -c gc.auto=0 checkout ${fb}`, {
+            env: NO_PAGER_ENV, stdio: 'inherit', cwd: submodulePath
+          });
+          execSync(`git -c gc.auto=0 reset --hard origin/${fb}`, {
+            env: NO_PAGER_ENV, stdio: 'inherit', cwd: submodulePath
+          });
+          console.warn(`Fell back to branch '${fb}' for submodule ${submodule.path}`);
+          fallbackOk = true;
+          break;
+        } catch (_fb) {
+          // this fallback branch also doesn't exist, try next
+        }
+      }
+      if (!fallbackOk) {
+        console.error(
+          `Failed to reset submodule ${submodule.path}: branch '${submodule.branch}' and fallbacks not found`
+        );
+        process.exit(1);
       }
     }
   }
