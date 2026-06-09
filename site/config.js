@@ -1,4 +1,5 @@
-const { path, fs } = require('sbg-utility');
+const fs = require('fs-extra');
+const path = require('upath');
 const dotenv = require('dotenv');
 
 const projectRoot = [path.join(__dirname, '..'), __dirname, path.join(__dirname, '..', '..')].find((dir) => {
