@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { gitCommandHelper } from 'git-command-helper';
 import Hexo from 'hexo';
 import path from 'upath';
-import { projectRoot } from './config';
+import { projectRoot } from './config.js';
 
 const hexo = new Hexo(projectRoot, { silent: true });
 

@@ -1,5 +1,10 @@
 {
   // Change this to match your project
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
   "compilerOptions": {
     "module": "preserve",
     "target": "es2018",
