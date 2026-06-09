@@ -51,21 +51,23 @@ export const sequentialPromises = <T>(promiseFactories: (() => Promise<T>)[]): P
  * @param options
  */
 export async function fixGitConfig(options: SpawnOptions) {
+  // prevent git pager from blocking
+  const opts = { ...options, env: { ...process.env, ...options.env, GIT_PAGER: 'cat', PAGER: 'cat' as string } };
   const isGithubCI =
     typeof process.env['GITHUB_WORKFLOW'] === 'string' && typeof process.env['GITHUB_WORKFLOW_SHA'] === 'string';
 
   if (isGithubCI) {
     // set username and email on github workflow
-    await spawn.spawnAsync('git', ['config', '--global', 'user.name', "'dimaslanjaka'"], options);
-    await spawn.spawnAsync('git', ['config', '--global', 'user.email', "'dimaslanjaka@gmail.com'"], options);
+    await spawn.spawnAsync('git', ['config', '--global', 'user.name', "'dimaslanjaka'"], opts);
+    await spawn.spawnAsync('git', ['config', '--global', 'user.email', "'dimaslanjaka@gmail.com'"], opts);
     // set local user email
-    await spawn.spawnAsync('git', ['config', 'user.name', "'dimaslanjaka'"], options);
-    await spawn.spawnAsync('git', ['config', 'user.email', "'dimaslanjaka@gmail.com'"], options);
+    await spawn.spawnAsync('git', ['config', 'user.name', "'dimaslanjaka'"], opts);
+    await spawn.spawnAsync('git', ['config', 'user.email', "'dimaslanjaka@gmail.com'"], opts);
   }
   // set EOL LF
-  await spawn.spawnAsync('git', ['config', 'core.eol', 'lf'], options);
-  await spawn.spawnAsync('git', ['config', 'core.autocrlf', 'input'], options);
-  await spawn.spawnAsync('git', ['config', 'checkout-index', '--force', '--all'], options);
+  await spawn.spawnAsync('git', ['config', 'core.eol', 'lf'], opts);
+  await spawn.spawnAsync('git', ['config', 'core.autocrlf', 'input'], opts);
+  await spawn.spawnAsync('git', ['config', 'checkout-index', '--force', '--all'], opts);
 }
 
 /**
@@ -80,6 +82,9 @@ export function killProcess(name: string) {
     spawn.sync('killall', [name]);
   }
 }
+
+/** Environment that prevents git from invoking an interactive pager */
+const NO_PAGER_ENV = { ...process.env, GIT_PAGER: 'cat', PAGER: 'cat' };
 
 /**
  * Remove a potentially stale Git index lock and terminate any running `git` processes.
@@ -124,8 +129,9 @@ export function resetSubmodule(submodule: SubmoduleEntry, rootProjectPath: strin
     // attempt a shallow clone first to speed up cloning large repos
     try {
       execSync(
-        `git clone --branch ${submodule.branch} --single-branch --depth 1 --no-tags ${submodule.url} ${submodulePath}`,
+        `git -c gc.auto=0 clone --branch ${submodule.branch} --single-branch --depth 1 --no-tags ${submodule.url} ${submodulePath}`,
         {
+          env: NO_PAGER_ENV,
           stdio: 'inherit',
           cwd: rootProjectPath
         }
@@ -135,35 +141,43 @@ export function resetSubmodule(submodule: SubmoduleEntry, rootProjectPath: strin
         'Shallow clone failed, falling back to full clone:',
         cloneErr && (cloneErr as any).message ? (cloneErr as any).message : cloneErr
       );
-      execSync(`git clone --branch ${submodule.branch} --single-branch ${submodule.url} ${submodulePath}`, {
+      execSync(`git -c gc.auto=0 clone --branch ${submodule.branch} --single-branch ${submodule.url} ${submodulePath}`, {
+        env: NO_PAGER_ENV,
         stdio: 'inherit',
         cwd: rootProjectPath
       });
     }
+    // disable auto-gc after clone to prevent repack file lock prompts
+    execSync(`git config gc.auto 0`, { env: NO_PAGER_ENV, stdio: 'ignore', cwd: submodulePath });
   }
   // kill any running git processes to avoid lock issues
   killGitLock(submodulePath);
   // fetch all branches and tags for the submodule
-  execSync(`git fetch --all`, {
+  execSync(`git -c gc.auto=0 fetch --all`, {
+    env: NO_PAGER_ENV,
     stdio: 'inherit',
     cwd: submodulePath
   });
   // show remotes and branches
   execSync(`git remote -v`, {
+    env: NO_PAGER_ENV,
     stdio: 'inherit',
     cwd: submodulePath
   });
   execSync(`git branch -a`, {
+    env: NO_PAGER_ENV,
     stdio: 'inherit',
     cwd: submodulePath
   });
   // ensure a local branch is checked out before resetting
   try {
-    execSync(`git checkout ${submodule.branch}`, {
+    execSync(`git -c gc.auto=0 checkout ${submodule.branch}`, {
+      env: NO_PAGER_ENV,
       stdio: 'inherit',
       cwd: submodulePath
     });
-    execSync(`git reset --hard origin/${submodule.branch}`, {
+    execSync(`git -c gc.auto=0 reset --hard origin/${submodule.branch}`, {
+      env: NO_PAGER_ENV,
       stdio: 'inherit',
       cwd: submodulePath
     });
@@ -173,23 +187,27 @@ export function resetSubmodule(submodule: SubmoduleEntry, rootProjectPath: strin
     );
     try {
       // fetch into the remote-tracking ref so `origin/<branch>` exists
-      execSync(`git fetch origin ${submodule.branch}:refs/remotes/origin/${submodule.branch}`, {
+      execSync(`git -c gc.auto=0 fetch origin ${submodule.branch}:refs/remotes/origin/${submodule.branch}`, {
+        env: NO_PAGER_ENV,
         stdio: 'inherit',
         cwd: submodulePath
       });
       // create/update local branch to track origin/<branch> and check it out
-      execSync(`git checkout -B ${submodule.branch} origin/${submodule.branch}`, {
+      execSync(`git -c gc.auto=0 checkout -B ${submodule.branch} origin/${submodule.branch}`, {
+        env: NO_PAGER_ENV,
         stdio: 'inherit',
         cwd: submodulePath
       });
-      execSync(`git reset --hard ${submodule.branch}`, {
+      execSync(`git -c gc.auto=0 reset --hard ${submodule.branch}`, {
+        env: NO_PAGER_ENV,
         stdio: 'inherit',
         cwd: submodulePath
       });
     } catch (_) {
       console.warn(`Failed to create/checkout ${submodule.branch}, attempting reset to FETCH_HEAD...`);
       try {
-        execSync(`git reset --hard FETCH_HEAD`, {
+        execSync(`git -c gc.auto=0 reset --hard FETCH_HEAD`, {
+          env: NO_PAGER_ENV,
           stdio: 'inherit',
           cwd: submodulePath
         });
@@ -201,7 +219,8 @@ export function resetSubmodule(submodule: SubmoduleEntry, rootProjectPath: strin
   }
   // pull latest changes for the submodule
   try {
-    execSync(`git pull --recurse-submodules`, {
+    execSync(`git -c gc.auto=0 pull --recurse-submodules`, {
+      env: NO_PAGER_ENV,
       stdio: 'inherit',
       cwd: submodulePath
     });
