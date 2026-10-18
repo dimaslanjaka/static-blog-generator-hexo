@@ -31,7 +31,7 @@
     "site:safe": "hexo generate --safe --expose-gc",
     "update:chimeraland": "cd multisite/chimeraland/chimeraland && yarn run update",
     "update:chimeraland2": "cd multisite/chimeraland && yarn run update",
-    "update:ncu": "npx npm-check-updates -u",
+    "update:ncu": "npx -y npm-check-updates -u -x \"jsdom,chalk,hexo,deepmerge-ts,husky,react,react-dom,*react*,prettier,eslint-config-prettier,eslint-plugin-prettier,eslint,@typescript-eslint/parser,@typescript-eslint/eslint-plugin,globals,@eslint/js,@eslint/eslintrc\"",
     "update": "run-s \"update:**\"",
     "postinstall": "node postinstall.cjs"
   },
