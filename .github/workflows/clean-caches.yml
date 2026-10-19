@@ -28,7 +28,7 @@ jobs:
       YARN_CHECKSUM_BEHAVIOR: update
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           lfs: true
